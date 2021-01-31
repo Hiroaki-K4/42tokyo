@@ -1,23 +1,42 @@
 #include <stdio.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
 
+#include <string.h>
 
-// int get_next_line(int fd, char **line)
-// {
-//     char buf[100];
-//     int i;
-//     i = read(fd, buf, 3);
-//     printf("%s", buf);
-//     return 0;
-// }
+#include "get_next_line.h"
+
+int get_next_line(int fd, char **line)
+{
+    char *buf;
+    // int i;
+
+    if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
+        return (-1);
+    while (read(fd, buf, BUFFER_SIZE))
+    {
+        if (!(*line = strdup(buf)))
+            return (-1);
+    }
+    // i = read(fd, buf, BUFFER_SIZE);
+    // if (!(*line = strdup(buf)))
+    //     return (-1);
+    // printf("line: %s\n", *line);
+    // printf("%d\n", i);
+    // printf("%s\n", buf);
+    return 0;
+}
 
 
 int main()
 {
     int fd;
+    char *line = NULL;
 
     fd = open("sample.txt", O_RDONLY);
-    printf("%d", fd);
-    // get_next_line(fd, NULL);
+    printf("%d\n", fd);
+    get_next_line(fd, &line);
+    printf("line: %s\n", line);
     return 0;
 }
