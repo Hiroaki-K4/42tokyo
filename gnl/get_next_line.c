@@ -10,16 +10,20 @@
 int get_next_line(int fd, char **line)
 {
     char *buf;
-    // int i;
     static char *store;
 
-    if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
-        return (-1);
-    while (read(fd, buf, BUFFER_SIZE) > 0)
-    {
-        printf("buf: %s\n", buf);
-        if (!(*line = strdup(buf)))
+    if (store == NULL)
+        store = "";
+    if (strchr(store, '\n') == NULL) {
+        if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
             return (-1);
+        while (read(fd, buf, BUFFER_SIZE) > 0)
+        {
+            // if (strchr(buf, '\n') != NULL)
+            printf("buf: %s\n", buf);
+            if (!(*line = strdup(buf)))
+                return (-1);
+        }
     }
     // i = read(fd, buf, BUFFER_SIZE);
     // if (!(*line = strdup(buf)))
