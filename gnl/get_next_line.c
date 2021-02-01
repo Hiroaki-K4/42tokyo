@@ -14,7 +14,7 @@ int get_next_line(int fd, char **line)
 
     if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
         return (-1);
-    while (read(fd, buf, BUFFER_SIZE))
+    while (read(fd, buf, BUFFER_SIZE) > 0)
     {
         if (!(*line = strdup(buf)))
             return (-1);
