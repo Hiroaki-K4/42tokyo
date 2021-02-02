@@ -11,18 +11,40 @@ int get_next_line(int fd, char **line)
 {
     char *buf;
     static char *store;
+    int i;
 
     if (store == NULL)
-        store = "";
-    if (strchr(store, '\n') == NULL) {
+        store = "d";
+    if (strchr(store, '\n') == NULL)
+    {
         if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
             return (-1);
+        i = 0;
         while (read(fd, buf, BUFFER_SIZE) > 0)
         {
-            // if (strchr(buf, '\n') != NULL)
             printf("buf: %s\n", buf);
-            if (!(*line = strdup(buf)))
-                return (-1);
+            if (strchr(buf, '\n') != NULL)
+            {
+                while (buf[i] != '\n')
+                    i++;
+                if (i == 0 && strcmp(buf, "") != 0)
+                {
+                    if (!(*line = strdup(store)))
+                        return (-1);
+                    printf("line: %s\n", *line);
+                    // store = 
+                    return (1);
+                }
+                printf("count: %d\n", i);
+            }
+            else
+            {
+                // TO DO 改行が見つからないときに既存のstoreにつなげる処理を書く
+                strcalt(store, buf);
+            }
+
+            // if (!(*line = strdup(buf)))
+            //     return (-1);
         }
     }
     // i = read(fd, buf, BUFFER_SIZE);
