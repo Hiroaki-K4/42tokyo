@@ -53,7 +53,6 @@ int get_next_line(int fd, char **line)
                 return (-1);
         }
     }
-    // TO DO storeの中に改行があったときの処理を書く
     else
     {
         i = 0;
@@ -62,9 +61,11 @@ int get_next_line(int fd, char **line)
         if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
             return (-1);
         strlcpy(*line, store, i + 1);
-        printf("store: %s", store);
+        strcpy(store, &store[i + 1]);
+        printf("store: %s\n", store);
         printf("with_line: %d\n", i);
     }
+    // 前回は改行前をlineに入れて、その後をstoreに入れる処理を書いた
     // i = read(fd, buf, BUFFER_SIZE);
     // if (!(*line = strdup(buf)))
     //     return (-1);
