@@ -10,11 +10,13 @@
 int get_next_line(int fd, char **line)
 {
     char *buf;
-    static char store[20000000];
-    // int i;
+    static char store[2000000000];
+    int i;
 
-    if (store == NULL)
-        strcpy(store, "");
+    // if (store == NULL)
+    //     strcpy(store, "dd\nd");
+    strcpy(store, "dd\nd");
+    printf("init_store: %s\n", store);
     if (strchr(store, '\n') == NULL)
     {
         if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
@@ -42,12 +44,22 @@ int get_next_line(int fd, char **line)
             else
             {
                 strcat(store, buf);
+                
                 // printf("buf: %s\n", buf);
                 printf("store: %s\n", store);
             }
             if (!(*line = strdup(buf)))
                 return (-1);
         }
+    }
+    // TO DO storeの中に改行があったときの処理を書く
+    else
+    {
+        i = 0;
+        while (store[i] != '\n')
+            i++;
+        // strlcpyとか使おうかな
+        printf("with_line: %d\n", i);
     }
     // i = read(fd, buf, BUFFER_SIZE);
     // if (!(*line = strdup(buf)))
@@ -56,7 +68,6 @@ int get_next_line(int fd, char **line)
     // printf("%d\n", i);
     // printf("%s\n", buf);
 
-    // TO DO storeの中に改行があったときの処理を書く
     return 0;
 }
 
@@ -68,5 +79,6 @@ int main()
     fd = open("sample.txt", O_RDONLY);
     get_next_line(fd, &line);
     printf("line: %s\n", line);
+    free(line);
     return 0;
 }
