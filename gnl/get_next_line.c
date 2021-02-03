@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+#include <bsd/string.h>
 
 #include "get_next_line.h"
 
@@ -58,7 +59,10 @@ int get_next_line(int fd, char **line)
         i = 0;
         while (store[i] != '\n')
             i++;
-        // strlcpyとか使おうかな
+        if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
+            return (-1);
+        strlcpy(*line, store, i + 1);
+        printf("store: %s", store);
         printf("with_line: %d\n", i);
     }
     // i = read(fd, buf, BUFFER_SIZE);
