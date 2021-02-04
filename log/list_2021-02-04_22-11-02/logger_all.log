@@ -1,0 +1,40 @@
+[0.071s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/hiroaki-k4/my_project/42tokyo']
+[0.071s] DEBUG:colcon:Parsed command line arguments: Namespace(base_paths=['/home/hiroaki-k4/my_project/42tokyo'], build_base='build', ignore_user_meta=False, log_base=None, log_level=None, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f6800ffc280>>, metas=['./colcon.meta'], names_only=False, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, paths=None, paths_only=True, topological_graph=False, topological_graph_density=False, topological_graph_dot=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, topological_graph_legend=False, topological_order=False, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f6800ffc280>, verb_name='list', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f6800e8ba00>)
+[0.087s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.087s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.087s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.087s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.087s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.087s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hiroaki-k4/my_project/42tokyo'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['ignore', 'ignore_ament_install']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'ignore'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'ignore_ament_install'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['colcon_pkg']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'colcon_pkg'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['colcon_meta']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'colcon_meta'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['ros']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'ros'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['cmake', 'python']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'cmake'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'python'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extensions ['python_setup_py']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo) by extension 'python_setup_py'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'ignore'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'ignore_ament_install'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['colcon_pkg']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'colcon_pkg'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['colcon_meta']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'colcon_meta'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['ros']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'ros'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['cmake', 'python']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'cmake'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'python'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extensions ['python_setup_py']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/gnl) by extension 'python_setup_py'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/log) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/log) by extension 'ignore'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hiroaki-k4/my_project/42tokyo/log) ignored
+[0.095s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
