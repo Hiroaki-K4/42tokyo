@@ -27,11 +27,11 @@ int get_next_line(int fd, char **line)
         {
             if (strchr(buf, '\n') != NULL)
             {
-                // readで読み込んだ結果に改行が含まれていたときの処理を書く
                 while (buf[i] != '\n')
                     i++;
                 printf("i: %d\n", i);
                 strlcat(store, buf, strlen(store) + i + 1);
+                // storeの内容をlineに入れる処理を書く　
                 printf("store_1: %s\n", store);
             }
             else
