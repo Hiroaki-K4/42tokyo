@@ -30,20 +30,24 @@ int get_next_line(int fd, char **line)
                 while (buf[i] != '\n')
                     i++;
                 // printf("i: %d\n", i);
+                // 2回目のstrcatした後の値がおかしい
+                printf("before_store: %s\n", buf);
                 strlcat(store, buf, strlen(store) + i + 1);
+                printf("strcat: %s\n", store);
                 if (!(*line = strdup(store)))
                     return (-1);
                 strcpy(store, &buf[i + 1]);
-                // printf("store_1: %s\n", store);
+                printf("store_1: %s\n", store);
                 return (1);
             }
             else
             {
                 strcat(store, buf);
                 
-                // printf("buf: %s\n", buf);
+                printf("store_3: %s\n", store);
             }
-            if (!(*line = strdup(buf)))
+            printf("buf: %s\n", buf);
+            if (!(*line = strdup(store)))
                 return (-1);
         }
     }
@@ -56,7 +60,7 @@ int get_next_line(int fd, char **line)
             return (-1);
         strlcpy(*line, store, i + 1);
         strcpy(store, &store[i + 1]);
-        // printf("store: %s\n", store);
+        printf("store_2: %s\n", store);
         return (1);    
     }
     // i = read(fd, buf, BUFFER_SIZE);
@@ -79,7 +83,7 @@ int main()
     do 
     {
         i = get_next_line(fd, &line);
-        printf("line: %s\n", line);
+        printf("line: %s return: %d\n", line, i);
         free(line);
     } while (i > 0);
     free(line);
