@@ -21,18 +21,17 @@ int get_next_line(int fd, char **line)
     printf("init_store: %s\n", store);
     if (strchr(store, '\n') == NULL)
     {
-        if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
+        if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
             return (-1);
-        i = 0;
-        // もう読み込まれることがないとき(eofまで到達している)の処理を書く
+        // i = 0;
         while (read(fd, buf, BUFFER_SIZE) > 0)
         {
-            if (strchr(buf, '\0') == NULL)
-                printf("ok");
             buf[BUFFER_SIZE] = '\0';
+            printf("buf: %s\n", buf);
             // printf("buf_len: %ld\n", strlen(buf));
             if (strchr(buf, '\n') != NULL)
             {
+                i = 0;
                 while (buf[i] != '\n')
                     i++;
                 // printf("i: %d\n", i);
@@ -48,45 +47,17 @@ int get_next_line(int fd, char **line)
             else
             {
                 strcat(store, buf);
-                
+                // strcpy(buf, "");
                 // printf("store_3: %s\n", store);
             }
             // printf("buf: %s\n", buf);
             printf("store: %s\n", store);
             // 下の2行はほんとはいらないはず
-            if (!(*line = strdup(store)))
-                return (-1);
+            // if (!(*line = strdup(store)))
+            //     return (-1);
         }
-        // buffer_sizeがすごく大きいときの処理を書く
-        // if (buf[0] != '\0')
-        // {
-        //     while (strlen(buf) > 0)
-        //     {
-        //         i = 0;
-        //         while (buf[i] != '\n' && buf[i] != '\0')
-        //             i++;
-        //         // printf("buf: %s\n", buf);
-        //         if (buf[i] == '\n')
-        //         {
-        //             if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
-        //                 return (-1);
-        //             strlcpy(*line, buf, i + 1);
-        //             strcpy(store, &buf[i + 1]);
-        //             // printf("store_2: %s\n", store);
-        //             return (1);    
-        //         }
-        //         if (buf[i] == '\0')
-        //         {
-        //             if (!(*line = (char *)malloc(sizeof(char *) * i)))
-        //                 return (-1);
-        //             strcat(store, buf);
-        //             strcpy(*line, store);
-        //             return (0);
-        //         }
-        //     }
-            
-        //     return (0);
-        // }
+        if (!(*line = strdup(store)))
+            return (-1);
     }
     else
     {
