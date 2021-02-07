@@ -16,39 +16,68 @@ int get_next_line(int fd, char **line)
 
     // if (store == NULL)
     //     strcpy(store, "dd\nd");
-    strcpy(store, "");
-    // printf("init_store: %s\n", store);
+    if (store == NULL)
+        strcpy(store, "");
+    printf("init_store: %s\n", store);
     if (strchr(store, '\n') == NULL)
     {
         if (!(buf = (char *)malloc(sizeof(char) * BUFFER_SIZE)))
             return (-1);
         i = 0;
-        while (read(fd, buf, BUFFER_SIZE) > 0)
+        // buffer_sizeが3のときおかしい
+        while (read(fd, buf, BUFFER_SIZE) >= BUFFER_SIZE)
         {
+            buf[BUFFER_SIZE] = '\0';
+            printf("buf_len: %ld\n", strlen(buf));
             if (strchr(buf, '\n') != NULL)
             {
                 while (buf[i] != '\n')
                     i++;
                 // printf("i: %d\n", i);
-                // 2回目のstrcatした後の値がおかしい
-                printf("before_store: %s\n", buf);
+                // printf("before_store: %s\n", buf);
                 strlcat(store, buf, strlen(store) + i + 1);
-                printf("strcat: %s\n", store);
+                // printf("strcat: %s\n", store);
                 if (!(*line = strdup(store)))
                     return (-1);
                 strcpy(store, &buf[i + 1]);
-                printf("store_1: %s\n", store);
+                // printf("store_1: %s\n", store);
                 return (1);
             }
             else
             {
                 strcat(store, buf);
                 
-                printf("store_3: %s\n", store);
+                // printf("store_3: %s\n", store);
             }
-            printf("buf: %s\n", buf);
+            // printf("buf: %s\n", buf);
             if (!(*line = strdup(store)))
                 return (-1);
+        }
+        // buffer_sizeがすごく大きいときの処理を書く
+        if (buf[0] != '\0')
+        {
+            while (strlen(buf) > 0)
+            {
+                i = 0;
+                while (buf[i] != '\n' && buf[i] != '\0')
+                    i++;
+                // printf("buf: %s\n", buf);
+                if (buf[i] == '\n')
+                {
+                    if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
+                        return (-1);
+                    strlcpy(*line, buf, i + 1);
+                    strcpy(store, &buf[i + 1]);
+                    // printf("store_2: %s\n", store);
+                    return (1);    
+                }
+                if (buf[i] == '\0')
+                {
+
+                }
+            }
+            
+            return (0);
         }
     }
     else
@@ -60,16 +89,9 @@ int get_next_line(int fd, char **line)
             return (-1);
         strlcpy(*line, store, i + 1);
         strcpy(store, &store[i + 1]);
-        printf("store_2: %s\n", store);
+        // printf("store_2: %s\n", store);
         return (1);    
     }
-    // i = read(fd, buf, BUFFER_SIZE);
-    // if (!(*line = strdup(buf)))
-    //     return (-1);
-    // printf("line: %s\n", *line);
-    // printf("%d\n", i);
-    // printf("%s\n", buf);
-
     return 0;
 }
 
@@ -83,10 +105,9 @@ int main()
     do 
     {
         i = get_next_line(fd, &line);
-        printf("line: %s return: %d\n", line, i);
-        free(line);
+        printf("~~~line: %s return: %d~~~\n", line, i);
+        // free(line);
     } while (i > 0);
-    free(line);
-    // TO DO 最後の行の出力がおかしいのを修正
+    // free(line);
     return 0;
 }
