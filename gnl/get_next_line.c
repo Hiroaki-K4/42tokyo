@@ -13,6 +13,7 @@ int get_next_line(int fd, char **line)
     char *buf;
     static char store[2000000000];
     int i;
+    int j;
 
     // if (store == NULL)
     //     strcpy(store, "dd\nd");
@@ -23,10 +24,12 @@ int get_next_line(int fd, char **line)
     {
         if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
             return (-1);
-        // i = 0;
-        while (read(fd, buf, BUFFER_SIZE) > 0)
+        j = 1;
+        while (j > 0)
         {
-            buf[BUFFER_SIZE] = '\0';
+            j = read(fd, buf, BUFFER_SIZE);
+            printf("j: %d\n", j);
+            buf[j] = '\0';
             printf("buf: %s\n", buf);
             // printf("buf_len: %ld\n", strlen(buf));
             if (strchr(buf, '\n') != NULL)
@@ -58,6 +61,7 @@ int get_next_line(int fd, char **line)
         }
         if (!(*line = strdup(store)))
             return (-1);
+        free(buf);
     }
     else
     {
