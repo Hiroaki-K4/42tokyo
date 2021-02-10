@@ -11,15 +11,18 @@
 int get_next_line(int fd, char **line)
 {
     char *buf;
+    // *store[255]で複数ファイル対応にする
     static char store[2000000000];
     int i;
     int j;
 
+    if (BUFFER_SIZE < 1)
+        return (-1);
     // if (store == NULL)
     //     strcpy(store, "dd\nd");
     if (store == NULL)
         strcpy(store, "");
-    printf("init_store: %s\n", store);
+    // printf("init_store: %s\n", store);
     if (strchr(store, '\n') == NULL)
     {
         if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
@@ -28,9 +31,9 @@ int get_next_line(int fd, char **line)
         while (j > 0)
         {
             j = read(fd, buf, BUFFER_SIZE);
-            printf("j: %d\n", j);
+            // printf("j: %d\n", j);
             buf[j] = '\0';
-            printf("buf: %s\n", buf);
+            // printf("buf: %s\n", buf);
             // printf("buf_len: %ld\n", strlen(buf));
             if (strchr(buf, '\n') != NULL)
             {
@@ -54,7 +57,7 @@ int get_next_line(int fd, char **line)
                 // printf("store_3: %s\n", store);
             }
             // printf("buf: %s\n", buf);
-            printf("store: %s\n", store);
+            // printf("store: %s\n", store);
             // 下の2行はほんとはいらないはず
             // if (!(*line = strdup(store)))
             //     return (-1);
