@@ -12,7 +12,7 @@ int get_next_line(int fd, char **line)
 {
     char *buf;
     // *store[255]で複数ファイル対応にする
-    static char store[2000000000];
+    static char *store[255];
     int i;
     int j;
 
@@ -20,10 +20,14 @@ int get_next_line(int fd, char **line)
         return (-1);
     // if (store == NULL)
     //     strcpy(store, "dd\nd");
-    if (store == NULL)
-        strcpy(store, "");
+    if (store[fd] == NULL)
+        store[fd] = strdup("");
+        // printf("fd: %d\n", fd);
+        // strcpy(store[fd], "");
+    if (!(*line = strdup(store[fd])))
+        return (-1);
     // printf("init_store: %s\n", store);
-    if (strchr(store, '\n') == NULL)
+    if (strchr(store[fd], '\n') == NULL)
     {
         if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
             return (-1);
@@ -42,17 +46,17 @@ int get_next_line(int fd, char **line)
                     i++;
                 // printf("i: %d\n", i);
                 // printf("before_store: %s\n", buf);
-                strlcat(store, buf, strlen(store) + i + 1);
+                strlcat(store[fd], buf, strlen(store[fd]) + i + 1);
                 // printf("strcat: %s\n", store);
-                if (!(*line = strdup(store)))
+                if (!(*line = strdup(store[fd])))
                     return (-1);
-                strcpy(store, &buf[i + 1]);
+                strcpy(store[fd], &buf[i + 1]);
                 // printf("store_1: %s\n", store);
                 return (1);
             }
             else
             {
-                strcat(store, buf);
+                strcat(store[fd], buf);
                 // strcpy(buf, "");
                 // printf("store_3: %s\n", store);
             }
@@ -62,19 +66,19 @@ int get_next_line(int fd, char **line)
             // if (!(*line = strdup(store)))
             //     return (-1);
         }
-        if (!(*line = strdup(store)))
+        if (!(*line = strdup(store[fd])))
             return (-1);
         free(buf);
     }
     else
     {
         i = 0;
-        while (store[i] != '\n')
+        while (store[fd][i] != '\n')
             i++;
         if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
             return (-1);
-        strlcpy(*line, store, i + 1);
-        strcpy(store, &store[i + 1]);
+        strlcpy(*line, store[fd], i + 1);
+        strcpy(store[fd], &store[fd][i + 1]);
         // printf("store_2: %s\n", store);
         return (1);    
     }
@@ -83,17 +87,24 @@ int get_next_line(int fd, char **line)
 
 int main()
 {
-    int fd;
+    int fd1;
+    int fd2;
     char *line = NULL;
     int i;
+    int j;
 
-    fd = open("sample.txt", O_RDONLY);
+    fd1 = open("sample.txt", O_RDONLY);
+    fd2 = open("sample2.txt", O_RDONLY);
+    printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
     do 
     {
-        i = get_next_line(fd, &line);
-        printf("~~~line: %s return: %d~~~\n", line, i);
+        i = get_next_line(fd1, &line);
+        printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
+        free(line);
+        j = get_next_line(fd2, &line);
+        printf("~~~fd: %d line: %s return: %d~~~\n", fd2, line, j);
         // free(line);
-    } while (i > 0);
-    // free(line);
+    } while (i > 0 || j > 0);
+    free(line);
     return 0;
 }
