@@ -63,7 +63,7 @@ int get_next_line(int fd, char **line)
     return (0);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     int fd1;
     int fd2;
@@ -71,18 +71,40 @@ int main()
     int i;
     int j;
 
-    fd1 = open("sample.txt", O_RDONLY);
-    fd2 = open("sample2.txt", O_RDONLY);
-    printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
-    do 
+    if (argc = 1)
     {
-        i = get_next_line(fd1, &line);
-        printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
+        i = get_next_line(0, &line);
+        printf("~~~fd: %d line: %s return: %d~~~\n", 0, line, i);
         free(line);
-        j = get_next_line(fd2, &line);
-        printf("~~~fd: %d line: %s return: %d~~~\n", fd2, line, j);
-        // free(line);
-    } while (i > 0 || j > 0);
-    free(line);
-    return 0;
+    }
+    if (argc = 2)
+    {
+        fd1 = open(argv[1], O_RDONLY);
+        printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
+        do 
+        {
+            i = get_next_line(fd1, &line);
+            printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
+            free(line);
+            // free(line);
+        } while (i > 0);
+        free(line);
+    }
+    if (argc = 3)
+    {
+        fd1 = open(argv[1], O_RDONLY);
+        fd2 = open(argv[2], O_RDONLY);
+        printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
+        do 
+        {
+            i = get_next_line(fd1, &line);
+            printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
+            free(line);
+            j = get_next_line(fd2, &line);
+            printf("~~~fd: %d line: %s return: %d~~~\n", fd2, line, j);
+            // free(line);
+        } while (i > 0 || j > 0);
+        free(line);
+    }
+    return (0);
 }
