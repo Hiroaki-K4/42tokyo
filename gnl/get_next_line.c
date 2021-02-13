@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/13 10:52:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/13 15:39:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int get_next_line(int fd, char **line)
 {
     char *buf;
     static char *store[255];
+    char *tmp;
     int i;
     int j;
 
@@ -52,7 +53,14 @@ int get_next_line(int fd, char **line)
                 i = 0;
                 while (buf[i] != '\n')
                     i++;
-                ft_strlcat(store[fd], buf, ft_strlen(store[fd]) + i + 1);
+                // if (!(store[fd] = ft_strjoin(store[fd], buf)))
+                    // return (-1);
+                if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store[fd]) + i + 1))))
+                    return (-1);
+                ft_strlcpy(tmp, store[fd], ft_strlen(store[fd]) + 1);
+                ft_strlcat(tmp, buf, ft_strlen(store[fd]) + i + 1);
+                free(store[fd]);
+                store[fd] = tmp;
                 if (!(*line = ft_strdup(store[fd])))
                     return (-1);
                 ft_strlcpy(store[fd], &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
@@ -60,8 +68,11 @@ int get_next_line(int fd, char **line)
             }
             else
             {
-                printf("buf_len: %ld, buf: %s\n", ft_strlen(buf), buf);
-                ft_strlcat(store[fd], buf, ft_strlen(store[fd]) + ft_strlen(buf) + 1);
+                // printf("buf_len: %ld, buf: %s\n", ft_strlen(buf), buf);
+                // ft_strlcat(store[fd], buf, ft_strlen(store[fd]) + ft_strlen(buf) + 1);
+                if (!(store[fd] = ft_strjoin(store[fd], buf)))
+                    return (-1);
+                // strlcat(store[fd], buf, ft_strlen(store[fd]) + ft_strlen(buf) + 1);
             }
             // free(buf);
             // printf("store_len: %ld\n", ft_strlen(store[fd]));
