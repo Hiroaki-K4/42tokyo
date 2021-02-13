@@ -2,7 +2,7 @@
 
 for i in `seq 15`
 do
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=$i get_next_line.c get_next_line_utils.c
+gcc -Wall -Wextra -Werror -D BUFFER_SIZE=$i get_next_line.c get_next_line_utils.c test.c
 ./a.out sample.txt
 done
 
