@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:07:04 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/11 15:07:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/13 11:02:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	d_size;
 	size_t	i;
 
+	printf("ssize: %ld size: %ld buf: %s\n", ft_strlen(src), size, src);
 	d_size = 0;
 	while (dst[d_size] != '\0' && d_size < size)
 		d_size++;
+	printf("ssize: %ld size: %ld buf: %s\n", ft_strlen(src), size, src);
 	i = 0;
 	while (src[i] != '\0' && (d_size + i + 1) < size)
 	{
 		dst[d_size + i] = src[i];
 		i++;
 	}
+	printf("ssize: %ld size: %ld buf: %s\n", ft_strlen(src), size, src);
 	if (d_size < size)
 		dst[d_size + i] = '\0';
+	printf("dsize: %ld ssize: %ld size: %ld buf: %s\n", d_size, ft_strlen(src), size, src);
 	return (d_size + ft_strlen(src));
 }
 
