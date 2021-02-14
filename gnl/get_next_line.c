@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/14 11:06:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/14 13:12:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int		get_next_line(int fd, char **line)
 	static char *store[255];
 	char *tmp;
 	int i;
-	int j;
 
 	if (BUFFER_SIZE < 1)
 		return (-1);
@@ -43,12 +42,12 @@ int		get_next_line(int fd, char **line)
 	{
 		if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 			return (-1);
-		j = 1;
-		while (j > 0)
+		i = 1;
+		while (i > 0)
 		{
-			j = read(fd, buf, BUFFER_SIZE);
-			buf[j] = '\0';
-			if (j == -1)
+			i = read(fd, buf, BUFFER_SIZE);
+			buf[i] = '\0';
+			if (i == -1)
 				return (-1);
 			if (ft_strchr(buf, '\n') != NULL)
 			{
