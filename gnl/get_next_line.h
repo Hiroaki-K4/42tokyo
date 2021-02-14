@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/13 22:17:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/14 10:38:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <stdio.h>
 
 int		get_next_line(int fd, char **line);
 char	*ft_strdup(const char *s);

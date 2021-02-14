@@ -6,25 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/14 11:06:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/14 10:21:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		get_new_line(int fd, char **store, char **line)
-{
-	int i;
-
-	i = 0;
-	while (store[fd][i] != '\n')
-		i++;
-	if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
-		return (-1);
-	ft_strlcpy(*line, store[fd], i + 1);
-	ft_strlcpy(store[fd], &store[fd][i + 1], ft_strlen(&store[fd][i + 1]) + 1);
-	return (1);
-}
 
 int		get_next_line(int fd, char **line)
 {
@@ -77,6 +63,15 @@ int		get_next_line(int fd, char **line)
 		free(buf);
 	}
 	else
-		return (get_new_line(fd, store, line));
+	{
+		i = 0;
+		while (store[fd][i] != '\n')
+			i++;
+		if (!(*line = (char *)malloc(sizeof(char *) * (i + 1))))
+			return (-1);
+		ft_strlcpy(*line, store[fd], i + 1);
+		ft_strlcpy(store[fd], &store[fd][i + 1], ft_strlen(&store[fd][i + 1]) + 1);
+		return (1);
+	}
 	return (0);
 }
