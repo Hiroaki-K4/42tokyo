@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/15 22:17:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/16 09:43:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int		get_make_line(int fd, char **store, char **line)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
 		buf[i] = '\0';
-		// printf("buf: %s i: %d\n", buf, i);
 		if (i == -1)
 			return (-1);
 		if (ft_strchr(buf, '\n') != NULL)
@@ -101,7 +100,6 @@ int		get_next_line(int fd, char **line)
 			return (1);
 		if (j == -1)
 			return (-1);
-		// return (0);
 	}
 	else
 		return (get_new_line(fd, store, line));
