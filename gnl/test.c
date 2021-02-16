@@ -21,7 +21,7 @@ int		main(int argc, char *argv[])
 		printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
 		do
 		{
-			i = get_next_line(14, &line);
+			i = get_next_line(fd1, &line);
 			printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
 			free(line);
 		} while (i > 0);
