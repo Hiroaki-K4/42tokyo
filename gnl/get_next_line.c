@@ -6,23 +6,34 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/17 09:52:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/17 22:26:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <bsd/string.h>
 
 int		get_new_line(int fd, char **store, char **line)
 {
 	int		i;
+	// char tmp[200];
 
 	i = 0;
 	while (store[fd][i] != '\n')
 		i++;
 	printf("i: %d\n", i);
 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+	{
+		printf("ng\n");
 		return (-1);
-	ft_strlcpy(*line, store[fd], i + 1);
+	}
+	else
+		printf("ok\n");
+	strlcpy(*line, store[fd], i + 1);
+	// ft_strlcpy(tmp, store[fd], i + 1);
+	// if (!(*line = ft_strdup(tmp)))
+		// return (-1);
+	printf("line_len: %ld\n", ft_strlen(*line));
 	ft_strlcpy(store[fd], &store[fd][i + 1], ft_strlen(&store[fd][i + 1]) + 1);
 	return (1);
 }
