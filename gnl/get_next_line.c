@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/16 22:18:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/17 09:52:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		get_new_line(int fd, char **store, char **line)
 	i = 0;
 	while (store[fd][i] != '\n')
 		i++;
+	printf("i: %d\n", i);
 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
 		return (-1);
 	ft_strlcpy(*line, store[fd], i + 1);
@@ -52,6 +53,7 @@ int		save_new_line(int fd, char **store, char **line, char *buf)
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
 	ft_strlcpy(store[fd], &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
+	printf("store: %s\n", store[fd]);
 	return (1);
 }
 
@@ -66,6 +68,7 @@ int		get_make_line(int fd, char **store, char **line)
 	while (i > 0)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
+		printf("buf: %s\n", buf);
 		buf[i] = '\0';
 		if (i == -1)
 			return (-1);
