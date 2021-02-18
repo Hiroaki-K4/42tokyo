@@ -25,6 +25,7 @@ int		main(int argc, char *argv[])
 			printf("~~~fd: %d line: %s return: %d~~~\n", fd1, line, i);
 			free(line);
 		} while (i > 0);
+		// free(line);
 	}
 	if (argc == 3)
 	{
