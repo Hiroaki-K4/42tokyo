@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/18 22:27:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/19 09:49:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,37 @@ int		save_new_line(int fd, char **store, char **line, char *buf)
 	return (1);
 }
 
+// char		save_new_line(int fd, char **store, char **line, char *buf)
+// {
+// 	int		i;
+// 	int		j;
+// 	int		size;
+// 	char	*tmp;
+
+// 	i = 0;
+// 	while (buf[i] != '\n')
+// 		i++;
+// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store[fd]) + i + 1))))
+// 		return (-1);
+// 	ft_strlcpy(tmp, store[fd], ft_strlen(store[fd]) + 1);
+// 	size = ft_strlen(tmp);
+// 	j = 0;
+// 	while (buf[j] != '\0' && (size + j + 1) < (int)ft_strlen(store[fd]) + i + 1)
+// 	{
+// 		tmp[size + j] = buf[j];
+// 		j++;
+// 	}
+// 	tmp[size + j] = '\0';
+// 	free(store[fd]);
+// 	store[fd] = tmp;
+// 	if (!(*line = ft_strdup(store[fd])))
+// 		return (-1);
+// 	ft_strlcpy(store[fd], &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
+// 	free(buf);
+// 	// printf("store: %s\n", store[fd]);
+// 	return (1);
+// }
+
 int		get_make_line(int fd, char **store, char **line)
 {
 	char	*buf;
@@ -95,6 +126,7 @@ int		get_make_line(int fd, char **store, char **line)
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
 	free(buf);
+	// free(store[fd]);
 	return (0);
 }
 
@@ -113,10 +145,16 @@ int		get_next_line(int fd, char **line)
 		j = get_make_line(fd, store, line);
 		if (j == 1)
 			return (1);
+		if (j == 0)
+		{
+			free(store[fd]);
+			return (0);
+		}
 		if (j == -1)
 			return (-1);
 	}
 	else
 		return (get_new_line(fd, store, line));
+	free(store[fd]);
 	return (0);
 }
