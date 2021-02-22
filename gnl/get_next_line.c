@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/22 09:50:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/22 22:23:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,34 @@
 char	*get_new_line(char *store, char **line)
 {
 	int		i;
-	char 	*tmp;
+	char 	*tmp = NULL;
+	int		size;
 	// char tmp[200];
+	
+	// printf("store_next: %s\n", store);
 
 	i = 0;
-	while (store[i] != '\n')
+	size = 0;
+	// tmp = ft_strdup("");
+	while (store[i] != '\n' && store[i] != '\0')
 		i++;
 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
+	// printf("store_be: %s\n", store);
 	ft_strlcpy(*line, store, i + 1);
+	// printf("store_af: %s\n", &store[i + 1]);
 	// ft_strlcpy(tmp, store[fd], i + 1);
 	// if (!(*line = ft_strdup(tmp)))
 		// return (-1);
-	// printf("line_len: %ld\n", ft_strlen(*line));
-	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
+	size = (int)ft_strlen(&store[i + 1]) + 1;
+	// printf("size: %d\n", size);
+	// printf("store_af: %s\n", store);
+	// if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
+	if (!(tmp = (char *)malloc(sizeof(char) * size)))
 		return (NULL);
+	// printf("store_after: %s\n", store);
 	ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
+	// printf("tmp: %s\n", tmp);
 	free(store);
 	return (tmp);
 }
@@ -105,29 +117,27 @@ char	*save_new_line(char *store, char **line, char *buf)
 		i++;
 	// printf("malloc: %ld\n", ft_strlen(store[fd]) + i + 1);
 	tmp = NULL;
-	printf("store_len: %ld\n", ft_strlen(store));
+	// printf("store: %ld\n", ft_strlen(store));
 	char_size = (int)ft_strlen(store) + i + 1;
+	printf("char_size: %d\n", char_size);
 	if (!(tmp = (char *)malloc(sizeof(char) * (char_size))))
 		return (NULL);
 	// printf("copy: %ld\n", ft_strlen(store[fd]) + 1);
-	if (ft_strlen(store) + 1 > 1)
+	if (ft_strlen(store) > 0)
 		ft_strlcpy(tmp, store, ft_strlen(store) + 1);
 	size = ft_strlen(tmp);
-	// printf("size: %d\n", size);
+	printf("size: %d\n", size);
 	j = 0;
 	while (buf[j] != '\0' && (size + j + 1) < (int)ft_strlen(store) + i + 1)
 	{
 		tmp[size + j] = buf[j];
 		j++;
 	}
-	printf("size + j: %d\n", size + j);
 	tmp[size + j] = '\0';
 	free(store);
 	store = tmp;
-	printf("store: %s\n", store);
 	if (!(*line = ft_strdup(store)))
 		return (NULL);
-	printf("line: %s\n", *line);
 	ft_strlcpy(store, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
 	// printf("store: %s\n", store[fd]);
@@ -168,6 +178,7 @@ int		get_make_line(int fd, char **store, char **line)
 	// 	free(buf);
 	// 	return (0);
 	// }
+	// printf("store: %s\n", store[fd]);
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
 	free(buf);

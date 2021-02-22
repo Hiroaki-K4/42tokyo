@@ -1,167 +1,202 @@
-==10975== Memcheck, a memory error detector
-==10975== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==10975== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==10975== Command: ./a.out sample.txt
-==10975== Parent PID: 7378
-==10975== 
-==10975== Conditional jump or move depends on uninitialised value(s)
-==10975==    at 0x109AEB: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1093D1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid write of size 1
-==10975==    at 0x109B4B: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109511: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a4 is 0 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid write of size 1
-==10975==    at 0x109B7D: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109511: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1b9 is 21 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109950: ft_strchr (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097A6: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a4 is 0 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109926: ft_strchr (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097A6: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a4 is 0 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109217: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a4 is 0 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109AE6: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109B16: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x10926C: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a4 is 0 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109AE6: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109284: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a5 is 1 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109AE6: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1092BA: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a5 is 1 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109AE6: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109B16: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1092DD: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a5 is 1 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109B6B: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1092DD: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a5 is 1 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== Invalid read of size 1
-==10975==    at 0x109B48: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1092DD: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==  Address 0x4a7e1a5 is 1 bytes after a block of size 4 alloc'd
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109377: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1095FA: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x1097C0: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== 
-==10975== HEAP SUMMARY:
-==10975==     in use at exit: 6 bytes in 1 blocks
-==10975==   total heap usage: 16 allocs, 15 frees, 4,451 bytes allocated
-==10975== 
-==10975== 6 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==10975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10975==    by 0x109290: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109804: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975==    by 0x109C44: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
-==10975== 
-==10975== LEAK SUMMARY:
-==10975==    definitely lost: 6 bytes in 1 blocks
-==10975==    indirectly lost: 0 bytes in 0 blocks
-==10975==      possibly lost: 0 bytes in 0 blocks
-==10975==    still reachable: 0 bytes in 0 blocks
-==10975==         suppressed: 0 bytes in 0 blocks
-==10975== 
-==10975== Use --track-origins=yes to see where uninitialised values come from
-==10975== For lists of detected and suppressed errors, rerun with: -s
-==10975== ERROR SUMMARY: 152 errors from 13 contexts (suppressed: 0 from 0)
+==98339== Memcheck, a memory error detector
+==98339== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==98339== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==98339== Command: ./a.out sample.txt
+==98339== Parent PID: 7378
+==98339== 
+==98339== Conditional jump or move depends on uninitialised value(s)
+==98339==    at 0x109AC2: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1093F6: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid write of size 1
+==98339==    at 0x109B22: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1094E8: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid write of size 1
+==98339==    at 0x109B54: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1094E8: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1b6 is 17 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109927: ft_strchr (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x10977D: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x1098FD: ft_strchr (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x10977D: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109226: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x10923A: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109ABD: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109AED: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x10928F: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109B42: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x10928F: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109B1F: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x10928F: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a5 is 0 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109ABD: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1092A7: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a7 is 2 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109ABD: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1092E4: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a7 is 2 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109ABD: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109AED: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109307: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a7 is 2 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109B42: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109307: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a7 is 2 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== Invalid read of size 1
+==98339==    at 0x109B1F: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109307: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==  Address 0x4a7e1a7 is 2 bytes after a block of size 5 alloc'd
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1093A1: save_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1095D1: get_make_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109797: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== 
+==98339== HEAP SUMMARY:
+==98339==     in use at exit: 5 bytes in 1 blocks
+==98339==   total heap usage: 14 allocs, 13 frees, 4,429 bytes allocated
+==98339== 
+==98339== 5 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==98339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==98339==    by 0x1092BA: get_new_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x1097DB: get_next_line (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339==    by 0x109C1B: main (in /home/hiroaki-k4/my_project/42tokyo/gnl/a.out)
+==98339== 
+==98339== LEAK SUMMARY:
+==98339==    definitely lost: 5 bytes in 1 blocks
+==98339==    indirectly lost: 0 bytes in 0 blocks
+==98339==      possibly lost: 0 bytes in 0 blocks
+==98339==    still reachable: 0 bytes in 0 blocks
+==98339==         suppressed: 0 bytes in 0 blocks
+==98339== 
+==98339== Use --track-origins=yes to see where uninitialised values come from
+==98339== For lists of detected and suppressed errors, rerun with: -s
+==98339== ERROR SUMMARY: 125 errors from 16 contexts (suppressed: 0 from 0)
