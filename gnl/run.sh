@@ -30,7 +30,7 @@
 # ./a.out empty.txt
 # done
 
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=128 get_next_line.c get_next_line_utils.c test.c -lbsd
+gcc -Wall -Wextra -Werror -D BUFFER_SIZE=4 get_next_line.c get_next_line_utils.c test.c -lbsd
 ./a.out sample.txt
 # gcc -Wall -Wextra -Werror -D BUFFER_SIZE=2 get_next_line.c get_next_line_utils.c -lsd
 # ./a.out long.txt

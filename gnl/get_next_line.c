@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/22 22:23:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/23 18:22:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,22 +111,21 @@ char	*save_new_line(char *store, char **line, char *buf)
 	int		char_size;
 	int		size;
 	char	*tmp;
+	char	*tmp2;
 
 	i = 0;
 	while (buf[i] != '\n')
 		i++;
-	// printf("malloc: %ld\n", ft_strlen(store[fd]) + i + 1);
-	tmp = NULL;
-	// printf("store: %ld\n", ft_strlen(store));
+	// tmp = NULL;
 	char_size = (int)ft_strlen(store) + i + 1;
-	printf("char_size: %d\n", char_size);
+	printf("char: %d\n", char_size);
 	if (!(tmp = (char *)malloc(sizeof(char) * (char_size))))
 		return (NULL);
-	// printf("copy: %ld\n", ft_strlen(store[fd]) + 1);
 	if (ft_strlen(store) > 0)
-		ft_strlcpy(tmp, store, ft_strlen(store) + 1);
-	size = ft_strlen(tmp);
-	printf("size: %d\n", size);
+		ft_strlcpy(tmp, store, char_size);
+		// ft_strlcpy(tmp, store, ft_strlen(store) + 1);
+	size = ft_strlen(store);
+	// printf("size: %d\n", size);
 	j = 0;
 	while (buf[j] != '\0' && (size + j + 1) < (int)ft_strlen(store) + i + 1)
 	{
@@ -135,13 +134,20 @@ char	*save_new_line(char *store, char **line, char *buf)
 	}
 	tmp[size + j] = '\0';
 	free(store);
-	store = tmp;
-	if (!(*line = ft_strdup(store)))
+	// store = strdup(tmp);
+	// free(tmp);
+	// store = tmp;
+	if (!(*line = ft_strdup(tmp)))
 		return (NULL);
-	ft_strlcpy(store, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
+	if (!(tmp2 = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
+		return (NULL);
+	// ft_strlcpy(store, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
+	ft_strlcpy(tmp2, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
+	free(tmp);
 	// printf("store: %s\n", store[fd]);
-	return (store);
+	// return (store);
+	return (tmp2);
 }
 
 int		get_make_line(int fd, char **store, char **line)
