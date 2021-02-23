@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/23 18:22:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/23 22:11:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ char	*save_new_line(char *store, char **line, char *buf)
 		i++;
 	// tmp = NULL;
 	char_size = (int)ft_strlen(store) + i + 1;
-	printf("char: %d\n", char_size);
 	if (!(tmp = (char *)malloc(sizeof(char) * (char_size))))
 		return (NULL);
 	if (ft_strlen(store) > 0)
@@ -154,6 +153,7 @@ int		get_make_line(int fd, char **store, char **line)
 {
 	char	*buf;
 	int		i;
+	char	*tmp;
 
 	if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 		return (-1);
@@ -161,7 +161,6 @@ int		get_make_line(int fd, char **store, char **line)
 	while (i > 0)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
-		// printf("buf: %s\n", buf);
 		buf[i] = '\0';
 		if (i == -1)
 			return (-1);
@@ -174,17 +173,12 @@ int		get_make_line(int fd, char **store, char **line)
 		}
 		else
 		{
-			if (!(store[fd] = ft_strjoin(store[fd], buf)))
+			if (!(tmp = ft_strjoin(store[fd], buf)))
 				return (-1);
+			free(store[fd]);
+			store[fd] = tmp;
 		}
 	}
-	// if (i == 0)
-	// {
-	// 	// free(store[fd]);
-	// 	free(buf);
-	// 	return (0);
-	// }
-	// printf("store: %s\n", store[fd]);
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
 	free(buf);
