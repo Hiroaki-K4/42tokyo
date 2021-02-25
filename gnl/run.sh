@@ -38,35 +38,42 @@
 # ./a.out medium.txt
 
 gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line.c get_next_line_utils.c
+echo "~~test_001.txt~~"
 ./a.out test_001.txt
+echo "~~test_002.txt~~"
 ./a.out test_002.txt
+echo "~~test_003.txt~~"
 ./a.out test_003.txt
+echo "~~test_004.txt~~"
 ./a.out test_004.txt
+echo "~~test_005.txt~~"
 ./a.out test_005.txt
+echo "~~test_006.txt~~"
 ./a.out test_006.txt
+echo "~~none.txt~~"
 ./a.out none.txt
-gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=3 main_file.c get_next_line.c get_next_line_utils.c
-./a.out test_001.txt
-./a.out test_002.txt
-./a.out test_003.txt
-./a.out test_004.txt
-./a.out test_005.txt
-./a.out test_006.txt
-./a.out none.txt
-gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=4 main_file.c get_next_line.c get_next_line_utils.c
-./a.out test_001.txt
-./a.out test_002.txt
-./a.out test_003.txt
-./a.out test_004.txt
-./a.out test_005.txt
-./a.out test_006.txt
-./a.out none.txt
-gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2000 main_file.c get_next_line.c get_next_line_utils.c
-./a.out test_001.txt
-./a.out test_002.txt
-./a.out test_003.txt
-./a.out test_004.txt
-./a.out test_005.txt
-./a.out test_006.txt
-./a.out none.txt
+# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=3 main_file.c get_next_line.c get_next_line_utils.c
+# ./a.out test_001.txt
+# ./a.out test_002.txt
+# ./a.out test_003.txt
+# ./a.out test_004.txt
+# ./a.out test_005.txt
+# ./a.out test_006.txt
+# ./a.out none.txt
+# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=4 main_file.c get_next_line.c get_next_line_utils.c
+# ./a.out test_001.txt
+# ./a.out test_002.txt
+# ./a.out test_003.txt
+# ./a.out test_004.txt
+# ./a.out test_005.txt
+# ./a.out test_006.txt
+# ./a.out none.txt
+# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2000 main_file.c get_next_line.c get_next_line_utils.c
+# ./a.out test_001.txt
+# ./a.out test_002.txt
+# ./a.out test_003.txt
+# ./a.out test_004.txt
+# ./a.out test_005.txt
+# ./a.out test_006.txt
+# ./a.out none.txt
 
