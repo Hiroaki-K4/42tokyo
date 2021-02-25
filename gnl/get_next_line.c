@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/25 14:44:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/25 15:40:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 char	*get_new_line(char *store, char **line)
 {
 	int		i;
-	char 	*tmp;
 	int		size;
+	char	*tmp;
 
 	tmp = NULL;
 	i = 0;
@@ -39,36 +39,31 @@ char	*save_new_line(char *store, char **line, char *buf)
 {
 	int		i;
 	int		j;
-	int		char_size;
-	int		size;
 	char	*tmp;
-	char	*tmp2;
 
 	i = 0;
 	while (buf[i] != '\n')
 		i++;
-	char_size = (int)ft_strlen(store) + i + 1;
-	if (!(tmp = (char *)malloc(sizeof(char) * (char_size))))
+	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
 		return (NULL);
 	if (ft_strlen(store) > 0)
-		ft_strlcpy(tmp, store, char_size);
-	size = ft_strlen(store);
+		ft_strlcpy(tmp, store, ft_strlen(store) + i + 1);
 	j = 0;
-	while (buf[j] != '\0' && (size + j + 1) < (int)ft_strlen(store) + i + 1)
+	while (buf[j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
 	{
-		tmp[size + j] = buf[j];
+		tmp[ft_strlen(store) + j] = buf[j];
 		j++;
 	}
-	tmp[size + j] = '\0';
+	tmp[ft_strlen(store) + j] = '\0';
 	free(store);
 	if (!(*line = ft_strdup(tmp)))
 		return (NULL);
-	if (!(tmp2 = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
-		return (NULL);
-	ft_strlcpy(tmp2, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-	free(buf);
 	free(tmp);
-	return (tmp2);
+	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
+		return (NULL);
+	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
+	free(buf);
+	return (tmp);
 }
 
 int		get_make_line(int fd, char **store, char **line)
