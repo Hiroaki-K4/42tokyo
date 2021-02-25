@@ -1,0 +1,67 @@
+テストファイル一式の置き場
+https://ap2.sakura.ne.jp/get_next_line_test.tar.gz
+
+テストファイル一式の取得と解凍
+curl -O https://ap2.sakura.ne.jp/get_next_line_test.tar.gz
+tar -xvf get_next_line_test.tar.gz
+mv get_next_line_test/* ./
+
+ファイルの内容
+test_001.txt 単発 長行(2k以上の文字)
+test_002.txt 複数 長行(2k以上の文字) 3行
+test_003.txt 単一 短い行 1行に2文字
+test_004.txt 複数 短い行 1行に2文字を3行
+test_005.txt 単一 空行
+test_006.txt 複数 空業 3行
+
+テストするバッファサイズ
+BUFF_SIZE 2
+BUFF_SIZE 3
+BUFF_SIZE 4
+BUFF_SIZE 2000
+
+コンパイル
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line.c get_next_line_utils.c
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=3 main_file.c get_next_line.c get_next_line_utils.c
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=4 main_file.c get_next_line.c get_next_line_utils.c
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2000 main_file.c get_next_line.c get_next_line_utils.c
+
+実行
+./a.out test_001.txt
+./a.out test_002.txt
+./a.out test_003.txt
+./a.out test_004.txt
+./a.out test_005.txt
+./a.out test_006.txt
+./a.out none.txt
+
+Hellio404さんのテストツール
+git clone https://github.com/Hellio404/Get_Next_Line_Tester.git
+cd Get_Next_Line_Tester
+bash run.sh
+
+メモリリークチェックのコマンド
+(1) ubuntsu
+valgrind --leak-check=full ./a.out test_001.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out test_002.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out test_003.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out test_004.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out test_005.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out test_006.txt 2>&1 | grep "ERROR SUMMARY"
+valgrind --leak-check=full ./a.out none.txt 2>&1 | grep "ERROR SUMMARY"
+
+(2) MAC
+leaks -atExit -- ./a.out test_001.txt
+
+leaks -atExit --ができなかったら以下のコマンドを試す
+cd /usr/local/lib
+sudo ln -s /Applications/Xcode.app//Contents/Developer/usr/lib/libLeaksAtExit.dylib
+
+(3) sshcluster
+gcc -g main.c -L . -lft
+ソースにwhile(1)を追加してプログラムが修了しないようにする。
+./a.out 0 & (&をつけることで、バックグラウンドで実行)
+leaks a.out
+ps (これでa.outのプロセスIDを取得する)
+kill 番号(これでkillしないとずっとプログラムが実行しっぱなしになってしまう)
+
