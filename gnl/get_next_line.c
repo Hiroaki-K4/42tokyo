@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/25 14:08:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/25 14:44:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,24 @@
 char	*get_new_line(char *store, char **line)
 {
 	int		i;
-	char 	*tmp = NULL;
-	int		size;	
+	char 	*tmp;
+	int		size;
 
+	tmp = NULL;
 	i = 0;
 	size = 0;
-	// tmp = ft_strdup("");
 	while (store[i] != '\n' && store[i] != '\0')
 		i++;
 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	// printf("store_be: %s\n", store);
 	ft_strlcpy(*line, store, i + 1);
-	// printf("store_af: %s\n", &store[i + 1]);
-	// ft_strlcpy(tmp, store[fd], i + 1);
-	// if (!(*line = ft_strdup(tmp)))
-		// return (-1);
 	size = (int)ft_strlen(&store[i + 1]) + 1;
-	// printf("size: %d\n", size);
-	// printf("store_af: %s\n", store);
-	// if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
 	if (!(tmp = (char *)malloc(sizeof(char) * size)))
 		return (NULL);
-	// printf("store_after: %s\n", store);
 	ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
-	// printf("tmp: %s\n", tmp);
 	free(store);
 	return (tmp);
 }
-
 
 char	*save_new_line(char *store, char **line, char *buf)
 {
@@ -58,7 +47,6 @@ char	*save_new_line(char *store, char **line, char *buf)
 	i = 0;
 	while (buf[i] != '\n')
 		i++;
-	// tmp = NULL;
 	char_size = (int)ft_strlen(store) + i + 1;
 	if (!(tmp = (char *)malloc(sizeof(char) * (char_size))))
 		return (NULL);
@@ -116,7 +104,6 @@ int		get_make_line(int fd, char **store, char **line)
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
 	free(buf);
-// free(store[fd]);
 	return (0);
 }
 
