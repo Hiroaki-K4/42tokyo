@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/26 09:58:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/26 10:18:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,13 @@ char	*save_new_line(char *store, char **line, char *buf)
 	return (tmp);
 }
 
-int		get_make_line(int fd, char **store, char **line)
+int		get_make_line(int fd, char **store, char **line, int i)
 {
 	char	*buf;
-	int		i;
 	char	*tmp;
 
 	if (!(buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 		return (-1);
-	i = 1;
 	while (i > 0)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
@@ -79,8 +77,7 @@ int		get_make_line(int fd, char **store, char **line)
 			return (-1);
 		if (ft_strchr(buf, '\n') != NULL)
 		{
-			store[fd] = save_new_line(store[fd], line, buf);
-			if (store[fd] == NULL)
+			if (!(store[fd] = save_new_line(store[fd], line, buf)))
 				return (-1);
 			return (1);
 		}
@@ -100,8 +97,10 @@ int		get_make_line(int fd, char **store, char **line)
 
 int		get_next_line(int fd, char **line)
 {
+	int			i;
 	static char *store[255];
 
+	i = 1;
 	*line = NULL;
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
@@ -109,11 +108,10 @@ int		get_next_line(int fd, char **line)
 		if (!(store[fd] = ft_strdup("")))
 			return (-1);
 	if (ft_strchr(store[fd], '\n') == NULL)
-		return (get_make_line(fd, store, line));
+		return (get_make_line(fd, store, line, i));
 	else
 	{
-		store[fd] = get_new_line(store[fd], line);
-		if (store[fd] == NULL)
+		if (!(store[fd] = get_new_line(store[fd], line)))
 			return (-1);
 		return (1);
 	}
