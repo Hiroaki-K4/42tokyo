@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/25 22:45:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/26 09:58:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int		get_make_line(int fd, char **store, char **line)
 
 int		get_next_line(int fd, char **line)
 {
-	int			j;
 	static char *store[255];
 
 	*line = NULL;
@@ -110,13 +109,7 @@ int		get_next_line(int fd, char **line)
 		if (!(store[fd] = ft_strdup("")))
 			return (-1);
 	if (ft_strchr(store[fd], '\n') == NULL)
-	{
-		j = get_make_line(fd, store, line);
-		if (j == 1)
-			return (1);
-		if (j == -1)
-			return (-1);
-	}
+		return (get_make_line(fd, store, line));
 	else
 	{
 		store[fd] = get_new_line(store[fd], line);
