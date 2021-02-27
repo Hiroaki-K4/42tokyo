@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/26 10:29:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/27 10:23:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,19 @@ int		get_make_line(int fd, char **store, char **line, int i)
 		return (-1);
 	while (i > 0)
 	{
-		i = read(fd, buf, BUFFER_SIZE);
-		buf[i] = '\0';
-		if (i == -1)
+		if ((i = read(fd, buf, BUFFER_SIZE)) == -1)
 			return (-1);
+		buf[i] = '\0';
 		if (ft_strchr(buf, '\n') != NULL)
 		{
 			if (!(store[fd] = save_new_line(store[fd], line, buf)))
 				return (-1);
 			return (1);
 		}
-		else
-		{
-			if (!(tmp = ft_strjoin(store[fd], buf)))
-				return (-1);
-			free(store[fd]);
-			store[fd] = tmp;
-		}
+		if (!(tmp = ft_strjoin(store[fd], buf)))
+			return (-1);
+		free(store[fd]);
+		store[fd] = tmp;
 	}
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
@@ -108,9 +104,7 @@ int		get_next_line(int fd, char **line)
 		if (!(store[fd] = ft_strdup("")))
 			return (-1);
 	if (ft_strchr(store[fd], '\n') == NULL)
-	{
 		return (get_make_line(fd, store, line, i));
-	}
 	else
 	{
 		if (!(store[fd] = get_new_line(store[fd], line)))

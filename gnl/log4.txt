@@ -1,22 +1,22 @@
-==24827== Memcheck, a memory error detector
-==24827== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==24827== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==24827== Command: ./a.out test_004.txt
-==24827== Parent PID: 24810
-==24827== 
-==24827== 
-==24827== HEAP SUMMARY:
-==24827==     in use at exit: 3 bytes in 1 blocks
-==24827==   total heap usage: 17 allocs, 16 frees, 12,137 bytes allocated
-==24827== 
-==24827== LEAK SUMMARY:
-==24827==    definitely lost: 0 bytes in 0 blocks
-==24827==    indirectly lost: 0 bytes in 0 blocks
-==24827==      possibly lost: 0 bytes in 0 blocks
-==24827==    still reachable: 3 bytes in 1 blocks
-==24827==         suppressed: 0 bytes in 0 blocks
-==24827== Reachable blocks (those to which a pointer was found) are not shown.
-==24827== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==24827== 
-==24827== For lists of detected and suppressed errors, rerun with: -s
-==24827== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==20582== Memcheck, a memory error detector
+==20582== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20582== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20582== Command: ./a.out test_004.txt
+==20582== Parent PID: 20565
+==20582== 
+==20582== 
+==20582== HEAP SUMMARY:
+==20582==     in use at exit: 3 bytes in 1 blocks
+==20582==   total heap usage: 17 allocs, 16 frees, 12,137 bytes allocated
+==20582== 
+==20582== LEAK SUMMARY:
+==20582==    definitely lost: 0 bytes in 0 blocks
+==20582==    indirectly lost: 0 bytes in 0 blocks
+==20582==      possibly lost: 0 bytes in 0 blocks
+==20582==    still reachable: 3 bytes in 1 blocks
+==20582==         suppressed: 0 bytes in 0 blocks
+==20582== Reachable blocks (those to which a pointer was found) are not shown.
+==20582== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==20582== 
+==20582== For lists of detected and suppressed errors, rerun with: -s
+==20582== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
