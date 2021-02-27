@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main_stdin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 06:38:23 by user42            #+#    #+#             */
-/*   Updated: 2020/07/03 02:19:50 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/27 15:36:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 int	main(void)
 {

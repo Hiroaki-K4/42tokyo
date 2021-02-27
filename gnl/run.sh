@@ -98,18 +98,23 @@
 # echo "~~none.txt~~"
 # ./a.out none.txt
 
-gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line_bonus.c get_next_line_utils_bonus.c
-echo "~~test_001.txt~~"
-./a.out test_001.txt
-echo "~~test_002.txt~~"
-./a.out test_002.txt
-echo "~~test_003.txt~~"
-./a.out test_003.txt
-echo "~~test_004.txt~~"
-./a.out test_004.txt
-echo "~~test_005.txt~~"
-./a.out test_005.txt
-echo "~~test_006.txt~~"
-./a.out test_006.txt
-echo "~~none.txt~~"
-./a.out none.txt
+# echo "~~Bonus check~~"
+# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line_bonus.c get_next_line_utils_bonus.c
+# echo "~~test_001.txt~~"
+# ./a.out test_001.txt
+# echo "~~test_002.txt~~"
+# ./a.out test_002.txt
+# echo "~~test_003.txt~~"
+# ./a.out test_003.txt
+# echo "~~test_004.txt~~"
+# ./a.out test_004.txt
+# echo "~~test_005.txt~~"
+# ./a.out test_005.txt
+# echo "~~test_006.txt~~"
+# ./a.out test_006.txt
+# echo "~~none.txt~~"
+# ./a.out none.txt
+
+# echo "~~Stdin check~~"
+# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_stdin.c get_next_line.c get_next_line_utils.c
+# ./a.out
