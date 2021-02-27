@@ -6,11 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 06:38:23 by user42            #+#    #+#             */
-/*   Updated: 2021/02/25 10:00:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/27 10:58:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
