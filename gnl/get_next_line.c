@@ -6,12 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/27 10:23:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/27 10:40:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <bsd/string.h>
 
 char	*get_new_line(char *store, char **line)
 {
