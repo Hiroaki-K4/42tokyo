@@ -21,12 +21,15 @@ AR = ar
 
 ARFLAGS = rc
 
+LIBFT = ./libft/libft.a
+
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o) 
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):make -C ${LIBFT}
+		$(OBJS)
 		$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(OBJSBONUS)
