@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/28 14:53:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/28 17:51:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ int ft_printf(const char *arg, ...)
             {
                 tmp = (char)va_arg(ap, int);
                 write(1, &tmp, 1);
-                // write(1, "\n", 1);
-                // printf("%c\n", (char)tmp);
-                // write(1, &arg[i], 1);
             }
             else if (arg[i] == 's')
             {
