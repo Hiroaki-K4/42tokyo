@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/27 23:00:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/02/28 10:29:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,24 @@ int ft_printf(const char *arg, ...)
 {
     va_list ap;
     int i;
+    char tmp;
     
     va_start(ap, arg);
-    printf("arg: %s", arg);
     i = 0;
     while (arg[i])
     {
         if (arg[i] == '%')
         {
             i++;
-            write(1, &arg[i], 1);
+            if (arg[i] == 'c')
+            {
+                tmp = (char)va_arg(ap, int);
+                write(1, &tmp, 1);
+                // write(1, "\n", 1);
+                // printf("%c\n", (char)tmp);
+                // write(1, &arg[i], 1);
+            }
+            i++;
         }
         else
         {
@@ -35,8 +43,6 @@ int ft_printf(const char *arg, ...)
         }
         i++;
     }
-    printf("%s\n", va_arg(ap, char*));
-    printf("%s\n", va_arg(ap, char*));
     va_end(ap);
     
     return (0);
@@ -44,11 +50,11 @@ int ft_printf(const char *arg, ...)
 
 int main(void)
 {
-    char *samp1 = "aaa";
-    char *samp2 = "bbb";
-    ft_printf("%s %s\n", samp1, samp2);
-    printf("ok\n");
-    printf("%c\n", 'c');
-    printf("%s\n", "ok");
+    char samp1 = 'b';
+    // char *samp2 = "bbb";
+    printf("%c", 'a');
+    printf("%c", samp1);
+    ft_printf("%c", 'a');
+    ft_printf("%c", samp1);
     return (0);
 }
