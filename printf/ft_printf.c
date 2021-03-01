@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/01 22:00:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/01 22:26:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int ft_printf(const char *arg, ...)
 {
     va_list ap;
     int i;
+    int digit;
     char tmp;
     char *tmp2;
     
@@ -49,7 +50,20 @@ int ft_printf(const char *arg, ...)
             }
             else if (ft_isdigit(arg[i]))
             {
-                printf("ok");
+                digit = 0;
+                while (ft_isdigit(arg[i]))
+                {
+                    digit = ft_atoi(&arg[i]);
+                    printf("digit: %d\n", digit);
+                    // i++;
+                    while ((digit / 10) > 0)
+                    {
+                        digit = digit / 10;
+                        i++;
+                    }
+                    i++;
+                }
+                // printf("digit: %d\n", digit);
             }
         }
         else

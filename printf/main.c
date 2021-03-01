@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/01 22:00:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/01 22:23:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
     printf("printf:    [%s %c %%%]\n", samp2, samp1);
     ft_printf("ft_printf: [%s %c %%%]\n", samp2, samp1);
     printf("printf:    [%10c]\n", 'a');
-    ft_printf("ft_printf:    [%10c]\n", 'a');
+    ft_printf("ft_printf:    [%100c]\n", 'a');
     // printf("%o\n", 10);
     return (0);
 }
