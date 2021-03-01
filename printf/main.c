@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/01 11:07:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/01 11:15:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
     char samp1 = 'b';
     char *samp2 = "ccc";
     
-    printf("printf:    [%c]\n", 'a');
+    printf("printf:    [%-10c]\n", 'a');
     ft_printf("ft_printf: [%c]\n", 'a');
     printf("printf:    [%c]\n", samp1);
     ft_printf("ft_printf: [%c]\n", samp1);
