@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/28 21:40:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/01 10:48:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,22 @@ int ft_printf(const char *arg, ...)
             {
                 tmp = (char)va_arg(ap, int);
                 write(1, &tmp, 1);
+                i++;
             }
             else if (arg[i] == 's')
             {
                 tmp2 = va_arg(ap, char*);
                 ft_putstr_fd(tmp2, 1);
+                i++;
             }
-            i++;
+            else if (arg[i] == '%')
+            {
+                while (arg[i] == '%')
+                {
+                    write(1, "%", 1);
+                    i++;
+                }
+            }
         }
         else
         {
