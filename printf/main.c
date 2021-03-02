@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/02 09:28:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/02 22:13:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,24 @@ int main(void)
     char samp1 = 'b';
     char *samp2 = "ccc";
     
-    ft_printf("ft_printf: [%c]\n", 'a');
-    printf("printf:    [%c]\n", samp1);
-    ft_printf("ft_printf: [%c]\n", samp1);
-    printf("printf:    [%s]\n", "ccc");
-    ft_printf("ft_printf: [%s]\n", "ccc");
-    printf("printf:    [%s]\n", samp2);
-    ft_printf("ft_printf: [%s]\n", samp2);
-    printf("printf:    [%c %s]\n", samp1, samp2);
-    ft_printf("ft_printf: [%c %s]\n", samp1, samp2);
-    printf("printf:    [%s %c]\n", samp2, samp1);
-    ft_printf("ft_printf: [%s %c]\n", samp2, samp1);
-    printf("printf:    [%s %c %%%]\n", samp2, samp1);
-    ft_printf("ft_printf: [%s %c %%%]\n", samp2, samp1);
-    printf("printf:    [%10c]\n", 'a');
-    ft_printf("ft_printf: [%10c]\n", 'a');
+    printf("printf:    [abcde%d]\n", 1);
+    ft_printf("ft_printf: [abcde%d]\n", 1);
+    // ft_printf("ft_printf: [%c]\n", 'a');
+    // printf("printf:    [%c]\n", samp1);
+    // ft_printf("ft_printf: [%c]\n", samp1);
+    // printf("printf:    [%s]\n", "ccc");
+    // ft_printf("ft_printf: [%s]\n", "ccc");
+    // printf("printf:    [%s]\n", samp2);
+    // ft_printf("ft_printf: [%s]\n", samp2);
+    // printf("printf:    [%c %s]\n", samp1, samp2);
+    // ft_printf("ft_printf: [%c %s]\n", samp1, samp2);
+    // printf("printf:    [%s %c]\n", samp2, samp1);
+    // ft_printf("ft_printf: [%s %c]\n", samp2, samp1);
+    // printf("printf:    [%s %c %%%]\n", samp2, samp1);
+    // ft_printf("ft_printf: [%s %c %%%]\n", samp2, samp1);
+    // printf("printf:    [%10c]\n", 'a');
+    // ft_printf("ft_printf: [%10c]\n", 'a');
+    // printf("printf:    [%10s]\n", "bbb");
+    // ft_printf("ft_printf: [%10s]\n", "bbb");
     return (0);
 }
