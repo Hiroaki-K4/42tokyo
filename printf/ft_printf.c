@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/02 22:41:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/03 11:15:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int ft_printf_str(const char *arg, int i)
     write(1, arg, i);
     printf("i: %d\n", i);
     return (i);
+}
+
+int ft_printf_per(const char *arg, int i)
+{
+    
 }
 
 int ft_printf(const char *arg, ...)
@@ -37,7 +42,7 @@ int ft_printf(const char *arg, ...)
             i = ft_printf_str(arg, i);
         else
         {
-            return (0);
+            ft_printf_per(arg, i);
         }
     }
     va_end(ap);
