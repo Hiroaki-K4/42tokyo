@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/03 11:15:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/03 11:47:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,39 @@ int ft_printf_str(const char *arg, int i)
     return (i);
 }
 
+int ft_strchr_multiple(const char *arg, int i, )
+{
+
+}
+
 int ft_printf_per(const char *arg, int i)
 {
-    
+    ft_strchr_multiple(arg, i, "-0");
+    return (0);
 }
+
+char	*ft_strchr(const char *s, int c)
+{
+	unsigned char const	*ptr_s;
+	int					i;
+
+	ptr_s = (unsigned char const *)s;
+	i = 0;
+	while (ptr_s[i] != '\0')
+	{
+		if (ptr_s[i] == (unsigned char)c)
+		{
+			return (char *)(s + i);
+		}
+		i++;
+	}
+	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+	{
+		return (char *)(s + i);
+	}
+	return (NULL);
+}
+
 
 int ft_printf(const char *arg, ...)
 {
