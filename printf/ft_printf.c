@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/04 09:52:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/04 10:39:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@ int ft_printf_str(const char *arg, int i)
     return (i);
 }
 
-int ft_strchr_multiple(const char *arg, int i, char *target)
+a_list ft_strchr_multiple(const char *arg, int i, char *target, a_list flag_list)
 {
     int j;
     char *ans;
     
     j = 0;
-    while (target[i] != 0)
+    while (target[j] != 0)
     {
-        ans = ft_strchr(arg, target[i]);
+        ans = ft_strchr(arg, target[j]);
         if (ans != NULL)
-        {
-            
-        }
+            flag_list.flag = 1;
+        j++;
     }
+    return (flag_list);
 }
 
-int ft_printf_per(const char *arg, int i)
+a_list ft_printf_per(const char *arg, int i, a_list flag_list)
 {
-    ft_strchr_multiple(arg, i, "-0");
-    return (0);
+    flag_list = ft_strchr_multiple(arg, i, "-0", flag_list);
+    return (flag_list);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -66,13 +66,20 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
+a_list init_list(a_list flag_list)
+{
+    flag_list.flag = -1;
+    return (flag_list);
+}
 
 int ft_printf(const char *arg, ...)
 {
     va_list ap;
     int i;
+    a_list flag_list;
     
     va_start(ap, arg);
+    flag_list = init_list(flag_list);
     i = 0;
     if (arg == NULL)
         i = -1;
@@ -82,9 +89,10 @@ int ft_printf(const char *arg, ...)
             i = ft_printf_str(arg, i);
         else
         {
-            ft_printf_per(arg, i);
+            flag_list = ft_printf_per(arg, i, flag_list);
         }
     }
+    printf("list: %d\n", flag_list.flag);
     va_end(ap);
     
     return (i);
