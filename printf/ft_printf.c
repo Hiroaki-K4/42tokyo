@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/04 10:39:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/07 18:51:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int ft_printf_str(const char *arg, int i)
     return (i);
 }
 
-a_list ft_strchr_multiple(const char *arg, int i, char *target, a_list flag_list)
+a_list ft_strchr_multiple(const char *arg, char *target, a_list flag_list)
 {
     int j;
     char *ans;
@@ -32,15 +32,15 @@ a_list ft_strchr_multiple(const char *arg, int i, char *target, a_list flag_list
     {
         ans = ft_strchr(arg, target[j]);
         if (ans != NULL)
-            flag_list.flag = 1;
+            flag_list.flag[0] = 1;
         j++;
     }
     return (flag_list);
 }
 
-a_list ft_printf_per(const char *arg, int i, a_list flag_list)
+a_list ft_printf_per(const char *arg, a_list flag_list)
 {
-    flag_list = ft_strchr_multiple(arg, i, "-0", flag_list);
+    flag_list = ft_strchr_multiple(arg, "-0", flag_list);
     return (flag_list);
 }
 
@@ -68,7 +68,8 @@ char	*ft_strchr(const char *s, int c)
 
 a_list init_list(a_list flag_list)
 {
-    flag_list.flag = -1;
+    flag_list.flag[0] = 0;
+    flag_list.flag[1] = 0;
     return (flag_list);
 }
 
@@ -89,10 +90,10 @@ int ft_printf(const char *arg, ...)
             i = ft_printf_str(arg, i);
         else
         {
-            flag_list = ft_printf_per(arg, i, flag_list);
+            flag_list = ft_printf_per(arg, flag_list);
         }
     }
-    printf("list: %d\n", flag_list.flag);
+    printf("list: %d\n", flag_list.flag[0]);
     va_end(ap);
     
     return (i);
