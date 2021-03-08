@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/08 11:06:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/08 11:54:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,30 @@ int ft_printf_str(const char *arg, int i)
     while (arg[i] != '%' && arg[i])
         i++;
     write(1, arg, i);
-    printf("i: %d\n", i);
     return (i);
 }
 
 int ft_strchr_place(const char *str, int c)
 {
+    int i;
+
+    i = 0;
+    while (i < 2)
+    {
+        if (str[i] == c)
+            return (i);
+        i++;
+    }
+    return (-1);
+}
+
+int str_to_field(char *arg, int i)
+{
+    int num;
     
+    num = 0;
+    // 数字だった場合は、前のnumを10倍してそれを足す
+    while (arg[i])
 }
 
 int ft_printf_per(const char *arg, int i)
@@ -32,14 +49,20 @@ int ft_printf_per(const char *arg, int i)
     int j;
     a_list flag_list;
 
+    printf("argi: %c\n", arg[i]);
     flag_list = init_list(flag_list);
     j = 0;
-    while (j = ft_strchr_place("-0", arg[i]) >= 0)
+    // Check the flag
+    while ((j = ft_strchr_place("-0", arg[i])) >= 0)
     {
         flag_list.flag[j] = 1;
         i++;
     }
-    return (i);
+    printf("now: %d\n", i);
+    // Check the field
+    flag_list.field = str_to_field(arg, i);
+    
+    return (-1);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -82,7 +105,7 @@ int ft_printf(const char *arg, ...)
             i = ft_printf_str(arg, i);
         else
         {
-            i = ft_printf_per(arg, i);
+            i = ft_printf_per(arg, i+1);
         }
     }
     va_end(ap);
