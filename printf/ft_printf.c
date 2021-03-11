@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 18:34:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 20:40:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,31 @@ int ft_strchr_place(const char *str, int c)
     return (-1);
 }
 
-int str_to_field(const char *arg, int i)
+int str_to_field(const char *arg, int *i)
 {
     int num;
+    int tmp;
 
     // 数字だった場合は、前のnumを10倍してそれを足す
-    num = ft_atoi(&arg[i]);
+    num = ft_atoi(arg);
     if (num <= 0)
         num = -1;
+    else
+    {
+        tmp = num;
+        while (tmp > 0)
+        {
+            tmp = tmp / 10;
+            (*i)++;
+        }
+    }
     return (num);
+}
+
+int str_to_precision(const char *arg, int *i)
+{
+    
+    return (0);
 }
 
 int ft_printf_per(const char *arg, int i)
@@ -62,9 +78,16 @@ int ft_printf_per(const char *arg, int i)
     }
     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     // Check the field
-    flag_list.field = str_to_field(arg, i);
+    flag_list.field = str_to_field(&arg[i], &i);
     printf("field: %d\n", flag_list.field);
-    // Check 
+    printf("i: %d now: %c\n", i, arg[i]);
+    // Check the precision
+    if (arg[i] == '.')
+    {
+        i++;
+        flag_list.precision = str_to_precision(&arg[i], &i);
+    }
+    // flag_list.precision = 
     
     return (-1);
 }
