@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:37:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:38:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     }
     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     // Check the field
-    flag_list.field = str_to_field(&arg[i], &i);
+    flag_list.field = str_to_num(&arg[i], &i, ap);
     printf("field: %d\n", flag_list.field);
     // printf("i: %d now: %c\n", i, arg[i]);
     // Check the precision
