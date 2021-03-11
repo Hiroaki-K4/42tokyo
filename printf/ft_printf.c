@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:11:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:14:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int str_to_precision(const char *arg, int *i, va_list *ap)
         return (precision);
     }
     j = ft_atoi(arg);
-    // if (ft_isdigit())
+    // if (ft_isdigit(arg) && )
     printf("i: %d\n", *i);
     printf("j: %d\n", j);
     return (0);
