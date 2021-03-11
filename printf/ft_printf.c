@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:55:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 22:15:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[i], &i);
     printf("format: %d\n", flag_list.format);
     printf("i: %d now: %c\n", i, arg[i]);
+    // Output
     return (-1);
 }
 
