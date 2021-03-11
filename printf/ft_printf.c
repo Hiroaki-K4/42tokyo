@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 20:45:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 20:52:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,13 @@ int str_to_field(const char *arg, int *i)
 
 int str_to_precision(const char *arg, int *i)
 {
-    if (arg[*i] == '*')
-        printf("hello");
+    int precision;
+    
+
+    if (*arg == '*')
+        precision = ;
+    if ()
+    printf("i: %d\n", *i);
     return (0);
 }
 
@@ -68,7 +73,6 @@ int ft_printf_per(const char *arg, int i)
     int j;
     a_list flag_list;
 
-    // printf("argi: %c\n", arg[i]);
     flag_list = init_list(flag_list);
     j = 0;
     // Check the flag
@@ -87,9 +91,7 @@ int ft_printf_per(const char *arg, int i)
     {
         i++;
         flag_list.precision = str_to_precision(&arg[i], &i);
-    }
-    // flag_list.precision = 
-    
+    }    
     return (-1);
 }
 
