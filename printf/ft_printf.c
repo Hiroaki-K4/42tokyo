@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 20:52:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:05:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,19 @@ int str_to_field(const char *arg, int *i)
     return (num);
 }
 
-int str_to_precision(const char *arg, int *i)
+int str_to_precision(const char *arg, int *i, va_list *ap)
 {
     int precision;
     
-
     if (*arg == '*')
-        precision = ;
-    if ()
-    printf("i: %d\n", *i);
+        printf("ap: %d\n", va_arg(*ap, int));
+        // precision = ;
+    // if ()
+    // printf("i: %d\n", *i);
     return (0);
 }
 
-int ft_printf_per(const char *arg, int i)
+int ft_printf_per(const char *arg, int i, va_list *ap)
 {
     int j;
     a_list flag_list;
@@ -90,7 +90,7 @@ int ft_printf_per(const char *arg, int i)
     if (arg[i] == '.')
     {
         i++;
-        flag_list.precision = str_to_precision(&arg[i], &i);
+        flag_list.precision = str_to_precision(&arg[i], &i, &ap);
     }    
     return (-1);
 }
@@ -135,7 +135,7 @@ int ft_printf(const char *arg, ...)
             i = ft_printf_str(arg, i);
         else
         {
-            i = ft_printf_per(arg, i+1);
+            i = ft_printf_per(arg, i+1, &ap);
         }
     }
     va_end(ap);
