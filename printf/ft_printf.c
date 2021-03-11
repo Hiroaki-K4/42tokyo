@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/09 19:09:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 18:23:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int str_to_field(char *arg, int i)
     
     num = 0;
     // 数字だった場合は、前のnumを10倍してそれを足す
-    while (arg[i])
+    while (arg[i] > '0' && arg[i] < '9')
 }
 
 int ft_printf_per(const char *arg, int i)
@@ -49,7 +49,7 @@ int ft_printf_per(const char *arg, int i)
     int j;
     a_list flag_list;
 
-    printf("argi: %c\n", arg[i]);
+    // printf("argi: %c\n", arg[i]);
     flag_list = init_list(flag_list);
     j = 0;
     // Check the flag
@@ -60,7 +60,7 @@ int ft_printf_per(const char *arg, int i)
     }
     printf("now: %d\n", i);
     // Check the field
-    flag_list.field = str_to_field(arg, i);
+    // flag_list.field = str_to_field(arg, i);
     
     return (-1);
 }
