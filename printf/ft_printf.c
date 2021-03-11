@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:05:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:05:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int str_to_precision(const char *arg, int *i, va_list *ap)
         printf("ap: %d\n", va_arg(*ap, int));
         // precision = ;
     // if ()
-    // printf("i: %d\n", *i);
+    printf("i: %d\n", *i);
     return (0);
 }
 
