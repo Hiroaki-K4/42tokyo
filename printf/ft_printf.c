@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:48:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:52:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,19 @@ int ft_printf_str(const char *arg, int i)
     return (i);
 }
 
-int ft_strchr_place(const char *str, int c)
+int ft_strchr_place(const char *str, int c, int *i)
 {
-    int i;
+    int j;
 
-    i = 0;
-    while (i < (int)ft_strlen(str))
+    j = 0;
+    while (j < (int)ft_strlen(str))
     {
-        if (str[i] == c)
-            return (i);
-        i++;
+        if (str[j] == c)
+        {
+            (*i)++;
+            return (j);
+        }
+        j++;
     }
     return (-1);
 }
@@ -89,10 +92,10 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     flag_list = init_list(flag_list);
     j = 0;
     // Check the flag
-    while ((j = ft_strchr_place("-0", arg[i])) >= 0)
+    while ((j = ft_strchr_place("-0", arg[i], &i)) >= 0)
     {
         flag_list.flag[j] = 1;
-        i++;
+        // i++;
     }
     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     // Check the field
@@ -105,7 +108,7 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
         i++;
         flag_list.precision = str_to_num(&arg[i], &i, ap);
     }
-    
+    flag_list.format = ft_strchr_place("cspdiuxX%", arg[i], &i);
     printf("precision: %d\n", flag_list.precision);
     printf("i: %d now: %c\n", i, arg[i]);
     return (-1);
