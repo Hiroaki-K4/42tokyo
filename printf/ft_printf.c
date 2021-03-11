@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 21:19:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 21:37:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int str_to_field(const char *arg, int *i)
     int num;
     int tmp;
 
-    // 数字だった場合は、前のnumを10倍してそれを足す
     num = ft_atoi(arg);
     if (num <= 0)
         num = -1;
@@ -56,21 +55,21 @@ int str_to_field(const char *arg, int *i)
     return (num);
 }
 
-int str_to_precision(const char *arg, int *i, va_list *ap)
+int str_to_num(const char *arg, int *i, va_list *ap)
 {
-    int precision;
+    int num;
     int j;
     
     if (*arg == '*')
     {
-        precision = va_arg(*ap, int);
+        num = va_arg(*ap, int);
         (*i)++;
-        return (precision);
+        return (num);
     }
     j = ft_atoi(arg);
     if (j > 0)
     {
-        precision = j;
+        num = j;
         while (j > 0)
         {
             j = j / 10;
@@ -78,10 +77,8 @@ int str_to_precision(const char *arg, int *i, va_list *ap)
         }
     }
     else
-        precision = -1;
-    // printf("i: %d\n", *i);
-    // printf("j: %d\n", j);
-    return (precision);
+        num = -1;
+    return (num);
 }
 
 int ft_printf_per(const char *arg, int i, va_list *ap)
