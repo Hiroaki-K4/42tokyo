@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/11 20:40:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/11 20:45:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int str_to_field(const char *arg, int *i)
 
 int str_to_precision(const char *arg, int *i)
 {
-    
+    if (arg[*i] == '*')
+        printf("hello");
     return (0);
 }
 
