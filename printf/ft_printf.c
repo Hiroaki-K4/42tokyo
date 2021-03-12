@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/12 09:37:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/12 09:55:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,10 @@ int str_to_num(const char *arg, int *i, va_list *ap)
     return (num);
 }
 
-int output_per(a_list flag_list)
+int output_per(va_list *ap, a_list flag_list)
 {
+    if (flag_list.format = 0)
+        print_char(ap, flag_list);
     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     printf("field: %d\n", flag_list.field);
     printf("precision: %d\n", flag_list.precision);
@@ -104,21 +106,16 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     // Check the flag
     while ((j = ft_strchr_place("-0", arg[i], &i)) >= 0)
         flag_list.flag[j] = 1;
-    // printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     // Check the field
     flag_list.field = str_to_num(&arg[i], &i, ap);
-    // printf("field: %d\n", flag_list.field);
     // Check the precision
     if (arg[i] == '.')
     {
         i++;
         flag_list.precision = str_to_num(&arg[i], &i, ap);
     }
-    // printf("precision: %d\n", flag_list.precision);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[i], &i);
-    // printf("format: %d\n", flag_list.format);
-    // printf("i: %d now: %c\n", i, arg[i]);
-    k = output_per(flag_list);
+    k = output_per(ap, flag_list);
     printf("k: %d\n", k);
     // Output
     return (-1);
