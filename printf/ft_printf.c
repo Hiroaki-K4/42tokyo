@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/12 09:36:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/12 09:37:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     // printf("format: %d\n", flag_list.format);
     // printf("i: %d now: %c\n", i, arg[i]);
     k = output_per(flag_list);
+    printf("k: %d\n", k);
     // Output
     return (-1);
 }
