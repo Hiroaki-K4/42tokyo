@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/12 09:55:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/12 09:55:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int str_to_num(const char *arg, int *i, va_list *ap)
 
 int output_per(va_list *ap, a_list flag_list)
 {
-    if (flag_list.format = 0)
+    if (flag_list.format == 0)
         print_char(ap, flag_list);
     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
     printf("field: %d\n", flag_list.field);
