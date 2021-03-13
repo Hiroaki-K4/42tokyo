@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 16:33:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 16:48:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,29 +98,29 @@ int output_per(va_list *ap, a_list flag_list)
     return (i);
 }
 
-int ft_printf_per(const char *arg, int i, va_list *ap)
+int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
     int j;
     int k;
     a_list flag_list;
 
-    k = i;
+    // k = *i;
     flag_list = init_list(flag_list);
     j = 0;
     // Check the flag
-    while ((j = ft_strchr_place("-0", arg[i], &i)) >= 0)
+    while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
         flag_list.flag[j] = 1;
     // Check the field
-    flag_list.field = str_to_num(&arg[i], &i, ap);
+    flag_list.field = str_to_num(&arg[*i], i, ap);
     // Check the precision
-    if (arg[i] == '.')
+    if (arg[*i] == '.')
     {
-        i++;
-        flag_list.precision = str_to_num(&arg[i], &i, ap);
+        (*i)++;
+        flag_list.precision = str_to_num(&arg[*i], i, ap);
     }
-    flag_list.format = ft_strchr_place("cspdiuxX%", arg[i], &i);
-    printf("k: %d\n", k);
-    k += output_per(ap, flag_list);
+    flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
+    // printf("k: %d\n", k);
+    k = output_per(ap, flag_list);
     printf("k: %d\n", k);
     // Output
     return (k);
@@ -155,7 +155,7 @@ int ft_printf(const char *arg, ...)
         }
         else
         {
-            i = ft_printf_per(arg, i+1, &ap);
+            i = ft_printf_per(arg, &i+1, &ap);
             printf("arg: %c\n", arg[i]);
             // printf("i: %d\n", i);
             // printf("yes");
