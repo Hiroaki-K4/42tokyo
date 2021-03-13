@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 16:20:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 16:23:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     }
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[i], &i);
     k += output_per(ap, flag_list);
-    // printf("k: %d\n", k);
+    printf("k: %d\n", k);
     // Output
     return (k);
 }
