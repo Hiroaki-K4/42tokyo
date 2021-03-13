@@ -6,26 +6,26 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:37:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:37:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void field_flag_pre(char *str, a_list flag_list)
-{
+// void field_flag_pre(char *str, a_list flag_list)
+// {
 
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-}
+//     printf("arg: %s\n", str);
+//     printf("flag: %d\n", flag_list.precision);
+// }
 
 
-void field_flag(char *str, a_list flag_list)
-{
+// void field_flag(char *str, a_list flag_list)
+// {
 
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-}
+//     printf("arg: %s\n", str);
+//     printf("flag: %d\n", flag_list.precision);
+// }
 
 void field_flag(char *str, a_list flag_list)
 {
