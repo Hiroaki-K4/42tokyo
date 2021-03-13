@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:46:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 20:47:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int print_string(va_list *ap, a_list flag_list)
         //     len = no_option(str, flag_list);
         len = no_field(str, flag_list);
     }
-    printf("len: %d\n", len);
-    printf("str: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
+    // printf("len: %d\n", len);
+    // printf("str: %s\n", str);
+    // printf("flag: %d\n", flag_list.precision);
     return (len);
 }
