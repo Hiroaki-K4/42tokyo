@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:30:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:31:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
     printf("len: %d\n", i);
     i = ft_printf("ft_printf: [%-10c %-c %c]\n", 'a', samp1, 'c');
     printf("len: %d\n", i);
-    printf("~~string~~");
+    printf("~~string~~\n");
     i = printf("printf:    [%s]\n", "ccc");
     printf("len: %d\n", i);
     i = ft_printf("ft_printf:    [%s]\n", "ccc");
