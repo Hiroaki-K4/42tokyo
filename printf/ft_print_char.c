@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:51:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 14:51:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void print_char(va_list *ap, a_list flag_list)
 {
-    int field_len;
     char pub;
     
     pub = va_arg(*ap, int);
