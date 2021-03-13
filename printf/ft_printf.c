@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 16:58:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 16:58:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ int ft_printf(const char *arg, ...)
     {
         if (arg[i] != '%')
         {
-            printf("arg: %c\n", arg[i]);
+            printf("arg: %d\n", i);
             i = ft_printf_str(arg, i);
             // printf("arg: %c\n", arg[i]);
             // printf("no");
