@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:47:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 20:56:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int no_field(char *str, a_list flag_list)
         write(1, str, ft_strlen(str));
         len = ft_strlen(str);
     }
+    printf("no_len: %d\n", len);
     return (len);
 }
 
