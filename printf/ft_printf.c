@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:06:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 22:02:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,9 @@ int output_per(va_list *ap, a_list flag_list)
     if (flag_list.format == 0)
         i = print_char(ap, flag_list);
     else if (flag_list.format == 1)
-    {
         i = print_string(ap, flag_list);
-        // printf("string: %d\n", i);
-    }
-    // printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
-    // printf("field: %d\n", flag_list.field);
-    // printf("precision: %d\n", flag_list.precision);
-    // printf("format: %d\n", flag_list.format);
+    else if (flag_list.format == 3 || flag_list.format == 4)
+        i = print_int(ap, flag_list);
     return (i);
 }
 
