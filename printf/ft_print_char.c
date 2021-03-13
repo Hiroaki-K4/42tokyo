@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:35:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:35:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ int print_string(va_list *ap, a_list flag_list)
 
     pub = va_arg(*ap, char*);
     printf("pub: %s\n", pub);
+    printf("flag: %d\n", flag_list.precision);
     return (0);
 }
