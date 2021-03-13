@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:51:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 14:51:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void print_char(va_list *ap, a_list flag_list)
     int field_len;
     char pub;
     
+    pub = va_arg(*ap, int);
     if (flag_list.field != -1)
     {
-        pub = va_arg(*ap, int);
         if (flag_list.flag[0] == 1)
         {
             write(1, &pub, 1);
@@ -41,6 +41,6 @@ void print_char(va_list *ap, a_list flag_list)
     }
     else
     {
-        write(1, va_arg(*ap, int), 1);
+        write(1, &pub, 1);
     }
 }
