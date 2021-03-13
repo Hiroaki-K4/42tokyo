@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 16:05:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:33:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,4 @@ typedef	struct
 int ft_printf(const char *arg, ...);
 a_list init_list(a_list flag_list);
 int print_char(va_list *ap, a_list flag_list);
+int print_string(va_list *ap, a_list flag_list);
