@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:27:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:27:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ int field_only(char *str, a_list flag_list)
 void field_no_flag(char *str, a_list flag_list)
 {
     int i;
-    int len;
     
-    len = 0;
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
         i = flag_list.precision;
