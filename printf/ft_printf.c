@@ -6,23 +6,26 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:14:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:16:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int ft_printf_str(const char *arg, int i)
+int ft_printf_str(const char *arg, int *i)
 {
+    int len;
     // printf("begin: %c\n", arg[i]);
-    while (arg[i] != '%' && arg[i])
+    len = 0;
+    while (arg[*i] != '%' && arg[*i])
     {
-        write(1, &arg[i], 1);
-        i++;
+        write(1, &arg[*i], 1);
+        (*i)++;
+        len++;
     }
     // write(1, arg, i);
-    return (i);
+    return (len);
 }
 
 int ft_strchr_place(const char *str, int c, int *i)
@@ -157,7 +160,7 @@ int ft_printf(const char *arg, ...)
         if (arg[i] != '%')
         {
             // printf("arg: %d\n", i);
-            i = ft_printf_str(arg, i);
+            print_len += ft_printf_str(arg, &i);
             // printf("arg: %c\n", arg[i]);
             // printf("no");
         }
