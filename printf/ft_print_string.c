@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:33:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 20:33:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int field_flag(va_list *ap, a_list flag_list)
     return (0);
 }
 
-int filed_pre(va_list *ap, a_list flag_list)
+int field_pre(va_list *ap, a_list flag_list)
 {
     char *arg;
 
