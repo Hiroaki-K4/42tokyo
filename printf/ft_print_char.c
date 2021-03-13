@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:49:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 14:49:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 void print_char(va_list *ap, a_list flag_list)
 {
     int field_len;
+    char pub;
     
     if (flag_list.field != -1)
     {
         if (flag_list.flag[0] == 1)
         {
-            write(1, (char*)(char)va_arg(*ap, int), 1);
+            pub = va_arg(*ap, int);
+            write(1, &pub, 1);
             while(flag_list.field > 1)
             {
                 write(1, ' ', 1);
