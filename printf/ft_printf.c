@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:52:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 14:52:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int output_per(va_list *ap, a_list flag_list)
 int ft_printf_per(const char *arg, int i, va_list *ap)
 {
     int j;
-    int k;
+    // int k;
     a_list flag_list;
 
     flag_list = init_list(flag_list);
