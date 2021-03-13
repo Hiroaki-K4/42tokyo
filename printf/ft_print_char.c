@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 11:26:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 11:53:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // void print_char(va_list *ap, a_list flag_list)
 // {
-//     ap = NULL;
-//     flag_list.format = 0;
+//     if (flag_list.flag[0] == 1)
+        
 //     printf("ok");
 // }
