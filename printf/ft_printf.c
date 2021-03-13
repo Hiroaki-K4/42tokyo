@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:52:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 15:57:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,23 +121,23 @@ int ft_printf_per(const char *arg, int i, va_list *ap)
     return (-1);
 }
 
-char	*ft_strchr(const char *s, int c)
-{
-	unsigned char const	*ptr_s;
-	int					i;
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char const	*ptr_s;
+// 	int					i;
 
-	ptr_s = (unsigned char const *)s;
-	i = 0;
-	while (ptr_s[i] != '\0')
-	{
-		if (ptr_s[i] == (unsigned char)c)
-			return (char *)(s + i);
-		i++;
-	}
-	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-		return (char *)(s + i);
-	return (NULL);
-}
+// 	ptr_s = (unsigned char const *)s;
+// 	i = 0;
+// 	while (ptr_s[i] != '\0')
+// 	{
+// 		if (ptr_s[i] == (unsigned char)c)
+// 			return (char *)(s + i);
+// 		i++;
+// 	}
+// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+// 		return (char *)(s + i);
+// 	return (NULL);
+// }
 
 a_list init_list(a_list flag_list)
 {
