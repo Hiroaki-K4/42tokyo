@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:11:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:11:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_printf_str(const char *arg, int i)
     // printf("begin: %c\n", arg[i]);
     while (arg[i] != '%' && arg[i])
     {
-        write(1, arg[i], 1);
+        write(1, &arg[i], 1);
         i++;
     }
     // write(1, arg, i);
