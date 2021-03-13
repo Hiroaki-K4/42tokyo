@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 22:20:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 22:21:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,25 +47,25 @@ int main(void)
     i = ft_printf("ft_printf: [%-10s]\n", "ccc");
     printf("len: %d\n", i);
     printf("~~int~~\n");
-    i = printf("printf:    [%d]\n", 3);
+    i = printf("printf:    [%d]\n", 300);
     printf("len: %d\n", i);
-    i = ft_printf("ft_printf: [%d]\n", 3);
+    i = ft_printf("ft_printf: [%d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%10d]\n", 3);
+    i = printf("printf:    [%10d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%-10d]\n", 3);
+    i = printf("printf:    [%-10d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%010d]\n", 3);
+    i = printf("printf:    [%010d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%10.5d]\n", 3);
+    i = printf("printf:    [%10.5d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%-10.5d]\n", 3);
+    i = printf("printf:    [%-10.5d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%10.d]\n", 3);
+    i = printf("printf:    [%10.d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%10.d]\n", 3);
+    i = printf("printf:    [%10.d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%-10.5d]\n", 3);
+    i = printf("printf:    [%-10.5d]\n", 300);
     printf("len: %d\n", i);
     // ft_printf("ft_printf: [aa]\n");
     // ft_printf("ft_printf: [%0-2425.3d]\n", 10);
