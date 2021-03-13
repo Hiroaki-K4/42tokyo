@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:07:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:12:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,20 @@ int field_only(char *str, a_list flag_list)
     return (0);
 }
 
-int pre_only(char *str, a_list flag_list)
+int field_no_flag(char *str, a_list flag_list)
 {
-
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-    return (0);
-}
-
-int no_option(char *str, a_list flag_list)
-{
+    int len;
     
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-    return (0);
+    len = 0;
+    if (flag_list.precision != -1)
+    {
+
+    }
+    else
+    {
+        
+    }
+    return (len);
 }
 
 int no_field(char *str, a_list flag_list)
@@ -100,10 +100,11 @@ int print_string(va_list *ap, a_list flag_list)
         }
         else
         {
-            if (flag_list.precision != -1)
-                len = field_pre(str, flag_list);
-            else
-                len = field_only(str, flag_list);
+            // if (flag_list.precision != -1)
+            //     len = field_pre(str, flag_list);
+            // else
+            //     len = field_only(str, flag_list);
+            len = field_no_flag(str, flag_list);
         }
     }
     else
