@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:33:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:35:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ int print_char(va_list *ap, a_list flag_list)
 
 int print_string(va_list *ap, a_list flag_list)
 {
-    
+    char *pub;
+
+    pub = va_arg(*ap, char*);
+    printf("pub: %s\n", pub);
+    return (0);
 }
