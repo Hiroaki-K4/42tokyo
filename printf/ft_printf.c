@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:59:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:02:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,7 @@ int ft_printf(const char *arg, ...)
         }
         else
         {
+            printf("print_len: %d\n", print_len);
             print_len += ft_printf_per(arg, &i, &ap);
             printf("print_len: %d\n", print_len);
         }
