@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:27:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:31:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,6 @@ void field_flag(char *str, a_list flag_list)
 
     printf("arg: %s\n", str);
     printf("flag: %d\n", flag_list.precision);
-}
-
-int field_pre(char *str, a_list flag_list)
-{
-
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-    return (0);
-}
-
-int field_only(char *str, a_list flag_list)
-{
-
-    printf("arg: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
-    return (0);
 }
 
 void field_no_flag(char *str, a_list flag_list)
@@ -107,13 +91,7 @@ int print_string(va_list *ap, a_list flag_list)
                 field_flag(str, flag_list);
         }
         else
-        {
-            // if (flag_list.precision != -1)
-            //     len = field_pre(str, flag_list);
-            // else
-            //     len = field_only(str, flag_list);
             field_no_flag(str, flag_list);
-        }
         len = flag_list.field;
     }
     else
