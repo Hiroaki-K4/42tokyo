@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:40:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 20:46:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,27 @@ int no_option(char *str, a_list flag_list)
     return (0);
 }
 
+int no_field(char *str, a_list flag_list)
+{
+    int len;
+    
+    len = 0;
+    if (flag_list.precision != -1)
+    {
+        while (len < flag_list.precision && str[len])
+        {
+            write(1, &str[len], 1);
+            len++;
+        }
+    }
+    else
+    {
+        write(1, &str, ft_strlen(str));
+        len = ft_strlen(str);
+    }
+    return (len);
+}
+
 int print_string(va_list *ap, a_list flag_list)
 {
     int len;
@@ -87,10 +108,11 @@ int print_string(va_list *ap, a_list flag_list)
     }
     else
     {
-        if (flag_list.precision != -1)
-            len = pre_only(str, flag_list);
-        else
-            len = no_option(str, flag_list);
+        // if (flag_list.precision != -1)
+        //     len = pre_only(str, flag_list);
+        // else
+        //     len = no_option(str, flag_list);
+        len = no_field(str, flag_list);
     }
     printf("len: %d\n", len);
     printf("str: %s\n", str);
