@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 16:23:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 16:33:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,9 @@ a_list init_list(a_list flag_list)
 {
     flag_list.flag[0] = 0;
     flag_list.flag[1] = 0;
+    flag_list.field = -1;
+    flag_list.precision = -1;
+    flag_list.format = -1;
     return (flag_list);
 }
 
