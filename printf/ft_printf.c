@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 11:27:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 11:27:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,16 @@ int str_to_num(const char *arg, int *i, va_list *ap)
     return (num);
 }
 
-int output_per(va_list *ap, a_list flag_list)
-{
-    // if (flag_list.format == 0)
-    //     print_char(ap, flag_list);
-    printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
-    printf("field: %d\n", flag_list.field);
-    printf("precision: %d\n", flag_list.precision);
-    printf("format: %d\n", flag_list.format);
-    return (0);
-}
+// int output_per(va_list *ap, a_list flag_list)
+// {
+//     // if (flag_list.format == 0)
+//     //     print_char(ap, flag_list);
+//     printf("flag[0]: %d flag[1] %d\n", flag_list.flag[0], flag_list.flag[1]);
+//     printf("field: %d\n", flag_list.field);
+//     printf("precision: %d\n", flag_list.precision);
+//     printf("format: %d\n", flag_list.format);
+//     return (0);
+// }
 
 int ft_printf_per(const char *arg, int i, va_list *ap)
 {
