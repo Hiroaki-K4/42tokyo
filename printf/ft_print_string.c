@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 20:38:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 20:40:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int pre_only(char *str, a_list flag_list)
 
 int no_option(char *str, a_list flag_list)
 {
-
+    
     printf("arg: %s\n", str);
     printf("flag: %d\n", flag_list.precision);
     return (0);
