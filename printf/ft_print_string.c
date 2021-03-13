@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:37:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:43:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,30 @@
 
 void field_flag(char *str, a_list flag_list)
 {
-    // if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-    // {
-        
-    // }
-    // else
-    // {
+    int i;
 
-    // }
-    printf("str: %s\n", str);
-    printf("flag: %d\n", flag_list.precision);
+    if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+    {
+        write(1, str, flag_list.precision);
+        i = flag_list.precision;
+        while (flag_list.field - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+    }
+    else
+    {
+        write(1, str, ft_strlen(str));
+        i = 0;
+        while (flag_list.field - ft_strlen(str) - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+    }
+    // printf("str: %s\n", str);
+    // printf("flag: %d\n", flag_list.precision);
 }
 
 void field_no_flag(char *str, a_list flag_list)
