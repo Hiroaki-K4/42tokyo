@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 14:49:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 14:50:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void print_char(va_list *ap, a_list flag_list)
         {
             while(flag_list.field > 1)
             {
-                write(1, ' ', 1);
+                write(1, " ", 1);
                 flag_list.field--;
             }
             write(1, va_arg(*ap, int), 1);
