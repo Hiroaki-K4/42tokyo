@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:12:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 21:24:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,29 @@ int field_only(char *str, a_list flag_list)
 
 int field_no_flag(char *str, a_list flag_list)
 {
+    int i;
     int len;
     
     len = 0;
-    if (flag_list.precision != -1)
+    if (flag_list.precision != -1 && flag_list.precision < ft_strlen(str))
     {
-
+        i = flag_list.precision;
+        while (flag_list.field - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+        write(1, str, flag_list.precision);
     }
     else
     {
-        
+        i = 1;
+        while (flag_list.field - ft_strlen(str) - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+        write(1, str, ft_strlen(str));
     }
     return (len);
 }
@@ -65,7 +78,6 @@ int no_field(char *str, a_list flag_list)
 {
     int len;
     
-    len = 0;
     if (flag_list.precision != -1)
     {
         while (len < flag_list.precision && str[len])
@@ -79,6 +91,7 @@ int no_field(char *str, a_list flag_list)
         write(1, str, ft_strlen(str));
         len = ft_strlen(str);
     }
+    len = flag_list.field;
     return (len);
 }
 
