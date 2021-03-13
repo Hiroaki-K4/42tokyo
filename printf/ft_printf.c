@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:11:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/13 17:14:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ int ft_printf(const char *arg, ...)
     if (arg == NULL)
         i = -1;
     // printf("begin: %c\n", arg[16]);
+    print_len = 0;
     while (i >= 0 && arg[i])
     {
         if (arg[i] != '%')
@@ -162,7 +163,7 @@ int ft_printf(const char *arg, ...)
         }
         else
         {
-            print_len = ft_printf_per(arg, &i, &ap);
+            print_len += ft_printf_per(arg, &i, &ap);
             // printf("arg: %c\n", arg[i]);
             // printf("i: %d\n", i);
             // printf("yes");
