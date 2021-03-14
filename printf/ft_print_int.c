@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 15:07:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 21:17:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,22 @@ int no_field_int(int num, char *str, a_list flag_list)
 
 int field_no_precision(int num, char *str, a_list flag_list)
 {
-    if (flag_list.flag[1] == 1)
+    int i;
+    int len;
+
+    if (flag_list.flag[0] != -1)
     {
-        printf("ok2\n");
+        write(1, str, ft_strlen(str));
+        i = 0;
+        while (flag_list.field - ft_strlen(str) - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
     }
     else
     {
-        
-        printf("ok3\n");
+        len = 0;
     }
     printf("num: %d\n", num);
     printf("str: %s\n", str);
@@ -67,17 +75,20 @@ int print_int(va_list *ap, a_list flag_list)
 {
     int num;
     int len;
+    int keta;
     char *str_num;
 
     len = 0;
+    keta = ft_strlen(str_num);
+    if (num < 0)
+        keta--;
     num = va_arg(*ap, int);
     str_num = ft_itoa(num);
     if (flag_list.field > (int)ft_strlen(str_num))
     {
-        //many func
-        if (flag_list.flag[0] == 1)
+        if (flag_list.precision > keta)
         {
-            printf("ok\n");
+            len = 0;
         }
         else
         {
