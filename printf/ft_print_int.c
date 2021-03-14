@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 15:02:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 15:05:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ int no_field_int(int num, char *str, a_list flag_list)
     return (len);
 }
 
+int field_no_precision(int num, char *str, a_list flag_list)
+{
+    if (flag_list.flag[1] == 1)
+    {
+        printf("ok2\n");
+    }
+    else
+    {
+        
+        printf("ok3\n");
+    }
+    return (0);
+}
+
 int print_int(va_list *ap, a_list flag_list)
 {
     int num;
@@ -64,14 +78,7 @@ int print_int(va_list *ap, a_list flag_list)
         }
         else
         {
-            if (flag_list.flag[1] == 1)
-            {
-                printf("ok2\n");
-            }
-            else
-            {
-                printf("ok3\n");
-            }
+            len = field_no_precision(num, str_num, flag_list);
         }
     }
     else
