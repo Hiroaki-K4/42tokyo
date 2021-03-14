@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 10:48:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 10:49:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int main(void)
     printf("len: %d\n", i);
     i = printf("printf:    [%-.5d]\n", 300);
     printf("len: %d\n", i);
-    i = printf("printf:    [%0.5d]\n", 300);
+    i = printf("printf:    [%.5d]\n", 300);
     printf("len: %d\n", i);
     return (0);
 }
