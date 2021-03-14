@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 21:22:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 21:24:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,14 @@ int field_no_precision(int num, char *str, a_list flag_list)
     }
     else
     {
+        // if (flag_list.flag[1] != -1)
+        // {
+
+        // }
+        // else
+        // {
+        //     while ()
+        // }
         printf("num: %d\n", num);
         len = 0;
     }
