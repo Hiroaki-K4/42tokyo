@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 22:29:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 22:31:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int field_precision(int num, char *str, a_list flag_list)
     
     if (num < 0)
     {
-        if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(flag_list.precision) + 2))))
+        if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
             return (-1);
         tmp[0] = '-';
         i = 1;
@@ -112,7 +112,7 @@ int field_precision(int num, char *str, a_list flag_list)
     }
     else
     {
-        if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(flag_list.precision) + 1))))
+        if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
             return (-1);
         i = 0;
         while (flag_list.precision - ft_strlen(str) - i)
