@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 22:39:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 22:39:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int field_precision(int num, char *str, a_list flag_list)
             j++;
         }
         tmp[i] = '\0';
-        printf("tmp_len: %d\n", ft_strlen(tmp));
+        printf("tmp_len: %ld\n", ft_strlen(tmp));
     }
     else
     {
