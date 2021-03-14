@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 15:02:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 15:11:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(void)
     i = ft_printf("ft_printf: [%-10s]\n", "ccc");
     printf("len: %d\n", i);
     printf("~~int~~\n");
-    i = printf("printf:    [%10d]\n", 300);
+    i = printf("printf:    [%10.5d]\n", 300);
     printf("len: %d\n", i);
     i = ft_printf("ft_printf: [%10d]\n", 300);
     printf("len: %d\n", i);
