@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 22:05:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 22:29:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,43 @@ int field_no_precision(int num, char *str, a_list flag_list)
 
 int field_precision(int num, char *str, a_list flag_list)
 {
-    // int i;
-
+    int i;
+    int j;
+    char *tmp;
+    
+    if (num < 0)
+    {
+        if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(flag_list.precision) + 2))))
+            return (-1);
+        tmp[0] = '-';
+        i = 1;
+        while (flag_list.precision + 1 - ft_strlen(str) - i)
+        {
+            tmp[i] = '0';
+            i++;
+        }
+        
+    }
+    else
+    {
+        if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(flag_list.precision) + 1))))
+            return (-1);
+        i = 0;
+        while (flag_list.precision - ft_strlen(str) - i)
+        {
+            tmp[i] = '0';
+            i++;
+        }
+        j = 0;
+        while (ft_strlen(str) - i)
+        {
+            tmp[i] = str[j];
+            i++;
+            j++;
+        }
+        tmp[i] = '\0';
+    }
+    
     printf("num: %d\n", num);
     printf("str: %s\n", str);
     return (flag_list.field);
