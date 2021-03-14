@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 21:36:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 21:36:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int field_no_precision(int num, char *str, a_list flag_list)
 
     if (flag_list.flag[0] != -1)
     {
-        printf("ok");
+        printf("ok1");
         write(1, str, ft_strlen(str));
         i = 0;
         while (flag_list.field - ft_strlen(str) - i)
