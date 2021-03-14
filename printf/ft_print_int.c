@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 11:25:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 11:25:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int no_field(int num, char *str, a_list flag_list)
     // if (flag_list.precision )
     printf("flag: %d\n", flag_list.precision);
     printf("num: %d\n", num);
+    printf("str: %s\n", str);
     return (0);
 }
 
