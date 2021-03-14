@@ -6,20 +6,20 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 11:28:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 11:28:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int no_field(int num, char *str, a_list flag_list)
-{
-    // if (flag_list.precision )
-    printf("flag: %d\n", flag_list.precision);
-    printf("num: %d\n", num);
-    printf("str: %s\n", str);
-    return (0);
-}
+// int no_field(int num, char *str, a_list flag_list)
+// {
+//     // if (flag_list.precision )
+//     printf("flag: %d\n", flag_list.precision);
+//     printf("num: %d\n", num);
+//     printf("str: %s\n", str);
+//     return (0);
+// }
 
 int print_int(va_list *ap, a_list flag_list)
 {
