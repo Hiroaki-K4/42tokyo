@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 21:56:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 21:57:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,19 @@ int field_no_precision(int num, char *str, a_list flag_list)
     }
     else
     {
-        if (num > 0)
-        {
-            i = 0;
-            while (flag_list.field - ft_strlen(str) - i)
-            {
-                if (flag_list.flag[1] == 1)
-                    write(1, "0", 1);
-                else
-                    write(1, " ", 1);
-                i++;
-            }
-            write(1, str, ft_strlen(str));
-        }
+        // if (num > 0)
+        // {
+        //     i = 0;
+        //     while (flag_list.field - ft_strlen(str) - i)
+        //     {
+        //         if (flag_list.flag[1] == 1)
+        //             write(1, "0", 1);
+        //         else
+        //             write(1, " ", 1);
+        //         i++;
+        //     }
+        //     write(1, str, ft_strlen(str));
+        // }
         if (num < 0 && flag_list.flag[0] != 1 && flag_list.flag[1] == 1)
         {
             // if (flag_list.flag[0] == 1)
@@ -111,6 +111,19 @@ int field_no_precision(int num, char *str, a_list flag_list)
             }
             num *= -1;
             write(1, ft_itoa(num), ft_strlen(ft_itoa(num)));
+        }
+        else
+        {
+            i = 0;
+            while (flag_list.field - ft_strlen(str) - i)
+            {
+                if (flag_list.flag[1] == 1)
+                    write(1, "0", 1);
+                else
+                    write(1, " ", 1);
+                i++;
+            }
+            write(1, str, ft_strlen(str));
         }
     }
     len = flag_list.field;
