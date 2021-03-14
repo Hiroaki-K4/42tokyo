@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 21:44:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/14 11:31:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void field_flag(char *str, a_list flag_list)
+void field_flag_str(char *str, a_list flag_list)
 {
     int i;
 
@@ -38,7 +38,7 @@ void field_flag(char *str, a_list flag_list)
     }
 }
 
-void field_no_flag(char *str, a_list flag_list)
+void field_no_flag_str(char *str, a_list flag_list)
 {
     int i;
     
@@ -64,7 +64,7 @@ void field_no_flag(char *str, a_list flag_list)
     }
 }
 
-int no_field(char *str, a_list flag_list)
+int no_field_str(char *str, a_list flag_list)
 {
     int len;
     
@@ -95,12 +95,12 @@ int print_string(va_list *ap, a_list flag_list)
     if (flag_list.field != -1)
     {
         if (flag_list.flag[0] == 1)
-            field_flag(str, flag_list);
+            field_flag_str(str, flag_list);
         else
-            field_no_flag(str, flag_list);
+            field_no_flag_str(str, flag_list);
         len = flag_list.field;
     }
     else
-        len = no_field(str, flag_list);
+        len = no_field_str(str, flag_list);
     return (len);
 }
