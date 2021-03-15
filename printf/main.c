@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/15 22:54:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/15 22:56:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,32 +22,33 @@ int main(void)
     
     i = 0;
     j = 0;
-    // printf("~~char~~\n");
-    // i = printf("printf:    [%-10c %-c %c]\n", 'a', samp1, 'c');
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%-10c %-c %c]\n", 'a', samp1, 'c');
-    // printf("len: %d\n", i);
-    // printf("~~string~~\n");
-    // i = printf("printf:    [%s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = printf("printf:    [%10s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%10s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = printf("printf:    [%10.2s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%10.2s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = printf("printf:    [%-10.2s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%-10.2s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = printf("printf:    [%-10s]\n", "ccc");
-    // printf("len: %d\n", i);
-    // i = ft_printf("ft_printf: [%-10s]\n", "ccc");
-    // printf("len: %d\n", i);
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printf("~~char~~\n");
+    i = printf("printf:    [%-10c %-c %c]\n", 'a', samp1, 'c');
+    j = ft_printf("ft_printf: [%-10c %-c %c]\n", 'a', samp1, 'c');
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    printf("~~string~~\n");
+    i = printf("printf:    [%s]\n", "ccc");
+    j = ft_printf("ft_printf: [%s]\n", "ccc");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%10s]\n", "ccc");
+    j = ft_printf("ft_printf: [%10s]\n", "ccc");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%10.2s]\n", "ccc");
+    j = ft_printf("ft_printf: [%10.2s]\n", "ccc");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%-10.2s]\n", "ccc");
+    j = ft_printf("ft_printf: [%-10.2s]\n", "ccc");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%-10s]\n", "ccc");
+    j = ft_printf("ft_printf: [%-10s]\n", "ccc");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~int~~\n");
     i = printf("printf:    [%.5d]\n", 300);
