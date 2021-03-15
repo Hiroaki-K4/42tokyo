@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/15 23:15:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/15 23:15:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     // Check the precision
     if (arg[*i] == '.')
     {
-        printf("ok\n");
         (*i)++;
         flag_list.precision = str_to_num(&arg[*i], i, ap);
     }
