@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/15 23:18:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/15 23:20:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ int str_to_num(const char *arg, int *i, va_list *ap)
         return (num);
     }
     j = ft_atoi(arg);
-    if (j == 0)
-    {
-        num = 0;
-        (*i)++;
-    }
-    else if (j > 0)
+    // if (j == 0)
+    // {
+    //     num = 0;
+    //     // (*i)++;
+    // }
+    if (j > 0)
     {
         num = j;
         while (j > 0)
