@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/15 23:11:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/15 23:11:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int no_field_int(int num, char *str, a_list flag_list)
     int len;
     int digit;
 
-    printf("ok");
     if (num >= 0)
         digit = ft_strlen(str);
     else
@@ -168,6 +167,7 @@ int print_int(va_list *ap, a_list flag_list)
     int keta;
     char *str_num;
 
+    printf("ok\n");
     len = 0;
     num = va_arg(*ap, int);
     str_num = ft_itoa(num);
