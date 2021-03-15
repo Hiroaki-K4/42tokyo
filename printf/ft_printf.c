@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/14 21:40:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/15 23:12:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int output_per(va_list *ap, a_list flag_list)
     int i;
     
     i = 0;
+    printf("format: %d\n", flag_list.format);
     if (flag_list.format == 0)
         i = print_char(ap, flag_list);
     else if (flag_list.format == 1)
