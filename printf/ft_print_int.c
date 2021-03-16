@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 22:59:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:01:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,8 @@ int print_int(va_list *ap, a_list flag_list)
     keta = ft_strlen(str_num);
     if (num < 0)
         keta--;
+    if (flag_list.precision == 0 && num == 0)
+        printf("ok\n");
     if (flag_list.field > (int)ft_strlen(str_num))
     {
         if (flag_list.precision > keta)
