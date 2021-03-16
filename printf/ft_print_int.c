@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 23:09:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:09:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int pre_arg_zero(a_list flag_list)
     int i;
     
     i = 0;
-    printf("flag: %d\n", flag_list.field);
+    // printf("flag: %d\n", flag_list.field);
     if (flag_list.field != -1)
     {
         while (flag_list.field - i > 0)
