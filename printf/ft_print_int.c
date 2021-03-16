@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 23:15:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:16:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,7 @@ int pre_arg_zero(a_list flag_list)
     int i;
     
     i = 0;
+    printf("ok\n");
     // printf("flag: %d\n", flag_list.field);
     if (flag_list.field != -1)
     {
@@ -177,7 +178,6 @@ int pre_arg_zero(a_list flag_list)
             write(1, " ", 1);
             i++;
         }
-        printf("ok\n");
     }
     return (i);
 }
