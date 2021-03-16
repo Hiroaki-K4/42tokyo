@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 22:11:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 22:13:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     }
     else if (flag == 1 && j == 0)
     {
-        num = -1;
+        num = 0;
         (*i)++;
     }
     // else if (j == 0)
