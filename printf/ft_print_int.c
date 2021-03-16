@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 22:49:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 22:59:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int no_field_int(int num, char *str, a_list flag_list)
         digit = ft_strlen(str);
     else
         digit = ft_strlen(str) - 1;
-    if (flag_list.precision == 0 && num == 0)
-        
+    // if (flag_list.precision == 0 && num == 0)
+
     if (flag_list.precision > digit)
     {
         if (num < 0)
