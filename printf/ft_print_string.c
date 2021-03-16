@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 23:21:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:22:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int no_field_str(char *str, a_list flag_list)
 {
     int len;
     
+    len = 0;
     if (flag_list.precision != -1)
     {
         while (len < flag_list.precision && str[len])
