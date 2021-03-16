@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 23:33:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:36:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,10 @@ int output_per(va_list *ap, a_list flag_list)
     else if (flag_list.format == 3 || flag_list.format == 4)
         i = print_int(ap, flag_list);
     else if (flag_list.format == 8)
-        i = print_percent(flag_list);
+    {
+        write(1, "%", 1);
+        i = 1;
+    }
     return (i);
 }
 
