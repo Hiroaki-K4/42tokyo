@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 23:34:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 23:34:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int main(void)
     printf("len: %d\n", j);
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~percent~~\n");
-    i = printf("printf:    [%3.%]\n", 300);
+    i = printf("printf:    [%3.%]\n");
     // j = ft_printf("ft_printf: [%-10.5d]\n", 300);
     return (0);
 }
