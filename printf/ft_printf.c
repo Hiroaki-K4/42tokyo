@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 09:21:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 09:23:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,19 +90,18 @@ int str_to_num(const char *arg, int *i, va_list *ap)
             (*i)++;
         }
     }
-    else if (j == 0)
-    {
-        printf("ok\n");
-        num = -1;
-        (*i)++;
-    }
+    // else if (j == 0)
+    // {
+    //     printf("ok\n");
+    //     num = -1;
+    //     (*i)++;
+    // }
     else
     {
         // printf("ok\n");
         num = -1;
         // (*i)++;
     }
-    printf("num: %d\n", num);
     return (num);
 }
 
