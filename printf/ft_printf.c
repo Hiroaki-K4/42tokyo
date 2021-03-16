@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/16 22:14:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/16 22:15:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     {
         (*i)++;
         flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
-        // printf("pre: %d\n", flag_list.precision);
+        printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
