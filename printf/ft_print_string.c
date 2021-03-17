@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:18:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 22:22:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,25 @@ int field_flag_str(char *str, a_list flag_list)
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
         write(1, str, flag_list.precision);
-        len = flag_list.precision;
         i = flag_list.precision;
         while (flag_list.field - i)
         {
             write(1, " ", 1);
             i++;
         }
+        len = i;
     }
     else
     {
         write(1, str, ft_strlen(str));
-        len = ft_strlen(str);
         i = 0;
         while (flag_list.field - ft_strlen(str) - i)
         {
             write(1, " ", 1);
             i++;
         }
+        len = (int)ft_strlen(str) + i;
     }
-    len = len + i;
     return (len);
 }
 
@@ -57,7 +56,7 @@ int field_no_flag_str(char *str, a_list flag_list)
             i++;
         }
         write(1, str, flag_list.precision);
-        len = flag_list.precision;
+        len = i;
     }
     else
     {
@@ -68,9 +67,8 @@ int field_no_flag_str(char *str, a_list flag_list)
             i++;
         }
         write(1, str, ft_strlen(str));
-        len = ft_strlen(str);
+        len = (int)ft_strlen(str) + i;
     }
-    len = len + i;
     return (len);
 }
 
