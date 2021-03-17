@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:03:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 22:05:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ void field_no_flag_str(char *str, a_list flag_list)
         i = 0;
         while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
         {
-            printf("field: %d\n", flag_list.field);
-            printf("len: %ld\n", ft_strlen(str));
             write(1, " ", 1);
             i++;
         }
