@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 11:33:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 23:09:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ int print_string(va_list *ap, a_list flag_list);
 int print_int(va_list *ap, a_list flag_list);
 // int print_percent(va_list *ap, a_list flag_list);
 int print_percent(a_list flag_list);
+int print_unsigned_int(va_list *ap, a_list flag_list);

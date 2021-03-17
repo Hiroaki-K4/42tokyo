@@ -3,5 +3,5 @@
 make re
 gcc main.c -L. -lftprintf
 echo "~~printf test~~ "
-./a.out
+# ./a.out
 sh git_run.sh
