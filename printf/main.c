@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:13:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 22:32:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~string~~\n");
+    i = printf("printf:    [%-5s]\n", "goes over");
+    // j = ft_printf("ft_printf: [%-5s]\n", "goes over");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     i = printf("printf:    [%3.5s]\n", "hi low");
     j = ft_printf("ft_printf: [%3.5s]\n", "hi low");
     printf("len: %d\n", i);
