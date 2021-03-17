@@ -6,19 +6,21 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:12:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 22:18:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void field_flag_str(char *str, a_list flag_list)
+int field_flag_str(char *str, a_list flag_list)
 {
     int i;
+    int len;
 
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
         write(1, str, flag_list.precision);
+        len = flag_list.precision;
         i = flag_list.precision;
         while (flag_list.field - i)
         {
@@ -29,6 +31,7 @@ void field_flag_str(char *str, a_list flag_list)
     else
     {
         write(1, str, ft_strlen(str));
+        len = ft_strlen(str);
         i = 0;
         while (flag_list.field - ft_strlen(str) - i)
         {
@@ -36,11 +39,14 @@ void field_flag_str(char *str, a_list flag_list)
             i++;
         }
     }
+    len = len + i;
+    return (len);
 }
 
-void field_no_flag_str(char *str, a_list flag_list)
+int field_no_flag_str(char *str, a_list flag_list)
 {
     int i;
+    int len;
     
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
@@ -51,6 +57,7 @@ void field_no_flag_str(char *str, a_list flag_list)
             i++;
         }
         write(1, str, flag_list.precision);
+        len = flag_list.precision;
     }
     else
     {
@@ -61,7 +68,10 @@ void field_no_flag_str(char *str, a_list flag_list)
             i++;
         }
         write(1, str, ft_strlen(str));
+        len = ft_strlen(str);
     }
+    len = len + i;
+    return (len);
 }
 
 int no_field_str(char *str, a_list flag_list)
@@ -96,10 +106,10 @@ int print_string(va_list *ap, a_list flag_list)
     if (flag_list.field != -1)
     {
         if (flag_list.flag[0] == 1)
-            field_flag_str(str, flag_list);
+            len = field_flag_str(str, flag_list);
         else
-            field_no_flag_str(str, flag_list);
-        len = flag_list.field;
+            len = field_no_flag_str(str, flag_list);
+        // len = flag_list.field;
     }
     else
         len = no_field_str(str, flag_list);
