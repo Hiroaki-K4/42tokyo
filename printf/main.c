@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 23:14:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 23:15:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,23 +166,23 @@ int main(void)
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     
-    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-    printf("~~percent~~\n");
-    i = printf("printf:    [%3.%]\n");
-    j = ft_printf("ft_printf: [%3.%]\n");
-    printf("len: %d\n", i);
-    printf("len: %d\n", j);
-    i = printf("printf:    [%%]\n", 300);
-    j = ft_printf("ft_printf: [%%]\n", 300);
-    printf("len: %d\n", i);
-    printf("len: %d\n", j);
-    i = printf("printf:    [%d%]\n", 300);
-    j = ft_printf("ft_printf: [%d%]\n", 300);
-    printf("len: %d\n", i);
-    printf("len: %d\n", j);
-    i = printf("printf:    [%.3]\n", 300);
-    j = ft_printf("ft_printf: [%.3]\n", 300);
-    printf("len: %d\n", i);
-    printf("len: %d\n", j);
+    // printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    // printf("~~percent~~\n");
+    // i = printf("printf:    [%3.%]\n");
+    // j = ft_printf("ft_printf: [%3.%]\n");
+    // printf("len: %d\n", i);
+    // printf("len: %d\n", j);
+    // i = printf("printf:    [%%]\n", 300);
+    // j = ft_printf("ft_printf: [%%]\n", 300);
+    // printf("len: %d\n", i);
+    // printf("len: %d\n", j);
+    // i = printf("printf:    [%d%]\n", 300);
+    // j = ft_printf("ft_printf: [%d%]\n", 300);
+    // printf("len: %d\n", i);
+    // printf("len: %d\n", j);
+    // i = printf("printf:    [%.3]\n", 300);
+    // j = ft_printf("ft_printf: [%.3]\n", 300);
+    // printf("len: %d\n", i);
+    // printf("len: %d\n", j);
     return (0);
 }
