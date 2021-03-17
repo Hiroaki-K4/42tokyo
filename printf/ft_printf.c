@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 21:25:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 21:25:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     printf("arg: %s\n", arg);
     if (ft_isdigit(arg[0]) == 0 && flag == 1)
     {
-        printf("ok\n");
+        // printf("ok\n");
         return (0);
     }
     j = ft_atoi(arg);
@@ -95,7 +95,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     }
     else if (flag == 1 && j == 0)
     {
-        printf("ok2\n");
+        // printf("ok2\n");
         num = 0;
         (*i)++;
     }
@@ -145,7 +145,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
         // printf("argc: %c\n", arg[*i]);
         (*i)++;
         flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
-        printf("pre: %d\n", flag_list.precision);
+        // printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
