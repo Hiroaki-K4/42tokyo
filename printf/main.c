@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 11:50:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 11:51:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int main(void)
     printf("len: %d\n", j);
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~int~~\n");
-    i = printf("printf:    [%-010.5d]\n", 300);
-    j = ft_printf("ft_printf: [%-10.5d]\n", 300);
+    i = printf("printf:    [%-10.05d]\n", 300);
+    j = ft_printf("ft_printf: [%-10.05d]\n", 300);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     i = printf("printf:    [%-10d]\n", -300);
@@ -79,8 +79,8 @@ int main(void)
     j = ft_printf("ft_printf: [%010d]\n", 300);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
-    i = printf("printf:    [%10.02d]\n", -300);
-    j = ft_printf("ft_printf: [%10.02d]\n", -300);
+    i = printf("printf:    [%10.2d]\n", -300);
+    j = ft_printf("ft_printf: [%10.2d]\n", -300);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     i = printf("printf:    [%-.5d]\n", -300);
