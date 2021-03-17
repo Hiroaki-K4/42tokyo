@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 23:16:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 23:16:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~unsigned int~~\n");
-    i = printf("printf:    [%u]\n", 2147483648);
+    i = printf("printf:    [%d]\n", 2147483648);
     j = ft_printf("ft_printf: [%u]\n", 2147483648);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
