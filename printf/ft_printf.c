@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 20:53:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 20:58:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
     int num;
     int j;
+    int k;
     
     if (*arg == '*')
     {
@@ -84,10 +85,16 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     if (j > 0)
     {
         num = j;
-        while (j > 0)
+        // while (j > 0)
+        // {
+        //     j = j / 10;
+        //     (*i)++;
+        // }
+        k = 0;
+        while (ft_isdigit(arg[k]))
         {
-            j = j / 10;
             (*i)++;
+            k++;
         }
     }
     else if (flag == 1 && j == 0)
