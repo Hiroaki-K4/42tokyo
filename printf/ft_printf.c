@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 20:45:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 20:46:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     // if (ft_isdigit(arg[0]) == 0 && flag == 1)
     //     return (0);
     j = ft_atoi(arg);
+    if (j == 0 && flag == 1)
+        return (0);
     printf("j: %d\n", j);
     if (j > 0)
     {
