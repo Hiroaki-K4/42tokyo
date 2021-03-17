@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 11:18:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 11:21:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,10 +120,10 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
     int j;
     int k;
-    a_list flag_list = 0;
+    a_list flag_list;
 
     (*i)++;
-    flag_list = init_list(flag_list);
+    flag_list = init_list();
     j = 0;
     // Check the flag
     while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
@@ -145,8 +145,20 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     return (k);
 }
 
-a_list init_list(a_list flag_list)
+// a_list init_list(a_list flag_list)
+// {
+//     flag_list.flag[0] = -1;
+//     flag_list.flag[1] = -1;
+//     flag_list.field = -1;
+//     flag_list.precision = -1;
+//     flag_list.format = -1;
+//     return (flag_list);
+// }
+
+a_list init_list()
 {
+    a_list flag_list;
+    
     flag_list.flag[0] = -1;
     flag_list.flag[1] = -1;
     flag_list.field = -1;
