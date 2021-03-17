@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:05:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 22:08:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void field_no_flag_str(char *str, a_list flag_list)
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
         i = flag_list.precision;
-        while (flag_list.field - i)
+        while ((flag_list.field - i) > 0)
         {
             write(1, " ", 1);
             i++;
