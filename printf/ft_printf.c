@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 21:27:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/17 21:28:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
         return (num);
     }
     // printf("arg: %s\n", arg);
-    // if (ft_isdigit(arg[0]) == 0 && flag == 1)
-    // {
-    //     // printf("ok\n");
-    //     return (0);
-    // }
+    if (ft_isdigit(arg[0]) == 0 && flag == 1)
+    {
+        // printf("ok\n");
+        return (0);
+    }
     j = ft_atoi(arg);
     // printf("j: %d\n", j);
     if (j > 0)
@@ -93,12 +93,12 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
             k++;
         }
     }
-    else if (flag == 1 && j == 0)
-    {
-        // printf("ok2\n");
-        num = 0;
-        (*i)++;
-    }
+    // else if (flag == 1 && j == 0)
+    // {
+    //     // printf("ok2\n");
+    //     num = 0;
+    //     (*i)++;
+    // }
     else
         num = -1;
     return (num);
