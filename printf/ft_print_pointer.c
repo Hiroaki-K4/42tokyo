@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 22:30:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 22:30:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     // tmp = (unsigned int)&num;
     keta = ft_strlen(str_num);
     if (!(ans_str = (char *)malloc(sizeof(char) * (keta + 3))))
-		return (NULL);
+		return (-1);
     ans_str[keta] = '\0';
     ans_str[0] = '0';
     ans_str[1] = 'x';
