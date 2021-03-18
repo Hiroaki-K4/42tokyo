@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 10:41:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 11:27:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,11 @@ static	int		digit_size(unsigned int number)
 char			*ft_itoa_unsigned(unsigned int n)
 {
 	int		len;
-	// char	flag;
 	char	*ans;
 
-	// if (n == -2147483648)
-	// 	return (ft_strdup("-2147483648"));
 	len = digit_size(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	// flag = '+';
-	// if (n < 0)
-	// {
-	// 	n = n * (-1);
-	// 	flag = '-';
-	// }
 	ans[len] = '\0';
 	len--;
 	while (len >= 0)
@@ -51,7 +42,10 @@ char			*ft_itoa_unsigned(unsigned int n)
 		ans[len--] = '0' + (n % 10);
 		n = n / 10;
 	}
-	// if (flag == '-')
-		// ans[0] = '-';
 	return (ans);
 }
+
+// char			*ft_itoa_hex(unsigned int n)
+// {
+
+// }
