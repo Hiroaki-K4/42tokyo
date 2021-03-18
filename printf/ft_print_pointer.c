@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:14:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:14:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int print_pointer(va_list *ap, a_list flag_list)
 {
-    int len;
+    // int len;
     void *num;
     
     num = va_arg(*ap, void *);
