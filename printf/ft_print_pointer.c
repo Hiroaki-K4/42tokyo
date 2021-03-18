@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:11:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:12:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int print_pointer(va_list *ap, a_list flag_list)
 {
     int len;
-    void *num;
+    char *num;
     
-    num = va_arg(*ap, void *);
+    num = (char *)va_arg(*ap, void *);
     len = ft_strlen((char*)num);
     printf("len: %d\n", len);
     // if (flag_list)
