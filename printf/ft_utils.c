@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 11:58:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 11:59:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int				get_len(unsigned int n)
 	}
 	else
 		len = 1;
+	return (len);
 }
 
 char			*ft_itoa_hex(unsigned int n)
