@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 18:22:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:23:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char *ft_itoa_hex(unsigned int n, char *arg)
 	len--;
 	if (i == 0)
 	{
-		ans[0] = 0;
+		ans[0] = '0';
 		printf("ans: %s\n", ans);
 		return (ans);
 	}
