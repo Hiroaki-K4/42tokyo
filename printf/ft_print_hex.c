@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 18:16:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:16:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int print_hex(va_list *ap, a_list flag_list)
         flag_list.flag[1] = 0;
     if (flag_list.precision == 0 && num == 0)
         return (pre_arg_zero(flag_list));
-    if (flag_list.field > (int)ft_strlen(_SC_TRACE_USER_EVENT_MAX))
+    if (flag_list.field > (int)ft_strlen(str_num))
     {
         if (flag_list.precision > keta)
             len = field_precision(num, str_num, flag_list);
