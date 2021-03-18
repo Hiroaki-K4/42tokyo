@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 11:57:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 11:59:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int print_hex(va_list *ap, a_list flag_list)
 
     num = va_arg(*ap, unsigned int);
     str = ft_itoa_hex(num);
+    printf("str: %s\n", str);
     printf("num: %u\n", num);
     printf("flag: %d\n", flag_list.precision);
     return (0);
