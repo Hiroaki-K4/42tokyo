@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 18:12:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:20:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,6 +208,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~hex x~~\n");
+    i = printf("printf:    [this %x number]\n", 0);
+    j = ft_printf("ft_printf: [this %x number]\n", 0);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     i = printf("printf:    [%10x]\n", 10);
     j = ft_printf("ft_printf: [%10x]\n", 10);
     printf("len: %d\n", i);
