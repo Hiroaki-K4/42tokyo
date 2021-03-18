@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 23:10:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 11:19:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,8 @@ int output_per(va_list *ap, a_list flag_list)
         i = print_int(ap, flag_list);
     else if (flag_list.format == 5)
         i = print_unsigned_int(ap, flag_list);
+    else if (flag_list.format == 6 || flag_list.format == 7)
+        i = print_hex(ap, flag_list);
     else if (flag_list.format == 8)
     {
         write(1, "%", 1);
