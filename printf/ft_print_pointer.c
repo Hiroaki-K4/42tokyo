@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:43:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:44:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ int print_pointer(va_list *ap, a_list flag_list)
 {
     // int len;
     unsigned int num;
+    char *str_num;
     // unsigned int tmp;
     
     num = va_arg(*ap, unsigned int);
+    str_num = ft_itoa_hex(num, "0123456789abcdef");
     // tmp = (unsigned int)&num;
     // len = ft_strlen((char*)num);
     // printf("len: %d\n", len);
     // if (flag_list)
     printf("num: %u\n", num);
+    printf("str_num: %s\n", str_num);
     // printf("tmp: %u\n", tmp);
     // printf("num: %p\n", &num);
     printf("flag: %d\n", flag_list.precision);
