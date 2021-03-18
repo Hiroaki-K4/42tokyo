@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 09:36:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 09:37:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int print_unsigned_int(va_list *ap, a_list flag_list)
     len = 0;
     num = va_arg(*ap, int);
     str_num = ft_itoa_unsigned(num);
+    printf("str_num: %s\n", str_num);
     keta = ft_strlen(str_num);
     if (flag_list.flag[1] == 1 && flag_list.precision != -1)
         flag_list.flag[1] = 0;
