@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:54:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:55:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int get_len(unsigned int n)
 
 int get_len_long(unsigned long n)
 {
-	int i;
+	unsigned long i;
 	int len;
 	
 	i = n / 16;
