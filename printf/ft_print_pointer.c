@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:51:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:53:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     // printf("len: %d\n", len);
     // if (flag_list)
     printf("num: %lu\n", num);
+    printf("ok\n");
     printf("str_num: %s\n", str_num);
     // printf("tmp: %u\n", tmp);
     // printf("num: %p\n", &num);
