@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 09:35:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 10:32:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static	int		digit_size(int number)
 	int		count;
 
 	count = 0;
-	// if (number <= 0)
-	// 	count++;
+	if (number == 0)
+		count++;
 	while (number != 0)
 	{
 		number = number / 10;
