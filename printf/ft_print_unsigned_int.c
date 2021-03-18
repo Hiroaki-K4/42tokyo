@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 09:37:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 09:41:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int print_unsigned_int(va_list *ap, a_list flag_list)
     char *str_num;
     
     len = 0;
-    num = va_arg(*ap, unsigned int);
+    num = (unsigned int)va_arg(*ap, unsigned int);
     printf("num: %d\n", num);
     str_num = ft_itoa_unsigned(num);
     printf("str_num: %s\n", str_num);
