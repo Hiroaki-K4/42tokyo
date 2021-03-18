@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 09:19:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 09:20:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,26 @@ int main(void)
     j = ft_printf("ft_printf: [%10u]\n", 300);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
-    
+    i = printf("printf:    [%-10u]\n", 300);
+    j = ft_printf("ft_printf: [%-10u]\n", 300);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%010u]\n", 300);
+    j = ft_printf("ft_printf: [%010u]\n", 300);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%-010u]\n", 300);
+    j = ft_printf("ft_printf: [%-010u]\n", 300);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%10.5u]\n", 300);
+    j = ft_printf("ft_printf: [%10.5u]\n", 300);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%10.2u]\n", 300);
+    j = ft_printf("ft_printf: [%10.2u]\n", 300);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     // printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     // printf("~~percent~~\n");
     // i = printf("printf:    [%3.%]\n");
