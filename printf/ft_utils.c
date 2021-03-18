@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:55:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 22:16:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ char *ft_itoa_hex_long(unsigned long n, char *arg)
 	char *ans;
 
 	len = get_len_long(n);
-	printf("long: %d\n", len);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
