@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 17:54:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:10:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,21 @@ int main(void)
     printf("len: %d\n", j);
     i = printf("printf:    [%x]\n", 1600);
     j = ft_printf("ft_printf: [%x]\n", 1600);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printf("~~hex X~~\n");
+    i = printf("printf:    [%X]\n", 10);
+    j = ft_printf("ft_printf: [%X]\n", 10);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%X]\n", 352);
+    j = ft_printf("ft_printf: [%X]\n", 352);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
+    i = printf("printf:    [%X]\n", 1600);
+    j = ft_printf("ft_printf: [%X]\n", 1600);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     // printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
