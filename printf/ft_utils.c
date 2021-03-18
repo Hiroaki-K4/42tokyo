@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 21:50:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:52:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,26 @@ int get_len(unsigned int n)
 	return (len);
 }
 
+int get_len_long(unsigned long n)
+{
+	int i;
+	int len;
+	
+	i = n / 16;
+	if (i != 0)
+	{
+		len = 2;
+		while (i > 16)
+		{
+			len++;
+			i = i / 16;
+		}
+	}
+	else
+		len = 1;
+	return (len);
+}
+
 char *ft_itoa_hex(unsigned int n, char *arg)
 {
 	int len;
@@ -100,7 +120,7 @@ char *ft_itoa_hex_long(unsigned long n, char *arg)
 	unsigned long j;
 	char *ans;
 
-	len = get_len(n);
+	len = get_len_long(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
