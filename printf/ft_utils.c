@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 11:56:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/18 11:58:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,9 @@ char			*ft_itoa_unsigned(unsigned int n)
 int				get_len(unsigned int n)
 {
 	int i;
-	int j;
 	int len;
 	
 	i = n / 16;
-	j = n % 16;
 	if (i != 0)
 	{
 		len = 0;
