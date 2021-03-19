@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 22:53:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 22:53:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int print_pointer(va_list *ap, a_list flag_list)
         size = flag_list.field;
     else
         size = keta + 2;
-    if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1)))
+    if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (-1);
     ans_str[keta] = '\0';
     ans_str[0] = '0';
