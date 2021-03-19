@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 22:48:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 22:50:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int print_pointer(va_list *ap, a_list flag_list)
         flag_list.flag[1] = 0;
     if (flag_list.flag[1] == 1 && flag_list.precision != -1)
     {
+        printf("ok\n");
         flag_list.flag[1] = 0;
         if (flag_list.precision > keta)
         {
