@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 22:59:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 23:01:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     if (size > (keta + 2))
     {
         i = 0;
-        while (size - keta + 2 - i)
+        while (size - (keta + 2) - i)
         {
             ans_str[i + 2] = '0';
             i++;
