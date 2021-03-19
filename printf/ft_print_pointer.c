@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 22:30:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 22:36:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,13 @@ int print_pointer(va_list *ap, a_list flag_list)
         ans_str[i + 2] = str_num[i];
         i++;
     }
-    if (flag_list.flag[1] == 1 && flag_list.precision != -1)
-        flag_list.flag[1] = 0;
-    if (flag_list.precision == 0 && num == 0)
-        return (pre_arg_zero(flag_list));
+    // if (flag_list.flag[1] == 1 && flag_list.precision != -1)
+    // {
+    //     flag_list.flag[1] = 0;
+    //     if 
+    // }
+    // if (flag_list.precision == 0 && num == 0)
+    //     return (pre_arg_zero(flag_list));
     if (flag_list.field > (int)ft_strlen(ans_str))
     {
         if (flag_list.precision > keta)
