@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 22:42:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 23:09:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,6 +242,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~pointer p~~\n");
+    i = printf("printf:    [%5.p]\n", NULL);
+    j = ft_printf("ft_printf: [%5.p]\n", NULL);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     int a;
     i = printf("printf:    [%p]\n", &a);
     j = ft_printf("ft_printf: [%p]\n", &a);
