@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 22:53:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 22:59:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     int len;
     char *ans_str;
     int i;
+    int j;
     int size;
     
     num = va_arg(*ap, unsigned long);
@@ -58,11 +59,30 @@ int print_pointer(va_list *ap, a_list flag_list)
     ans_str[keta] = '\0';
     ans_str[0] = '0';
     ans_str[1] = 'x';
-    i = 0;
-    while (str_num[i])
+    if (size > (keta + 2))
     {
-        ans_str[i + 2] = str_num[i];
-        i++;
+        i = 0;
+        while (size - keta + 2 - i)
+        {
+            ans_str[i + 2] = '0';
+            i++;
+        }
+        j = 0;
+        while (str_num[j])
+        {
+            ans_str[i + 2] = str_num[j];
+            i++;
+            j++;
+        }
+    }
+    else
+    {
+        i = 0;
+        while (str_num[i])
+        {
+            ans_str[i + 2] = str_num[i];
+            i++;
+        }
     }
     printf("ans: %s\n", ans_str);
     if (flag_list.field > (int)ft_strlen(ans_str))
