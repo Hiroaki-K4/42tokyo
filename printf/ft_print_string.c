@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/17 22:47:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 09:28:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,17 @@ int field_no_flag_str(char *str, a_list flag_list)
         }
         write(1, str, flag_list.precision);
         len = i;
+    }
+    else if (flag_list.flag[1] == 1)
+    {
+        i = 0;
+        while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+        {
+            write(1, "0", 1);
+            i++;
+        }
+        write(1, str, ft_strlen(str));
+        len = (int)ft_strlen(str) + i;
     }
     else
     {
