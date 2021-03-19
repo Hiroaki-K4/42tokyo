@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 23:01:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/19 23:06:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     
     num = va_arg(*ap, unsigned long);
     str_num = ft_itoa_hex_long(num, "0123456789abcdef");
-    // tmp = (unsigned int)&num;
     keta = ft_strlen(str_num);
-    // if (!(ans_str = (char *)malloc(sizeof(char) * (keta + 3))))
-	// 	return (-1);
-    // ans_str[keta] = '\0';
-    // ans_str[0] = '0';
-    // ans_str[1] = 'x';
-    // i = 0;
-    // while (str_num[i])
-    // {
-    //     ans_str[i + 2] = str_num[i];
-    //     i++;
-    // }
     size = 0;
     if (flag_list.flag[0] == 1 && flag_list.flag[1])
         flag_list.flag[1] = 0;
@@ -84,22 +72,50 @@ int print_pointer(va_list *ap, a_list flag_list)
             i++;
         }
     }
-    printf("ans: %s\n", ans_str);
-    if (flag_list.field > (int)ft_strlen(ans_str))
+    // printf("ans: %s\n", ans_str);
+    if (flag_list.field > size)
     {
-        if (flag_list.precision > keta)
-            len = field_precision(num, ans_str, flag_list);
+        if (flag_list.flag[0] == 1)
+        {
+            i = 0;
+            while (ans_str[i])
+            {
+                write(1, &ans_str[i], 1);
+                i++;
+            }
+            i = 0;
+            while (flag_list.field - size - i)
+            {
+                write(1, " ", 1);
+                i++;
+            }
+        }
         else
-            len = field_no_precision(num, ans_str, flag_list);
+        {
+            i = 0;
+            while (flag_list.field - size - i)
+            {
+                write(1, " ", 1);
+                i++;
+            }
+            i = 0;
+            while (ans_str[i])
+            {
+                write(1, &ans_str[i], 1);
+                i++;
+            }
+        }
+        len = flag_list.field;
     }
     else
-        len = no_field_int(num, ans_str, flag_list);
-    // printf("len: %d\n", len);
-    // if (flag_list)
-    // printf("num: %lu\n", num);
-    // printf("str_num: %s\n", str_num);
-    // printf("tmp: %u\n", tmp);
-    // printf("num: %p\n", &num);
-    // printf("flag: %d\n", flag_list.precision);
+    {
+        i = 0;
+        while (ans_str[i])
+        {
+            write(1, &ans_str[i], 1);
+            i++;
+        }
+        len = size;
+    }
     return (len);
 }
