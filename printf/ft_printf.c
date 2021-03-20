@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:03:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:06:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int ft_strchr_place(const char *str, int c, int *i)
 //     return (num);
 // }
 
-int str_to_num(const char *arg, int *i, va_list *ap, int flag)
+int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list)
 {
     int num;
     int j;
@@ -84,6 +84,11 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
     if (*arg == '*')
     {
         num = va_arg(*ap, int);
+        if (num < 0)
+        {
+            flag_list->flag[0] = 1;
+            num *= -1;
+        }
         (*i)++;
         return (num);
     }
@@ -151,13 +156,13 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
         flag_list.flag[j] = 1;
     // Check the field
-    flag_list.field = str_to_num(&arg[*i], i, ap, 0);
+    flag_list.field = str_to_num(&arg[*i], i, ap, 0, &flag_list);
     // Check the precision
     if (arg[*i] == '.')
     {
         // printf("argc: %c\n", arg[*i]);
         (*i)++;
-        flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
+        flag_list.precision = str_to_num(&arg[*i], i, ap, 1, &flag_list);
         // printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
