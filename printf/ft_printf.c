@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:50:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:51:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,12 +133,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
         flag_list.flag[j] = 1;
     // Check the field
-    flag_list.field = str_to_num(&arg[*i], &i, ap, 0, &flag_list);
+    flag_list.field = str_to_num(&arg[*i], i, ap, 0, &flag_list);
     // Check the precision
     if (arg[*i] == '.')
     {
         (*i)++;
-        flag_list.precision = str_to_num(&arg[*i], &i, ap, 1, &flag_list);
+        flag_list.precision = str_to_num(&arg[*i], i, ap, 1, &flag_list);
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
