@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 11:40:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 11:45:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,40 @@
 
 int pre_arg_zero_pointer(a_list flag_list)
 {
-        // if (flag_list.field > 2)
-        // {
-        //     while ()
-        //     {
-        //         /* code */
-        //     }
-            
-        // }
-    printf("flag: %d\n", flag_list.precision);
-    write(1, "0x", 2);
-    return (2);
+    int i;
+    int len;
+    
+    len = 0;
+    if (flag_list.field > 2)
+    {
+        if (flag_list.flag[0] == 1)
+        {
+            write(1, "0x", 2);
+            i = 0;
+            while (flag_list.field - 2 - i)
+            {
+                write(1, " ", 1);
+                i++;
+            }
+        }
+        else
+        {
+            i = 0;
+            while (flag_list.field - 2 - i)
+            {
+                write(1, " ", 1);
+                i++;
+            }
+            write(1, "0x", 2);
+        }
+        len = flag_list.field;
+    }
+    else
+    {
+        write(1, "0x", 2);
+        len = 2;
+    }
+    return (len);
 }
 
 int print_pointer(va_list *ap, a_list flag_list)
