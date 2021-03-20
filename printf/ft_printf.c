@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:39:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 13:58:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int ft_strchr_place(const char *str, int c, int *i, va_list *ap)
     int num;
     char *str_num;
 
-    if (c == '*')
-    {
-        num = va_arg(*ap, int);
-        str_num = ft_itoa(num);
-        printf(str_num);
-        // (*i)++;
-        // return (num);
-    }
+    // if (c == '*')
+    // {
+    //     num = va_arg(*ap, int);
+    //     str_num = ft_itoa(num);
+    //     printf("str_num: %s\n", str_num);
+    //     // (*i)++;
+    //     // return (num);
+    // }
     j = 0;
     printf("c: %c\n", c);
     
