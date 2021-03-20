@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 22:59:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 23:26:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int no_field_int(int num, char *str, a_list flag_list);
 char *ft_itoa_unsigned(unsigned int n);
 int print_hex(va_list *ap, a_list flag_list);
 char *ft_itoa_hex(unsigned int n, char *arg);
-char *ft_itoa_hex_long(unsigned long long n, char *arg);
+char *ft_itoa_hex_long(size_t n, char *arg);
 int print_pointer(va_list *ap, a_list flag_list);
