@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:23:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:07:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int field_flag_str(char *str, a_list flag_list)
     int i;
     int len;
 
-    printf("ok1\n");
     if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
     {
         write(1, str, flag_list.precision);
@@ -31,7 +30,6 @@ int field_flag_str(char *str, a_list flag_list)
     }
     else
     {
-        printf("ok2");
         write(1, str, ft_strlen(str));
         i = 0;
         while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
@@ -103,7 +101,6 @@ int no_field_str(char *str, a_list flag_list)
         write(1, str, ft_strlen(str));
         len = ft_strlen(str);
     }
-    // len = flag_list.field;
     return (len);
 }
 
@@ -118,12 +115,10 @@ int print_string(va_list *ap, a_list flag_list)
         str = "(null)";
     if (flag_list.field != -1)
     {
-        printf("flag: %d\n", flag_list.flag[0]);
         if (flag_list.flag[0] == 1)
             len = field_flag_str(str, flag_list);
         else
             len = field_no_flag_str(str, flag_list);
-        // len = flag_list.field;
     }
     else
         len = no_field_str(str, flag_list);
