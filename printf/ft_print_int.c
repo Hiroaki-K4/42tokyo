@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 16:49:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 16:50:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,6 @@ int print_int(va_list *ap, a_list flag_list)
     len = 0;
     num = va_arg(*ap, int);
     str_num = ft_itoa(num);
-    printf("str_num: %s\n", str_num);
     keta = ft_strlen(str_num);
     if (flag_list.flag[1] == 1 && flag_list.precision != -1)
         flag_list.flag[1] = 0;
@@ -200,6 +199,7 @@ int print_int(va_list *ap, a_list flag_list)
         keta--;
     if (flag_list.precision == 0 && num == 0)
         return (pre_arg_zero(flag_list));
+    printf("field: %d\n", flag_list.field);
     if (flag_list.field > (int)ft_strlen(str_num))
     {
         if (flag_list.precision > keta)
