@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:06:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:06:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int ft_strchr_place(const char *str, int c, int *i)
     //     // return (num);
     // }
     j = 0;
-    printf("c: %c\n", c);
     
     while (j < (int)ft_strlen(str))
     {
