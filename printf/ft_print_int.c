@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 16:56:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 16:56:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,14 +109,12 @@ int field_precision(int num, char *str, a_list flag_list)
         i = 1;
         while (flag_list.precision + 2 - ft_strlen(str) - i)
         {
-            printf("ok3\n");
             tmp[i] = '0';
             i++;
         }
         j = 1;
         while (ft_strlen(str) - j)
         {
-            printf("ok4\n");
             tmp[i] = str[j];
             i++;
             j++;
@@ -131,14 +129,12 @@ int field_precision(int num, char *str, a_list flag_list)
         while (flag_list.precision - ft_strlen(str) - i)
         {
             tmp[i] = '0';
-            printf("ok1\n");
             i++;
         }
         j = 0;
         while (ft_strlen(str) - j)
         {
             tmp[i] = str[j];
-            printf("ok2\n");
             i++;
             j++;
         }
@@ -150,7 +146,6 @@ int field_precision(int num, char *str, a_list flag_list)
         i = 0;
         while (flag_list.field - ft_strlen(tmp) - i)
         {
-            printf("ok5\n");
             write(1, " ", 1);
             i++;
         }
