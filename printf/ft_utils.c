@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/18 22:16:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 22:59:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int get_len(unsigned int n)
 	return (len);
 }
 
-int get_len_long(unsigned long n)
+int get_len_long(unsigned long long n)
 {
-	unsigned long i;
+	unsigned long long i;
 	int len;
 	
 	i = n / 16;
@@ -113,11 +113,11 @@ char *ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
-char *ft_itoa_hex_long(unsigned long n, char *arg)
+char *ft_itoa_hex_long(unsigned long long n, char *arg)
 {
 	int len;
-	unsigned long i;
-	unsigned long j;
+	unsigned long long i;
+	unsigned long long j;
 	char *ans;
 
 	len = get_len_long(n);
