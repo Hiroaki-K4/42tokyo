@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 15:17:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:19:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list
             printf("ok\n");
             num = va_arg(*ap, int);
             if (num < 0)
-                flag_list->precision = -1;
-            else
-                flag_list->precision = num;
-            printf("num: %d\n", flag_list->precision);
+                num = -1;
             (*i)++;
             return (num);
         }
