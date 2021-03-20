@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 11:48:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:25:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,6 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
         flag_list.flag[j] = 1;
     // Check the field
     flag_list.field = str_to_num(&arg[*i], i, ap, 0);
-    // printf("argc: %s\n", &arg[*i]);
     // Check the precision
     if (arg[*i] == '.')
     {
@@ -156,7 +155,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
-    // printf("format: %d\n", flag_list.format);
+    printf("flag: %d\n", flag_list.flag[0]);
     k = output_per(ap, flag_list);
     // printf("k: %d\n", k);
     return (k);
