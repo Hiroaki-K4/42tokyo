@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:00:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:01:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int ft_printf_str(const char *arg, int *i)
 int ft_strchr_place(const char *str, int c, int *i, va_list *ap)
 {
     int j;
-    int num;
-    char *str_num;
+    // int num;
+    // char *str_num;
 
     // if (c == '*')
     // {
