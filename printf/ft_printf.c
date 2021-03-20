@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:25:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:26:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int ft_strchr_place(const char *str, int c, int *i)
     int j;
 
     j = 0;
+    printf("c: %c\n", c);
     while (j < (int)ft_strlen(str))
     {
         if (str[j] == c)
@@ -155,7 +156,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
-    printf("flag: %d\n", flag_list.flag[0]);
+    // printf("flag: %d\n", flag_list.flag[0]);
     k = output_per(ap, flag_list);
     // printf("k: %d\n", k);
     return (k);
