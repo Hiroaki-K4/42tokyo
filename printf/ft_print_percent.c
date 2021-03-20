@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 23:28:58 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 11:58:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 11:59:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int print_percent(a_list flag_list)
                     write(1, "0", 1);
                     i++;
                 }
+                write(1, "%", 1);
             }
             else
             {
@@ -49,6 +50,7 @@ int print_percent(a_list flag_list)
                     write(1, " ", 1);
                     i++;
                 }
+                write(1, "%", 1);
             }
         }
         len = flag_list.field;
