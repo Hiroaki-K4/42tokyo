@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 13:58:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:00:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int str_to_field(const char *arg, int *i)
 
     num = ft_atoi(arg);
     if (num <= 0)
-        num *= -1;
+        num = -1;
     else
     {
         tmp = num;
