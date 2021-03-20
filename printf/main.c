@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 10:06:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 10:11:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,8 +242,20 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~pointer p~~\n");
-    i = printf("printf:    [%p%p%p%p%p%p%p%p%p%p%p%p]\n", 1,2,3,4,5,6,7,8,9,10,11,12);
-    j = ft_printf("ft_printf: [%p%p%p%p%p%p%p%p%p%p%p%p]\n", 1,2,3,4,5,6,7,8,9,10,11,12);
+    int a1;
+    int a2;
+    int a3;
+    int a4;
+    int a5;
+    int a6;
+    int a7;
+    int a8;
+    int a9;
+    int a10;
+    int a11;
+    int a12;
+    i = printf("printf:    [%p%p%p%p%p%p%p%p%p%p%p%p]\n", &a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a10,&a11,&a12);
+    j = ft_printf("ft_printf: [%p%p%p%p%p%p%p%p%p%p%p%p]\n", &a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a10,&a11,&a12);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     i = printf("printf:    [%p]\n", NULL);
