@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:22:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:23:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int print_string(va_list *ap, a_list flag_list)
         str = "(null)";
     if (flag_list.field != -1)
     {
-        printf("ok\n");
+        printf("flag: %d\n", flag_list.flag[0]);
         if (flag_list.flag[0] == 1)
             len = field_flag_str(str, flag_list);
         else
