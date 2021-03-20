@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:26:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:39:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,23 @@ int ft_printf_str(const char *arg, int *i)
     return (len);
 }
 
-int ft_strchr_place(const char *str, int c, int *i)
+int ft_strchr_place(const char *str, int c, int *i, va_list *ap)
 {
     int j;
+    int num;
+    char *str_num;
 
+    if (c == '*')
+    {
+        num = va_arg(*ap, int);
+        str_num = ft_itoa(num);
+        printf(str_num);
+        // (*i)++;
+        // return (num);
+    }
     j = 0;
     printf("c: %c\n", c);
+    
     while (j < (int)ft_strlen(str))
     {
         if (str[j] == c)
@@ -51,7 +62,7 @@ int str_to_field(const char *arg, int *i)
 
     num = ft_atoi(arg);
     if (num <= 0)
-        num = -1;
+        num *= -1;
     else
     {
         tmp = num;
@@ -76,14 +87,9 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
         (*i)++;
         return (num);
     }
-    // printf("arg: %s\n", arg);
     if (ft_isdigit(arg[0]) == 0 && flag == 1)
-    {
-        // printf("ok\n");
         return (0);
-    }
     j = ft_atoi(arg);
-    // printf("j: %d\n", j);
     if (j > 0)
     {
         num = j;
@@ -142,7 +148,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     flag_list = init_list();
     j = 0;
     // Check the flag
-    while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
+    while ((j = ft_strchr_place("-0", arg[*i], i, ap)) >= 0)
         flag_list.flag[j] = 1;
     // Check the field
     flag_list.field = str_to_num(&arg[*i], i, ap, 0);
@@ -155,7 +161,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
         // printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
-    flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
+    flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i, ap);
     // printf("flag: %d\n", flag_list.flag[0]);
     k = output_per(ap, flag_list);
     // printf("k: %d\n", k);
