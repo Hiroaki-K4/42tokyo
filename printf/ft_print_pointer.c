@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 12:08:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:08:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     if (num == 0)
         str_num = "";
     keta = ft_strlen(str_num);
-    printf("keta: %d\n", keta);
+    // printf("keta: %d\n", keta);
     size = 0;
     if (flag_list.precision == 0 && num == 0)
         return (pre_arg_zero_pointer(flag_list));
