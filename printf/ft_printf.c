@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:53:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:55:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list
     int j;
     int k;
     
-    printf("arg: %s\n", arg);
+    // printf("arg: %s\n", arg);
     if (*arg == '*')
     {
         if (flag == 0)
@@ -140,7 +140,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
         (*i)++;
         flag_list.precision = str_to_num(&arg[*i], i, ap, 1, &flag_list);
     }
-    // printf("arg: %s\n", &arg[*i]);
+    printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
     // printf("flag: %d\n", flag_list.flag[0]);
     k = output_per(ap, flag_list);
