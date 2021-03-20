@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/19 09:28:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 12:20:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int field_flag_str(char *str, a_list flag_list)
     }
     else
     {
+        printf("ok\n");
         write(1, str, ft_strlen(str));
         i = 0;
         while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
