@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:01:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:01:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_printf_str(const char *arg, int *i)
     return (len);
 }
 
-int ft_strchr_place(const char *str, int c, int *i, va_list *ap)
+int ft_strchr_place(const char *str, int c, int *i)
 {
     int j;
     // int num;
@@ -148,7 +148,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     flag_list = init_list();
     j = 0;
     // Check the flag
-    while ((j = ft_strchr_place("-0", arg[*i], i, ap)) >= 0)
+    while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
         flag_list.flag[j] = 1;
     // Check the field
     flag_list.field = str_to_num(&arg[*i], i, ap, 0);
@@ -161,7 +161,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
         // printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
-    flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i, ap);
+    flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
     // printf("flag: %d\n", flag_list.flag[0]);
     k = output_per(ap, flag_list);
     // printf("k: %d\n", k);
