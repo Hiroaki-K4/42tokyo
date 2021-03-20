@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:06:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:08:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,8 @@ int ft_printf_str(const char *arg, int *i)
 int ft_strchr_place(const char *str, int c, int *i)
 {
     int j;
-    // int num;
-    // char *str_num;
-
-    // if (c == '*')
-    // {
-    //     num = va_arg(*ap, int);
-    //     str_num = ft_itoa(num);
-    //     printf("str_num: %s\n", str_num);
-    //     // (*i)++;
-    //     // return (num);
-    // }
-    j = 0;
     
+    j = 0;
     while (j < (int)ft_strlen(str))
     {
         if (str[j] == c)
@@ -53,26 +42,6 @@ int ft_strchr_place(const char *str, int c, int *i)
     }
     return (-1);
 }
-
-// int str_to_field(const char *arg, int *i)
-// {
-//     int num;
-//     int tmp;
-
-//     num = ft_atoi(arg);
-//     if (num <= 0)
-//         num = -1;
-//     else
-//     {
-//         tmp = num;
-//         while (tmp > 0)
-//         {
-//             tmp = tmp / 10;
-//             (*i)++;
-//         }
-//     }
-//     return (num);
-// }
 
 int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list)
 {
