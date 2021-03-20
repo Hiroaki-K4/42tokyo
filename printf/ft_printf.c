@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:08:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:14:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,19 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list
     
     if (*arg == '*')
     {
-        num = va_arg(*ap, int);
-        if (num < 0)
+        if (flag == 0)
         {
-            flag_list->flag[0] = 1;
-            num *= -1;
+            num = va_arg(*ap, int);
+            if (num < 0)
+            {
+                flag_list->flag[0] = 1;
+                num *= -1;
+            }
+            (*i)++;
+            return (num);
         }
-        (*i)++;
-        return (num);
+        else
+            return (-1);
     }
     if (ft_isdigit(arg[0]) == 0 && flag == 1)
         return (0);
@@ -128,10 +133,8 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
     // Check the precision
     if (arg[*i] == '.')
     {
-        // printf("argc: %c\n", arg[*i]);
         (*i)++;
         flag_list.precision = str_to_num(&arg[*i], i, ap, 1, &flag_list);
-        // printf("pre: %d\n", flag_list.precision);
     }
     // printf("arg: %s\n", &arg[*i]);
     flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
