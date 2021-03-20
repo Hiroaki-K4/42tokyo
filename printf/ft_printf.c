@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:15:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 14:15:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag, a_list *flag_list
         }
         else
         {
-            return (-1);
             (*i)++;
+            return (-1);
         }
     }
     if (ft_isdigit(arg[0]) == 0 && flag == 1)
