@@ -6,14 +6,23 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 10:01:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 11:40:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int pre_arg_zero_pointer()
+int pre_arg_zero_pointer(a_list flag_list)
 {
+        // if (flag_list.field > 2)
+        // {
+        //     while ()
+        //     {
+        //         /* code */
+        //     }
+            
+        // }
+    flag_list.precision = 0;
     write(1, "0x", 2);
     return (2);
 }
@@ -36,7 +45,7 @@ int print_pointer(va_list *ap, a_list flag_list)
     keta = ft_strlen(str_num);
     size = 0;
     if (flag_list.precision == 0 && num == 0)
-        return (pre_arg_zero_pointer());
+        return (pre_arg_zero_pointer(flag_list));
     if (flag_list.flag[0] == 1 && flag_list.flag[1])
         flag_list.flag[1] = 0;
     if (flag_list.precision != -1)
