@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 21:50:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/20 21:52:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~int~~\n");
-    i = printf("printf:    [%*.5i]\n", 4, 42);
-    j = ft_printf("ft_printf: [%*.5i]\n", 4, 42);
+    i = printf("printf:    [%% *.5i 42 == |%*.5i|]\n", 4, 42);
+    j = ft_printf("ft_printf: [%% *.5i 42 == |%*.5i|]\n", 4, 42);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     i = printf("printf:    [%04.5i]\n", 42);
