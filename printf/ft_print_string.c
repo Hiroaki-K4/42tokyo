@@ -6,16 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 20:17:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 20:44:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	field_flag_str(char *str, t_plist flag_list)
+int	field_flag_str(char *str, t_plist flag_list, int len)
 {
 	int i;
-	int len;
+	// int len;
 
 	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
 	{
@@ -116,7 +116,7 @@ int	print_string(va_list *ap, t_plist flag_list)
 	if (flag_list.field != -1)
 	{
 		if (flag_list.flag[0] == 1)
-			len = field_flag_str(str, flag_list);
+			len = field_flag_str(str, flag_list, 0);
 		else
 			len = field_no_flag_str(str, flag_list);
 	}
