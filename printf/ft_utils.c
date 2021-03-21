@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 10:51:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 11:00:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ int get_len_long(unsigned long n)
 	if (i != 0)
 	{
 		len = 2;
-		while (i > 16)
+		while (i >= 16)
 		{
-			len++;
 			i = i / 16;
 			printf("i: %ld\n", i);
 		}
