@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 19:07:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 19:08:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ int	print_char(va_list *ap, t_plist flag_list)
 		{
 			write(1, &pub, 1);
 			len++;
-			while (flag_list.field > 1)
+			while (flag_list.field-- > 1)
 			{
 				write(1, " ", 1);
-				flag_list.field--;
+				// flag_list.field--;
 				len++;
 			}
 		}
 		else
 		{
-			while (flag_list.field > 1)
+			while (flag_list.field-- > 1)
 			{
 				write(1, " ", 1);
-				flag_list.field--;
+				// flag_list.field--;
 				len++;
 			}
 			write(1, &pub, 1);
