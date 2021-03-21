@@ -6,12 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 17:50:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 18:20:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		ft_printf_str(const char *arg, int *i)
 {
@@ -44,7 +43,7 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
-int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_list)
+int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *flag_list)
 {
 	int	num;
 	int	j;
@@ -52,27 +51,83 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_li
 
 	if (*arg == '*')
 	{
-		if (flag == 0)
+		// if (flag == 0)
+		// {
+		num = va_arg(*ap, int);
+		if (num < 0)
 		{
-			num = va_arg(*ap, int);
-			if (num < 0)
-			{
-				flag_list->flag[0] = 1;
-				num *= -1;
-			}
-			(*i)++;
-			return (num);
+			flag_list->flag[0] = 1;
+			num *= -1;
 		}
-		else
+		(*i)++;
+		return (num);
+		// }
+		// else
+		// {
+		// 	num = va_arg(*ap, int);
+		// 	if (num < 0)
+		// 		num = -1;
+		// 	(*i)++;
+		// 	return (num);
+		// }
+	}
+	// if (ft_isdigit(arg[0]) == 0 && flag == 1)
+	// 	return (0);
+	j = ft_atoi(arg);
+	if (j > 0)
+	{
+		num = j;
+		k = 0;
+		while (ft_isdigit(arg[k]))
 		{
-			num = va_arg(*ap, int);
-			if (num < 0)
-				num = -1;
 			(*i)++;
-			return (num);
+			k++;
 		}
 	}
-	if (ft_isdigit(arg[0]) == 0 && flag == 1)
+	// else if (flag == 1 && j == 0)
+	// {
+	// 	num = 0;
+	// 	k = 0;
+	// 	while (ft_isdigit(arg[k]))
+	// 	{
+	// 		(*i)++;
+	// 		k++;
+	// 	}
+	// }
+	else
+		num = -1;
+	return (num);
+}
+
+int		str_to_num_pre(const char *arg, int *i, va_list *ap)
+{
+	int	num;
+	int	j;
+	int	k;
+
+	if (*arg == '*')
+	{
+		// if (flag == 0)
+		// {
+		// 	num = va_arg(*ap, int);
+		// 	if (num < 0)
+		// 	{
+		// 		flag_list->flag[0] = 1;
+		// 		num *= -1;
+		// 	}
+		// 	(*i)++;
+		// 	return (num);
+		// }
+		// else
+		// {
+		num = va_arg(*ap, int);
+		if (num < 0)
+			num = -1;
+		(*i)++;
+		return (num);
+		// }
+	}
+	if (ft_isdigit(arg[0]) == 0)
 		return (0);
 	j = ft_atoi(arg);
 	if (j > 0)
@@ -85,7 +140,7 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_li
 			k++;
 		}
 	}
-	else if (flag == 1 && j == 0)
+	else if (j == 0)
 	{
 		num = 0;
 		k = 0;
@@ -133,18 +188,18 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	j = 0;
 	while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
 		flag_list.flag[j] = 1;
-	flag_list.field = str_to_num(&arg[*i], i, ap, 0, &flag_list);
+	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
 	if (arg[*i] == '.')
 	{
 		(*i)++;
-		flag_list.precision = str_to_num(&arg[*i], i, ap, 1, &flag_list);
+		flag_list.precision = str_to_num_pre(&arg[*i], i, ap);
 	}
 	flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
 	k = output_per(ap, flag_list);
 	return (k);
 }
 
-t_plist	init_plist()
+t_plist	init_plist(void)
 {
 	t_plist	flag_list;
 
