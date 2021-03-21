@@ -6,13 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 23:26:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 10:01:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "libft/libft.h"
 
 typedef	struct
