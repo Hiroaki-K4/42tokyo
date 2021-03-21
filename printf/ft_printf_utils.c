@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:12:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:40:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 18:43:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
 {
 	int	num;
 	int	j;
-	int	k;
+	// int	k;
 
 	if (*arg == '*')
 	{
@@ -33,11 +33,13 @@ int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
 	if (j > 0)
 	{
 		num = j;
-		k = 0;
-		while (ft_isdigit(arg[k]))
+		// k = 0;
+		j = 0;
+		while (ft_isdigit(arg[j]))
 		{
 			(*i)++;
-			k++;
+			// k++;
+			j++;
 		}
 	}
 	else
