@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:12:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:13:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 18:26:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_list)
+int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
 {
 	int	num;
 	int	j;
@@ -20,27 +20,46 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_li
 
 	if (*arg == '*')
 	{
-		if (flag == 0)
+		num = va_arg(*ap, int);
+		if (num < 0)
 		{
-			num = va_arg(*ap, int);
-			if (num < 0)
-			{
-				flag_list->flag[0] = 1;
-				num *= -1;
-			}
-			(*i)++;
-			return (num);
+			f_list->flag[0] = 1;
+			num *= -1;
 		}
-		else
+		(*i)++;
+		return (num);
+	}
+	j = ft_atoi(arg);
+	if (j > 0)
+	{
+		num = j;
+		k = 0;
+		while (ft_isdigit(arg[k]))
 		{
-			num = va_arg(*ap, int);
-			if (num < 0)
-				num = -1;
 			(*i)++;
-			return (num);
+			k++;
 		}
 	}
-	if (ft_isdigit(arg[0]) == 0 && flag == 1)
+	else
+		num = -1;
+	return (num);
+}
+
+int		str_to_num_pre(const char *arg, int *i, va_list *ap)
+{
+	int	num;
+	int	j;
+	int	k;
+
+	if (*arg == '*')
+	{
+		num = va_arg(*ap, int);
+		if (num < 0)
+			num = -1;
+		(*i)++;
+		return (num);
+	}
+	if (ft_isdigit(arg[0]) == 0)
 		return (0);
 	j = ft_atoi(arg);
 	if (j > 0)
@@ -53,7 +72,7 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag, t_plist *flag_li
 			k++;
 		}
 	}
-	else if (flag == 1 && j == 0)
+	else if (j == 0)
 	{
 		num = 0;
 		k = 0;
