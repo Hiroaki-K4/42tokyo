@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:26:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 18:32:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef	struct
 }		t_plist;
 
 int		ft_printf(const char *arg, ...);
-t_plist	init_plist();
 int		print_char(va_list *ap, t_plist flag_list);
 int		print_string(va_list *ap, t_plist flag_list);
 int		print_int(va_list *ap, t_plist flag_list);
@@ -45,5 +44,6 @@ char	*ft_itoa_hex_long(unsigned long n, char *arg);
 int		print_pointer(va_list *ap, t_plist flag_list);
 int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list);
 int		str_to_num_pre(const char *arg, int *i, va_list *ap);
+t_plist	init_plist(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:12:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:26:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 18:32:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,16 @@ int		str_to_num_pre(const char *arg, int *i, va_list *ap)
 	else
 		num = -1;
 	return (num);
+}
+
+t_plist     init_plist(void)
+{
+	t_plist	flag_list;
+
+	flag_list.flag[0] = -1;
+	flag_list.flag[1] = -1;
+	flag_list.field = -1;
+	flag_list.precision = -1;
+	flag_list.format = -1;
+	return (flag_list);
 }
