@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 20:48:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 20:50:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
 	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
 	{
 		i = flag_list.precision;
-		while ((flag_list.field - i) > 0)
+		while ((flag_list.field - i++) > 0)
 		{
 			write(1, " ", 1);
-			i++;
+			// i++;
 		}
 		write(1, str, flag_list.precision);
 		len = i;
@@ -57,10 +57,10 @@ int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
 	else if (flag_list.flag[1] == 1)
 	{
 		i = 0;
-		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+		while ((flag_list.field - (int)ft_strlen(str) - i++) > 0)
 		{
 			write(1, "0", 1);
-			i++;
+			// i++;
 		}
 		write(1, str, ft_strlen(str));
 		len = (int)ft_strlen(str) + i;
@@ -68,10 +68,10 @@ int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
 	else
 	{
 		i = 0;
-		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+		while ((flag_list.field - (int)ft_strlen(str) - i++) > 0)
 		{
 			write(1, " ", 1);
-			i++;
+			// i++;
 		}
 		write(1, str, ft_strlen(str));
 		len = (int)ft_strlen(str) + i;
