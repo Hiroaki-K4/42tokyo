@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 15:12:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 22:08:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,14 @@ char			*ft_itoa_unsigned(unsigned int n)
 		ans[len--] = '0' + (n % 10);
 		n = n / 10;
 	}
-	// printf("ans: %s\n", ans);
 	return (ans);
 }
 
-int get_len(unsigned int n)
+int				get_len(unsigned int n)
 {
 	int i;
 	int len;
-	
+
 	i = n / 16;
 	if (i != 0)
 	{
@@ -66,34 +65,12 @@ int get_len(unsigned int n)
 	return (len);
 }
 
-int get_len_long(unsigned long n)
+char			*ft_itoa_hex(unsigned int n, char *arg)
 {
-	unsigned long i;
-	int len;
-	
-	i = n / 16;
-	if (i != 0)
-	{
-		len = 2;
-		while (i >= 16)
-		{
-			len++;
-			i = i / 16;
-			// printf("i: %ld\n", i);
-		}
-	}
-	else
-		len = 1;
-	// printf("get_len: %d\n", len);
-	return (len);
-}
-
-char *ft_itoa_hex(unsigned int n, char *arg)
-{
-	int len;
-	unsigned int i;
-	unsigned int j;
-	char *ans;
+	int				len;
+	unsigned int	i;
+	unsigned int	j;
+	char			*ans;
 
 	len = get_len(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
@@ -116,16 +93,14 @@ char *ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
-char *ft_itoa_hex_long(unsigned long n, char *arg)
+char			*ft_itoa_hex_long(unsigned long n, char *arg)
 {
-	int len;
-	unsigned long i;
-	unsigned long j;
-	char *ans;
+	int				len;
+	unsigned long	i;
+	unsigned long	j;
+	char			*ans;
 
-	// printf("long: %ld\n", n);
 	len = get_len_long(n);
-	// printf("len: %d\n", len);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
