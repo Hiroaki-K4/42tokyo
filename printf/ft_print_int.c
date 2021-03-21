@@ -6,15 +6,15 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 22:13:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 22:15:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	no_field_int(int num, char *str, t_plist flag_list)
+int	no_field_int(int num, char *str, t_plist flag_list, int len)
 {
-	int len;
+	// int len;
 	int digit;
 
 	if (num >= 0)
@@ -203,6 +203,6 @@ int	print_int(va_list *ap, t_plist flag_list)
 			len = field_no_precision(num, str_num, flag_list);
 	}
 	else
-		len = no_field_int(num, str_num, flag_list);
+		len = no_field_int(num, str_num, flag_list, 0);
 	return (len);
 }
