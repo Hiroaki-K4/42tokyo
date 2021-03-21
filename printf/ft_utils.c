@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 11:02:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 15:12:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char			*ft_itoa_unsigned(unsigned int n)
 		ans[len--] = '0' + (n % 10);
 		n = n / 10;
 	}
+	// printf("ans: %s\n", ans);
 	return (ans);
 }
 
