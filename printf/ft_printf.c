@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:56:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 19:11:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		output_per(va_list *ap, t_plist flag_list)
 
 	i = 0;
 	if (flag_list.format == 0)
-		i = print_char(ap, flag_list);
+		i = print_char(ap, flag_list, 0);
 	else if (flag_list.format == 1)
 		i = print_string(ap, flag_list);
 	else if (flag_list.format == 2)

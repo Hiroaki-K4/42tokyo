@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 18:56:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 19:12:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef	struct
 }		t_plist;
 
 int		ft_printf(const char *arg, ...);
-int		print_char(va_list *ap, t_plist flag_list);
+int		print_char(va_list *ap, t_plist flag_list, int len);
 int		print_string(va_list *ap, t_plist flag_list);
 int		print_int(va_list *ap, t_plist flag_list);
 int		print_percent(t_plist flag_list);
