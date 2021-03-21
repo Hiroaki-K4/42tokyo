@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:31:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 10:41:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 10:47:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int get_len_long(unsigned long n)
 	}
 	else
 		len = 1;
+	printf("get_len: %d\n", len);
 	return (len);
 }
 
