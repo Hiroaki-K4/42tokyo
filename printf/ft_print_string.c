@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 14:07:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int field_flag_str(char *str, a_list flag_list)
+int field_flag_str(char *str, t_plist flag_list)
 {
     int i;
     int len;
@@ -42,7 +42,7 @@ int field_flag_str(char *str, a_list flag_list)
     return (len);
 }
 
-int field_no_flag_str(char *str, a_list flag_list)
+int field_no_flag_str(char *str, t_plist flag_list)
 {
     int i;
     int len;
@@ -83,7 +83,7 @@ int field_no_flag_str(char *str, a_list flag_list)
     return (len);
 }
 
-int no_field_str(char *str, a_list flag_list)
+int no_field_str(char *str, t_plist flag_list)
 {
     int len;
     
@@ -104,7 +104,7 @@ int no_field_str(char *str, a_list flag_list)
     return (len);
 }
 
-int print_string(va_list *ap, a_list flag_list)
+int print_string(va_list *ap, t_plist flag_list)
 {
     int len;
     char *str;

@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 15:43:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int no_field_unsigned(char *str, a_list flag_list)
+int no_field_unsigned(char *str, t_plist flag_list)
 {
     int len;
     int digit;
@@ -36,56 +36,55 @@ int no_field_unsigned(char *str, a_list flag_list)
     return (len);
 }
 
-// int field_precision_unsigned(char *str, a_list flag_list)
-// {
-//     int i;
-//     int j;
-//     char *tmp;
+int field_precision_unsigned(char *str, t_plist flag_list)
+{
+    int i;
+    int j;
+    char *tmp;
     
-//     printf("ok\n");
-//     if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
-//         return (-1);
-//     i = 0;
-//     while (flag_list.precision - ft_strlen(str) - i)
-//     {
-//         tmp[i] = '0';
-//         i++;
-//     }
-//     j = 0;
-//     while (ft_strlen(str) - j)
-//     {
-//         tmp[i] = str[j];
-//         i++;
-//         j++;
-//     }
-//     tmp[i] = '\0';
-//     if (flag_list.flag[0] == 1)
-//     {
-//         write(1, tmp, ft_strlen(tmp));
-//         i = 0;
-//         while (flag_list.field - ft_strlen(tmp) - i)
-//         {
-//             write(1, " ", 1);
-//             i++;
-//         }
-//     }
-//     else
-//     {
-//         i = 0;
-//         while ((flag_list.field - (int)ft_strlen(tmp) - i) > 0)
-//         {
-//             write(1, " ", 1);
-//             i++;
-//         }
-//         write(1, tmp, ft_strlen(tmp));
-//         if (flag_list.precision > flag_list.field)
-//             return (flag_list.precision);
-//     }
-//     free(tmp);
-//     return (flag_list.field);
-// }
+    if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+        return (-1);
+    i = 0;
+    while (flag_list.precision - ft_strlen(str) - i)
+    {
+        tmp[i] = '0';
+        i++;
+    }
+    j = 0;
+    while (ft_strlen(str) - j)
+    {
+        tmp[i] = str[j];
+        i++;
+        j++;
+    }
+    tmp[i] = '\0';
+    if (flag_list.flag[0] == 1)
+    {
+        write(1, tmp, ft_strlen(tmp));
+        i = 0;
+        while (flag_list.field - ft_strlen(tmp) - i)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+    }
+    else
+    {
+        i = 0;
+        while ((flag_list.field - (int)ft_strlen(tmp) - i) > 0)
+        {
+            write(1, " ", 1);
+            i++;
+        }
+        write(1, tmp, ft_strlen(tmp));
+        if (flag_list.precision > flag_list.field)
+            return (flag_list.precision);
+    }
+    free(tmp);
+    return (flag_list.field);
+}
 
-int field_no_precision_unsigned(char *str, a_list flag_list)
+int field_no_precision_unsigned(char *str, t_plist flag_list)
 {
     int i;    
 
@@ -115,7 +114,7 @@ int field_no_precision_unsigned(char *str, a_list flag_list)
     return (flag_list.field);
 }
 
-int print_unsigned_int(va_list *ap, a_list flag_list)
+int print_unsigned_int(va_list *ap, t_plist flag_list)
 {
     unsigned int num;
     int len;
@@ -134,7 +133,7 @@ int print_unsigned_int(va_list *ap, a_list flag_list)
     if (flag_list.field > (int)ft_strlen(str_num))
     {
         if (flag_list.precision > keta)
-            len = field_precision(num, str_num, flag_list);
+            len = field_precision_unsigned(str_num, flag_list);
         else
             len = field_no_precision_unsigned(str_num, flag_list);
     }

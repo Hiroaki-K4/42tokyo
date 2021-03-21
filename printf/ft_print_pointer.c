@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 11:02:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int pre_arg_zero_pointer(a_list flag_list)
+int pre_arg_zero_pointer(t_plist flag_list)
 {
     int i;
     int len;
@@ -50,7 +50,7 @@ int pre_arg_zero_pointer(a_list flag_list)
     return (len);
 }
 
-int print_pointer(va_list *ap, a_list flag_list)
+int print_pointer(va_list *ap, t_plist flag_list)
 {
     // int len;
     unsigned long num;

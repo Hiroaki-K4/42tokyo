@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 23:28:58 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/20 11:59:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_percent(a_list flag_list)
+int print_percent(t_plist flag_list)
 {
     int i;
     int len;

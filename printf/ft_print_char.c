@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:21:37 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/13 17:45:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_char(va_list *ap, a_list flag_list)
+int print_char(va_list *ap, t_plist flag_list)
 {
     int len;
     char pub;

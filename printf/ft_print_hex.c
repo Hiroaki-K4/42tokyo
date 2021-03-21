@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 14:48:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_hex(va_list *ap, a_list flag_list)
+int print_hex(va_list *ap, t_plist flag_list)
 {
     unsigned int num;
     char *str_num;

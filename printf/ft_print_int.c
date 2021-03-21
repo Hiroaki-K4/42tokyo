@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 15:25:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/21 17:50:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int no_field_int(int num, char *str, a_list flag_list)
+int no_field_int(int num, char *str, t_plist flag_list)
 {
     int len;
     int digit;
@@ -50,7 +50,7 @@ int no_field_int(int num, char *str, a_list flag_list)
     return (len);
 }
 
-int field_no_precision(int num, char *str, a_list flag_list)
+int field_no_precision(int num, char *str, t_plist flag_list)
 {
     int i;    
 
@@ -95,7 +95,7 @@ int field_no_precision(int num, char *str, a_list flag_list)
     return (flag_list.field);
 }
 
-int field_precision(int num, char *str, a_list flag_list)
+int field_precision(int num, char *str, t_plist flag_list)
 {
     int i;
     int j;
@@ -166,7 +166,7 @@ int field_precision(int num, char *str, a_list flag_list)
     return (flag_list.field);
 }
 
-int pre_arg_zero(a_list flag_list)
+int pre_arg_zero(t_plist flag_list)
 {
     int i;
     
@@ -182,7 +182,7 @@ int pre_arg_zero(a_list flag_list)
     return (i);
 }
 
-int print_int(va_list *ap, a_list flag_list)
+int print_int(va_list *ap, t_plist flag_list)
 {
     int num;
     int len;
