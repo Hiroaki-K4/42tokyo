@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:23:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 15:25:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	pre_arg_zero_pointer(t_plist flag_list)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	len = 0;
 	if (flag_list.field > 2)
@@ -52,14 +52,14 @@ int	pre_arg_zero_pointer(t_plist flag_list)
 
 int	print_pointer(va_list *ap, t_plist flag_list)
 {
-	unsigned long num;
-	char *str_num;
-	int keta;
-	int len;
-	char *ans_str;
-	int i;
-	int j;
-	int size;
+	unsigned	long	num;
+	char				*str_num;
+	int					keta;
+	int					len;
+	char				*ans_str;
+	int					i;
+	int					j;
+	int					size;
 
 	num = (unsigned long)va_arg(*ap, void *);
 	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
