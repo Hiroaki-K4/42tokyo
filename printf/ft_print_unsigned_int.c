@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:40:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:50:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,6 @@ int		print_unsigned_int(va_list *ap, t_plist flag_list)
 	}
 	else
 		len = no_field_unsigned(str_num, flag_list);
+	free(str_num);
 	return (len);
 }

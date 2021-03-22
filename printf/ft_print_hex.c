@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 10:50:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:43:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int keta, int len)
 {
 	unsigned	int	num;
 	char			*str_num;
-	// int				keta;
-	// int				len;
 
 	num = va_arg(*ap, unsigned int);
 	if (flag_list.format == 6)
