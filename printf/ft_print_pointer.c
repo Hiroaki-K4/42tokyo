@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:08:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:09:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int	make_str_size(t_plist flag_list, int keta)
 	return (size);
 }
 
-int	make_return_len(t_plist flag_list, int size, char *ans_str)
+int	make_return_len(t_plist flag_list, int size, char *ans_str, int i)
 {
 	int	len;
-	int	i;
+	// int	i;
 
-	i = 0;
+	// i = 0;
 	if (flag_list.field > size)
 	{
 		if (flag_list.flag[0] == 1)
@@ -129,7 +129,7 @@ int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 			i++;
 		}
 	}
-	len = make_return_len(flag_list, size, ans_str);
+	len = make_return_len(flag_list, size, ans_str, 0);
 	free(ans_str);
 	return (len);
 }
