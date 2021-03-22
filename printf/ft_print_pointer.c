@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:55:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:57:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 {
 	unsigned	long	num;
 	char				*str_num;
-	int					keta;
+	// int					keta;
 	int					len;
 	char				*ans_str;
 	int					i;
@@ -71,21 +71,21 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 
 	num = (unsigned long)va_arg(*ap, void *);
 	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
-	keta = ft_strlen(str_num);
+	len = ft_strlen(str_num);
 	if (flag_list.precision == 0 && num == 0)
 		return (pre_arg_zero_pointer(flag_list, 0, 0));
 	if (flag_list.flag[0] == 1 && flag_list.flag[1])
 		flag_list.flag[1] = 0;
-	size = make_str_size(flag_list, keta);
+	size = make_str_size(flag_list, len);
 	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (-1);
 	ans_str[size] = '\0';
 	ans_str[0] = '0';
 	ans_str[1] = 'x';
-	if (size > (keta + 2))
+	if (size > (len + 2))
 	{
 		i = 0;
-		while ((size - (keta + 2) - i) > 0)
+		while ((size - (len + 2) - i) > 0)
 			ans_str[(i++) + 2] = '0';
 		j = 0;
 		while (str_num[j])
