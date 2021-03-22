@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:25:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 15:34:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	pre_arg_zero_pointer(t_plist flag_list)
 		{
 			write(1, "0x", 2);
 			i = 0;
-			while (flag_list.field - 2 - i)
+			while ((flag_list.field - 2 - i) > 0)
 			{
 				write(1, " ", 1);
 				i++;
@@ -33,7 +33,7 @@ int	pre_arg_zero_pointer(t_plist flag_list)
 		else
 		{
 			i = 0;
-			while (flag_list.field - 2 - i)
+			while ((flag_list.field - 2 - i) > 0)
 			{
 				write(1, " ", 1);
 				i++;
@@ -156,5 +156,5 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 		len = size;
 	}
 	free(ans_str);
-    return (len);
+	return (len);
 }
