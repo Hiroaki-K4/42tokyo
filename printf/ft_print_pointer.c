@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:46:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:49:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,6 @@ char	*make_str_base(t_plist flag_list, unsigned long num, int keta)
 	int		size;
 
 	size = 0;
-	if (flag_list.precision == 0 && num == 0)
-		return (pre_arg_zero_pointer(flag_list, 0, 0));
-	if (flag_list.flag[0] == 1 && flag_list.flag[1])
-		flag_list.flag[1] = 0;
 	if (flag_list.precision != -1)
 	{
 		flag_list.flag[1] = 0;
@@ -83,10 +79,10 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
 	keta = ft_strlen(str_num);
 	// size = 0;
-	// if (flag_list.precision == 0 && num == 0)
-	// 	return (pre_arg_zero_pointer(flag_list, 0, 0));
-	// if (flag_list.flag[0] == 1 && flag_list.flag[1])
-	// 	flag_list.flag[1] = 0;
+	if (flag_list.precision == 0 && num == 0)
+		return (pre_arg_zero_pointer(flag_list, 0, 0));
+	if (flag_list.flag[0] == 1 && flag_list.flag[1])
+		flag_list.flag[1] = 0;
 	// if (flag_list.precision != -1)
 	// {
 	// 	flag_list.flag[1] = 0;
