@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 22:05:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 22:53:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 22:53:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	field_no_precision_sub(int num, char *str, t_plist flag_list, int i)
 		num *= -1;
 		tmp = ft_itoa(num);
 		write(1, tmp, ft_strlen(tmp));
+		free(tmp);
 	}
 	else
 	{
