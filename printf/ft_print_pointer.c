@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:35:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:35:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,6 @@ int		print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 		len = make_return_len(flag_list, size, ans_str, 0);
 	else
 	{
-		// i = 0;
 		while (ans_str[i])
 			write(1, &ans_str[i++], 1);
 		len = size;
