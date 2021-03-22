@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:29:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:31:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ int	make_return_len(t_plist flag_list, int size, char *ans_str, int i)
 	return (len);
 }
 
-char	*make_pointer_str(char *str_num, int i, int len, int size)
+char	*make_pointer_str(char *str_num, int j, int len, int size)
 {
-	int j;
+	int i;
 	char *ans_str;
 
-	j = 0;
+	i = 0;
 	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	ans_str[size] = '\0';
@@ -147,7 +147,7 @@ int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 	// 		i++;
 	// 	}
 	// }
-	if (!(ans_str = make_pointer_str(str_num, 0, len, size)))
+	if (!(ans_str = make_pointer_str(str_num, j, len, size)))
 		return (-1);
 	if (flag_list.field > size)
 		len = make_return_len(flag_list, size, ans_str, 0);
