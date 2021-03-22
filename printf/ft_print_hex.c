@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:53:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:54:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		return (pre_arg_zero(flag_list));
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
-		if (flag_list.precision > ft_strlen(str_num))
+		if (flag_list.precision > (int)ft_strlen(str_num))
 			len = field_precision(num, str_num, flag_list, 0);
 		else
 			len = field_no_precision(num, str_num, flag_list, 0);
