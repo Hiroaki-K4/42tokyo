@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:31:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:32:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
+int		pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 {
 	if (flag_list.field > 2)
 	{
@@ -38,7 +38,7 @@ int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 	return (len);
 }
 
-int	make_str_size(t_plist flag_list, int keta)
+int		make_str_size(t_plist flag_list, int keta)
 {
 	int		size;
 
@@ -58,7 +58,7 @@ int	make_str_size(t_plist flag_list, int keta)
 	return (size);
 }
 
-int	make_return_len(t_plist flag_list, int size, char *ans_str, int i)
+int		make_return_len(t_plist flag_list, int size, char *ans_str, int i)
 {
 	int	len;
 
@@ -111,7 +111,7 @@ char	*make_pointer_str(char *str_num, int j, int len, int size)
 	return (ans_str);
 }
 
-int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
+int		print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 {
 	unsigned	long	num;
 	char				*str_num;
