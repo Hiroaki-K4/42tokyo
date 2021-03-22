@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:50:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:54:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 	return (len);
 }
 
-char	*make_str_base(t_plist flag_list, int keta)
+char	*make_str_size(t_plist flag_list, int keta)
 {
-	char	*ans_str;
 	int		size;
 
 	size = 0;
@@ -56,12 +55,7 @@ char	*make_str_base(t_plist flag_list, int keta)
 		size = flag_list.field;
 	else
 		size = keta + 2;
-	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	ans_str[size] = '\0';
-	ans_str[0] = '0';
-	ans_str[1] = 'x';
-	return (ans_str);
+	return (size);
 }
 
 int	print_pointer(va_list *ap, t_plist flag_list)
@@ -95,13 +89,14 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	// 	size = flag_list.field;
 	// else
 	// 	size = keta + 2;
-	// if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
-	// 	return (-1);
-	// ans_str[size] = '\0';
-	// ans_str[0] = '0';
-	// ans_str[1] = 'x';
-	ans_str = make_str_base(flag_list, keta);
-	size = (int)ft_strlen(ans_str);
+	size = make_str_size(flag_list, keta);
+	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
+		return (-1);
+	ans_str[size] = '\0';
+	ans_str[0] = '0';
+	ans_str[1] = 'x';
+	// ans_str = make_str_base(flag_list, keta);
+	// size = (int)ft_strlen(ans_str);
 	if (size > (keta + 2))
 	{
 		i = 0;
