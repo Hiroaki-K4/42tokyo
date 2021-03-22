@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 23:28:58 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 14:01:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 14:02:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,7 @@ int		print_percent(t_plist flag_list, int i, int len)
 				write(1, " ", 1);
 		}
 		else
-		{
-			// if (flag_list.flag[1] == 1)
-			// {
-			// 	while ((flag_list.field - 1 - (i++)) > 0)
-			// 		write(1, "0", 1);
-			// }
-			// else
-			// {
-			// 	while ((flag_list.field - 1 - (i++)) > 0)
-			// 		write(1, " ", 1);
-			// }
-			// write(1, "%", 1);
 			print_percent_sub(flag_list, i);
-		}
 		len = flag_list.field;
 	}
 	else
