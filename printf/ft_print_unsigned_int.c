@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:11:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:11:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,7 @@ int	field_no_precision_unsigned(char *str, t_plist flag_list)
 		write(1, str, ft_strlen(str));
 		i = 0;
 		while (flag_list.field - ft_strlen(str) - (i++))
-		{
 			write(1, " ", 1);
-			// i++;
-		}
 	}
 	else
 	{
