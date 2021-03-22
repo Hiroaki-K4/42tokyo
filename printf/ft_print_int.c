@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 09:32:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 09:38:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	no_field_int(int num, char *str, t_plist flag_list, int len)
 	return (len);
 }
 
-int	field_no_precision(int num, char *str, t_plist flag_list)
+int	field_no_precision(int num, char *str, t_plist flag_list, int i)
 {
-	int i;
+	// int i;
 
 	if (flag_list.flag[0] == 1)
 	{
 		write(1, str, ft_strlen(str));
-		i = 0;
+		// i = 0;
 		while (flag_list.field - ft_strlen(str) - i)
 		{
 			write(1, " ", 1);
@@ -59,7 +59,7 @@ int	field_no_precision(int num, char *str, t_plist flag_list)
 		if (num < 0 && flag_list.flag[0] != 1 && flag_list.flag[1] == 1)
 		{
 			write(1, "-", 1);
-			i = 0;
+			// i = 0;
 			while (flag_list.field - ft_strlen(str) - i)
 			{
 				write(1, "0", 1);
@@ -70,7 +70,7 @@ int	field_no_precision(int num, char *str, t_plist flag_list)
 		}
 		else
 		{
-			i = 0;
+			// i = 0;
 			while (flag_list.field - ft_strlen(str) - i)
 			{
 				if (flag_list.flag[1] == 1)
@@ -194,7 +194,7 @@ int	print_int(va_list *ap, t_plist flag_list)
 		if (flag_list.precision > keta)
 			len = field_precision(num, str_num, flag_list);
 		else
-			len = field_no_precision(num, str_num, flag_list);
+			len = field_no_precision(num, str_num, flag_list, 0);
 	}
 	else
 		len = no_field_int(num, str_num, flag_list, 0);
