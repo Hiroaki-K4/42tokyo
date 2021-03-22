@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:39:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 15:40:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	if (size > (keta + 2))
 	{
 		i = 0;
-		while (size - (keta + 2) - i)
+		while ((size - (keta + 2) - i) > 0)
 		{
 			ans_str[i + 2] = '0';
 			i++;
@@ -110,7 +110,7 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 				i++;
 			}
 			i = 0;
-			while (flag_list.field - size - i)
+			while ((flag_list.field - size - i) > 0)
 			{
 				write(1, " ", 1);
 				i++;
@@ -119,7 +119,7 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 		else
 		{
 			i = 0;
-			while (flag_list.field - size - i)
+			while ((flag_list.field - size - i) > 0)
 			{
 				write(1, " ", 1);
 				i++;
