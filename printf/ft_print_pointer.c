@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:49:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:50:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*make_str_base(t_plist flag_list, int keta)
 	else
 		size = keta + 2;
 	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
-		return (-1);
+		return (NULL);
 	ans_str[size] = '\0';
 	ans_str[0] = '0';
 	ans_str[1] = 'x';
