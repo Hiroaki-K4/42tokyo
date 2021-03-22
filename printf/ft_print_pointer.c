@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:54:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:55:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,31 +72,16 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	num = (unsigned long)va_arg(*ap, void *);
 	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
 	keta = ft_strlen(str_num);
-	// size = 0;
 	if (flag_list.precision == 0 && num == 0)
 		return (pre_arg_zero_pointer(flag_list, 0, 0));
 	if (flag_list.flag[0] == 1 && flag_list.flag[1])
 		flag_list.flag[1] = 0;
-	// if (flag_list.precision != -1)
-	// {
-	// 	flag_list.flag[1] = 0;
-	// 	if (flag_list.precision > keta)
-	// 		size = flag_list.precision + 2;
-	// 	else
-	// 		size = keta + 2;
-	// }
-	// else if (flag_list.flag[1] == 1 && flag_list.field > (keta + 2))
-	// 	size = flag_list.field;
-	// else
-	// 	size = keta + 2;
 	size = make_str_size(flag_list, keta);
 	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (-1);
 	ans_str[size] = '\0';
 	ans_str[0] = '0';
 	ans_str[1] = 'x';
-	// ans_str = make_str_base(flag_list, keta);
-	// size = (int)ft_strlen(ans_str);
 	if (size > (keta + 2))
 	{
 		i = 0;
