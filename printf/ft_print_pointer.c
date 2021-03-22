@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:17:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:29:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ int	make_return_len(t_plist flag_list, int size, char *ans_str, int i)
 {
 	int	len;
 
-	// if (flag_list.field > size)
-	// {
 	if (flag_list.flag[0] == 1)
 	{
 		while (ans_str[i])
@@ -81,32 +79,15 @@ int	make_return_len(t_plist flag_list, int size, char *ans_str, int i)
 			write(1, &ans_str[i++], 1);
 	}
 	len = flag_list.field;
-	// }
-	// else
-	// {
-	// 	while (ans_str[i])
-	// 		write(1, &ans_str[i++], 1);
-	// 	len = size;
-	// }
 	return (len);
 }
 
-int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
+char	*make_pointer_str(char *str_num, int i, int len, int size)
 {
-	unsigned	long	num;
-	char				*str_num;
-	int					len;
-	char				*ans_str;
-	int					size;
+	int j;
+	char *ans_str;
 
-	num = (unsigned long)va_arg(*ap, void *);
-	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
-	len = ft_strlen(str_num);
-	if (flag_list.precision == 0 && num == 0)
-		return (pre_arg_zero_pointer(flag_list, 0, 0));
-	if (flag_list.flag[0] == 1 && flag_list.flag[1])
-		flag_list.flag[1] = 0;
-	size = make_str_size(flag_list, len);
+	j = 0;
 	if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (-1);
 	ans_str[size] = '\0';
@@ -127,6 +108,46 @@ int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 			i++;
 		}
 	}
+}
+
+int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
+{
+	unsigned	long	num;
+	char				*str_num;
+	int					len;
+	char				*ans_str;
+	int					size;
+
+	num = (unsigned long)va_arg(*ap, void *);
+	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
+	len = ft_strlen(str_num);
+	if (flag_list.precision == 0 && num == 0)
+		return (pre_arg_zero_pointer(flag_list, 0, 0));
+	if (flag_list.flag[0] == 1 && flag_list.flag[1])
+		flag_list.flag[1] = 0;
+	size = make_str_size(flag_list, len);
+	// if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
+	// 	return (-1);
+	// ans_str[size] = '\0';
+	// ans_str[0] = '0';
+	// ans_str[1] = 'x';
+	// if (size > (len + 2))
+	// {
+	// 	while ((size - (len + 2) - i) > 0)
+	// 		ans_str[(i++) + 2] = '0';
+	// 	while (str_num[j])
+	// 		ans_str[(i++) + 2] = str_num[j++];
+	// }
+	// else
+	// {
+	// 	while (str_num[i])
+	// 	{
+	// 		ans_str[i + 2] = str_num[i];
+	// 		i++;
+	// 	}
+	// }
+	if (!(ans_str = make_pointer_str(str_num, 0, len, size)))
+		return (-1);
 	if (flag_list.field > size)
 		len = make_return_len(flag_list, size, ans_str, 0);
 	else
