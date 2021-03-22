@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:16:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:18:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	no_field_unsigned(char *str, t_plist flag_list)
 	return (len);
 }
 
-int	field_precision_unsigned(char *str, t_plist flag_list)
+int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 {
-	int		i;
-	int		j;
+	// int		i;
+	// int		j;
 	char	*tmp;
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
@@ -116,7 +116,7 @@ int	print_unsigned_int(va_list *ap, t_plist flag_list)
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
-			len = field_precision_unsigned(str_num, flag_list);
+			len = field_precision_unsigned(str_num, flag_list, 0, 0);
 		else
 			len = field_no_precision_unsigned(str_num, flag_list);
 	}
