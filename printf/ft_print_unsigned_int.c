@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:11:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:13:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,36 +45,36 @@ int	field_precision_unsigned(char *str, t_plist flag_list)
 	if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
 		return (-1);
 	i = 0;
-	while (flag_list.precision - ft_strlen(str) - i)
+	while (flag_list.precision - ft_strlen(str) - (i++))
 	{
 		tmp[i] = '0';
-		i++;
+		// i++;
 	}
 	j = 0;
 	while (ft_strlen(str) - j)
 	{
-		tmp[i] = str[j];
-		i++;
-		j++;
+		tmp[i++] = str[j++];
+		// i++;
+		// j++;
 	}
 	tmp[i] = '\0';
 	if (flag_list.flag[0] == 1)
 	{
 		write(1, tmp, ft_strlen(tmp));
 		i = 0;
-		while (flag_list.field - ft_strlen(tmp) - i)
+		while (flag_list.field - ft_strlen(tmp) - (i++))
 		{
 			write(1, " ", 1);
-			i++;
+			// i++;
 		}
 	}
 	else
 	{
 		i = 0;
-		while ((flag_list.field - (int)ft_strlen(tmp) - i) > 0)
+		while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
 		{
 			write(1, " ", 1);
-			i++;
+			// i++;
 		}
 		write(1, tmp, ft_strlen(tmp));
 		if (flag_list.precision > flag_list.field)
