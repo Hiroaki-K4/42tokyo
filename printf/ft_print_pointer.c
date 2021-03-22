@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:43:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:36:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,17 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	if (size > (keta + 2))
 	{
 		i = 0;
-		while ((size - (keta + 2) - (i++)) > 0)
+		while ((size - (keta + 2) - i) > 0)
 		{
-			ans_str[i + 2] = '0';
+			ans_str[(i++) + 2] = '0';
 			// i++;
 		}
 		j = 0;
 		while (str_num[j])
 		{
-			ans_str[i + 2] = str_num[j];
-			i++;
-			j++;
+			ans_str[(i++) + 2] = str_num[j++];
+			// i++;
+			// j++;
 		}
 	}
 	else
@@ -106,29 +106,29 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 			i = 0;
 			while (ans_str[i])
 			{
-				write(1, &ans_str[i], 1);
-				i++;
+				write(1, &ans_str[i++], 1);
+				// i++;
 			}
 			i = 0;
-			while ((flag_list.field - size - i) > 0)
+			while ((flag_list.field - size - (i++)) > 0)
 			{
 				write(1, " ", 1);
-				i++;
+				// i++;
 			}
 		}
 		else
 		{
 			i = 0;
-			while ((flag_list.field - size - i) > 0)
+			while ((flag_list.field - size - (i++)) > 0)
 			{
 				write(1, " ", 1);
-				i++;
+				// i++;
 			}
 			i = 0;
 			while (ans_str[i])
 			{
-				write(1, &ans_str[i], 1);
-				i++;
+				write(1, &ans_str[i++], 1);
+				// i++;
 			}
 		}
 		len = flag_list.field;
@@ -138,8 +138,8 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 		i = 0;
 		while (ans_str[i])
 		{
-			write(1, &ans_str[i], 1);
-			i++;
+			write(1, &ans_str[i++], 1);
+			// i++;
 		}
 		len = size;
 	}
