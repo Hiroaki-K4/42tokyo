@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:18:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:19:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
 		return (-1);
-	i = 0;
+	// i = 0;
 	while (flag_list.precision - ft_strlen(str) - i)
 		tmp[i++] = '0';
-	j = 0;
+	// j = 0;
 	while (ft_strlen(str) - j)
 		tmp[i++] = str[j++];
 	tmp[i] = '\0';
