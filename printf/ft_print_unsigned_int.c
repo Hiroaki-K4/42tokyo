@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:39:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:40:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	no_field_unsigned(char *str, t_plist flag_list)
+int		no_field_unsigned(char *str, t_plist flag_list)
 {
 	int len;
 	int digit;
@@ -50,17 +50,10 @@ char	*make_str(char *str, t_plist flag_list, int i, int j)
 	return (tmp);
 }
 
-int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
+int		field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 {
 	char	*tmp;
 
-	// if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
-	// 	return (-1);
-	// while (flag_list.precision - ft_strlen(str) - i)
-	// 	tmp[i++] = '0';
-	// while (ft_strlen(str) - j)
-	// 	tmp[i++] = str[j++];
-	// tmp[i] = '\0';
 	tmp = make_str(str, flag_list, i, j);
 	i = 0;
 	if (flag_list.flag[0] == 1)
@@ -81,7 +74,7 @@ int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 	return (flag_list.field);
 }
 
-int	field_no_precision_unsigned(char *str, t_plist flag_list)
+int		field_no_precision_unsigned(char *str, t_plist flag_list)
 {
 	int i;
 
@@ -108,7 +101,7 @@ int	field_no_precision_unsigned(char *str, t_plist flag_list)
 	return (flag_list.field);
 }
 
-int	print_unsigned_int(va_list *ap, t_plist flag_list)
+int		print_unsigned_int(va_list *ap, t_plist flag_list)
 {
 	unsigned	int	num;
 	int				len;
