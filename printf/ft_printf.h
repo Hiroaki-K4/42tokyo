@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 09:38:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 09:46:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list);
 int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k);
 t_plist	init_plist(void);
 int		get_len_long(unsigned long n);
+void	field_no_precision_sub(int num, char *str, t_plist flag_list, int i);
 
 #endif
