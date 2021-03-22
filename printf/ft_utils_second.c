@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 22:05:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 22:56:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 23:00:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ char	*field_precision_sub(int num, char *str, t_plist flag_list, int i)
 	while (ft_strlen(str) - j)
 		tmp[i++] = str[j++];
 	tmp[i] = '\0';
+	free(tmp);
 	return (tmp);
 }
