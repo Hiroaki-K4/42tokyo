@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:25:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:31:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ int	field_no_precision_unsigned(char *str, t_plist flag_list)
 	{
 		write(1, str, ft_strlen(str));
 		i = 0;
-		while (flag_list.field - ft_strlen(str) - (i++))
+		while ((flag_list.field - (int)ft_strlen(str) - (i++)) > 0)
 			write(1, " ", 1);
 	}
 	else
 	{
 		i = 0;
-		while (flag_list.field - ft_strlen(str) - i)
+		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
 		{
 			if (flag_list.flag[1] == 1)
 				write(1, "0", 1);
