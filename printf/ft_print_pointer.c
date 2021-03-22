@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:54:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:54:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 	return (len);
 }
 
-char	*make_str_size(t_plist flag_list, int keta)
+int	make_str_size(t_plist flag_list, int keta)
 {
 	int		size;
 
