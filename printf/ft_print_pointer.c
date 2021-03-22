@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:56:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:57:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ char	*make_pointer_str(char *str_num, int j, int len, int size)
 			i++;
 		}
 	}
+	free(str_num);
 	return (ans_str);
 }
 
@@ -136,7 +137,6 @@ int		print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 			write(1, &ans_str[i++], 1);
 		len = size;
 	}
-	free(str_num);
 	free(ans_str);
 	return (len);
 }
