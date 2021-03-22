@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:38:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 15:38:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 	// int	i;
 	// int	len;
 
-	len = 0;
+	// len = 0;
 	if (flag_list.field > 2)
 	{
 		if (flag_list.flag[0] == 1)
 		{
 			write(1, "0x", 2);
-			i = 0;
+			// i = 0;
 			while ((flag_list.field - 2 - (i++)) > 0)
 				write(1, " ", 1);
 		}
 		else
 		{
-			i = 0;
+			// i = 0;
 			while ((flag_list.field - 2 - (i++)) > 0)
 				write(1, " ", 1);
 			write(1, "0x", 2);
