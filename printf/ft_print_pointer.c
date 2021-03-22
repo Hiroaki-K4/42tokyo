@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 15:42:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 15:43:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 		j = 0;
 		while (str_num[j])
 		{
-			ans_str[(i++) + 2] = str_num[j++];
-			// i++;
-			// j++;
+			ans_str[i + 2] = str_num[j];
+			i++;
+			j++;
 		}
 	}
 	else
