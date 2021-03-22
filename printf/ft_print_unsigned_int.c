@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:34:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:39:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	no_field_unsigned(char *str, t_plist flag_list)
 	return (len);
 }
 
-int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
+char	*make_str(char *str, t_plist flag_list, int i, int j)
 {
 	char	*tmp;
 
@@ -47,6 +47,21 @@ int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 	while (ft_strlen(str) - j)
 		tmp[i++] = str[j++];
 	tmp[i] = '\0';
+	return (tmp);
+}
+
+int	field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
+{
+	char	*tmp;
+
+	// if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+	// 	return (-1);
+	// while (flag_list.precision - ft_strlen(str) - i)
+	// 	tmp[i++] = '0';
+	// while (ft_strlen(str) - j)
+	// 	tmp[i++] = str[j++];
+	// tmp[i] = '\0';
+	tmp = make_str(str, flag_list, i, j);
 	i = 0;
 	if (flag_list.flag[0] == 1)
 	{
