@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 09:55:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 09:58:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 		while (flag_list.precision + 2 - ft_strlen(str) - i)
 			tmp[i++] = '0';
 		j = 1;
-		while (ft_strlen(str) - j)
-			tmp[i++] = str[j++];
-		tmp[i] = '\0';
+		// while (ft_strlen(str) - j)
+		// 	tmp[i++] = str[j++];
+		// tmp[i] = '\0';
 	}
 	else
 	{
@@ -78,10 +78,13 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 		while (flag_list.precision - ft_strlen(str) - i)
 			tmp[i++] = '0';
 		j = 0;
-		while (ft_strlen(str) - j)
-			tmp[i++] = str[j++];
-		tmp[i] = '\0';
+		// while (ft_strlen(str) - j)
+		// 	tmp[i++] = str[j++];
+		// tmp[i] = '\0';
 	}
+	while (ft_strlen(str) - j)
+		tmp[i++] = str[j++];
+	tmp[i] = '\0';
 	if (flag_list.flag[0] == 1)
 	{
 		write(1, tmp, ft_strlen(tmp));
