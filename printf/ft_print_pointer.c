@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:31:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:31:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,26 +127,6 @@ int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 	if (flag_list.flag[0] == 1 && flag_list.flag[1])
 		flag_list.flag[1] = 0;
 	size = make_str_size(flag_list, len);
-	// if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
-	// 	return (-1);
-	// ans_str[size] = '\0';
-	// ans_str[0] = '0';
-	// ans_str[1] = 'x';
-	// if (size > (len + 2))
-	// {
-	// 	while ((size - (len + 2) - i) > 0)
-	// 		ans_str[(i++) + 2] = '0';
-	// 	while (str_num[j])
-	// 		ans_str[(i++) + 2] = str_num[j++];
-	// }
-	// else
-	// {
-	// 	while (str_num[i])
-	// 	{
-	// 		ans_str[i + 2] = str_num[i];
-	// 		i++;
-	// 	}
-	// }
 	if (!(ans_str = make_pointer_str(str_num, j, len, size)))
 		return (-1);
 	if (flag_list.field > size)
