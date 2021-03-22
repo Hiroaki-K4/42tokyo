@@ -6,18 +6,18 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 23:28:58 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 11:45:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 11:47:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_percent(t_plist flag_list)
+int	print_percent(t_plist flag_list, int i, int len)
 {
-	int i;
-	int len;
+	// int i;
+	// int len;
 
-	len = 0;
+	// len = 0;
 	if (flag_list.field > 1)
 	{
 		if (flag_list.flag[0] == 1)
