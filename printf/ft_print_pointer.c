@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 20:38:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:46:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,11 @@ int	pre_arg_zero_pointer(t_plist flag_list, int i, int len)
 	return (len);
 }
 
-int	print_pointer(va_list *ap, t_plist flag_list)
+char	*make_str_base(t_plist flag_list, unsigned long num, int keta)
 {
-	unsigned	long	num;
-	char				*str_num;
-	int					keta;
-	int					len;
-	char				*ans_str;
-	int					i;
-	int					j;
-	int					size;
+	char	*ans_str;
+	int		size;
 
-	num = (unsigned long)va_arg(*ap, void *);
-	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
-	keta = ft_strlen(str_num);
 	size = 0;
 	if (flag_list.precision == 0 && num == 0)
 		return (pre_arg_zero_pointer(flag_list, 0, 0));
@@ -74,6 +65,47 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	ans_str[size] = '\0';
 	ans_str[0] = '0';
 	ans_str[1] = 'x';
+	return (ans_str);
+}
+
+int	print_pointer(va_list *ap, t_plist flag_list)
+{
+	unsigned	long	num;
+	char				*str_num;
+	int					keta;
+	int					len;
+	char				*ans_str;
+	int					i;
+	int					j;
+	int					size;
+
+	num = (unsigned long)va_arg(*ap, void *);
+	str_num = ft_itoa_hex_long(num, "0123456789abcdef");
+	keta = ft_strlen(str_num);
+	// size = 0;
+	// if (flag_list.precision == 0 && num == 0)
+	// 	return (pre_arg_zero_pointer(flag_list, 0, 0));
+	// if (flag_list.flag[0] == 1 && flag_list.flag[1])
+	// 	flag_list.flag[1] = 0;
+	// if (flag_list.precision != -1)
+	// {
+	// 	flag_list.flag[1] = 0;
+	// 	if (flag_list.precision > keta)
+	// 		size = flag_list.precision + 2;
+	// 	else
+	// 		size = keta + 2;
+	// }
+	// else if (flag_list.flag[1] == 1 && flag_list.field > (keta + 2))
+	// 	size = flag_list.field;
+	// else
+	// 	size = keta + 2;
+	// if (!(ans_str = (char *)malloc(sizeof(char) * (size + 1))))
+	// 	return (-1);
+	// ans_str[size] = '\0';
+	// ans_str[0] = '0';
+	// ans_str[1] = 'x';
+	ans_str = make_str_base(flag_list, num, keta);
+	size = (int)ft_strlen(ans_str);
 	if (size > (keta + 2))
 	{
 		i = 0;
