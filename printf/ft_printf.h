@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:02:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:53:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		field_precision(int num, char *str, t_plist flag_list, int i);
 int		field_no_precision(int num, char *str, t_plist flag_list, int i);
 int		no_field_int(int num, char *str, t_plist flag_list, int len);
 char	*ft_itoa_unsigned(unsigned int n);
-int		print_hex(va_list *ap, t_plist flag_list, int keta, int len);
+int		print_hex(va_list *ap, t_plist flag_list, int len);
 char	*ft_itoa_hex(unsigned int n, char *arg);
 char	*ft_itoa_hex_long(unsigned long n, char *arg);
 int		print_pointer(va_list *ap, t_plist flag_list, int i, int j);
