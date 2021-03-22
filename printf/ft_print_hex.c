@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:43:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:52:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int keta, int len)
 	}
 	else
 		len = no_field_int(num, str_num, flag_list, 0);
+	free(str_num);
 	return (len);
 }
