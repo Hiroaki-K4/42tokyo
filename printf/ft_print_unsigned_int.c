@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:50:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 22:28:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int		field_precision_unsigned(char *str, t_plist flag_list, int i, int j)
 {
 	char	*tmp;
 
-	tmp = make_str(str, flag_list, i, j);
+	if (!(tmp = make_str(str, flag_list, i, j)))
+		return (-1);
 	i = 0;
 	if (flag_list.flag[0] == 1)
 	{
@@ -110,7 +111,8 @@ int		print_unsigned_int(va_list *ap, t_plist flag_list)
 
 	len = 0;
 	num = va_arg(*ap, unsigned int);
-	str_num = ft_itoa_unsigned(num);
+	if (!(str_num = ft_itoa_unsigned(num)))
+		return (-1);
 	keta = ft_strlen(str_num);
 	if (flag_list.flag[1] == 1 && flag_list.precision != -1)
 		flag_list.flag[1] = 0;
