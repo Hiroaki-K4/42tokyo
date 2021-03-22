@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 21:00:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:02:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ int	make_str_size(t_plist flag_list, int keta)
 	return (size);
 }
 
-int	print_pointer(va_list *ap, t_plist flag_list)
+int	print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 {
 	unsigned	long	num;
 	char				*str_num;
 	int					len;
 	char				*ans_str;
-	int					i;
-	int					j;
+	// int					i;
+	// int					j;
 	int					size;
 
 	num = (unsigned long)va_arg(*ap, void *);
@@ -83,16 +83,16 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	ans_str[1] = 'x';
 	if (size > (len + 2))
 	{
-		i = 0;
+		// i = 0;
 		while ((size - (len + 2) - i) > 0)
 			ans_str[(i++) + 2] = '0';
-		j = 0;
+		// j = 0;
 		while (str_num[j])
 			ans_str[(i++) + 2] = str_num[j++];
 	}
 	else
 	{
-		i = 0;
+		// i = 0;
 		while (str_num[i])
 		{
 			ans_str[i + 2] = str_num[i];
@@ -102,7 +102,6 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	i = 0;
 	if (flag_list.field > size)
 	{
-		// i = 0;
 		if (flag_list.flag[0] == 1)
 		{
 			while (ans_str[i])
@@ -123,7 +122,6 @@ int	print_pointer(va_list *ap, t_plist flag_list)
 	}
 	else
 	{
-		// i = 0;
 		while (ans_str[i])
 			write(1, &ans_str[i++], 1);
 		len = size;
