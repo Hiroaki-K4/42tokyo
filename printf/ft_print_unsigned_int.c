@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 22:28:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 09:31:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,10 @@ int		print_unsigned_int(va_list *ap, t_plist flag_list)
 	if (flag_list.flag[1] == 1 && flag_list.precision != -1)
 		flag_list.flag[1] = 0;
 	if (flag_list.precision == 0 && num == 0)
+	{
+		free(str_num);
 		return (pre_arg_zero(flag_list));
+	}
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
