@@ -6,17 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:48:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 11:55:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 12:00:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_pointer_len(t_plist flag_list, int size, int i, char *ans_str)
+int	print_pointer_len(t_plist flag_list, int size, int i, char *ans_str)
 {
-    int len;
+	int len;
 
-    if (flag_list.field > size)
+	if (flag_list.field > size)
 		len = make_return_len(flag_list, size, ans_str, 0);
 	else
 	{
@@ -24,16 +24,16 @@ int print_pointer_len(t_plist flag_list, int size, int i, char *ans_str)
 			write(1, &ans_str[i++], 1);
 		len = size;
 	}
-    return (len);
+	return (len);
 }
 
-int print_unsigned_int_len(t_plist flag_list, int keta, char *str_num)
+int	print_unsigned_int_len(t_plist flag_list, int keta, char *str_num)
 {
-    int len;
+	int len;
 
-    if (flag_list.precision > keta)
-        len = field_precision_unsigned(str_num, flag_list, 0, 0);
-    else
-        len = field_no_precision_unsigned(str_num, flag_list);
-    return (len);
+	if (flag_list.precision > keta)
+		len = field_precision_unsigned(str_num, flag_list, 0, 0);
+	else
+		len = field_no_precision_unsigned(str_num, flag_list);
+	return (len);
 }
