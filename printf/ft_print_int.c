@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 09:29:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 09:34:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	no_field_int(int num, char *str, t_plist flag_list, int len)
 		write(1, str, ft_strlen(str));
 		len = ft_strlen(str);
 	}
+	free(str);
 	return (len);
 }
 
