@@ -1,59 +1,81 @@
-==22547== Memcheck, a memory error detector
-==22547== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==22547== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==22547== Command: ./a.out
-==22547== Parent PID: 22394
-==22547== 
-==22547== 
-==22547== HEAP SUMMARY:
-==22547==     in use at exit: 14 bytes in 4 blocks
-==22547==   total heap usage: 96 allocs, 92 frees, 4,741 bytes allocated
-==22547== 
-==22547== 2 bytes in 1 blocks are definitely lost in loss record 1 of 4
-==22547==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==22547==    by 0x10CBA7: ft_itoa_hex_long (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10D52A: print_pointer (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B07F: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10A8E5: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547== 
-==22547== 4 bytes in 1 blocks are definitely lost in loss record 2 of 4
-==22547==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==22547==    by 0x10D8E3: ft_itoa (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10BD9B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10C27F: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547== 
-==22547== 4 bytes in 1 blocks are definitely lost in loss record 3 of 4
-==22547==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==22547==    by 0x10D8E3: ft_itoa (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10BD9B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10C27F: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x109C8F: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547== 
-==22547== 4 bytes in 1 blocks are definitely lost in loss record 4 of 4
-==22547==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==22547==    by 0x10D8E3: ft_itoa (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10BD9B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10C27F: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547==    by 0x109CED: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
-==22547== 
-==22547== LEAK SUMMARY:
-==22547==    definitely lost: 14 bytes in 4 blocks
-==22547==    indirectly lost: 0 bytes in 0 blocks
-==22547==      possibly lost: 0 bytes in 0 blocks
-==22547==    still reachable: 0 bytes in 0 blocks
-==22547==         suppressed: 0 bytes in 0 blocks
-==22547== 
-==22547== For lists of detected and suppressed errors, rerun with: -s
-==22547== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==24385== Memcheck, a memory error detector
+==24385== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==24385== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24385== Command: ./a.out
+==24385== Parent PID: 24234
+==24385== 
+==24385== Invalid read of size 1
+==24385==    at 0x10D6E9: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10BE1B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==  Address 0x4a7e3f0 is 0 bytes inside a block of size 4 free'd
+==24385==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24385==    by 0x10BDC4: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==  Block was alloc'd at
+==24385==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24385==    by 0x10D8F7: ft_itoa (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10BD9B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385== 
+==24385== Syscall param write(buf) points to unaddressable byte(s)
+==24385==    at 0x49991E7: write (write.c:26)
+==24385==    by 0x10BE2F: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==  Address 0x4a7e3f0 is 0 bytes inside a block of size 4 free'd
+==24385==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24385==    by 0x10BDC4: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==  Block was alloc'd at
+==24385==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24385==    by 0x10D8F7: ft_itoa (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10BD9B: no_field_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10C293: print_int (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B0C7: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x109C31: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385== 
+==24385== 
+==24385== HEAP SUMMARY:
+==24385==     in use at exit: 2 bytes in 1 blocks
+==24385==   total heap usage: 96 allocs, 95 frees, 4,741 bytes allocated
+==24385== 
+==24385== 2 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==24385==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24385==    by 0x10CBBB: ft_itoa_hex_long (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10D53E: print_pointer (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B07F: output_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B30A: ft_printf_per (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10B44B: ft_printf (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385==    by 0x10A8E5: main (in /home/hiroaki-k4/my_project/42tokyo/printf/a.out)
+==24385== 
+==24385== LEAK SUMMARY:
+==24385==    definitely lost: 2 bytes in 1 blocks
+==24385==    indirectly lost: 0 bytes in 0 blocks
+==24385==      possibly lost: 0 bytes in 0 blocks
+==24385==    still reachable: 0 bytes in 0 blocks
+==24385==         suppressed: 0 bytes in 0 blocks
+==24385== 
+==24385== For lists of detected and suppressed errors, rerun with: -s
+==24385== ERROR SUMMARY: 16 errors from 3 contexts (suppressed: 0 from 0)
