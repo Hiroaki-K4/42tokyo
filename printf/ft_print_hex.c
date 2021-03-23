@@ -6,11 +6,27 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:15:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 09:30:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:33:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	get_hex_len(t_plist flag_list, unsigned int num, char str_num)
+{
+	int len;
+
+	if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > (int)ft_strlen(str_num))
+			len = field_precision(num, str_num, flag_list, 0);
+		else
+			len = field_no_precision(num, str_num, flag_list, 0);
+	}
+	else
+		len = no_field_int(num, str_num, flag_list, 0);
+	return (len);
+}
 
 int	print_hex(va_list *ap, t_plist flag_list, int len)
 {
@@ -33,15 +49,16 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		free(str_num);
 		return (pre_arg_zero(flag_list));
 	}
-	if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > (int)ft_strlen(str_num))
-			len = field_precision(num, str_num, flag_list, 0);
-		else
-			len = field_no_precision(num, str_num, flag_list, 0);
-	}
-	else
-		len = no_field_int(num, str_num, flag_list, 0);
+	// if (flag_list.field > (int)ft_strlen(str_num))
+	// {
+	// 	if (flag_list.precision > (int)ft_strlen(str_num))
+	// 		len = field_precision(num, str_num, flag_list, 0);
+	// 	else
+	// 		len = field_no_precision(num, str_num, flag_list, 0);
+	// }
+	// else
+	// 	len = no_field_int(num, str_num, flag_list, 0);
+	len = get_hex_len(flag_list, num, str_num);
 	free(str_num);
 	return (len);
 }
