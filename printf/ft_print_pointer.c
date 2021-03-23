@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:41:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 09:15:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 09:46:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,10 @@ int		print_pointer(va_list *ap, t_plist flag_list, int i, int j)
 	if (!(str_num = ft_itoa_hex_long(num, "0123456789abcdef")))
 		return (-1);
 	if (flag_list.precision == 0 && num == 0)
+	{
+		free(str_num);
 		return (pre_arg_zero_pointer(flag_list, 0, 0));
+	}
 	if (flag_list.flag[0] == 1 && flag_list.flag[1])
 		flag_list.flag[1] = 0;
 	size = make_str_size(flag_list, ft_strlen(str_num));
