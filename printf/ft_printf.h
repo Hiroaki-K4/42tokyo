@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 11:52:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:57:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ int		field_no_precision_sub(int num, char *str, t_plist flag_list, int i);
 char	*field_precision_sub(int num, char *str, t_plist flag_list, int i);
 int		no_field_int_sub(t_plist flag_list, int num, int digit);
 int		print_int_len(t_plist flag_list, char *str_num, int keta, int num);
-int print_pointer_len(t_plist flag_list, int size, int i, char *ans_str);
+int		print_pointer_len(t_plist flag_list, int size, int i, char *ans_str);
 int		make_return_len(t_plist flag_list, int size, char *ans_str, int i);
+int		print_unsigned_int_len(t_plist flag_list, int keta, char *str_num);
+int		field_no_precision_unsigned(char *str, t_plist flag_list);
+int		field_precision_unsigned(char *str, t_plist flag_list, int i, int j);
 
 #endif

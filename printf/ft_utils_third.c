@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:48:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 11:50:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:55:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,16 @@ int print_pointer_len(t_plist flag_list, int size, int i, char *ans_str)
 			write(1, &ans_str[i++], 1);
 		len = size;
 	}
+    return (len);
+}
+
+int print_unsigned_int_len(t_plist flag_list, int keta, char *str_num)
+{
+    int len;
+
+    if (flag_list.precision > keta)
+        len = field_precision_unsigned(str_num, flag_list, 0, 0);
+    else
+        len = field_no_precision_unsigned(str_num, flag_list);
     return (len);
 }
