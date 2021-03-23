@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:01:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 10:32:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:27:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
 	char	*tmp;
 
+	printf("ok\n");
 	if (!(tmp = field_precision_sub(num, str, flag_list, 0)))
 		return (-1);
 	if (flag_list.flag[0] == 1)
