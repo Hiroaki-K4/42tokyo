@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 22:05:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 23:07:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:41:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,20 @@ char	*field_precision_sub(int num, char *str, t_plist flag_list, int i)
 		tmp[i++] = str[j++];
 	tmp[i] = '\0';
 	return (tmp);
+}
+
+int		no_field_int_sub(t_plist flag_list, int num, int digit)
+{
+	int		len;
+	char	*tmp;
+
+	if (!(tmp = ft_itoa(num * (-1))))
+		return (-1);
+	write(1, "-", 1);
+	len = flag_list.precision + 1;
+	while (flag_list.precision - (digit++) > 0)
+		write(1, "0", 1);
+	write(1, tmp, ft_strlen(tmp));
+	free(tmp);
+	return (len);
 }

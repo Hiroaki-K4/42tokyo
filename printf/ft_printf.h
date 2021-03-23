@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 14:52:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/22 22:56:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/23 11:41:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ t_plist	init_plist(void);
 int		get_len_long(unsigned long n);
 int		field_no_precision_sub(int num, char *str, t_plist flag_list, int i);
 char	*field_precision_sub(int num, char *str, t_plist flag_list, int i);
+int		no_field_int_sub(t_plist flag_list, int num, int digit);
 
 #endif
