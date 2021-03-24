@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 11:25:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/24 09:41:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~int~~\n");
+    i = printf("printf:    [%020d]\n", -2147483648);
+    j = ft_printf("ft_printf: [%020d]\n", -2147483648);
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     i = printf("printf:    [%% *.5i 42 == |% *.5i|]\n", 4, 42);
     j = ft_printf("ft_printf: [%% *.5i 42 == |% *.5i|]\n", 4, 42);
     printf("len: %d\n", i);
@@ -311,10 +315,6 @@ int main(void)
     // printf("len: %d\n", j);
     i = printf("printf:    [%2p]\n", 1234);
     j = ft_printf("ft_printf: [%2p]\n", 1234);
-    printf("len: %d\n", i);
-    printf("len: %d\n", j);
-    i = printf("printf:    [%10p]\n", 234234234234234234234234);
-    j = ft_printf("ft_printf: [%10p]\n", 234234234234234234234234);
     printf("len: %d\n", i);
     printf("len: %d\n", j);
     i = printf("printf:    [%-10p]\n", 1234);
