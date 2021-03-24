@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 22:05:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/24 09:55:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/24 09:56:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		get_len_long(unsigned long n)
 	return (len);
 }
 
-int		field_no_precision_sub(long num, char *str, t_plist flag_list, int i)
+int		field_no_precision_sub(int num, char *str, t_plist flag_list, int i)
 {
 	char *tmp;
 
