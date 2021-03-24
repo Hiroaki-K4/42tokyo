@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 22:05:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/24 09:58:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/24 09:59:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		field_no_precision_sub(long num, char *str, t_plist flag_list, int i)
 		while (flag_list.field - ft_strlen(str) - (i++))
 			write(1, "0", 1);
 		num *= -1;
-		printf("num: %ld\n", num);
+		// printf("num: %ld\n", num);
 		if (!(tmp = ft_itoa(num)))
 			return (-1);
 		write(1, tmp, ft_strlen(tmp));
