@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 10:29:29 by abourin           #+#    #+#             */
-/*   Updated: 2021/03/21 16:55:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/25 09:38:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,6 +271,7 @@ int main(void)
 	ft_printf("%d\n", ft_printf("%u\n", -1));
 	printf("%d\n", printf("%15.12u\n", -100));
 	ft_printf("%d\n", ft_printf("%15.12u\n", -100));
+	ft_printf("%-3.4s", "hello");
 	// printf("%d\n", printf("%-.12i\n", -20000000));
 	// ft_printf("%d\n", ft_printf("%-.12i\n", -20000000));
 	// printf("%d\n", printf("truc\n"));

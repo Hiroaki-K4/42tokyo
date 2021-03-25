@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 17:44:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/21 21:57:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/25 09:39:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	field_flag_str(char *str, t_plist flag_list, int len)
 	{
 		write(1, str, flag_list.precision);
 		i = flag_list.precision;
-		while (flag_list.field - i)
+		while (flag_list.field - i > 0)
 		{
 			write(1, " ", 1);
 			i++;

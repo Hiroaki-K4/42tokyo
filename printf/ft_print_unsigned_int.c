@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:07:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 11:58:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/25 10:54:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ char	*make_str(char *str, t_plist flag_list, int i, int j)
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
 		return (NULL);
-	while (flag_list.precision - ft_strlen(str) - i)
+	while ((flag_list.precision - ft_strlen(str) - i) > 0)
 		tmp[i++] = '0';
-	while (ft_strlen(str) - j)
+	while ((ft_strlen(str) - j) > 0)
 		tmp[i++] = str[j++];
 	tmp[i] = '\0';
 	return (tmp);
