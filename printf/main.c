@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/24 09:53:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/25 09:20:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~string~~\n");
+    i = printf("printf:    [%*.*s]\n", -1, 2 "hello");
+    // j = ft_printf("ft_printf: [%.*s]\n", -3, "hello");
+    printf("len: %d\n", i);
+    printf("len: %d\n", j);
     i = printf("printf:    [%.*s]\n", -3, "hello");
     j = ft_printf("ft_printf: [%.*s]\n", -3, "hello");
     printf("len: %d\n", i);
@@ -94,6 +98,10 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~int~~\n");
+    // i = printf("printf:    [%*d]\n", -2147483648, 100);
+    // j = ft_printf("ft_printf: [%*d]\n", -2147483648, 100);
+    // printf("len: %d\n", i);
+    // printf("len: %d\n", j);
     i = printf("printf:    [%020d]\n", -2147483648);
     j = ft_printf("ft_printf: [%020d]\n", -2147483648);
     printf("len: %d\n", i);
