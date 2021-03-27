@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:07:04 by hkubo             #+#    #+#             */
-/*   Updated: 2021/02/27 10:54:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 21:37:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,11 @@ char	*ft_strchr(const char *s, int c)
 	while (ptr_s[i] != '\0')
 	{
 		if (ptr_s[i] == (unsigned char)c)
-		{
 			return (char *)(s + i);
-		}
 		i++;
 	}
 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-	{
 		return (char *)(s + i);
-	}
 	return (NULL);
 }
 
@@ -95,9 +91,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 
 	ans = ft_strlen(src);
 	if (n == 0)
-	{
 		return (ans);
-	}
 	i = 0;
 	while (i < n - 1 && src[i] != '\0')
 	{
