@@ -6,11 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/27 18:15:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 20:50:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+int main(int argc, char *argv[])
 {
+    printf("str: %s\n", argv[argc]);
     return (0);
 }
