@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcc -Wall -Werror -Wextra inter.c -o union
+gcc -Wall -Werror -Wextra union.c -o union
 echo "# Expected result (next line) Your result #"
 echo "---"
 echo "zpadintoqefwjy$"
