@@ -6,10 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/27 20:55:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 20:55:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
 int main(int argc, char *argv[])
