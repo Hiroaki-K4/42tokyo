@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/27 20:51:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 20:51:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-    printf("str: %s\n", argv[argc]);
+    printf("str: %s\n", argv[argc - 1]);
     return (0);
 }
