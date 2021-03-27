@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/27 21:17:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 21:18:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,29 @@ int main(int argc, char *argv[])
 	int		j;
 	int		flag;
 
-	if (argc != 3)
+	if (argc == 3)
 	{
-		write(1, "\n", 1);
-		return (0);
-	}
-	arg1 = argv[1];
-	arg2 = argv[2];
-	i = 0;
-	while (arg1[i])
-	{
-		if (ft_strchr(arg2, arg1[i]))
+		arg1 = argv[1];
+		arg2 = argv[2];
+		i = 0;
+		while (arg1[i])
 		{
-			j = i;
-			flag = 1;
-			while (j > 0)
+			if (ft_strchr(arg2, arg1[i]))
 			{
-				if (arg1[j - 1] == arg1[i])
-					flag = 0;
-				j--;
+				j = i;
+				flag = 1;
+				while (j > 0)
+				{
+					if (arg1[j - 1] == arg1[i])
+						flag = 0;
+					j--;
+				}
+				if (flag == 1)
+					write(1, &arg1[i], 1);
 			}
-			if (flag == 1)
-				write(1, &arg1[i], 1);
+			i++;
 		}
-		i++;
 	}
 	write(1, "\n", 1);
-	// printf("arg1: %s agc2: %s\n", arg1, arg2);
 	return (0);
 }
