@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/27 21:11:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/27 21:14:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,18 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (arg1[i])
 	{
-		j = i;
-		while (j > 0)
+		if (ft_strchr(arg2, arg1[i]))
 		{
-			if ((arg1[j - 1] != arg1[i]) && ft_strchr(arg2, arg1[i]))
+			j = i;
+			while (j > 0)
 			{
-				write(1, &arg1[i], 1);
-				break;
+				if (arg1[j - 1] != arg1[i])
+				{
+					write(1, &arg1[i], 1);
+					break;
+				}
+				j--;
 			}
-			j--;
 		}
 		i++;
 	}
