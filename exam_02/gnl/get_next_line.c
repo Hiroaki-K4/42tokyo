@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/10 10:32:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/28 18:38:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ int		get_make_line(int fd, char **store, char **line, int i)
 {
 	char	*buf;
 	char	*tmp;
+	int		buffer_size;
 
-	if (!(buf = (char *)malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1))))
+	buffer_size = 128
+	if (!(buf = (char *)malloc(sizeof(char) * ((size_t)buffer_size + 1))))
 		return (-1);
 	while (i > 0)
 	{
-		if ((i = read(fd, buf, BUFFER_SIZE)) == -1)
+		if ((i = read(fd, buf, buffer_size)) == -1)
 			return (-1);
 		buf[i] = '\0';
 		if (ft_strchr(buf, '\n') != NULL)
@@ -96,7 +98,7 @@ int		get_next_line(int fd, char **line)
 	static char *store[256];
 
 	*line = NULL;
-	if (fd < 0 || fd > 255 || BUFFER_SIZE < 1)
+	if (fd < 0 || fd > 255)
 		return (-1);
 	if (store[fd] == NULL)
 		if (!(store[fd] = ft_strdup("")))
