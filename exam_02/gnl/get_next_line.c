@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/28 18:38:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/28 18:38:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		get_make_line(int fd, char **store, char **line, int i)
 	char	*tmp;
 	int		buffer_size;
 
-	buffer_size = 128
+	buffer_size = 128;
 	if (!(buf = (char *)malloc(sizeof(char) * ((size_t)buffer_size + 1))))
 		return (-1);
 	while (i > 0)
