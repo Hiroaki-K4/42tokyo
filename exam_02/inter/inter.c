@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/30 21:55:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/30 21:59:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ char	*ft_strchr(const char *s, int c)
 
 int main(int argc, char *argv[])
 {
-	char	*arg1;
-	char	*arg2;
-	int		i;
-	int		j;
-	int		flag;
+	int i;
+	int j;
+	int flag;
+	char *arg1;
+	char *arg2;
 	
 	if (argc == 3)
 	{
@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 			}
 			i++;
 		}
-		write(1, "\n", 1);
-		return (0);
 	}
+	write(1, "\n", 1);
+	return (0);
 }
