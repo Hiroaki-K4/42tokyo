@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:17:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/30 22:14:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/30 22:20:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 	int flag;
 	char *arg1;
 	char *arg2;
-	
+
 	if (argc == 3)
 	{
 		arg1 = argv[1];
@@ -118,14 +118,14 @@ int main(int argc, char *argv[])
 				{
 					if (arg2[j - 1] == arg2[i])
 						flag = 0;
-					j--; 
+					j--;
 				}
 				if (flag == 1)
 					write(1, &arg2[i], 1);
 			}
 			i++;
 		}
-		write(1, "\n", 1);
-		return (0);
 	}
+	write(1, "\n", 1);
+	return (0);
 }
