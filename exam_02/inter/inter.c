@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:15:09 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/30 21:45:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/03/30 21:48:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,24 @@
 // 	return (NULL);
 // }
 
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char const *ptr_s;
+// 	int					i;
+	
+// 	ptr_s = (unsigned char const *)s;
+// 	i = 0;
+// 	while (ptr_s[i])
+// 	{
+// 		if (ptr_s[i] == (unsigned char)c)
+// 			return (char *)(s + i);
+// 		i++;
+// 	}
+// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+// 		return (char *)(s + i);
+// 	return (NULL);
+// }
+
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned char const *ptr_s;
@@ -39,12 +57,12 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (ptr_s[i])
 	{
-		if (ptr_s[i] == (unsigned char)c)
-			return (char *)(s + i);
+		if (ptr_s[i] == c)
+			return ((char *)(s + i));
 		i++;
 	}
-	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-		return (char *)(s + i);
+	if (ptr_s[i] == '\0' && ptr_s[i] == c)
+		return ((char *)(s + i));
 	return (NULL);
 }
 
