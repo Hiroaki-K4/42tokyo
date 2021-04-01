@@ -1,4 +1,4 @@
-gcc -Wall -Werror -Wextra get_next_line.c main.c -o get_next_line
+gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c main.c -o get_next_line
 ./get_next_line < get_next_line.c > yours_.res
 cat -e yours_.res > yours.res
 cat -e < get_next_line.c > original.res
