@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/23 10:41:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/04 10:55:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,18 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	return (k);
 }
 
+int		ft_printf_per(const char *arg, int *i, va_list *ap)
+{
+	int		j;
+	int		k;
+	t_plist flag_list;
+	
+	(*i)++;
+	flag_list = init_plist();
+	j = 0;
+	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
+}
+
 int		ft_printf(const char *arg, ...)
 {
 	va_list	ap;
@@ -94,6 +106,33 @@ int		ft_printf(const char *arg, ...)
 	int		j;
 	int		print_len;
 
+	va_start(ap, arg);
+	i = 0;
+	if (arg == NULL)
+		i = -1;
+	print_len = 0;
+	while (i >= 0 && arg[i])
+	{
+		if (arg[i] != '%')
+			print_len += ft_printf_str(arg, &i);
+		else
+		{
+			j = ft_printf_per(arg, &i, &ap);
+			if (j == -1)
+				return (-1);
+			print_len += j;
+		}
+	}
+	va_end(ap);
+	return (print_len);
+}
+
+int		ft_printf(const char *arg, ...)
+{
+	va_list ap;
+	int		i;
+	int		j;
+	int		print_len;
 	va_start(ap, arg);
 	i = 0;
 	if (arg == NULL)
