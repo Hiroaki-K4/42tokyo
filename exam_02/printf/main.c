@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/26 21:29:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/04 10:25:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
     
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("~~string~~\n");
-    i = printf("printf:    [%*.*s]\n", -1, 2 "hello");
+    i = printf("printf:    [%*.*s]\n", -1, 2, "hello");
     // j = ft_printf("ft_printf: [%.*s]\n", -3, "hello");
     printf("len: %d\n", i);
     printf("len: %d\n", j);
