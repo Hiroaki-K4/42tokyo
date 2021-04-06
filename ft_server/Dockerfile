@@ -4,3 +4,4 @@ RUN apt-get update && apt-get install -y \
     mariadb-server \
     php \
     php-fpm
+CMD nginx -g 'daemon off;'
