@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
 			{
 				flag = 1;
 				j = i - 1;
-				while (j > 0)
+				while (j >= 0)
 				{
 					if (arg1[j] == arg1[i])
 						flag = 0;
