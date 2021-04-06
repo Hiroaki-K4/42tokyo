@@ -12,21 +12,39 @@
 
 #include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
-{
-	unsigned char const	*ptr_s;
-	int					i;
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char const	*ptr_s;
+// 	int					i;
 
-	ptr_s = (unsigned char const *)s;
+// 	ptr_s = (unsigned char const *)s;
+// 	i = 0;
+// 	while (ptr_s[i])
+// 	{
+// 		if (ptr_s[i] == (unsigned char)c)
+// 			return (char *)(s + i);
+// 		i++;
+// 	}
+// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+// 		return (char *)(s + i);
+// 	return (NULL);
+// }
+
+char *ft_strchr(const char *str, int c)
+{
+	unsigned const char *arg_s;
+	int i;
+
 	i = 0;
-	while (ptr_s[i])
+	arg_s = (unsigned const char *)str;
+	while (arg_s[i])
 	{
-		if (ptr_s[i] == (unsigned char)c)
-			return (char *)(s + i);
-		i++;
+		if (arg_s[i] == c)
+			return (char *)(str + i);
+		i++; 
 	}
-	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-		return (char *)(s + i);
+	if (arg_s[i] == '\0' && c == '\0')
+		return (char *)(str + i);
 	return (NULL);
 }
 
