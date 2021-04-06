@@ -30,13 +30,48 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
+// int main(int argc, char *argv[])
+// {
+// 	char	*arg1;
+// 	char	*arg2;
+// 	int		i;
+// 	int		j;
+// 	int		flag;
+
+// 	if (argc == 3)
+// 	{
+// 		arg1 = argv[1];
+// 		arg2 = argv[2];
+// 		i = 0;
+// 		while (arg1[i])
+// 		{
+// 			if (ft_strchr(arg2, arg1[i]))
+// 			{
+// 				j = i;
+// 				flag = 1;
+// 				while (j > 0)
+// 				{
+// 					if (arg1[j - 1] == arg1[i])
+// 						flag = 0;
+// 					j--;
+// 				}
+// 				if (flag == 1)
+// 					write(1, &arg1[i], 1);
+// 			}
+// 			i++;
+// 		}
+// 	}
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
+
 int main(int argc, char *argv[])
 {
-	char	*arg1;
-	char	*arg2;
-	int		i;
-	int		j;
-	int		flag;
+	int	i;
+	int j;
+	int flag;
+	char *arg1;
+	char *arg2;
 
 	if (argc == 3)
 	{
@@ -45,19 +80,20 @@ int main(int argc, char *argv[])
 		i = 0;
 		while (arg1[i])
 		{
-			if (ft_strchr(arg2, arg1[i]))
+			flag = 0;
+			if (ft_strchr(arg2, arg1[i]) != NULL)
 			{
-				j = i;
 				flag = 1;
+				j = i - 1;
 				while (j > 0)
 				{
-					if (arg1[j - 1] == arg1[i])
+					if (arg1[j] == arg1[i])
 						flag = 0;
 					j--;
 				}
-				if (flag == 1)
-					write(1, &arg1[i], 1);
 			}
+			if (flag == 1)
+				write(1, &arg1[i], 1);
 			i++;
 		}
 	}
