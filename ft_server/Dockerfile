@@ -5,6 +5,5 @@ RUN apt-get update && apt-get install -y \
     php \
     php-fpm
     
-# CMD nginx -g 'daemon off;'
-# CMD /etc/init.d/mysql start
+COPY ./srcs/docker_init.sh ./root
 CMD /bin/bash docker_init.sh
