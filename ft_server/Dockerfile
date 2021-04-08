@@ -5,5 +5,6 @@ RUN apt-get update && apt-get install -y \
     php \
     php-fpm
     
-COPY ./srcs/docker_init.sh ./root
+COPY /srcs/docker_init.sh /docker_init.sh
+RUN chmod 744 /docker_init.sh
 CMD /bin/bash docker_init.sh
