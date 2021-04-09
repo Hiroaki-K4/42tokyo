@@ -3,7 +3,8 @@ RUN apt-get update && apt-get install -y \
     nginx \
     mariadb-server \
     php \
-    php-fpm
+    php-fpm \
+    wget
     
 COPY /srcs/container_init.sh /container_init.sh
 RUN chmod 744 /container_init.sh
