@@ -1,1 +1,3 @@
 # ft_server
+
+- [About Web server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server)
