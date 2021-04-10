@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     mariadb-server \
     php \
     php-fpm \
+    php-mysql \
     wget
     
 COPY /srcs/container_init.sh /container_init.sh
