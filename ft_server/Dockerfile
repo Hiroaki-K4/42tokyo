@@ -5,7 +5,9 @@ RUN apt-get update && apt-get install -y \
     php \
     php-fpm \
     php-mysql \
-    wget
+    wget \
+    vim \
+    curl
     
 COPY /srcs/container_init.sh /container_init.sh
 RUN chmod 744 /container_init.sh
