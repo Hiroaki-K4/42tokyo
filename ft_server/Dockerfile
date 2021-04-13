@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     php \
     php-fpm \
     php-mysql \
+    php-mbstring \
     wget \
     vim \
     curl \
@@ -12,8 +13,10 @@ RUN apt-get update && apt-get install -y \
     
 # Setup nginx
 COPY /srcs/nginx.conf /etc/nginx/sites-available/nginx.conf
-RUN ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
-RUN rm -rf /etc/nginx/sites-enabled/default
+RUN cp /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-available/default
+# RUN ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
+# RUN rm -rf /etc/nginx/sites-enabled/default
+
 # Setup phpmyadmin
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz && \
     tar -xzvf phpMyAdmin-5.0.2-english.tar.gz && \
