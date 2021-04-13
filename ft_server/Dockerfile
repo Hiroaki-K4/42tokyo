@@ -31,6 +31,7 @@ RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v
     mv localhost-key.pem localhost.pem /etc/nginx/ssl
 
 RUN chown -R www-data:www-data /var/www/html/*
+EXPOSE 80 443
 
 COPY /srcs/container_init.sh /container_init.sh
 RUN chmod 744 /container_init.sh

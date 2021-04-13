@@ -62,6 +62,6 @@ RUN	chown -R www-data:www-data /var/www/html/*
 COPY srcs/*.sh ./
 
 # Ports that needs to be exposed at run time with -p [host port]:[container port]
-# EXPOSE 80 443
+EXPOSE 80 443
 
 CMD bash start.sh
