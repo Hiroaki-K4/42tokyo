@@ -14,8 +14,13 @@ RUN apt-get update && apt-get install -y \
 ENV AUTO_INDEX="on"
 
 # Setup nginx
-COPY /srcs/nginx.conf /etc/nginx/sites-available/nginx.conf
-RUN cp /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-available/default
+COPY srcs/nginx.conf /etc/nginx/sites-available/nginx.conf
+COPY srcs/nginx_index_off.conf /etc/nginx/sites-available/nginx_index_off.conf
+COPY srcs/*.sh /
+# COPY srcs/database_init.sh database_init.sh
+RUN rm /var/www/html/index.nginx-debian.html && chmod 744 nginx.sh
+# CMD /bin/bash nginx.sh
+# RUN cp /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-available/default
 # RUN ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
 # RUN rm -rf /etc/nginx/sites-enabled/default
 
@@ -41,6 +46,7 @@ RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v
 RUN chown www-data:www-data /var/www/html/phpmyadmin && chown www-data:www-data /var/www/html/wordpress
 EXPOSE 80 443
 
-COPY /srcs/container_init.sh /container_init.sh
-RUN chmod 744 /container_init.sh
+# COPY srcs/database_init.sh database_init.sh
+# RUN chmod 744 database_init.sh
+RUN chmod 744 container_init.sh
 CMD /bin/bash container_init.sh
