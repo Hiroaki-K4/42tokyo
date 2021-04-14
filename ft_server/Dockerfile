@@ -24,13 +24,19 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.
     rm -rf phpMyAdmin-5.0.2-english.tar.gz
 COPY srcs/config.inc.php /var/www/html/phpmyadmin
 
+# Setup wordpress
+RUN wget https://wordpress.org/latest.tar.gz && \
+    tar -xvzf latest.tar.gz && rm -rf latest.tar.gz && \
+    mv wordpress /var/www/html
+COPY srcs/wp-config.php /var/www/html/wordpress
+
 # Setup SSL
 RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 && \
     mv mkcert-v1.4.3-linux-amd64 mkcert && chmod +x mkcert && \
     ./mkcert -install && ./mkcert localhost && mkdir /etc/nginx/ssl && \
     mv localhost-key.pem localhost.pem /etc/nginx/ssl
 
-RUN chown -R www-data:www-data /var/www/html/*
+RUN chown www-data:www-data /var/www/html/phpmyadmin && chown www-data:www-data /var/www/html/wordpress
 EXPOSE 80 443
 
 COPY /srcs/container_init.sh /container_init.sh
