@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     git
     
+ENV AUTO_INDEX="on"
+
 # Setup nginx
 COPY /srcs/nginx.conf /etc/nginx/sites-available/nginx.conf
 RUN cp /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-available/default
