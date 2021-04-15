@@ -1,5 +1,5 @@
 # ft_server
-
+## About ft_server
 **Nginx**
 - [About Web server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server)
 - [Beginners Guide](http://nginx.org/en/docs/beginners_guide.html)
