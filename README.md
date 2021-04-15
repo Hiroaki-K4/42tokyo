@@ -6,7 +6,7 @@
 **Level 1**
 - netwhat
 - [get_next_line](https://github.com/Hiroaki-K4/42tokyo/tree/main/gnl)
-- [ft_printf]()
+- [ft_printf](https://github.com/Hiroaki-K4/42tokyo/tree/main/printf)
 
 **Level 2**
 - [exam_02]()
