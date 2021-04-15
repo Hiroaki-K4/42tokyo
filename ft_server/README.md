@@ -10,6 +10,7 @@ and a SQL database.
 - [Setup nginx, mariaDB and php](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)
 
 ## How to run
+**Build docker image**
 ```
-cd ft_server
+docker build -t ft_server.
 ```
