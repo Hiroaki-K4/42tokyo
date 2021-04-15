@@ -22,3 +22,11 @@ docker build -t ft_server.
 ```
 docker run --name ft_server -d -p 443:443 -p 8080:80 ft_server
 ```
+**Turn off autoindex**
+```
+docker run --env AUTO_INDEX="off" --name ft_server -d -p 443:443 -p 8080:80 ft_server
+```
+**Enter container**
+```
+docker exec -it container_id /bin/bash
+```
