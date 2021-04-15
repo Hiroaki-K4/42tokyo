@@ -18,34 +18,40 @@ and a SQL database.
 ```
 docker build -t ft_server.
 ```
+
 **Run docker container**
 ```
 docker run --name ft_server -d -p 443:443 -p 8080:80 ft_server
 ```
+
 **Turn off autoindex**
 ```
 docker run --env AUTO_INDEX="off" --name ft_server -d -p 443:443 -p 8080:80 ft_server
 ```
-![Screenshot from 2021-04-15 18-11-06](https://user-images.githubusercontent.com/51109408/114844827-227cb780-9e16-11eb-89d9-efe16e6ca92a.png)
 
 **Enter container**
 ```
 docker exec -it container_id /bin/bash
 ```
+
 **Access home URL**
 ```
 http://localhost:8080
 ```
+![Screenshot from 2021-04-15 18-11-06](https://user-images.githubusercontent.com/51109408/114844911-388a7800-9e16-11eb-8394-46ed29c9fae0.png)
+
 
 **Access phpmyadmin URL**
 ```
 http://localhost:8080/phpmyadmin
 ```
+![Screenshot from 2021-04-15 18-11-28](https://user-images.githubusercontent.com/51109408/114844990-4fc96580-9e16-11eb-9cb0-afbe1e716361.png)
 
 **Access wordpress URL**
 ```
 http://localhost:8080/wordpress
 ```
+![Screenshot from 2021-04-15 18-11-49](https://user-images.githubusercontent.com/51109408/114845027-56f07380-9e16-11eb-95d8-9deb99276b5d.png)
 
 **Use the SSL protcol**
 ```
