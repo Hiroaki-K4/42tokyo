@@ -30,3 +30,5 @@ docker run --env AUTO_INDEX="off" --name ft_server -d -p 443:443 -p 8080:80 ft_s
 ```
 docker exec -it container_id /bin/bash
 ```
+**Access application URLs**
+http://localhost:8080
