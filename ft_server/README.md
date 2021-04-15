@@ -26,6 +26,8 @@ docker run --name ft_server -d -p 443:443 -p 8080:80 ft_server
 ```
 docker run --env AUTO_INDEX="off" --name ft_server -d -p 443:443 -p 8080:80 ft_server
 ```
+![Screenshot from 2021-04-15 18-11-06](https://user-images.githubusercontent.com/51109408/114844827-227cb780-9e16-11eb-89d9-efe16e6ca92a.png)
+
 **Enter container**
 ```
 docker exec -it container_id /bin/bash
