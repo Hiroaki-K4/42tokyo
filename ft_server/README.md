@@ -30,5 +30,22 @@ docker run --env AUTO_INDEX="off" --name ft_server -d -p 443:443 -p 8080:80 ft_s
 ```
 docker exec -it container_id /bin/bash
 ```
-**Access application URLs**
+**Access home URL**
+```
 http://localhost:8080
+```
+
+**Access phpmyadmin URL**
+```
+http://localhost:8080/phpmyadmin
+```
+
+**Access wordpress URL**
+```
+http://localhost:8080/wordpress
+```
+
+**Use the SSL protcol**
+```
+https://localhost:8080
+```
