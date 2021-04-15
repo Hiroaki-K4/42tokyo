@@ -1,4 +1,4 @@
-# What is 42tokyo?
+## What is 42tokyo?
 
 **Level 0**
 - [libft](https://github.com/Hiroaki-K4/42tokyo/tree/main/libft)
