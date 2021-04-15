@@ -4,6 +4,10 @@ We provide engineer education around the world, including Silicon Valley, with t
 We are producing many engineers who are active in society with new systems such as facilities that can be used 24 hours a day, peer learning that overcomes problems between students, and completely free tuition fees.
 [42tokyo official site](https://42tokyo.jp/)
 
+## About this repository
+This repository contains the code I wrote when solving the problems of 42tokyo.
+
+## My source code
 **Level 0**
 - [libft](https://github.com/Hiroaki-K4/42tokyo/tree/main/libft)
 
