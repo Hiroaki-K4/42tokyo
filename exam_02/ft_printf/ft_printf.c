@@ -49,38 +49,28 @@ int		output_per(va_list *ap, t_plist flag_list)
 
 	i = 0;
 	if (flag_list.format == 0)
-		i = print_char(ap, flag_list, 0);
-	else if (flag_list.format == 1)
 		i = print_string(ap, flag_list);
-	else if (flag_list.format == 2)
-		i = print_pointer(ap, flag_list, 0, 0);
-	else if (flag_list.format == 3 || flag_list.format == 4)
+	else if (flag_list.format == 1)
 		i = print_int(ap, flag_list);
-	else if (flag_list.format == 5)
-		i = print_unsigned_int(ap, flag_list);
-	else if (flag_list.format == 6 || flag_list.format == 7)
+	else if (flag_list.format == 2)
 		i = print_hex(ap, flag_list, 0);
-	else if (flag_list.format == 8)
-		i = print_percent(flag_list, 0, 0);
 	return (i);
 }
 
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
-	// int		j;
 	int		k;
 	t_plist	flag_list;
 
 	(*i)++;
 	flag_list = init_plist();
-	// j = 0;
 	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
 	if (arg[*i] == '.')
 	{
 		(*i)++;
 		flag_list.precision = str_to_num_pre(&arg[*i], i, ap, 0);
 	}
-	flag_list.format = ft_strchr_place("sdx%", arg[*i], i);
+	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	k = output_per(ap, flag_list);
 	return (k);
 }
