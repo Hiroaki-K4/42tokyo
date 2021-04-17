@@ -73,7 +73,7 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 
 	(*i)++;
 	flag_list = init_plist();
-	j = 0;
+	// j = 0;
 	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
 	if (arg[*i] == '.')
 	{
