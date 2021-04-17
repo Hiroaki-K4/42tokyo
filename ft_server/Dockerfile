@@ -6,7 +6,7 @@
 #    By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/15 21:15:45 by hkubo             #+#    #+#              #
-#    Updated: 2021/04/17 22:18:53 by hkubo            ###   ########.fr        #
+#    Updated: 2021/04/17 22:20:08 by hkubo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     php-fpm \
     php-mysql \
     php-mbstring \
-    wget \
+    wget
     
 ENV AUTO_INDEX="on"
 
