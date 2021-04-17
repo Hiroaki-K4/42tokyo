@@ -25,20 +25,12 @@ from a binary file. However, if you wish, you can make this behavior coherent.
 
 <br>
 
-# How to build
-Build the files.
+# How to run
+Compile the program. test.c is your program. Please write #include "get_next_line.h"
 ```
-make
+gcc -Wall -Wextra -Werror -D BUFFER_SIZE=32 get_next_line.c get_next_line_utils.c test.c
 ```
-Rebuild
+Run the program. sample.txt is your text file.
 ```
-make re
-```
-Clean .o files
-```
-make clean
-```
-Clean all files
-```
-make fclean
+./a.out sample.txt
 ```
