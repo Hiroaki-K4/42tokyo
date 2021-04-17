@@ -9,7 +9,6 @@ with your own. Take the time to expand your libft throughout the year.
 <br>
 
 # How to build
-**Build docker image**
 Build the files.
 ```
 make

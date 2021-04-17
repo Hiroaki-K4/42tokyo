@@ -26,3 +26,19 @@ from a binary file. However, if you wish, you can make this behavior coherent.
 <br>
 
 # How to build
+Build the files.
+```
+make
+```
+Rebuild
+```
+make re
+```
+Clean .o files
+```
+make clean
+```
+Clean all files
+```
+make fclean
+```
