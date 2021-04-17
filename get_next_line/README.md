@@ -22,7 +22,6 @@ the first fd.
 from a binary file. However, if you wish, you can make this behavior coherent.
 - Global variables are forbidden.
 
-
 <br>
 
 # How to run
