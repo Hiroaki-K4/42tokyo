@@ -62,7 +62,7 @@ int		output_per(va_list *ap, t_plist flag_list)
 		i = print_hex(ap, flag_list, 0);
 	else if (flag_list.format == 8)
 		i = print_percent(flag_list, 0, 0);
-	return (i);
+	return (i)
 }
 
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
