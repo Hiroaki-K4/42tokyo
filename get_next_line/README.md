@@ -25,12 +25,4 @@ from a binary file. However, if you wish, you can make this behavior coherent.
 
 <br>
 
-# About this repository
-This repository contains the code I wrote when solving the problems of 42tokyo.
-
-<br>
-
-# 
-**Level 0**
-- [libft](https://github.com/Hiroaki-K4/42tokyo/tree/main/libft)
-
+# How to build
