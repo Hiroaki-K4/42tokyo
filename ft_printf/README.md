@@ -11,5 +11,30 @@ is forbidden.
 
 <br>
 
-# About this repository
-This repository contains the code I wrote when solving the problems of 42tokyo.
+# How to build
+Build the files.
+```
+make
+```
+Rebuild
+```
+make re
+```
+Clean .o files
+```
+make clean
+```
+Clean all files
+```
+make fclean
+```
+
+# How to run
+main.c is your program. Please write #include "ft_printf.h" in your main.c.
+```
+gcc main.c -L. -lftprintf
+```
+Run the program.
+```
+./a.out
+```
