@@ -14,3 +14,15 @@ Build the files.
 ```
 make
 ```
+Rebuild
+```
+make re
+```
+Clean .o files
+```
+make clean
+```
+Clean all files
+```
+make fclean
+```
