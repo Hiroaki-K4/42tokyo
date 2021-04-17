@@ -28,3 +28,7 @@ make fclean
 ```
 
 # How to run
+sample.c is your program. Please write #include "libft.h".
+```
+gcc sample.c libft.a
+```
