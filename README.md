@@ -1,4 +1,4 @@
-## What is 42tokyo?
+# What is 42tokyo?
 42 Tokyo is an engineer training institution from France.
 We provide engineer education around the world, including Silicon Valley, with the philosophy of "quality education for everyone who wants to take on challenges."
 We are producing many engineers who are active in society with new systems such as facilities that can be used 24 hours a day, peer learning that overcomes problems between students, and completely free tuition fees.
@@ -6,12 +6,12 @@ We are producing many engineers who are active in society with new systems such 
 
 <br>
 
-## About this repository
+# About this repository
 This repository contains the code I wrote when solving the problems of 42tokyo.
 
 <br>
 
-## My source code
+# My source code
 **Level 0**
 - [libft](https://github.com/Hiroaki-K4/42tokyo/tree/main/libft)
 
