@@ -70,8 +70,6 @@ t_plist	init_plist(void)
 {
 	t_plist	flag_list;
 
-	flag_list.flag[0] = -1;
-	flag_list.flag[1] = -1;
 	flag_list.field = -1;
 	flag_list.precision = -1;
 	flag_list.format = -1;

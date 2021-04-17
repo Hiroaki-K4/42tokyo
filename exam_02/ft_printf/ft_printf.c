@@ -74,15 +74,13 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	(*i)++;
 	flag_list = init_plist();
 	j = 0;
-	while ((j = ft_strchr_place("-0", arg[*i], i)) >= 0)
-		flag_list.flag[j] = 1;
 	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
 	if (arg[*i] == '.')
 	{
 		(*i)++;
 		flag_list.precision = str_to_num_pre(&arg[*i], i, ap, 0);
 	}
-	flag_list.format = ft_strchr_place("cspdiuxX%", arg[*i], i);
+	flag_list.format = ft_strchr_place("sdx%", arg[*i], i);
 	k = output_per(ap, flag_list);
 	return (k);
 }
