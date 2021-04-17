@@ -67,7 +67,7 @@ int		output_per(va_list *ap, t_plist flag_list)
 
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
-	int		j;
+	// int		j;
 	int		k;
 	t_plist	flag_list;
 
