@@ -6,7 +6,7 @@
 #    By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/15 21:15:45 by hkubo             #+#    #+#              #
-#    Updated: 2021/04/15 23:02:08 by hkubo            ###   ########.fr        #
+#    Updated: 2021/04/17 16:22:31 by hkubo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,7 @@ RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v
     ./mkcert -install && ./mkcert localhost && mkdir /etc/nginx/ssl && \
     mv localhost-key.pem localhost.pem /etc/nginx/ssl
 
-RUN chown www-data:www-data /var/www/html/phpmyadmin && chmod 744 /var/www/html/phpmyadmin && \
-    chown www-data:www-data /var/www/html/wordpress && chmod 744 /var/www/html/wordpress
+RUN chown -R www-data:www-data /var/www/html/* && chmod -R 744 /var/www/html/*
 EXPOSE 80 443
-
 RUN chmod 744 container_init.sh
 CMD /bin/bash container_init.sh
