@@ -29,7 +29,7 @@ int main(void)
 	F("");
 	F("--Format---");
 	F("\n");
-    ft_printf("%d\n", 0);
+    // ft_printf("%d\n", 0);
 	F("%d", 0);
 	F("%d", 42);
 	F("%d", 1);
