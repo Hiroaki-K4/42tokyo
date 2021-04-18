@@ -47,10 +47,10 @@ int main(void)
 	F("%x", (int)2147483648);
 	F("%x", (int)-2147483648);
 	F("%x", (int)-2147483649);
-	// F("%s", "");
-	// F("%s", "toto");
-	// F("%s", "wiurwuyrhwrywuier");
-	// F("%s", NULL);
+	F("%s", "");
+	F("%s", "toto");
+	F("%s", "wiurwuyrhwrywuier");
+	F("%s", NULL);
 	// F("-%s-%s-%s-%s-\n", "", "toto", "wiurwuyrhwrywuier", NULL);
 	// F("\n--Mixed---\n");
 	// F("%d%x%d%x%d%x%d%x\n", 0, 0, 42, 42, 2147483647, 2147483647, (int)-2147483648, (int)-2147483648);
