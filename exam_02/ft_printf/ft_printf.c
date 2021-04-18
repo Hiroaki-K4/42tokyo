@@ -184,6 +184,36 @@ int	print_string(va_list *ap, t_plist flag_list)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+int	print_int(va_list *ap, t_plist flag_list)
+{
+	int		num;
+	int		len;
+	int		keta;
+	char	*str_num;
+
+	len = 0;
+	num = va_arg(*ap, int);
+	if (!(str_num = ft_itoa(num)))
+		return (-1);
+	keta = ft_strlen(str_num);
+	if (flag_list.flag[1] == 1 && flag_list.precision != -1)
+		flag_list.flag[1] = 0;
+	if (num < 0)
+		keta--;
+	if (flag_list.precision == 0 && num == 0)
+	{
+		free(str_num);
+		return (pre_arg_zero(flag_list));
+	}
+	len = print_int_len(flag_list, str_num, keta, num);
+	free(str_num);
+	return (len);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 int		output_per(va_list *ap, t_plist flag_list)
 {
 	int	i;
