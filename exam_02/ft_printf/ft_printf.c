@@ -201,6 +201,27 @@ static	int		digit_size(int number)
 	return (count);
 }
 
+char	*ft_strdup(const char *s)
+{
+	char	*new_ptr;
+	int		i;
+	int		size;
+
+	size = 0;
+	while (s[size] != '\0')
+		size++;
+	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		new_ptr[i] = s[i];
+		i++;
+	}
+	new_ptr[i] = '\0';
+	return (new_ptr);
+}
+
 char			*ft_itoa(int n)
 {
 	int		len;
