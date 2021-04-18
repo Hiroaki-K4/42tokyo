@@ -252,6 +252,22 @@ char			*ft_itoa(int n)
 	return (ans);
 }
 
+int	pre_arg_zero(t_plist flag_list)
+{
+	int i;
+
+	i = 0;
+	if (flag_list.field != -1)
+	{
+		while (flag_list.field - i > 0)
+		{
+			write(1, " ", 1);
+			i++;
+		}
+	}
+	return (i);
+}
+
 int	print_int(va_list *ap, t_plist flag_list)
 {
 	int		num;
