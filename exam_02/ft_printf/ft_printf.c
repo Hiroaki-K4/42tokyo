@@ -10,7 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
+// # include <stdint.h>
+
+typedef	struct
+{
+	int flag[2];
+	int field;
+	int precision;
+	int format;
+}		t_plist;
+
+size_t		ft_strlen(const char *str)
+{
+	size_t	count;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
+}
 
 int		ft_printf_str(const char *arg, int *i)
 {
@@ -43,6 +64,8 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 int	field_flag_str(char *str, t_plist flag_list, int len)
 {
 	int i;
@@ -67,6 +90,33 @@ int	field_flag_str(char *str, t_plist flag_list, int len)
 			write(1, " ", 1);
 			i++;
 		}
+		len = (int)ft_strlen(str) + i;
+	}
+	return (len);
+}
+
+int	no_precision(char *str, t_plist flag_list, int i, int len)
+{
+	if (flag_list.flag[1] == 1)
+	{
+		i = 0;
+		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+		{
+			write(1, "0", 1);
+			i++;
+		}
+		write(1, str, ft_strlen(str));
+		len = (int)ft_strlen(str) + i;
+	}
+	else
+	{
+		i = 0;
+		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+		{
+			write(1, " ", 1);
+			i++;
+		}
+		write(1, str, ft_strlen(str));
 		len = (int)ft_strlen(str) + i;
 	}
 	return (len);
@@ -131,6 +181,8 @@ int	print_string(va_list *ap, t_plist flag_list)
 		len = no_field_str(str, flag_list);
 	return (len);
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 int		output_per(va_list *ap, t_plist flag_list)
 {
