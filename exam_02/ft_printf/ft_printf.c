@@ -326,6 +326,22 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 	return (flag_list.field);
 }
 
+int	field_no_precision(int num, char *str, t_plist flag_list, int i)
+{
+	if (flag_list.flag[0] == 1)
+	{
+		write(1, str, ft_strlen(str));
+		while ((flag_list.field - (int)ft_strlen(str) - (i++)) > 0)
+			write(1, " ", 1);
+	}
+	else
+	{
+		if (field_no_precision_sub(num, str, flag_list, i) == -1)
+			return (-1);
+	}
+	return (flag_list.field);
+}
+
 int		print_int_len(t_plist flag_list, char *str_num, int keta, int num)
 {
 	int len;
