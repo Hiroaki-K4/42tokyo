@@ -28,6 +28,7 @@ int main(void)
 	F("Simple test\n");
 	F("");
 	F("--Format---");
+    ft_printf("aaa\n");
 	F("\n");
 	F("%d", 0);
 	F("%d", 42);
