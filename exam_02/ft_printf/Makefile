@@ -33,7 +33,7 @@ bonus: $(OBJS) $(OBJSBONUS)
 		$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJSBONUS)
 
 clean:
-	make clean -C $(LIBFT)
+	# make clean -C $(LIBFT)
 	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean

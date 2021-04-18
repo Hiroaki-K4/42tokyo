@@ -57,6 +57,60 @@ int		output_per(va_list *ap, t_plist flag_list)
 	return (i);
 }
 
+int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
+{
+	int	num;
+	int	j;
+
+	if (*arg == '*')
+	{
+		num = va_arg(*ap, int);
+		if (num < 0)
+		{
+			f_list->flag[0] = 1;
+			num *= -1;
+		}
+		(*i)++;
+		return (num);
+	}
+	j = ft_atoi(arg);
+	if (j > 0)
+	{
+		num = j;
+		j = 0;
+		while (ft_isdigit(arg[j++]))
+			(*i)++;
+	}
+	else
+		num = -1;
+	return (num);
+}
+
+int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
+{
+	int	num;
+
+	if (*arg == '*')
+	{
+		num = va_arg(*ap, int);
+		if (num < 0)
+			num = -1;
+		(*i)++;
+		return (num);
+	}
+	if (ft_isdigit(arg[0]) == 0)
+		return (0);
+	num = ft_atoi(arg);
+	if (num >= 0)
+	{
+		while (ft_isdigit(arg[k++]))
+			(*i)++;
+	}
+	else
+		num = -1;
+	return (num);
+}
+
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int		k;
