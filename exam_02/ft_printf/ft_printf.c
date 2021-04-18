@@ -508,6 +508,22 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
+int	get_hex_len(t_plist flag_list, unsigned int num, char *str_num)
+{
+	int len;
+
+	if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > (int)ft_strlen(str_num))
+			len = field_precision(num, str_num, flag_list, 0);
+		else
+			len = field_no_precision(num, str_num, flag_list, 0);
+	}
+	else
+		len = no_field_int(num, str_num, flag_list, 0);
+	return (len);
+}
+
 int	print_hex(va_list *ap, t_plist flag_list, int len)
 {
 	unsigned	int	num;
