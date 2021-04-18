@@ -371,6 +371,22 @@ int	field_no_precision(int num, char *str, t_plist flag_list, int i)
 	return (flag_list.field);
 }
 
+int		no_field_int_sub(t_plist flag_list, int num, int digit)
+{
+	int		len;
+	char	*tmp;
+
+	if (!(tmp = ft_itoa(num * (-1))))
+		return (-1);
+	write(1, "-", 1);
+	len = flag_list.precision + 1;
+	while (flag_list.precision - (digit++) > 0)
+		write(1, "0", 1);
+	write(1, tmp, ft_strlen(tmp));
+	free(tmp);
+	return (len);
+}
+
 int	no_field_int(int num, char *str, t_plist flag_list, int len)
 {
 	int		digit;
