@@ -15,7 +15,7 @@
 int ft_printf(char const *format, ...);
 
 #ifndef REAL
-# define F	r += ft_printf
+# define F	r += printf
 #else
 # define F	r += printf
 #endif
