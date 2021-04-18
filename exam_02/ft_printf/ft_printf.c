@@ -460,6 +460,34 @@ int	print_int(va_list *ap, t_plist flag_list)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+char			*ft_itoa_hex(unsigned int n, char *arg)
+{
+	int				len;
+	unsigned int	i;
+	unsigned int	j;
+	char			*ans;
+
+	len = get_len(n);
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ans[len] = '\0';
+	i = n;
+	len--;
+	if (i == 0)
+	{
+		ans[0] = '0';
+		return (ans);
+	}
+	while (i > 0)
+	{
+		j = i % 16;
+		ans[len] = arg[j];
+		i = i / 16;
+		len--;
+	}
+	return (ans);
+}
+
 int	print_hex(va_list *ap, t_plist flag_list, int len)
 {
 	unsigned	int	num;
