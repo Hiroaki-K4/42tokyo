@@ -14,4 +14,4 @@ gcc -Wall -Werror -Wextra ft_printf.c main.c -o ft_printf
 # rm -rf yy y r ft_printf printf
 cd ../../
 sh git.sh
-cd exam_02/printf
+cd exam_02/ft_printf
