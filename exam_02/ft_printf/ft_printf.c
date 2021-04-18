@@ -43,6 +43,74 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
+int	field_flag_str(char *str, t_plist flag_list, int len)
+{
+	int i;
+
+	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+	{
+		write(1, str, flag_list.precision);
+		i = flag_list.precision;
+		while (flag_list.field - i > 0)
+		{
+			write(1, " ", 1);
+			i++;
+		}
+		len = i;
+	}
+	else
+	{
+		write(1, str, ft_strlen(str));
+		i = 0;
+		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+		{
+			write(1, " ", 1);
+			i++;
+		}
+		len = (int)ft_strlen(str) + i;
+	}
+	return (len);
+}
+
+int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
+{
+	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+	{
+		i = flag_list.precision;
+		while ((flag_list.field - i) > 0)
+		{
+			write(1, " ", 1);
+			i++;
+		}
+		write(1, str, flag_list.precision);
+		len = i;
+	}
+	else
+		len = no_precision(str, flag_list, i, len);
+	return (len);
+}
+
+int	no_field_str(char *str, t_plist flag_list)
+{
+	int len;
+
+	len = 0;
+	if (flag_list.precision != -1)
+	{
+		while (len < flag_list.precision && str[len])
+		{
+			write(1, &str[len], 1);
+			len++;
+		}
+	}
+	else
+	{
+		write(1, str, ft_strlen(str));
+		len = ft_strlen(str);
+	}
+	return (len);
+}
+
 int	print_string(va_list *ap, t_plist flag_list)
 {
 	int		len;
