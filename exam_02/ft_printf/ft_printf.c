@@ -268,6 +268,35 @@ int	pre_arg_zero(t_plist flag_list)
 	return (i);
 }
 
+char	*field_precision_sub(int num, char *str, t_plist flag_list, int i)
+{
+	int		j;
+	char	*tmp;
+
+	if (num < 0)
+	{
+		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
+			return (NULL);
+		tmp[0] = '-';
+		i = 1;
+		while ((flag_list.precision + 2 - (int)ft_strlen(str) - i) > 0)
+			tmp[i++] = '0';
+		j = 1;
+	}
+	else
+	{
+		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+			return (NULL);
+		while ((flag_list.precision - (int)ft_strlen(str) - i) > 0)
+			tmp[i++] = '0';
+		j = 0;
+	}
+	while ((ft_strlen(str) - j) > 0)
+		tmp[i++] = str[j++];
+	tmp[i] = '\0';
+	return (tmp);
+}
+
 int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
 	char	*tmp;
