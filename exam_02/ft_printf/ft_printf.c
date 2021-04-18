@@ -43,6 +43,27 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
+int	print_string(va_list *ap, t_plist flag_list)
+{
+	int		len;
+	char	*str;
+
+	len = 0;
+	str = va_arg(*ap, char*);
+	if (str == NULL)
+		str = "(null)";
+	if (flag_list.field != -1)
+	{
+		if (flag_list.flag[0] == 1)
+			len = field_flag_str(str, flag_list, 0);
+		else
+			len = field_no_flag_str(str, flag_list, 0, 0);
+	}
+	else
+		len = no_field_str(str, flag_list);
+	return (len);
+}
+
 int		output_per(va_list *ap, t_plist flag_list)
 {
 	int	i;
