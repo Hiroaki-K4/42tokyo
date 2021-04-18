@@ -28,8 +28,8 @@ int main(void)
 	F("Simple test\n");
 	F("");
 	F("--Format---");
-    ft_printf("aaa\n");
 	F("\n");
+    ft_printf("%d", 0);
 	F("%d", 0);
 	F("%d", 42);
 	F("%d", 1);
