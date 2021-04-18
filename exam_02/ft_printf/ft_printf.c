@@ -593,6 +593,14 @@ int		ft_atoi(const char *nptr)
 	return (ans);
 }
 
+int		ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
+
 int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
 {
 	int	num;
