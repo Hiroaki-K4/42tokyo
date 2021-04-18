@@ -111,6 +111,16 @@ int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
 	return (num);
 }
 
+t_plist	init_plist(void)
+{
+	t_plist	flag_list;
+
+	flag_list.field = -1;
+	flag_list.precision = -1;
+	flag_list.format = -1;
+	return (flag_list);
+}
+
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int		k;
