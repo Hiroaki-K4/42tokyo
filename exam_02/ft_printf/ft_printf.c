@@ -458,6 +458,36 @@ int	print_int(va_list *ap, t_plist flag_list)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+int	print_hex(va_list *ap, t_plist flag_list, int len)
+{
+	unsigned	int	num;
+	char			*str_num;
+
+	num = va_arg(*ap, unsigned int);
+	if (flag_list.format == 6)
+		str_num = ft_itoa_hex(num, "0123456789abcdef");
+	else
+		str_num = ft_itoa_hex(num, "0123456789ABCDEF");
+	if (!(str_num))
+		return (-1);
+	if ((int)num < 0)
+		num *= -1;
+	if (flag_list.flag[1] == 1 && flag_list.precision != -1)
+		flag_list.flag[1] = 0;
+	if (flag_list.precision == 0 && num == 0)
+	{
+		free(str_num);
+		return (pre_arg_zero(flag_list));
+	}
+	len = get_hex_len(flag_list, num, str_num);
+	free(str_num);
+	return (len);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 int		output_per(va_list *ap, t_plist flag_list)
 {
 	int	i;
