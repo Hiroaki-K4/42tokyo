@@ -530,10 +530,7 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 	char			*str_num;
 
 	num = va_arg(*ap, unsigned int);
-	if (flag_list.format == 6)
-		str_num = ft_itoa_hex(num, "0123456789abcdef");
-	else
-		str_num = ft_itoa_hex(num, "0123456789ABCDEF");
+	str_num = ft_itoa_hex(num, "0123456789abcdef");
 	if (!(str_num))
 		return (-1);
 	if ((int)num < 0)
