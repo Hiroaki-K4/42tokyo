@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:30:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:33:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -617,32 +617,15 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 	return (num);
 }
 
-// int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
+// t_plist	init_plist(void)
 // {
-// 	int	num;
+// 	t_plist	flag_list;
 
-// 	if (ft_isdigit(arg[0]) == 0)
-// 		return (0);
-// 	num = ft_atoi(arg);
-// 	if (num >= 0)
-// 	{
-// 		while (ft_isdigit(arg[k++]))
-// 			(*i)++;
-// 	}
-// 	else
-// 		num = -1;
-// 	return (num);
+// 	flag_list.field = -1;
+// 	flag_list.precision = -1;
+// 	flag_list.format = -1;
+// 	return (flag_list);
 // }
-
-t_plist	init_plist(void)
-{
-	t_plist	flag_list;
-
-	flag_list.field = -1;
-	flag_list.precision = -1;
-	flag_list.format = -1;
-	return (flag_list);
-}
 
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
@@ -650,7 +633,10 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	t_plist	flag_list;
 
 	(*i)++;
-	flag_list = init_plist();
+	flag_list.field = -1;
+	flag_list.precision = -1;
+	flag_list.format = -1;
+	// flag_list = init_plist();
 	flag_list.field = str_to_num(&arg[*i], i, ap, 0);
 	if (arg[*i] == '.')
 	{
