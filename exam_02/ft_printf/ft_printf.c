@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:48:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:52:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,6 @@ int		ft_strchr_place(const char *str, int c, int *i)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-int	no_precision(char *str, t_plist flag_list, int i, int len)
-{
-	i = 0;
-	while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-	{
-		write(1, " ", 1);
-		i++;
-	}
-	write(1, str, ft_strlen(str));
-	len = (int)ft_strlen(str) + i;
-	return (len);
-}
-
 int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
 {
 	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
@@ -104,7 +91,6 @@ int	field_no_flag_str(char *str, t_plist flag_list, int i, int len)
 		write(1, str, ft_strlen(str));
 		len = (int)ft_strlen(str) + i;
 	}
-		// len = no_precision(str, flag_list, i, len);
 	return (len);
 }
 
@@ -131,6 +117,7 @@ int	no_field_str(char *str, t_plist flag_list)
 
 int	print_string(va_list *ap, t_plist flag_list)
 {
+	int		i;
 	int		len;
 	char	*str;
 
@@ -139,7 +126,31 @@ int	print_string(va_list *ap, t_plist flag_list)
 	if (str == NULL)
 		str = "(null)";
 	if (flag_list.field != -1)
-		len = field_no_flag_str(str, flag_list, 0, 0);
+	{
+		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+		{
+			i = flag_list.precision;
+			while ((flag_list.field - i) > 0)
+			{
+				write(1, " ", 1);
+				i++;
+			}
+			write(1, str, flag_list.precision);
+			len = i;
+		}
+		else
+		{
+			i = 0;
+			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+			{
+				write(1, " ", 1);
+				i++;
+			}
+			write(1, str, ft_strlen(str));
+			len = (int)ft_strlen(str) + i;
+		}
+	}
+		// len = field_no_flag_str(str, flag_list, 0, 0);
 	else
 		len = no_field_str(str, flag_list);
 	return (len);
