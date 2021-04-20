@@ -4,7 +4,7 @@
 # gcc main.c -L. -lftprintf
 # echo "~~printf test~~ "
 # ./a.out
-gcc -Wall -Werror -Wextra ft_printf.c test.c -o ft_printf
+gcc ft_printf.c test.c -o ft_printf
 ./ft_printf
 # cat yy
 # cat -e yy > y
