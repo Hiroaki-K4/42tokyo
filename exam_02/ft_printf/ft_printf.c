@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:33:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:35:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -549,19 +549,19 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-int		output_per(va_list *ap, t_plist flag_list)
-{
-	int	i;
+// int		output_per(va_list *ap, t_plist flag_list)
+// {
+// 	int	i;
 
-	i = 0;
-	if (flag_list.format == 0)
-		i = print_string(ap, flag_list);
-	else if (flag_list.format == 1)
-		i = print_int(ap, flag_list);
-	else if (flag_list.format == 2)
-		i = print_hex(ap, flag_list, 0);
-	return (i);
-}
+// 	i = 0;
+// 	if (flag_list.format == 0)
+// 		i = print_string(ap, flag_list);
+// 	else if (flag_list.format == 1)
+// 		i = print_int(ap, flag_list);
+// 	else if (flag_list.format == 2)
+// 		i = print_hex(ap, flag_list, 0);
+// 	return (i);
+// }
 
 int		ft_atoi(const char *nptr)
 {
@@ -617,16 +617,6 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 	return (num);
 }
 
-// t_plist	init_plist(void)
-// {
-// 	t_plist	flag_list;
-
-// 	flag_list.field = -1;
-// 	flag_list.precision = -1;
-// 	flag_list.format = -1;
-// 	return (flag_list);
-// }
-
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int		k;
@@ -636,7 +626,6 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	flag_list.field = -1;
 	flag_list.precision = -1;
 	flag_list.format = -1;
-	// flag_list = init_plist();
 	flag_list.field = str_to_num(&arg[*i], i, ap, 0);
 	if (arg[*i] == '.')
 	{
@@ -644,7 +633,13 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
 	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
-	k = output_per(ap, flag_list);
+	if (flag_list.format == 0)
+		k = print_string(ap, flag_list);
+	else if (flag_list.format == 1)
+		k = print_int(ap, flag_list);
+	else if (flag_list.format == 2)
+		k = print_hex(ap, flag_list, 0);
+	// k = output_per(ap, flag_list);
 	return (k);
 }
 
