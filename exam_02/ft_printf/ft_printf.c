@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:45:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:46:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,35 +66,6 @@ int		ft_strchr_place(const char *str, int c, int *i)
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-int	field_flag_str(char *str, t_plist flag_list, int len)
-{
-	int i;
-
-	if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-	{
-		write(1, str, flag_list.precision);
-		i = flag_list.precision;
-		while (flag_list.field - i > 0)
-		{
-			write(1, " ", 1);
-			i++;
-		}
-		len = i;
-	}
-	else
-	{
-		write(1, str, ft_strlen(str));
-		i = 0;
-		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-		{
-			write(1, " ", 1);
-			i++;
-		}
-		len = (int)ft_strlen(str) + i;
-	}
-	return (len);
-}
 
 int	no_precision(char *str, t_plist flag_list, int i, int len)
 {
@@ -172,12 +143,7 @@ int	print_string(va_list *ap, t_plist flag_list)
 	if (str == NULL)
 		str = "(null)";
 	if (flag_list.field != -1)
-	{
-		// if (flag_list.flag[0] == 1)
-		// 	len = field_flag_str(str, flag_list, 0);
-		// else
 		len = field_no_flag_str(str, flag_list, 0, 0);
-	}
 	else
 		len = no_field_str(str, flag_list);
 	return (len);
