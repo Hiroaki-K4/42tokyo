@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:25:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:27:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -604,7 +604,7 @@ int		str_to_num_field(const char *arg, int *i, va_list *ap)
 	int	j;
 
 	num = ft_atoi(arg);
-	if (num > 0)
+	if (num >= 0)
 	{
 		j = 0;
 		while (ft_isdigit(arg[j++]))
@@ -622,7 +622,7 @@ int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
 	if (ft_isdigit(arg[0]) == 0)
 		return (0);
 	num = ft_atoi(arg);
-	if (num > 0)
+	if (num >= 0)
 	{
 		while (ft_isdigit(arg[k++]))
 			(*i)++;
