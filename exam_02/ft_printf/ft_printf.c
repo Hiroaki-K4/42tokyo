@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:06:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:08:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -598,7 +598,7 @@ int		ft_isdigit(int c)
 		return (0);
 }
 
-int		str_to_num_field(const char *arg, int *i, va_list *ap, t_plist *f_list)
+int		str_to_num_field(const char *arg, int *i, va_list *ap)
 {
 	int	num;
 	int	j;
@@ -650,7 +650,7 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 
 	(*i)++;
 	flag_list = init_plist();
-	flag_list.field = str_to_num_field(&arg[*i], i, ap, &flag_list);
+	flag_list.field = str_to_num_field(&arg[*i], i, ap);
 	if (arg[*i] == '.')
 	{
 		(*i)++;
