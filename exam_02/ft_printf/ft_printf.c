@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:46:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:48:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,28 +69,28 @@ int		ft_strchr_place(const char *str, int c, int *i)
 
 int	no_precision(char *str, t_plist flag_list, int i, int len)
 {
-	if (flag_list.flag[1] == 1)
+	// if (flag_list.flag[1] == 1)
+	// {
+	// 	i = 0;
+	// 	while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+	// 	{
+	// 		write(1, "0", 1);
+	// 		i++;
+	// 	}
+	// 	write(1, str, ft_strlen(str));
+	// 	len = (int)ft_strlen(str) + i;
+	// }
+	// else
+	// {
+	i = 0;
+	while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
 	{
-		i = 0;
-		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-		{
-			write(1, "0", 1);
-			i++;
-		}
-		write(1, str, ft_strlen(str));
-		len = (int)ft_strlen(str) + i;
+		write(1, " ", 1);
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-		{
-			write(1, " ", 1);
-			i++;
-		}
-		write(1, str, ft_strlen(str));
-		len = (int)ft_strlen(str) + i;
-	}
+	write(1, str, ft_strlen(str));
+	len = (int)ft_strlen(str) + i;
+	// }
 	return (len);
 }
 
