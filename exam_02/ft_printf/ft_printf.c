@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:27:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:30:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -598,11 +598,13 @@ int		ft_isdigit(int c)
 		return (0);
 }
 
-int		str_to_num_field(const char *arg, int *i, va_list *ap)
+int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
 	int	num;
 	int	j;
 
+	if (ft_isdigit(arg[0]) == 0 && flag == 1)
+		return (0);
 	num = ft_atoi(arg);
 	if (num >= 0)
 	{
@@ -615,22 +617,22 @@ int		str_to_num_field(const char *arg, int *i, va_list *ap)
 	return (num);
 }
 
-int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
-{
-	int	num;
+// int		str_to_num_pre(const char *arg, int *i, va_list *ap, int k)
+// {
+// 	int	num;
 
-	if (ft_isdigit(arg[0]) == 0)
-		return (0);
-	num = ft_atoi(arg);
-	if (num >= 0)
-	{
-		while (ft_isdigit(arg[k++]))
-			(*i)++;
-	}
-	else
-		num = -1;
-	return (num);
-}
+// 	if (ft_isdigit(arg[0]) == 0)
+// 		return (0);
+// 	num = ft_atoi(arg);
+// 	if (num >= 0)
+// 	{
+// 		while (ft_isdigit(arg[k++]))
+// 			(*i)++;
+// 	}
+// 	else
+// 		num = -1;
+// 	return (num);
+// }
 
 t_plist	init_plist(void)
 {
@@ -649,11 +651,11 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 
 	(*i)++;
 	flag_list = init_plist();
-	flag_list.field = str_to_num_field(&arg[*i], i, ap);
+	flag_list.field = str_to_num(&arg[*i], i, ap, 0);
 	if (arg[*i] == '.')
 	{
 		(*i)++;
-		flag_list.precision = str_to_num_pre(&arg[*i], i, ap, 0);
+		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
 	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	k = output_per(ap, flag_list);
