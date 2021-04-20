@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 22:53:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 22:53:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,6 @@ int		ft_strchr_place(const char *str, int c, int *i)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-int	no_field_str(char *str, t_plist flag_list)
-{
-	int len;
-
-	len = 0;
-	if (flag_list.precision != -1)
-	{
-		while (len < flag_list.precision && str[len])
-		{
-			write(1, &str[len], 1);
-			len++;
-		}
-	}
-	else
-	{
-		write(1, str, ft_strlen(str));
-		len = ft_strlen(str);
-	}
-	return (len);
-}
-
 int	print_string(va_list *ap, t_plist flag_list)
 {
 	int		i;
@@ -139,7 +118,6 @@ int	print_string(va_list *ap, t_plist flag_list)
 			len = ft_strlen(str);
 		}
 	}
-		// len = no_field_str(str, flag_list);
 	return (len);
 }
 
