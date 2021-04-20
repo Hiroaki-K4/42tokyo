@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/20 21:40:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/20 21:41:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int ft_printf(char const *format, ...);
 
 #ifndef REAL
-# define F	r += ft_printf
+# define F	r += printf
 #else
 # define F	r += printf
 #endif
