@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:03:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:04:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,10 +236,32 @@ char	*field_precision_sub(int num, char *str, t_plist flag_list, int i)
 
 int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
+	int		j;
 	char	*tmp;
 
-	if (!(tmp = field_precision_sub(num, str, flag_list, 0)))
-		return (-1);
+	// if (!(tmp = field_precision_sub(num, str, flag_list, 0)))
+	// 	return (-1);
+	if (num < 0)
+	{
+		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
+			return (NULL);
+		tmp[0] = '-';
+		i = 1;
+		while ((flag_list.precision + 2 - (int)ft_strlen(str) - i) > 0)
+			tmp[i++] = '0';
+		j = 1;
+	}
+	else
+	{
+		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+			return (NULL);
+		while ((flag_list.precision - (int)ft_strlen(str) - i) > 0)
+			tmp[i++] = '0';
+		j = 0;
+	}
+	while ((ft_strlen(str) - j) > 0)
+		tmp[i++] = str[j++];
+	tmp[i] = '\0';
 	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
 		write(1, " ", 1);
 	write(1, tmp, ft_strlen(tmp));
