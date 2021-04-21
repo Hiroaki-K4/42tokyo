@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:18:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:20:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -345,34 +345,34 @@ int	print_int(va_list *ap, t_plist flag_list)
 	return (print_digit(flag_list, str_num, num, keta));
 	// return (len);
 }
-int	print_hex(va_list *ap, t_plist flag_list, int len)
-{
-	unsigned	int	num;
-	char			*str_num;
+// int	print_hex(va_list *ap, t_plist flag_list, int len)
+// {
+// 	unsigned	int	num;
+// 	char			*str_num;
 
-	num = va_arg(*ap, unsigned int);
-	str_num = ft_itoa_hex(num, "0123456789abcdef");
-	if (!(str_num))
-		return (-1);
-	if ((int)num < 0)
-		num *= -1;
-	if (flag_list.precision == 0 && num == 0)
-	{
-		free(str_num);
-		return (pre_arg_zero(flag_list));
-	}
-	if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > (int)ft_strlen(str_num))
-			len = field_precision(num, str_num, flag_list, 0);
-		else
-			len = field_no_precision(num, str_num, flag_list, 0);
-	}
-	else
-		len = no_field_int(num, str_num, flag_list, 0);
-	free(str_num);
-	return (len);
-}
+// 	num = va_arg(*ap, unsigned int);
+// 	str_num = ft_itoa_hex(num, "0123456789abcdef");
+// 	if (!(str_num))
+// 		return (-1);
+// 	if ((int)num < 0)
+// 		num *= -1;
+// 	if (flag_list.precision == 0 && num == 0)
+// 	{
+// 		free(str_num);
+// 		return (pre_arg_zero(flag_list));
+// 	}
+// 	if (flag_list.field > (int)ft_strlen(str_num))
+// 	{
+// 		if (flag_list.precision > (int)ft_strlen(str_num))
+// 			len = field_precision(num, str_num, flag_list, 0);
+// 		else
+// 			len = field_no_precision(num, str_num, flag_list, 0);
+// 	}
+// 	else
+// 		len = no_field_int(num, str_num, flag_list, 0);
+// 	free(str_num);
+// 	return (len);
+// }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
