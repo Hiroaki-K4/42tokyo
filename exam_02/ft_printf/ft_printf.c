@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:12:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:18:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,20 +290,11 @@ int	no_field_int(int num, char *str, t_plist flag_list, int len)
 	return (len);
 }
 
-int	print_int(va_list *ap, t_plist flag_list)
+int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 {
-	int		num;
-	int		len;
-	int		keta;
-	char	*str_num;
-
+	int len;
+	
 	len = 0;
-	num = va_arg(*ap, int);
-	if (!(str_num = ft_itoa(num)))
-		return (-1);
-	keta = ft_strlen(str_num);
-	if (num < 0)
-		keta--;
 	if (flag_list.precision == 0 && num == 0)
 	{
 		free(str_num);
@@ -312,6 +303,67 @@ int	print_int(va_list *ap, t_plist flag_list)
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
+			len = field_precision(num, str_num, flag_list, 0);
+		else
+			len = field_no_precision(num, str_num, flag_list, 0);
+	}
+	else
+		len = no_field_int(num, str_num, flag_list, 0);
+	free(str_num);
+	return (len);
+}
+
+int	print_int(va_list *ap, t_plist flag_list)
+{
+	int		num;
+	// int		len;
+	int		keta;
+	char	*str_num;
+
+	// len = 0;
+	num = va_arg(*ap, int);
+	if (!(str_num = ft_itoa(num)))
+		return (-1);
+	keta = ft_strlen(str_num);
+	if (num < 0)
+		keta--;
+	// if (flag_list.precision == 0 && num == 0)
+	// {
+	// 	free(str_num);
+	// 	return (pre_arg_zero(flag_list));
+	// }
+	// if (flag_list.field > (int)ft_strlen(str_num))
+	// {
+	// 	if (flag_list.precision > keta)
+	// 		len = field_precision(num, str_num, flag_list, 0);
+	// 	else
+	// 		len = field_no_precision(num, str_num, flag_list, 0);
+	// }
+	// else
+	// 	len = no_field_int(num, str_num, flag_list, 0);
+	// free(str_num);
+	return (print_digit(flag_list, str_num, num, keta));
+	// return (len);
+}
+int	print_hex(va_list *ap, t_plist flag_list, int len)
+{
+	unsigned	int	num;
+	char			*str_num;
+
+	num = va_arg(*ap, unsigned int);
+	str_num = ft_itoa_hex(num, "0123456789abcdef");
+	if (!(str_num))
+		return (-1);
+	if ((int)num < 0)
+		num *= -1;
+	if (flag_list.precision == 0 && num == 0)
+	{
+		free(str_num);
+		return (pre_arg_zero(flag_list));
+	}
+	if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > (int)ft_strlen(str_num))
 			len = field_precision(num, str_num, flag_list, 0);
 		else
 			len = field_no_precision(num, str_num, flag_list, 0);
@@ -374,22 +426,6 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
-int	get_hex_len(t_plist flag_list, unsigned int num, char *str_num)
-{
-	int len;
-
-	if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > (int)ft_strlen(str_num))
-			len = field_precision(num, str_num, flag_list, 0);
-		else
-			len = field_no_precision(num, str_num, flag_list, 0);
-	}
-	else
-		len = no_field_int(num, str_num, flag_list, 0);
-	return (len);
-}
-
 int	print_hex(va_list *ap, t_plist flag_list, int len)
 {
 	unsigned	int	num;
@@ -415,7 +451,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 	}
 	else
 		len = no_field_int(num, str_num, flag_list, 0);
-	// len = get_hex_len(flag_list, num, str_num);
 	free(str_num);
 	return (len);
 }
