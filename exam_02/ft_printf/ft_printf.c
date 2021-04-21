@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 21:41:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 21:43:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -380,8 +380,6 @@ int	print_int(va_list *ap, t_plist flag_list)
 	if (!(str_num = ft_itoa(num)))
 		return (-1);
 	keta = ft_strlen(str_num);
-	// if (flag_list.flag[1] == 1 && flag_list.precision != -1)
-	// 	flag_list.flag[1] = 0;
 	if (num < 0)
 		keta--;
 	if (flag_list.precision == 0 && num == 0)
@@ -389,7 +387,16 @@ int	print_int(va_list *ap, t_plist flag_list)
 		free(str_num);
 		return (pre_arg_zero(flag_list));
 	}
-	len = print_int_len(flag_list, str_num, keta, num);
+	// len = print_int_len(flag_list, str_num, keta, num);
+	if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > keta)
+			len = field_precision(num, str_num, flag_list, 0);
+		else
+			len = field_no_precision(num, str_num, flag_list, 0);
+	}
+	else
+		len = no_field_int(num, str_num, flag_list, 0);
 	free(str_num);
 	return (len);
 }
