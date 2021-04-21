@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:22:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:22:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -391,22 +391,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		return (-1);
 	if ((int)num < 0)
 		num *= -1;
-	// if (flag_list.precision == 0 && num == 0)
-	// {
-	// 	free(str_num);
-	// 	return (pre_arg_zero(flag_list));
-	// }
-	// if (flag_list.field > (int)ft_strlen(str_num))
-	// {
-	// 	if (flag_list.precision > (int)ft_strlen(str_num))
-	// 		len = field_precision(num, str_num, flag_list, 0);
-	// 	else
-	// 		len = field_no_precision(num, str_num, flag_list, 0);
-	// }
-	// else
-	// 	len = no_field_int(num, str_num, flag_list, 0);
-	// free(str_num);
-	// return (len);
 	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num)));
 }
 
