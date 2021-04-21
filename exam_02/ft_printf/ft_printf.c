@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:21:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:22:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -407,7 +407,7 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 	// 	len = no_field_int(num, str_num, flag_list, 0);
 	// free(str_num);
 	// return (len);
-	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num));
+	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num)));
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
