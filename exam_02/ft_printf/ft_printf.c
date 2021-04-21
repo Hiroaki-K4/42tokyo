@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 21:43:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 21:45:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,27 +239,27 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
 	char	*tmp;
 
-	if (!(tmp = field_precision_sub(num, str, flag_list, 0)))
-		return (-1);
-	if (flag_list.flag[0] == 1)
+	// if (!(tmp = field_precision_sub(num, str, flag_list, 0)))
+	// 	return (-1);
+	// if (flag_list.flag[0] == 1)
+	// {
+	// 	write(1, tmp, ft_strlen(tmp));
+	// 	i = 0;
+	// 	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
+	// 		write(1, " ", 1);
+	// }
+	// else
+	// {
+	i = 0;
+	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
+		write(1, " ", 1);
+	write(1, tmp, ft_strlen(tmp));
+	if (flag_list.precision > flag_list.field)
 	{
-		write(1, tmp, ft_strlen(tmp));
-		i = 0;
-		while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
-			write(1, " ", 1);
+		free(tmp);
+		return (flag_list.precision);
 	}
-	else
-	{
-		i = 0;
-		while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
-			write(1, " ", 1);
-		write(1, tmp, ft_strlen(tmp));
-		if (flag_list.precision > flag_list.field)
-		{
-			free(tmp);
-			return (flag_list.precision);
-		}
-	}
+	// }
 	free(tmp);
 	return (flag_list.field);
 }
@@ -352,22 +352,6 @@ int	no_field_int(int num, char *str, t_plist flag_list, int len)
 	return (len);
 }
 
-int		print_int_len(t_plist flag_list, char *str_num, int keta, int num)
-{
-	int len;
-
-	if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > keta)
-			len = field_precision(num, str_num, flag_list, 0);
-		else
-			len = field_no_precision(num, str_num, flag_list, 0);
-	}
-	else
-		len = no_field_int(num, str_num, flag_list, 0);
-	return (len);
-}
-
 int	print_int(va_list *ap, t_plist flag_list)
 {
 	int		num;
@@ -387,7 +371,6 @@ int	print_int(va_list *ap, t_plist flag_list)
 		free(str_num);
 		return (pre_arg_zero(flag_list));
 	}
-	// len = print_int_len(flag_list, str_num, keta, num);
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
