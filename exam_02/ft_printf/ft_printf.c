@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 21:47:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 21:49:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -284,17 +284,17 @@ int		field_no_precision_sub(long num, char *str, t_plist flag_list, int i)
 
 int	field_no_precision(int num, char *str, t_plist flag_list, int i)
 {
-	if (flag_list.flag[0] == 1)
-	{
-		write(1, str, ft_strlen(str));
-		while ((flag_list.field - (int)ft_strlen(str) - (i++)) > 0)
-			write(1, " ", 1);
-	}
-	else
-	{
-		if (field_no_precision_sub(num, str, flag_list, i) == -1)
-			return (-1);
-	}
+	// if (flag_list.flag[0] == 1)
+	// {
+	// 	write(1, str, ft_strlen(str));
+	// 	while ((flag_list.field - (int)ft_strlen(str) - (i++)) > 0)
+	// 		write(1, " ", 1);
+	// }
+	// else
+	// {
+	if (field_no_precision_sub(num, str, flag_list, i) == -1)
+		return (-1);
+	// }
 	return (flag_list.field);
 }
 
