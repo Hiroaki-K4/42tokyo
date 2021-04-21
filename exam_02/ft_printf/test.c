@@ -57,7 +57,7 @@ int main(void)
 	ft_printf("%s\n", "wiurwuyrhwrywuier");
 	printf("%s\n", "wiurwuyrhwrywuier");
 	ft_printf("%s\n", NULL);
-	// printf("%s\n", NULL);
+	printf("%s\n", NULL);
 	ft_printf("-%s-%s-%s-%s-\n", "", "toto", "wiurwuyrhwrywuier", NULL);
 	printf("-%s-%s-%s-%s-\n", "", "toto", "wiurwuyrhwrywuier", NULL);
 	ft_printf("\n--Mixed---\n");
