@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:00:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:02:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,22 +261,6 @@ int	field_no_precision(int num, char *str, t_plist flag_list, int i)
 	return (flag_list.field);
 }
 
-int		no_field_int_sub(t_plist flag_list, int num, int digit)
-{
-	int		len;
-	char	*tmp;
-
-	if (!(tmp = ft_itoa(num * (-1))))
-		return (-1);
-	write(1, "-", 1);
-	len = flag_list.precision + 1;
-	while (flag_list.precision - (digit++) > 0)
-		write(1, "0", 1);
-	write(1, tmp, ft_strlen(tmp));
-	free(tmp);
-	return (len);
-}
-
 int	no_field_int(int num, char *str, t_plist flag_list, int len)
 {
 	int		digit;
@@ -426,8 +410,8 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		return (-1);
 	if ((int)num < 0)
 		num *= -1;
-	if (flag_list.flag[1] == 1 && flag_list.precision != -1)
-		flag_list.flag[1] = 0;
+	// if (flag_list.flag[1] == 1 && flag_list.precision != -1)
+	// 	flag_list.flag[1] = 0;
 	if (flag_list.precision == 0 && num == 0)
 	{
 		free(str_num);
