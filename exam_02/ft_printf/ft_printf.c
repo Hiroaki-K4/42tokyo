@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:02:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/21 22:03:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 typedef	struct
 {
-	int flag[2];
 	int field;
 	int precision;
 	int format;
@@ -410,8 +409,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		return (-1);
 	if ((int)num < 0)
 		num *= -1;
-	// if (flag_list.flag[1] == 1 && flag_list.precision != -1)
-	// 	flag_list.flag[1] = 0;
 	if (flag_list.precision == 0 && num == 0)
 	{
 		free(str_num);
