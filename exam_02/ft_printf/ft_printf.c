@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:44:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:46:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,7 +223,8 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 int	no_field_int(int num, char *str, t_plist flag_list, int len)
 {
 	int		digit;
-
+	char	*tmp;
+	
 	digit = ft_strlen(str);
 	if (num < 0)
 		digit = ft_strlen(str) - 1;
@@ -232,8 +233,6 @@ int	no_field_int(int num, char *str, t_plist flag_list, int len)
 		len = flag_list.precision;
 		if (num < 0)
 		{
-			char	*tmp;
-
 			if (!(tmp = ft_itoa(num * (-1))))
 				return (-1);
 			write(1, "-", 1);
@@ -265,7 +264,6 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	len = 0;
 	if (flag_list.precision == 0 && num == 0)
 	{
-		// free(str_num);
 		if (flag_list.field != -1)
 		{
 			while (flag_list.field - len > 0)
@@ -274,7 +272,6 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 				len++;
 			}
 		}
-		// return (len);
 	}
 	else if (flag_list.field > (int)ft_strlen(str_num))
 	{
@@ -286,7 +283,6 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 				write(1, " ", 1);
 			write(1, str_num, ft_strlen(str_num));
 			len = flag_list.field;
-			// return (flag_list.field);
 		}
 	}
 	else
