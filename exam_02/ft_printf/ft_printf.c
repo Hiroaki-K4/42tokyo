@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:38:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:38:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -364,9 +364,10 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 	char			*str_num;
 
 	num = va_arg(*ap, unsigned int);
-	str_num = ft_itoa_hex(num, "0123456789abcdef");
-	if (!(str_num))
+	if (!(str_num = ft_itoa_hex(num, "0123456789abcdef")))
 		return (-1);
+	// if (!(str_num))
+		// return (-1);
 	if ((int)num < 0)
 		num *= -1;
 	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num)));
