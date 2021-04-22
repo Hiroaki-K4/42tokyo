@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:37:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:38:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -403,8 +403,7 @@ int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
@@ -434,7 +433,6 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i, ap, 0);
 	flag_list.precision = -1;
-	// flag_list.format = -1;
 	if (arg[*i] == '.')
 	{
 		(*i)++;
