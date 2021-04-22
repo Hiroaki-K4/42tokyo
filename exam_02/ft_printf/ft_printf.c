@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:20:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:21:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,22 +184,6 @@ char			*ft_itoa(int n)
 	return (ans);
 }
 
-int	pre_arg_zero(t_plist flag_list)
-{
-	int i;
-
-	i = 0;
-	if (flag_list.field != -1)
-	{
-		while (flag_list.field - i > 0)
-		{
-			write(1, " ", 1);
-			i++;
-		}
-	}
-	return (i);
-}
-
 int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
 	int		j;
@@ -302,7 +286,6 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 			}
 		}
 		return (len);
-		// return (pre_arg_zero(flag_list));
 	}
 	if (flag_list.field > (int)ft_strlen(str_num))
 	{
