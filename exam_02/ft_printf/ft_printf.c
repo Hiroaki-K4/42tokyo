@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 18:29:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 18:32:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,21 +287,6 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	free(str_num);
 	return (len);
 }
-
-int	print_int(va_list *ap, t_plist flag_list)
-{
-	int		num;
-	int		keta;
-	char	*str_num;
-
-	num = va_arg(*ap, int);
-	if (!(str_num = ft_itoa(num)))
-		return (-1);
-	keta = ft_strlen(str_num);
-	if (num < 0)
-		keta--;
-	return (print_digit(flag_list, str_num, num, keta));
-}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 char			*ft_itoa_hex(unsigned int n, char *arg)
@@ -414,6 +399,7 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 	int		k;
 	int		num;
 	int		keta;
+	unsigned	int	hex_num;
 	char	*str_num;
 	t_plist	flag_list;
 
@@ -430,10 +416,6 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 		k = print_string(ap, flag_list);
 	else if (flag_list.format == 1)
 	{
-		// int		num;
-		// int		keta;
-		// char	*str_num;
-
 		num = va_arg(*ap, int);
 		if (!(str_num = ft_itoa(num)))
 			return (-1);
@@ -442,9 +424,16 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 			keta--;
 		k = print_digit(flag_list, str_num, num, keta);
 	}
-		// k = print_int(ap, flag_list);
 	else if (flag_list.format == 2)
-		k = print_hex(ap, flag_list, 0);
+	{
+		hex_num = va_arg(*ap, unsigned int);
+		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+			return (-1);
+		if ((int)hex_num < 0)
+			hex_num *= -1;
+		k = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
+	}
+		// k = print_hex(ap, flag_list, 0);
 	return (k);
 }
 
