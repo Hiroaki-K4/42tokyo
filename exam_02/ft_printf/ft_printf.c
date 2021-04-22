@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/21 22:22:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:12:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	}
 	return (-1);
 }
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 int	print_string(va_list *ap, t_plist flag_list)
 {
 	int		i;
@@ -119,11 +117,8 @@ int	print_string(va_list *ap, t_plist flag_list)
 	}
 	return (len);
 }
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 static	int		digit_size(int number)
 {
 	int		count;
@@ -327,11 +322,8 @@ int	print_int(va_list *ap, t_plist flag_list)
 		keta--;
 	return (print_digit(flag_list, str_num, num, keta));
 }
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 int				get_len(unsigned int n)
 {
 	int i;
@@ -393,9 +385,7 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 		num *= -1;
 	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num)));
 }
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 int		ft_atoi(const char *nptr)
 {
 	int		i;
