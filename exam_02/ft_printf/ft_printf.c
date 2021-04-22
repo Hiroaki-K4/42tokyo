@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 18:07:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 18:08:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -307,26 +307,6 @@ int	print_int(va_list *ap, t_plist flag_list)
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int				get_len(unsigned int n)
-{
-	int i;
-	int len;
-
-	i = n / 16;
-	if (i != 0)
-	{
-		len = 2;
-		while (i > 16)
-		{
-			len++;
-			i = i / 16;
-		}
-	}
-	else
-		len = 1;
-	return (len);
-}
-
 char			*ft_itoa_hex(unsigned int n, char *arg)
 {
 	int				len;
@@ -346,7 +326,6 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	}
 	else
 		len = 1;
-	// len = get_len(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
