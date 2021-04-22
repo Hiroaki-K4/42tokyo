@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:21:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:28:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,12 +214,13 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
 		write(1, " ", 1);
 	write(1, tmp, ft_strlen(tmp));
+	free(tmp);
 	if (flag_list.precision > flag_list.field)
 	{
-		free(tmp);
+		// free(tmp);
 		return (flag_list.precision);
 	}
-	free(tmp);
+	// free(tmp);
 	return (flag_list.field);
 }
 
