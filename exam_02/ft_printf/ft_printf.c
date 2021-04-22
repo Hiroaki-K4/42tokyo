@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:38:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 09:44:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,7 +265,7 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	len = 0;
 	if (flag_list.precision == 0 && num == 0)
 	{
-		free(str_num);
+		// free(str_num);
 		if (flag_list.field != -1)
 		{
 			while (flag_list.field - len > 0)
@@ -274,9 +274,9 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 				len++;
 			}
 		}
-		return (len);
+		// return (len);
 	}
-	if (flag_list.field > (int)ft_strlen(str_num))
+	else if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
 			len = field_precision(num, str_num, flag_list, 0);
@@ -285,7 +285,8 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 			while ((flag_list.field - (int)ft_strlen(str_num) - (len++)) > 0)
 				write(1, " ", 1);
 			write(1, str_num, ft_strlen(str_num));
-			return (flag_list.field);
+			len = flag_list.field;
+			// return (flag_list.field);
 		}
 	}
 	else
@@ -366,8 +367,6 @@ int	print_hex(va_list *ap, t_plist flag_list, int len)
 	num = va_arg(*ap, unsigned int);
 	if (!(str_num = ft_itoa_hex(num, "0123456789abcdef")))
 		return (-1);
-	// if (!(str_num))
-		// return (-1);
 	if ((int)num < 0)
 		num *= -1;
 	return (print_digit(flag_list, str_num, num, (int)ft_strlen(str_num)));
