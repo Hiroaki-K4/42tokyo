@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/22 09:53:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/22 18:07:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,7 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 			return (-1);
 		tmp[0] = '-';
 		i = 1;
-		while ((flag_list.precision - (int)ft_strlen(str) - i) > 0)
+		while ((flag_list.precision + 2 - (int)ft_strlen(str) - i) > 0)
 			tmp[i++] = '0';
 		j = 1;
 	}
@@ -334,7 +334,19 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	unsigned int	j;
 	char			*ans;
 
-	len = get_len(n);
+	i = n / 16;
+	if (i != 0)
+	{
+		len = 2;
+		while (i > 16)
+		{
+			len++;
+			i = i / 16;
+		}
+	}
+	else
+		len = 1;
+	// len = get_len(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
