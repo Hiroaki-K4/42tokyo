@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:57:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:14:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*save_new_line(char *store, char **line, char *buf)
 	return (tmp);
 }
 
-int		get_make_line(int fd, char **store, char **line, int i)
+int		get_make_line(int fd, char **store, char **line, int i, int BUFFER_SIZE)
 {
 	char	*buf;
 	char	*tmp;
@@ -103,7 +103,7 @@ int		get_next_line(int fd, char **line, int BUFFER_SIZE)
 			return (-1);
 	if (ft_strchr(store[fd], '\n') == NULL)
 	{
-		if ((i = get_make_line(fd, store, line, 1)) == 0)
+		if ((i = get_make_line(fd, store, line, 1, BUFFER_SIZE)) == 0)
 		{
 			free(store[fd]);
 			store[fd] = NULL;

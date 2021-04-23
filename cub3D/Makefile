@@ -3,11 +3,11 @@ NAME = cub3D
 
 .PHONY: all, clean, fclean, re
 
-SRCS = cub3D.c
+SRCS = cub3D.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
-INCLUDE = -I.
+INCLUDE = -I. -I./get_next_line
 
 CC = gcc
 

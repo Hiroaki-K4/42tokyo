@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:57:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:15:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main(int argc, char *argv[])
 {
 	int i;
-	int fd;
-	int buffer_size;
-	char *line;
+	// int fd;
+	// int buffer_size;
+	// char *line;
 	char *cub_path;
 
 	if (argc != 2)
@@ -34,6 +34,8 @@ int	main(int argc, char *argv[])
 		free(line);
 	} while (i > 0);
 	cub_path = argv[1];
+	i = ft_strlen(cub_path);
+	printf("len: %i\n", i);
 	printf("path: %s\n", cub_path);
 	argv[0] = "aa";
 	return (argc);
