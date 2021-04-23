@@ -3,7 +3,7 @@ NAME = cub3D
 
 .PHONY: all, clean, fclean, re
 
-SRCS = main.c
+SRCS = cub3D.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -23,7 +23,7 @@ all: $(NAME)
 
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
-		$(CC) $(CFLAGS) main.c libft/libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)
