@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:31:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:08:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@
 #include "get_next_line/get_next_line.h"
 #include "libft/libft.h"
 #include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 #endif
