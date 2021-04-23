@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 22:15:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:15:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main(int argc, char *argv[])
 {
 	int i;
-	// int fd;
-	// int buffer_size;
-	// char *line;
+	int fd;
+	int buffer_size;
+	char *line;
 	char *cub_path;
 
 	if (argc != 2)
