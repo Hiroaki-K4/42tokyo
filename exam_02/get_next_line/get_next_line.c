@@ -6,31 +6,48 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 09:45:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 09:53:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *s)
-{
-	char	*new_ptr;
-	int		i;
-	int		size;
+// char	*ft_strdup(const char *s)
+// {
+// 	char	*new_ptr;
+// 	int		i;
+// 	int		size;
 
-	size = 0;
-	while (s[size] != '\0')
-		size++;
-	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
+// 	size = 0;
+// 	while (s[size] != '\0')
+// 		size++;
+// 	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
+// 		return (NULL);
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		new_ptr[i] = s[i];
+// 		i++;
+// 	}
+// 	new_ptr[i] = '\0';
+// 	return (new_ptr);
+// }
+
+char	ft_strdup(const char *s)
+{
+	char	*new_str;
+	int		i;
+	
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	if (!(new_str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
-	{
-		new_ptr[i] = s[i];
-		i++;
-	}
-	new_ptr[i] = '\0';
-	return (new_ptr);
+		new_str[i] = s[i];
+	new_str[i] = '\0';
+	return (new_str);
 }
 
 char	*ft_strchr(const char *s, int c)
