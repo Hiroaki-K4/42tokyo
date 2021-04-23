@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 22:09:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:24:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
+int		get_next_line(int fd, char **line, int BUFFER_SIZE);
 
 #endif
