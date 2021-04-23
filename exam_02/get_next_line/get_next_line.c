@@ -6,32 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 09:54:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 10:14:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-// char	*ft_strdup(const char *s)
-// {
-// 	char	*new_ptr;
-// 	int		i;
-// 	int		size;
-
-// 	size = 0;
-// 	while (s[size] != '\0')
-// 		size++;
-// 	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
-// 		return (NULL);
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		new_ptr[i] = s[i];
-// 		i++;
-// 	}
-// 	new_ptr[i] = '\0';
-// 	return (new_ptr);
-// }
 
 char	*ft_strdup(const char *s)
 {
@@ -53,12 +32,30 @@ char	*ft_strdup(const char *s)
 	return (new_str);
 }
 
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char const	*ptr_s;
+// 	int					i;
+
+// 	ptr_s = (unsigned char const *)s;
+// 	i = 0;
+// 	while (ptr_s[i] != '\0')
+// 	{
+// 		if (ptr_s[i] == (unsigned char)c)
+// 			return (char *)(s + i);
+// 		i++;
+// 	}
+// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+// 		return (char *)(s + i);
+// 	return (NULL);
+// }
+
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char const	*ptr_s;
+	unsigned const char *ptr_s;
 	int					i;
 
-	ptr_s = (unsigned char const *)s;
+	ptr_s = (unsigned const char *)s;
 	i = 0;
 	while (ptr_s[i] != '\0')
 	{
