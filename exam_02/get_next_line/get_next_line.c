@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 10:14:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 10:30:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,12 @@ char	*ft_strdup(const char *s)
 	return (new_str);
 }
 
-// char	*ft_strchr(const char *s, int c)
-// {
-// 	unsigned char const	*ptr_s;
-// 	int					i;
-
-// 	ptr_s = (unsigned char const *)s;
-// 	i = 0;
-// 	while (ptr_s[i] != '\0')
-// 	{
-// 		if (ptr_s[i] == (unsigned char)c)
-// 			return (char *)(s + i);
-// 		i++;
-// 	}
-// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-// 		return (char *)(s + i);
-// 	return (NULL);
-// }
-
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned const char *ptr_s;
+	unsigned char const	*ptr_s;
 	int					i;
 
-	ptr_s = (unsigned const char *)s;
+	ptr_s = (unsigned char const *)s;
 	i = 0;
 	while (ptr_s[i] != '\0')
 	{
@@ -68,13 +50,36 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+// char	*ft_strjoin(char const *s1, char const *s2)
+// {
+// 	size_t	new_str_len;
+// 	char	*new_str;
+// 	int		i;
+// 	int		j;
+
+// 	if (!s1 || !s2)
+// 		return (NULL);
+// 	new_str_len = ft_strlen(s1) + ft_strlen(s2);
+// 	if (!(new_str = (char *)malloc(sizeof(char) * (new_str_len + 1))))
+// 		return (NULL);
+// 	i = 0;
+// 	j = 0;
+// 	while (s1[j] != '\0')
+// 		new_str[i++] = s1[j++];
+// 	j = 0;
+// 	while (s2[j] != '\0')
+// 		new_str[i++] = s2[j++];
+// 	new_str[i] = '\0';
+// 	return (new_str);
+// }
+
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	new_str_len;
 	char	*new_str;
 	int		i;
 	int		j;
-
+	
 	if (!s1 || !s2)
 		return (NULL);
 	new_str_len = ft_strlen(s1) + ft_strlen(s2);
@@ -83,10 +88,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	while (s1[j] != '\0')
-		new_str[i++] = s1[j++];
+	{
+		new_str[i] = s1[j];
+		i++;
+		j++;
+	}
 	j = 0;
 	while (s2[j] != '\0')
-		new_str[i++] = s2[j++];
+	{
+		new_str[i] = s2[j];
+		i++;
+		j++;
+	}
 	new_str[i] = '\0';
 	return (new_str);
 }
