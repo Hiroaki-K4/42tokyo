@@ -23,7 +23,7 @@ all: $(NAME)
 
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
-		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(INCLUDE) $(SRCS) libft/libft.a -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)

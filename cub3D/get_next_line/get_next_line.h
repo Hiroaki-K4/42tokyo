@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/07 22:43:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 22:06:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-int		get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line, int BUFFER_SIZE);
 char	*ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
