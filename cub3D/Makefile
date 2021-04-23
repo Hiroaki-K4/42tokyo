@@ -19,18 +19,11 @@ ARFLAGS = rc
 
 LIBFT = libft
 
-.c.o:
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o) 
-
 all: $(NAME)
 
-$(NAME):$(OBJS)
+$(NAME):$(SRCS)
 		make -C $(LIBFT)
-		cp libft/libft.a $(NAME)
-		$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-
-bonus: $(OBJS) $(OBJSBONUS)
-		$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJSBONUS)
+		$(CC) $(CFLAGS) main.c libft/libft.a -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)
