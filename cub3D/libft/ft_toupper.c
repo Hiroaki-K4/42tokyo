@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/15 22:10:21 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/28 19:43:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int		ft_toupper(int c)
 {
-	argv[0] = "aa";
-	return (argc);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

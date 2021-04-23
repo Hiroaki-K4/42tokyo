@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/17 09:29:24 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/29 09:38:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	argv[0] = "aa";
-	return (argc);
+	size_t	len;
+	char	*ans;
+
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len > 0 && ft_strchr(set, s1[len]))
+		len--;
+	ans = ft_substr(s1, 0, len + 1);
+	return (ans);
 }

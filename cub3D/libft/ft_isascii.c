@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/15 21:53:04 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/23 21:40:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int		ft_isascii(int c)
 {
-	argv[0] = "aa";
-	return (argc);
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

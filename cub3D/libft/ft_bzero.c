@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/11 09:06:33 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/26 08:57:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_bzero(void *s, size_t n)
 {
-	argv[0] = "aa";
-	return (argc);
+	unsigned char	*p;
+
+	p = (unsigned char *)s;
+	while (n > 0)
+	{
+		*p++ = 0;
+		n--;
+	}
 }

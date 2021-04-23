@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/14 12:01:33 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/28 19:44:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	argv[0] = "aa";
-	return (argc);
+	unsigned char const	*ptr_src;
+	size_t				i;
+
+	ptr_src = (unsigned char const *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr_src[i] == (unsigned char)c)
+			return (void *)(s + i);
+		i++;
+	}
+	return (NULL);
 }

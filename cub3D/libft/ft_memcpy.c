@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/11 22:45:38 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/29 09:37:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	argv[0] = "aa";
-	return (argc);
+	unsigned char		*p_dest;
+	unsigned char const	*p_src;
+
+	p_dest = (unsigned char *)(dest);
+	p_src = (unsigned char const *)(src);
+	while (n > 0)
+	{
+		*p_dest++ = *p_src++;
+		n--;
+	}
+	return (dest);
 }

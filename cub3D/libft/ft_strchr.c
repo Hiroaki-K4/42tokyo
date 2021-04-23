@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/14 14:42:16 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/27 08:27:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strchr(const char *s, int c)
 {
-	argv[0] = "aa";
-	return (argc);
+	unsigned char const	*ptr_s;
+	int					i;
+
+	ptr_s = (unsigned char const *)s;
+	i = 0;
+	while (ptr_s[i] != '\0')
+	{
+		if (ptr_s[i] == (unsigned char)c)
+		{
+			return (char *)(s + i);
+		}
+		i++;
+	}
+	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+	{
+		return (char *)(s + i);
+	}
+	return (NULL);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/16 08:49:01 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/28 19:47:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	argv[0] = "aa";
-	return (argc);
+	void	*ptr;
+
+	if (!(ptr = malloc(nmemb * size)))
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

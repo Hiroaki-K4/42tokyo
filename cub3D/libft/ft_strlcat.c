@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/03 20:35:50 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/28 19:38:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	argv[0] = "aa";
-	return (argc);
+	size_t	d_size;
+	size_t	i;
+
+	d_size = 0;
+	while (dst[d_size] != '\0' && d_size < size)
+		d_size++;
+	i = 0;
+	while (src[i] != '\0' && (d_size + i + 1) < size)
+	{
+		dst[d_size + i] = src[i];
+		i++;
+	}
+	if (d_size < size)
+		dst[d_size + i] = '\0';
+	return (d_size + ft_strlen(src));
 }

@@ -1,9 +1,9 @@
 #Makefile
-NAME = libftprintf.a
+NAME = cub3D
 
 .PHONY: all, clean, fclean, re
 
-SRCS = ft_printf.c ft_printf_utils.c ft_print_char.c ft_print_string.c ft_print_int.c ft_print_percent.c ft_print_unsigned_int.c ft_utils.c ft_utils_second.c ft_utils_third.c ft_print_hex.c ft_print_pointer.c
+SRCS = main.c
 
 OBJS = $(SRCS:.c=.o)
 

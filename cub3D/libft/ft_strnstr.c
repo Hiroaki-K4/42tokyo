@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 21:02:57 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/15 13:24:16 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/28 19:30:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line/get_next_line.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	argv[0] = "aa";
-	return (argc);
+	size_t	i;
+	size_t	n;
+
+	n = ft_strlen(little);
+	if (n == 0)
+	{
+		return (char *)(big);
+	}
+	i = 0;
+	while (big[i] != '\0' && i < len)
+	{
+		if (ft_strncmp(big + i, little, n) == 0 && i + n <= len)
+		{
+			return (char *)(big + i);
+		}
+		i++;
+	}
+	return (NULL);
 }
