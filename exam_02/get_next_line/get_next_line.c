@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 11:05:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/23 11:06:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_str[i] = '\0';
 	return (new_str);
 }
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t	count;
-
-// 	count = 0;
-// 	while (str[count] != '\0')
-// 		count++;
-// 	return (count);
-// }
 
 size_t	ft_strlen(const char *str)
 {
