@@ -37,7 +37,7 @@
 # gcc -Wall -Wextra -Werror -D BUFFER_SIZE=2 get_next_line.c get_next_line_utils.c test.c
 # ./a.out medium.txt
 
-gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line.c get_next_line_utils.c
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_file.c get_next_line.c
 echo "~~test_001.txt~~"
 ./a.out test_001.txt
 echo "~~test_002.txt~~"
