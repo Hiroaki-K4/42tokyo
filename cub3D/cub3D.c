@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 14:48:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/24 15:10:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,16 @@ int             key_hook(int keycode, t_vars *vars)
 
 int             display_close(int keycode, t_vars *vars)
 {
-	if (keycode == 65308)
-    	mlx_destroy_window(vars->mlx, vars->win);
+	if (keycode == 65307)
+		mlx_destroy_window(vars->mlx, vars->win);
+	exit(1);
 }
 
+int             resize_display(int keycode, t_vars *vars)
+{
+	printf("Resize display");
+	return (0);
+}
 
 void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -86,14 +92,15 @@ int	main(int argc, char *argv[])
     // mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
     // mlx_loop(mlx);
 	
-	vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
-    mlx_key_hook(vars.win, key_hook, &vars);
-    mlx_loop(vars.mlx);
-	
 	// vars.mlx = mlx_init();
-    // vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-    // mlx_hook(vars.win, 2, 1L<<0, display_close, &vars);
+    // vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
+    // mlx_key_hook(vars.win, key_hook, &vars);
     // mlx_loop(vars.mlx);
+	
+	vars.mlx = mlx_init();
+    vars.win = mlx_new_window(vars.mlx, 640, 640, "Hello world!");
+    mlx_hook(vars.win, 2, 1L<<0, display_close, &vars);
+    // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
+    mlx_loop(vars.mlx);
 	// return (argc);
 }
