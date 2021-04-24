@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 10:31:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/24 10:56:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	char *line;
 	char *cub_path;
 	void    *mlx;
-    void    *mlx_win;
+    void    *img;
 
 	if (argc != 2)
 	{
@@ -41,7 +41,6 @@ int	main(int argc, char *argv[])
 	printf("path: %s\n", cub_path);
 	argv[0] = "aa";
 	mlx = mlx_init();
-    mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-    mlx_loop(mlx);
+	img = mlx_new_image(mlx, 1920, 1080);
 	return (argc);
 }
