@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 14:36:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/24 14:48:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ typedef struct  s_vars {
 
 int             key_hook(int keycode, t_vars *vars)
 {
+	printf("keycode: %d\n", keycode);
     printf("Hello from key_hook!\n");
 }
 
-int             close(int keycode, t_vars *vars)
+int             display_close(int keycode, t_vars *vars)
 {
-    mlx_destroy_window(vars->mlx, vars->win);
+	if (keycode == 65308)
+    	mlx_destroy_window(vars->mlx, vars->win);
 }
 
 
@@ -84,14 +86,14 @@ int	main(int argc, char *argv[])
     // mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
     // mlx_loop(mlx);
 	
-	// vars.mlx = mlx_init();
-    // vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
-    // mlx_key_hook(vars.win, key_hook, &vars);
-    // mlx_loop(vars.mlx);
-	
 	vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-    mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+    vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
+    mlx_key_hook(vars.win, key_hook, &vars);
     mlx_loop(vars.mlx);
+	
+	// vars.mlx = mlx_init();
+    // vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+    // mlx_hook(vars.win, 2, 1L<<0, display_close, &vars);
+    // mlx_loop(vars.mlx);
 	// return (argc);
 }
