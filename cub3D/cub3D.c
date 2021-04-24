@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 15:10:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/24 15:12:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int             display_close(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
 		mlx_destroy_window(vars->mlx, vars->win);
-	exit(1);
+	exit(0);
 }
 
 int             resize_display(int keycode, t_vars *vars)
