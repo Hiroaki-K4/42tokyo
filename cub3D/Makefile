@@ -7,7 +7,7 @@ SRCS = cub3D.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
-# INCLUDE = -I.
+# INCLUDE = -I. -I./libft
 
 CC = gcc
 
@@ -23,7 +23,7 @@ all: $(NAME)
 
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
-		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)
