@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 17:21:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/24 17:22:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ size_t	ft_strlen(const char *str)
 // 	return (ans);
 // }
 
-size_t	ft_strlcpy(char *dest, char *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 	size_t	ans;
