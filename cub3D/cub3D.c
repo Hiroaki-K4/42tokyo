@@ -36,12 +36,12 @@ typedef struct  s_vars {
 //     printf("Hello from key_hook!\n");
 // }
 
-// int             key_press(int keycode, t_vars *vars)
-// {
-// 	if (keycode == 65307)
-// 		mlx_destroy_window(vars->mlx, vars->win);
-// 	exit(0);
-// }
+int             key_press(int keycode, t_vars *vars)
+{
+	if (keycode == 65307)
+		mlx_destroy_window(vars->mlx, vars->win);
+	exit(0);
+}
 
 // int             resize_display(int keycode, t_vars *vars)
 // {
