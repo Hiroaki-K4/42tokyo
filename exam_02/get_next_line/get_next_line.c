@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 21:16:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 21:22:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,38 +123,33 @@ char	*get_from_store(char *store, char **line)
 	return (tmp);
 }
 
-// char	*save_new_line(char *store, char **line, char *buf)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	*tmp;
-
-// 	i = 0;
-// 	while (buf[i] != '\n')
-// 		i++;
-// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
-// 		return (NULL);
-// 	ft_strlcpy(tmp, store, ft_strlen(store) + 1);
-// 	j = -1;
-// 	while (buf[++j] && j < i)
-// 		tmp[ft_strlen(store) + j] = buf[j];
-// 	tmp[ft_strlen(store) + j] = '\0';
-// 	free(store);
-// 	if (!(*line = ft_strdup(tmp)))
-// 		return (NULL);
-// 	free(tmp);
-// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
-// 		return (NULL);
-// 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-// 	free(buf);
-// 	return (tmp);
-// }
-
-char *save_new_line(char *store, char **line, char *buf)
+char *get_from_store(char *store, char **line)
 {
 	int i;
-	int j;
+	int size;
 	char *tmp;
+	
+	tmp = NULL;
+	i = 0;
+	size = 0;
+	while (store[i] != '\n' && store[i] != '\0')
+		i++;
+	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	ft_strlcpy(*line, store, i + 1);
+	size = (int)ft_strlen(&store[i + 1]) + 1;
+	if (!(tmp = (char *)malloc(sizeof(char) * size)))
+		return (NULL);
+	ft_strlcpy(tmp, &store[i + 1], size);
+	free(store);
+	return (tmp);
+}
+
+char	*save_new_line(char *store, char **line, char *buf)
+{
+	int		i;
+	int		j;
+	char	*tmp;
 
 	i = 0;
 	while (buf[i] != '\n')
@@ -172,6 +167,7 @@ char *save_new_line(char *store, char **line, char *buf)
 	free(tmp);
 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
 		return (NULL);
+	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
 	return (tmp);
 }
