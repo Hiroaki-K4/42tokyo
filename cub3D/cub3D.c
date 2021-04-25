@@ -57,6 +57,11 @@ int             key_press(int keycode, t_vars *vars)
 //     *(unsigned int*)dst = color;
 // }
 
+int main_loop(void *arg)
+{
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	int i;
@@ -104,6 +109,7 @@ int	main(int argc, char *argv[])
 	
 	vars.mlx = mlx_init();
     vars.win = mlx_new_window(vars.mlx, screenWidth, screenHeight, "Raycaster!");
+	mlx_loop_hook(vars.mlx, main_loop, &vars);
     mlx_hook(vars.win, 2, 1L<<0, key_press, &vars);
     // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
     mlx_loop(vars.mlx);
