@@ -12,6 +12,11 @@
 
 #include "cub3D.h"
 
+#define screenWidth 640
+#define screenHeight 480
+#define mapWidth 24
+#define mapHeight 24
+
 typedef struct  s_data {
     void        *img;
     char        *addr;
@@ -25,32 +30,32 @@ typedef struct  s_vars {
     void        *win;
 }               t_vars;
 
-int             key_hook(int keycode, t_vars *vars)
-{
-	printf("keycode: %d\n", keycode);
-    printf("Hello from key_hook!\n");
-}
+// int             key_hook(int keycode, t_vars *vars)
+// {
+// 	printf("keycode: %d\n", keycode);
+//     printf("Hello from key_hook!\n");
+// }
 
-int             display_close(int keycode, t_vars *vars)
-{
-	if (keycode == 65307)
-		mlx_destroy_window(vars->mlx, vars->win);
-	exit(0);
-}
+// int             key_press(int keycode, t_vars *vars)
+// {
+// 	if (keycode == 65307)
+// 		mlx_destroy_window(vars->mlx, vars->win);
+// 	exit(0);
+// }
 
-int             resize_display(int keycode, t_vars *vars)
-{
-	printf("Resize display");
-	return (0);
-}
+// int             resize_display(int keycode, t_vars *vars)
+// {
+// 	printf("Resize display");
+// 	return (0);
+// }
 
-void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-    char    *dst;
+// void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
+// {
+//     char    *dst;
 
-    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-    *(unsigned int*)dst = color;
-}
+//     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+//     *(unsigned int*)dst = color;
+// }
 
 int	main(int argc, char *argv[])
 {
@@ -98,8 +103,8 @@ int	main(int argc, char *argv[])
     // mlx_loop(vars.mlx);
 	
 	vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, 640, 640, "Hello world!");
-    mlx_hook(vars.win, 2, 1L<<0, display_close, &vars);
+    vars.win = mlx_new_window(vars.mlx, screenWidth, screenHeight, "Raycaster!");
+    mlx_hook(vars.win, 2, 1L<<0, key_press, &vars);
     // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
     mlx_loop(vars.mlx);
 	// return (argc);
