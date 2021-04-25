@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 12:20:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 12:20:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ char *save_new_line(char *store, char **line, char *buf)
 	char *tmp;
 
 	i = 0;
-	while (buf[i] != '\0')
+	while (buf[i] != '\n')
 		i++;
 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + 1))))
 		return (NULL);
