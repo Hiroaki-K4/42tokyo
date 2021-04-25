@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 10:14:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 10:15:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ int read_line(int fd, char **store, char **line)
 	char *tmp;
 
 	buffer_size = 128;
-	i = 0;
+	i = 1;
 	if (!(buf = (char *)malloc(sizeof(char) * ((size_t)buffer_size + 1))))
 		return (-1);
 	while (i > 0)
