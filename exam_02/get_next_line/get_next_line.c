@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 21:49:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 21:49:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ char *get_from_store(char *store, char **line)
 		return (NULL);
 	ft_strlcpy(tmp, &store[i + 1], size);
 	free(store);
-	return (tmp;)
+	return (tmp);
 }
 
 char	*save_new_line(char *store, char **line, char *buf)
