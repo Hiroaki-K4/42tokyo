@@ -59,8 +59,13 @@ int             key_press(int keycode, t_vars *vars)
 
 int main_loop(void *arg)
 {
-	int 
-	while ()
+	int i;
+
+	i = 0;
+	while (i < screenWidth)
+	{
+		i++;
+	}
 	return (0);
 }
 
