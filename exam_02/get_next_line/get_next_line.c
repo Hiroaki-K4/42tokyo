@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/24 18:59:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 10:12:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,9 +191,7 @@ int read_line(int fd, char **store, char **line)
 	char *tmp;
 
 	buffer_size = 128;
-	if (!(buf = (char *)malloc(sizeof(char) * ((ssize_t)buffer_size) + 1)))
-		return (-1);
-	i = 1;
+	i = 0;
 	while (i > 0)
 	{
 		if ((i = read(fd, buf, buffer_size)) == -1)
@@ -203,10 +201,9 @@ int read_line(int fd, char **store, char **line)
 		{
 			if (!(store[fd] = save_new_line(store[fd], line, buf)))
 				return (-1);
-			return (1);
+			return (i);
 		}
-		if (!(tmp = ft_strjoin(store[fd], buf)))
-			return (-1);
+		tmp = ft_strjoin(store[fd], buf);
 		free(store[fd]);
 		store[fd] = tmp;
 	}
@@ -215,7 +212,6 @@ int read_line(int fd, char **store, char **line)
 	free(buf);
 	return (0);
 }
-
 
 int get_next_line(int fd, char **line)
 {
