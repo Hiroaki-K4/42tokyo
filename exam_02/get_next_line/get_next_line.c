@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 11:59:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 12:05:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ char *save_new_line(char *store, char **line, char *buf)
 	int i;
 	int j;
 	char *tmp;
-	
+
 	i = 0;
 	while (buf[i] != '\n')
 		i++;
