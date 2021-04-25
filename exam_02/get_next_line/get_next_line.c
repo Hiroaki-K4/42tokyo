@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/25 10:42:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/25 10:43:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,11 +196,8 @@ int read_line(int fd, char **store, char **line)
 	i = 1;
 	while (i > 0)
 	{
-		if ((i = read(fd, buf, buffer_size)) == 0)
-		{
-			free(store[fd]);
-			store[fd] = NULL;
-		}
+		if ((i = read(fd, buf, buffer_size)) == -1)
+			return (-1);
 		buf[i] = '\0';
 		if (ft_strchr(buf, '\n') != NULL)
 		{
