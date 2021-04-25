@@ -59,6 +59,8 @@ int             key_press(int keycode, t_vars *vars)
 
 int main_loop(void *arg)
 {
+	int 
+	while ()
 	return (0);
 }
 
