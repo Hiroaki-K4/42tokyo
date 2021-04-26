@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/26 22:07:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/26 22:08:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,50 +101,50 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	return (ans);
 }
 
-char *get_from_store(char *store, char **line)
-{
-	int i;
-	int size;
-	char *tmp;
-
-	i = 0;
-	tmp = NULL;
-	while (store[i] != '\n' && store[i] != '\0')
-		i++;
-	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	ft_strlcpy(*line, store, i + 1);
-	size = ft_strlen(&store[i + 1]) + 1;
-	if (!(tmp = (char *)malloc(sizeof(char) * size)))
-		return (NULL);
-	ft_strlcpy(tmp, &store[i + 1], size);
-	free(store);
-	return (tmp);
-}
 // char *get_from_store(char *store, char **line)
 // {
 // 	int i;
+// 	int size;
 // 	char *tmp;
-	
+
 // 	i = 0;
 // 	tmp = NULL;
-// 	while (store[i] && store[i] != '\n')
+// 	while (store[i] != '\n' && store[i] != '\0')
 // 		i++;
 // 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
 // 		return (NULL);
 // 	ft_strlcpy(*line, store, i + 1);
-// 	// if (!(tmp = (char *)malloc(sizeof(char) * (i + 1))))
-// 	// 	return (NULL);
-// 	// ft_strlcpy(tmp, store, i + 1);
-// 	// if (!(*line = ft_strdup(tmp)))
-// 	// 	return (NULL);
-// 	// free(tmp);
-// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
+// 	size = ft_strlen(&store[i + 1]) + 1;
+// 	if (!(tmp = (char *)malloc(sizeof(char) * size)))
 // 		return (NULL);
-// 	ft_strlcpy(tmp, store, ft_strlen(&store[i + 1]) + 1);
+// 	ft_strlcpy(tmp, &store[i + 1], size);
 // 	free(store);
 // 	return (tmp);
 // }
+char *get_from_store(char *store, char **line)
+{
+	int i;
+	char *tmp;
+	
+	i = 0;
+	tmp = NULL;
+	while (store[i] && store[i] != '\n')
+		i++;
+	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	ft_strlcpy(*line, store, i + 1);
+	// if (!(tmp = (char *)malloc(sizeof(char) * (i + 1))))
+	// 	return (NULL);
+	// ft_strlcpy(tmp, store, i + 1);
+	// if (!(*line = ft_strdup(tmp)))
+	// 	return (NULL);
+	// free(tmp);
+	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
+		return (NULL);
+	ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
+	free(store);
+	return (tmp);
+}
 
 // char	*save_new_line(char *store, char **line, char *buf)
 // {
