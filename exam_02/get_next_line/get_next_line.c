@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/26 21:41:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/26 21:42:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,11 +229,11 @@ char *save_new_line(char *store, char **line, char *buf)
 	while (buf[++j] && j < i)
 		tmp[ft_strlen(store) + j] = buf[j];
 	if (!(*line = ft_strdup(tmp)))
-		return (-1);
+		return (NULL);
 	free(store);
 	free(tmp);
 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
-		return (-1);
+		return (NULL);
 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	return (tmp);
 }
