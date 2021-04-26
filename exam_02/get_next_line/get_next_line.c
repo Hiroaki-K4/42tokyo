@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/26 22:42:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/26 22:42:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ char *get_from_store(char *store, char **line)
 	while (store[i] && store[i] != '\n')
 		i++;
 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
-		return (-1);
+		return (NULL);
 	ft_strlcpy(*line, store, i + 1);
 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
 		return (NULL);
