@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/26 22:42:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/26 22:43:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,7 +225,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 char *get_from_store(char *store, char **line)
 {
 	int i;
-	char tmp;
+	char *tmp;
 	
 	i = 0;
 	while (store[i] && store[i] != '\n')
