@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 22:21:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 22:21:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int main_loop(void *arg)
 	double cameraX;
 	double rayDirX;
 	double rayDirY;
+	int mapX;
+	int mapY;
 	
 	posX = 22;
 	posY = 12;  //x and y start position
@@ -88,8 +90,8 @@ int main_loop(void *arg)
 		rayDirX = dirX + planeX * cameraX;
 		rayDirY = dirY + planeY * cameraX;
 		//which box of the map we're in
-		int mapX = int(posX);
-		int mapY = int(posY);
+		mapX = (int)posX;
+		mapY = (int)posY;
 		
 		i++;
 	}
