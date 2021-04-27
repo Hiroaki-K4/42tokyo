@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 10:01:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 10:03:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,7 @@ char *get_from_store(char *store, char **line)
 	int i;
 	char *tmp;
 
+	printf("store: %s\n", store);
 	i = 0;
 	while (store[i] && store[i] != '\n')
 		i++;
@@ -289,7 +290,6 @@ int read_line(int fd, char **store, char **line)
 			return (-1);
 		free(store[fd]);
 		store[fd] = tmp;
-		printf("store: %s\n", store[fd]);
 	}
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
