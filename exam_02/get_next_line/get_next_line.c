@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 10:03:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 10:03:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,6 @@ char *get_from_store(char *store, char **line)
 	int i;
 	char *tmp;
 
-	printf("store: %s\n", store);
 	i = 0;
 	while (store[i] && store[i] != '\n')
 		i++;
@@ -260,7 +259,6 @@ char *save_new_line(char *store, char **line, char *buf)
 		return (NULL);
 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
-	printf("tmp: %s\n", tmp);
 	return (tmp);
 }
 
