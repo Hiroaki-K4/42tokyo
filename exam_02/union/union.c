@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:17:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 12:44:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 12:47:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@
 
 char *ft_strchr(const char *s, int c)
 {
-	unsigned char const *ptr_s;
-	int 				i;
-	
-	ptr_s = (unsigned char const *)s;
+	unsigned const char *ptr_s;
+	int i;
+
+	ptr_s = (unsigned const char *)s;
 	i = 0;
 	while (ptr_s[i])
 	{
@@ -43,7 +43,7 @@ char *ft_strchr(const char *s, int c)
 			return (char *)(s + i);
 		i++;
 	}
-	if (ptr_s[i] == '\n' && ptr_s[i] == (unsigned char)c)
+	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
 		return (char *)(s + i);
 	return (NULL);
 }
