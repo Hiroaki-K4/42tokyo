@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 06:38:23 by user42            #+#    #+#             */
-/*   Updated: 2021/04/27 21:31:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 21:41:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	while (i++ < 5)
 	{
-		r = get_next_line(&get_line);
+		r = get_next_line(fd, &get_line);
 		printf("%d\n", r);
 		if (r == -1)
 		{

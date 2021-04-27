@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 18:47:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 21:22:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 21:41:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	char	*line;
 
 	line = NULL;
-	while ((r = get_next_line(&line)) > 0)
+	while ((r = get_next_line(0, &line)) > 0)
 	{
 		printf("%s\n", line);
 		free(line);

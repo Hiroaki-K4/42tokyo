@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 21:34:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 21:39:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,7 +163,6 @@ int		read_line(int fd, char **store, char **line)
 	i = 1;
 	while (i > 0)
 	{
-		printf("ok\n");
 		if ((i = read(fd, buf, buffer_size)) == -1)
 			return (-1);
 		buf[i] = '\0';
@@ -184,13 +183,11 @@ int		read_line(int fd, char **store, char **line)
 	return (0);
 }
 
-int get_next_line(char **line)
+int get_next_line(int fd, char **line)
 {
     int         i;
-	int			fd;
     static char *store[255];
 
-	fd = 0;
     *line = NULL;
     if (fd < 0 || fd > 255)
         return (-1);
