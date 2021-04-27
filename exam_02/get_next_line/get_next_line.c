@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 13:17:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 13:19:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,6 +256,7 @@ char *save_new_line(char *store, char **line, char *buf)
 		return (NULL);
 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
+	printf("tmp: %s\n", tmp);
 	return (tmp);
 }
 
@@ -279,7 +280,6 @@ int read_line(int fd, char **store, char **line)
 		{
 			if (!(store[fd] = save_new_line(store[fd], line, buf)))
 				return (-1);
-			printf("store: %s\n", store[fd]);
 			return (1);
 		}
 		if (!(tmp = ft_strjoin(store[fd], buf)))
