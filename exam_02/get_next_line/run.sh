@@ -115,9 +115,9 @@ echo "~~none.txt~~"
 # echo "~~none.txt~~"
 # ./a.out none.txt
 
-# echo "~~Stdin check~~"
-# gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=2 main_stdin.c get_next_line.c get_next_line_utils.c
-# ./a.out
+echo "~~Stdin check~~"
+gcc -Wall -Wextra -Werror -g main_stdin.c get_next_line.c
+./a.out
 cd ../../
 sh git.sh
 cd exam_02/gnl
