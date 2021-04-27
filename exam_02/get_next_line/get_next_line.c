@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 13:22:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 13:22:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -309,6 +309,7 @@ int get_next_line(int fd, char **line)
 			free(store[fd]);
 			store[fd] = NULL;
 		}
+		printf("store: %s\n", store[fd]);
 		return (i);
 	}
 	else
