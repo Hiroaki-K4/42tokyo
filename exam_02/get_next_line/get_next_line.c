@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 13:17:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 13:17:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,7 +272,6 @@ int read_line(int fd, char **store, char **line)
 	i = 1;
 	while (i > 0)
 	{
-		printf("ok");
 		if ((i = read(fd, buf, buffer_size)) == -1)
 			return (-1);
 		buf[i] = '\0';
@@ -280,6 +279,7 @@ int read_line(int fd, char **store, char **line)
 		{
 			if (!(store[fd] = save_new_line(store[fd], line, buf)))
 				return (-1);
+			printf("store: %s\n", store[fd]);
 			return (1);
 		}
 		if (!(tmp = ft_strjoin(store[fd], buf)))
