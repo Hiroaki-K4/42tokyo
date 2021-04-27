@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 09:54:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 09:54:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,23 +217,23 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 
 
 
-char *get_from_store(char *store, char **line)
-{
-	int i;
-	char *tmp;
+// char *get_from_store(char *store, char **line)
+// {
+// 	int i;
+// 	char *tmp;
 
-	i = 0;
-	while (store[i] && store[i] != '\n')
-		i++;
-	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	ft_strlcpy(*line, store, i + 1);
-	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
-		return (NULL);
-	ft_strlcpy(tmp, store, ft_strlen(&store[i + 1]) + 1);
-	free(store);
-	return (tmp);
-}
+// 	i = 0;
+// 	while (store[i] && store[i] != '\n')
+// 		i++;
+// 	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+// 		return (NULL);
+// 	ft_strlcpy(*line, store, i + 1);
+// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
+// 		return (NULL);
+// 	ft_strlcpy(tmp, store, ft_strlen(&store[i + 1]) + 1);
+// 	free(store);
+// 	return (tmp);
+// }
 
 char *save_new_line(char *store, char **line, char *buf)
 {
@@ -300,7 +300,6 @@ int get_next_line(int fd, char **line)
 	int i;
 	static char *store[255];
 
-	printf("ok");
 	if (fd < 0 || fd > 255)
 		return (-1);
 	if (ft_strchr(store[fd], '\n') == NULL)
@@ -314,8 +313,8 @@ int get_next_line(int fd, char **line)
 	}
 	else
 	{
-		if (!(store[fd] = get_from_store(store[fd], line)))
-			return (-1);
+		// if (!(store[fd] = get_from_store(store[fd], line)))
+			// return (-1);
 		return (1);
 	}
 	return (0);
