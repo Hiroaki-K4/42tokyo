@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 09:59:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 10:00:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,7 +270,6 @@ int read_line(int fd, char **store, char **line)
 	char *tmp;
 	
 	buffer_size = 128;
-	printf("store: %s\n", store[fd]);
 	if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
 		return (-1);
 	i = 1;
@@ -289,6 +288,7 @@ int read_line(int fd, char **store, char **line)
 			return (-1);
 		free(store[fd]);
 		store[fd] = tmp;
+		printf("store: %s\n", store[fd]);
 	}
 	if (!(*line = ft_strdup(store[fd])))
 		return (-1);
