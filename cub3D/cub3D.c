@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 22:05:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 22:21:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,37 @@ int             key_press(int keycode, t_vars *vars)
 int main_loop(void *arg)
 {
 	int x;
-	double posX = 22, posY = 12;  //x and y start position
-  	double dirX = -1, dirY = 0; //initial direction vector
-  	double planeX = 0, planeY = 0.66; //the 2d raycaster version of camera plane
-
-  double time = 0; //time of current frame
-  double oldTime = 0; //time of previous frame
-
-
+	double posX;
+	double posY;  //x and y start position
+	double dirX;
+	double dirY; //initial direction vector
+	double planeX;
+	double planeY; //the 2d raycaster version of camera plane
+  	double time; //time of current frame
+  	double oldTime; //time of previous frame
+	double cameraX;
+	double rayDirX;
+	double rayDirY;
+	
+	posX = 22;
+	posY = 12;  //x and y start position
+	dirX = -1;
+	dirY = 0; //initial direction vector
+	planeX = 0;
+	planeY = 0.66; //the 2d raycaster version of camera plane
+  	time = 0; //time of current frame
+  	oldTime = 0; //time of previous frame
 	x = 0;
 	while (x < screenWidth)
 	{
 		//calculate ray position and direction
-		double cameraX = 2 * x / (double)screenWidth - 1;
-		double rayDirX = dirX + planeX * cameraX;
-		double rayDirY = dir
+		cameraX = 2 * x / (double)screenWidth - 1;
+		rayDirX = dirX + planeX * cameraX;
+		rayDirY = dirY + planeY * cameraX;
+		//which box of the map we're in
+		int mapX = int(posX);
+		int mapY = int(posY);
+		
 		i++;
 	}
 	return (0);
