@@ -6,17 +6,35 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:17:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/30 22:21:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 12:28:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
-{
-	unsigned char const	*ptr_s;
-	int					i;
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	unsigned char const	*ptr_s;
+// 	int					i;
 
+// 	ptr_s = (unsigned char const *)s;
+// 	i = 0;
+// 	while (ptr_s[i])
+// 	{
+// 		if (ptr_s[i] == (unsigned char)c)
+// 			return (char *)(s + i);
+// 		i++;
+// 	}
+// 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+// 		return (char *)(s + i);
+// 	return (NULL);
+// }
+
+char *ft_strchr(const char *s, int c)
+{
+	unsigned char const *ptr_s;
+	int 				i;
+	
 	ptr_s = (unsigned char const *)s;
 	i = 0;
 	while (ptr_s[i])
@@ -25,7 +43,7 @@ char	*ft_strchr(const char *s, int c)
 			return (char *)(s + i);
 		i++;
 	}
-	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+	if (ptr_s[i] == '\n' && ptr_s[i] == (unsigned char)c)
 		return (char *)(s + i);
 	return (NULL);
 }
