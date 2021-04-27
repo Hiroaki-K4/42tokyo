@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:17:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 12:39:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/27 12:44:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,10 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int j;
-	int flag = 1;
+	int flag;
 	char *arg1;
 	char *arg2;
-
+	
 	if (argc == 3)
 	{
 		arg1 = argv[1];
@@ -113,8 +113,8 @@ int main(int argc, char *argv[])
 		i = 0;
 		while (arg1[i])
 		{
-			flag = 1;
 			j = i;
+			flag = 1;
 			while (j > 0)
 			{
 				if (arg1[j - 1] == arg1[i])
@@ -130,8 +130,8 @@ int main(int argc, char *argv[])
 		{
 			if (ft_strchr(arg1, arg2[i]) == NULL)
 			{
-				flag = 1;
 				j = i;
+				flag = 1;
 				while (j > 0)
 				{
 					if (arg2[j - 1] == arg2[i])
