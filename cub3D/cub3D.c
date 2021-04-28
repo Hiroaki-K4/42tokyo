@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/27 22:24:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/28 09:29:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,11 @@ int main_loop(void *arg)
 	double deltaDistX;
 	double deltaDistY;
 	double perpWallDist;
+  //what direction to step in x or y-direction (either +1 or -1)
+  int stepX;
+  int stepY;
+  int hit; //was there a wall hit?
+  int side; //was a NS or a EW wall hit?
 	
 	posX = 22;
 	posY = 12;  //x and y start position
@@ -86,9 +91,10 @@ int main_loop(void *arg)
 	dirY = 0; //initial direction vector
 	planeX = 0;
 	planeY = 0.66; //the 2d raycaster version of camera plane
-  	time = 0; //time of current frame
-  	oldTime = 0; //time of previous frame
-	x = 0;
+  time = 0; //time of current frame
+  oldTime = 0; //time of previous frame
+	hit = 0;
+  x = 0;
 	while (x < screenWidth)
 	{
 		//calculate ray position and direction
