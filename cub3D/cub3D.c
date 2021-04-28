@@ -17,6 +17,34 @@
 #define mapWidth 24
 #define mapHeight 24
 
+int worldMap[mapWidth][mapHeight]=
+{
+  {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
+  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+  {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+};
+
 typedef struct  s_data {
     void        *img;
     char        *addr;
@@ -66,8 +94,8 @@ int main_loop(void *arg)
 	double dirY; //initial direction vector
 	double planeX;
 	double planeY; //the 2d raycaster version of camera plane
-  	double time; //time of current frame
-  	double oldTime; //time of previous frame
+  double time; //time of current frame
+  double oldTime; //time of previous frame
 	double cameraX;
 	double rayDirX;
 	double rayDirY;
@@ -107,6 +135,47 @@ int main_loop(void *arg)
 		//length of ray from one x or y-side to next x or y-side
 		double deltaDistX = std::abs(1 / rayDirX);
 		double deltaDistY = std::abs(1 / rayDirY);
+    //calculate step and initial sideDist
+    if(rayDirX < 0)
+    {
+      stepX = -1;
+      sideDistX = (posX - mapX) * deltaDistX;
+    }
+    else
+    {
+      stepX = 1;
+      sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+    }
+    if(rayDirY < 0)
+    {
+      stepY = -1;
+      sideDistY = (posY - mapY) * deltaDistY;
+    }
+    else
+    {
+      stepY = 1;
+      sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+    }
+    //perform DDA
+    while (hit == 0)
+    {
+      //jump to next map square, OR in x-direction, OR in y-direction
+      if(sideDistX < sideDistY)
+      {
+        sideDistX += deltaDistX;
+        mapX += stepX;
+        side = 0;
+      }
+      else
+      {
+        sideDistY += deltaDistY;
+        mapY += stepY;
+        side = 1;
+      }
+      //Check if ray has hit a wall
+      if (worldMap[mapX][mapY] > 0) 
+        hit = 1;
+    }
 		
 		i++;
 	}
