@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/28 22:53:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/28 23:07:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,6 @@ int worldMap[mapWidth][mapHeight]=
 	{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	};
-
-typedef struct Color
-{
-	int r;
-	int g;
-	int b;
-
-	// ColorRGB(Uint8 r, Uint8 g, Uint8 b);
-	// ColorRGB(const ColorRGB8bit& color);
-	// ColorRGB();
-}              ColorRGB;
 
 typedef struct  s_data {
     void        *img;
@@ -95,6 +84,15 @@ int             key_press(int keycode, t_vars *vars)
 //     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 //     *(unsigned int*)dst = color;
 // }
+
+void verLine(t_info *info, int x, int y1, int y2, int color)
+{
+	while (y1 <= y2)
+	{
+		mlx_pixel_put(info->mlx, info->win, x, y, color);
+		y1++;
+	}
+}
 
 int main_loop(void *arg)
 {
@@ -207,38 +205,24 @@ int main_loop(void *arg)
 			drawEnd = screenHeight - 1;
 
 		//choose wall color
-		ColorRGB color;
+		// ColorRGB color;
+		int color;
 		if (worldMap[mapX][mapY] == 1)
-		{
-			color.r = 255;
-			color.g = 0;
-			color.b = 0;
-		}
+			color = 0xFF0000;
 		else if (worldMap[mapX][mapY] == 2)
-		{
-			color.r = 0;
-			color.g = 255;
-			color.b = 0;
-		}
+			color = 0x00FF00;
 		else if (worldMap[mapX][mapY] == 3)
-		{
-			color.r = 0;
-			color.g = 0;
-			color.b = 255;
-		}
+			color = 0x0000FF;
 		else if (worldMap[mapX][mapY] == 4)
-		{
-			color.r = 255;
-			color.g = 255;
-			color.b = 255;
-		}
+			color = 0xFFFFFF;
 		else
-		{
-			color.r = 255;
-			color.g = 255;
-			color.b = 0;
-		}
-		
+			color = 0xFFFF00;
+		//give x and y sides different brightness
+		if(side == 1) 
+			color = color / 2;
+
+		//draw the pixels of the stripe as a vertical line
+		verLine(x, drawStart, drawEnd, color);
 		i++;
 	}
 	return (0);
