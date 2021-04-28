@@ -112,6 +112,9 @@ int main_loop(void *arg)
   int stepY;
   int hit; //was there a wall hit?
   int side; //was a NS or a EW wall hit?
+  int lineHeight;
+  int drawStart;
+  int drawEnd;
 	
 	posX = 22;
 	posY = 12;  //x and y start position
@@ -175,6 +178,32 @@ int main_loop(void *arg)
       //Check if ray has hit a wall
       if (worldMap[mapX][mapY] > 0) 
         hit = 1;
+    }
+    //Calculate distance projected on camera direction (Euclidean distance will give fisheye effect!)
+    if(side == 0) 
+      perpWallDist = (mapX - posX + (1 - stepX) / 2) / rayDirX;
+    else
+      perpWallDist = (mapY - posY + (1 - stepY) / 2) / rayDirY;
+    //Calculate height of line to draw on screen
+    lineHeight = (int)(screenHeight / perpWallDist);
+
+    //calculate lowest and highest pixel to fill in current stripe
+    drawStart = -lineHeight / 2 + screenHeight / 2;
+    if (drawStart < 0)
+      drawStart = 0;
+    drawEnd = lineHeight / 2 + screenHeight / 2;
+    if (drawEnd >= screenHeight)
+      drawEnd = screenHeight - 1;
+
+    //choose wall color
+    ColorRGB color;
+    switch(worldMap[mapX][mapY])
+    {
+      case 1:  color = RGB_Red;    break; //red
+      case 2:  color = RGB_Green;  break; //green
+      case 3:  color = RGB_Blue;   break; //blue
+      case 4:  color = RGB_White;  break; //white
+      default: color = RGB_Yellow; break; //yellow
     }
 		
 		i++;
