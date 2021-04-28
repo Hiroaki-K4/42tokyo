@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/28 22:51:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/28 22:53:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,32 +220,25 @@ int main_loop(void *arg)
 			color.g = 255;
 			color.b = 0;
 		}
-		else if (worldMap[mapX][mapY] == )
-		switch(worldMap[mapX][mapY])
+		else if (worldMap[mapX][mapY] == 3)
 		{
-		case 1:  color = RGB_Red;    break; //red
-		case 2:  color = RGB_Green;  break; //green
-		case 3:  color = RGB_Blue;   break; //blue
-		case 4:  color = RGB_White;  break; //white
-		default: color = RGB_Yellow; break; //yellow
+			color.r = 0;
+			color.g = 0;
+			color.b = 255;
 		}
-			
-		static const ColorRGB RGB_Black    (  0,   0,   0);
-		static const ColorRGB RGB_Red      (255,   0,   0);
-		static const ColorRGB RGB_Green    (  0, 255,   0);
-		static const ColorRGB RGB_Blue     (  0,   0, 255);
-		static const ColorRGB RGB_Cyan     (  0, 255, 255);
-		static const ColorRGB RGB_Magenta  (255,   0, 255);
-		static const ColorRGB RGB_Yellow   (255, 255,   0);
-		static const ColorRGB RGB_White    (255, 255, 255);
-		static const ColorRGB RGB_Gray     (128, 128, 128);
-		static const ColorRGB RGB_Grey     (192, 192, 192);
-		static const ColorRGB RGB_Maroon   (128,   0,   0);
-		static const ColorRGB RGB_Darkgreen(  0, 128,   0);
-		static const ColorRGB RGB_Navy     (  0,   0, 128);
-		static const ColorRGB RGB_Teal     (  0, 128, 128);
-		static const ColorRGB RGB_Purple   (128,   0, 128);
-		static const ColorRGB RGB_Olive    (128, 128,   0);
+		else if (worldMap[mapX][mapY] == 4)
+		{
+			color.r = 255;
+			color.g = 255;
+			color.b = 255;
+		}
+		else
+		{
+			color.r = 255;
+			color.g = 255;
+			color.b = 0;
+		}
+		
 		i++;
 	}
 	return (0);
