@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/28 09:29:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/28 22:51:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,41 +19,41 @@
 
 int worldMap[mapWidth][mapHeight]=
 {
-  {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
-  {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-  {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-};
+	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+	{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
+	{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+	};
 
 typedef struct Color
 {
-  int r;
-  int g;
-  int b;
+	int r;
+	int g;
+	int b;
 
-  ColorRGB(Uint8 r, Uint8 g, Uint8 b);
-  ColorRGB(const ColorRGB8bit& color);
-  ColorRGB();
+	// ColorRGB(Uint8 r, Uint8 g, Uint8 b);
+	// ColorRGB(const ColorRGB8bit& color);
+	// ColorRGB();
 }              ColorRGB;
 
 typedef struct  s_data {
@@ -105,8 +105,8 @@ int main_loop(void *arg)
 	double dirY; //initial direction vector
 	double planeX;
 	double planeY; //the 2d raycaster version of camera plane
-  double time; //time of current frame
-  double oldTime; //time of previous frame
+	double time; //time of current frame
+	double oldTime; //time of previous frame
 	double cameraX;
 	double rayDirX;
 	double rayDirY;
@@ -118,14 +118,14 @@ int main_loop(void *arg)
 	double deltaDistX;
 	double deltaDistY;
 	double perpWallDist;
-  //what direction to step in x or y-direction (either +1 or -1)
-  int stepX;
-  int stepY;
-  int hit; //was there a wall hit?
-  int side; //was a NS or a EW wall hit?
-  int lineHeight;
-  int drawStart;
-  int drawEnd;
+	//what direction to step in x or y-direction (either +1 or -1)
+	int stepX;
+	int stepY;
+	int hit; //was there a wall hit?
+	int side; //was a NS or a EW wall hit?
+	int lineHeight;
+	int drawStart;
+	int drawEnd;
 	
 	posX = 22;
 	posY = 12;  //x and y start position
@@ -133,10 +133,10 @@ int main_loop(void *arg)
 	dirY = 0; //initial direction vector
 	planeX = 0;
 	planeY = 0.66; //the 2d raycaster version of camera plane
-  time = 0; //time of current frame
-  oldTime = 0; //time of previous frame
+	time = 0; //time of current frame
+	oldTime = 0; //time of previous frame
 	hit = 0;
-  x = 0;
+	x = 0;
 	while (x < screenWidth)
 	{
 		//calculate ray position and direction
@@ -149,74 +149,103 @@ int main_loop(void *arg)
 		//length of ray from one x or y-side to next x or y-side
 		double deltaDistX = std::abs(1 / rayDirX);
 		double deltaDistY = std::abs(1 / rayDirY);
-    //calculate step and initial sideDist
-    if(rayDirX < 0)
-    {
-      stepX = -1;
-      sideDistX = (posX - mapX) * deltaDistX;
-    }
-    else
-    {
-      stepX = 1;
-      sideDistX = (mapX + 1.0 - posX) * deltaDistX;
-    }
-    if(rayDirY < 0)
-    {
-      stepY = -1;
-      sideDistY = (posY - mapY) * deltaDistY;
-    }
-    else
-    {
-      stepY = 1;
-      sideDistY = (mapY + 1.0 - posY) * deltaDistY;
-    }
-    //perform DDA
-    while (hit == 0)
-    {
-      //jump to next map square, OR in x-direction, OR in y-direction
-      if(sideDistX < sideDistY)
-      {
-        sideDistX += deltaDistX;
-        mapX += stepX;
-        side = 0;
-      }
-      else
-      {
-        sideDistY += deltaDistY;
-        mapY += stepY;
-        side = 1;
-      }
-      //Check if ray has hit a wall
-      if (worldMap[mapX][mapY] > 0) 
-        hit = 1;
-    }
-    //Calculate distance projected on camera direction (Euclidean distance will give fisheye effect!)
-    if(side == 0) 
-      perpWallDist = (mapX - posX + (1 - stepX) / 2) / rayDirX;
-    else
-      perpWallDist = (mapY - posY + (1 - stepY) / 2) / rayDirY;
-    //Calculate height of line to draw on screen
-    lineHeight = (int)(screenHeight / perpWallDist);
+		//calculate step and initial sideDist
+		if(rayDirX < 0)
+		{
+			stepX = -1;
+			sideDistX = (posX - mapX) * deltaDistX;
+		}
+		else
+		{
+			stepX = 1;
+			sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+		}
+		if(rayDirY < 0)
+		{
+			stepY = -1;
+			sideDistY = (posY - mapY) * deltaDistY;
+		}
+		else
+		{
+			stepY = 1;
+			sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+		}
+		//perform DDA
+		while (hit == 0)
+		{
+			//jump to next map square, OR in x-direction, OR in y-direction
+			if(sideDistX < sideDistY)
+			{
+			sideDistX += deltaDistX;
+			mapX += stepX;
+			side = 0;
+			}
+			else
+			{
+			sideDistY += deltaDistY;
+			mapY += stepY;
+			side = 1;
+			}
+			//Check if ray has hit a wall
+			if (worldMap[mapX][mapY] > 0) 
+			hit = 1;
+		}
+		//Calculate distance projected on camera direction (Euclidean distance will give fisheye effect!)
+		if(side == 0) 
+			perpWallDist = (mapX - posX + (1 - stepX) / 2) / rayDirX;
+		else
+			perpWallDist = (mapY - posY + (1 - stepY) / 2) / rayDirY;
+		//Calculate height of line to draw on screen
+		lineHeight = (int)(screenHeight / perpWallDist);
 
-    //calculate lowest and highest pixel to fill in current stripe
-    drawStart = -lineHeight / 2 + screenHeight / 2;
-    if (drawStart < 0)
-      drawStart = 0;
-    drawEnd = lineHeight / 2 + screenHeight / 2;
-    if (drawEnd >= screenHeight)
-      drawEnd = screenHeight - 1;
+		//calculate lowest and highest pixel to fill in current stripe
+		drawStart = -lineHeight / 2 + screenHeight / 2;
+		if (drawStart < 0)
+			drawStart = 0;
+		drawEnd = lineHeight / 2 + screenHeight / 2;
+		if (drawEnd >= screenHeight)
+			drawEnd = screenHeight - 1;
 
-    //choose wall color
-    ColorRGB color;
-    switch(worldMap[mapX][mapY])
-    {
-      case 1:  color = RGB_Red;    break; //red
-      case 2:  color = RGB_Green;  break; //green
-      case 3:  color = RGB_Blue;   break; //blue
-      case 4:  color = RGB_White;  break; //white
-      default: color = RGB_Yellow; break; //yellow
-    }
-		
+		//choose wall color
+		ColorRGB color;
+		if (worldMap[mapX][mapY] == 1)
+		{
+			color.r = 255;
+			color.g = 0;
+			color.b = 0;
+		}
+		else if (worldMap[mapX][mapY] == 2)
+		{
+			color.r = 0;
+			color.g = 255;
+			color.b = 0;
+		}
+		else if (worldMap[mapX][mapY] == )
+		switch(worldMap[mapX][mapY])
+		{
+		case 1:  color = RGB_Red;    break; //red
+		case 2:  color = RGB_Green;  break; //green
+		case 3:  color = RGB_Blue;   break; //blue
+		case 4:  color = RGB_White;  break; //white
+		default: color = RGB_Yellow; break; //yellow
+		}
+			
+		static const ColorRGB RGB_Black    (  0,   0,   0);
+		static const ColorRGB RGB_Red      (255,   0,   0);
+		static const ColorRGB RGB_Green    (  0, 255,   0);
+		static const ColorRGB RGB_Blue     (  0,   0, 255);
+		static const ColorRGB RGB_Cyan     (  0, 255, 255);
+		static const ColorRGB RGB_Magenta  (255,   0, 255);
+		static const ColorRGB RGB_Yellow   (255, 255,   0);
+		static const ColorRGB RGB_White    (255, 255, 255);
+		static const ColorRGB RGB_Gray     (128, 128, 128);
+		static const ColorRGB RGB_Grey     (192, 192, 192);
+		static const ColorRGB RGB_Maroon   (128,   0,   0);
+		static const ColorRGB RGB_Darkgreen(  0, 128,   0);
+		static const ColorRGB RGB_Navy     (  0,   0, 128);
+		static const ColorRGB RGB_Teal     (  0, 128, 128);
+		static const ColorRGB RGB_Purple   (128,   0, 128);
+		static const ColorRGB RGB_Olive    (128, 128,   0);
 		i++;
 	}
 	return (0);
