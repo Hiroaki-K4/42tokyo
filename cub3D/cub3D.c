@@ -45,6 +45,17 @@ int worldMap[mapWidth][mapHeight]=
   {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 };
 
+typedef struct Color
+{
+  int r;
+  int g;
+  int b;
+
+  ColorRGB(Uint8 r, Uint8 g, Uint8 b);
+  ColorRGB(const ColorRGB8bit& color);
+  ColorRGB();
+}              ColorRGB;
+
 typedef struct  s_data {
     void        *img;
     char        *addr;
