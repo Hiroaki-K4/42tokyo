@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 17:58:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 18:12:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,6 @@ int worldMap[mapWidth][mapHeight]=
 	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	};
 
-typedef struct  s_data {
-    void        *img;
-    char        *addr;
-    int         bits_per_pixel;
-    int         line_length;
-    int         endian;
-}               t_data;
-
-typedef struct  s_vars {
-    void        *mlx;
-    void        *win;
-}               t_vars;
-
 typedef struct	s_info {
 	double	posX;
 	double	posY;
@@ -83,20 +70,6 @@ int             key_press(int keycode, t_vars *vars)
 		mlx_destroy_window(vars->mlx, vars->win);
 	exit(0);
 }
-
-// int             resize_display(int keycode, t_vars *vars)
-// {
-// 	printf("Resize display");
-// 	return (0);
-// }
-
-// void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
-// {
-//     char    *dst;
-
-//     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-//     *(unsigned int*)dst = color;
-// }
 
 void verLine(t_info *info, int x, int y1, int y2, int color)
 {
@@ -243,41 +216,41 @@ void main_loop(void *arg)
 
     
     //move forward if no wall in front of you
-    if(keyDown(SDLK_UP))
-    {
-      if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
-      if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
-    }
-    //move backwards if no wall behind you
-    if(keyDown(SDLK_DOWN))
-    {
-      if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
-      if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
-    }
-    //rotate to the right
-    if(keyDown(SDLK_RIGHT))
-    {
-      //both camera direction and camera plane must be rotated
-      double oldDirX = dirX;
-      dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
-      dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
-      double oldPlaneX = planeX;
-      planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
-      planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
-    }
-    //rotate to the left
-    if(keyDown(SDLK_LEFT))
-    {
-      //both camera direction and camera plane must be rotated
-      double oldDirX = dirX;
-      dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
-      dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
-      double oldPlaneX = planeX;
-      planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
-      planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
-    }
-  }
-}
+//     if(keyDown(SDLK_UP))
+//     {
+//       if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
+//       if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
+//     }
+//     //move backwards if no wall behind you
+//     if(keyDown(SDLK_DOWN))
+//     {
+//       if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
+//       if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
+//     }
+//     //rotate to the right
+//     if(keyDown(SDLK_RIGHT))
+//     {
+//       //both camera direction and camera plane must be rotated
+//       double oldDirX = dirX;
+//       dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
+//       dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
+//       double oldPlaneX = planeX;
+//       planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
+//       planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
+//     }
+//     //rotate to the left
+//     if(keyDown(SDLK_LEFT))
+//     {
+//       //both camera direction and camera plane must be rotated
+//       double oldDirX = dirX;
+//       dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
+//       dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
+//       double oldPlaneX = planeX;
+//       planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
+//       planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
+//     }
+//   }
+// }
 
 int	main(int argc, char *argv[])
 {
@@ -288,47 +261,33 @@ int	main(int argc, char *argv[])
 	char *cub_path;
 	void    *mlx;
 	void    *mlx_win;
-	t_data  img;
-	t_vars      vars;
+	t_info info;
 
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (-1);
-	}
-	buffer_size = 10;
-    fd = open(argv[1], O_RDONLY);
-	do
-	{
-		i = get_next_line(fd, &line, buffer_size);
-		printf("~~~fd: %d line: %s return: %d~~~\n", fd, line, i);
-		free(line);
-	} while (i > 0);
-	cub_path = argv[1];
-	i = ft_strlen(cub_path);
-	printf("len: %i\n", i);
-	printf("path: %s\n", cub_path);
-	argv[0] = "aa";
-	// mlx = mlx_init();
-	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-    // img.img = mlx_new_image(mlx, 1920, 1080);
-    // img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-    //                             &img.endian);
-    // my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-	// my_mlx_pixel_put(&img, 10, 10, 0x00FFFF00);
-    // mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    // mlx_loop(mlx);
+	// if (argc != 2)
+	// {
+	// 	printf("Error\n");
+	// 	return (-1);
+	// }
+	// buffer_size = 10;
+    // fd = open(argv[1], O_RDONLY);
+	// do
+	// {
+	// 	i = get_next_line(fd, &line, buffer_size);
+	// 	printf("~~~fd: %d line: %s return: %d~~~\n", fd, line, i);
+	// 	free(line);
+	// } while (i > 0);
+	// cub_path = argv[1];
+	// i = ft_strlen(cub_path);
+	// printf("len: %i\n", i);
+	// printf("path: %s\n", cub_path);
+	// argv[0] = "aa";
 	
-	// vars.mlx = mlx_init();
-    // vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
-    // mlx_key_hook(vars.win, key_hook, &vars);
-    // mlx_loop(vars.mlx);
 	
-	vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, screenWidth, screenHeight, "Raycaster!");
-	mlx_loop_hook(vars.mlx, main_loop, &vars);
-    mlx_hook(vars.win, 2, 1L<<0, key_press, &vars);
+	info.mlx = mlx_init();
+    info.win = mlx_new_window(info.mlx, screenWidth, screenHeight, "Raycaster!");
+	mlx_loop_hook(info.mlx, &main_loop, &info);
+    mlx_hook(info.win, 2, 1L<<0, &key_press, &info);
     // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
-    mlx_loop(vars.mlx);
+    mlx_loop(info.mlx);
 	// return (argc);
 }
