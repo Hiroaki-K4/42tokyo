@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 18:18:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 18:19:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ typedef struct	s_info {
 int             key_press(int keycode, t_info *info)
 {
 	if (keycode == 65307)
-		mlx_destroy_window(info->mlx, info->win);
-	exit(0);
+		exit(0);
+	return (0);
 }
 
 void verLine(t_info *info, int x, int y1, int y2, int color)
