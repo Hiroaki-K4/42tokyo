@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 11:01:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 11:02:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,40 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 		len--;
 	}
 	return (ans);
+}
+
+int		ft_atoi(const char *nptr)
+{
+	int		i;
+	int		flag;
+	int		ans;
+
+	flag = 1;
+	i = 0;
+	while (nptr[i] == ' ' || nptr[i] == '\f' || nptr[i] == '\n' ||
+			nptr[i] == '\r' || nptr[i] == '\t' || nptr[i] == '\v')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			flag = -1;
+		i++;
+	}
+	ans = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		ans = (ans * 10) + (nptr[i] - '0');
+		i++;
+	}
+	ans = ans * flag;
+	return (ans);
+}
+
+int		ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int	print_string(va_list *ap, t_plist flag_list)
@@ -327,80 +361,42 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	free(str_num);
 	return (len);
 }
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// char			*ft_itoa_hex(unsigned int n, char *arg)
-// {
-// 	int				len;
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	char			*ans;
 
-// 	i = n / 16;
-// 	if (i != 0)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// int		ft_atoi(const char *nptr)
+// {
+// 	int		i;
+// 	int		flag;
+// 	int		ans;
+
+// 	flag = 1;
+// 	i = 0;
+// 	while (nptr[i] == ' ' || nptr[i] == '\f' || nptr[i] == '\n' ||
+// 			nptr[i] == '\r' || nptr[i] == '\t' || nptr[i] == '\v')
+// 		i++;
+// 	if (nptr[i] == '-' || nptr[i] == '+')
 // 	{
-// 		len = 2;
-// 		while (i > 16)
-// 		{
-// 			len++;
-// 			i = i / 16;
-// 		}
+// 		if (nptr[i] == '-')
+// 			flag = -1;
+// 		i++;
 // 	}
-// 	else
-// 		len = 1;
-// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-// 		return (NULL);
-// 	ans[len] = '\0';
-// 	i = n;
-// 	len--;
-// 	if (i == 0)
+// 	ans = 0;
+// 	while (nptr[i] >= '0' && nptr[i] <= '9')
 // 	{
-// 		ans[0] = '0';
-// 		return (ans);
+// 		ans = (ans * 10) + (nptr[i] - '0');
+// 		i++;
 // 	}
-// 	while (i > 0)
-// 	{
-// 		j = i % 16;
-// 		ans[len] = arg[j];
-// 		i = i / 16;
-// 		len--;
-// 	}
+// 	ans = ans * flag;
 // 	return (ans);
 // }
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int		ft_atoi(const char *nptr)
-{
-	int		i;
-	int		flag;
-	int		ans;
 
-	flag = 1;
-	i = 0;
-	while (nptr[i] == ' ' || nptr[i] == '\f' || nptr[i] == '\n' ||
-			nptr[i] == '\r' || nptr[i] == '\t' || nptr[i] == '\v')
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			flag = -1;
-		i++;
-	}
-	ans = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		ans = (ans * 10) + (nptr[i] - '0');
-		i++;
-	}
-	ans = ans * flag;
-	return (ans);
-}
-
-int		ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+// int		ft_isdigit(int c)
+// {
+// 	if (c >= '0' && c <= '9')
+// 		return (1);
+// 	return (0);
+// }
 
 int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
