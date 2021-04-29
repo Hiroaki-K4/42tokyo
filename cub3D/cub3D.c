@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 18:17:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 18:18:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct	s_info {
 //     printf("Hello from key_hook!\n");
 // }
 
-int             key_press(int keycode, t_vars *vars)
+int             key_press(int keycode, t_info *info)
 {
 	if (keycode == 65307)
 		mlx_destroy_window(vars->mlx, vars->win);
