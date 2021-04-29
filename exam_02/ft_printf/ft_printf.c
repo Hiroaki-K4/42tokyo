@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 11:00:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 11:01:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,45 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	}
 	return (-1);
 }
+
+char			*ft_itoa_hex(unsigned int n, char *arg)
+{
+	int				len;
+	unsigned int	i;
+	unsigned int	j;
+	char			*ans;
+
+	i = n / 16;
+	if (i != 0)
+	{
+		len = 2;
+		while (i > 16)
+		{
+			len++;
+			i = i / 16;
+		}
+	}
+	else
+		len = 1;
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ans[len] = '\0';
+	i = n;
+	len--;
+	if (i == 0)
+	{
+		ans[0] = '0';
+		return (ans);
+	}
+	while (i > 0)
+	{
+		j = i % 16;
+		ans[len] = arg[j];
+		i = i / 16;
+		len--;
+	}
+	return (ans);
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int	print_string(va_list *ap, t_plist flag_list)
 {
@@ -184,70 +223,6 @@ int	print_string(va_list *ap, t_plist flag_list)
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// static	int		digit_size(int number)
-// {
-// 	int		count;
-
-// 	count = 0;
-// 	if (number <= 0)
-// 		count++;
-// 	while (number != 0)
-// 	{
-// 		number = number / 10;
-// 		count++;
-// 	}
-// 	return (count);
-// }
-
-// char	*ft_strdup(const char *s)
-// {
-// 	char	*new_ptr;
-// 	int		i;
-// 	int		size;
-
-// 	size = 0;
-// 	while (s[size] != '\0')
-// 		size++;
-// 	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
-// 		return (NULL);
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		new_ptr[i] = s[i];
-// 		i++;
-// 	}
-// 	new_ptr[i] = '\0';
-// 	return (new_ptr);
-// }
-
-// char			*ft_itoa(int n)
-// {
-// 	int		len;
-// 	char	flag;
-// 	char	*ans;
-
-// 	if (n == -2147483648)
-// 		return (ft_strdup("-2147483648"));
-// 	len = digit_size(n);
-// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-// 		return (NULL);
-// 	flag = '+';
-// 	if (n < 0)
-// 	{
-// 		n = n * (-1);
-// 		flag = '-';
-// 	}
-// 	ans[len] = '\0';
-// 	len--;
-// 	while (len >= 0)
-// 	{
-// 		ans[len--] = '0' + (n % 10);
-// 		n = n / 10;
-// 	}
-// 	if (flag == '-')
-// 		ans[0] = '-';
-// 	return (ans);
-// }
 
 int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
@@ -354,44 +329,44 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-char			*ft_itoa_hex(unsigned int n, char *arg)
-{
-	int				len;
-	unsigned int	i;
-	unsigned int	j;
-	char			*ans;
+// char			*ft_itoa_hex(unsigned int n, char *arg)
+// {
+// 	int				len;
+// 	unsigned int	i;
+// 	unsigned int	j;
+// 	char			*ans;
 
-	i = n / 16;
-	if (i != 0)
-	{
-		len = 2;
-		while (i > 16)
-		{
-			len++;
-			i = i / 16;
-		}
-	}
-	else
-		len = 1;
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ans[len] = '\0';
-	i = n;
-	len--;
-	if (i == 0)
-	{
-		ans[0] = '0';
-		return (ans);
-	}
-	while (i > 0)
-	{
-		j = i % 16;
-		ans[len] = arg[j];
-		i = i / 16;
-		len--;
-	}
-	return (ans);
-}
+// 	i = n / 16;
+// 	if (i != 0)
+// 	{
+// 		len = 2;
+// 		while (i > 16)
+// 		{
+// 			len++;
+// 			i = i / 16;
+// 		}
+// 	}
+// 	else
+// 		len = 1;
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	i = n;
+// 	len--;
+// 	if (i == 0)
+// 	{
+// 		ans[0] = '0';
+// 		return (ans);
+// 	}
+// 	while (i > 0)
+// 	{
+// 		j = i % 16;
+// 		ans[len] = arg[j];
+// 		i = i / 16;
+// 		len--;
+// 	}
+// 	return (ans);
+// }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print hex~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int		ft_atoi(const char *nptr)
 {
