@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 11:02:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 11:04:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,62 +201,60 @@ int		ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int	print_string(va_list *ap, t_plist flag_list)
-{
-	int		i;
-	int		len;
-	char	*str;
 
-	len = 0;
-	str = va_arg(*ap, char*);
-	if (str == NULL)
-		str = "(null)";
-	if (flag_list.field != -1)
-	{
-		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-		{
-			i = flag_list.precision;
-			while ((flag_list.field - i) > 0)
-			{
-				write(1, " ", 1);
-				i++;
-			}
-			write(1, str, flag_list.precision);
-			len = i;
-		}
-		else
-		{
-			i = 0;
-			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-			{
-				write(1, " ", 1);
-				i++;
-			}
-			write(1, str, ft_strlen(str));
-			len = (int)ft_strlen(str) + i;
-		}
-	}
-	else
-	{
-		if (flag_list.precision != -1)
-		{
-			while (len < flag_list.precision && str[len])
-			{
-				write(1, &str[len], 1);
-				len++;
-			}
-		}
-		else
-		{
-			write(1, str, ft_strlen(str));
-			len = ft_strlen(str);
-		}
-	}
-	return (len);
-}
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print string~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// int	print_string(va_list *ap, t_plist flag_list)
+// {
+// 	int		i;
+// 	int		len;
+// 	char	*str;
+
+// 	len = 0;
+// 	str = va_arg(*ap, char*);
+// 	if (str == NULL)
+// 		str = "(null)";
+// 	if (flag_list.field != -1)
+// 	{
+// 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+// 		{
+// 			i = flag_list.precision;
+// 			while ((flag_list.field - i) > 0)
+// 			{
+// 				write(1, " ", 1);
+// 				i++;
+// 			}
+// 			write(1, str, flag_list.precision);
+// 			len = i;
+// 		}
+// 		else
+// 		{
+// 			i = 0;
+// 			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+// 			{
+// 				write(1, " ", 1);
+// 				i++;
+// 			}
+// 			write(1, str, ft_strlen(str));
+// 			len = (int)ft_strlen(str) + i;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		if (flag_list.precision != -1)
+// 		{
+// 			while (len < flag_list.precision && str[len])
+// 			{
+// 				write(1, &str[len], 1);
+// 				len++;
+// 			}
+// 		}
+// 		else
+// 		{
+// 			write(1, str, ft_strlen(str));
+// 			len = ft_strlen(str);
+// 		}
+// 	}
+// 	return (len);
+// }
 
 int	field_precision(int num, char *str, t_plist flag_list, int i)
 {
@@ -362,41 +360,59 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	return (len);
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~print int~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+int	print_string(va_list *ap, t_plist flag_list)
+{
+	int		i;
+	int		len;
+	char	*str;
 
-// int		ft_atoi(const char *nptr)
-// {
-// 	int		i;
-// 	int		flag;
-// 	int		ans;
-
-// 	flag = 1;
-// 	i = 0;
-// 	while (nptr[i] == ' ' || nptr[i] == '\f' || nptr[i] == '\n' ||
-// 			nptr[i] == '\r' || nptr[i] == '\t' || nptr[i] == '\v')
-// 		i++;
-// 	if (nptr[i] == '-' || nptr[i] == '+')
-// 	{
-// 		if (nptr[i] == '-')
-// 			flag = -1;
-// 		i++;
-// 	}
-// 	ans = 0;
-// 	while (nptr[i] >= '0' && nptr[i] <= '9')
-// 	{
-// 		ans = (ans * 10) + (nptr[i] - '0');
-// 		i++;
-// 	}
-// 	ans = ans * flag;
-// 	return (ans);
-// }
-
-// int		ft_isdigit(int c)
-// {
-// 	if (c >= '0' && c <= '9')
-// 		return (1);
-// 	return (0);
-// }
+	len = 0;
+	str = va_arg(*ap, char*);
+	if (str == NULL)
+		str = "(null)";
+	if (flag_list.field != -1)
+	{
+		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+		{
+			i = flag_list.precision;
+			while ((flag_list.field - i) > 0)
+			{
+				write(1, " ", 1);
+				i++;
+			}
+			write(1, str, flag_list.precision);
+			len = i;
+		}
+		else
+		{
+			i = 0;
+			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
+			{
+				write(1, " ", 1);
+				i++;
+			}
+			write(1, str, ft_strlen(str));
+			len = (int)ft_strlen(str) + i;
+		}
+	}
+	else
+	{
+		if (flag_list.precision != -1)
+		{
+			while (len < flag_list.precision && str[len])
+			{
+				write(1, &str[len], 1);
+				len++;
+			}
+		}
+		else
+		{
+			write(1, str, ft_strlen(str));
+			len = ft_strlen(str);
+		}
+	}
+	return (len);
+}
 
 int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
