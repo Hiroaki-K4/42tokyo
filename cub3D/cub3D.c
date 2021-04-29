@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 18:12:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 18:14:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void verLine(t_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-void main_loop(void *arg)
+void main_loop(t_info *info)
 {
 	int x;
 	double posX;
@@ -209,7 +209,7 @@ void main_loop(void *arg)
 
 		//draw the pixels of the stripe as a vertical line
 		verLine(info, x, drawStart, drawEnd, color);
-		i++;
+		x++;
 	}
 }
 
