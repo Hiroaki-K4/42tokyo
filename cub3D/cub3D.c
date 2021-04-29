@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 17:54:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 17:58:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void verLine(t_info *info, int x, int y1, int y2, int color)
 {
 	while (y1 <= y2)
 	{
-		mlx_pixel_put(info->mlx, info->win, x, y, color);
+		mlx_pixel_put(info->mlx, info->win, x, y1, color);
 		y1++;
 	}
 }
