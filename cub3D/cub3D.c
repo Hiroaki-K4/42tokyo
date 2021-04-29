@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/28 23:15:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/29 17:54:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void verLine(t_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-int main_loop(void *arg)
+void main_loop(void *arg)
 {
 	int x;
 	double posX;
@@ -158,8 +158,8 @@ int main_loop(void *arg)
 		mapX = (int)posX;
 		mapY = (int)posY;
 		//length of ray from one x or y-side to next x or y-side
-		double deltaDistX = std::abs(1 / rayDirX);
-		double deltaDistY = std::abs(1 / rayDirY);
+		double deltaDistX = fabs(1 / rayDirX);
+		double deltaDistY = fabs(1 / rayDirY);
 		//calculate step and initial sideDist
 		if(rayDirX < 0)
 		{
@@ -238,7 +238,6 @@ int main_loop(void *arg)
 		verLine(info, x, drawStart, drawEnd, color);
 		i++;
 	}
-	return (0);
 }
 
 
