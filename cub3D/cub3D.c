@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 18:19:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/30 17:02:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,15 @@ typedef struct	s_info {
 	double	rotSpeed;
 }				t_info;
 
-// int             key_hook(int keycode, t_vars *vars)
-// {
-// 	printf("keycode: %d\n", keycode);
-//     printf("Hello from key_hook!\n");
-// }
-
 int             key_press(int keycode, t_info *info)
 {
+	if (keycode == KEY_W)
+	{
+		if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
+			info->posX += info->dirX * info->moveSpeed;
+		if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+			info->posY += info->dirY * info->moveSpeed;
+	}
 	if (keycode == 65307)
 		exit(0);
 	return (0);
