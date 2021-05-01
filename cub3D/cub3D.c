@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/30 17:02:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/04/30 17:02:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,10 @@ int             key_press(int keycode, t_info *info)
 			info->posX += info->dirX * info->moveSpeed;
 		if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
+	}
+	if (keycode == KEY_S)
+	{
+		if (!worldMap[(int)])
 	}
 	if (keycode == 65307)
 		exit(0);
