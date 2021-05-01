@@ -481,7 +481,7 @@ int ft_printf(const char *arg, ...)
 			print_len += ft_print_str(arg, &i);
 		else
 		{
-			j = ft_print_per(arg, &i, &ap)
+			j = ft_print_per(arg, &i, &ap);
 			if (j == -1)
 				return (-1);
 			print_len += j;
