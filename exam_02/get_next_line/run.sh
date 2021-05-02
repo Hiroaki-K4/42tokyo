@@ -120,4 +120,4 @@ gcc -Wall -Wextra -Werror -g main_stdin.c get_next_line.c
 ./a.out
 cd ../../
 sh git.sh
-cd exam_02/gnl
+cd exam_02/get_next_line
