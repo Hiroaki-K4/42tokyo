@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/04 17:11:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 17:12:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 #define mapHeight 24
 #define width 640
 #define height 480
+#define KEY_W 119
+#define KEY_S 115
+#define KEY_D 100
+#define KEY_A 97
+#define KEY_ESC 65307
 
 typedef struct	s_info
 {
