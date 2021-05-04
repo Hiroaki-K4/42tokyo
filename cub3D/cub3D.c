@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 17:08:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 18:07:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -318,6 +318,8 @@ int	main(int argc, char *argv[])
 	
 	
 	info.mlx = mlx_init();
+	info.posX = 12;
+	info.posY = 5;
     info.win = mlx_new_window(info.mlx, screenWidth, screenHeight, "Raycaster!");
 	mlx_loop_hook(info.mlx, &main_loop, &info);
     mlx_hook(info.win, 2, 1L<<0, &key_press, &info);
