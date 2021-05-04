@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:11:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:12:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,15 @@
 
 
 
-
+size_t ft_strlen(const char *s)
+{
+    size_t i;
+    
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
+}
 
 char *get_from_store(char *store, char **line)
 {
