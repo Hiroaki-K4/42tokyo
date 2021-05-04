@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:21:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:22:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,13 +245,13 @@ char *ft_strchr(const char *src, int c)
     
     ptr_s = (unsigned const char *)src;
     i = 0;
-    while (src[i])
+    while (ptr_s[i])
     {
-        if (src[i] == (unsigned char)c)
+        if (ptr_s[i] == (unsigned char)c)
             return (char *)(src + i);
         i++;
     }
-    if (src[i] == '\0' && src[i] == (unsigned char)c)
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
         return (char *)(src + i);
     return (NULL);
 }
