@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:12:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:18:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,7 +228,6 @@
 
 
 
-
 size_t ft_strlen(const char *s)
 {
     size_t i;
@@ -237,6 +236,41 @@ size_t ft_strlen(const char *s)
     while (s[i])
         i++;
     return (i);
+}
+
+char *ft_strdup(const char *src)
+{
+    int i;
+    char *dst;
+
+    if (!src)
+        return (NULL);
+    if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
+        return (NULL);
+    i = 0;
+    while (src[i])
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    return (dst);
+}
+
+size_t ft_strlcpy(char *dest, const char *src, int n)
+{
+    size_t i;
+    size_t ans;
+
+    ans = ft_strlen(src);
+    if (n == 0)
+        return (ans);
+    i = 0;
+    while (src[i] && i < n - 1)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    return (ans);
 }
 
 char *get_from_store(char *store, char **line)
