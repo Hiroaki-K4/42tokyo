@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 16:50:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 17:08:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void verLine(t_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-void main_loop(t_info *info)
+void calc(t_info *info)
 {
 	int x;
 	double posX;
@@ -243,7 +243,11 @@ void main_loop(t_info *info)
 	}
 }
 
-
+int main_loop(t_info *info)
+{
+	calc(info);
+	return (0);
+}
     
     //move forward if no wall in front of you
 //     if(keyDown(SDLK_UP))
