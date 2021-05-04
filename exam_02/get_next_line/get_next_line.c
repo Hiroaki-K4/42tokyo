@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:18:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:21:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,6 +236,24 @@ size_t ft_strlen(const char *s)
     while (s[i])
         i++;
     return (i);
+}
+
+char *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+    
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (src[i])
+    {
+        if (src[i] == (unsigned char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (src[i] == '\0' && src[i] == (unsigned char)c)
+        return (char *)(src + i);
+    return (NULL);
 }
 
 char *ft_strdup(const char *src)
