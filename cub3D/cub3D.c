@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 16:44:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 16:50:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #define screenHeight 480
 #define mapWidth 24
 #define mapHeight 24
+#define KEY_W 119
+#define KEY_S 115
+#define KEY_D 100
+#define KEY_A 97
 
 int worldMap[mapWidth][mapHeight]=
 {
