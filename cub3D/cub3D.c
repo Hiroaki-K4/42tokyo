@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 22:14:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:40:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 16:44:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,12 @@ int             key_press(int keycode, t_info *info)
 	}
 	if (keycode == KEY_A)
 	{
-		
+		double oldDirX = info->dirX;
+		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY * sin(info->rotSpeed);
+		info->dirY = oldDirX * sin(info->rotSpeed) + info->dirY * cos(info->rotSpeed);
+		double oldPlaneX = info->planeX;
+		info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY * sin(info->rotSpeed);
+		info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
 	}
 	if (keycode == 65307)
 		exit(0);
