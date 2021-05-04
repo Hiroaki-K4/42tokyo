@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:11:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:11:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -329,7 +329,7 @@ int get_next_line(int fd, char **line)
     }
     else
     {
-        if (!(store[fd] = get__from_store(store[fd], line)))
+        if (!(store[fd] = get_from_store(store[fd], line)))
             return (-1);
         return (1);
     }
