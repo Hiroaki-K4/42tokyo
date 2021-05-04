@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/04 17:12:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 17:31:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 #define mapHeight 24
 #define width 640
 #define height 480
-#define KEY_W 119
-#define KEY_S 115
-#define KEY_D 100
-#define KEY_A 97
-#define KEY_ESC 65307
+#define K_W 119
+#define K_S 115
+#define K_D 100
+#define K_A 97
+#define K_ESC 65307
 
 typedef struct	s_info
 {
@@ -257,7 +257,14 @@ int	main(void)
 	info.win = mlx_new_window(info.mlx, width, height, "mlx");
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
-	mlx_hook(info.win, X_EVENT_KEY_PRESS, 0, &key_press, &info);
+	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
 
 	mlx_loop(info.mlx);
+	
+	// info.mlx = mlx_init();
+    // info.win = mlx_new_window(info.mlx, screenWidth, screenHeight, "Raycaster!");
+	// mlx_loop_hook(info.mlx, &main_loop, &info);
+    // mlx_hook(info.win, 2, 1L<<0, &key_press, &info);
+    // // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
+    // mlx_loop(info.mlx);
 }
