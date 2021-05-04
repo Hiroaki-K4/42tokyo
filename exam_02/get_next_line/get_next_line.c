@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/04 15:22:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:26:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,6 +238,34 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
+char *ft_strjoin(const char *s1, const char *s2)
+{
+    size_t i;
+    size_t j;
+    char *ans;
+    
+    if (!s1 || !s2)
+        return (NULL);
+    i = ft_strlen(s1) + ft_strlen(s2);
+    if (!(ans = (char *)malloc(sizeof(char) * (i + 1))))
+        return (NULL);
+    i = 0;
+    while (s1[i])
+    {
+        ans[i] = s1[i];
+        i++;
+    }
+    j = 0;
+    while (s2[j])
+    {
+        ans[i] = s2[j];
+        i++;
+        j++;
+    }
+    ans[i] = '\0';
+    return (ans);
+}
+
 char *ft_strchr(const char *src, int c)
 {
     unsigned const char *ptr_s;
@@ -271,6 +299,7 @@ char *ft_strdup(const char *src)
         dst[i] = src[i];
         i++;
     }
+    dst[i] = '\0';
     return (dst);
 }
 
@@ -288,6 +317,7 @@ size_t ft_strlcpy(char *dest, const char *src, size_t n)
         dest[i] = src[i];
         i++;
     }
+    dest[i] = '\0';
     return (ans);
 }
 
