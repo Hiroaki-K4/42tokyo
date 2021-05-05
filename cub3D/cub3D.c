@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/05 15:48:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/05 15:49:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,8 +245,8 @@ int	main(void)
 	t_info info;
 	info.mlx = mlx_init();
 
-	info.posX = 12;
-	info.posY = 5;
+	info.posX = 22;
+	info.posY = 12;
 	info.dirX = -1;
 	info.dirY = 0;
 	info.planeX = 0;
