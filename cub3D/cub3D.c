@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/05 18:32:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/05 21:44:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ void	calc(t_info *info)
 int	main_loop(t_info *info)
 {
 	calc(info);
-	// mlx_put_image_to_window(info->mlx, info->win, &info->img, 0, 0);
+	mlx_put_image_to_window(info->mlx, info->win, &info->img, 0, 0);
 
 	return (0);
 }
