@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/05 15:05:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/05 15:06:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -422,9 +422,9 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 		(*i)++;
 		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
 	}
-	flag_list.format = ft_strchr_place("sdx", &arg[*i], i);
+	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	if (flag_list.format == 0)
-		print_string(ap, flag_list);
+		k = print_string(ap, flag_list);
 	else if (flag_list.format == 1)
 	{
 		num = va_arg(*ap, int);
