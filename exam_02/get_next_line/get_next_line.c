@@ -226,7 +226,7 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
-size_t ft_strlcpy(char *dst, const char *src, int n)
+size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t i;
     size_t ans;
