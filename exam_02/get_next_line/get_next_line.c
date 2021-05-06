@@ -226,6 +226,24 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
+char *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+        return (char *)(src + i);
+    return (NULL);
+}
+
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t i;
