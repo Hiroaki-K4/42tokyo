@@ -258,6 +258,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t n)
         dst[i] = src[i];
         i++;
     }
+    dst[i] = '\0';
     return (ans);
 }
 
@@ -382,6 +383,7 @@ int read_line(int fd, char **store, char **line)
     }
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
+    free(buf);
     return (0);
 }
 
