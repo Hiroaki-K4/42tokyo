@@ -321,7 +321,7 @@ char *get_from_store(char *store, char **line)
     ft_strlcpy(*line, store, i + 1);
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
         return (NULL);
-    ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1] + 1));
+    ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
     free(store);
     return (tmp);
 }
@@ -344,6 +344,11 @@ char *save_new_line(char *store, char **line, char *buf)
     tmp[ft_strlen(store) + j] = '\0';
     if (!(*line = ft_strdup(tmp)))
         return (NULL);
+    free(tmp);
+    if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
+        return (NULL);
+    free(store);
+    ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
     free(buf);
     return (tmp);
 }
@@ -375,7 +380,8 @@ int read_line(int fd, char **store, char **line)
         free(store[fd]);
         store[fd] = tmp;
     }
-    free(buf);
+    if (!(*line = ft_strdup(store[fd])))
+        return (-1);
     return (0);
 }
 
