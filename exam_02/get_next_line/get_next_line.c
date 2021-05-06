@@ -216,7 +216,15 @@
 
 
 
+size_t ft_strlen(const char *s)
+{
+    size_t i;
 
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
+}
 
 char *get_from_store(char *store, char **line)
 {
