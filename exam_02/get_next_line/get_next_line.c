@@ -226,6 +226,23 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
+size_t ft_strlcpy(char *dst, const char *src, int n)
+{
+    size_t i;
+    size_t ans;
+
+    ans = ft_strlen(src);
+    if (n == 0)
+        return (ans);
+    i = 0;
+    while (src[i] && i < n - 1)
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    return (ans);
+}
+
 char *ft_strjoin(const char *s1, const char *s2)
 {
     char *dst;
