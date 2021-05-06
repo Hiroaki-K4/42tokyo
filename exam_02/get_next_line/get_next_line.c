@@ -236,7 +236,7 @@ char *ft_strjoin(const char *s1, const char *s2)
         return (NULL);
     i = ft_strlen(s1) + ft_strlen(s2);
     if (!(dst = (char *)malloc(sizeof(char) * (i + 1))))
-        return (-1);
+        return (NULL);
     i = 0;
     while (s1[i])
     {
@@ -250,6 +250,7 @@ char *ft_strjoin(const char *s1, const char *s2)
         i++;
         j++;
     }
+    dst[i] = '\0';
     return (dst);
 }
 
@@ -268,6 +269,7 @@ char *ft_strdup(const char *src)
         dst[i] = src[i];
         i++;
     }
+    dst[i] = '\0';
     return (dst);
 }
 
