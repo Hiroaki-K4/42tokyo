@@ -226,6 +226,24 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
+char *ft_strdup(const char *src)
+{
+    char *dst;
+    int i;
+
+    if (!src)
+        return (NULL);
+    if (!(dst = (char *)malloc(sizeof(char) * ((int)ft_strlen(src) + 1))))
+        return (NULL);
+    i = 0;
+    while (src[i])
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    return (dst);
+}
+
 char *get_from_store(char *store, char **line)
 {
     int i;
