@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 19:01:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 20:42:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,25 +203,27 @@ int	key_press(int key, t_info *info)
 {
 	if (key == K_W)
 	{
-		calc(info, 1);
+		// calc(info, 1);
 		if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX += info->dirX * info->moveSpeed;
 		if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
+		calc(info, 1);
 	}
 	//move backwards if no wall behind you
 	if (key == K_S)
 	{
-		calc(info, 1);
+		// calc(info, 1);
 		if (!worldMap[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX -= info->dirX * info->moveSpeed;
 		if (!worldMap[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
 			info->posY -= info->dirY * info->moveSpeed;
+		calc(info, 1);
 	}
 	//rotate to the right
 	if (key == K_D)
 	{
-		calc(info, 1);
+		// calc(info, 1);
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(-info->rotSpeed) - info->dirY * sin(-info->rotSpeed);
@@ -229,11 +231,12 @@ int	key_press(int key, t_info *info)
 		double oldPlaneX = info->planeX;
 		info->planeX = info->planeX * cos(-info->rotSpeed) - info->planeY * sin(-info->rotSpeed);
 		info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY * cos(-info->rotSpeed);
+		calc(info, 1);
 	}
 	//rotate to the left
 	if (key == K_A)
 	{
-		calc(info, 1);
+		// calc(info, 1);
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY * sin(info->rotSpeed);
@@ -241,6 +244,7 @@ int	key_press(int key, t_info *info)
 		double oldPlaneX = info->planeX;
 		info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY * sin(info->rotSpeed);
 		info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
+		calc(info, 1);
 	}
 	if (key == K_ESC)
 		exit(0);
