@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 21:37:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 21:43:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	verLine(t_info *info, int x, int y1, int y2, int color)
 		// mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
 		y++;
 	}
-	mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
+	// mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
 }
 
 void	calc(t_info *info)
@@ -220,6 +220,7 @@ void	calc(t_info *info)
 		
 		x++;
 	}
+	mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
 }
 
 int	main_loop(t_info *info)
