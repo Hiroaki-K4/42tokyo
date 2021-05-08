@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 21:02:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 21:35:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@
 #define K_A 97
 #define K_ESC 65307
 
+typedef struct	s_data
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_data;
+
 typedef struct	s_info
 {
 	double posX;
@@ -41,6 +50,7 @@ typedef struct	s_info
 	void	*win;
 	double	moveSpeed;
 	double	rotSpeed;
+	t_data draw;
 }				t_info;
 
 int	worldMap[24][24] = {
@@ -70,6 +80,14 @@ int	worldMap[24][24] = {
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 						};
 
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+	char *dst;
+	
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
+}
+
 void	verLine(t_info *info, int x, int y1, int y2, int color)
 {
 	int	y;
@@ -77,21 +95,25 @@ void	verLine(t_info *info, int x, int y1, int y2, int color)
 	y = 0;
 	while (y < y1)
 	{
-		mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
+		my_mlx_pixel_put(&info->draw, x, y, 0x000000);
+		// mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
 		y++;
 	}
 	y = y1;
 	while (y <= y2)
 	{
-		mlx_pixel_put(info->mlx, info->win, x, y, color);
+		my_mlx_pixel_put(&info->draw, x, y, color);
+		// mlx_pixel_put(info->mlx, info->win, x, y, color);
 		y++;
 	}
 	y = y2 + 1;
 	while (y < height)
 	{
-		mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
+		my_mlx_pixel_put(&info->draw, x, y, color);
+		// mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
 		y++;
 	}
+	mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
 }
 
 void	calc(t_info *info)
@@ -267,6 +289,8 @@ int	main(void)
 	info.rotSpeed = 0.05;
 	
 	info.win = mlx_new_window(info.mlx, width, height, "mlx");
+	info.draw.img =  mlx_new_image(info.mlx, width, height);
+	info.draw.addr = mlx_get_data_addr(info.draw.img, &info.draw.bits_per_pixel, &info.draw.line_length, &info.draw.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
