@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 21:00:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 21:01:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	verLine(t_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-void	calc(t_info *info, int flag)
+void	calc(t_info *info)
 {
 	int	x;
 
@@ -193,9 +193,6 @@ void	calc(t_info *info, int flag)
 		
 		if (side == 1)
 			color = color / 2;
-			
-		// if (flag == 1)
-		// 	color = 0xFFFF00;
 
 		verLine(info, x, drawStart, drawEnd, color);
 		
@@ -205,7 +202,7 @@ void	calc(t_info *info, int flag)
 
 int	main_loop(t_info *info)
 {
-	calc(info, 0);
+	calc(info);
 	// mlx_put_image_to_window(info->mlx, info->win, &info->img, 0, 0);
 
 	return (0);
