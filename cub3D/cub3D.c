@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/05 21:44:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 18:42:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	verLine(t_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-void	calc(t_info *info)
+void	calc(t_info *info, int flag)
 {
 	int	x;
 
@@ -168,7 +168,9 @@ void	calc(t_info *info)
 			drawEnd = height - 1;
 
 		int	color;
-		if (worldMap[mapY][mapX] == 1)
+		if (flag == 1)
+			color = 0xFFFF00;
+		else if (worldMap[mapY][mapX] == 1)
 			color = 0xFF0000;
 		else if (worldMap[mapY][mapX] == 2)
 			color = 0x00FF00;
@@ -190,7 +192,7 @@ void	calc(t_info *info)
 
 int	main_loop(t_info *info)
 {
-	calc(info);
+	calc(info, 0);
 	// mlx_put_image_to_window(info->mlx, info->win, &info->img, 0, 0);
 
 	return (0);
@@ -200,6 +202,7 @@ int	key_press(int key, t_info *info)
 {
 	if (key == K_W)
 	{
+		calc(info, 1);
 		if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX += info->dirX * info->moveSpeed;
 		if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
@@ -208,6 +211,7 @@ int	key_press(int key, t_info *info)
 	//move backwards if no wall behind you
 	if (key == K_S)
 	{
+		calc(info, 1);
 		if (!worldMap[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX -= info->dirX * info->moveSpeed;
 		if (!worldMap[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
@@ -216,6 +220,7 @@ int	key_press(int key, t_info *info)
 	//rotate to the right
 	if (key == K_D)
 	{
+		calc(info, 1);
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(-info->rotSpeed) - info->dirY * sin(-info->rotSpeed);
@@ -227,6 +232,7 @@ int	key_press(int key, t_info *info)
 	//rotate to the left
 	if (key == K_A)
 	{
+		calc(info, 1);
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY * sin(info->rotSpeed);
