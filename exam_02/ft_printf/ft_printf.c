@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/08 11:23:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 11:32:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -413,15 +413,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	unsigned int hex_num;
 	char *str_num;
 	t_plist flag_list;
-
+	
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i, ap, 0);
 	flag_list.precision = -1;
 	if (arg[*i] == '.')
-	{
-		(*i)++;
 		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
-	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	if (flag_list.format == 0)
 		len = print_string(ap, flag_list);
@@ -438,7 +435,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")));
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
