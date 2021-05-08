@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/08 14:47:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 14:54:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,7 +313,7 @@ int	print_string(va_list *ap, t_plist flag_list)
 				i++;
 			}
 			write(1, str, flag_list.precision);
-			len = i;
+			// len = i;
 		}
 		else
 		{
@@ -324,8 +324,9 @@ int	print_string(va_list *ap, t_plist flag_list)
 				i++;
 			}
 			write(1, str, ft_strlen(str));
-			len = (int)ft_strlen(str) + i;
+			// len = (int)ft_strlen(str) + i;
 		}
+		len = flag_list.field;
 	}
 	else
 	{
@@ -383,31 +384,12 @@ int	print_string(va_list *ap, t_plist flag_list)
 // 	}
 // }
 
-// int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
-// {
-// 	int	num;
-// 	int	j;
-
-// 	if (ft_isdigit(arg[0]) == 0 && flag == 1)
-// 		return (0);
-// 	num = ft_atoi(arg);
-// 	if (num >= 0)
-// 	{
-// 		j = 0;
-// 		while (ft_isdigit(arg[j++]))
-// 			(*i)++;
-// 	}
-// 	else
-// 		num = -1;
-// 	return (num);
-// }
-
-int str_to_num(const char *arg, int *i, va_list *ap, int flag)
+int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
-	int num;
-	int j;
+	int	num;
+	int	j;
 
-	if (ft_isdigit(arg[0]) && flag == 1)
+	if (ft_isdigit(arg[0]) == 0 && flag == 1)
 		return (0);
 	num = ft_atoi(arg);
 	if (num >= 0)
