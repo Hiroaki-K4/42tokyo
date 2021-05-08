@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/08 10:44:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 10:50:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -464,16 +464,15 @@ int ft_printf_str(const char *arg, int *i)
 int ft_printf(const char *arg, ...)
 {
 	va_list ap;
-	int 	i;
-	int		j;
+	int		i;
+	int 	j;
 	int		print_len;
-	
+
 	va_start(ap, arg);
-	i = 0;
 	if (arg == NULL)
-		i = -1;
-	print_len = 0;
-	while (i >= 0 && arg[i])
+		return (-1);
+	i = 0;
+	while (arg[i])
 	{
 		if (arg[i] != '%')
 			print_len += ft_printf_str(arg, &i);
