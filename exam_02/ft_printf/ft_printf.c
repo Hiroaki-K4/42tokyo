@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/08 14:09:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 14:14:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,19 +369,19 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
 {
 	int num;
 	int j;
-
+	
 	if (ft_isdigit(arg[0]) == 0 && flag == 1)
 		return (0);
-	num = ft_atoi(arg);
+	num = ft_itoa(arg);
+	j = 0;
 	if (num >= 0)
 	{
-		j = 0;
 		while (ft_isdigit(arg[j++]))
 			(*i)++;
 	}
 	else
 		num = -1;
-	return (num);
+	return (0);
 }
 
 // int		ft_printf_per(const char *arg, int *i, va_list *ap)
