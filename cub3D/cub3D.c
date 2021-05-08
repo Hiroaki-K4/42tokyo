@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 18:45:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 19:01:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,8 +182,8 @@ void	calc(t_info *info, int flag)
 		if (side == 1)
 			color = color / 2;
 			
-		// if (flag == 1)
-		// 	color = 0xFFFF00;
+		if (flag == 1)
+			color = 0xFFFF00;
 
 		verLine(info, x, drawStart, drawEnd, color);
 		
