@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 21:36:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 21:37:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #define X_EVENT_KEY_EXIT	17
 #define mapWidth 24
 #define mapHeight 24
-#define width 640
-#define height 480
+#define width 1080
+#define height 1920
 #define K_W 119
 #define K_S 115
 #define K_D 100
