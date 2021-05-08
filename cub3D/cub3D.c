@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 21:43:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 22:07:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,24 +96,20 @@ void	verLine(t_info *info, int x, int y1, int y2, int color)
 	while (y < y1)
 	{
 		my_mlx_pixel_put(&info->draw, x, y, 0x000000);
-		// mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
 		y++;
 	}
 	y = y1;
 	while (y <= y2)
 	{
 		my_mlx_pixel_put(&info->draw, x, y, color);
-		// mlx_pixel_put(info->mlx, info->win, x, y, color);
 		y++;
 	}
 	y = y2 + 1;
 	while (y < height)
 	{
 		my_mlx_pixel_put(&info->draw, x, y, 0x000000);
-		// mlx_pixel_put(info->mlx, info->win, x, y, 0x000000);
 		y++;
 	}
-	// mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
 }
 
 void	calc(t_info *info)
