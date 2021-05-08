@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 18:42:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/08 18:44:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,9 +168,7 @@ void	calc(t_info *info, int flag)
 			drawEnd = height - 1;
 
 		int	color;
-		if (flag == 1)
-			color = 0xFFFF00;
-		else if (worldMap[mapY][mapX] == 1)
+		if (worldMap[mapY][mapX] == 1)
 			color = 0xFF0000;
 		else if (worldMap[mapY][mapX] == 2)
 			color = 0x00FF00;
@@ -183,6 +181,9 @@ void	calc(t_info *info, int flag)
 		
 		if (side == 1)
 			color = color / 2;
+			
+		if (flag == 1)
+			color = 0xFFFF00;
 
 		verLine(info, x, drawStart, drawEnd, color);
 		
