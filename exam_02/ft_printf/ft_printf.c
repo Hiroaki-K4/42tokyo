@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 11:21:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 11:21:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -459,7 +459,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 // 	return (len);
 // }
 
-int ft_printf_per(const char *arg, int *i)
+int ft_printf_str(const char *arg, int *i)
 {
 	int len;
 
