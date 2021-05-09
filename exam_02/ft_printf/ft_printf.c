@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/08 15:16:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 11:16:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -459,19 +459,46 @@ int		ft_printf_str(const char *arg, int *i)
 	return (len);
 }
 
-int		ft_printf(const char *arg, ...)
+// int		ft_printf(const char *arg, ...)
+// {
+// 	va_list	ap;
+// 	int		i;
+// 	int		j;
+// 	int		print_len;
+
+// 	va_start(ap, arg);
+// 	i = 0;
+// 	if (arg == NULL)
+// 		i = -1;
+// 	print_len = 0;
+// 	while (i >= 0 && arg[i])
+// 	{
+// 		if (arg[i] != '%')
+// 			print_len += ft_printf_str(arg, &i);
+// 		else
+// 		{
+// 			j = ft_printf_per(arg, &i, &ap);
+// 			if (j == -1)
+// 				return (-1);
+// 			print_len += j;
+// 		}
+// 	}
+// 	va_end(ap);
+// 	return (print_len);
+// }
+
+int ft_printf(const char *arg, ...)
 {
-	va_list	ap;
-	int		i;
-	int		j;
-	int		print_len;
+	va_list ap;
+	int i;
+	int j;
+	int print_len;
 
 	va_start(ap, arg);
 	i = 0;
 	if (arg == NULL)
 		i = -1;
-	print_len = 0;
-	while (i >= 0 && arg[i])
+	while (arg[i])
 	{
 		if (arg[i] != '%')
 			print_len += ft_printf_str(arg, &i);
