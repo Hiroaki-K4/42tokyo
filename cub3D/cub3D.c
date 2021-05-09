@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/09 19:58:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 21:09:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,11 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
+	int y;
 
 	//FLOOR CASTING
-	for(int y = 0; y < height; y++)
+	y = 0;
+	while (y < height)
 	{
 		// rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
 		float rayDirX0 = info->dirX - info->planeX;
@@ -161,6 +163,7 @@ void	calc(t_info *info)
 
 			info->buf[height - y - 1][x] = color;
 		}
+		y++;
 	}
 
 	x = 0;
