@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 10:47:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 10:48:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -382,7 +382,7 @@ int get_next_line(int fd, char **line)
     // int i;
     static char *store[256];
 
-    *line = NULL;
+    // *line = NULL;
     if (fd < 0 || fd > 255)
         return (-1);
     if (store[fd] == NULL)
