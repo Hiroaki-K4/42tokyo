@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 11:22:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 11:30:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -407,11 +407,11 @@ int		str_to_num(const char *arg, int *i, va_list *ap, int flag)
 
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
-	int len;
-	int keta;
 	int num;
-	unsigned int hex_num;
+	int keta;
+	int len;
 	char *str_num;
+	unsigned int hex_num;
 	t_plist flag_list;
 
 	(*i)++;
