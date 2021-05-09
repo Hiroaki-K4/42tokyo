@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 10:29:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 10:29:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,7 @@ char *ft_strdup(const char *src)
         i++;
     }
     dst[i] = '\0';
-    retn (dst);
+    return (dst);
 }
 
 char *get_from_store(char *store, char **line)
