@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 19:53:20 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/09 19:55:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 19:56:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void	calc(t_info *info)
 
 			// choose texture and draw the pixel
 			int floorTexture = 3;
-			int ceilingTexture = 5;
+			int ceilingTexture = 6;
 
 			int color;
 
