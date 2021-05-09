@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 10:33:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 10:33:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ char *ft_strjoin(const char *s1, const char *s2)
     if (!s1 || !s2)
         return (NULL);
     if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-        return (-1);
+        return (NULL);
     i = 0;
     while (s1[i])
     {
