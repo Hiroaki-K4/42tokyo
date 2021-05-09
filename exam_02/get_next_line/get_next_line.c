@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/09 10:49:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 10:56:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,6 +215,7 @@ size_t ft_strlen(const char *src)
 {
     size_t i;
     
+    i = 0;
     while (src[i])
         i++;
     return (i);
@@ -379,28 +380,28 @@ int read_line(int fd, char **store, char **line)
 
 int get_next_line(int fd, char **line)
 {
-    // int i;
+    int i;
     static char *store[256];
 
-    // *line = NULL;
+    *line = NULL;
     if (fd < 0 || fd > 255)
         return (-1);
     if (store[fd] == NULL)
         store[fd] = ft_strdup("");
-    // if (ft_strchr(store[fd], '\n') == NULL)
-    // {
-    //     if ((i = read_line(fd, store, line)) == 0)
-    //     {
-    //         free(store[fd]);
-    //         store[fd] = NULL;
-    //     }
-    //     return (i);
-    // }
-    // else
-    // {
-    if (!(store[fd] = get_from_store(store[fd], line)))
-        return (-1);
-    return (1);
-    // }
+    if (ft_strchr(store[fd], '\n') == NULL)
+    {
+        if ((i = read_line(fd, store, line)) == 0)
+        {
+            free(store[fd]);
+            store[fd] = NULL;
+        }
+        return (i);
+    }
+    else
+    {
+        if (!(store[fd] = get_from_store(store[fd], line)))
+            return (-1);
+        return (1);
+    }
     return (0);
 }
