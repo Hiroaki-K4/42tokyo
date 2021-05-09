@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/09 19:57:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/09 19:58:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
-#define width 640
-#define height 480
+#define width 1080
+#define height 1920
 #define K_W 119
 #define K_S 115
 #define K_D 100
