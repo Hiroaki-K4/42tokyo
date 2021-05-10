@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.c                                            :+:      :+:    :+:   */
+/*   cub3D_floor_textured.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/15 12:12:25 by yohan             #+#    #+#             */
-/*   Updated: 2021/05/08 22:07:47 by hkubo            ###   ########.fr       */
+/*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
+/*   Updated: 2021/05/10 20:53:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "mlx/mlx.h"
-// #include "key_macos.h"
 #include "cub3D.h"
 #include <math.h>
 #include <string.h>
@@ -19,6 +17,8 @@
 #include <stdlib.h>
 #define X_EVENT_KEY_PRESS	2
 #define X_EVENT_KEY_EXIT	17
+#define texWidth 64
+#define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
 #define width 1080
@@ -29,14 +29,17 @@
 #define K_A 97
 #define K_ESC 65307
 
-typedef struct	s_data
+typedef struct	s_img
 {
 	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
+	int		*data;
+
+	int		size_l;
+	int		bpp;
 	int		endian;
-}				t_data;
+	int		img_width;
+	int		img_height;
+}				t_img;
 
 typedef struct	s_info
 {
@@ -48,73 +51,120 @@ typedef struct	s_info
 	double planeY;
 	void	*mlx;
 	void	*win;
+	t_img	img;
+	int		buf[height][width];
+	int		**texture;
 	double	moveSpeed;
 	double	rotSpeed;
-	t_data draw;
 }				t_info;
 
-int	worldMap[24][24] = {
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-							{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
-							{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+int	worldMap[mapWidth][mapHeight] =
+						{
+							{4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,7},
+							{4,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+							{4,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+							{4,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,7},
+							{4,0,4,0,0,0,0,5,5,5,5,5,5,5,5,5,7,7,0,7,7,7,7,7},
+							{4,0,5,0,0,0,0,5,0,5,0,5,0,5,0,5,7,0,0,0,7,7,7,1},
+							{4,0,6,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,0,0,0,8},
+							{4,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,1},
+							{4,0,8,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,0,0,0,8},
+							{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,7,0,0,0,7,7,7,1},
+							{4,0,0,0,0,0,0,5,5,5,5,0,5,5,5,5,7,7,7,7,7,7,7,1},
+							{6,6,6,6,6,6,6,6,6,6,6,0,6,6,6,6,6,6,6,6,6,6,6,6},
+							{8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
+							{6,6,6,6,6,6,0,6,6,6,6,0,6,6,6,6,6,6,6,6,6,6,6,6},
+							{4,4,4,4,4,4,0,4,4,4,6,0,6,2,2,2,2,2,2,2,3,3,3,3},
+							{4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+							{4,0,0,0,0,0,0,0,0,0,0,0,6,2,0,0,5,0,0,2,0,0,0,2},
+							{4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
+							{4,0,6,0,6,0,0,0,0,4,6,0,0,0,0,0,5,0,0,0,0,0,0,2},
+							{4,0,0,5,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
+							{4,0,6,0,6,0,0,0,0,4,6,0,6,2,0,0,5,0,0,2,0,0,0,2},
+							{4,0,0,0,0,0,0,0,0,4,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+							{4,4,4,4,4,4,4,4,4,4,1,1,1,2,2,2,2,2,2,3,3,3,3,3}
 						};
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	draw(t_info *info)
 {
-	char *dst;
-	
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
-}
-
-void	verLine(t_info *info, int x, int y1, int y2, int color)
-{
-	int	y;
-
-	y = 0;
-	while (y < y1)
+	for (int y = 0; y < height; y++)
 	{
-		my_mlx_pixel_put(&info->draw, x, y, 0x000000);
-		y++;
+		for (int x = 0; x < width; x++)
+		{
+			info->img.data[y * width + x] = info->buf[y][x];
+		}
 	}
-	y = y1;
-	while (y <= y2)
-	{
-		my_mlx_pixel_put(&info->draw, x, y, color);
-		y++;
-	}
-	y = y2 + 1;
-	while (y < height)
-	{
-		my_mlx_pixel_put(&info->draw, x, y, 0x000000);
-		y++;
-	}
+	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
 
 void	calc(t_info *info)
 {
 	int	x;
+	// int y;
+
+	//FLOOR CASTING
+	// y = 0;
+	// while (y < height)
+	// {
+	// 	// rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
+	// 	float rayDirX0 = info->dirX - info->planeX;
+	// 	float rayDirY0 = info->dirY - info->planeY;
+	// 	float rayDirX1 = info->dirX + info->planeX;
+	// 	float rayDirY1 = info->dirY + info->planeY;
+
+	// 	// Current y position compared to the center of the screen (the horizon)
+	// 	int p = y - height / 2;
+
+	// 	// Vertical position of the camera.
+	// 	float posZ = 0.5 * height;
+
+	// 	// Horizontal distance from the camera to the floor for the current row.
+	// 	// 0.5 is the z position exactly in the middle between floor and ceiling.
+	// 	float rowDistance = posZ / p;
+
+	// 	// calculate the real world step vector we have to add for each x (parallel to camera plane)
+	// 	// adding step by step avoids multiplications with a weight in the inner loop
+	// 	float floorStepX = rowDistance * (rayDirX1 - rayDirX0) / width;
+	// 	float floorStepY = rowDistance * (rayDirY1 - rayDirY0) / width;
+
+	// 	// real world coordinates of the leftmost column. This will be updated as we step to the right.
+	// 	float floorX = info->posX + rowDistance * rayDirX0;
+	// 	float floorY = info->posY + rowDistance * rayDirY0;
+
+	// 	for(int x = 0; x < width; ++x)
+	// 	{
+	// 		// the cell coord is simply got from the integer parts of floorX and floorY
+	// 		int cellX = (int)(floorX);
+	// 		int cellY = (int)(floorY);
+
+	// 		// get the texture coordinate from the fractional part
+	// 		int tx = (int)(texWidth * (floorX - cellX)) & (texWidth - 1);
+	// 		int ty = (int)(texHeight * (floorY - cellY)) & (texHeight - 1);
+
+	// 		floorX += floorStepX;
+	// 		floorY += floorStepY;
+
+	// 		// choose texture and draw the pixel
+	// 		int floorTexture = 3;
+	// 		int ceilingTexture = 3;
+
+	// 		int color;
+
+	// 		// floor
+	// 		color = info->texture[floorTexture][texWidth * ty + tx];
+	// 		color = (color >> 1) & 8355711; // make a bit darker
+
+	// 		info->buf[y][x] = color;
+
+	// 		//ceiling (symmetrical, at screenHeight - y - 1 instead of y)
+	// 		color = info->texture[ceilingTexture][texWidth * ty + tx];
+	// 		color = (color >> 1) & 8355711; // make a bit darker
+
+	// 		info->buf[height - y - 1][x] = color;
+	// 	}
+	// 	y++;
+	// }
 
 	x = 0;
 	while (x < width)
@@ -197,33 +247,57 @@ void	calc(t_info *info)
 		if(drawEnd >= height)
 			drawEnd = height - 1;
 
-		int	color;
-		if (worldMap[mapY][mapX] == 1)
-			color = 0xFF0000;
-		else if (worldMap[mapY][mapX] == 2)
-			color = 0x00FF00;
-		else if (worldMap[mapY][mapX] == 3)
-			color = 0x0000FF;
-		else if (worldMap[mapY][mapX] == 4)
-			color = 0xFFFFFF;
-		else
-			color = 0xFFFF00;
-		
-		if (side == 1)
-			color = color / 2;
+		// texturing calculations
+		int texNum = worldMap[mapX][mapY];
 
-		verLine(info, x, drawStart, drawEnd, color);
-		
+		// calculate value of wallX
+		double wallX;
+		if (side == 0)
+			wallX = info->posY + perpWallDist * rayDirY;
+		else
+			wallX = info->posX + perpWallDist * rayDirX;
+		wallX -= floor(wallX);
+
+		// x coordinate on the texture
+		int texX = (int)(wallX * (double)texWidth);
+		if (side == 0 && rayDirX > 0)
+			texX = texWidth - texX - 1;
+		if (side == 1 && rayDirY < 0)
+			texX = texWidth - texX - 1;
+
+		// How much to increase the texture coordinate perscreen pixel
+		double step = 1.0 * texHeight / lineHeight;
+		// Starting texture coordinate
+		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
+		for (int y = 0; y < drawStart; y++)
+		{
+			info->buf[y][x] = 8355711;
+		}
+		for (int y = drawStart; y < drawEnd; y++)
+		{
+			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
+			int texY = (int)texPos & (texHeight - 1);
+			texPos += step;
+			int color = info->texture[texNum][texHeight * texY + texX];
+			// printf("color: %d\n", color);
+			// make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
+			if (side == 1)
+				color = (color >> 1) & 8355711;
+			info->buf[y][x] = color;
+			// printf("color: %d\n", color);
+		}
+		for (int y = drawEnd; y < height; y++)
+		{
+			info->buf[y][x] = 8355711;
+		}
 		x++;
 	}
-	mlx_put_image_to_window(info->mlx, info->win, info->draw.img, 0, 0);
 }
 
 int	main_loop(t_info *info)
 {
 	calc(info);
-	// mlx_put_image_to_window(info->mlx, info->win, &info->img, 0, 0);
-
+	draw(info);
 	return (0);
 }
 
@@ -271,33 +345,81 @@ int	key_press(int key, t_info *info)
 	return (0);
 }
 
+void	load_image(t_info *info, int *texture, char *path, t_img *img)
+{
+	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width, &img->img_height);
+	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
+	for (int y = 0; y < img->img_height; y++)
+	{
+		for (int x = 0; x < img->img_width; x++)
+		{
+			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
+		}
+	}
+	mlx_destroy_image(info->mlx, img->img);
+}
+
+void	load_texture(t_info *info)
+{
+	t_img	img;
+
+	load_image(info, info->texture[0], "textures/eagle.xpm", &img);
+	load_image(info, info->texture[1], "textures/redbrick.xpm", &img);
+	load_image(info, info->texture[2], "textures/purplestone.xpm", &img);
+	load_image(info, info->texture[3], "textures/greystone.xpm", &img);
+	load_image(info, info->texture[4], "textures/bluestone.xpm", &img);
+	load_image(info, info->texture[5], "textures/mossy.xpm", &img);
+	load_image(info, info->texture[6], "textures/wood.xpm", &img);
+	load_image(info, info->texture[7], "textures/colorstone.xpm", &img);
+}
+
 int	main(void)
 {
 	t_info info;
 	info.mlx = mlx_init();
 
-	info.posX = 22;
-	info.posY = 12;
-	info.dirX = -1;
-	info.dirY = 0;
-	info.planeX = 0;
+	info.posX = 22.0;
+	info.posY = 11.5;
+	info.dirX = -1.0;
+	info.dirY = 0.0;
+	info.planeX = 0.0;
 	info.planeY = 0.66;
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			info.buf[i][j] = 0;
+		}
+	}
+
+	if (!(info.texture = (int **)malloc(sizeof(int *) * 8)))
+		return (-1);
+	for (int i = 0; i < 8; i++)
+	{
+		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
+			return (-1);
+	}
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < texHeight * texWidth; j++)
+		{
+			info.texture[i][j] = 0;
+		}
+	}
+
+	load_texture(&info);
+
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
 	info.win = mlx_new_window(info.mlx, width, height, "mlx");
-	info.draw.img =  mlx_new_image(info.mlx, width, height);
-	info.draw.addr = mlx_get_data_addr(info.draw.img, &info.draw.bits_per_pixel, &info.draw.line_length, &info.draw.endian);
+
+	info.img.img = mlx_new_image(info.mlx, width, height);
+	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
 
 	mlx_loop(info.mlx);
-	
-	// info.mlx = mlx_init();
-    // info.win = mlx_new_window(info.mlx, screenWidth, screenHeight, "Raycaster!");
-	// mlx_loop_hook(info.mlx, &main_loop, &info);
-    // mlx_hook(info.win, 2, 1L<<0, &key_press, &info);
-    // // mlx_hook(vars.win, 2, 1L<<18, resize_display, &vars);
-    // mlx_loop(info.mlx);
 }
