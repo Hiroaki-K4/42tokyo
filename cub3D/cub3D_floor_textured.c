@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.c                                            :+:      :+:    :+:   */
+/*   cub3D_floor_textured.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/09 21:09:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 20:53:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,70 +101,70 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
-	int y;
+	// int y;
 
 	//FLOOR CASTING
-	y = 0;
-	while (y < height)
-	{
-		// rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
-		float rayDirX0 = info->dirX - info->planeX;
-		float rayDirY0 = info->dirY - info->planeY;
-		float rayDirX1 = info->dirX + info->planeX;
-		float rayDirY1 = info->dirY + info->planeY;
+	// y = 0;
+	// while (y < height)
+	// {
+	// 	// rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
+	// 	float rayDirX0 = info->dirX - info->planeX;
+	// 	float rayDirY0 = info->dirY - info->planeY;
+	// 	float rayDirX1 = info->dirX + info->planeX;
+	// 	float rayDirY1 = info->dirY + info->planeY;
 
-		// Current y position compared to the center of the screen (the horizon)
-		int p = y - height / 2;
+	// 	// Current y position compared to the center of the screen (the horizon)
+	// 	int p = y - height / 2;
 
-		// Vertical position of the camera.
-		float posZ = 0.5 * height;
+	// 	// Vertical position of the camera.
+	// 	float posZ = 0.5 * height;
 
-		// Horizontal distance from the camera to the floor for the current row.
-		// 0.5 is the z position exactly in the middle between floor and ceiling.
-		float rowDistance = posZ / p;
+	// 	// Horizontal distance from the camera to the floor for the current row.
+	// 	// 0.5 is the z position exactly in the middle between floor and ceiling.
+	// 	float rowDistance = posZ / p;
 
-		// calculate the real world step vector we have to add for each x (parallel to camera plane)
-		// adding step by step avoids multiplications with a weight in the inner loop
-		float floorStepX = rowDistance * (rayDirX1 - rayDirX0) / width;
-		float floorStepY = rowDistance * (rayDirY1 - rayDirY0) / width;
+	// 	// calculate the real world step vector we have to add for each x (parallel to camera plane)
+	// 	// adding step by step avoids multiplications with a weight in the inner loop
+	// 	float floorStepX = rowDistance * (rayDirX1 - rayDirX0) / width;
+	// 	float floorStepY = rowDistance * (rayDirY1 - rayDirY0) / width;
 
-		// real world coordinates of the leftmost column. This will be updated as we step to the right.
-		float floorX = info->posX + rowDistance * rayDirX0;
-		float floorY = info->posY + rowDistance * rayDirY0;
+	// 	// real world coordinates of the leftmost column. This will be updated as we step to the right.
+	// 	float floorX = info->posX + rowDistance * rayDirX0;
+	// 	float floorY = info->posY + rowDistance * rayDirY0;
 
-		for(int x = 0; x < width; ++x)
-		{
-			// the cell coord is simply got from the integer parts of floorX and floorY
-			int cellX = (int)(floorX);
-			int cellY = (int)(floorY);
+	// 	for(int x = 0; x < width; ++x)
+	// 	{
+	// 		// the cell coord is simply got from the integer parts of floorX and floorY
+	// 		int cellX = (int)(floorX);
+	// 		int cellY = (int)(floorY);
 
-			// get the texture coordinate from the fractional part
-			int tx = (int)(texWidth * (floorX - cellX)) & (texWidth - 1);
-			int ty = (int)(texHeight * (floorY - cellY)) & (texHeight - 1);
+	// 		// get the texture coordinate from the fractional part
+	// 		int tx = (int)(texWidth * (floorX - cellX)) & (texWidth - 1);
+	// 		int ty = (int)(texHeight * (floorY - cellY)) & (texHeight - 1);
 
-			floorX += floorStepX;
-			floorY += floorStepY;
+	// 		floorX += floorStepX;
+	// 		floorY += floorStepY;
 
-			// choose texture and draw the pixel
-			int floorTexture = 3;
-			int ceilingTexture = 3;
+	// 		// choose texture and draw the pixel
+	// 		int floorTexture = 3;
+	// 		int ceilingTexture = 3;
 
-			int color;
+	// 		int color;
 
-			// floor
-			color = info->texture[floorTexture][texWidth * ty + tx];
-			color = (color >> 1) & 8355711; // make a bit darker
+	// 		// floor
+	// 		color = info->texture[floorTexture][texWidth * ty + tx];
+	// 		color = (color >> 1) & 8355711; // make a bit darker
 
-			info->buf[y][x] = color;
+	// 		info->buf[y][x] = color;
 
-			//ceiling (symmetrical, at screenHeight - y - 1 instead of y)
-			color = info->texture[ceilingTexture][texWidth * ty + tx];
-			color = (color >> 1) & 8355711; // make a bit darker
+	// 		//ceiling (symmetrical, at screenHeight - y - 1 instead of y)
+	// 		color = info->texture[ceilingTexture][texWidth * ty + tx];
+	// 		color = (color >> 1) & 8355711; // make a bit darker
 
-			info->buf[height - y - 1][x] = color;
-		}
-		y++;
-	}
+	// 		info->buf[height - y - 1][x] = color;
+	// 	}
+	// 	y++;
+	// }
 
 	x = 0;
 	while (x < width)
@@ -269,10 +269,10 @@ void	calc(t_info *info)
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
 		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
-		// for (int y = 0; y < drawStart; y++)
-		// {
-		// 	info->buf[y][x] = 8355711;
-		// }
+		for (int y = 0; y < drawStart; y++)
+		{
+			info->buf[y][x] = 8355711;
+		}
 		for (int y = drawStart; y < drawEnd; y++)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
@@ -286,10 +286,10 @@ void	calc(t_info *info)
 			info->buf[y][x] = color;
 			// printf("color: %d\n", color);
 		}
-		// for (int y = drawEnd; y < height; y++)
-		// {
-		// 	info->buf[y][x] = 8355711;
-		// }
+		for (int y = drawEnd; y < height; y++)
+		{
+			info->buf[y][x] = 8355711;
+		}
 		x++;
 	}
 }
