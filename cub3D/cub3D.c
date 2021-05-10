@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/10 21:54:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 21:54:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -490,12 +490,12 @@ int	main(void)
 
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 11)))
 		return (-1);
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 11; i++)
 	{
 		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
 			return (-1);
 	}
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 11; i++)
 	{
 		for (int j = 0; j < texHeight * texWidth; j++)
 		{
