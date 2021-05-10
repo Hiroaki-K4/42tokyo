@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/10 21:48:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 21:49:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct	s_info
 	double dirY;
 	double planeX;
 	double planeY;
+	double	zBuffer[width];
 	void	*mlx;
 	void	*win;
 	t_img	img;
