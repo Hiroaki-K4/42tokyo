@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/10 21:49:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 21:49:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,48 @@ typedef struct	s_info
 	double	moveSpeed;
 	double	rotSpeed;
 }				t_info;
+
+void	sort_order(t_pair *orders, int amount)
+{
+	t_pair	tmp;
+
+	for (int i = 0; i < amount; i++)
+	{
+		for (int j = 0; j < amount - 1; j++)
+		{
+			if (orders[j].first > orders[j + 1].first)
+			{
+				tmp.first = orders[j].first;
+				tmp.second = orders[j].second;
+				orders[j].first = orders[j + 1].first;
+				orders[j].second = orders[j + 1].second;
+				orders[j + 1].first = tmp.first;
+				orders[j + 1].second = tmp.second;
+			}
+		}
+	}
+}
+
+void	sortSprites(int *order, double *dist, int amount)
+{
+	t_pair	*sprites;
+
+	//std::vector<std::pair<double, int>> sprites(amount);
+	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
+	for (int i = 0; i < amount; i++)
+	{
+		sprites[i].first = dist[i];
+		sprites[i].second = order[i];
+	}
+	sort_order(sprites, amount);
+	//std::sort(sprites.begin(), sprites.end());
+	for (int i = 0; i < amount; i++)
+	{
+		dist[i] = sprites[amount - i - 1].first;
+		order[i] = sprites[amount - i - 1].second;
+	}
+	free(sprites);
+}
 
 int	worldMap[mapWidth][mapHeight] =
 						{
