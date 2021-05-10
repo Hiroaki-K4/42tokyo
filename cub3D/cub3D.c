@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/10 21:51:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 21:52:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -463,7 +463,9 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[5], "textures/mossy.xpm", &img);
 	load_image(info, info->texture[6], "textures/wood.xpm", &img);
 	load_image(info, info->texture[7], "textures/colorstone.xpm", &img);
-}
+	load_image(info, info->texture[8], "textures/barrel.xpm", &img);
+	load_image(info, info->texture[9], "textures/pillar.xpm", &img);
+	load_image(info, info->texture[10], "textures/greenlight.xpm", &img);
 
 int	main(void)
 {
