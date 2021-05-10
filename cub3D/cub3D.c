@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/10 21:46:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/10 21:47:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@
 #define K_D 100
 #define K_A 97
 #define K_ESC 65307
+
+int		spriteOrder[numSprites];
+double	spriteDistance[numSprites];
 
 typedef struct	s_img
 {
