@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:22:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:24:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -477,8 +477,9 @@ int line_check(char **line)
 	// printf("line: %s first: %c\n", line, line[0]);
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
-	if (line_split[1] != "1920\n")
+	if (line_split[1] != "1920")
 		printf("ok\n");
+	printf("len: %d\n", (int)ft_strlen(line_split[0]));
 	printf("dst: %s\n", line_split[1]);
 	return (0);
 }
