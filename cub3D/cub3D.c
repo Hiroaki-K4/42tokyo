@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:17:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:18:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -479,7 +479,7 @@ int line_check(char **line)
 		return (-1);
 	if (line_split[0] == "R")
 		printf("ok\n");
-	printf("dst: %s\n", line_split[0]);
+	printf("dst: %s\n", line_split[1]);
 	return (0);
 }
 
