@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:12:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:13:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -477,6 +477,7 @@ int line_check(char **line)
 	printf("line: %s first: %c\n", line, line[0]);
 	if (!(dst = ft_split(line, ' ')))
 		return (-1);
+	printf("dst: %s\n", dst[0]);
 	return (0);
 }
 
