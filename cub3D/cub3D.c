@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 21:49:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 21:50:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -489,7 +489,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		printf("~~~fd: %d line: %s return: %d~~~\n", fd, **line, i);
+		printf("~~~fd: %d line: %s return: %d~~~\n", fd, line, i);
 		free(line);
 	}
 	// cub_path = argv[1];
