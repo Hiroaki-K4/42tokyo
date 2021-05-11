@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 21:44:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 21:45:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -473,20 +473,24 @@ void	load_texture(t_info *info)
 int	main(int argc, char *argv[])
 {
 	t_info info;
+	int buffer_size;
+	int fd;
+	int i;
+	char **line;
 	
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (-1);
 	}
-	// buffer_size = 10;
-    // fd = open(argv[1], O_RDONLY);
-	// do
-	// {
-	// 	i = get_next_line(fd, &line, buffer_size);
-	// 	printf("~~~fd: %d line: %s return: %d~~~\n", fd, line, i);
-	// 	free(line);
-	// } while (i > 0);
+	buffer_size = 10;
+    fd = open(argv[1], O_RDONLY);
+	do
+	{
+		i = get_next_line(fd, &line, buffer_size);
+		printf("~~~fd: %d line: %s return: %d~~~\n", fd, line, i);
+		free(line);
+	} while (i > 0);
 	// cub_path = argv[1];
 	// i = ft_strlen(cub_path);
 	// printf("len: %i\n", i);
