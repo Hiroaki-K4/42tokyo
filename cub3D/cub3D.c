@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:13:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:14:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -472,11 +472,13 @@ void	load_texture(t_info *info)
 
 int line_check(char **line)
 {
-	char **dst;
+	char **line_split;
 	
 	printf("line: %s first: %c\n", line, line[0]);
-	if (!(dst = ft_split(line, ' ')))
+	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
+	if (line_split[0] == 'R')
+		printf("ok\n");
 	printf("dst: %s\n", dst[0]);
 	return (0);
 }
