@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:00:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:02:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -470,6 +470,11 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[10], "textures/greenlight.xpm", &img);
 }
 
+void line_check(char **line)
+{
+	printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -489,7 +494,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
+		line_check(line);
 		free(line);
 	}
 	// cub_path = argv[1];
