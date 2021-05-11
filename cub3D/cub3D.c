@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/11 22:02:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/11 22:03:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -472,7 +472,7 @@ void	load_texture(t_info *info)
 
 void line_check(char **line)
 {
-	printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
+	printf("line: %s first: %c\n", line, line[0]);
 }
 
 int	main(int argc, char *argv[])
@@ -495,6 +495,7 @@ int	main(int argc, char *argv[])
 	{
 		i = get_next_line(fd, &line, buffer_size);
 		line_check(line);
+		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
 	// cub_path = argv[1];
