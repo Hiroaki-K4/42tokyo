@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 22:59:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/12 23:00:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -500,6 +500,12 @@ int line_check(char **line)
 		printf("WE_ok\n");
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
 		printf("EA_ok\n");
+	else if (i = ft_strcmp("S", line_split[0]) == 0)
+		printf("S_ok\n");
+	else if (i = ft_strcmp("F", line_split[0]) == 0)
+		printf("F_ok\n");
+	else if (i = ft_strcmp("C", line_split[0]) == 0)
+		printf("C_ok\n");
 	printf("dst: %s\n", line_split[0]);
 	return (0);
 }
