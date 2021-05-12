@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 22:39:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/12 22:39:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -470,7 +470,7 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[10], "textures/greenlight.xpm", &img);
 }
 
-void line_check(char **line)
+int line_check(char **line)
 {
 	char **line_split;
 	
@@ -481,7 +481,7 @@ void line_check(char **line)
 		printf("ok\n");
 	printf("len: %d\n", (int)ft_strlen(line_split[0]));
 	printf("dst: %s\n", line_split[1]);
-	// return (0);
+	return (0);
 }
 
 int	main(int argc, char *argv[])
