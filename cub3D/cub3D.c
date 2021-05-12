@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 22:47:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/12 22:52:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -470,14 +470,27 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[10], "textures/greenlight.xpm", &img);
 }
 
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
 int line_check(char **line)
 {
+	int i;
 	char **line_split;
 	
 	// printf("line: %s first: %c\n", line, line[0]);
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
-	if ((char *)line_split[0] == "NO")
+	i = ft_strcmp("NO", line_split[0]);
+	print("diff: %d\n", i);
+	if (line_split[0] == "NO")
 		printf("ok\n");
 	printf("dst: %s\n", line_split[0]);
 	return (0);
