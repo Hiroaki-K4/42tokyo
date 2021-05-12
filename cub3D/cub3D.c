@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 22:40:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/12 22:40:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -475,12 +475,12 @@ int line_check(char **line)
 	char **line_split;
 	
 	// printf("line: %s first: %c\n", line, line[0]);
-	if (!(line_split = ft_split(line, ' ')))
-		return (-1);
-	if (line_split[1] != "1920")
-		printf("ok\n");
-	printf("len: %d\n", (int)ft_strlen(line_split[0]));
-	printf("dst: %s\n", line_split[1]);
+	// if (!(line_split = ft_split(line, ' ')))
+	// 	return (-1);
+	// if (line_split[1] != "1920")
+	// 	printf("ok\n");
+	// printf("len: %d\n", (int)ft_strlen(line_split[0]));
+	// printf("dst: %s\n", line_split[1]);
 	return (0);
 }
 
@@ -505,7 +505,7 @@ int	main(int argc, char *argv[])
 		i = get_next_line(fd, &line, buffer_size);
 		line_check(line);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
-		// free(line);
+		free(line);
 	}
 	// cub_path = argv[1];
 	// i = ft_strlen(cub_path);
