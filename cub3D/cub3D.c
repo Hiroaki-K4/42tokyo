@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 22:52:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/12 22:52:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -489,7 +489,7 @@ int line_check(char **line)
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
 	i = ft_strcmp("NO", line_split[0]);
-	print("diff: %d\n", i);
+	printf("diff: %d\n", i);
 	if (line_split[0] == "NO")
 		printf("ok\n");
 	printf("dst: %s\n", line_split[0]);
