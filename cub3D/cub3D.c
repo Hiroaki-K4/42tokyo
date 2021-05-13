@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:41:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:42:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -533,7 +533,7 @@ int line_check(char **line, t_cub *cub_list)
 	char **line_split;
 	char **rgb_split;
 	
-	if (!(line_split = ft_split(*line, ' ')))
+	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
 	if (line_split[0] == NULL)
 		return (0);
@@ -592,21 +592,17 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		if (!(map_line = (char *)malloc(sizeof(char) * (ft_strlen(*line) + 1))))
+		if (!(map_line = (char *)malloc(sizeof(char) * (ft_strlen(line) + 1))))
 			return (-1);
 		i = 0;
-		while (*line[i] != '\0')
+		while (line[i])
 		{
-			printf("line_i: %c", *line[i]);
-			if (*line[i] == ' ')
-				*line[i] = '1';
-			map_line[i] = *line[i];
+			if (line[i] == ' ')
+				line[i] = '1';
+			map_line[i] = line[i];
 			i++;
 		}
-		printf("\n");
-		map_line[i] = '\0';
-		printf("line: %s\n", *line);
-		printf("map_line: %s\n", map_line);
+		printf("line: %s\n", map_line);
 	}
 	// printf("line: %s\n", line);
 	// printf("dst: %s\n", line_split[0]);
