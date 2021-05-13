@@ -109,6 +109,10 @@ typedef struct		s_cub
 {
 	int c_width;
 	int c_height;
+	char *n_texture;
+	char *s_texture;
+	char *w_texture;
+	char *e_texture;
 }					t_cub;
 
 
@@ -504,7 +508,10 @@ int line_check(char **line, t_cub *cub_list)
 		printf("width: %d height: %d\n", cub_list->c_width, cub_list->c_height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
-		printf("NO_ok\n");
+	{
+		cub_list->n_texture = line_split[1];
+		printf("North: %s\n", cub_list->n_texture);
+	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
 		printf("SO_ok\n");
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
