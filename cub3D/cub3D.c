@@ -573,11 +573,6 @@ int line_check(char **line, t_cub *cub_list)
 	return (0);
 }
 
-void init_cub_list(t_cub *cub_list)
-{
-
-}
-
 int	main(int argc, char *argv[])
 {
 	t_info info;
