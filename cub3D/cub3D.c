@@ -113,6 +113,7 @@ typedef struct		s_cub
 	char *s_texture;
 	char *w_texture;
 	char *e_texture;
+	char *spirite
 }					t_cub;
 
 
@@ -528,7 +529,10 @@ int line_check(char **line, t_cub *cub_list)
 		printf("East: %s\n", cub_list->e_texture);
 	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
-		printf("S_ok\n");
+	{
+		cub_list->spirite = line_split[1];
+		printf("Sprite: %s\n", cub_list->spirite);
+	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 		printf("F_ok\n");
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
