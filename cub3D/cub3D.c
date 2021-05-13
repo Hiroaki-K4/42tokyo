@@ -534,9 +534,13 @@ int line_check(char **line, t_cub *cub_list)
 		printf("Sprite: %s\n", cub_list->spirite);
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
-		printf("F_ok\n");
+	{
+		printf("Floor: %s\n", line_split[1]);
+	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
-		printf("C_ok\n");
+	{
+		printf("Ceiling: %s\n", line_split[1]);
+	}
 	printf("dst: %s\n", line_split[0]);
 	return (0);
 }
