@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:13:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:14:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -517,7 +517,7 @@ int map_line_check(char **line_split)
 		while (line_split[i][j])
 		{
 			printf("word: %c\n", line_split[i][j]);
-			if (line_split[i][j] != 0 && line_split[i][j] != 1 && line_split[i][j] != 2 
+			if (line_split[i][j] != '0' && line_split[i][j] != '1' && line_split[i][j] != '2' 
 			&& line_split[i][j] != 'N' && line_split[i][j] != 'S' && line_split[i][j] != 'E' && line_split[i][j] != 'W')
 				return (1);
 			j++;
