@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:59:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 23:00:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -596,7 +596,7 @@ int line_check(char **line, t_cub *cub_list)
 			return (-1);
 		printf("befo: %s\n", map_line);
 		i = 0;
-		while (i < ft_strlen(map_line))
+		while (map_line[i])
 		{
 			// printf("word: %c\n", map_line[i]);
 			if (map_line[i] == ' ')
