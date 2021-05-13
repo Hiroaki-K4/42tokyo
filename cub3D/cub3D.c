@@ -547,7 +547,6 @@ int line_check(char **line, t_cub *cub_list)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		printf("red: %s\n", rgb_split[0]);
 		cub_list->rgb.red = ft_atoi(rgb_split[0]);
 		cub_list->rgb.green = ft_atoi(rgb_split[1]);
 		cub_list->rgb.blue = ft_atoi(rgb_split[2]);
@@ -557,7 +556,14 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
-		printf("Ceiling: %s\n", line_split[1]);
+		if (!(rgb_split = ft_split(line_split[1], ',')))
+			return (-1);
+		cub_list->rgb.red = ft_atoi(rgb_split[0]);
+		cub_list->rgb.green = ft_atoi(rgb_split[1]);
+		cub_list->rgb.blue = ft_atoi(rgb_split[2]);
+		printf("Ceiling_r: %d\n", cub_list->rgb.red);
+		printf("Ceiling_g: %d\n", cub_list->rgb.green);
+		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
 	}
 	printf("dst: %s\n", line_split[0]);
 	return (0);
