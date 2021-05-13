@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 21:58:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:10:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -508,12 +508,21 @@ int		ft_strcmp(const char *s1, const char *s2)
 int map_line_check(char **line_split)
 {
 	int i;
+	int j;
 	
 	i = 0;
 	while (line_split[i])
+	{
+		j = 0;
+		while (line_split[i][j])
+		{
+			if (line_split[i][j] != 0 && line_split[i][j] != 1 && line_split[i][j] != 2 
+			&& line_split[i][j] != 'N' && line_split[i][j] != 'S' && line_split[i][j] != 'E' && line_split[i][j] != 'W')
+				return (1);
+			j++;
+		}
 		i++;
-	printf("i: %d\n", i);
-	printf("size: %d\n", sizeof(line_split) / sizeof(char**));
+	}
 	return (0);
 }
 
@@ -583,7 +592,7 @@ int line_check(char **line, t_cub *cub_list)
 	// {
 
 	// }
-	map_line_check(line_split);
+	printf("line_check: %d\n", map_line_check(line_split));
 	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
