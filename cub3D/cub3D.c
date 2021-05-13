@@ -513,11 +513,20 @@ int line_check(char **line, t_cub *cub_list)
 		printf("North: %s\n", cub_list->n_texture);
 	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
-		printf("SO_ok\n");
+	{
+		cub_list->s_texture = line_split[1];
+		printf("Sorth: %s\n", cub_list->s_texture);
+	}
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
-		printf("WE_ok\n");
+	{
+		cub_list->w_texture = line_split[1];
+		printf("West: %s\n", cub_list->w_texture);
+	}
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
-		printf("EA_ok\n");
+	{
+		cub_list->e_texture = line_split[1];
+		printf("East: %s\n", cub_list->e_texture);
+	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
 		printf("S_ok\n");
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
