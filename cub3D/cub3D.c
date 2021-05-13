@@ -499,8 +499,8 @@ int line_check(char **line, t_cub *cub_list)
 		return (-1);
 	if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		cub_list->c_width = line_split[1];
-		cub_list->c_width = line_split[2];
+		cub_list->c_width = ft_atoi(line_split[1]);
+		cub_list->c_height = ft_atoi(line_split[2]);
 		printf("width: %d height: %d\n", cub_list->c_width, cub_list->c_height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
