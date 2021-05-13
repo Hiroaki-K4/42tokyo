@@ -105,6 +105,13 @@ typedef struct		s_pair
 	int		second;
 }					t_pair;
 
+typedef struct		s_cub
+{
+	int c_width;
+	int c_height;
+}					t_cub;
+
+
 void	sort_order(t_pair *orders, int amount)
 {
 	t_pair	tmp;
@@ -482,7 +489,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int line_check(char **line)
+int line_check(char **line, t_cub *cub_list)
 {
 	int i;
 	char **line_split;
@@ -491,7 +498,11 @@ int line_check(char **line)
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
 	if (i = ft_strcmp("R", line_split[0]) == 0)
-		printf("R_ok\n");
+	{
+		cub_list->c_width = line_split[1];
+		cub_list->c_width = line_split[2];
+		printf("width: %d height: %d\n", cub_list->c_width, cub_list->c_height);
+	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 		printf("NO_ok\n");
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
@@ -513,6 +524,7 @@ int line_check(char **line)
 int	main(int argc, char *argv[])
 {
 	t_info info;
+	t_cub cub_list;
 	int buffer_size;
 	int fd;
 	int i;
@@ -529,7 +541,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line);
+		line_check(line, &cub_list);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
