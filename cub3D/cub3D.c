@@ -569,7 +569,7 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (map_check(line_split[0]))
 	{
-		
+
 	}
 	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
@@ -602,11 +602,6 @@ int	main(int argc, char *argv[])
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	// cub_path = argv[1];
-	// i = ft_strlen(cub_path);
-	// printf("len: %i\n", i);
-	// printf("path: %s\n", cub_path);
-	// argv[0] = "aa";
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
