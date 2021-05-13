@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:52:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:54:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -598,7 +598,7 @@ int line_check(char **line, t_cub *cub_list)
 		i = 0;
 		while (i < ft_strlen(line))
 		{
-			printf("word: %c\n", line[0][i]);
+			printf("word: %c\n", line[i]);
 			if (line[i] == '1')
 				line[i] = '2';
 			// map_line[i] = line[i];
@@ -619,6 +619,7 @@ int	main(int argc, char *argv[])
 	int buffer_size;
 	int fd;
 	int i;
+	char *tmp;
 	char **line;
 	
 	if (argc != 2)
@@ -634,6 +635,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
+		tmp = *line;
 		line_check(line, &cub_list);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
