@@ -565,6 +565,7 @@ int line_check(char **line, t_cub *cub_list)
 		printf("Ceiling_g: %d\n", cub_list->rgb.green);
 		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
 	}
+	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
 }
