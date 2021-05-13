@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:54:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:54:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -526,7 +526,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int line_check(char **line, t_cub *cub_list)
+int line_check(char *line, t_cub *cub_list)
 {
 	int i;
 	char *map_line;
