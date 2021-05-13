@@ -547,12 +547,12 @@ int line_check(char **line, t_cub *cub_list)
 	{
 		if (!(rgb_split = ft_split(line, ',')))
 			return (-1);
-		cub_list->rgb.red = rgb_split[0];
-		cub_list->rgb.green = rgb_split[1];
-		cub_list->rgb.blue = rgb_split[2];
-		printf("Floor_r: %s\n", cub_list->rgb.red);
-		printf("Floor_g: %s\n", cub_list->rgb.green);
-		printf("Floor_b: %s\n", cub_list->rgb.blue);
+		cub_list->rgb.red = ft_atoi(rgb_split[0]);
+		cub_list->rgb.green = ft_atoi(rgb_split[1]);
+		cub_list->rgb.blue = ft_atoi(rgb_split[2]);
+		printf("Floor_r: %d\n", cub_list->rgb.red);
+		printf("Floor_g: %d\n", cub_list->rgb.green);
+		printf("Floor_b: %d\n", cub_list->rgb.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
