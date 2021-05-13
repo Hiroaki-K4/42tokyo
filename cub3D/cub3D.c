@@ -545,7 +545,7 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
-		if (!(rgb_split = ft_split(line, ',')))
+		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
 		printf("red: %s\n", rgb_split[0]);
 		cub_list->rgb.red = ft_atoi(rgb_split[0]);
