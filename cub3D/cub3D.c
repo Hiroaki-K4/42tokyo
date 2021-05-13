@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:19:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:21:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -532,7 +532,6 @@ int line_check(char **line, t_cub *cub_list)
 	char **line_split;
 	char **rgb_split;
 	
-	// printf("line: %s first: %c\n", line, line[0]);
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
 	if (line_split[0] == NULL)
@@ -592,9 +591,9 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		printf("line_check: %d\n", map_line_check(line_split));
+		printf("line: %s\n", line);
 	}
-	printf("line: %s\n", line);
+	// printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
 }
