@@ -529,7 +529,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line);
+		// line_check(line);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
