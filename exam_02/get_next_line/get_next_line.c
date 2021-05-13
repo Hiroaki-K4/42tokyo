@@ -221,6 +221,24 @@ size_t ft_strlen(const char *src)
     return (i);
 }
 
+char *ft_strchr(const char *arg, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)arg;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(arg + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(arg + i);
+    return (NULL);
+}
+
 char *ft_strjoin(const char *s1, const char *s2)
 {
     size_t i;
