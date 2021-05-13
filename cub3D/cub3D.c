@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:37:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:38:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -595,7 +595,7 @@ int line_check(char **line, t_cub *cub_list)
 		if (!(map_line = (char *)malloc(sizeof(char) * (ft_strlen(line) + 1))))
 			return (-1);
 		i = 0;
-		while (line[i])
+		while (line[i] != '\0')
 		{
 			printf("line_i: %c", line[i]);
 			if (line[i] == ' ')
