@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 21:47:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 21:54:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -505,6 +505,12 @@ int		ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
+int map_line_check(char **line_split)
+{
+	printf("size: %d\n", sizeof(line_split));
+	return (0);
+}
+
 int line_check(char **line, t_cub *cub_list)
 {
 	int i;
@@ -567,10 +573,11 @@ int line_check(char **line, t_cub *cub_list)
 		printf("Ceiling_g: %d\n", cub_list->rgb.green);
 		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
 	}
-	// else if (map_check(line_split[0]))
+	// else if (map_line_check(line_split))
 	// {
 
 	// }
+	map_line_check(line_split);
 	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
