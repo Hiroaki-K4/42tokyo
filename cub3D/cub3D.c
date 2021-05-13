@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 22:23:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 22:28:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -529,6 +529,7 @@ int map_line_check(char **line_split)
 int line_check(char **line, t_cub *cub_list)
 {
 	int i;
+	char *map_line;
 	char **line_split;
 	char **rgb_split;
 	
@@ -591,8 +592,17 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		printf("len: %d\n", (int)ft_strlen(line));
-		printf("line: %s\n", line);
+		if (!(map_line = (char *)malloc(sizeof(char) * (ft_strlen(line) + 1))))
+			return (-1);
+		i = 0;
+		while (line[i])
+		{
+			if (line[i] == ' ')
+				line[i] = '1';
+			map_line[i] = line[i];
+			i++;
+		}
+		printf("line: %s\n", map_line);
 	}
 	// printf("line: %s\n", line);
 	// printf("dst: %s\n", line_split[0]);
