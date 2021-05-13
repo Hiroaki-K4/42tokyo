@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/13 21:55:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 21:58:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -507,6 +507,12 @@ int		ft_strcmp(const char *s1, const char *s2)
 
 int map_line_check(char **line_split)
 {
+	int i;
+	
+	i = 0;
+	while (line_split[i])
+		i++;
+	printf("i: %d\n", i);
 	printf("size: %d\n", sizeof(line_split) / sizeof(char**));
 	return (0);
 }
