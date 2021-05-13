@@ -105,6 +105,14 @@ typedef struct		s_pair
 	int		second;
 }					t_pair;
 
+typedef struct		s_rgb
+{
+	int red;
+	int green;
+	int blue;
+}					t_rgb;
+
+
 typedef struct		s_cub
 {
 	int c_width;
@@ -113,7 +121,8 @@ typedef struct		s_cub
 	char *s_texture;
 	char *w_texture;
 	char *e_texture;
-	char *sprite
+	char *sprite;
+	t_rgb rgb;
 }					t_cub;
 
 
@@ -498,6 +507,7 @@ int line_check(char **line, t_cub *cub_list)
 {
 	int i;
 	char **line_split;
+	char **rgb_split;
 	
 	// printf("line: %s first: %c\n", line, line[0]);
 	if (!(line_split = ft_split(line, ' ')))
@@ -535,7 +545,9 @@ int line_check(char **line, t_cub *cub_list)
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
-		printf("Floor: %s\n", line_split[1]);
+		if (!(rgb_split = ft_split(line, ',')))
+			return (-1);
+		printf("Floor: %s\n", rgb_split[1]);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
