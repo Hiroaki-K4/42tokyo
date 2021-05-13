@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/13 08:59:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 09:04:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,6 +210,39 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 //     }
 //     return (0);
 // }
+
+int read_line(int fd, char **store, char **line)
+{
+    int buffer_size;
+    int i;
+    char *buf;
+    char *tmp;
+
+    buffer_size = 128;
+    if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
+        return (-1);
+    i = 1;
+    while (i > 0)
+    {
+        if ((i = read(fd, buf, buffer_size)) == -1)
+            return (-1);
+        buf[i] = '\0';
+        if (ft_strchr(buf, '\n') != NULL)
+        {
+            if (!(store[fd] = save_new_line(store[fd], line, buf)))
+                return (-1);
+            return (1);
+        }
+        if (!(tmp = ft_strjoin(store[fd], buf)))
+            return (-1);
+        free(store[fd]);
+        store[fd] = tmp;
+    }
+    free(buf);
+    if (!(*line = ft_strdup(store[fd])))
+        return (-1);
+    return (0);
+}
 
 int get_next_line(int fd, char **line)
 {
