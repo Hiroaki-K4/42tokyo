@@ -117,6 +117,8 @@ typedef struct		s_cub
 {
 	int c_width;
 	int c_height;
+	int map_x;
+	int map_y;
 	char *n_texture;
 	char *s_texture;
 	char *w_texture;
@@ -565,10 +567,15 @@ int line_check(char **line, t_cub *cub_list)
 		printf("Ceiling_g: %d\n", cub_list->rgb.green);
 		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
 	}
-	printf("Ceiling_r: %d\n", cub_list->rgb.red);
+	else if (map_check(line_split[0]))
 	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
+}
+
+void init_cub_list(t_cub *cub_list)
+{
+
 }
 
 int	main(int argc, char *argv[])
@@ -587,6 +594,8 @@ int	main(int argc, char *argv[])
 	}
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
+	// init_cub_list(&cub_list);
+	cub_list.map_y = 0;
 	i = 1;
 	while (i > 0)
 	{
