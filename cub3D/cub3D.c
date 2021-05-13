@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/12 23:00:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/13 21:47:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -567,10 +567,10 @@ int line_check(char **line, t_cub *cub_list)
 		printf("Ceiling_g: %d\n", cub_list->rgb.green);
 		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
 	}
-	else if (map_check(line_split[0]))
-	{
+	// else if (map_check(line_split[0]))
+	// {
 
-	}
+	// }
 	printf("line: %s\n", line);
 	printf("dst: %s\n", line_split[0]);
 	return (0);
