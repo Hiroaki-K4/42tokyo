@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:02:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:03:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -539,9 +539,9 @@ int line_check(char **line, t_cub *cub_list)
 		return (0);
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		cub_list->c_width = ft_atoi(line_split[1]);
-		cub_list->c_height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", cub_list->c_width, cub_list->c_height);
+		cub_list->width = ft_atoi(line_split[1]);
+		cub_list->height = ft_atoi(line_split[2]);
+		printf("width: %d height: %d\n", cub_list->width, cub_list->height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
