@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:14:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:15:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,6 @@ typedef struct	s_img
 	int		img_height;
 }				t_img;
 
-typedef struct	s_info
-{
-	double posX;
-	double posY;
-	double dirX;
-	double dirY;
-	double planeX;
-	double planeY;
-	double	zBuffer[width];
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	int		buf[height][width];
-	int		**texture;
-	double	moveSpeed;
-	double	rotSpeed;
-	t_cub cub_list;
-}				t_info;
-
 typedef struct		s_pair
 {
 	double	first;
@@ -128,6 +109,24 @@ typedef struct		s_cub
 	t_rgb rgb;
 }					t_cub;
 
+typedef struct	s_info
+{
+	double posX;
+	double posY;
+	double dirX;
+	double dirY;
+	double planeX;
+	double planeY;
+	double	zBuffer[width];
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	int		buf[height][width];
+	int		**texture;
+	double	moveSpeed;
+	double	rotSpeed;
+	t_cub cub_list;
+}				t_info;
 
 void	sort_order(t_pair *orders, int amount)
 {
