@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 20:59:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:02:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,7 +210,7 @@ void	draw(t_info *info)
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
 
-void	calc(t_info *info)
+void	calc(t_info *info, t_cub *cub_list)
 {
 	int	x;
 
@@ -411,9 +411,9 @@ void	calc(t_info *info)
 	}
 }
 
-int	main_loop(t_info *info)
+int	main_loop(t_info *info, t_cub *cub_list)
 {
-	calc(info);
+	calc(info, cub_list);
 	draw(info);
 	return (0);
 }
@@ -644,7 +644,7 @@ int	main(int argc, char *argv[])
 
 	for (int i = 0; i < cub_list.height; i++)
 	{
-		for (int j = 0; j < width; j++)
+		for (int j = 0; j < cub_list.width; j++)
 		{
 			info.buf[i][j] = 0;
 		}
@@ -670,13 +670,13 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	// info.win = mlx_new_window(info.mlx, width, height, "mlx");
+	info.win = mlx_new_window(info.mlx, cub_list.width, cub_list.height, "mlx");
 
-	// info.img.img = mlx_new_image(info.mlx, width, height);
-	// info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
+	info.img.img = mlx_new_image(info.mlx, cub_list.width, cub_list.height);
+	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
-	// mlx_loop_hook(info.mlx, &main_loop, &info);
-	// mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
+	mlx_loop_hook(info.mlx, &main_loop, &info);
+	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
 
-	// mlx_loop(info.mlx);
+	mlx_loop(info.mlx);
 }
