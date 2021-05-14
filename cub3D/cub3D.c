@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:18:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:19:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -629,7 +629,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line, &info.cub_list);
+		line_check(line, &info);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
