@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:03:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:14:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
-// #define width 1080
-// #define height 1920
+#define width 1080
+#define height 1920
 #define numSprites 19
 #define K_W 119
 #define K_S 115
@@ -97,6 +97,7 @@ typedef struct	s_info
 	int		**texture;
 	double	moveSpeed;
 	double	rotSpeed;
+	t_cub cub_list;
 }				t_info;
 
 typedef struct		s_pair
@@ -526,7 +527,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int line_check(char **line, t_cub *cub_list)
+int line_check(char **line, t_info *info)
 {
 	int i;
 	char *map_line;
@@ -539,56 +540,56 @@ int line_check(char **line, t_cub *cub_list)
 		return (0);
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		cub_list->width = ft_atoi(line_split[1]);
-		cub_list->height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", cub_list->width, cub_list->height);
+		info->cub_list.width = ft_atoi(line_split[1]);
+		info->cub_list.height = ft_atoi(line_split[2]);
+		printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
-		cub_list->n_texture = line_split[1];
-		printf("North: %s\n", cub_list->n_texture);
+		info->cub_list.n_texture = line_split[1];
+		printf("North: %s\n", info->cub_list.n_texture);
 	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
 	{
-		cub_list->s_texture = line_split[1];
-		printf("Sorth: %s\n", cub_list->s_texture);
+		info->cub_list.s_texture = line_split[1];
+		printf("Sorth: %s\n", info->cub_list.s_texture);
 	}
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
 	{
-		cub_list->w_texture = line_split[1];
-		printf("West: %s\n", cub_list->w_texture);
+		info->cub_list.w_texture = line_split[1];
+		printf("West: %s\n", info->cub_list.w_texture);
 	}
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
 	{
-		cub_list->e_texture = line_split[1];
-		printf("East: %s\n", cub_list->e_texture);
+		info->cub_list.e_texture = line_split[1];
+		printf("East: %s\n", info->cub_list.e_texture);
 	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
 	{
-		cub_list->sprite = line_split[1];
-		printf("Sprite: %s\n", cub_list->sprite);
+		info->cub_list.sprite = line_split[1];
+		printf("Sprite: %s\n", info->cub_list.sprite);
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		cub_list->rgb.red = ft_atoi(rgb_split[0]);
-		cub_list->rgb.green = ft_atoi(rgb_split[1]);
-		cub_list->rgb.blue = ft_atoi(rgb_split[2]);
-		printf("Floor_r: %d\n", cub_list->rgb.red);
-		printf("Floor_g: %d\n", cub_list->rgb.green);
-		printf("Floor_b: %d\n", cub_list->rgb.blue);
+		info->cub_list.rgb.red = ft_atoi(rgb_split[0]);
+		info->cub_list.rgb.green = ft_atoi(rgb_split[1]);
+		info->cub_list.rgb.blue = ft_atoi(rgb_split[2]);
+		printf("Floor_r: %d\n", info->cub_list.rgb.red);
+		printf("Floor_g: %d\n", info->cub_list.rgb.green);
+		printf("Floor_b: %d\n", info->cub_list.rgb.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		cub_list->rgb.red = ft_atoi(rgb_split[0]);
-		cub_list->rgb.green = ft_atoi(rgb_split[1]);
-		cub_list->rgb.blue = ft_atoi(rgb_split[2]);
-		printf("Ceiling_r: %d\n", cub_list->rgb.red);
-		printf("Ceiling_g: %d\n", cub_list->rgb.green);
-		printf("Ceiling_b: %d\n", cub_list->rgb.blue);
+		info->cub_list.rgb.red = ft_atoi(rgb_split[0]);
+		info->cub_list.rgb.green = ft_atoi(rgb_split[1]);
+		info->cub_list.rgb.blue = ft_atoi(rgb_split[2]);
+		printf("Ceiling_r: %d\n", info->cub_list.rgb.red);
+		printf("Ceiling_g: %d\n", info->cub_list.rgb.green);
+		printf("Ceiling_b: %d\n", info->cub_list.rgb.blue);
 	}
 	else if (map_line_check(line_split) == 0)
 	{
@@ -610,7 +611,7 @@ int line_check(char **line, t_cub *cub_list)
 int	main(int argc, char *argv[])
 {
 	t_info info;
-	t_cub cub_list;
+	// t_cub cub_list;
 	int buffer_size;
 	int fd;
 	int i;
@@ -624,12 +625,12 @@ int	main(int argc, char *argv[])
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
 	// init_cub_list(&cub_list);
-	cub_list.map_y = 0;
+	info.cub_list.map_y = 0;
 	i = 1;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line, &cub_list);
+		line_check(line, &info.cub_list);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
@@ -642,9 +643,9 @@ int	main(int argc, char *argv[])
 	info.planeX = 0.0;
 	info.planeY = 0.66;
 
-	for (int i = 0; i < cub_list.height; i++)
+	for (int i = 0; i < info.cub_list.height; i++)
 	{
-		for (int j = 0; j < cub_list.width; j++)
+		for (int j = 0; j < info.cub_list.width; j++)
 		{
 			info.buf[i][j] = 0;
 		}
@@ -670,7 +671,7 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	info.win = mlx_new_window(info.mlx, cub_list.width, cub_list.height, "mlx");
+	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
 
 	info.img.img = mlx_new_image(info.mlx, cub_list.width, cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
