@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/14 09:15:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 09:24:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -483,10 +483,10 @@ int str_to_num(const char *arg, int *i, va_list *ap, int flag)
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int num;
-	int len;
 	int keta;
-	char *str_num;
+	int len;
 	unsigned int hex_num;
+	char *str_num;
 	t_plist flag_list;
 	
 	(*i)++;
@@ -494,8 +494,8 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	flag_list.precision = -1;
 	if (arg[*i] == '.')
 	{
-		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
 		(*i)++;
+		flag_list.precision = str_to_num(&arg[*i], i, ap, 1);
 	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	if (flag_list.format == 0)
@@ -513,7 +513,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+		if (!(str_num = ft_itoa(hex_num)))
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
