@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:17:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:18:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,7 +210,7 @@ void	draw(t_info *info)
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
 
-void	calc(t_info *info, t_cub *cub_list)
+void	calc(t_info *info)
 {
 	int	x;
 
@@ -411,9 +411,9 @@ void	calc(t_info *info, t_cub *cub_list)
 	}
 }
 
-int	main_loop(t_info *info, t_cub *cub_list)
+int	main_loop(t_info *info)
 {
-	calc(info, cub_list);
+	calc(info);
 	draw(info);
 	return (0);
 }
