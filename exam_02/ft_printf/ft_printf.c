@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/14 13:45:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 13:53:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -348,8 +348,8 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 
 int print_string(va_list *ap, t_plist flag_list)
 {
-	int i;
 	int len;
+	int i;
 	char *str;
 
 	len = 0;
@@ -399,6 +399,7 @@ int print_string(va_list *ap, t_plist flag_list)
 	}
 	return (len);
 }
+
 
 
 // int		str_to_num(const char *arg, int *i, int flag)
