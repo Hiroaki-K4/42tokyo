@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:15:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:17:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ typedef struct		s_rgb
 
 typedef struct		s_cub
 {
-	int width;
-	int height;
+	int r_width;
+	int r_height;
 	int map_x;
 	int map_y;
 	char *n_texture;
@@ -539,9 +539,9 @@ int line_check(char **line, t_info *info)
 		return (0);
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		info->cub_list.width = ft_atoi(line_split[1]);
-		info->cub_list.height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
+		info->cub_list.r_width = ft_atoi(line_split[1]);
+		info->cub_list.r_height = ft_atoi(line_split[2]);
+		printf("width: %d height: %d\n", info->cub_list.r_width, info->cub_list.r_height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
@@ -642,9 +642,9 @@ int	main(int argc, char *argv[])
 	info.planeX = 0.0;
 	info.planeY = 0.66;
 
-	for (int i = 0; i < info.cub_list.height; i++)
+	for (int i = 0; i < info.cub_list.r_height; i++)
 	{
-		for (int j = 0; j < info.cub_list.width; j++)
+		for (int j = 0; j < info.cub_list.r_width; j++)
 		{
 			info.buf[i][j] = 0;
 		}
@@ -670,9 +670,9 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
+	info.win = mlx_new_window(info.mlx, info.cub_list.r_width, info.cub_list.r_height, "mlx");
 
-	info.img.img = mlx_new_image(info.mlx, cub_list.width, cub_list.height);
+	info.img.img = mlx_new_image(info.mlx, cub_list.r_width, cub_list.r_height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
