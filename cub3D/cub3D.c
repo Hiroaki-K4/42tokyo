@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:24:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:44:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -594,7 +594,7 @@ int line_check(char **line, t_info *info)
 	{
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
-		// printf("befo: %s\n", map_line);
+		printf("befo: %s\n", map_line);
 		i = 0;
 		while (map_line[i])
 		{
@@ -602,7 +602,7 @@ int line_check(char **line, t_info *info)
 				map_line[i] = '1';
 			i++;
 		}
-		printf("line: %s\n", map_line);
+		// printf("line: %s\n", map_line);
 	}
 	return (0);
 }
