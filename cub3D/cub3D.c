@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:57:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:28:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct		s_cub
 	int r_width;
 	int r_height;
 	int count;
+	char **map;
 	int map_x;
 	int map_y;
 	char *n_texture;
@@ -596,6 +597,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.count++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
+		if (!(map = (char **)malloc))
 		printf("befo: %s\n", map_line);
 		printf("count: %d\n", info->cub_list.count);
 		// i = 0;
