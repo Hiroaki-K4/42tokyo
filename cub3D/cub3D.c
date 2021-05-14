@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:44:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:50:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -526,7 +526,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int line_check(char **line, t_info *info)
+int line_check(char **line, t_info *info, int count)
 {
 	int i;
 	char *map_line;
@@ -592,16 +592,18 @@ int line_check(char **line, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
+		count++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
 		printf("befo: %s\n", map_line);
-		i = 0;
-		while (map_line[i])
-		{
-			if (map_line[i] == ' ')
-				map_line[i] = '1';
-			i++;
-		}
+		printf("count: %d\n", count);
+		// i = 0;
+		// while (map_line[i])
+		// {
+		// 	if (map_line[i] == ' ')
+		// 		map_line[i] = '1';
+		// 	i++;
+		// }
 		// printf("line: %s\n", map_line);
 	}
 	return (0);
@@ -614,6 +616,7 @@ int	main(int argc, char *argv[])
 	int buffer_size;
 	int fd;
 	int i;
+	int count;
 	char **line;
 	
 	if (argc != 2)
@@ -626,10 +629,11 @@ int	main(int argc, char *argv[])
 	// init_cub_list(&cub_list);
 	info.cub_list.map_y = 0;
 	i = 1;
+	count = 0;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line, &info);
+		line_check(line, &info, count);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
