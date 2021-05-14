@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 21:55:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:57:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct		s_cub
 {
 	int r_width;
 	int r_height;
+	int count;
 	int map_x;
 	int map_y;
 	char *n_texture;
@@ -526,7 +527,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int line_check(char **line, t_info *info, int *count)
+int line_check(char **line, t_info *info)
 {
 	int i;
 	char *map_line;
@@ -592,11 +593,11 @@ int line_check(char **line, t_info *info, int *count)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		(*count)++;
+		info->cub_list.count++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
 		printf("befo: %s\n", map_line);
-		printf("count: %d\n", count);
+		printf("count: %d\n", info->cub_list.count);
 		// i = 0;
 		// while (map_line[i])
 		// {
@@ -616,7 +617,6 @@ int	main(int argc, char *argv[])
 	int buffer_size;
 	int fd;
 	int i;
-	int count;
 	char **line;
 	
 	if (argc != 2)
@@ -628,16 +628,15 @@ int	main(int argc, char *argv[])
     fd = open(argv[1], O_RDONLY);
 	// init_cub_list(&cub_list);
 	info.cub_list.map_y = 0;
+	info.cub_list.count = 0;
 	i = 1;
-	count = 0;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line, &info, &count);
+		line_check(line, &info);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	printf("Ceiling_r: %d\n", info.cub_list.rgb.red);
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
