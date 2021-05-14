@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/14 20:57:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/14 20:59:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ typedef struct		s_rgb
 
 typedef struct		s_cub
 {
-	int c_width;
-	int c_height;
+	int width;
+	int height;
 	int map_x;
 	int map_y;
 	char *n_texture;
@@ -642,7 +642,7 @@ int	main(int argc, char *argv[])
 	info.planeX = 0.0;
 	info.planeY = 0.66;
 
-	for (int i = 0; i < height; i++)
+	for (int i = 0; i < cub_list.height; i++)
 	{
 		for (int j = 0; j < width; j++)
 		{
