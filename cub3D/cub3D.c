@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 21:28:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:31:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -457,17 +457,21 @@ int	key_press(int key, t_info *info)
 {
 	if (key == K_W)
 	{
-		if (!info->cub_list.map_matrix[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
+		// if (!info->cub_list.map_matrix[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
+		if (!info->cub_list.map_matrix[(int)(info->posY)][(int)(info->posX + info->dirX * info->moveSpeed)])
 			info->posX += info->dirX * info->moveSpeed;
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+		// if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posY + info->dirY * info->moveSpeed)][(int)(info->posX)])
 			info->posY += info->dirY * info->moveSpeed;
 	}
 	//move backwards if no wall behind you
 	if (key == K_S)
 	{
-		if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
+		// if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
+		if (!info->cub_list.map_matrix[(int)(info->posY)][(int)(info->posX - info->dirX * info->moveSpeed)])
 			info->posX -= info->dirX * info->moveSpeed;
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		// if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posY - info->dirY * info->moveSpeed)][(int)(info->posX)])
 			info->posY -= info->dirY * info->moveSpeed;
 	}
 	//rotate to the right
