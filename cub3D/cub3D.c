@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:50:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:58:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -628,6 +628,8 @@ int line_check(char **line, t_info *info)
 		info->cub_list.map_y++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
+		if (ft_strlen(map_line) > info->cub_list.map_x)
+			info->cub_list.map_x = ft_strlen(map_line);
 		// info->cub_list.size += ft_strlen(map_line) + 1;
 		// tmp = info->cub_list.map;
 		// free(info->cub_list.map);
@@ -678,6 +680,7 @@ int	main(int argc, char *argv[])
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
 	// init_cub_list(&cub_list);
+	info.cub_list.map_x = 0;
 	info.cub_list.map_y = 0;
 	info.cub_list.size = 0;
 	i = 1;
@@ -688,7 +691,7 @@ int	main(int argc, char *argv[])
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	// printf("line: %s\n", info.cub_list.map[1]);
+	printf("line: %d\n", info.cub_list.map_x);
 	i = 0;
 	while (i < info.cub_list.map_y)
 	{
