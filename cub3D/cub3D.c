@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:59:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 18:14:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ typedef struct		s_cub
 	int r_height;
 	int count;
 	char **map;
+	int **map_matrix;
 	int map_x;
 	int map_y;
 	int size;
@@ -175,7 +176,7 @@ void	sortSprites(int *order, double *dist, int amount)
 
 int	worldMap[mapWidth][mapHeight] =
 									{
-										{8,8,8,8,8,8,8,8,8,8,8,4,4,6,4,4,6,4,6,4,4,4,6,4},
+										{-1,8,8,8,8,8,8,8,8,8,8,4,4,6,4,4,6,4,6,4,4,4,6,4},
 										{8,0,0,0,0,0,0,0,0,0,8,4,0,0,0,0,0,0,0,0,0,0,0,4},
 										{8,0,3,3,0,0,0,0,0,8,8,4,0,0,0,0,0,0,0,0,0,0,0,6},
 										{8,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6},
@@ -663,6 +664,13 @@ int line_check(char **line, t_info *info)
 	return (0);
 }
 
+int convert_int_matrix(t_info *info)
+{
+	
+
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -679,7 +687,6 @@ int	main(int argc, char *argv[])
 	}
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
-	// init_cub_list(&cub_list);
 	info.cub_list.map_x = 0;
 	info.cub_list.map_y = 0;
 	info.cub_list.size = 0;
@@ -698,6 +705,7 @@ int	main(int argc, char *argv[])
 		printf("line: %s\n", info.cub_list.map[i]);
 		i++;
 	}
+	convert_int_matrix(&info);
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
