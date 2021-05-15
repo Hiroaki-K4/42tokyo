@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:42:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:42:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -657,7 +657,6 @@ int	main(int argc, char *argv[])
     fd = open(argv[1], O_RDONLY);
 	// init_cub_list(&cub_list);
 	info.cub_list.map_y = 0;
-	info.cub_list.count = 0;
 	info.cub_list.size = 0;
 	i = 1;
 	while (i > 0)
