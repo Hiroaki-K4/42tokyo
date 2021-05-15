@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 20:48:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 20:49:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -692,6 +692,7 @@ int convert_int_matrix(t_info *info)
 		{
 			while (j < info->cub_list.map_x)
 			{
+				printf("word: %c\n", info->cub_list.map[i][j]);
 				if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 3;
 				else
