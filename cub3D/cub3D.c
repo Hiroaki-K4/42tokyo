@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 16:35:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 16:36:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -615,6 +615,7 @@ int line_check(char **line, t_info *info)
 		}
 		if (!(info->cub_list.map[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
 				return (-1);
+		free(tmp);
 		ft_strlcpy(info->cub_list.map[i], map_line, ft_strlen(map_line) + 1);
 		printf("befo: %s\n", info->cub_list.map[info->cub_list.count]);
 		printf("size: %d\n", info->cub_list.size);
