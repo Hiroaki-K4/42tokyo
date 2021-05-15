@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:05:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:05:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -535,7 +535,7 @@ int line_check(char **line, t_info *info)
 	char *map_line;
 	char **line_split;
 	char **rgb_split;
-	char *tmp;
+	char **tmp;
 	
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
@@ -596,9 +596,9 @@ int line_check(char **line, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		// info->cub_list.count++;
-		// if (!(map_line = ft_strdup(line)))
-		// 	return (-1);
+		info->cub_list.count++;
+		if (!(map_line = ft_strdup(line)))
+			return (-1);
 		// tmp = info->cub_list.map;
 		// free(info->cub_list.map);
 		// if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.count))))
