@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:58:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:59:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -691,7 +691,7 @@ int	main(int argc, char *argv[])
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	printf("line: %d\n", info.cub_list.map_x);
+	printf("map_x: %d\n", info.cub_list.map_x);
 	i = 0;
 	while (i < info.cub_list.map_y)
 	{
