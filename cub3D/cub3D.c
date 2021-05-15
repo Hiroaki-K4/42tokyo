@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 16:38:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 16:52:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -600,23 +600,24 @@ int line_check(char **line, t_info *info)
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
 		// info->cub_list.size += ft_strlen(map_line) + 1;
-		tmp = info->cub_list.map;
-		free(info->cub_list.map);
-		if (!(info->cub_list.map = (char **)malloc(sizeof(char *) * (info->cub_list.count))))
+		// tmp = info->cub_list.map;
+		// free(info->cub_list.map);
+		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.count))))
 			return (-1);
 		i = 0;
 		while (i < info->cub_list.count - 1)
 		{
-			if (!(info->cub_list.map[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
+			if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
 				return (-1);
 			// info->cub_list.map[i] = tmp[i];
-			ft_strlcpy(info->cub_list.map[i], tmp[i], ft_strlen(tmp[i]) + 1);
+			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(tmp[i]) + 1);
 			i++;
 		}
-		if (!(info->cub_list.map[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
+		if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
 				return (-1);
-		free(tmp);
-		ft_strlcpy(info->cub_list.map[i], map_line, ft_strlen(map_line) + 1);
+		free(info->cub_list.map);
+		ft_strlcpy(tmp[i], map_line, ft_strlen(map_line) + 1);
+		info->cub_list.map = tmp;
 		printf("line: %s\n", info->cub_list.map[info->cub_list.count - 1]);
 		// info->cub_list.count++;
 		// i = 0;
