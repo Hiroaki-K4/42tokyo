@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 21:31:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:57:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,6 +248,7 @@ void	calc(t_info *info)
 	int	x;
 
 	x = 0;
+	printf("first: %d\n", info->cub_list.map_matrix[0][0]);
 	while (x < width)
 	{
 		double cameraX = 2 * x / (double)width - 1;
