@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 16:22:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 16:35:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -535,6 +535,7 @@ int line_check(char **line, t_info *info)
 	char *map_line;
 	char **line_split;
 	char **rgb_split;
+	char *tmp;
 	
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
@@ -599,11 +600,22 @@ int line_check(char **line, t_info *info)
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
 		info->cub_list.size += ft_strlen(map_line) + 1;
+		tmp = info->cub_list.map;
+		free(info->cub_list.map);
 		if (!(info->cub_list.map = (char **)malloc(sizeof(char *) * (info->cub_list.count))))
 			return (-1);
 		i = 0;
-		// while (i < )
-		info->cub_list.map[info->cub_list.count] = map_line;
+		while (i < info->cub_list.count - 1)
+		{
+			if (!(info->cub_list.map[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
+				return (-1);
+			// info->cub_list.map[i] = tmp[i];
+			ft_strlcpy(info->cub_list.map[i], tmp[i], ft_strlen(tmp[i]) + 1);
+			i++;
+		}
+		if (!(info->cub_list.map[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
+				return (-1);
+		ft_strlcpy(info->cub_list.map[i], map_line, ft_strlen(map_line) + 1);
 		printf("befo: %s\n", info->cub_list.map[info->cub_list.count]);
 		printf("size: %d\n", info->cub_list.size);
 		printf("first:%s\n", info->cub_list.map[0]);
