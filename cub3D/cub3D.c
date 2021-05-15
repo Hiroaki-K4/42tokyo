@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:02:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 22:17:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,9 +311,9 @@ void	calc(t_info *info)
 			}
 			//Check if ray has hit a wall
 			printf("mapx: %d mapy: %d\n", mapX, mapY);
-			printf("point: %d\n", info->cub_list.map_matrix[mapX][mapY]);
-			if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
-			// if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
+			printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
+			// if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
+			if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
 		}
 		if (side == 0)
 			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
