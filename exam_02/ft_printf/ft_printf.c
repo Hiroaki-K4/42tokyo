@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/15 14:02:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 14:03:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -498,9 +498,9 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 		flag_list.precision = str_to_num(&arg[*i], i, 1);
 	}
 	flag_list.field = ft_strchr_place("sdx", arg[*i], i);
-	if (flag_list.field == 0)
+	if (flag_list.format == 0)
 		len = print_string(ap, flag_list);
-	else if (flag_list.field == 1)
+	else if (flag_list.format == 1)
 	{
 		num = va_arg(*ap, int);
 		if (!(str_num = ft_itoa(num)))
@@ -510,7 +510,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 			keta--;
 		len = print_digit(flag_list, str_num, num, keta);
 	}
-	else if (flag_list.field == 2)
+	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
 		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
