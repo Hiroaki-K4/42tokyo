@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:23:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:23:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -614,16 +614,16 @@ int line_check(char **line, t_info *info)
 		}
 		tmp[i] = map_line;
 		i = 0;
-		while (i < info->cub_list.count && 1 < info->cub_list.count)
-		{
-			// free(info->cub_list.map[i]);
-			printf("befo: %s\n", info->cub_list.map[i]);
-			i++;
-		}
+		// while (i < info->cub_list.count && 1 < info->cub_list.count)
+		// {
+		// 	// free(info->cub_list.map[i]);
+		// 	printf("befo: %s\n", info->cub_list.map[i]);
+		// 	i++;
+		// }
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
 		// info->cub_list.map[info->cub_list.count] = map_line;
-		// printf("befo: %s\n", info->cub_list.map[info->cub_list.count - 1]);
+		printf("befo: %s\n", info->cub_list.map[info->cub_list.count - 1]);
 		// printf("size: %d\n", info->cub_list.size);
 		// printf("first:%s\n", info->cub_list.map[0]);
 		// info->cub_list.count++;
