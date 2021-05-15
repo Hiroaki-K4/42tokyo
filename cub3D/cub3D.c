@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 15:40:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 15:49:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ typedef struct		s_cub
 	char **map;
 	int map_x;
 	int map_y;
+	int size;
 	char *n_texture;
 	char *s_texture;
 	char *w_texture;
@@ -597,12 +598,12 @@ int line_check(char **line, t_info *info)
 		info->cub_list.count++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
-		printf("map_len: %d\n", ft_strlen(info->cub_list.map));
+		info->cub_list.size += ft_strlen(map_line) + 1;
 		if (!(info->cub_list.map = (char **)malloc(sizeof(char) * (ft_strlen(map_line) * info->cub_list.count + 1))))
 			return (-1);
 		info->cub_list.map[info->cub_list.count - 1] = map_line;
 		printf("befo: %s\n", info->cub_list.map[info->cub_list.count - 1]);
-		// printf("count: %d\n", info->cub_list.count);
+		printf("size: %d\n", info->cub_list.size);
 		// i = 0;
 		// while (map_line[i])
 		// {
@@ -634,6 +635,7 @@ int	main(int argc, char *argv[])
 	// init_cub_list(&cub_list);
 	info.cub_list.map_y = 0;
 	info.cub_list.count = 0;
+	info.cub_list.size = 0;
 	i = 1;
 	while (i > 0)
 	{
