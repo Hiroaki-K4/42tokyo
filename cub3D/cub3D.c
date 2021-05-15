@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 18:14:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 18:16:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void	sortSprites(int *order, double *dist, int amount)
 
 int	worldMap[mapWidth][mapHeight] =
 									{
-										{-1,8,8,8,8,8,8,8,8,8,8,4,4,6,4,4,6,4,6,4,4,4,6,4},
+										{8,8,8,8,8,8,8,8,8,8,8,4,4,6,4,4,6,4,6,4,4,4,6,4},
 										{8,0,0,0,0,0,0,0,0,0,8,4,0,0,0,0,0,0,0,0,0,0,0,4},
 										{8,0,3,3,0,0,0,0,0,8,8,4,0,0,0,0,0,0,0,0,0,0,0,6},
 										{8,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6},
@@ -666,7 +666,14 @@ int line_check(char **line, t_info *info)
 
 int convert_int_matrix(t_info *info)
 {
-	
+	int i;
+
+	i = 0;
+	while (i < info->cub_list.map_y)
+	{
+		printf("line: %s\n", info->cub_list.map[i]);
+		i++;
+	}
 
 	return (0);
 }
