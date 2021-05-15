@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 21:23:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:28:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,7 +310,8 @@ void	calc(t_info *info)
 				side = 1;
 			}
 			//Check if ray has hit a wall
-			if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
+			// if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
+			if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
 		}
 		if (side == 0)
 			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
@@ -329,7 +330,8 @@ void	calc(t_info *info)
 			drawEnd = height - 1;
 
 		// texturing calculations
-		int texNum = info->cub_list.map_matrix[mapX][mapY];
+		// int texNum = info->cub_list.map_matrix[mapX][mapY];
+		int texNum = info->cub_list.map_matrix[mapY][mapX];
 
 		// calculate value of wallX
 		double wallX;
