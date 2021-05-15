@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 18:30:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 18:30:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -680,26 +680,26 @@ int convert_int_matrix(t_info *info)
 		i++;
 	}
 	i = 0;
-	// while (i < info->cub_list.map_y)
-	// {
-	// 	j = 0;
-	// 	if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
-	// 	{
-	// 		printf("ok2\n");
-	// 	}
-	// 	else
-	// 	{
-	// 		while (j < info->cub_list.map_x)
-	// 		{
-	// 			if (info->cub_list.map[i][j] == ' ')
-	// 				printf("ok\n");
-	// 			j++;
-	// 			// info->cub_list.map_matrix[i][j] = ft_atoi(info)
-	// 		}
-	// 	}
-	// 	// printf("line: %s\n", info->cub_list.map[i]);
-	// 	i++;
-	// }
+	while (i < info->cub_list.map_y)
+	{
+		j = 0;
+		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
+		{
+			printf("ok2\n");
+		}
+		else
+		{
+			while (j < info->cub_list.map_x)
+			{
+				if (info->cub_list.map[i][j] == ' ')
+					printf("ok\n");
+				j++;
+				// info->cub_list.map_matrix[i][j] = ft_atoi(info)
+			}
+		}
+		// printf("line: %s\n", info->cub_list.map[i]);
+		i++;
+	}
 
 	return (0);
 }
