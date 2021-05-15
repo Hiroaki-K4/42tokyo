@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 21:03:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:07:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -685,7 +685,21 @@ int convert_int_matrix(t_info *info)
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{
 			// printf("line: %s\n", info->cub_list.map[i]);
-			printf("ok2\n");
+			while (j < ft_strlen(info->cub_list.map[i]))
+			{
+				if (info->cub_list.map[i][j] == ' ')
+					info->cub_list.map_matrix[i][j] = 3;
+				else
+				{
+					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
+				}
+				j++;
+			}
+			while (j < info->cub_list.map_x)
+			{
+				info->cub_list.map_matrix[i][j] = 3;
+				j++;
+			}
 		}
 		else
 		{
@@ -702,7 +716,7 @@ int convert_int_matrix(t_info *info)
 				j++;
 			}
 		}
-		printf("line: %d\n", info->cub_list.map_matrix[i]);
+		// printf("line: %d\n", info->cub_list.map_matrix[i]);
 		i++;
 	}
 
