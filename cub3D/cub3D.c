@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:19:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 22:20:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -344,6 +344,7 @@ void	calc(t_info *info)
 		else
 			wallX = info->posX + perpWallDist * rayDirX;
 		wallX -= floor(wallX);
+		printf("ok\n");
 
 		// x coordinate on the texture
 		int texX = (int)(wallX * (double)texWidth);
@@ -378,7 +379,6 @@ void	calc(t_info *info)
 		{
 			info->buf[y][x] = 8355711;
 		}
-		printf("ok\n");
 		x++;
 	}
 	
