@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:43:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:43:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ typedef struct		s_cub
 {
 	int r_width;
 	int r_height;
-	int count;
+	// int count;
 	char **map;
 	int map_x;
 	int map_y;
@@ -614,19 +614,12 @@ int line_check(char **line, t_info *info)
 		}
 		tmp[i] = map_line;
 		i = 0;
-		// while (i < info->cub_list.count && 1 < info->cub_list.count)
-		// {
-		// 	// free(info->cub_list.map[i]);
-		// 	printf("befo: %s\n", info->cub_list.map[i]);
-		// 	i++;
-		// }
+		
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
-		// info->cub_list.map[info->cub_list.count] = map_line;
 		printf("befo: %s\n", info->cub_list.map[info->cub_list.map_y - 1]);
 		// printf("size: %d\n", info->cub_list.size);
 		// printf("first:%s\n", info->cub_list.map[0]);
-		// info->cub_list.count++;
 		// i = 0;
 		// while (map_line[i])
 		// {
@@ -673,7 +666,6 @@ int	main(int argc, char *argv[])
 		printf("line: %s\n", info.cub_list.map[i]);
 		i++;
 	}
-	// printf("count: %d\n", info.cub_list.count);
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
