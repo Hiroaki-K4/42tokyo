@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:18:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 22:19:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -335,6 +335,7 @@ void	calc(t_info *info)
 		printf("mapx: %d mapy: %d\n", mapX, mapY);
 		// int texNum = info->cub_list.map_matrix[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapY][mapX];
+		printf("texNum: %d\n", texNum);
 
 		// calculate value of wallX
 		double wallX;
@@ -379,7 +380,6 @@ void	calc(t_info *info)
 		}
 		x++;
 	}
-	printf("ok\n");
 	
 	//SPRITE CASTING
 	//sort sprites from far to close
