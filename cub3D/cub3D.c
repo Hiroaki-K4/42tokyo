@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 20:59:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:00:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -649,7 +649,7 @@ int line_check(char **line, t_info *info)
 		
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
-		printf("befo: %s\n", info->cub_list.map[info->cub_list.map_y - 1]);
+		// printf("befo: %s\n", info->cub_list.map[info->cub_list.map_y - 1]);
 		// printf("size: %d\n", info->cub_list.size);
 		// printf("first:%s\n", info->cub_list.map[0]);
 		// i = 0;
@@ -672,7 +672,6 @@ int convert_int_matrix(t_info *info)
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		return (-1);
 	i = 0;
-	printf("info_len: %d\n", info->cub_list.map_y);
 	while (i < info->cub_list.map_y)
 	{
 		if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
@@ -698,7 +697,6 @@ int convert_int_matrix(t_info *info)
 				{
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
 				}
-				printf(info->cub_list.map_matrix[i][j]);
 				j++;
 			}
 		}
