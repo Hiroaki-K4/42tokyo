@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:20:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 22:20:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -352,7 +352,6 @@ void	calc(t_info *info)
 		if (side == 1 && rayDirY < 0)
 			texX = texWidth - texX - 1;
 
-		printf("ok\n");
 		// How much to increase the texture coordinate perscreen pixel
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
@@ -361,6 +360,7 @@ void	calc(t_info *info)
 		{
 			info->buf[y][x] = 8355711;
 		}
+		printf("ok\n");
 		for (int y = drawStart; y < drawEnd; y++)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
