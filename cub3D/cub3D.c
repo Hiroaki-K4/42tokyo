@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:23:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:24:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -667,7 +667,7 @@ int	main(int argc, char *argv[])
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	// printf("line: %s\n", info.cub_list.map[1]);
+	printf("line: %s\n", info.cub_list.map[1]);
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
