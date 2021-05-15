@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:20:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 22:21:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -356,11 +356,11 @@ void	calc(t_info *info)
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
 		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
+		printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
 			info->buf[y][x] = 8355711;
 		}
-		printf("ok\n");
 		for (int y = drawStart; y < drawEnd; y++)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
