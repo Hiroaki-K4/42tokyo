@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 17:41:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:41:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct		s_cub
 {
 	int r_width;
 	int r_height;
+	int count;
 	char **map;
 	int map_x;
 	int map_y;
@@ -595,16 +596,16 @@ int line_check(char **line, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		info->cub_list.map_y++;
+		info->cub_list.count++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);
 		// info->cub_list.size += ft_strlen(map_line) + 1;
 		// tmp = info->cub_list.map;
 		// free(info->cub_list.map);
-		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y))))
+		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.count))))
 			return (-1);
 		i = 0;
-		while (i < info->cub_list.map_y - 1)
+		while (i < info->cub_list.count - 1)
 		{
 			if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
 				return (-1);
@@ -613,7 +614,7 @@ int line_check(char **line, t_info *info)
 		}
 		tmp[i] = map_line;
 		i = 0;
-		// while (i < info->cub_list.map_y && 1 < info->cub_list.map_y)
+		// while (i < info->cub_list.count && 1 < info->cub_list.count)
 		// {
 		// 	// free(info->cub_list.map[i]);
 		// 	printf("befo: %s\n", info->cub_list.map[i]);
@@ -621,11 +622,11 @@ int line_check(char **line, t_info *info)
 		// }
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
-		// info->cub_list.map[info->cub_list.map_y] = map_line;
-		// printf("befo: %s\n", info->cub_list.map[info->cub_list.map_y - 1]);
+		// info->cub_list.map[info->cub_list.count] = map_line;
+		printf("befo: %s\n", info->cub_list.map[info->cub_list.count - 1]);
 		// printf("size: %d\n", info->cub_list.size);
 		// printf("first:%s\n", info->cub_list.map[0]);
-		// info->cub_list.map_y++;
+		// info->cub_list.count++;
 		// i = 0;
 		// while (map_line[i])
 		// {
@@ -656,6 +657,7 @@ int	main(int argc, char *argv[])
     fd = open(argv[1], O_RDONLY);
 	// init_cub_list(&cub_list);
 	info.cub_list.map_y = 0;
+	info.cub_list.count = 0;
 	info.cub_list.size = 0;
 	i = 1;
 	while (i > 0)
@@ -667,12 +669,12 @@ int	main(int argc, char *argv[])
 	}
 	// printf("line: %s\n", info.cub_list.map[1]);
 	i = 0;
-	while (i < info.cub_list.map_y)
+	while (i < info.cub_list.count)
 	{
 		printf("line: %s\n", info.cub_list.map[i]);
 		i++;
 	}
-	// printf("map_y: %d\n", info.cub_list.map_y);
+	// printf("count: %d\n", info.cub_list.count);
 	info.mlx = mlx_init();
 
 	info.posX = 22.0;
