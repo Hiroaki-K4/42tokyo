@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 15:53:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 16:08:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -604,6 +604,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.map[info->cub_list.count] = map_line;
 		printf("befo: %s\n", info->cub_list.map[info->cub_list.count]);
 		printf("size: %d\n", info->cub_list.size);
+		printf("first:%s\n", info->cub_list.map[0]);
 		info->cub_list.count++;
 		// i = 0;
 		// while (map_line[i])
