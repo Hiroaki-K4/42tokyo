@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 21:12:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/15 21:18:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -687,7 +687,15 @@ int convert_int_matrix(t_info *info)
 			// printf("line: %s\n", info->cub_list.map[i]);
 			while (j < ft_strlen(info->cub_list.map[i]))
 			{
-				if (info->cub_list.map[i][j] == ' ')
+				if (info->cub_list.map[i][j] == 'N')
+					info->cub_list.map_matrix[i][j] = 4;
+				else if (info->cub_list.map[i][j] == 'S')
+					info->cub_list.map_matrix[i][j] = 5;
+				else if (info->cub_list.map[i][j] == 'W')
+					info->cub_list.map_matrix[i][j] = 6;
+				else if (info->cub_list.map[i][j] == 'E')
+					info->cub_list.map_matrix[i][j] = 7;
+				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 3;
 				else
 				{
@@ -707,7 +715,15 @@ int convert_int_matrix(t_info *info)
 		{
 			while (j < info->cub_list.map_x)
 			{
-				if (info->cub_list.map[i][j] == ' ')
+				if (info->cub_list.map[i][j] == 'N')
+					info->cub_list.map_matrix[i][j] = 4;
+				else if (info->cub_list.map[i][j] == 'S')
+					info->cub_list.map_matrix[i][j] = 5;
+				else if (info->cub_list.map[i][j] == 'W')
+					info->cub_list.map_matrix[i][j] = 6;
+				else if (info->cub_list.map[i][j] == 'E')
+					info->cub_list.map_matrix[i][j] = 7;
+				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 3;
 				else
 				{
