@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:00:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:00:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,9 +263,10 @@ void	calc(t_info *info)
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
-	printf("posX: %d posY: %d\n", info->posX, info->posY);
+	// printf("posX: %d posY: %d\n", info->posX, info->posY);
 	while (x < info->cub_list.width)
 	{
+		printf("posX: %d posY: %d\n", info->posX, info->posY);
 		double cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
