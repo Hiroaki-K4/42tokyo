@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/15 22:22:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:38:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -373,7 +373,7 @@ void	calc(t_info *info)
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
-			// printf("color: %d\n", color);
+			printf("color: %d\n", color);
 		}
 		info->zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < height; y++)
