@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:39:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:40:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -359,12 +359,12 @@ void	calc(t_info *info)
 		printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
-			printf("ok2\n");
+			// printf("ok2\n");
+			printf("x: %d y: %d\n", x, y);
 			info->buf[y][x] = 8355711;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
 		{
-			printf("ok3\n");
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 			int texY = (int)texPos & (texHeight - 1);
 			texPos += step;
