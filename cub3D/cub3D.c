@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:15:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:43:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,45 @@ void	sortSprites(int *order, double *dist, int amount)
 		order[i] = sprites[amount - i - 1].second;
 	}
 	free(sprites);
+}
+
+char			*ft_itoa_hex(unsigned int n, char *arg)
+{
+	int				len;
+	unsigned int	i;
+	unsigned int	j;
+	char			*ans;
+
+	i = n / 16;
+	if (i != 0)
+	{
+		len = 2;
+		while (i > 16)
+		{
+			len++;
+			i = i / 16;
+		}
+	}
+	else
+		len = 1;
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ans[len] = '\0';
+	i = n;
+	len--;
+	if (i == 0)
+	{
+		ans[0] = '0';
+		return (ans);
+	}
+	while (i > 0)
+	{
+		j = i % 16;
+		ans[len] = arg[j];
+		i = i / 16;
+		len--;
+	}
+	return (ans);
 }
 
 // int	worldMap[mapWidth][mapHeight] =
@@ -776,6 +815,7 @@ int	main(int argc, char *argv[])
 	int fd;
 	int i;
 	char **line;
+	char *sin;
 	
 	if (argc != 2)
 	{
@@ -804,6 +844,8 @@ int	main(int argc, char *argv[])
 	}
 	convert_int_matrix(&info);
 	info.mlx = mlx_init();
+	sin = ft_itoa_hex(info.cub_list.rgb.red, "0123456789ABCDEF");
+	printf("sin: %s\n", sin);
 
 	info.posX = 3.0;
 	// info.posX = 1.0;
