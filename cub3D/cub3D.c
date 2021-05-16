@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:46:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 18:19:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,6 +625,34 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
+int make_decimal_color(t_rgb color)
+{
+	char *hex;
+	char *red;
+	char *green;
+	char *blue;
+	char *tmp;
+	
+	if (!(red = ft_strdup(ft_itoa_hex(color.red, "0123456789ABCDEF"))))
+		return (-1);
+	if (!(green = ft_strdup(ft_itoa_hex(color.green, "0123456789ABCDEF"))))
+		return (-1);
+	if (!(blue = ft_strdup(ft_itoa_hex(color.blue, "0123456789ABCDEF"))))
+		return (-1);
+	if (!(hex = ft_strjoin(red, green)))
+		return (-1);
+	if (!(tmp = ft_strdup(hex)))
+		return (-1);
+	free(hex);
+	if (!(hex = ft_strjoin(tmp, blue)))
+		return (-1);
+	free(red);
+	free(green);
+	free(blue);
+	free(tmp);
+	return (hex);
+}
+
 int line_check(char **line, t_info *info)
 {
 	int i;
@@ -675,6 +703,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
+		printf("floor: %s\n", make_decimal_color(info->cub_list.floor));
 		printf("Floor_r: %d\n", info->cub_list.floor.red);
 		printf("Floor_g: %d\n", info->cub_list.floor.green);
 		printf("Floor_b: %d\n", info->cub_list.floor.blue);
@@ -686,6 +715,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
+		printf("ceiling: %s\n", make_decimal_color(info->cub_list.ceiling));
 		printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
 		printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
 		printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
