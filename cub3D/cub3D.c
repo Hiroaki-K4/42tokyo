@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:07:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:07:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -733,7 +733,6 @@ int line_check(char **line, t_info *info)
 			i++;
 		}
 		tmp[i] = map_line;
-		// i = 0;
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
 	}
