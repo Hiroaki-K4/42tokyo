@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:06:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:07:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -686,33 +686,17 @@ int line_check(char **line, t_info *info)
 	{
 		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		// printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
-	{
 		info->cub_list.n_texture = line_split[1];
-		// printf("North: %s\n", info->cub_list.n_texture);
-	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
-	{
 		info->cub_list.s_texture = line_split[1];
-		// printf("Sorth: %s\n", info->cub_list.s_texture);
-	}
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
-	{
 		info->cub_list.w_texture = line_split[1];
-		// printf("West: %s\n", info->cub_list.w_texture);
-	}
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
-	{
 		info->cub_list.e_texture = line_split[1];
-		// printf("East: %s\n", info->cub_list.e_texture);
-	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
-	{
 		info->cub_list.sprite = line_split[1];
-		// printf("Sprite: %s\n", info->cub_list.sprite);
-	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
@@ -721,9 +705,6 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
-		// printf("Floor_r: %d\n", info->cub_list.floor.red);
-		// printf("Floor_g: %d\n", info->cub_list.floor.green);
-		// printf("Floor_b: %d\n", info->cub_list.floor.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
@@ -733,9 +714,6 @@ int line_check(char **line, t_info *info)
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
-		// printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
-		// printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
-		// printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
 	}
 	else if (map_line_check(line_split) == 0)
 	{
@@ -744,9 +722,6 @@ int line_check(char **line, t_info *info)
 			return (-1);
 		if (ft_strlen(map_line) > info->cub_list.map_x)
 			info->cub_list.map_x = ft_strlen(map_line);
-		// info->cub_list.size += ft_strlen(map_line) + 1;
-		// tmp = info->cub_list.map;
-		// free(info->cub_list.map);
 		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y))))
 			return (-1);
 		i = 0;
