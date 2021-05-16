@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 20:42:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 20:43:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -802,8 +802,8 @@ int convert_int_matrix(t_info *info)
 				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' ||
 				info->cub_list.map[i][j] == 'E' || info->cub_list.map[i][j] == 'E')
 				{
-					info->posX = j + 1;
-					info->posY = i + 1;
+					info->posX = (double)j + 1;
+					info->posY = (double)i + 1;
 				}
 				if (info->cub_list.map[i][j] == 'N')
 					info->cub_list.map_matrix[i][j] = 4;
@@ -900,10 +900,10 @@ int	main(int argc, char *argv[])
 	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
 	printf("sin: %s\n", sin);
 
-	info.posX = 3.0;
 	// info.posX = 1.0;
 	// info.posY = 11.5;
-	info.posY = 13.0;
+	// info.posX = 3.0;
+	// info.posY = 13.0;
 	info.dirX = -1.0;
 	info.dirY = 0.0;
 	info.planeX = 0.0;
