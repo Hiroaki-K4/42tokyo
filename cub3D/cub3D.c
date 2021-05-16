@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:48:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:49:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,8 +310,8 @@ void	calc(t_info *info)
 				side = 1;
 			}
 			//Check if ray has hit a wall
-			printf("mapx: %d mapy: %d\n", mapX, mapY);
-			printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
+			// printf("mapx: %d mapy: %d\n", mapX, mapY);
+			// printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
 			// if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
 			if (worldMap[mapX][mapY] > 0) hit = 1;
 			// if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
@@ -333,11 +333,11 @@ void	calc(t_info *info)
 			drawEnd = height - 1;
 
 		// texturing calculations
-		printf("mapx: %d mapy: %d\n", mapX, mapY);
+		// printf("mapx: %d mapy: %d\n", mapX, mapY);
 		int texNum = worldMap[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
-		printf("texNum: %d\n", texNum);
+		// printf("texNum: %d\n", texNum);
 
 		// calculate value of wallX
 		double wallX;
