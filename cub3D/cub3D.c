@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 18:20:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 18:20:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -702,8 +702,9 @@ int line_check(char **line, t_info *info)
 			return (-1);
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
-		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
-		// printf("floor: %s\n", make_decimal_color(info->cub_list.floor));
+		inf
+		o->cub_list.floor.blue = ft_atoi(rgb_split[2]);
+		printf("floor: %s\n", make_decimal_color(info->cub_list.floor));
 		printf("Floor_r: %d\n", info->cub_list.floor.red);
 		printf("Floor_g: %d\n", info->cub_list.floor.green);
 		printf("Floor_b: %d\n", info->cub_list.floor.blue);
