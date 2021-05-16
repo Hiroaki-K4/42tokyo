@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:46:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:46:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -677,7 +677,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		printf("Floor_r: %d\n", info->cub_list.floor.red);
 		printf("Floor_g: %d\n", info->cub_list.floor.green);
-		printf("Floor_b: %d\n", info->cub_list.rgb.blue);
+		printf("Floor_b: %d\n", info->cub_list.floor.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
