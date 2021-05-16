@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:48:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:50:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ typedef struct	s_info
 	double planeX;
 	double planeY;
 	// double	zBuffer[width];
+	double	*zBuffer;
 	void	*mlx;
 	void	*win;
 	t_img	img;
@@ -245,10 +246,10 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
-	double	*zBuffer;
+	// double	*zBuffer;
 
 
-	if (!(zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_width))))
+	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_width))))
 		return (-1);
 	x = 0;
 	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.r_height);
@@ -382,8 +383,8 @@ void	calc(t_info *info)
 			info->buf[y][x] = color;
 			// printf("color: %d\n", color);
 		}
-		// info->zBuffer[x] = perpWallDist;
-		zBuffer[x] = perpWallDist;
+		info->zBuffer[x] = perpWallDist;
+		// zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < height; y++)
 		{
 			info->buf[y][x] = 8355711;
@@ -448,8 +449,8 @@ void	calc(t_info *info)
 			//2) it's on the screen (left)
 			//3) it's on the screen (right)
 			//4) ZBuffer, with perpendicular distance
-			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < info->zBuffer[stripe])
-			if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
+			if(transformY > 0 && stripe > 0 && stripe < width && transformY < info->zBuffer[stripe])
+			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
 			{
 				int d = (y-vMoveScreen) * 256 - height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
@@ -459,7 +460,7 @@ void	calc(t_info *info)
 			}
 		}
 	}
-	free(zBuffer);
+	free(info->zBuffer);
 }
 
 int	main_loop(t_info *info)
