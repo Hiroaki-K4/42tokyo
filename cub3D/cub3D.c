@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:47:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:48:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ typedef struct	s_info
 	double dirY;
 	double planeX;
 	double planeY;
-	double	zBuffer[width];
+	// double	zBuffer[width];
 	void	*mlx;
 	void	*win;
 	t_img	img;
@@ -382,7 +382,8 @@ void	calc(t_info *info)
 			info->buf[y][x] = color;
 			// printf("color: %d\n", color);
 		}
-		info->zBuffer[x] = perpWallDist;
+		// info->zBuffer[x] = perpWallDist;
+		zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < height; y++)
 		{
 			info->buf[y][x] = 8355711;
@@ -447,7 +448,8 @@ void	calc(t_info *info)
 			//2) it's on the screen (left)
 			//3) it's on the screen (right)
 			//4) ZBuffer, with perpendicular distance
-			if(transformY > 0 && stripe > 0 && stripe < width && transformY < info->zBuffer[stripe])
+			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < info->zBuffer[stripe])
+			if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
 			{
 				int d = (y-vMoveScreen) * 256 - height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
