@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 18:43:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 20:27:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -647,7 +647,6 @@ int hex_to_decimal(char *hex)
 	int hex_pow;
 	
 	ans = 0;
-	i = 0;
 	printf("hex: %s\n", hex);
 	while (i < ft_strlen(hex))
 	{
@@ -658,7 +657,7 @@ int hex_to_decimal(char *hex)
 			hex_pow *= 16;
 			j++;
 		}
-		ans += hex_pow * (ft_strchr_place("0123456789ABCDEF", hex[i]));
+		ans += hex_pow * (ft_strchr_place("0123456789ABCDEF", hex[ft_strlen(hex) - 1 - i]));
 		i++;
 	}
 	return (ans);
