@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:04:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:04:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -797,8 +797,9 @@ int	main(int argc, char *argv[])
 	convert_int_matrix(&info);
 	info.mlx = mlx_init();
 
-	info.posX = 3.0;
-	info.posY = 3.5;
+	// info.posX = 22.0;
+	info.posX = 12.0;
+	// info.posY = 11.5;
 	info.dirX = -1.0;
 	info.dirY = 0.0;
 	info.planeX = 0.0;
