@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 18:20:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 18:21:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,7 +625,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int make_decimal_color(t_rgb color)
+char make_decimal_color(t_rgb color)
 {
 	char *hex;
 	char *red;
@@ -634,18 +634,18 @@ int make_decimal_color(t_rgb color)
 	char *tmp;
 	
 	if (!(red = ft_strdup(ft_itoa_hex(color.red, "0123456789ABCDEF"))))
-		return (-1);
+		return (NULL);
 	if (!(green = ft_strdup(ft_itoa_hex(color.green, "0123456789ABCDEF"))))
-		return (-1);
+		return (NULL);
 	if (!(blue = ft_strdup(ft_itoa_hex(color.blue, "0123456789ABCDEF"))))
-		return (-1);
+		return (NULL);
 	if (!(hex = ft_strjoin(red, green)))
-		return (-1);
+		return (NULL);
 	if (!(tmp = ft_strdup(hex)))
-		return (-1);
+		return (NULL);
 	free(hex);
 	if (!(hex = ft_strjoin(tmp, blue)))
-		return (-1);
+		return (NULL);
 	free(red);
 	free(green);
 	free(blue);
