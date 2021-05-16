@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:59:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:59:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ typedef struct		s_rgb
 
 typedef struct		s_cub
 {
-	int r_width;
-	int r_height;
+	int width;
+	int height;
 	int count;
 	char **map;
 	int **map_matrix;
