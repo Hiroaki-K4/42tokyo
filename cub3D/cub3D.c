@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:43:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:44:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,8 +333,8 @@ void	calc(t_info *info)
 
 		// texturing calculations
 		printf("mapx: %d mapy: %d\n", mapX, mapY);
-		// int texNum = info->cub_list.map_matrix[mapX][mapY];
-		int texNum = info->cub_list.map_matrix[mapY][mapX];
+		int texNum = info->cub_list.map_matrix[mapX][mapY];
+		// int texNum = info->cub_list.map_matrix[mapY][mapX];
 		printf("texNum: %d\n", texNum);
 
 		// calculate value of wallX
