@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:04:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:06:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -686,32 +686,32 @@ int line_check(char **line, t_info *info)
 	{
 		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
+		// printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
 		info->cub_list.n_texture = line_split[1];
-		printf("North: %s\n", info->cub_list.n_texture);
+		// printf("North: %s\n", info->cub_list.n_texture);
 	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
 	{
 		info->cub_list.s_texture = line_split[1];
-		printf("Sorth: %s\n", info->cub_list.s_texture);
+		// printf("Sorth: %s\n", info->cub_list.s_texture);
 	}
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
 	{
 		info->cub_list.w_texture = line_split[1];
-		printf("West: %s\n", info->cub_list.w_texture);
+		// printf("West: %s\n", info->cub_list.w_texture);
 	}
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
 	{
 		info->cub_list.e_texture = line_split[1];
-		printf("East: %s\n", info->cub_list.e_texture);
+		// printf("East: %s\n", info->cub_list.e_texture);
 	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
 	{
 		info->cub_list.sprite = line_split[1];
-		printf("Sprite: %s\n", info->cub_list.sprite);
+		// printf("Sprite: %s\n", info->cub_list.sprite);
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
@@ -721,9 +721,9 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
-		printf("Floor_r: %d\n", info->cub_list.floor.red);
-		printf("Floor_g: %d\n", info->cub_list.floor.green);
-		printf("Floor_b: %d\n", info->cub_list.floor.blue);
+		// printf("Floor_r: %d\n", info->cub_list.floor.red);
+		// printf("Floor_g: %d\n", info->cub_list.floor.green);
+		// printf("Floor_b: %d\n", info->cub_list.floor.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
@@ -733,9 +733,9 @@ int line_check(char **line, t_info *info)
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
-		printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
-		printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
-		printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
+		// printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
+		// printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
+		// printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
 	}
 	else if (map_line_check(line_split) == 0)
 	{
@@ -802,7 +802,6 @@ int convert_int_matrix(t_info *info)
 			{
 				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
 				{
-					printf("i: %d j: %d\n", i, j);
 					info->posX = (double)i;
 					info->posY = (double)j;
 				}
@@ -864,7 +863,6 @@ int convert_int_matrix(t_info *info)
 int	main(int argc, char *argv[])
 {
 	t_info info;
-	// t_cub cub_list;
 	int buffer_size;
 	int fd;
 	int i;
@@ -905,8 +903,6 @@ int	main(int argc, char *argv[])
 	// info.posY = 11.5;
 	// info.posX = 3.0;
 	// info.posY = 13.0;
-	// info.posX = 11.0;
-	// info.posY = 26.0;
 	info.dirX = -1.0;
 	info.dirY = 0.0;
 	info.planeX = 0.0;
