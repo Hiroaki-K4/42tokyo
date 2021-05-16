@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:07:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:07:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -733,21 +733,9 @@ int line_check(char **line, t_info *info)
 			i++;
 		}
 		tmp[i] = map_line;
-		i = 0;
-		
+		// i = 0;
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
-		// printf("befo: %s\n", info->cub_list.map[info->cub_list.map_y - 1]);
-		// printf("size: %d\n", info->cub_list.size);
-		// printf("first:%s\n", info->cub_list.map[0]);
-		// i = 0;
-		// while (map_line[i])
-		// {
-		// 	if (map_line[i] == ' ')
-		// 		map_line[i] = '1';
-		// 	i++;
-		// }
-		// printf("line: %s\n", map_line);
 	}
 	return (0);
 }
