@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 18:21:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 18:21:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,7 +625,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-char make_decimal_color(t_rgb color)
+char *make_decimal_color(t_rgb color)
 {
 	char *hex;
 	char *red;
