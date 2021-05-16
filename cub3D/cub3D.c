@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:48:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:48:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -361,8 +361,8 @@ void	calc(t_info *info)
 		printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
-			printf("drawStart: %d\n", drawStart);
-			printf("x: %d y: %d\n", x, y);
+			// printf("drawStart: %d\n", drawStart);
+			// printf("x: %d y: %d\n", x, y);
 			info->buf[y][x] = 8355711;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
