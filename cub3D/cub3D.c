@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:09:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:10:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,7 +234,7 @@ void	sortSprites(int *order, double *dist, int amount)
 
 void	draw(t_info *info)
 {
-	for (int y = 0; y < height; y++)
+	for (int y = 0; y < info->cub_list.r_height; y++)
 	{
 		for (int x = 0; x < info->cub_list.r_width; x++)
 		{
