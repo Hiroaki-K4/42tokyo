@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:59:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:01:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,10 +250,10 @@ void	calc(t_info *info)
 	// double	*zBuffer;
 
 
-	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_width))))
+	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
-	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.r_height);
+	printf("w: %d h: %d\n", info->cub_list.width, info->cub_list.height);
 	while (x < width)
 	{
 		double cameraX = 2 * x / (double)width - 1;
@@ -601,9 +601,9 @@ int line_check(char **line, t_info *info)
 		return (0);
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		info->cub_list.r_width = ft_atoi(line_split[1]);
-		info->cub_list.r_height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", info->cub_list.r_width, info->cub_list.r_height);
+		info->cub_list.width = ft_atoi(line_split[1]);
+		info->cub_list.height = ft_atoi(line_split[2]);
+		printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
@@ -816,19 +816,19 @@ int	main(int argc, char *argv[])
 	info.planeX = 0.0;
 	info.planeY = 0.66;
 	
-	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.r_height))))
+	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		return (-1);
 	i = 0;
-	while (i < info.cub_list.r_height)
+	while (i < info.cub_list.height)
 	{
-		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.r_width))))
+		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.width))))
 			return (-1);
 		i++;
 	}
 
-	for (int i = 0; i < info.cub_list.r_height; i++)
+	for (int i = 0; i < info.cub_list.height; i++)
 	{
-		for (int j = 0; j < info.cub_list.r_width; j++)
+		for (int j = 0; j < info.cub_list.width; j++)
 		{
 			info.buf[i][j] = 0;
 		}
@@ -854,9 +854,9 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	info.win = mlx_new_window(info.mlx, width, height, "mlx");
+	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
 
-	info.img.img = mlx_new_image(info.mlx, width, height);
+	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
