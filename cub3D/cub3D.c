@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:40:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:44:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,8 +245,11 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
+	// double	zBuffer[width];
+
 
 	x = 0;
+	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.r_height);
 	while (x < width)
 	{
 		double cameraX = 2 * x / (double)width - 1;
@@ -332,7 +335,7 @@ void	calc(t_info *info)
 			drawEnd = height - 1;
 
 		// texturing calculations
-		printf("mapx: %d mapy: %d\n", mapX, mapY);
+		// printf("mapx: %d mapy: %d\n", mapX, mapY);
 		// int texNum = worldMap[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
