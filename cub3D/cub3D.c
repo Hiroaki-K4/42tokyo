@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:12:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:13:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -331,12 +331,12 @@ void	calc(t_info *info)
 		int lineHeight = (int)(info->cub_list.r_height / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStart = -lineHeight / 2 + height / 2;
+		int drawStart = -lineHeight / 2 + info->cub_list.r_height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
-		int drawEnd = lineHeight / 2 + height / 2;
-		if(drawEnd >= height)
-			drawEnd = height - 1;
+		int drawEnd = lineHeight / 2 + info->cub_list.r_height / 2;
+		if(drawEnd >= info->cub_list.r_height)
+			drawEnd = info->cub_list.r_height - 1;
 
 		// texturing calculations
 		// printf("mapx: %d mapy: %d\n", mapX, mapY);
