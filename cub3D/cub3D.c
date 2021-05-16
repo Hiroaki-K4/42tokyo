@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:50:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:58:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ typedef struct	s_info
 	void	*mlx;
 	void	*win;
 	t_img	img;
-	int		buf[height][width];
+	// int		buf[height][width];
+	int		**buf;
 	int		**texture;
 	double	moveSpeed;
 	double	rotSpeed;
@@ -814,6 +815,16 @@ int	main(int argc, char *argv[])
 	info.dirY = 0.0;
 	info.planeX = 0.0;
 	info.planeY = 0.66;
+	
+	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.r_height))))
+		return (-1);
+	i = 0;
+	while (i < info.cub_list.r_height)
+	{
+		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.r_width))))
+			return (-1);
+		i++;
+	}
 
 	for (int i = 0; i < info.cub_list.r_height; i++)
 	{
