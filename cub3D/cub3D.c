@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:08:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:08:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,10 +263,8 @@ void	calc(t_info *info)
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
-	// printf("posX: %d posY: %d\n", info->posX, info->posY);
 	while (x < info->cub_list.width)
 	{
-		printf("posX: %d posY: %d\n", (int)info->posX, (int)info->posY);
 		double cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
@@ -350,11 +348,9 @@ void	calc(t_info *info)
 			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
-		printf("mapx: %d mapy: %d\n", mapX, mapY);
 		// int texNum = worldMap[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
-		printf("texNum: %d\n", texNum);
 
 		// calculate value of wallX
 		double wallX;
