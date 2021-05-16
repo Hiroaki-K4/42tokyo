@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:13:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:13:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,7 +363,7 @@ void	calc(t_info *info)
 		// How much to increase the texture coordinate perscreen pixel
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
+		double texPos = (drawStart - info->cub_list.r_height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
@@ -386,7 +386,7 @@ void	calc(t_info *info)
 		}
 		info->zBuffer[x] = perpWallDist;
 		// zBuffer[x] = perpWallDist;
-		for (int y = drawEnd; y < height; y++)
+		for (int y = drawEnd; y < info->cub_list.r_height; y++)
 		{
 			info->buf[y][x] = 8355711;
 		}
