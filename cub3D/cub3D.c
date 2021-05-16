@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:00:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:00:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,7 @@ void	calc(t_info *info)
 	// printf("posX: %d posY: %d\n", info->posX, info->posY);
 	while (x < info->cub_list.width)
 	{
-		printf("posX: %d posY: %d\n", info->posX, info->posY);
+		printf("posX: %d posY: %d\n", (int)info->posX, (int)info->posY);
 		double cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
