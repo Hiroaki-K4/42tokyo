@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:04:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:05:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,11 +234,11 @@ void	sortSprites(int *order, double *dist, int amount)
 
 void	draw(t_info *info)
 {
-	for (int y = 0; y < info->cub_list.height; y++)
+	for (int y = 0; y < height; y++)
 	{
-		for (int x = 0; x < info->cub_list.width; x++)
+		for (int x = 0; x < width; x++)
 		{
-			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
+			info->img.data[y * width + x] = info->buf[y][x];
 		}
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
@@ -254,9 +254,9 @@ void	calc(t_info *info)
 		return (-1);
 	x = 0;
 	printf("w: %d h: %d\n", info->cub_list.width, info->cub_list.height);
-	while (x < info->cub_list.width)
+	while (x < width)
 	{
-		double cameraX = 2 * x / (double)info->cub_list.width - 1;
+		double cameraX = 2 * x / (double)width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
 		
@@ -328,15 +328,15 @@ void	calc(t_info *info)
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
 
 		//Calculate height of line to draw on screen
-		int lineHeight = (int)(info->cub_list.height / perpWallDist);
+		int lineHeight = (int)(height / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStart = -lineHeight / 2 + info->cub_list.height / 2;
+		int drawStart = -lineHeight / 2 + height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
-		int drawEnd = lineHeight / 2 + info->cub_list.height / 2;
-		if(drawEnd >= info->cub_list.height)
-			drawEnd = info->cub_list.height - 1;
+		int drawEnd = lineHeight / 2 + height / 2;
+		if(drawEnd >= height)
+			drawEnd = height - 1;
 
 		// texturing calculations
 		// printf("mapx: %d mapy: %d\n", mapX, mapY);
@@ -363,7 +363,7 @@ void	calc(t_info *info)
 		// How much to increase the texture coordinate perscreen pixel
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
+		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
@@ -386,7 +386,7 @@ void	calc(t_info *info)
 		}
 		info->zBuffer[x] = perpWallDist;
 		// zBuffer[x] = perpWallDist;
-		for (int y = drawEnd; y < info->cub_list.height; y++)
+		for (int y = drawEnd; y < height; y++)
 		{
 			info->buf[y][x] = 8355711;
 		}
@@ -418,7 +418,7 @@ void	calc(t_info *info)
 		double transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
 		double transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
 
-		int spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
+		int spriteScreenX = (int)((width / 2) * (1 + transformX / transformY));
 
 		//parameters for scaling and moving the sprites
 		#define uDiv 1
@@ -427,19 +427,19 @@ void	calc(t_info *info)
 		int vMoveScreen = (int)(vMove / transformY);
 
 		//calculate height of the sprite on screen
-		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
+		int spriteHeight = (int)fabs((height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		int drawStartY = -spriteHeight / 2 + height / 2 + vMoveScreen;
 		if(drawStartY < 0) drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
-		if(drawEndY >= info->cub_list.height) drawEndY = info->cub_list.height - 1;
+		int drawEndY = spriteHeight / 2 + height / 2 + vMoveScreen;
+		if(drawEndY >= height) drawEndY = height - 1;
 
 		//calculate width of the sprite
-		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
+		int spriteWidth = (int)fabs((height / transformY) / uDiv);
 		int drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if(drawStartX < 0) drawStartX = 0;
 		int drawEndX = spriteWidth / 2 + spriteScreenX;
-		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
+		if(drawEndX >= width) drawEndX = width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
 		for(int stripe = drawStartX; stripe < drawEndX; stripe++)
@@ -450,11 +450,11 @@ void	calc(t_info *info)
 			//2) it's on the screen (left)
 			//3) it's on the screen (right)
 			//4) ZBuffer, with perpendicular distance
-			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
+			if(transformY > 0 && stripe > 0 && stripe < width && transformY < info->zBuffer[stripe])
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
 			{
-				int d = (y-vMoveScreen) * 256 - info->cub_list.width * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
+				int d = (y-vMoveScreen) * 256 - height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
 				int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
 				if((color & 0x00FFFFFF) != 0) info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
