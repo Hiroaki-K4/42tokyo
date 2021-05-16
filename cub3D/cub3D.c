@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 20:43:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 20:44:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,7 +349,7 @@ void	calc(t_info *info)
 			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
-		// printf("mapx: %d mapy: %d\n", mapX, mapY);
+		printf("mapx: %d mapy: %d\n", mapX, mapY);
 		// int texNum = worldMap[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
