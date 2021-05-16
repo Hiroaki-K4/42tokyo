@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:48:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:48:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,7 +248,7 @@ void	calc(t_info *info)
 	double	*zBuffer;
 
 
-	if (!(zBuffer = (double *)malloc(sizeof(char) * (info->cub_list.r_height))))
+	if (!(zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_height))))
 		return (-1);
 	x = 0;
 	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.r_height);
