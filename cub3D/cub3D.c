@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:15:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:15:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ typedef struct		s_rgb
 
 typedef struct		s_cub
 {
-	int r_width;
+	int width;
 	int height;
 	int count;
 	char **map;
@@ -234,9 +234,9 @@ void	draw(t_info *info)
 {
 	for (int y = 0; y < info->cub_list.height; y++)
 	{
-		for (int x = 0; x < info->cub_list.r_width; x++)
+		for (int x = 0; x < info->cub_list.width; x++)
 		{
-			info->img.data[y * info->cub_list.r_width + x] = info->buf[y][x];
+			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
 		}
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
@@ -248,13 +248,13 @@ void	calc(t_info *info)
 	// double	*zBuffer;
 
 
-	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_width))))
+	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
-	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.height);
-	while (x < info->cub_list.r_width)
+	printf("w: %d h: %d\n", info->cub_list.width, info->cub_list.height);
+	while (x < info->cub_list.width)
 	{
-		double cameraX = 2 * x / (double)info->cub_list.r_width - 1;
+		double cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
 		
@@ -416,7 +416,7 @@ void	calc(t_info *info)
 		double transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
 		double transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
 
-		int spriteScreenX = (int)((info->cub_list.r_width / 2) * (1 + transformX / transformY));
+		int spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
 
 		//parameters for scaling and moving the sprites
 		#define uDiv 1
@@ -437,7 +437,7 @@ void	calc(t_info *info)
 		int drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if(drawStartX < 0) drawStartX = 0;
 		int drawEndX = spriteWidth / 2 + spriteScreenX;
-		if(drawEndX >= info->cub_list.r_width) drawEndX = info->cub_list.r_width - 1;
+		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
 		for(int stripe = drawStartX; stripe < drawEndX; stripe++)
@@ -448,7 +448,7 @@ void	calc(t_info *info)
 			//2) it's on the screen (left)
 			//3) it's on the screen (right)
 			//4) ZBuffer, with perpendicular distance
-			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.r_width && transformY < info->zBuffer[stripe])
+			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
 			{
@@ -599,9 +599,9 @@ int line_check(char **line, t_info *info)
 		return (0);
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
-		info->cub_list.r_width = ft_atoi(line_split[1]);
+		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", info->cub_list.r_width, info->cub_list.height);
+		printf("width: %d height: %d\n", info->cub_list.width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
@@ -819,14 +819,14 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (i < info.cub_list.height)
 	{
-		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.r_width))))
+		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.width))))
 			return (-1);
 		i++;
 	}
 
 	for (int i = 0; i < info.cub_list.height; i++)
 	{
-		for (int j = 0; j < info.cub_list.r_width; j++)
+		for (int j = 0; j < info.cub_list.width; j++)
 		{
 			info.buf[i][j] = 0;
 		}
@@ -852,9 +852,9 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	info.win = mlx_new_window(info.mlx, info.cub_list.r_width, info.cub_list.height, "mlx");
+	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
 
-	info.img.img = mlx_new_image(info.mlx, info.cub_list.r_width, info.cub_list.height);
+	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
