@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:08:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:09:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,9 +236,9 @@ void	draw(t_info *info)
 {
 	for (int y = 0; y < height; y++)
 	{
-		for (int x = 0; x < width; x++)
+		for (int x = 0; x < info->cub_list.r_width; x++)
 		{
-			info->img.data[y * width + x] = info->buf[y][x];
+			info->img.data[y * info->cub_list.r_width + x] = info->buf[y][x];
 		}
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
