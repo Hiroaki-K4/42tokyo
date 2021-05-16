@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 20:44:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 20:45:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -799,8 +799,7 @@ int convert_int_matrix(t_info *info)
 			// printf("line: %s\n", info->cub_list.map[i]);
 			while (j < ft_strlen(info->cub_list.map[i]))
 			{
-				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' ||
-				info->cub_list.map[i][j] == 'E' || info->cub_list.map[i][j] == 'E')
+				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
 				{
 					info->posX = (double)j + 1;
 					info->posY = (double)i + 1;
