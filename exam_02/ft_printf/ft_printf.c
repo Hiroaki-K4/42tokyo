@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/16 11:46:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 13:56:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ int		ft_isdigit(int c)
 	return (0);
 }
 
-int	field_precision(int num, char *str, t_plist flag_list, int i)
+int	field_precision(t_plist flag_list, char *str, int num, int i)
 {
 	int		j;
 	char	*tmp;
@@ -224,7 +224,7 @@ int	field_precision(int num, char *str, t_plist flag_list, int i)
 	return (flag_list.field);
 }
 
-int	no_field_int(int num, char *str, t_plist flag_list, int len)
+int	no_field_int(t_plist flag_list, char *str, int num, int len)
 {
 	int		digit;
 	char	*tmp;
@@ -277,7 +277,7 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	else if (flag_list.field > (int)ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
-			len = field_precision(num, str_num, flag_list, 0);
+			len = field_precision(flag_list, str_num, num, 0);
 		else
 		{
 			while ((flag_list.field - (int)ft_strlen(str_num) - (len++)) > 0)
@@ -287,10 +287,30 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 		}
 	}
 	else
-		len = no_field_int(num, str_num, flag_list, 0);
+		len = no_field_int(flag_list, str_num, num, 0);
 	free(str_num);
 	return (len);
 }
+
+// int print_digit(t_plist flag_list, char *str_num, int num, int keta)
+// {
+// 	int len;
+
+// 	len = 0;
+// 	if (flag_list.precision == 0 && num == 0)
+// 	{
+// 		while (flag_list.field - len > 0)
+// 		{
+// 			write(1, " ", 1);
+// 			len++;
+// 		}
+// 	}
+// 	else if (flag_list.field > (int)ft_strlen(str_num))
+// 	{
+// 		if (flag_list.precision > keta)
+// 			len = field_precision(num, str_num, flag_list, )
+// 	}
+// }
 
 
 
