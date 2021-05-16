@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:05:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:06:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
-// #define width 1920
-// #define height 1080
+#define width 1920
+#define height 1080
 #define numSprites 19
 #define K_W 119
 #define K_S 115
@@ -254,7 +254,7 @@ void	calc(t_info *info)
 		return (-1);
 	x = 0;
 	printf("w: %d h: %d\n", info->cub_list.width, info->cub_list.height);
-	while (x < width)
+	while (x < info->cub_list.width)
 	{
 		double cameraX = 2 * x / (double)width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
