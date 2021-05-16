@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 16:09:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:11:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,8 +311,8 @@ void	calc(t_info *info)
 			//Check if ray has hit a wall
 			// printf("mapx: %d mapy: %d\n", mapX, mapY);
 			// printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
-			// if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
-			if (worldMap[mapX][mapY] > 0) hit = 1;
+			if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
+			// if (worldMap[mapX][mapY] > 0) hit = 1;
 			// if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
 		}
 		if (side == 0)
@@ -333,8 +333,8 @@ void	calc(t_info *info)
 
 		// texturing calculations
 		printf("mapx: %d mapy: %d\n", mapX, mapY);
-		int texNum = worldMap[mapX][mapY];
-		// int texNum = info->cub_list.map_matrix[mapX][mapY];
+		// int texNum = worldMap[mapX][mapY];
+		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
 		// printf("texNum: %d\n", texNum);
 
@@ -465,26 +465,26 @@ int	key_press(int key, t_info *info)
 {
 	if (key == K_W)
 	{
-		// if (!info->cub_list.map_matrix[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
-		// 	info->posX += info->dirX * info->moveSpeed;
-		// if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
-		// 	info->posY += info->dirY * info->moveSpeed;
-		if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
+		if (!info->cub_list.map_matrix[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX += info->dirX * info->moveSpeed;
-		if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
+		// if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
+		// 	info->posX += info->dirX * info->moveSpeed;
+		// if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+		// 	info->posY += info->dirY * info->moveSpeed;
 	}
 	//move backwards if no wall behind you
 	if (key == K_S)
 	{
-		// if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
-		// 	info->posX -= info->dirX * info->moveSpeed;
-		// if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
-		// 	info->posY -= info->dirY * info->moveSpeed;
-		if (!worldMap[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
+		if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
 			info->posX -= info->dirX * info->moveSpeed;
-		if (!worldMap[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
 			info->posY -= info->dirY * info->moveSpeed;
+		// if (!worldMap[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
+		// 	info->posX -= info->dirX * info->moveSpeed;
+		// if (!worldMap[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		// 	info->posY -= info->dirY * info->moveSpeed;
 	}
 	//rotate to the right
 	if (key == K_D)
