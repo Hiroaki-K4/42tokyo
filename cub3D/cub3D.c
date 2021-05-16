@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:49:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:49:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,7 +358,7 @@ void	calc(t_info *info)
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
 		double texPos = (drawStart - height / 2 + lineHeight / 2) * step;
-		printf("ok\n");
+		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
 			// printf("drawStart: %d\n", drawStart);
