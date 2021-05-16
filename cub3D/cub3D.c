@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:13:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:13:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -427,12 +427,12 @@ void	calc(t_info *info)
 		int vMoveScreen = (int)(vMove / transformY);
 
 		//calculate height of the sprite on screen
-		int spriteHeight = (int)fabs((height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
+		int spriteHeight = (int)fabs((info->cub_list.r_height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + height / 2 + vMoveScreen;
+		int drawStartY = -spriteHeight / 2 + info->cub_list.r_height / 2 + vMoveScreen;
 		if(drawStartY < 0) drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + height / 2 + vMoveScreen;
-		if(drawEndY >= height) drawEndY = height - 1;
+		int drawEndY = spriteHeight / 2 + info->cub_list.r_height / 2 + vMoveScreen;
+		if(drawEndY >= info->cub_list.r_height) drawEndY = info->cub_list.r_height - 1;
 
 		//calculate width of the sprite
 		int spriteWidth = (int)fabs((height / transformY) / uDiv);
