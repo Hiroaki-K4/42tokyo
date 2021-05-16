@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 15:58:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 16:00:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define X_EVENT_KEY_EXIT	17
 #define texWidth 64
 #define texHeight 64
-#define mapWidth 22
+#define mapWidth 24
 #define mapHeight 24
 #define width 1920
 #define height 1080
@@ -309,7 +309,7 @@ void	calc(t_info *info)
 				side = 1;
 			}
 			//Check if ray has hit a wall
-			printf("mapx: %d mapy: %d\n", mapX, mapY);
+			// printf("mapx: %d mapy: %d\n", mapX, mapY);
 			// printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
 			// if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
 			if (worldMap[mapX][mapY] > 0) hit = 1;
@@ -332,7 +332,7 @@ void	calc(t_info *info)
 			drawEnd = height - 1;
 
 		// texturing calculations
-		// printf("mapx: %d mapy: %d\n", mapX, mapY);
+		printf("mapx: %d mapy: %d\n", mapX, mapY);
 		int texNum = worldMap[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapX][mapY];
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
