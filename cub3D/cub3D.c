@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 20:29:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 20:35:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
+	int floor_dec;
+	int ceiling_dec;
 	t_rgb floor;
 	t_rgb ceiling;
 }					t_cub;
@@ -407,7 +409,8 @@ void	calc(t_info *info)
 		{
 			// printf("drawStart: %d\n", drawStart);
 			// printf("x: %d y: %d\n", x, y);
-			info->buf[y][x] = 8355711;
+			// info->buf[y][x] = 8355711;
+			info->buf[y][x] = info->cub_list.ceiling_dec;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
 		{
@@ -426,7 +429,8 @@ void	calc(t_info *info)
 		// zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < info->cub_list.height; y++)
 		{
-			info->buf[y][x] = 8355711;
+			// info->buf[y][x] = 8355711;
+			info->buf[y][x] = info->cub_list.floor_dec;
 		}
 		x++;
 	}
@@ -648,7 +652,6 @@ int hex_to_decimal(char *hex)
 	
 	ans = 0;
 	printf("hex: %s\n", hex);
-	printf("len: %d\n", (int)ft_strlen(hex));
 	i = 0;
 	while (i < ft_strlen(hex))
 	{
@@ -746,7 +749,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
-		printf("floor: %d\n", make_decimal_color(info->cub_list.floor));
+		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 		printf("Floor_r: %d\n", info->cub_list.floor.red);
 		printf("Floor_g: %d\n", info->cub_list.floor.green);
 		printf("Floor_b: %d\n", info->cub_list.floor.blue);
@@ -758,7 +761,7 @@ int line_check(char **line, t_info *info)
 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
-		printf("ceiling: %d\n", make_decimal_color(info->cub_list.ceiling));
+		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
 		printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
 		printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
 		printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
