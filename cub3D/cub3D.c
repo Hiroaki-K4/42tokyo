@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:14:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:15:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 #define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
-// #define width 1920
-// #define height 1080
 #define numSprites 19
 #define K_W 119
 #define K_S 115
@@ -98,7 +96,7 @@ typedef struct		s_rgb
 typedef struct		s_cub
 {
 	int r_width;
-	int r_height;
+	int height;
 	int count;
 	char **map;
 	int **map_matrix;
@@ -234,7 +232,7 @@ void	sortSprites(int *order, double *dist, int amount)
 
 void	draw(t_info *info)
 {
-	for (int y = 0; y < info->cub_list.r_height; y++)
+	for (int y = 0; y < info->cub_list.height; y++)
 	{
 		for (int x = 0; x < info->cub_list.r_width; x++)
 		{
@@ -253,7 +251,7 @@ void	calc(t_info *info)
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.r_width))))
 		return (-1);
 	x = 0;
-	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.r_height);
+	printf("w: %d h: %d\n", info->cub_list.r_width, info->cub_list.height);
 	while (x < info->cub_list.r_width)
 	{
 		double cameraX = 2 * x / (double)info->cub_list.r_width - 1;
@@ -328,15 +326,15 @@ void	calc(t_info *info)
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
 
 		//Calculate height of line to draw on screen
-		int lineHeight = (int)(info->cub_list.r_height / perpWallDist);
+		int lineHeight = (int)(info->cub_list.height / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStart = -lineHeight / 2 + info->cub_list.r_height / 2;
+		int drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
-		int drawEnd = lineHeight / 2 + info->cub_list.r_height / 2;
-		if(drawEnd >= info->cub_list.r_height)
-			drawEnd = info->cub_list.r_height - 1;
+		int drawEnd = lineHeight / 2 + info->cub_list.height / 2;
+		if(drawEnd >= info->cub_list.height)
+			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
 		// printf("mapx: %d mapy: %d\n", mapX, mapY);
@@ -363,7 +361,7 @@ void	calc(t_info *info)
 		// How much to increase the texture coordinate perscreen pixel
 		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		double texPos = (drawStart - info->cub_list.r_height / 2 + lineHeight / 2) * step;
+		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
@@ -386,7 +384,7 @@ void	calc(t_info *info)
 		}
 		info->zBuffer[x] = perpWallDist;
 		// zBuffer[x] = perpWallDist;
-		for (int y = drawEnd; y < info->cub_list.r_height; y++)
+		for (int y = drawEnd; y < info->cub_list.height; y++)
 		{
 			info->buf[y][x] = 8355711;
 		}
@@ -427,15 +425,15 @@ void	calc(t_info *info)
 		int vMoveScreen = (int)(vMove / transformY);
 
 		//calculate height of the sprite on screen
-		int spriteHeight = (int)fabs((info->cub_list.r_height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
+		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.r_height / 2 + vMoveScreen;
+		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
 		if(drawStartY < 0) drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.r_height / 2 + vMoveScreen;
-		if(drawEndY >= info->cub_list.r_height) drawEndY = info->cub_list.r_height - 1;
+		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		if(drawEndY >= info->cub_list.height) drawEndY = info->cub_list.height - 1;
 
 		//calculate width of the sprite
-		int spriteWidth = (int)fabs((info->cub_list.r_height / transformY) / uDiv);
+		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
 		int drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if(drawStartX < 0) drawStartX = 0;
 		int drawEndX = spriteWidth / 2 + spriteScreenX;
@@ -454,7 +452,7 @@ void	calc(t_info *info)
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
 			{
-				int d = (y-vMoveScreen) * 256 - info->cub_list.r_height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
+				int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
 				int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
 				if((color & 0x00FFFFFF) != 0) info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
@@ -602,8 +600,8 @@ int line_check(char **line, t_info *info)
 	else if (i = ft_strcmp("R", line_split[0]) == 0)
 	{
 		info->cub_list.r_width = ft_atoi(line_split[1]);
-		info->cub_list.r_height = ft_atoi(line_split[2]);
-		printf("width: %d height: %d\n", info->cub_list.r_width, info->cub_list.r_height);
+		info->cub_list.height = ft_atoi(line_split[2]);
+		printf("width: %d height: %d\n", info->cub_list.r_width, info->cub_list.height);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 	{
@@ -816,17 +814,17 @@ int	main(int argc, char *argv[])
 	info.planeX = 0.0;
 	info.planeY = 0.66;
 	
-	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.r_height))))
+	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		return (-1);
 	i = 0;
-	while (i < info.cub_list.r_height)
+	while (i < info.cub_list.height)
 	{
 		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.r_width))))
 			return (-1);
 		i++;
 	}
 
-	for (int i = 0; i < info.cub_list.r_height; i++)
+	for (int i = 0; i < info.cub_list.height; i++)
 	{
 		for (int j = 0; j < info.cub_list.r_width; j++)
 		{
@@ -854,9 +852,9 @@ int	main(int argc, char *argv[])
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	
-	info.win = mlx_new_window(info.mlx, info.cub_list.r_width, info.cub_list.r_height, "mlx");
+	info.win = mlx_new_window(info.mlx, info.cub_list.r_width, info.cub_list.height, "mlx");
 
-	info.img.img = mlx_new_image(info.mlx, info.cub_list.r_width, info.cub_list.r_height);
+	info.img.img = mlx_new_image(info.mlx, info.cub_list.r_width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 
 	mlx_loop_hook(info.mlx, &main_loop, &info);
