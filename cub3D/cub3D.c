@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 17:43:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/16 17:46:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,8 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
-	t_rgb rgb;
+	t_rgb floor;
+	t_rgb ceiling;
 }					t_cub;
 
 typedef struct	s_info
@@ -671,23 +672,23 @@ int line_check(char **line, t_info *info)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		info->cub_list.rgb.red = ft_atoi(rgb_split[0]);
-		info->cub_list.rgb.green = ft_atoi(rgb_split[1]);
-		info->cub_list.rgb.blue = ft_atoi(rgb_split[2]);
-		printf("Floor_r: %d\n", info->cub_list.rgb.red);
-		printf("Floor_g: %d\n", info->cub_list.rgb.green);
+		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
+		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
+		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
+		printf("Floor_r: %d\n", info->cub_list.floor.red);
+		printf("Floor_g: %d\n", info->cub_list.floor.green);
 		printf("Floor_b: %d\n", info->cub_list.rgb.blue);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		info->cub_list.rgb.red = ft_atoi(rgb_split[0]);
-		info->cub_list.rgb.green = ft_atoi(rgb_split[1]);
-		info->cub_list.rgb.blue = ft_atoi(rgb_split[2]);
-		printf("Ceiling_r: %d\n", info->cub_list.rgb.red);
-		printf("Ceiling_g: %d\n", info->cub_list.rgb.green);
-		printf("Ceiling_b: %d\n", info->cub_list.rgb.blue);
+		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
+		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
+		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
+		printf("Ceiling_r: %d\n", info->cub_list.ceiling.red);
+		printf("Ceiling_g: %d\n", info->cub_list.ceiling.green);
+		printf("Ceiling_b: %d\n", info->cub_list.ceiling.blue);
 	}
 	else if (map_line_check(line_split) == 0)
 	{
@@ -844,7 +845,7 @@ int	main(int argc, char *argv[])
 	}
 	convert_int_matrix(&info);
 	info.mlx = mlx_init();
-	sin = ft_itoa_hex(info.cub_list.rgb.red, "0123456789ABCDEF");
+	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
 	printf("sin: %s\n", sin);
 
 	info.posX = 3.0;
