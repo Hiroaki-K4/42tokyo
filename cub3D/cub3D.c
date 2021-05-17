@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 22:21:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 22:22:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,14 +375,14 @@ void	calc(t_info *info)
 						texNum = 3;
 				}
 				else
-					texNum = 4;
+					texNum = 1;
 			}
 			else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
 			{
 				if (side == 0)
 				{
 					if (rayDirX > 0)
-						texNum = 4;
+						texNum = 1;
 					else
 						texNum = 0;
 				}
@@ -394,7 +394,7 @@ void	calc(t_info *info)
 				if (side == 0)
 				{
 					if (rayDirX > 0)
-						texNum = 4;
+						texNum = 1;
 					else
 						texNum = 0;
 				}
