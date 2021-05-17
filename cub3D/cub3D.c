@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 20:35:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 20:38:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -862,7 +862,8 @@ int	main(int argc, char *argv[])
 	// info.posY = 13.0;
 	// info.posX = 11.0;
 	// info.posY = 26.0;
-	info.dirX = -1.0;
+	// info.dirX = -1.0;
+	info.dirX = 0.0;
 	info.dirY = 0.0;
 	info.planeX = 0.0;
 	info.planeY = 0.66;
