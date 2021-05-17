@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 21:53:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:54:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -367,7 +367,7 @@ void	calc(t_info *info)
 			}
 			else if (fabs(info->dirX) > fabs(info->dirY) && info->dirX > 0)
 			{
-				
+				texNum = 4;
 			}
 		}
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
