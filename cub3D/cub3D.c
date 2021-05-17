@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 22:00:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 22:01:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -377,7 +377,7 @@ void	calc(t_info *info)
 				else
 					texNum = 4;
 			}
-			else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
+			else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
 			{
 				if (side == 1)
 				{
