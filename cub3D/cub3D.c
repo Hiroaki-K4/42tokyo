@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 21:15:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:37:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,6 +351,11 @@ void	calc(t_info *info)
 		// texturing calculations
 		// int texNum = worldMap[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
+		if (texNum == 1)
+		{
+			if (info->dirX > info->dirY && info->dirX <= 0)
+				texNum = 4;
+		}
 		// int texNum = info->cub_list.map_matrix[mapY][mapX];
 
 		// calculate value of wallX
