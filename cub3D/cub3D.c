@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 21:57:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:59:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,7 +353,7 @@ void	calc(t_info *info)
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
 		{
-			if (fabs(info->dirX) > fabs(info->dirY) && info->dirX <= 0)
+			if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
 			{
 				if (side == 1)
 				{
@@ -365,7 +365,19 @@ void	calc(t_info *info)
 				else
 					texNum = 1;
 			}
-			else if (fabs(info->dirX) > fabs(info->dirY) && info->dirX > 0)
+			else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
+			{
+				if (side == 1)
+				{
+					if (rayDirY > 0)
+						texNum = 2;
+					else
+						texNum = 3;
+				}
+				else
+					texNum = 4;
+			}
+			else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
 			{
 				if (side == 1)
 				{
