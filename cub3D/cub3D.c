@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/16 21:13:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 20:35:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,6 +288,7 @@ void	calc(t_info *info)
 		int hit = 0; //was there a wall hit?
 		int side; //was a NS or a EW wall hit?
 
+		printf("DirX: %f DirY: %f\n", info->dirX, info->dirY);
 		if (rayDirX < 0)
 		{
 			stepX = -1;
