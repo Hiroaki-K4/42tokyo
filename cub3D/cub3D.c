@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 22:01:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 22:02:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,7 +381,7 @@ void	calc(t_info *info)
 			{
 				if (side == 1)
 				{
-					if (rayDirY > 0)
+					if (rayDirX > 0)
 						texNum = 1;
 					else
 						texNum = 4;
