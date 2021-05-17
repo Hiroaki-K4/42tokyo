@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 21:02:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:12:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -769,12 +769,16 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = -1.0;
 					info->dirY = 0.0;
+					info->planeX = 0.0;
+					info->planeY = 0.66;
 				}
 				else if (info->cub_list.map[i][j] == 'S')
 				{
 					info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 1.0;
 					info->dirY = 0.0;
+					info->planeX = 0.0;
+					info->planeY = -0.66;
 				}
 				else if (info->cub_list.map[i][j] == 'W')
 				{
@@ -902,8 +906,8 @@ int	main(int argc, char *argv[])
 	// info.dirX = -1.0;
 	// info.dirX = 1.0;
 	// info.dirY = 0.0;
-	info.planeX = 0.0;
-	info.planeY = 0.66;
+	// info.planeX = 0.0;
+	// info.planeY = 0.66;
 	
 	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		return (-1);
