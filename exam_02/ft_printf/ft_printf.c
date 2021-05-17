@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/17 18:38:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 18:42:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,13 +226,13 @@ int	field_precision(t_plist flag_list, char *str, int num, int i)
 
 int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
-	int		digit;
+	int		keta;
 	char	*tmp;
 	
-	digit = ft_strlen(str_num);
+	keta = ft_strlen(str_num);
 	if (num < 0)
-		digit = ft_strlen(str_num) - 1;
-	if (flag_list.precision > digit)
+		keta = ft_strlen(str_num) - 1;
+	if (flag_list.precision > keta)
 	{
 		len = flag_list.precision;
 		if (num < 0)
@@ -240,7 +240,7 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 			if (!(tmp = ft_itoa(num * (-1))))
 				return (-1);
 			write(1, "-", 1);
-			while (flag_list.precision - (digit++) > 0)
+			while (flag_list.precision - (keta++) > 0)
 				write(1, "0", 1);
 			write(1, tmp, ft_strlen(tmp));
 			free(tmp);
@@ -248,7 +248,7 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 		}
 		else
 		{
-			while (flag_list.precision - (digit++) > 0)
+			while (flag_list.precision - (keta++) > 0)
 				write(1, "0", 1);
 			write(1, str_num, ft_strlen(str_num));
 		}
@@ -261,12 +261,14 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	return (len);
 }
 
-// int no_field_int(t_plist flag_list, char *str, int num, int keta)
+// int no_field_int(t_plist flag_list, char *str_num, int num, int keta)
 // {
-// 	int digit;
+// 	int keta;
 // 	char *tmp;
 
-// 	digit = 
+// 	keta = ft_strlen(str_num);
+// 	if (num < 0)
+// 		keta = 
 // }
 
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
