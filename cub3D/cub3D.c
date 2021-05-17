@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 20:54:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 20:59:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -772,19 +772,19 @@ int convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'S')
 				{
-					info->cub_list.map_matrix[i][j] = 5;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 1.0;
 					info->dirY = 0.0;
 				}
 				else if (info->cub_list.map[i][j] == 'W')
 				{
-					info->cub_list.map_matrix[i][j] = 6;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 0.0;
 					info->dirY = -1.0;
 				}
 				else if (info->cub_list.map[i][j] == 'E')
 				{
-					info->cub_list.map_matrix[i][j] = 7;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 0.0;
 					info->dirY = 1.0;
 				}
@@ -821,19 +821,19 @@ int convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'S')
 				{
-					info->cub_list.map_matrix[i][j] = 5;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 1.0;
 					info->dirY = 0.0;
 				}
 				else if (info->cub_list.map[i][j] == 'W')
 				{
-					info->cub_list.map_matrix[i][j] = 6;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 0.0;
 					info->dirY = -1.0;
 				}
 				else if (info->cub_list.map[i][j] == 'E')
 				{	
-					info->cub_list.map_matrix[i][j] = 7;
+					info->cub_list.map_matrix[i][j] = 4;
 					info->dirX = 0.0;
 					info->dirY = 1.0;
 				}
