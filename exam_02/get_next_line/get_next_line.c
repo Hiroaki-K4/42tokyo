@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/17 11:11:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 11:15:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,6 +221,25 @@ size_t ft_strlen(const char *src)
     while (src[i])
         i++;
     return (i);
+}
+
+char *ft_strdup(const char *src)
+{
+    char *dst;
+    size_t i;
+
+    if (!src)
+        return (NULL);
+    if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
+        return (NULL);
+    i = 0;
+    while (src[i])
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = '\0';
+    return (dst);
 }
 
 char *get_from_store(char *store, char **line)
