@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/17 18:32:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/17 18:38:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,14 +224,14 @@ int	field_precision(t_plist flag_list, char *str, int num, int i)
 	return (flag_list.field);
 }
 
-int	no_field_int(t_plist flag_list, char *str, int num, int len)
+int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
 	int		digit;
 	char	*tmp;
 	
-	digit = ft_strlen(str);
+	digit = ft_strlen(str_num);
 	if (num < 0)
-		digit = ft_strlen(str) - 1;
+		digit = ft_strlen(str_num) - 1;
 	if (flag_list.precision > digit)
 	{
 		len = flag_list.precision;
@@ -250,16 +250,24 @@ int	no_field_int(t_plist flag_list, char *str, int num, int len)
 		{
 			while (flag_list.precision - (digit++) > 0)
 				write(1, "0", 1);
-			write(1, str, ft_strlen(str));
+			write(1, str_num, ft_strlen(str_num));
 		}
 	}
 	else
 	{
-		write(1, str, ft_strlen(str));
-		len = ft_strlen(str);
+		write(1, str_num, ft_strlen(str_num));
+		len = ft_strlen(str_num);
 	}
 	return (len);
 }
+
+// int no_field_int(t_plist flag_list, char *str, int num, int keta)
+// {
+// 	int digit;
+// 	char *tmp;
+
+// 	digit = 
+// }
 
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // {
