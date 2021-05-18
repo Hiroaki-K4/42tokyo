@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:25:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:26:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -934,6 +934,7 @@ int get_sprite_pos(t_info *info)
 			if (info->cub_list.map[i][j] == 2)
 				count++;
 			j++;
+			printf("ok\n");
 		}
 		i++;
 	}
@@ -959,7 +960,6 @@ int get_sprite_pos(t_info *info)
 				info->cub_list.sprites[count][1] = j;
 				info->cub_list.sprites[count][2] = 2;
 				count++;
-				printf("ok\n");
 			} 
 			j++;
 		}
