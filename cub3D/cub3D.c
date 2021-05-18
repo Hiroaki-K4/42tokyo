@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:26:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:26:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -934,10 +934,10 @@ int get_sprite_pos(t_info *info)
 			if (info->cub_list.map[i][j] == 2)
 				count++;
 			j++;
-			printf("ok\n");
 		}
 		i++;
 	}
+	printf("count: %d\n", count);
 	if (!(info->cub_list.sprites = (int **)malloc(sizeof(int *) * count)))
 		return (-1);
 	i = 0;
