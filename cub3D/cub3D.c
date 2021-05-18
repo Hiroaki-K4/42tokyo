@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:47:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:48:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -465,7 +465,7 @@ void	calc(t_info *info)
 	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
 		spriteOrder[i] = i;
-		spriteDistance[i] = ((info->posX - sprite[i].x) * (info->posX - sprite[i].x) + (info->posY - sprite[i].y) * (info->posY - sprite[i].y)); //sqrt not taken, unneeded
+		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i][0]) * (info->posX - sprite[i].x) + (info->posY - sprite[i].y) * (info->posY - sprite[i].y)); //sqrt not taken, unneeded
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
