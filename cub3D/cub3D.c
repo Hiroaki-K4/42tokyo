@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:30:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:37:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 #define K_A 97
 #define K_ESC 65307
 
-int		spriteOrder[numSprites];
-double	spriteDistance[numSprites];
+// int		spriteOrder[numSprites];
+// double	spriteDistance[numSprites];
 
 struct	Sprite
 {
@@ -110,6 +110,7 @@ typedef struct		s_cub
 	char *e_texture;
 	char *sprite;
 	int **sprites;
+	int num_sprites;
 	int floor_dec;
 	int ceiling_dec;
 	t_rgb floor;
@@ -261,6 +262,10 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
+	int		spriteOrder[info->cub_list.num_sprites];
+	double	spriteDistance[info->cub_list.num_sprites];
+
+
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -457,14 +462,14 @@ void	calc(t_info *info)
 	
 	//SPRITE CASTING
 	//sort sprites from far to close
-	for(int i = 0; i < numSprites; i++)
+	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
 		spriteOrder[i] = i;
 		spriteDistance[i] = ((info->posX - sprite[i].x) * (info->posX - sprite[i].x) + (info->posY - sprite[i].y) * (info->posY - sprite[i].y)); //sqrt not taken, unneeded
 	}
-	sortSprites(spriteOrder, spriteDistance, numSprites);
+	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
-	for(int i = 0; i < numSprites; i++)
+	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
 		//translate sprite position to relative to camera
 		double spriteX = sprite[spriteOrder[i]].x - info->posX;
@@ -964,6 +969,7 @@ int get_sprite_pos(t_info *info)
 		}
 		i++;
 	}
+	info->cub_list.num_sprites = count;
 	return (0);
 }
 
