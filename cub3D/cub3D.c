@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:28:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:28:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1003,7 +1003,7 @@ int	main(int argc, char *argv[])
 	}
 	convert_int_matrix(&info);
 	get_sprite_pos(&info);
-	printf("spriteX: %d spriteY: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1]);
+	printf("spriteX: %d spriteY: %d texture: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1], info.cub_list.sprites[0][2]);
 	info.mlx = mlx_init();
 	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
 	printf("sin: %s\n", sin);
