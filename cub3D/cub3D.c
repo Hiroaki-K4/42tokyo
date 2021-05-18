@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:24:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:25:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -964,6 +964,7 @@ int get_sprite_pos(t_info *info)
 		}
 		i++;
 	}
+	return (0);
 }
 
 int	main(int argc, char *argv[])
