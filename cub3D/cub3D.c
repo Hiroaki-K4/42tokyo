@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:01:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:22:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
+	int **sprites;
 	int floor_dec;
 	int ceiling_dec;
 	t_rgb floor;
@@ -850,9 +851,7 @@ int convert_int_matrix(t_info *info)
 				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 3;
 				else
-				{
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
@@ -907,9 +906,7 @@ int convert_int_matrix(t_info *info)
 				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 3;
 				else
-				{
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
@@ -919,6 +916,54 @@ int convert_int_matrix(t_info *info)
 	}
 
 	return (0);
+}
+
+int get_sprite_pos(t_info *info)
+{
+	int i;
+	int j;
+	int count;
+
+	count = 0;
+	i = 0;
+	while (i < info->cub_list.map_y)
+	{
+		j = 0;
+		while (j < info->cub_list.map_x)
+		{
+			if (info->cub_list.map[i][j] == 2)
+				count++;
+			j++;
+		}
+		i++;
+	}
+	if (!(info->cub_list.sprites = (int **)malloc(sizeof(int *) * count)))
+		return (-1);
+	i = 0;
+	while (i < count)
+	{
+		if (!(info->cub_list.sprites[i] = (int *)malloc(sizeof(int) * 3)))
+			return (-1);
+		i++;
+	}
+	count = 0;
+	i = 0;
+	while (i < info->cub_list.map_y)
+	{
+		j = 0;
+		while (j < info->cub_list.map_x)
+		{
+			if (info->cub_list.map[i][j] == 2)
+			{
+				info->cub_list.sprites[count][0] = i;
+				info->cub_list.sprites[count][1] = j;
+				info->cub_list.sprites[count][2] = 2;
+				count++;
+			} 
+			j++;
+		}
+		i++;
+	}
 }
 
 int	main(int argc, char *argv[])
@@ -956,6 +1001,7 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	convert_int_matrix(&info);
+	get_sprite_pos(&info);
 	info.mlx = mlx_init();
 	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
 	printf("sin: %s\n", sin);
