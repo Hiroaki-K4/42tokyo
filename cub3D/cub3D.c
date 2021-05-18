@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:22:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:24:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,7 +290,7 @@ void	calc(t_info *info)
 		int hit = 0; //was there a wall hit?
 		int side; //was a NS or a EW wall hit?
 
-		printf("DirX: %f DirY: %f\n", info->dirX, info->dirY);
+		// printf("DirX: %f DirY: %f\n", info->dirX, info->dirY);
 		if (rayDirX < 0)
 		{
 			stepX = -1;
@@ -1002,6 +1002,7 @@ int	main(int argc, char *argv[])
 	}
 	convert_int_matrix(&info);
 	get_sprite_pos(&info);
+	printf("spriteX: %d spriteY: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1]);
 	info.mlx = mlx_init();
 	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
 	printf("sin: %s\n", sin);
