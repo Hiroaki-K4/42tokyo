@@ -211,6 +211,15 @@
 //     return (0);
 // }
 
+size_t ft_strlen(const char *src)
+{
+    size_t i;
+
+    i = 0;
+    while (src[i])
+        i++;
+    return (i);
+}
 
 char *get_from_store(char *store, char **line)
 {
