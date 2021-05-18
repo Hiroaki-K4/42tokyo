@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 21:53:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 21:54:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,20 @@ struct	Sprite
 
 struct Sprite	sprite[numSprites] =
 {
-	{20.5, 11.5, 10}, //green light in front of playerstart
-	//green lights in every room
-	{18.5,4.5, 10},
-	{10.0,4.5, 10},
-	{10.0,12.5,10},
-	{3.5, 6.5, 10},
-	{3.5, 20.5,10},
-	{3.5, 14.5,10},
-	{14.5,20.5,10},
+	// {20.5, 11.5, 10}, //green light in front of playerstart
+	// //green lights in every room
+	// {18.5,4.5, 10},
+	// {10.0,4.5, 10},
+	// {10.0,12.5,10},
+	// {3.5, 6.5, 10},
+	// {3.5, 20.5,10},
+	// {3.5, 14.5,10},
+	// {14.5,20.5,10},
 
 	//row of pillars in front of wall: fisheye test
-	{18.5, 10.5, 9},
-	{18.5, 11.5, 9},
-	{18.5, 12.5, 9},
+	// {18.5, 10.5, 9},
+	// {18.5, 11.5, 9},
+	// {18.5, 12.5, 9},
 
 	//some barrels around the map
 	{21.5, 1.5, 8},
