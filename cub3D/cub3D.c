@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/17 22:24:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 21:30:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -601,10 +601,11 @@ void	load_texture(t_info *info)
 {
 	t_img	img;
 
-	load_image(info, info->texture[0], "textures/eagle.xpm", &img);
-	load_image(info, info->texture[1], "textures/redbrick.xpm", &img);
-	load_image(info, info->texture[2], "textures/purplestone.xpm", &img);
-	load_image(info, info->texture[3], "textures/greystone.xpm", &img);
+	// load_image(info, info->texture[0], "textures/eagle.xpm", &img);
+	load_image(info, info->texture[0], info->cub_list.n_texture, &img);
+	load_image(info, info->texture[1], info->cub_list.s_texture, &img);
+	load_image(info, info->texture[2], info->cub_list.w_texture, &img);
+	load_image(info, info->texture[3], info->cub_list.e_texture, &img);
 	load_image(info, info->texture[4], "textures/bluestone.xpm", &img);
 	load_image(info, info->texture[5], "textures/mossy.xpm", &img);
 	load_image(info, info->texture[6], "textures/wood.xpm", &img);
