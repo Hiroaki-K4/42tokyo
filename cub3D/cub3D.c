@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:37:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:46:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -472,8 +472,10 @@ void	calc(t_info *info)
 	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
 		//translate sprite position to relative to camera
-		double spriteX = sprite[spriteOrder[i]].x - info->posX;
-		double spriteY = sprite[spriteOrder[i]].y - info->posY;
+		// double spriteX = sprite[spriteOrder[i]].x - info->posX;
+		double spriteX = (double)info->cub_list.sprites[spriteOrder[i]][0] - info->posX;
+		// double spriteY = sprite[spriteOrder[i]].y - info->posY;
+		double spriteY = (double)info->cub_list.sprites[spriteOrder[i]][1] - info->posY;
 
 		//transform sprite with the inverse camera matrix
 		// [ planeX   dirX ] -1                                       [ dirY      -dirX ]
@@ -523,7 +525,8 @@ void	calc(t_info *info)
 			{
 				int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
-				int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
+				// int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
+				int color = info->texture[info->cub_list.sprites[spriteOrder[i]][2]][texWidth * texY + texX]; //get current color from the texture
 				if((color & 0x00FFFFFF) != 0) info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
 			}
 		}
