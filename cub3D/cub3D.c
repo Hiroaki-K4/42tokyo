@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 21:30:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 21:46:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ struct Sprite	sprite[numSprites] =
 	{9.5, 15.5, 8},
 	{10.0, 15.1,8},
 	{3.0, 21.0, 8},
+	{9.0, 4.0, 8}
 	// {10.5, 15.8,8},
 };
 
@@ -601,7 +602,6 @@ void	load_texture(t_info *info)
 {
 	t_img	img;
 
-	// load_image(info, info->texture[0], "textures/eagle.xpm", &img);
 	load_image(info, info->texture[0], info->cub_list.n_texture, &img);
 	load_image(info, info->texture[1], info->cub_list.s_texture, &img);
 	load_image(info, info->texture[2], info->cub_list.w_texture, &img);
