@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 22:26:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:27:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -931,7 +931,7 @@ int get_sprite_pos(t_info *info)
 		j = 0;
 		while (j < info->cub_list.map_x)
 		{
-			if (info->cub_list.map[i][j] == 2)
+			if (info->cub_list.map_matrix[i][j] == 2)
 				count++;
 			j++;
 		}
@@ -954,7 +954,7 @@ int get_sprite_pos(t_info *info)
 		j = 0;
 		while (j < info->cub_list.map_x)
 		{
-			if (info->cub_list.map[i][j] == 2)
+			if (info->cub_list.map_matrix[i][j] == 2)
 			{
 				info->cub_list.sprites[count][0] = i;
 				info->cub_list.sprites[count][1] = j;
