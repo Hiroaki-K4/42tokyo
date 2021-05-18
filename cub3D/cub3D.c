@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/18 21:55:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/18 22:01:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -329,7 +329,7 @@ void	calc(t_info *info)
 			//Check if ray has hit a wall
 			// printf("mapx: %d mapy: %d\n", mapX, mapY);
 			// printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
-			if (info->cub_list.map_matrix[mapX][mapY] > 0) hit = 1;
+			if (info->cub_list.map_matrix[mapX][mapY] > 0 && info->cub_list.map_matrix[mapX][mapY] != 2) hit = 1;
 			// if (worldMap[mapX][mapY] > 0) hit = 1;
 			// if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
 		}
