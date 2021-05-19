@@ -221,6 +221,24 @@ size_t ft_strlen(const char *src)
     return (i);
 }
 
+char *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(src + i);
+    return (NULL);
+}
+
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t i;
@@ -324,7 +342,7 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-    free(buf);
+    // free(buf);
     free(store);
     return (tmp);
 }
@@ -356,9 +374,9 @@ int read_line(int fd, char **store, char **line)
         free(store[fd]);
         store[fd] = tmp;
     }
-    if (!(store[fd] = ft_strdup(store[fd])))
+    if (!(*line = ft_strdup(store[fd])))
         return (-1);
-    free(store[fd]);
+    // free(store[fd]);
     free(buf);
     return (0);
 }
