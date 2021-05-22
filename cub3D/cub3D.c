@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 17:31:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 18:20:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,8 +304,22 @@ int write_header(int fd, int filesize, t_info *info)
 	return (0);
 }
 
-int write_img_data(int fd, t_info *info, int padding)
+int write_data(int fd, t_info *info, int padding)
 {
+	int i;
+	int j;
+
+	i = 0;
+	while (info->cub_list.map_y > i)
+	{
+		j = 0;
+		while (info->cub_list.map_x > j)
+		{
+			printf("map: %d\n", info->buf[i][j]);
+			j++;
+		}
+		i++;
+	}
 	
 }
 
@@ -323,7 +337,7 @@ int save_bmp(t_info *info)
 	padding = (4 - (info->cub_list.width * 3) % 4) % 4;
 	filesize = 54 + (3 * (info->cub_list.width + padding) * info->cub_list.height);
 	write_header(fd, filesize, info);
-	write_img_data(fd, info, padding);
+	write_data(fd, info, padding);
 	return (0);
 }
 
