@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:43:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:44:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,7 +304,7 @@ void	draw(t_info *info)
 	}
 	if (info->save_flag == 1)
 	{
-		write_bmp_simple_file(info);
+		save_bmp(info);
 		info->save_flag = 0;
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
