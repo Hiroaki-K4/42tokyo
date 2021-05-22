@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:43:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:43:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,10 +271,10 @@ typedef struct image_t {
   pixcel_t **map;       /**< 画像データ */
 } image_t;
 
-int write_bmp_data(int fd, int filesize, t_info *info)
-{
+// int write_bmp_data(int fd, int filesize, t_info *info)
+// {
 
-}
+// }
 
 int save_bmp(t_info *info)
 {
