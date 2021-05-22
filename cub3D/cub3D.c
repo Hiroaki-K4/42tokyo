@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:43:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:43:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,7 +289,7 @@ int save_bmp(t_info *info)
 	printf("width: %d\n", info->cub_list.width);
 	// pad = (4 - ((int)info->cub_list.width))
 	// filesize = 54 + 4 * 
-	write_bmp_data(fd, filesize, info);
+	// write_bmp_data(fd, filesize, info);
 	return (0);
 }
 
