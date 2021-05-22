@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/22 11:52:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 12:12:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,39 +261,6 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	return (len);
 }
 
-// int no_field_int(t_plist flag_list, char *str_num, int num, int len)
-// {
-// 	int keta;
-// 	char *tmp;
-
-// 	keta = ft_strlen(str_num);
-// 	if (num < 0)
-// 		keta--;
-// 	if (flag_list.precision > keta)
-// 	{
-// 		len = flag_list.precision;
-// 		if (num < 0)
-// 		{
-// 			if (!(tmp = ft_itoa(num * (-1))))
-// 				return (-1);
-// 			write(1, "-", 1);
-// 			while (flag_list.precision - (keta++) > 0)
-// 				write(1, "0", 1);
-// 			write(1, tmp, ft_strlen(tmp));
-// 			free(tmp);
-// 			len = flag_list.precision + 1;
-// 		}
-// 		else
-// 		{
-			
-// 		}
-// 	}
-// 	else
-// 	{
-		
-// 	}
-// }
-
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // {
 // 	int len;
@@ -412,14 +379,14 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 
 int print_string(va_list *ap, t_plist flag_list)
 {
-	int len;
 	int i;
+	int len;
 	char *str;
-
-	str = va_arg(*ap, char*);
+	
+	len = 0;
+	str = va_arg(*ap, char *);
 	if (str == NULL)
 		str = "(null)";
-	len = 0;
 	if (flag_list.field != -1)
 	{
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
@@ -441,7 +408,6 @@ int print_string(va_list *ap, t_plist flag_list)
 				write(1, " ", 1);
 				i++;
 			}
-			write(1, str, ft_strlen(str));
 			len = (int)ft_strlen(str) + i;
 		}
 	}
@@ -454,6 +420,7 @@ int print_string(va_list *ap, t_plist flag_list)
 				write(1, &str[len], 1);
 				len++;
 			}
+			
 		}
 		else
 		{
