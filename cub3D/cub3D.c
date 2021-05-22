@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 21:23:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 21:24:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,7 +315,7 @@ int write_data(int fd, t_info *info, int padding)
 		j = 0;
 		while (info->cub_list.map_x > j)
 		{
-			printf("map: %d\n", info->buf[i][j]);
+			printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
 			j++;
 		}
 		i++;
