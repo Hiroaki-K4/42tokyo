@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 17:28:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 17:28:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,7 +300,7 @@ int write_header(int fd, int filesize, t_info *info)
 	printf("file_8: %d\n", filesize >> 8);
 	printf("file_16: %d\n", filesize >> 16);
 	printf("file_24: %d\n", filesize >> 24);
-	printf("write: %d\n", -1 > 0));
+	printf("write: %d\n", -1 > 0);
 	return ((write(fd, bitmapfileheader, 54) > 0));
 }
 
