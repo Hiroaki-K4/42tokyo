@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 14:44:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 14:45:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -990,10 +990,11 @@ int	main(int argc, char *argv[])
 		printf("Error\n");
 		return (-1);
 	}
-	// if (argc == 3 && argv[2] == "--save")
-	// {
-	// 	printf("~~~~~~~~~~~~~~~~~~~~~ok~~~~~~~~~~~~~~~\n");
-	// }
+	if (argc == 3)
+	{
+		if (argv[2] == "--save")
+			printf("~~~~~~~~~~~~~~~~~~~~~ok~~~~~~~~~~~~~~~\n");
+	}
 	printf("save: %s\n", argv[2]);
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
