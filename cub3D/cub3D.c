@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:46:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:51:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,8 +287,9 @@ int save_bmp(t_info *info)
 		return (-1);
 	if (!(fd = open("cub3D.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND)))
 		return (-1);
-	padding = (4 - ((int)info->cub_list.width * 3) % 4) % 4;
-	printf("padding: %d\n", padding);
+	padding = (4 - (info->cub_list.width * 3) % 4) % 4;
+	filesize = 54 + (3 * (info->cub_list.width + padding) * info->cub_list.height);
+	printf("filesize: %d\n", filesize);
 	// filesize = 54 + 4 * 
 	// write_bmp_data(fd, filesize, info);
 	return (0);
