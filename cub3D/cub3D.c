@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 17:13:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 17:16:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,6 +271,14 @@ typedef struct image_t {
   pixcel_t **map;       /**< 画像データ */
 } image_t;
 
+void set_int_as_char(unsigned char *str, int num)
+{
+	str[0] = (unsigned char)(num);
+	str[1] = (unsigned char)(num >> 8);
+	str[2] = (unsigned char)(num >> 16);
+	str[3] = (unsigned char)(num >> 24);
+}
+
 int write_header(int fd, int filesize, t_info *info)
 {
 	unsigned char bitmapfileheader[54];
@@ -278,6 +286,7 @@ int write_header(int fd, int filesize, t_info *info)
 	ft_bzero(bitmapfileheader, 54);
 	bitmapfileheader[0] = (unsigned char)('B');
 	bitmapfileheader[1] = (unsigned char)('M');
+	set_int_as_char(bitmapfileheader + 2, filesize);
 	printf("filesize: %d\n", filesize);
 	printf("file_8: %d\n", filesize >> 8);
 	printf("file_16: %d\n", filesize >> 16);
