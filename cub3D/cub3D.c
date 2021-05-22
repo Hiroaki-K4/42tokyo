@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 14:54:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:04:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #define X_EVENT_KEY_PRESS	2
 #define X_EVENT_KEY_EXIT	17
 #define texWidth 64
@@ -248,6 +249,39 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 // 										{2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,5,5,5,5,5,5,5,5,5}
 // 									};
 
+typedef struct color_t {
+  uint8_t r; /**< Red */
+  uint8_t g; /**< Green */
+  uint8_t b; /**< Blue */
+  uint8_t a; /**< Alpha */
+} color_t;
+
+typedef union pixcel_t {
+  color_t c; /**< RGBA */
+  uint8_t g; /**< グレースケール */
+  uint8_t i; /**< カラーインデックス */
+} pixcel_t;
+
+typedef struct image_t {
+  uint32_t width;       /**< 幅 */
+  uint32_t height;      /**< 高さ */
+  uint16_t color_type;  /**< 色表現の種別 */
+  uint16_t palette_num; /**< カラーパレットの数 */
+  color_t *palette;     /**< カラーパレットへのポインタ */
+  pixcel_t **map;       /**< 画像データ */
+} image_t;
+
+int write_bmp_simple_file(t_info *info)
+{
+	image_t *img;
+	
+	if (img == NULL)
+		printf("NULL\n");
+	else
+		printf("something\n");
+	return (0);
+}
+
 void	draw(t_info *info)
 {
 	for (int y = 0; y < info->cub_list.height; y++)
@@ -259,8 +293,8 @@ void	draw(t_info *info)
 	}
 	if (info->save_flag == 1)
 	{
-		printf("yes\n");
-		info->save_flag = 1;
+		write_bmp_simple_file(info);
+		info->save_flag = 0;
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
