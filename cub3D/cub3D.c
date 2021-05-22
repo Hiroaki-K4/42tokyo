@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:04:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:18:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,11 +274,12 @@ typedef struct image_t {
 int write_bmp_simple_file(t_info *info)
 {
 	image_t *img;
+	int fd;
 	
 	if (img == NULL)
-		printf("NULL\n");
-	else
-		printf("something\n");
+		return (-1);
+	if (!(fd = open("cub3D.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND)))
+		return (-1);
 	return (0);
 }
 
