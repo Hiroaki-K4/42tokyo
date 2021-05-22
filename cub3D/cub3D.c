@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 14:39:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 14:39:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -985,7 +985,7 @@ int	main(int argc, char *argv[])
 	char **line;
 	char *sin;
 	
-	if (argc != 2)
+	if (argc != 2 && arc != 3)
 	{
 		printf("Error\n");
 		return (-1);
