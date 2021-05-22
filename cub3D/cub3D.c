@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 14:50:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 14:51:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -991,11 +991,6 @@ int	main(int argc, char *argv[])
 		printf("Error\n");
 		return (-1);
 	}
-	// if (argc == 3)
-	// {
-	// 	if (ft_strcmp(argv[2], "--save") == 0)
-			
-	// }
 	printf("save: %s\n", argv[2]);
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
@@ -1021,8 +1016,6 @@ int	main(int argc, char *argv[])
 	get_sprite_pos(&info);
 	printf("spriteX: %d spriteY: %d texture: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1], info.cub_list.sprites[0][2]);
 	info.mlx = mlx_init();
-	// sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
-	// printf("sin: %s\n", sin);
 
 	// info.posX = 1.0;
 	// info.posY = 11.5;
@@ -1035,7 +1028,13 @@ int	main(int argc, char *argv[])
 	// info.dirY = 0.0;
 	// info.planeX = 0.0;
 	// info.planeY = 0.66;
-	
+	info.save_flag = 0;
+	if (argc == 3)
+	{
+		if (ft_strcmp(argv[2], "--save") == 0)
+			info.save_flag = 1;
+	}
+	printf("flag: %d\n", info.save_flag);
 	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		return (-1);
 	i = 0;
