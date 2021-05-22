@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 17:20:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 17:25:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,10 +294,13 @@ int write_header(int fd, int filesize, t_info *info)
 	set_int_as_char(bitmapfileheader + 18, num);
 	num = info->cub_list.height;
 	set_int_as_char(bitmapfileheader + 22, num);
+	bitmapfileheader[27] = (unsigned char)(1);
+	bitmapfileheader[28] = (unsigned char)(24);
 	printf("filesize: %d\n", filesize);
 	printf("file_8: %d\n", filesize >> 8);
 	printf("file_16: %d\n", filesize >> 16);
 	printf("file_24: %d\n", filesize >> 24);
+	write(fd, bitmapfileheader, 54);
 	return (0);
 }
 
