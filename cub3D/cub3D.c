@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 21:32:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 21:33:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,7 +315,7 @@ int write_data(int fd, t_info *info, int padding)
 		j = 0;
 		while (info->cub_list.map_x > j)
 		{
-			// printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
+			printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
 			j++;
 		}
 		i++;
@@ -861,7 +861,6 @@ int line_check(char **line, t_info *info)
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
-		printf("floor: %d\n", info->cub_list.floor_dec);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
@@ -871,7 +870,6 @@ int line_check(char **line, t_info *info)
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
-		printf("ceil: %d\n", info->cub_list.ceiling_dec);
 	}
 	else if (map_line_check(line_split) == 0)
 	{
