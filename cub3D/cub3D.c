@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 21:35:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 21:41:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -312,10 +312,11 @@ int write_data(int fd, t_info *info, int padding)
 	i = 0;
 	while (info->cub_list.map_y > i)
 	{
+		printf("map_y: %d\n", info->cub_list.map_y);
 		j = 0;
 		while (info->cub_list.map_x > j)
 		{
-			printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
+			// printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
 			j++;
 		}
 		i++;
@@ -353,7 +354,7 @@ void	draw(t_info *info)
 	if (info->save_flag == 1)
 	{
 		save_bmp(info);
-		// info->save_flag = 0;
+		info->save_flag = 0;
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
