@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 14:47:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 14:49:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ typedef struct	s_info
 	// int		buf[height][width];
 	int		**buf;
 	int		**texture;
+	int save_flag;
 	double	moveSpeed;
 	double	rotSpeed;
 	t_cub cub_list;
@@ -993,7 +994,7 @@ int	main(int argc, char *argv[])
 	if (argc == 3)
 	{
 		if (ft_strcmp(argv[2], "--save") == 0)
-			printf("~~~~~~~~~~~~~~~~~~~~~ok~~~~~~~~~~~~~~~\n");
+			
 	}
 	printf("save: %s\n", argv[2]);
 	buffer_size = 10;
@@ -1020,8 +1021,8 @@ int	main(int argc, char *argv[])
 	get_sprite_pos(&info);
 	printf("spriteX: %d spriteY: %d texture: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1], info.cub_list.sprites[0][2]);
 	info.mlx = mlx_init();
-	sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
-	printf("sin: %s\n", sin);
+	// sin = ft_itoa_hex(info.cub_list.floor.red, "0123456789ABCDEF");
+	// printf("sin: %s\n", sin);
 
 	// info.posX = 1.0;
 	// info.posY = 11.5;
