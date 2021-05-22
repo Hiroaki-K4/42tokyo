@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/22 10:57:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 11:00:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,41 +294,10 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	}
 // }
 
-int print_digit(t_plist flag_list, char *str_num, int num, int keta)
-{
-	int len;
-	
-	len = 0;
-	if (flag_list.precision == 0 && num == 0)
-	{
-		while (flag_list.field - len > 0)
-		{
-			write(1, " ", 1);
-			len++;
-		}
-	}
-	else if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > keta)
-			len = field_precision(flag_list, str_num, num, 0);
-		else
-		{
-			while ((flag_list.field - (int)ft_strlen(str_num) - (len++)) > 0)
-				write(1, " ", 1);
-			write(1, str_num, ft_strlen(str_num));
-			len = flag_list.field;
-		}
-	}
-	else
-		len = no_field_int(flag_list, str_num, num, 0);
-	free(str_num);
-	return (len);
-}
-
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // {
 // 	int len;
-
+	
 // 	len = 0;
 // 	if (flag_list.precision == 0 && num == 0)
 // 	{
@@ -355,6 +324,37 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // 	free(str_num);
 // 	return (len);
 // }
+
+int print_digit(t_plist flag_list, char *str_num, int num, int keta)
+{
+	int len;
+
+	len = 0;
+	if (flag_list.precision == 0 && num == 0)
+	{
+		while (flag_list.field - len > 0)
+		{
+			write(1, " ", 1);
+			len++;
+		}
+	}
+	else if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > keta)
+			len = field_precision(flag_list, str_num, num, 0);
+		else
+		{
+			while ((flag_list.field - (int)ft_strlen(str_num) - (len++)) > 0)
+				write(1, " ", 1);
+			write(1, str_num, ft_strlen(str_num));
+			len = flag_list.field;
+		}
+	}
+	else
+		len = no_field_int(flag_list, str_num, num, 0);
+	free(str_num);
+	return (len);
+}
 
 // int	print_string(va_list *ap, t_plist flag_list)
 // {
@@ -611,46 +611,18 @@ int ft_printf_str(const char *arg, int *i)
 	return (len);
 }
 
-int		ft_printf(const char *arg, ...)
-{
-	va_list	ap;
-	int		i;
-	int		j;
-	int		print_len;
-
-	va_start(ap, arg);
-	i = 0;
-	if (arg == NULL)
-		i = -1;
-	print_len = 0;
-	while (i >= 0 && arg[i])
-	{
-		if (arg[i] != '%')
-			print_len += ft_printf_str(arg, &i);
-		else
-		{
-			j = ft_printf_per(arg, &i, &ap);
-			if (j == -1)
-				return (-1);
-			print_len += j;
-		}
-	}
-	va_end(ap);
-	return (print_len);
-}
-
-// int ft_printf(const char *arg, ...)
+// int		ft_printf(const char *arg, ...)
 // {
-// 	va_list ap;
-// 	int i;
-// 	int j;
-// 	int print_len;
-	
+// 	va_list	ap;
+// 	int		i;
+// 	int		j;
+// 	int		print_len;
+
 // 	va_start(ap, arg);
 // 	i = 0;
-// 	print_len = 0;
 // 	if (arg == NULL)
 // 		i = -1;
+// 	print_len = 0;
 // 	while (i >= 0 && arg[i])
 // 	{
 // 		if (arg[i] != '%')
@@ -666,3 +638,31 @@ int		ft_printf(const char *arg, ...)
 // 	va_end(ap);
 // 	return (print_len);
 // }
+
+int ft_printf(const char *arg, ...)
+{
+	va_list ap;
+	int i;
+	int j;
+	int print_len;
+
+	va_start(ap, arg);
+	i = 0;
+	print_len = 0;
+	if (arg == NULL)
+		i = -1;
+	while (i >= 0 && arg[i])
+	{
+		if (arg[i] != '%')
+			print_len += ft_printf_str(arg, &i);
+		else
+		{
+			j = ft_printf_per(arg, &i, &ap);
+			if (j == -1)
+				return (-1);
+			print_len += j;
+		}
+	}
+	va_end(ap);
+	return (print_len);
+}
