@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 18:24:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 18:25:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -348,7 +348,6 @@ void	draw(t_info *info)
 		for (int x = 0; x < info->cub_list.width; x++)
 		{
 			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
-			// printf("data: %d\n", info->img.data[y * info->cub_list.width + x]);
 		}
 	}
 	if (info->save_flag == 1)
