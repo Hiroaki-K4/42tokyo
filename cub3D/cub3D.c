@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 16:51:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 16:59:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,10 +271,15 @@ typedef struct image_t {
   pixcel_t **map;       /**< 画像データ */
 } image_t;
 
-// int write_bmp_data(int fd, int filesize, t_info *info)
-// {
-
-// }
+int write_header(int fd, int filesize, t_info *info)
+{
+	int i;
+	unsigned char bitmapfileheader[54];
+	
+	i = 0;
+	ft_bzero(bitmapfileheader, 54);
+	return (0);
+}
 
 int save_bmp(t_info *info)
 {
@@ -289,9 +294,7 @@ int save_bmp(t_info *info)
 		return (-1);
 	padding = (4 - (info->cub_list.width * 3) % 4) % 4;
 	filesize = 54 + (3 * (info->cub_list.width + padding) * info->cub_list.height);
-	printf("filesize: %d\n", filesize);
-	// filesize = 54 + 4 * 
-	// write_bmp_data(fd, filesize, info);
+	write_bmp_data(fd, filesize, info);
 	return (0);
 }
 
