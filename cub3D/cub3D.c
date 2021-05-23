@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:18:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:18:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -337,7 +337,7 @@ void	draw(t_info *info)
 		// for (int x = 0; x < info->cub_list.width; x++)
 		while (i < info->cub_list.width)
 		{
-			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
+			info->img.data[j * info->cub_list.width + i] = info->buf[j][i];
 			i++;
 		}
 		j++;
