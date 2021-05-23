@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 16:10:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:21:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1022,7 +1022,9 @@ int get_sprite_pos(t_info *info)
 				// info->cub_list.sprites[count][0] = i;
 				// info->cub_list.sprites[count][1] = j;
 				// info->cub_list.sprites[count][2] = 4;
-				info->cub_list.sprites->y = 
+				info->cub_list.sprites[count].x = i;
+				info->cub_list.sprites[count].y = j;
+				info->cub_list.sprites[count].texture = 4;
 				count++;
 			} 
 			j++;
@@ -1069,7 +1071,7 @@ int	main(int argc, char *argv[])
 	}
 	convert_int_matrix(&info);
 	get_sprite_pos(&info);
-	printf("spriteX: %d spriteY: %d texture: %d\n", info.cub_list.sprites[0][0], info.cub_list.sprites[0][1], info.cub_list.sprites[0][2]);
+	printf("spriteX: %d spriteY: %d texture: %d\n", info.cub_list.sprites[0].x, info.cub_list.sprites[0].y, info.cub_list.sprites[0].texture);
 	info.mlx = mlx_init();
 
 	// info.posX = 1.0;
