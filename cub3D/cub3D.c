@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:32:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:35:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,10 +547,13 @@ void	calc(t_info *info)
 	
 	//SPRITE CASTING
 	//sort sprites from far to close
-	for(int i = 0; i < info->cub_list.num_sprites; i++)
+	x = 0;
+	// for(int i = 0; i < info->cub_list.num_sprites; i++)
+	while (x < info->cub_list.num_sprites)
 	{
-		spriteOrder[i] = i;
-		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i][0]) * (info->posX - info->cub_list.sprites[i][0]) + (info->posY - info->cub_list.sprites[i][1]) * (info->posY - info->cub_list.sprites[i][1])); //sqrt not taken, unneeded
+		spriteOrder[x] = x;
+		spriteDistance[x] = ((info->posX - info->cub_list.sprites[x][0]) * (info->posX - info->cub_list.sprites[x][0]) + (info->posY - info->cub_list.sprites[x][1]) * (info->posY - info->cub_list.sprites[x][1])); //sqrt not taken, unneeded
+		x++;
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
