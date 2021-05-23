@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:37:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:38:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1061,7 +1061,7 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	convert_int_matrix(&info);
-	printf("initX: %d initY: %d\n", info.posX, info.posY);
+	printf("initX: %d initY: %d\n", (int)info.posX, (int)info.posY);
 	get_sprite_pos(&info);
 	info.mlx = mlx_init();
 
