@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:25:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:26:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,6 +369,8 @@ void	calc(t_info *info)
 	int side; //was a NS or a EW wall hit?
 	int lineHeight;
 	int drawStart;
+	int drawEnd;
+	int texNum;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -434,12 +436,12 @@ void	calc(t_info *info)
 		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
-		int drawEnd = lineHeight / 2 + info->cub_list.height / 2;
+		drawEnd = lineHeight / 2 + info->cub_list.height / 2;
 		if(drawEnd >= info->cub_list.height)
 			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
-		int texNum = info->cub_list.map_matrix[mapX][mapY];
+		texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
 		{
 			if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
