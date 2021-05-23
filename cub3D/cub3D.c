@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:40:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:41:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 #define K_D 100
 #define K_A 97
 #define K_ESC 65307
+
 
 // struct	Sprite
 // {
@@ -138,14 +139,10 @@ typedef struct	s_info
 void	sort_order(t_pair *orders, int amount)
 {
 	t_pair	tmp;
-	int i;
-	int j;
 
-	i = 0;
-	while (i < amount)
+	for (int i = 0; i < amount; i++)
 	{
-		j = 0;
-		while (j < amount - 1)
+		for (int j = 0; j < amount - 1; j++)
 		{
 			if (orders[j].first > orders[j + 1].first)
 			{
@@ -156,32 +153,25 @@ void	sort_order(t_pair *orders, int amount)
 				orders[j + 1].first = tmp.first;
 				orders[j + 1].second = tmp.second;
 			}
-			j++;
 		}
-		i++;
 	}
 }
 
 void	sortSprites(int *order, double *dist, int amount)
 {
 	t_pair	*sprites;
-	int i;
 
 	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
-	while (i < amount)
+	for (int i = 0; i < amount; i++)
 	{
 		sprites[i].first = dist[i];
 		sprites[i].second = order[i];
-		i++;
 	}
 	sort_order(sprites, amount);
-	i = 0;
-	// for (int i = 0; i < amount; i++)
-	while (i < amount)
+	for (int i = 0; i < amount; i++)
 	{
 		dist[i] = sprites[amount - i - 1].first;
 		order[i] = sprites[amount - i - 1].second;
-		i++;
 	}
 	free(sprites);
 }
