@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:26:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:27:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,6 +371,9 @@ void	calc(t_info *info)
 	int drawStart;
 	int drawEnd;
 	int texNum;
+	double wallX;
+	double step;
+	double texPos;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -494,8 +497,6 @@ void	calc(t_info *info)
 			}
 		}
 
-		// calculate value of wallX
-		double wallX;
 		if (side == 0)
 			wallX = info->posY + perpWallDist * rayDirY;
 		else
@@ -510,9 +511,9 @@ void	calc(t_info *info)
 			texX = texWidth - texX - 1;
 
 		// How much to increase the texture coordinate perscreen pixel
-		double step = 1.0 * texHeight / lineHeight;
+		step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
+		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
