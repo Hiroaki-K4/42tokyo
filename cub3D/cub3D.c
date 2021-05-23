@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:20:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:22:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -356,6 +356,13 @@ void	calc(t_info *info)
 	double cameraX;
 	double rayDirX;
 	double rayDirY;
+	int mapX;
+	int mapY;
+	double sideDistX; //length of ray from current position to next x or y-side
+	double sideDistY;
+	double deltaDistX; //length of ray from one x or y-side to next x or y-side
+	double deltaDistY;
+	double perpWallDist;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -365,18 +372,10 @@ void	calc(t_info *info)
 		cameraX = 2 * x / (double)info->cub_list.width - 1;
 		rayDirX = info->dirX + info->planeX * cameraX;
 		rayDirY = info->dirY + info->planeY * cameraX;
-		
-		int mapX = (int)info->posX;
-		int mapY = (int)info->posY;
-
-		//length of ray from current position to next x or y-side
-		double sideDistX;
-		double sideDistY;
-		
-		 //length of ray from one x or y-side to next x or y-side
-		double deltaDistX = fabs(1 / rayDirX);
-		double deltaDistY = fabs(1 / rayDirY);
-		double perpWallDist;
+		mapX = (int)info->posX;
+		mapY = (int)info->posY;
+		deltaDistX = fabs(1 / rayDirX);
+		deltaDistY = fabs(1 / rayDirY);
 		
 		//what direction to step in x or y-direction (either +1 or -1)
 		int stepX;
