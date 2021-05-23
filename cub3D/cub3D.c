@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:18:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:20:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -330,11 +330,9 @@ void	draw(t_info *info)
 	int j;
 	
 	j = 0;
-	// for (int y = 0; y < info->cub_list.height; y++)
 	while (j < info->cub_list.height)
 	{
 		i = 0;
-		// for (int x = 0; x < info->cub_list.width; x++)
 		while (i < info->cub_list.width)
 		{
 			info->img.data[j * info->cub_list.width + i] = info->buf[j][i];
@@ -355,17 +353,18 @@ void	calc(t_info *info)
 	int	x;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
-
-
+	double cameraX;
+	double rayDirX;
+	double rayDirY;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
 	while (x < info->cub_list.width)
 	{
-		double cameraX = 2 * x / (double)info->cub_list.width - 1;
-		double rayDirX = info->dirX + info->planeX * cameraX;
-		double rayDirY = info->dirY + info->planeY * cameraX;
+		cameraX = 2 * x / (double)info->cub_list.width - 1;
+		rayDirX = info->dirX + info->planeX * cameraX;
+		rayDirY = info->dirY + info->planeY * cameraX;
 		
 		int mapX = (int)info->posX;
 		int mapY = (int)info->posY;
