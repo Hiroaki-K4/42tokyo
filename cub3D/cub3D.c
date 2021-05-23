@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:58:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 16:03:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
-	int **sprites;
+	double **sprites;
 	int num_sprites;
 	int floor_dec;
 	int ceiling_dec;
@@ -1018,8 +1018,8 @@ int get_sprite_pos(t_info *info)
 		{
 			if (info->cub_list.map_matrix[i][j] == 2)
 			{
-				info->cub_list.sprites[count][0] = i + 1;
-				info->cub_list.sprites[count][1] = j + 1;
+				info->cub_list.sprites[count][0] = i;
+				info->cub_list.sprites[count][1] = j;
 				info->cub_list.sprites[count][2] = 4;
 				count++;
 			} 
