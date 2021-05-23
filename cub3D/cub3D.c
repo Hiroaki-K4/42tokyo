@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:27:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:28:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1001,9 +1001,9 @@ int get_sprite_pos(t_info *info)
 		}
 		i++;
 	}
-	if (!(info->cub_list.sprites = (int **)malloc(sizeof(int *) * count)))
+	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
 		return (-1);
-	i = 0;
+	// i = 0;
 	// while (i < count)
 	// {
 	// 	if (!(info->cub_list.sprites[i] = (int *)malloc(sizeof(int) * 3)))
