@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:27:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:29:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,6 +351,7 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
+	int y;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	double cameraX;
@@ -515,9 +516,12 @@ void	calc(t_info *info)
 		// Starting texture coordinate
 		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
-		for (int y = 0; y < drawStart; y++)
+		// for (int y = 0; y < drawStart; y++)
+		y = 0;
+		while (y < drawStart)
 		{
 			info->buf[y][x] = info->cub_list.ceiling_dec;
+			y++;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
 		{
