@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:34:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:34:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1014,7 +1014,7 @@ int get_sprite_pos(t_info *info)
 			{
 				info->cub_list.sprites[count].x = i;
 				info->cub_list.sprites[count].y = j;
-				printf("spriteX: %f spriteY: %f\n", info->cub_list.sprites[count].x, info->cub_list.sprites[count].y)
+				printf("spriteX: %f spriteY: %f\n", info->cub_list.sprites[count].x, info->cub_list.sprites[count].y);
 				info->cub_list.sprites[count].texture = 4;
 				count++;
 			} 
