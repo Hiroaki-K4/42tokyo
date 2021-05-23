@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:07:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:07:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -249,27 +249,6 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 // 										{2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,5,5,5,5,5,5,5,5,5}
 // 									};
 
-// typedef struct color_t {
-//   uint8_t r; /**< Red */
-//   uint8_t g; /**< Green */
-//   uint8_t b; /**< Blue */
-//   uint8_t a; /**< Alpha */
-// } color_t;
-
-// typedef union pixcel_t {
-//   color_t c; /**< RGBA */
-//   uint8_t g; /**< グレースケール */
-//   uint8_t i; /**< カラーインデックス */
-// } pixcel_t;
-
-// typedef struct image_t {
-//   uint32_t width;       /**< 幅 */
-//   uint32_t height;      /**< 高さ */
-//   uint16_t color_type;  /**< 色表現の種別 */
-//   uint16_t palette_num; /**< カラーパレットの数 */
-//   color_t *palette;     /**< カラーパレットへのポインタ */
-//   pixcel_t **map;       /**< 画像データ */
-// } image_t;
 
 void set_int_as_char(unsigned char *str, int num)
 {
