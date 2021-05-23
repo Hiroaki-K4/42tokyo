@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:35:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:36:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,7 +351,6 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
-	int y;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	double cameraX;
@@ -373,8 +372,6 @@ void	calc(t_info *info)
 	int drawEnd;
 	int texNum;
 	double wallX;
-	double step;
-	double texPos;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -512,17 +509,15 @@ void	calc(t_info *info)
 			texX = texWidth - texX - 1;
 
 		// How much to increase the texture coordinate perscreen pixel
-		step = 1.0 * texHeight / lineHeight;
+		double step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
-		y = 0;
-		while (y < drawStart)
+		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
+		// printf("ok\n");
+		for (int y = 0; y < drawStart; y++)
 		{
 			info->buf[y][x] = info->cub_list.ceiling_dec;
-			y++;
 		}
-		y = drawStart;
-		while (y < drawEnd)
+		for (int y = drawStart; y < drawEnd; y++)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 			int texY = (int)texPos & (texHeight - 1);
@@ -532,27 +527,21 @@ void	calc(t_info *info)
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
-			y++;
 		}
 		info->zBuffer[x] = perpWallDist;
-		// for (int y = drawEnd; y < info->cub_list.height; y++)
-		y = drawEnd;
-		while (y < info->cub_list.height)
+		for (int y = drawEnd; y < info->cub_list.height; y++)
 		{
 			info->buf[y][x] = info->cub_list.floor_dec;
-			y++;
 		}
 		x++;
 	}
 	
 	//SPRITE CASTING
 	//sort sprites from far to close
-	x = 0;
-	while (x < info->cub_list.num_sprites)
+	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
-		spriteOrder[x] = x;
-		spriteDistance[x] = ((info->posX - info->cub_list.sprites[x][0]) * (info->posX - info->cub_list.sprites[x][0]) + (info->posY - info->cub_list.sprites[x][1]) * (info->posY - info->cub_list.sprites[x][1])); //sqrt not taken, unneeded
-		x++;
+		spriteOrder[i] = i;
+		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i][0]) * (info->posX - info->cub_list.sprites[i][0]) + (info->posY - info->cub_list.sprites[i][1]) * (info->posY - info->cub_list.sprites[i][1])); //sqrt not taken, unneeded
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
