@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:10:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:13:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@
 #define K_D 100
 #define K_A 97
 #define K_ESC 65307
-
-// int		spriteOrder[numSprites];
-// double	spriteDistance[numSprites];
 
 // struct	Sprite
 // {
@@ -141,10 +138,16 @@ typedef struct	s_info
 void	sort_order(t_pair *orders, int amount)
 {
 	t_pair	tmp;
+	int i;
+	int j;
 
-	for (int i = 0; i < amount; i++)
+	i = 0;
+	// for (int i = 0; i < amount; i++)
+	while (i < amount)
 	{
-		for (int j = 0; j < amount - 1; j++)
+		j = 0;
+		// for (int j = 0; j < amount - 1; j++)
+		while (j < amount - 1)
 		{
 			if (orders[j].first > orders[j + 1].first)
 			{
@@ -155,7 +158,9 @@ void	sort_order(t_pair *orders, int amount)
 				orders[j + 1].first = tmp.first;
 				orders[j + 1].second = tmp.second;
 			}
+			j++;
 		}
+		i++;
 	}
 }
 
