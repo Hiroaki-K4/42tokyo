@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/23 10:44:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 10:49:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,6 +221,24 @@ size_t ft_strlen(const char *src)
     return (i);
 }
 
+char *ft_strchr(const char *str, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)str;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(ptr_s + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(ptr_s + i);
+    return (NULL);
+}
+
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t ans;
@@ -346,7 +364,7 @@ int read_line(int fd, char **store, char **line)
     {
         if ((i = read(fd, buf, buffer_size)) == -1)
             return (-1);
-        buf[i] = '\n';
+        buf[i] = '\0';
         if (ft_strchr(buf, '\n') != NULL)
         {
             if (!(store[fd] = save_new_line(store[fd], line, buf)))
@@ -360,7 +378,7 @@ int read_line(int fd, char **store, char **line)
     }
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
-    free(store[fd]);
+    // free(store[fd]);
     free(buf);
     return (0);
 }
