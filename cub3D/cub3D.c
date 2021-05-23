@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:37:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:39:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -677,14 +677,23 @@ int	key_press(int key, t_info *info)
 
 void	load_image(t_info *info, int *texture, char *path, t_img *img)
 {
+	int x;
+	int y;
+
 	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width, &img->img_height);
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
-	for (int y = 0; y < img->img_height; y++)
+	// for (int y = 0; y < img->img_height; y++)
+	y = 0;
+	while (y < img->img_height)
 	{
-		for (int x = 0; x < img->img_width; x++)
+		// for (int x = 0; x < img->img_width; x++)
+		x = 0;
+		while (x < img->img_width)
 		{
 			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
+			x++;
 		}
+		y++;
 	}
 	mlx_destroy_image(info->mlx, img->img);
 }
