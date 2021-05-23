@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 16:03:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 16:07:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@
 #define K_ESC 65307
 
 
-// struct	Sprite
-// {
-// 	double		x;
-// 	double		y;
-// 	int			texture;
-// };
+typedef struct	s_sprite
+{
+	double		x;
+	double		y;
+	int			texture;
+}				t_sprite;
 
 // struct Sprite	sprite[numSprites] =
 // {
@@ -108,7 +108,8 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
-	double **sprites;
+	// int **sprites;
+	t_sprite *sprites;
 	int num_sprites;
 	int floor_dec;
 	int ceiling_dec;
