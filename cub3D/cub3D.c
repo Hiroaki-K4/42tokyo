@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:28:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:32:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1003,13 +1003,6 @@ int get_sprite_pos(t_info *info)
 	}
 	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
 		return (-1);
-	// i = 0;
-	// while (i < count)
-	// {
-	// 	if (!(info->cub_list.sprites[i] = (int *)malloc(sizeof(int) * 3)))
-	// 		return (-1);
-	// 	i++;
-	// }
 	count = 0;
 	i = 0;
 	while (i < info->cub_list.map_y)
@@ -1019,9 +1012,6 @@ int get_sprite_pos(t_info *info)
 		{
 			if (info->cub_list.map_matrix[i][j] == 2)
 			{
-				// info->cub_list.sprites[count][0] = i;
-				// info->cub_list.sprites[count][1] = j;
-				// info->cub_list.sprites[count][2] = 4;
 				info->cub_list.sprites[count].x = i;
 				info->cub_list.sprites[count].y = j;
 				info->cub_list.sprites[count].texture = 4;
