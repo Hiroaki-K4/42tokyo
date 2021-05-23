@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:39:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:40:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,7 @@ void	sortSprites(int *order, double *dist, int amount)
 	}
 	sort_order(sprites, amount);
 	i = 0;
+	// for (int i = 0; i < amount; i++)
 	while (i < amount)
 	{
 		dist[i] = sprites[amount - i - 1].first;
@@ -326,19 +327,12 @@ int save_bmp(t_info *info)
 
 void	draw(t_info *info)
 {
-	int i;
-	int j;
-	
-	j = 0;
-	while (j < info->cub_list.height)
+	for (int y = 0; y < info->cub_list.height; y++)
 	{
-		i = 0;
-		while (i < info->cub_list.width)
+		for (int x = 0; x < info->cub_list.width; x++)
 		{
-			info->img.data[j * info->cub_list.width + i] = info->buf[j][i];
-			i++;
+			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
 		}
-		j++;
 	}
 	if (info->save_flag == 1)
 	{
@@ -353,24 +347,25 @@ void	calc(t_info *info)
 	int	x;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
-	double cameraX;
-	double rayDirX;
-	double rayDirY;
-	int mapX;
-	int mapY;
-	double sideDistX; //length of ray from current position to next x or y-side
-	double sideDistY;
+
+
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
 	x = 0;
 	while (x < info->cub_list.width)
 	{
-		cameraX = 2 * x / (double)info->cub_list.width - 1;
-		rayDirX = info->dirX + info->planeX * cameraX;
-		rayDirY = info->dirY + info->planeY * cameraX;
-		mapX = (int)info->posX;
-		mapY = (int)info->posY;
+		double cameraX = 2 * x / (double)info->cub_list.width - 1;
+		double rayDirX = info->dirX + info->planeX * cameraX;
+		double rayDirY = info->dirY + info->planeY * cameraX;
+		
+		int mapX = (int)info->posX;
+		int mapY = (int)info->posY;
+
+		//length of ray from current position to next x or y-side
+		double sideDistX;
+		double sideDistY;
+		
 		 //length of ray from one x or y-side to next x or y-side
 		double deltaDistX = fabs(1 / rayDirX);
 		double deltaDistY = fabs(1 / rayDirY);
