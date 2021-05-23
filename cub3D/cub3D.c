@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:36:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:37:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,7 +371,6 @@ void	calc(t_info *info)
 	int drawStart;
 	int drawEnd;
 	int texNum;
-	double wallX;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -495,6 +494,8 @@ void	calc(t_info *info)
 			}
 		}
 
+		// calculate value of wallX
+		double wallX;
 		if (side == 0)
 			wallX = info->posY + perpWallDist * rayDirY;
 		else
