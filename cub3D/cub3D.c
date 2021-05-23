@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:26:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:26:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -536,9 +536,9 @@ void	calc(t_info *info)
 	{
 		//translate sprite position to relative to camera
 		// double spriteX = sprite[spriteOrder[i]].x - info->posX;
-		double spriteX = (double)info->cub_list.sprites[spriteOrder[i]][0] - info->posX;
+		double spriteX = (double)info->cub_list.sprites[spriteOrder[i]].x - info->posX;
 		// double spriteY = sprite[spriteOrder[i]].y - info->posY;
-		double spriteY = (double)info->cub_list.sprites[spriteOrder[i]][1] - info->posY;
+		double spriteY = (double)info->cub_list.sprites[spriteOrder[i]].y - info->posY;
 
 		//transform sprite with the inverse camera matrix
 		// [ planeX   dirX ] -1                                       [ dirY      -dirX ]
