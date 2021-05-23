@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:00:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:03:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,8 +313,8 @@ int write_data(int fd, t_info *info, int padding)
 	int color;
 	unsigned char zero[3] = {0, 0, 0};
 
-	j = -1;
-	while (++j < info->cub_list.height)
+	j = 0;
+	while (info->cub_list.height > j)
 	{
 		i = -1;
 		while (++i < info->cub_list.width)
@@ -335,7 +335,7 @@ int write_data(int fd, t_info *info, int padding)
 			// j++;
 		}
 		// printf("ok\n");
-		// i++;
+		j++;
 	}
 	
 }
