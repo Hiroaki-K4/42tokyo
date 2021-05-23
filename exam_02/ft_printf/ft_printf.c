@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/23 11:31:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 11:45:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -511,13 +511,13 @@ int str_to_num(const char *arg, int *i, int flag)
 
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
+	int len;
 	int num;
 	int keta;
-	int len;
-	char *str_num;
 	unsigned int hex_num;
+	char *str_num;
 	t_plist flag_list;
-
+	
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i, 0);
 	flag_list.precision = -1;
@@ -544,11 +544,10 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 		hex_num = va_arg(*ap, unsigned int);
 		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
 			return (-1);
-		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
+		len = print_digit(flag_list, str_num, hex_num, ft_strlen(str_num));
 	}
 	return (len);
 }
-
 
 // int		ft_printf_str(const char *arg, int *i)
 // {
