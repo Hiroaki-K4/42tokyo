@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:41:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:50:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -589,7 +589,8 @@ void	calc(t_info *info)
 				int texY = ((d * texHeight) / spriteHeight) / 256;
 				// int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
 				int color = info->texture[info->cub_list.sprites[spriteOrder[i]][2]][texWidth * texY + texX]; //get current color from the texture
-				if((color & 0x00FFFFFF) != 0) info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
+				if((color & 0x00FFFFFF) != 0)
+					info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
 			}
 		}
 	}
