@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/22 22:20:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/22 22:57:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,6 +308,8 @@ int write_data(int fd, t_info *info, int padding)
 {
 	int i;
 	int j;
+	int color;
+	unsigned char zero[3] = {0, 0, 0};
 
 	i = 0;
 	while (info->cub_list.height > i)
@@ -315,10 +317,19 @@ int write_data(int fd, t_info *info, int padding)
 		j = 0;
 		while (info->cub_list.width > j)
 		{
-			// write(1, info->img.data[i * info->cub_list.width + j], 3);
+			color = info->img.data[(info->cub_list.height - 1 - i) * info->cub_list.width + j];
+			write(fd, color, 3);
 			// printf("map: %d\n", info->img.data[i * info->cub_list.width + j]);
 			j++;
 		}
+		j = 0;
+		// printf("digit: %d\n", (4 - (info->cub_list.width * 3) % 4) % 4);
+		while ((4 - (info->cub_list.width * 3) % 4) % 4 > i)
+		{
+			write(fd, &zero, 1);
+			j++;
+		}
+		// printf("ok\n");
 		i++;
 	}
 	
@@ -326,19 +337,18 @@ int write_data(int fd, t_info *info, int padding)
 
 int save_bmp(t_info *info)
 {
-	image_t *img;
 	int fd;
 	int filesize;
 	int padding;
 	
-	if (img == NULL)
-		return (-1);
 	if (!(fd = open("cub3D.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND)))
 		return (-1);
 	padding = (4 - (info->cub_list.width * 3) % 4) % 4;
 	filesize = 54 + (3 * (info->cub_list.width + padding) * info->cub_list.height);
 	write_header(fd, filesize, info);
 	write_data(fd, info, padding);
+	close(fd);
+	printf("ok\n");
 	return (0);
 }
 
