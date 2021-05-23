@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:43:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:35:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -556,15 +556,13 @@ void	calc(t_info *info)
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
-	// for(int i = 0; i < info->cub_list.num_sprites; i++)
-	x = 0;
-	while (x < info->cub_list.num_sprites)
+	for(int i = 0; i < info->cub_list.num_sprites; i++)
 	{
 		//translate sprite position to relative to camera
 		// double spriteX = sprite[spriteOrder[i]].x - info->posX;
-		double spriteX = (double)info->cub_list.sprites[spriteOrder[x]][0] - info->posX;
+		double spriteX = (double)info->cub_list.sprites[spriteOrder[i]][0] - info->posX;
 		// double spriteY = sprite[spriteOrder[i]].y - info->posY;
-		double spriteY = (double)info->cub_list.sprites[spriteOrder[x]][1] - info->posY;
+		double spriteY = (double)info->cub_list.sprites[spriteOrder[i]][1] - info->posY;
 
 		//transform sprite with the inverse camera matrix
 		// [ planeX   dirX ] -1                                       [ dirY      -dirX ]
@@ -615,11 +613,10 @@ void	calc(t_info *info)
 				int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
 				// int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
-				int color = info->texture[info->cub_list.sprites[spriteOrder[x]][2]][texWidth * texY + texX]; //get current color from the texture
+				int color = info->texture[info->cub_list.sprites[spriteOrder[i]][2]][texWidth * texY + texX]; //get current color from the texture
 				if((color & 0x00FFFFFF) != 0) info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
 			}
 		}
-		x++;
 	}
 	free(info->zBuffer);
 }
@@ -677,21 +674,14 @@ int	key_press(int key, t_info *info)
 
 void	load_image(t_info *info, int *texture, char *path, t_img *img)
 {
-	int x;
-	int y;
-
 	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width, &img->img_height);
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
-	y = 0;
-	while (y < img->img_height)
+	for (int y = 0; y < img->img_height; y++)
 	{
-		x = 0;
-		while (x < img->img_width)
+		for (int x = 0; x < img->img_width; x++)
 		{
 			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
-			x++;
 		}
-		y++;
 	}
 	mlx_destroy_image(info->mlx, img->img);
 }
@@ -705,6 +695,12 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[2], info->cub_list.w_texture, &img);
 	load_image(info, info->texture[3], info->cub_list.e_texture, &img);
 	load_image(info, info->texture[4], info->cub_list.sprite, &img);
+	// load_image(info, info->texture[5], "textures/mossy.xpm", &img);
+	// load_image(info, info->texture[6], "textures/wood.xpm", &img);
+	// load_image(info, info->texture[7], "textures/colorstone.xpm", &img);
+	// load_image(info, info->texture[8], "textures/bluestone.xpm", &img);
+	// load_image(info, info->texture[9], "textures/pillar.xpm", &img);
+	// load_image(info, info->texture[10], "textures/greenlight.xpm", &img);
 }
 
 int		ft_strcmp(const char *s1, const char *s2)
