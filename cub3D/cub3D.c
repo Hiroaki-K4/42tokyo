@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:16:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:18:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,6 @@ void	sortSprites(int *order, double *dist, int amount)
 	int i;
 
 	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
-	// for (int i = 0; i < amount; i++)
 	while (i < amount)
 	{
 		sprites[i].first = dist[i];
@@ -177,7 +176,6 @@ void	sortSprites(int *order, double *dist, int amount)
 	}
 	sort_order(sprites, amount);
 	i = 0;
-	// for (int i = 0; i < amount; i++)
 	while (i < amount)
 	{
 		dist[i] = sprites[amount - i - 1].first;
@@ -328,12 +326,21 @@ int save_bmp(t_info *info)
 
 void	draw(t_info *info)
 {
-	for (int y = 0; y < info->cub_list.height; y++)
+	int i;
+	int j;
+	
+	j = 0;
+	// for (int y = 0; y < info->cub_list.height; y++)
+	while (j < info->cub_list.height)
 	{
-		for (int x = 0; x < info->cub_list.width; x++)
+		i = 0;
+		// for (int x = 0; x < info->cub_list.width; x++)
+		while (i < info->cub_list.width)
 		{
 			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
+			i++;
 		}
+		j++;
 	}
 	if (info->save_flag == 1)
 	{
