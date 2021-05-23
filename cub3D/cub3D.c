@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 21:38:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 21:45:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -562,9 +562,11 @@ void	calc(t_info *info)
 		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
 		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
-		if(drawStartY < 0) drawStartY = 0;
+		if (drawStartY < 0)
+			drawStartY = 0;
 		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
-		if(drawEndY >= info->cub_list.height) drawEndY = info->cub_list.height - 1;
+		if (drawEndY >= info->cub_list.height)
+			drawEndY = info->cub_list.height - 1;
 
 		//calculate width of the sprite
 		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
@@ -872,7 +874,6 @@ int convert_int_matrix(t_info *info)
 		j = 0;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{
-			// printf("line: %s\n", info->cub_list.map[i]);
 			while (j < ft_strlen(info->cub_list.map[i]))
 			{
 				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
