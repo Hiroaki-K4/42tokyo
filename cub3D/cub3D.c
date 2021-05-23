@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:05:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:06:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,10 +296,6 @@ int write_header(int fd, int filesize, t_info *info)
 	set_int_as_char(bitmapfileheader + 22, num);
 	bitmapfileheader[27] = (unsigned char)(1);
 	bitmapfileheader[28] = (unsigned char)(24);
-	printf("filesize: %d\n", filesize);
-	printf("file_8: %d\n", filesize >> 8);
-	printf("file_16: %d\n", filesize >> 16);
-	printf("file_24: %d\n", filesize >> 24);
 	write(fd, bitmapfileheader, 54);
 	return (0);
 }
@@ -308,8 +304,6 @@ int write_data(int fd, t_info *info, int padding)
 {
 	int i;
 	int j;
-	// int x;
-	// int y;
 	int color;
 	unsigned char zero[3] = {0, 0, 0};
 
@@ -319,8 +313,6 @@ int write_data(int fd, t_info *info, int padding)
 		i = 0;
 		while (info->cub_list.width > i)
 		{
-			// x = i;
-			// y = info->cub_list.height - 1 - j;
 			color = info->img.data[i + (info->cub_list.height - 1 - j) * info->cub_list.width];
 			write(fd, &color, 3);
 			i++;
