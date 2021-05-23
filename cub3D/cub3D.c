@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:07:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:10:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,12 +126,10 @@ typedef struct	s_info
 	double dirY;
 	double planeX;
 	double planeY;
-	// double	zBuffer[width];
 	double	*zBuffer;
 	void	*mlx;
 	void	*win;
 	t_img	img;
-	// int		buf[height][width];
 	int		**buf;
 	int		**texture;
 	int save_flag;
@@ -165,7 +163,6 @@ void	sortSprites(int *order, double *dist, int amount)
 {
 	t_pair	*sprites;
 
-	//std::vector<std::pair<double, int>> sprites(amount);
 	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
 	for (int i = 0; i < amount; i++)
 	{
@@ -173,7 +170,6 @@ void	sortSprites(int *order, double *dist, int amount)
 		sprites[i].second = order[i];
 	}
 	sort_order(sprites, amount);
-	//std::sort(sprites.begin(), sprites.end());
 	for (int i = 0; i < amount; i++)
 	{
 		dist[i] = sprites[amount - i - 1].first;
@@ -412,11 +408,8 @@ void	calc(t_info *info)
 				side = 1;
 			}
 			//Check if ray has hit a wall
-			// printf("mapx: %d mapy: %d\n", mapX, mapY);
-			// printf("point: %d\n", info->cub_list.map_matrix[mapY][mapX]);
-			if (info->cub_list.map_matrix[mapX][mapY] > 0 && info->cub_list.map_matrix[mapX][mapY] != 2) hit = 1;
-			// if (worldMap[mapX][mapY] > 0) hit = 1;
-			// if (info->cub_list.map_matrix[mapY][mapX] > 0) hit = 1;
+			if (info->cub_list.map_matrix[mapX][mapY] > 0 && info->cub_list.map_matrix[mapX][mapY] != 2)
+				hit = 1;
 		}
 		if (side == 0)
 			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
@@ -435,7 +428,6 @@ void	calc(t_info *info)
 			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
-		// int texNum = worldMap[mapX][mapY];
 		int texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
 		{
@@ -511,9 +503,6 @@ void	calc(t_info *info)
 		// printf("ok\n");
 		for (int y = 0; y < drawStart; y++)
 		{
-			// printf("drawStart: %d\n", drawStart);
-			// printf("x: %d y: %d\n", x, y);
-			// info->buf[y][x] = 8355711;
 			info->buf[y][x] = info->cub_list.ceiling_dec;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
@@ -522,18 +511,14 @@ void	calc(t_info *info)
 			int texY = (int)texPos & (texHeight - 1);
 			texPos += step;
 			int color = info->texture[texNum][texHeight * texY + texX];
-			// printf("color: %d\n", color);
 			// make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
-			// printf("color: %d\n", color);
 		}
 		info->zBuffer[x] = perpWallDist;
-		// zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < info->cub_list.height; y++)
 		{
-			// info->buf[y][x] = 8355711;
 			info->buf[y][x] = info->cub_list.floor_dec;
 		}
 		x++;
@@ -628,10 +613,6 @@ int	key_press(int key, t_info *info)
 			info->posX += info->dirX * info->moveSpeed;
 		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
-		// if (!worldMap[(int)(info->posX + info->dirX * info->moveSpeed)][(int)(info->posY)])
-		// 	info->posX += info->dirX * info->moveSpeed;
-		// if (!worldMap[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
-		// 	info->posY += info->dirY * info->moveSpeed;
 	}
 	//move backwards if no wall behind you
 	if (key == K_S)
@@ -640,10 +621,6 @@ int	key_press(int key, t_info *info)
 			info->posX -= info->dirX * info->moveSpeed;
 		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
 			info->posY -= info->dirY * info->moveSpeed;
-		// if (!worldMap[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
-		// 	info->posX -= info->dirX * info->moveSpeed;
-		// if (!worldMap[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
-		// 	info->posY -= info->dirY * info->moveSpeed;
 	}
 	//rotate to the right
 	if (key == K_D)
@@ -1120,7 +1097,6 @@ int	main(int argc, char *argv[])
 			return (-1);
 		i++;
 	}
-
 	for (int i = 0; i < info.cub_list.height; i++)
 	{
 		for (int j = 0; j < info.cub_list.width; j++)
@@ -1128,7 +1104,6 @@ int	main(int argc, char *argv[])
 			info.buf[i][j] = 0;
 		}
 	}
-
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 11)))
 		return (-1);
 	for (int i = 0; i < 11; i++)
@@ -1143,19 +1118,13 @@ int	main(int argc, char *argv[])
 			info.texture[i][j] = 0;
 		}
 	}
-
 	load_texture(&info);
-
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
-	
 	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
-
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
-
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
-
 	mlx_loop(info.mlx);
 }
