@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 14:13:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 14:14:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,11 +142,9 @@ void	sort_order(t_pair *orders, int amount)
 	int j;
 
 	i = 0;
-	// for (int i = 0; i < amount; i++)
 	while (i < amount)
 	{
 		j = 0;
-		// for (int j = 0; j < amount - 1; j++)
 		while (j < amount - 1)
 		{
 			if (orders[j].first > orders[j + 1].first)
