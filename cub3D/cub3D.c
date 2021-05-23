@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 15:39:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/23 15:39:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -360,15 +360,6 @@ void	calc(t_info *info)
 	int mapY;
 	double sideDistX; //length of ray from current position to next x or y-side
 	double sideDistY;
-	double deltaDistX; //length of ray from one x or y-side to next x or y-side
-	double deltaDistY;
-	double perpWallDist;
-	int stepX; //what direction to step in x or y-direction (either +1 or -1)
-	int stepY;
-	int hit; //was there a wall hit?
-	int side; //was a NS or a EW wall hit?
-	int lineHeight;
-	int drawStart;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -380,9 +371,19 @@ void	calc(t_info *info)
 		rayDirY = info->dirY + info->planeY * cameraX;
 		mapX = (int)info->posX;
 		mapY = (int)info->posY;
-		deltaDistX = fabs(1 / rayDirX);
-		deltaDistY = fabs(1 / rayDirY);
-		hit = 0; //was there a wall hit?
+		 //length of ray from one x or y-side to next x or y-side
+		double deltaDistX = fabs(1 / rayDirX);
+		double deltaDistY = fabs(1 / rayDirY);
+		double perpWallDist;
+		
+		//what direction to step in x or y-direction (either +1 or -1)
+		int stepX;
+		int stepY;
+		
+		int hit = 0; //was there a wall hit?
+		int side; //was a NS or a EW wall hit?
+
+		// printf("DirX: %f DirY: %f\n", info->dirX, info->dirY);
 		if (rayDirX < 0)
 		{
 			stepX = -1;
@@ -427,11 +428,12 @@ void	calc(t_info *info)
 			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
 		else
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
+
 		//Calculate height of line to draw on screen
-		lineHeight = (int)(info->cub_list.height / perpWallDist);
+		int lineHeight = (int)(info->cub_list.height / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
-		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
+		int drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
 		int drawEnd = lineHeight / 2 + info->cub_list.height / 2;
