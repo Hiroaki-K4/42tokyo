@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/24 21:50:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/24 21:51:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -571,7 +571,8 @@ void	calc(t_info *info)
 			drawEndY = info->cub_list.height - 1;
 
 		//calculate width of the sprite
-		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
+		// int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
+		int spriteWidth = abs((int)((info->cub_list.height / transformY) / uDiv));
 		int drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if(drawStartX < 0) drawStartX = 0;
 		int drawEndX = spriteWidth / 2 + spriteScreenX;
