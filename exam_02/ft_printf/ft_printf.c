@@ -314,7 +314,7 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 			while ((flag_list.precision - (int)ft_strlen(str_num) - (len++)) > 0)
 				write(1, " ", 1);
 			write(1, str_num, ft_strlen(str_num));
-			len = ft_strlen(str_num);
+			len = flag_list.field;
 		}
 	}
 	else
