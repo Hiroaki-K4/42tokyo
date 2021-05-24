@@ -311,10 +311,10 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 			len = field_precision(flag_list, str_num, num, 0);
 		else
 		{
-			while ((flag_list.field - (int)ft_strlen(str_num) - (len++)) > 0)
+			while ((flag_list.precision - (int)ft_strlen(str_num) - (len++)) > 0)
 				write(1, " ", 1);
 			write(1, str_num, ft_strlen(str_num));
-			len = flag_list.field;
+			len = ft_strlen(str_num);
 		}
 	}
 	else
