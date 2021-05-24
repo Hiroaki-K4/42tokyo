@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/24 22:56:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/24 22:57:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 #define K_D 100
 #define K_A 97
 #define K_ESC 65307
-#define K_R 65361
-#define K_L 65363
+#define K_R 65363
+#define K_L 65361
 
 
 typedef struct	s_sprite
