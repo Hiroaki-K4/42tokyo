@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/24 22:29:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/24 22:56:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #define K_D 100
 #define K_A 97
 #define K_ESC 65307
+#define K_R 65361
+#define K_L 65363
 
 
 typedef struct	s_sprite
@@ -597,7 +599,7 @@ int	key_press(int key, t_info *info)
 			info->posY -= info->dirY * info->moveSpeed;
 	}
 	//rotate to the right
-	if (key == K_D)
+	if (key == K_R)
 	{
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
@@ -608,7 +610,7 @@ int	key_press(int key, t_info *info)
 		info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY * cos(-info->rotSpeed);
 	}
 	//rotate to the left
-	if (key == K_A)
+	if (key == K_L)
 	{
 		//both camera direction and camera plane must be rotated
 		double oldDirX = info->dirX;
