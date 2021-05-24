@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/23 22:16:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/24 21:50:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -560,7 +560,8 @@ void	calc(t_info *info)
 		int vMoveScreen = (int)(vMove / transformY);
 
 		//calculate height of the sprite on screen
-		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
+		// int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
+		int spriteHeight = abs((int)((info->cub_list.height / transformY) / vDiv)); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
 		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
 		if (drawStartY < 0)
