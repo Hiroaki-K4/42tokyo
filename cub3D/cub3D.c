@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 16:54:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 17:02:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -600,13 +600,12 @@ int	key_press(int key, t_info *info)
 	}
 	if (key == K_D)
 	{
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
-			info->posY -= info->dirY * info->moveSpeed;
+		// if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		info->posX += info->dirX * info->moveSpeed;
+		info->posY -= info->dirY * info->moveSpeed;
 	}
 	if (key == K_A)
 	{
-		// if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
-		// 	info->posX -= info->dirX * info->moveSpeed;
 		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
 	}
