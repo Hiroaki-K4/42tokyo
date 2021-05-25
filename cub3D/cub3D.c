@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 20:52:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 20:53:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -545,9 +545,9 @@ void	calc(t_info *info)
 
 		//calculate width of the sprite
 		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
-		int drawStartX = -spriteWidth / 2 + spriteScreenX + 100;
+		int drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if(drawStartX < 0) drawStartX = 0;
-		int drawEndX = spriteWidth / 2 + spriteScreenX + 100;
+		int drawEndX = spriteWidth / 2 + spriteScreenX;
 		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
