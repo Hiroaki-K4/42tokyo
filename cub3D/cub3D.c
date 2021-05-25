@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 20:49:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 20:50:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -535,10 +535,10 @@ void	calc(t_info *info)
 		//calculate height of the sprite on screen
 		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen + 30;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen + 30;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
 		printf("drawStartY: %d drawEndY: %d\n", drawStartY, drawEndY);
