@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 21:25:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 21:25:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -520,12 +520,9 @@ void	calc(t_info *info)
 		// [ planeY   dirY ]                                          [ -planeY  planeX ]
 
 		double invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY); //required for correct matrix multiplication
-
 		double transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
 		double transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
-
 		int spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
-
 		//parameters for scaling and moving the sprites
 		#define uDiv 1
 		#define vDiv 1
