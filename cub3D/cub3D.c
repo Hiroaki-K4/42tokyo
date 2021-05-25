@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:20:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 22:22:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -773,8 +773,8 @@ char *make_decimal_color(t_rgb color)
 int line_check(char **line, t_info *info)
 {
 	int i;
-	int sizex;
-	int sizey;
+	int sizex = 0;
+	int sizey = 0;
 	char *map_line;
 	char **line_split;
 	char **rgb_split;
@@ -788,9 +788,7 @@ int line_check(char **line, t_info *info)
 	{
 		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		sizex = 0;
-		sizey = 0;
-		mlx_get_screen_size(&info->mlx, &sizex, &sizey);
+		mlx_get_screen_size(info->mlx, &sizex, &sizey);
 		// printf("sizex: %d sizey: %d\n", sizex, sizey);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
