@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 21:39:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 21:40:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -578,7 +578,7 @@ int	main_loop(t_info *info)
 	return (0);
 }
 
-int win_close(int key, t_info *info)
+int win_close()
 {
 	exit(0);
 	return (0);
