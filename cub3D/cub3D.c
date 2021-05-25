@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:24:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 22:24:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1018,6 +1018,8 @@ int	main(int argc, char *argv[])
 	int buffer_size;
 	int fd;
 	int i;
+	int sizex;
+	int sizey;
 	char **line;
 	char *sin;
 	
@@ -1086,8 +1088,6 @@ int	main(int argc, char *argv[])
 			info.texture[i][j] = 0;
 		}
 	}
-	int sizex;
-	int sizey;
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
 	if (info.cub_list.width > sizex)
 		info.cub_list.width = sizex;
