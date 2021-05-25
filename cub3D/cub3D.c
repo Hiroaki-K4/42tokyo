@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:22:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 22:24:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -773,8 +773,6 @@ char *make_decimal_color(t_rgb color)
 int line_check(char **line, t_info *info)
 {
 	int i;
-	int sizex = 0;
-	int sizey = 0;
 	char *map_line;
 	char **line_split;
 	char **rgb_split;
@@ -788,8 +786,6 @@ int line_check(char **line, t_info *info)
 	{
 		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		mlx_get_screen_size(info->mlx, &sizex, &sizey);
-		// printf("sizex: %d sizey: %d\n", sizex, sizey);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 		info->cub_list.n_texture = line_split[1];
@@ -1090,10 +1086,14 @@ int	main(int argc, char *argv[])
 			info.texture[i][j] = 0;
 		}
 	}
-	// int sizex = 0;
-	// int sizey = 0;
-	// mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	// printf("sizex: %d sizey: %d\n", sizex, sizey);
+	int sizex;
+	int sizey;
+	mlx_get_screen_size(info.mlx, &sizex, &sizey);
+	if (info.cub_list.width > sizex)
+		info.cub_list.width = sizex;
+	if (info.cub_list.height > sizey)
+		info.cub_list.height = sizey;
+	printf("sizex: %d sizey: %d\n", info.cub_list.width, info.cub_list.height);
 	load_texture(&info);
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
