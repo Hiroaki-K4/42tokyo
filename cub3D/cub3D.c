@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 21:17:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 21:25:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -541,7 +541,6 @@ void	calc(t_info *info)
 		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
-		printf("drawStartY: %d drawEndY: %d\n", drawStartY, drawEndY);
 
 		//calculate width of the sprite
 		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
