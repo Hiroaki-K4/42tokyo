@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 20:51:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 20:52:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -535,19 +535,19 @@ void	calc(t_info *info)
 		//calculate height of the sprite on screen
 		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen + 300;
+		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen + 300;
+		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
 		printf("drawStartY: %d drawEndY: %d\n", drawStartY, drawEndY);
 
 		//calculate width of the sprite
 		int spriteWidth = (int)fabs((info->cub_list.height / transformY) / uDiv);
-		int drawStartX = -spriteWidth / 2 + spriteScreenX;
+		int drawStartX = -spriteWidth / 2 + spriteScreenX + 100;
 		if(drawStartX < 0) drawStartX = 0;
-		int drawEndX = spriteWidth / 2 + spriteScreenX;
+		int drawEndX = spriteWidth / 2 + spriteScreenX + 100;
 		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
