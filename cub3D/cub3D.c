@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:17:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 22:18:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1090,10 +1090,10 @@ int	main(int argc, char *argv[])
 			info.texture[i][j] = 0;
 		}
 	}
-	int sizex = 0;
-	int sizey = 0;
-	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	printf("sizex: %d sizey: %d\n", sizex, sizey);
+	// int sizex = 0;
+	// int sizey = 0;
+	// mlx_get_screen_size(info.mlx, &sizex, &sizey);
+	// printf("sizex: %d sizey: %d\n", sizex, sizey);
 	load_texture(&info);
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
