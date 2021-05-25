@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:18:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 22:19:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -788,8 +788,10 @@ int line_check(char **line, t_info *info)
 	{
 		info->cub_list.width = ft_atoi(line_split[1]);
 		info->cub_list.height = ft_atoi(line_split[2]);
-		// mlx_get_screen_size(info->mlx, &sizex, &sizey);
-		// printf("sizex: %d sizey: %d\n", sizex, sizey);
+		sizex = 0;
+		sizey = 0;
+		mlx_get_screen_size(info->mlx, &sizex, &sizey);
+		printf("sizex: %d sizey: %d\n", sizex, sizey);
 	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 		info->cub_list.n_texture = line_split[1];
