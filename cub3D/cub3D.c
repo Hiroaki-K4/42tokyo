@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 17:18:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/25 17:19:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -606,8 +606,8 @@ int	key_press(int key, t_info *info)
 	}
 	if (key == K_A)
 	{
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
-			info->posY += info->dirY * info->moveSpeed;
+		info->posX -= info->planeX * info->moveSpeed;
+		info->posY -= info->planeY * info->moveSpeed;
 	}
 	//rotate to the right
 	if (key == K_R)
