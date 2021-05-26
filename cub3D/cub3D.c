@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:35:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:36:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1110,6 +1110,7 @@ int	main(int argc, char *argv[])
 	// if (info.cub_list.height > sizey)
 	// 	info.cub_list.height = sizey;
 	load_texture(&info);
+	printf("load_texture\n");
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
