@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:40:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:41:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	calc(t_info *info)
 	int texY;
 	int color;
 	double cameraX;
+	double rayDirX;
+	double rayDirY;
 	double sideDistX;
 	double sideDistY;
 	double deltaDistX;
@@ -46,8 +48,8 @@ void	calc(t_info *info)
 	while (x < info->cub_list.width)
 	{
 		cameraX = 2 * x / (double)info->cub_list.width - 1;
-		double rayDirX = info->dirX + info->planeX * cameraX;
-		double rayDirY = info->dirY + info->planeY * cameraX;
+		rayDirX = info->dirX + info->planeX * cameraX;
+		rayDirY = info->dirY + info->planeY * cameraX;
 		mapX = (int)info->posX;
 		mapY = (int)info->posY;
 		 //length of ray from one x or y-side to next x or y-side
