@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:39:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:40:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int	main(int argc, char *argv[])
 	int buffer_size;
 	int fd;
 	int i;
+	int j;
 	int sizex;
 	int sizey;
 	char **line;
