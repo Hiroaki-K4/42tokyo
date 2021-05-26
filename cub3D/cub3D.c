@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:15:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:18:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,7 @@ int	main(int argc, char *argv[])
 		printf("Error\n");
 		return (-1);
 	}
-	fd = open(argv[1], O_RDONLY);
-	printf("okk\n");
 	// init_info(&info, fd);
-	printf("ok\n");
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
 	info.cub_list.map_x = 0;
@@ -156,14 +153,14 @@ int	main(int argc, char *argv[])
 			info.buf[i][j] = 0;
 		}
 	}
-	if (!(info.texture = (int **)malloc(sizeof(int *) * 11)))
+	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
 		return (-1);
-	for (int i = 0; i < 11; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
 			return (-1);
 	}
-	for (int i = 0; i < 11; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < texHeight * texWidth; j++)
 		{
