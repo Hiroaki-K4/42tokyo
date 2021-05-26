@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:41:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:43:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 void	draw(t_info *info)
 {
-	for (int y = 0; y < info->cub_list.height; y++)
+	int x;
+	int y;
+
+	// for (int y = 0; y < info->cub_list.height; y++)
+	y = 0;
+	while (y < info->cub_list.height)
 	{
-		for (int x = 0; x < info->cub_list.width; x++)
+		x = 0;
+		// for (int x = 0; x < info->cub_list.width; x++)
+		while (x < info->cub_list.width)
 		{
 			info->img.data[y * info->cub_list.width + x] = info->buf[y][x];
+			x++;
 		}
+		y++;
 	}
 	if (info->save_flag == 1)
 	{
@@ -141,11 +150,9 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	i = 0;
-	// for (int i = 0; i < 5; i++)
 	while (i < 5)
 	{
 		j = 0;
-		// for (int j = 0; j < texHeight * texWidth; j++)
 		while (j < texHeight * texWidth)
 		{
 			info.texture[i][j] = 0;
