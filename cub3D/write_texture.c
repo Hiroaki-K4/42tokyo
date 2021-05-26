@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:39:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:40:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	calc(t_info *info)
 	int drawEnd;
 	int texNum;
 	int texX;
+	int texY;
+	int color;
 	double cameraX;
 	double sideDistX;
 	double sideDistY;
@@ -190,9 +192,9 @@ void	calc(t_info *info)
 		while (y < drawEnd)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
-			int texY = (int)texPos & (texHeight - 1);
+			texY = (int)texPos & (texHeight - 1);
 			texPos += step;
-			int color = info->texture[texNum][texHeight * texY + texX];
+			color = info->texture[texNum][texHeight * texY + texX];
 			// make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
 			if (side == 1)
 				color = (color >> 1) & 8355711;
