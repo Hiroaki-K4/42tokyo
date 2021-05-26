@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:35:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:46:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,18 @@ int get_sprite_pos(t_info *info)
 
 void	sort_order(t_pair *orders, int amount)
 {
+    int i;
+    int j;
 	t_pair	tmp;
 
-	for (int i = 0; i < amount; i++)
-	{
-		for (int j = 0; j < amount - 1; j++)
-		{
+    i = 0;
+	// for (int i = 0; i < amount; i++)
+	while (i < amount)
+    {
+        j = 0;
+		// for (int j = 0; j < amount - 1; j++)
+		while (j < amount - 1)
+        {
 			if (orders[j].first > orders[j + 1].first)
 			{
 				tmp.first = orders[j].first;
@@ -73,7 +79,9 @@ void	sort_order(t_pair *orders, int amount)
 				orders[j + 1].first = tmp.first;
 				orders[j + 1].second = tmp.second;
 			}
+            j++;
 		}
+        i++;
 	}
 }
 
