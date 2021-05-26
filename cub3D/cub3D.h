@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:58:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 08:47:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ typedef struct		s_cub
 	char *w_texture;
 	char *e_texture;
 	char *sprite;
-	// int **sprites;
 	t_sprite *sprites;
 	int num_sprites;
 	int sprite_flag;
@@ -111,7 +110,6 @@ typedef struct	s_info
 	t_img	img;
 	int		**buf;
 	int		**texture;
-	int save_flag;
 	double	moveSpeed;
 	double	rotSpeed;
 	t_cub cub_list;

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 20:53:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 08:48:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ void	draw(t_info *info)
 			x++;
 		}
 		y++;
-	}
-	if (info->save_flag == 1)
-	{
-		save_bmp(info);
-		info->save_flag = 0;
 	}
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
@@ -94,7 +89,7 @@ int	main(int argc, char *argv[])
 	char **line;
 	char *sin;
 	
-	if (argc != 2 && argc != 3)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (-1);
@@ -119,12 +114,6 @@ int	main(int argc, char *argv[])
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
 	info.cub_list.width = sizex;
 	info.cub_list.height = sizey;
-	info.save_flag = 0;
-	if (argc == 3)
-	{
-		if (ft_strcmp(argv[2], "--save") == 0)
-			info.save_flag = 1;
-	}
 	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		return (-1);
 	i = 0;
