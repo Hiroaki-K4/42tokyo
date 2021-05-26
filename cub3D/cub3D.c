@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:19:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:21:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1089,7 +1089,7 @@ int	main(int argc, char *argv[])
 		}
 	}
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	info.cub_list.width = sizex;
+	info.cub_list.width = 1080;
 	info.cub_list.height = sizey;
 	// if (info.cub_list.width > sizex)
 	// 	info.cub_list.width = sizex;
