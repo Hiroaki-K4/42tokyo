@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:40:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:41:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,19 +134,24 @@ int	main(int argc, char *argv[])
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
 		return (-1);
 	i = 0;
-	// for (int i = 0; i < 5; i++)
 	while (i < 5)
 	{
 		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
 			return (-1);
 		i++;
 	}
-	for (int i = 0; i < 5; i++)
+	i = 0;
+	// for (int i = 0; i < 5; i++)
+	while (i < 5)
 	{
-		for (int j = 0; j < texHeight * texWidth; j++)
+		j = 0;
+		// for (int j = 0; j < texHeight * texWidth; j++)
+		while (j < texHeight * texWidth)
 		{
 			info.texture[i][j] = 0;
+			j++;
 		}
+		i++;
 	}
 	load_texture(&info);
 	info.moveSpeed = 0.05;
