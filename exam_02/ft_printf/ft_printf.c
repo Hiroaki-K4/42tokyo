@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 10:47:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 10:48:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -586,33 +586,33 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	return (len);
 }
 
-// int		ft_printf_str(const char *arg, int *i)
-// {
-// 	int	len;
-
-// 	len = 0;
-// 	while (arg[*i] != '%' && arg[*i])
-// 	{
-// 		write(1, &arg[*i], 1);
-// 		(*i)++;
-// 		len++;
-// 	}
-// 	return (len);
-// }
-
-int ft_printf_str(const char *arg, int *i)
+int		ft_printf_str(const char *arg, int *i)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	while (arg[*i] && arg[*i] != '%')
+	while (arg[*i] != '%' && arg[*i])
 	{
 		write(1, &arg[*i], 1);
-		(*i++);
+		(*i)++;
 		len++;
 	}
 	return (len);
 }
+
+// int ft_printf_str(const char *arg, int *i)
+// {
+// 	int len;
+
+// 	len = 0;
+// 	while (arg[*i] && arg[*i] != '%')
+// 	{
+// 		write(1, &arg[*i], 1);
+// 		(*i++);
+// 		len++;
+// 	}
+// 	return (len);
+// }
 
 // int		ft_printf(const char *arg, ...)
 // {
