@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:40:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 20:57:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	calc(t_info *info)
 {
 	int	x;
+	int y;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -176,9 +177,12 @@ void	calc(t_info *info)
 		// Starting texture coordinate
 		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		// printf("ok\n");
-		for (int y = 0; y < drawStart; y++)
+		// for (int y = 0; y < drawStart; y++)
+		y = 0;
+		while (y < drawStart)
 		{
 			info->buf[y][x] = info->cub_list.ceiling_dec;
+			y++;
 		}
 		for (int y = drawStart; y < drawEnd; y++)
 		{
