@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:36:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:37:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	calc(t_info *info)
 	int hit;
 	int mapX;
 	int mapY;
+	int lineHeight;
+	int drawStart;
+	int drawEnd;
+	int texNum;
 	double cameraX;
 	double sideDistX;
 	double sideDistY;
@@ -90,18 +94,18 @@ void	calc(t_info *info)
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
 
 		//Calculate height of line to draw on screen
-		int lineHeight = (int)(info->cub_list.height / perpWallDist);
+		lineHeight = (int)(info->cub_list.height / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStart = -lineHeight / 2 + info->cub_list.height / 2;
+		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
-		int drawEnd = lineHeight / 2 + info->cub_list.height / 2;
+		drawEnd = lineHeight / 2 + info->cub_list.height / 2;
 		if(drawEnd >= info->cub_list.height)
 			drawEnd = info->cub_list.height - 1;
 
 		// texturing calculations
-		int texNum = info->cub_list.map_matrix[mapX][mapY];
+		texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
 		{
 			if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
@@ -150,7 +154,7 @@ void	calc(t_info *info)
 						texNum = 0;
 				}
 				else
-				texNum = 3;
+					texNum = 3;
 			}
 		}
 
