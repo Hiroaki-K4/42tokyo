@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:47:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:51:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ char *make_decimal_color(t_rgb color)
 	return (ans);
 }
 
-int line_check(char **line, t_info *info)
+int cub_line_check(char **line, t_info *info)
 {
 	int i;
 	char *map_line;
@@ -367,7 +367,7 @@ int	main(int argc, char *argv[])
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
-		line_check(line, &info);
+		cub_line_check(line, &info);
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
