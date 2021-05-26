@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:01:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:06:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,14 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
+// void	init_info(t_info *info)
+// {
+// 	info.cub_list.map_x = 0;
+// 	info.cub_list.map_y = 0;
+// 	info.cub_list.size = 0;
+// 	info.cub_list.sprite_flag = 0;
+// }
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -86,10 +94,10 @@ int	main(int argc, char *argv[])
 	}
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
-	info.cub_list.map_x = 0;
-	info.cub_list.map_y = 0;
-	info.cub_list.size = 0;
-	info.cub_list.sprite_flag = 0;
+	// info.cub_list.map_x = 0;
+	// info.cub_list.map_y = 0;
+	// info.cub_list.size = 0;
+	// info.cub_list.sprite_flag = 0;
 	i = 1;
 	while (i > 0)
 	{
@@ -97,6 +105,10 @@ int	main(int argc, char *argv[])
 		cub_line_check(line, &info);
 		free(line);
 	}
+	info.cub_list.map_x = 0;
+	info.cub_list.map_y = 0;
+	info.cub_list.size = 0;
+	info.cub_list.sprite_flag = 0;
 	convert_int_matrix(&info);
 	if (info.cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
