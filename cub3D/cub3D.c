@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:56:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:58:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,190 +68,134 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-// int hex_to_decimal(char *hex)
+// int convert_int_matrix(t_info *info)
 // {
 // 	int i;
 // 	int j;
-// 	int ans;
-// 	int hex_pow;
 	
-// 	ans = 0;
-// 	printf("hex: %s\n", hex);
+// 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
+// 		return (-1);
 // 	i = 0;
-// 	while (i < ft_strlen(hex))
+// 	while (i < info->cub_list.map_y)
 // 	{
-// 		hex_pow = 1;
-// 		j = 0;
-// 		while (j < i)
-// 		{
-// 			hex_pow *= 16;
-// 			j++;
-// 		}
-// 		printf("hex_pow: %d\n", hex_pow);
-// 		ans += hex_pow * (ft_strchr_place("0123456789ABCDEF", hex[ft_strlen(hex) - 1 - i]));
+// 		if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
+// 			return (-1);
 // 		i++;
 // 	}
-// 	return (ans);
+// 	i = 0;
+// 	while (i < info->cub_list.map_y)
+// 	{
+// 		j = 0;
+// 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
+// 		{
+// 			while (j < ft_strlen(info->cub_list.map[i]))
+// 			{
+// 				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
+// 				{
+// 					info->posX = (double)i + 0.5;
+// 					info->posY = (double)j + 0.5;
+// 				}
+// 				if (info->cub_list.map[i][j] == 'N')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = -1.0;
+// 					info->dirY = 0.0;
+// 					info->planeX = 0.0;
+// 					info->planeY = 0.66;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'S')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 1.0;
+// 					info->dirY = 0.0;
+// 					info->planeX = 0.0;
+// 					info->planeY = -0.66;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'W')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 0.0;
+// 					info->dirY = -1.0;
+// 					info->planeX = -0.66;
+// 					info->planeY = 0.0;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'E')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 0.0;
+// 					info->dirY = 1.0;
+// 					info->planeX = 0.66;
+// 					info->planeY = 0.0;
+// 				}
+// 				else if (info->cub_list.map[i][j] == ' ')
+// 					info->cub_list.map_matrix[i][j] = 3;
+// 				else
+// 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
+// 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+// 				j++;
+// 			}
+// 			while (j < info->cub_list.map_x)
+// 			{
+// 				info->cub_list.map_matrix[i][j] = 3;
+// 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+// 				j++;
+// 			}
+// 		}
+// 		else
+// 		{
+// 			while (j < info->cub_list.map_x)
+// 			{
+// 				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
+// 				{
+// 					info->posX = (double)i + 0.5;
+// 					info->posY = (double)j + 0.5;
+// 				}
+// 				if (info->cub_list.map[i][j] == 'N')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = -1.0;
+// 					info->dirY = 0.0;
+// 					info->planeX = 0.0;
+// 					info->planeY = 0.66;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'S')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 1.0;
+// 					info->dirY = 0.0;
+// 					info->planeX = 0.0;
+// 					info->planeY = -0.66;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'W')
+// 				{
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 0.0;
+// 					info->dirY = -1.0;
+// 					info->planeX = -0.66;
+// 					info->planeY = 0.0;
+// 				}
+// 				else if (info->cub_list.map[i][j] == 'E')
+// 				{	
+// 					info->cub_list.map_matrix[i][j] = 0;
+// 					info->dirX = 0.0;
+// 					info->dirY = 1.0;
+// 					info->planeX = 0.66;
+// 					info->planeY = 0.0;
+// 				}
+// 				else if (info->cub_list.map[i][j] == ' ')
+// 					info->cub_list.map_matrix[i][j] = 3;
+// 				else
+// 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
+// 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+// 				j++;
+// 			}
+// 		}
+// 		write(1, "\n", 1);
+// 		i++;
+// 	}
+
+// 	return (0);
 // }
-
-// char *make_decimal_color(t_rgb color)
-// {
-// 	char *hex;
-// 	char *red;
-// 	char *green;
-// 	char *blue;
-// 	char *tmp;
-// 	int ans;
-	
-// 	if (!(red = ft_strdup(ft_itoa_hex(color.red, "0123456789ABCDEF"))))
-// 		return (NULL);
-// 	if (!(green = ft_strdup(ft_itoa_hex(color.green, "0123456789ABCDEF"))))
-// 		return (NULL);
-// 	if (!(blue = ft_strdup(ft_itoa_hex(color.blue, "0123456789ABCDEF"))))
-// 		return (NULL);
-// 	if (!(hex = ft_strjoin(red, green)))
-// 		return (NULL);
-// 	if (!(tmp = ft_strdup(hex)))
-// 		return (NULL);
-// 	free(hex);
-// 	if (!(hex = ft_strjoin(tmp, blue)))
-// 		return (NULL);
-// 	free(red);
-// 	free(green);
-// 	free(blue);
-// 	free(tmp);
-// 	ans = hex_to_decimal(hex);
-// 	return (ans);
-// }
-
-int convert_int_matrix(t_info *info)
-{
-	int i;
-	int j;
-	
-	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
-		return (-1);
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
-			return (-1);
-		i++;
-	}
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
-		{
-			while (j < ft_strlen(info->cub_list.map[i]))
-			{
-				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
-				{
-					info->posX = (double)i + 0.5;
-					info->posY = (double)j + 0.5;
-				}
-				if (info->cub_list.map[i][j] == 'N')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = -1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = 0.66;
-				}
-				else if (info->cub_list.map[i][j] == 'S')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = -0.66;
-				}
-				else if (info->cub_list.map[i][j] == 'W')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = -1.0;
-					info->planeX = -0.66;
-					info->planeY = 0.0;
-				}
-				else if (info->cub_list.map[i][j] == 'E')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = 1.0;
-					info->planeX = 0.66;
-					info->planeY = 0.0;
-				}
-				else if (info->cub_list.map[i][j] == ' ')
-					info->cub_list.map_matrix[i][j] = 3;
-				else
-					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
-				j++;
-			}
-			while (j < info->cub_list.map_x)
-			{
-				info->cub_list.map_matrix[i][j] = 3;
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
-				j++;
-			}
-		}
-		else
-		{
-			while (j < info->cub_list.map_x)
-			{
-				if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
-				{
-					info->posX = (double)i + 0.5;
-					info->posY = (double)j + 0.5;
-				}
-				if (info->cub_list.map[i][j] == 'N')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = -1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = 0.66;
-				}
-				else if (info->cub_list.map[i][j] == 'S')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = -0.66;
-				}
-				else if (info->cub_list.map[i][j] == 'W')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = -1.0;
-					info->planeX = -0.66;
-					info->planeY = 0.0;
-				}
-				else if (info->cub_list.map[i][j] == 'E')
-				{	
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = 1.0;
-					info->planeX = 0.66;
-					info->planeY = 0.0;
-				}
-				else if (info->cub_list.map[i][j] == ' ')
-					info->cub_list.map_matrix[i][j] = 3;
-				else
-					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
-				j++;
-			}
-		}
-		write(1, "\n", 1);
-		i++;
-	}
-
-	return (0);
-}
 
 int	main(int argc, char *argv[])
 {
