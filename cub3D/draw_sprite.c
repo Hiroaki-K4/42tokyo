@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 20:48:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 20:48:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	sortSprites(int *order, double *dist, int amount)
 void draw_sprite(t_info *info)
 {
     int i;
-    // int y;
+    int y;
     int stripe;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
@@ -178,7 +178,7 @@ void draw_sprite(t_info *info)
 			//4) ZBuffer, with perpendicular distance
 			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
-			int y = drawStartY;
+			y = drawStartY;
             // for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
             while (y < drawEndY)
             {
