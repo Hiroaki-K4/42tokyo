@@ -6,11 +6,32 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:52:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:54:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+int map_line_check(char **line_split)
+{
+	int i;
+	int j;
+	
+	i = 0;
+	while (line_split[i])
+	{
+		j = 0;
+		while (line_split[i][j])
+		{
+			if (line_split[i][j] != '0' && line_split[i][j] != '1' && line_split[i][j] != '2' 
+			&& line_split[i][j] != 'N' && line_split[i][j] != 'S' && line_split[i][j] != 'E' && line_split[i][j] != 'W')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int cub_line_check(char **line, t_info *info)
 {
