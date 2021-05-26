@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:06:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:11:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,36 +68,19 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-// void	init_info(t_info *info)
-// {
-// 	info.cub_list.map_x = 0;
-// 	info.cub_list.map_y = 0;
-// 	info.cub_list.size = 0;
-// 	info.cub_list.sprite_flag = 0;
-// }
-
-int	main(int argc, char *argv[])
+void	init_info(t_info *info, int fd)
 {
-	t_info info;
 	int buffer_size;
-	int fd;
 	int i;
-	int sizex;
-	int sizey;
 	char **line;
-	char *sin;
-	
-	if (argc != 2 && argc != 3)
-	{
-		printf("Error\n");
-		return (-1);
-	}
+	// int fd;
+
 	buffer_size = 10;
-    fd = open(argv[1], O_RDONLY);
-	// info.cub_list.map_x = 0;
-	// info.cub_list.map_y = 0;
-	// info.cub_list.size = 0;
-	// info.cub_list.sprite_flag = 0;
+    // fd = open(argv[1], O_RDONLY);
+	info->cub_list.map_x = 0;
+	info->cub_list.map_y = 0;
+	info->cub_list.size = 0;
+	info->cub_list.sprite_flag = 0;
 	i = 1;
 	while (i > 0)
 	{
@@ -105,14 +88,47 @@ int	main(int argc, char *argv[])
 		cub_line_check(line, &info);
 		free(line);
 	}
-	info.cub_list.map_x = 0;
-	info.cub_list.map_y = 0;
-	info.cub_list.size = 0;
-	info.cub_list.sprite_flag = 0;
 	convert_int_matrix(&info);
-	if (info.cub_list.sprite_flag == 1)
+	if (info->cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
-	info.mlx = mlx_init();
+	info->mlx = mlx_init();
+}
+
+int	main(int argc, char *argv[])
+{
+	t_info info;
+	// int buffer_size;
+	int fd;
+	int i;
+	int sizex;
+	int sizey;
+	// char **line;
+	char *sin;
+	
+	if (argc != 2 && argc != 3)
+	{
+		printf("Error\n");
+		return (-1);
+	}
+	fd = open(argv[1], O_RDONLY);
+	init_info(&info, fd);
+	// buffer_size = 10;
+    // fd = open(argv[1], O_RDONLY);
+	// info.cub_list.map_x = 0;
+	// info.cub_list.map_y = 0;
+	// info.cub_list.size = 0;
+	// info.cub_list.sprite_flag = 0;
+	// i = 1;
+	// while (i > 0)
+	// {
+	// 	i = get_next_line(fd, &line, buffer_size);
+	// 	cub_line_check(line, &info);
+	// 	free(line);
+	// }
+	// convert_int_matrix(&info);
+	// if (info.cub_list.sprite_flag == 1)
+	// 	get_sprite_pos(&info);
+	// info.mlx = mlx_init();
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
 	info.cub_list.width = sizex;
 	info.cub_list.height = sizey;
