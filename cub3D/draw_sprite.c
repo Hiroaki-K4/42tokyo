@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:57:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:58:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,10 +179,8 @@ void draw_sprite(t_info *info)
 			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
 			y = drawStartY;
-            // for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
-			while (y < drawEndY)
+            for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
             {
-                y++;
 				int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
 				// int color = info->texture[sprite[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
