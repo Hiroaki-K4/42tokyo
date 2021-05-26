@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:31:11 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:33:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 22:10:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,5 @@ int save_bmp(t_info *info)
 	write_header(fd, filesize, info);
 	write_data(fd, info, padding);
 	close(fd);
-	printf("ok\n");
 	return (0);
 }
