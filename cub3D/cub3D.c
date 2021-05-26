@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:42:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:09:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,113 +32,113 @@
 #define K_L 65361
 
 
-typedef struct	s_sprite
-{
-	double		x;
-	double		y;
-	int			texture;
-}				t_sprite;
-
-// struct Sprite	sprite[numSprites] =
+// typedef struct	s_sprite
 // {
-// 	// {20.5, 11.5, 10}, //green light in front of playerstart
-// 	// //green lights in every room
-// 	// {18.5,4.5, 10},
-// 	// {10.0,4.5, 10},
-// 	// {10.0,12.5,10},
-// 	// {3.5, 6.5, 10},
-// 	// {3.5, 20.5,10},
-// 	// {3.5, 14.5,10},
-// 	// {14.5,20.5,10},
+// 	double		x;
+// 	double		y;
+// 	int			texture;
+// }				t_sprite;
 
-// 	//row of pillars in front of wall: fisheye test
-// 	// {18.5, 10.5, 9},
-// 	// {18.5, 11.5, 9},
-// 	// {18.5, 12.5, 9},
+// // struct Sprite	sprite[numSprites] =
+// // {
+// // 	// {20.5, 11.5, 10}, //green light in front of playerstart
+// // 	// //green lights in every room
+// // 	// {18.5,4.5, 10},
+// // 	// {10.0,4.5, 10},
+// // 	// {10.0,12.5,10},
+// // 	// {3.5, 6.5, 10},
+// // 	// {3.5, 20.5,10},
+// // 	// {3.5, 14.5,10},
+// // 	// {14.5,20.5,10},
 
-// 	//some barrels around the map
-// 	// {21.5, 1.5, 8},
-// 	// {15.5, 1.5, 8},
-// 	// {16.0, 1.8, 8},
-// 	// {16.2, 1.2, 8},
-// 	// {3.5,  2.5, 8},
-// 	// {9.5, 15.5, 8},
-// 	// {10.0, 15.1,8},
-// 	// {3.0, 21.0, 8},
-// 	{9.0, 4.0, 8},
-// 	// {10.5, 15.8,8},
-// };
+// // 	//row of pillars in front of wall: fisheye test
+// // 	// {18.5, 10.5, 9},
+// // 	// {18.5, 11.5, 9},
+// // 	// {18.5, 12.5, 9},
 
-typedef struct	s_img
-{
-	void	*img;
-	int		*data;
+// // 	//some barrels around the map
+// // 	// {21.5, 1.5, 8},
+// // 	// {15.5, 1.5, 8},
+// // 	// {16.0, 1.8, 8},
+// // 	// {16.2, 1.2, 8},
+// // 	// {3.5,  2.5, 8},
+// // 	// {9.5, 15.5, 8},
+// // 	// {10.0, 15.1,8},
+// // 	// {3.0, 21.0, 8},
+// // 	{9.0, 4.0, 8},
+// // 	// {10.5, 15.8,8},
+// // };
 
-	int		size_l;
-	int		bpp;
-	int		endian;
-	int		img_width;
-	int		img_height;
-}				t_img;
+// typedef struct	s_img
+// {
+// 	void	*img;
+// 	int		*data;
 
-typedef struct		s_pair
-{
-	double	first;
-	int		second;
-}					t_pair;
+// 	int		size_l;
+// 	int		bpp;
+// 	int		endian;
+// 	int		img_width;
+// 	int		img_height;
+// }				t_img;
 
-typedef struct		s_rgb
-{
-	int red;
-	int green;
-	int blue;
-}					t_rgb;
+// typedef struct		s_pair
+// {
+// 	double	first;
+// 	int		second;
+// }					t_pair;
+
+// typedef struct		s_rgb
+// {
+// 	int red;
+// 	int green;
+// 	int blue;
+// }					t_rgb;
 
 
-typedef struct		s_cub
-{
-	int width;
-	int height;
-	int count;
-	char **map;
-	int **map_matrix;
-	int map_x;
-	int map_y;
-	int size;
-	char *n_texture;
-	char *s_texture;
-	char *w_texture;
-	char *e_texture;
-	char *sprite;
-	// int **sprites;
-	t_sprite *sprites;
-	int num_sprites;
-	int sprite_flag;
-	int floor_dec;
-	int ceiling_dec;
-	t_rgb floor;
-	t_rgb ceiling;
-}					t_cub;
+// typedef struct		s_cub
+// {
+// 	int width;
+// 	int height;
+// 	int count;
+// 	char **map;
+// 	int **map_matrix;
+// 	int map_x;
+// 	int map_y;
+// 	int size;
+// 	char *n_texture;
+// 	char *s_texture;
+// 	char *w_texture;
+// 	char *e_texture;
+// 	char *sprite;
+// 	// int **sprites;
+// 	t_sprite *sprites;
+// 	int num_sprites;
+// 	int sprite_flag;
+// 	int floor_dec;
+// 	int ceiling_dec;
+// 	t_rgb floor;
+// 	t_rgb ceiling;
+// }					t_cub;
 
-typedef struct	s_info
-{
-	double posX;
-	double posY;
-	double dirX;
-	double dirY;
-	double planeX;
-	double planeY;
-	double	*zBuffer;
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	int		**buf;
-	int		**texture;
-	int save_flag;
-	double	moveSpeed;
-	double	rotSpeed;
-	t_cub cub_list;
-}				t_info;
+// typedef struct	s_info
+// {
+// 	double posX;
+// 	double posY;
+// 	double dirX;
+// 	double dirY;
+// 	double planeX;
+// 	double planeY;
+// 	double	*zBuffer;
+// 	void	*mlx;
+// 	void	*win;
+// 	t_img	img;
+// 	int		**buf;
+// 	int		**texture;
+// 	int save_flag;
+// 	double	moveSpeed;
+// 	double	rotSpeed;
+// 	t_cub cub_list;
+// }				t_info;
 
 void	sort_order(t_pair *orders, int amount)
 {

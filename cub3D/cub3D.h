@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/29 17:55:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:09:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,85 @@
 # include <unistd.h>
 # include <math.h>
 # include "mlx_linux/mlx.h"
+
+typedef struct	s_sprite
+{
+	double		x;
+	double		y;
+	int			texture;
+}				t_sprite;
+
+typedef struct	s_img
+{
+	void	*img;
+	int		*data;
+
+	int		size_l;
+	int		bpp;
+	int		endian;
+	int		img_width;
+	int		img_height;
+}				t_img;
+
+typedef struct		s_pair
+{
+	double	first;
+	int		second;
+}					t_pair;
+
+typedef struct		s_rgb
+{
+	int red;
+	int green;
+	int blue;
+}					t_rgb;
+
+
+typedef struct		s_cub
+{
+	int width;
+	int height;
+	int count;
+	char **map;
+	int **map_matrix;
+	int map_x;
+	int map_y;
+	int size;
+	char *n_texture;
+	char *s_texture;
+	char *w_texture;
+	char *e_texture;
+	char *sprite;
+	// int **sprites;
+	t_sprite *sprites;
+	int num_sprites;
+	int sprite_flag;
+	int floor_dec;
+	int ceiling_dec;
+	t_rgb floor;
+	t_rgb ceiling;
+}					t_cub;
+
+typedef struct	s_info
+{
+	double posX;
+	double posY;
+	double dirX;
+	double dirY;
+	double planeX;
+	double planeY;
+	double	*zBuffer;
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	int		**buf;
+	int		**texture;
+	int save_flag;
+	double	moveSpeed;
+	double	rotSpeed;
+	t_cub cub_list;
+}				t_info;
+
 int		get_next_line(int fd, char **line, int BUFFER_SIZE);
 
 #endif
