@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:35:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:36:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -663,50 +663,6 @@ int convert_int_matrix(t_info *info)
 	return (0);
 }
 
-// int get_sprite_pos(t_info *info)
-// {
-// 	int i;
-// 	int j;
-// 	int count;
-
-// 	count = 0;
-// 	i = 0;
-// 	while (i < info->cub_list.map_y)
-// 	{
-// 		j = 0;
-// 		while (j < info->cub_list.map_x)
-// 		{
-// 			if (info->cub_list.map_matrix[i][j] == 2)
-// 				count++;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
-// 		return (-1);
-// 	count = 0;
-// 	i = 0;
-// 	while (i < info->cub_list.map_y)
-// 	{
-// 		j = 0;
-// 		while (j < info->cub_list.map_x)
-// 		{
-// 			if (info->cub_list.map_matrix[i][j] == 2)
-// 			{
-// 				info->cub_list.sprites[count].x = i;
-// 				info->cub_list.sprites[count].y = j;
-// 				printf("spriteX: %f spriteY: %f\n", info->cub_list.sprites[count].x, info->cub_list.sprites[count].y);
-// 				info->cub_list.sprites[count].texture = 4;
-// 				count++;
-// 			} 
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	info->cub_list.num_sprites = count;
-// 	return (0);
-// }
-
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -789,25 +745,13 @@ int	main(int argc, char *argv[])
 			info.texture[i][j] = 0;
 		}
 	}
-	// mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	// info.cub_list.width = sizex;
-	// info.cub_list.height = sizey;
-	// if (info.cub_list.width > sizex)
-		// info.cub_list.width = sizex;
-	// if (info.cub_list.height > sizey)
-	// 	info.cub_list.height = sizey;
 	load_texture(&info);
-	printf("load_texture\n");
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
 	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
-	printf("ok1\n");
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
-	printf("ok2\n");
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
-	printf("ok3\n");
 	mlx_loop_hook(info.mlx, &main_loop, &info);
-	printf("ok4\n");
 	mlx_hook(info.win, 33, 1<<33, &win_close, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
 	mlx_loop(info.mlx);
