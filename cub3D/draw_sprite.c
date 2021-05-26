@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:27:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:28:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ void draw_sprite(t_info *info)
     int spriteScreenX;
     int spriteHeight;
     int drawStartY;
+    int drawEndY;
     int drawStartX;
     int drawEndX;
     int spriteWidth;
@@ -159,7 +160,7 @@ void draw_sprite(t_info *info)
 		drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
+		drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
 
