@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 20:57:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 20:58:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,9 @@ void	calc(t_info *info)
 			info->buf[y][x] = info->cub_list.ceiling_dec;
 			y++;
 		}
-		for (int y = drawStart; y < drawEnd; y++)
+		y = drawStart;
+		// for (int y = drawStart; y < drawEnd; y++)
+		while (y < drawEnd)
 		{
 			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 			int texY = (int)texPos & (texHeight - 1);
@@ -194,6 +196,7 @@ void	calc(t_info *info)
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
+			y++;
 		}
 		info->zBuffer[x] = perpWallDist;
 		for (int y = drawEnd; y < info->cub_list.height; y++)
