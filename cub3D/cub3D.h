@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:09:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:11:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <math.h>
+#include <string.h>
+#include <stdint.h>
 # include "mlx_linux/mlx.h"
 
 typedef struct	s_sprite
