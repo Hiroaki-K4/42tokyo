@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:13:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:13:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ int	main(int argc, char *argv[])
 		return (-1);
 	}
 	fd = open(argv[1], O_RDONLY);
+	printf("okk\n");
 	init_info(&info, fd);
 	printf("ok\n");
 	// buffer_size = 10;
