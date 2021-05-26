@@ -6,51 +6,51 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:33:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:34:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	sort_order(t_pair *orders, int amount)
-{
-	t_pair	tmp;
+// void	sort_order(t_pair *orders, int amount)
+// {
+// 	t_pair	tmp;
 
-	for (int i = 0; i < amount; i++)
-	{
-		for (int j = 0; j < amount - 1; j++)
-		{
-			if (orders[j].first > orders[j + 1].first)
-			{
-				tmp.first = orders[j].first;
-				tmp.second = orders[j].second;
-				orders[j].first = orders[j + 1].first;
-				orders[j].second = orders[j + 1].second;
-				orders[j + 1].first = tmp.first;
-				orders[j + 1].second = tmp.second;
-			}
-		}
-	}
-}
+// 	for (int i = 0; i < amount; i++)
+// 	{
+// 		for (int j = 0; j < amount - 1; j++)
+// 		{
+// 			if (orders[j].first > orders[j + 1].first)
+// 			{
+// 				tmp.first = orders[j].first;
+// 				tmp.second = orders[j].second;
+// 				orders[j].first = orders[j + 1].first;
+// 				orders[j].second = orders[j + 1].second;
+// 				orders[j + 1].first = tmp.first;
+// 				orders[j + 1].second = tmp.second;
+// 			}
+// 		}
+// 	}
+// }
 
-void	sortSprites(int *order, double *dist, int amount)
-{
-	t_pair	*sprites;
+// void	sortSprites(int *order, double *dist, int amount)
+// {
+// 	t_pair	*sprites;
 
-	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
-	for (int i = 0; i < amount; i++)
-	{
-		sprites[i].first = dist[i];
-		sprites[i].second = order[i];
-	}
-	sort_order(sprites, amount);
-	for (int i = 0; i < amount; i++)
-	{
-		dist[i] = sprites[amount - i - 1].first;
-		order[i] = sprites[amount - i - 1].second;
-	}
-	free(sprites);
-}
+// 	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
+// 	for (int i = 0; i < amount; i++)
+// 	{
+// 		sprites[i].first = dist[i];
+// 		sprites[i].second = order[i];
+// 	}
+// 	sort_order(sprites, amount);
+// 	for (int i = 0; i < amount; i++)
+// 	{
+// 		dist[i] = sprites[amount - i - 1].first;
+// 		order[i] = sprites[amount - i - 1].second;
+// 	}
+// 	free(sprites);
+// }
 
 char			*ft_itoa_hex(unsigned int n, char *arg)
 {
@@ -90,60 +90,6 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	}
 	return (ans);
 }
-
-// void set_int_as_char(unsigned char *str, int num)
-// {
-// 	str[0] = (unsigned char)(num);
-// 	str[1] = (unsigned char)(num >> 8);
-// 	str[2] = (unsigned char)(num >> 16);
-// 	str[3] = (unsigned char)(num >> 24);
-// }
-
-// int write_header(int fd, int filesize, t_info *info)
-// {
-// 	int num;
-// 	unsigned char bitmapfileheader[54];
-	
-// 	ft_bzero(bitmapfileheader, 54);
-// 	bitmapfileheader[0] = (unsigned char)('B');
-// 	bitmapfileheader[1] = (unsigned char)('M');
-// 	set_int_as_char(bitmapfileheader + 2, filesize);
-// 	bitmapfileheader[10] = (unsigned char)(54);
-// 	bitmapfileheader[14] = (unsigned char)(40);
-// 	num = info->cub_list.width;
-// 	set_int_as_char(bitmapfileheader + 18, num);
-// 	num = info->cub_list.height;
-// 	set_int_as_char(bitmapfileheader + 22, num);
-// 	bitmapfileheader[27] = (unsigned char)(1);
-// 	bitmapfileheader[28] = (unsigned char)(24);
-// 	write(fd, bitmapfileheader, 54);
-// 	return (0);
-// }
-
-// int write_data(int fd, t_info *info, int padding)
-// {
-// 	int i;
-// 	int j;
-// 	int color;
-// 	unsigned char zero[3] = {0, 0, 0};
-
-// 	j = 0;
-// 	while (info->cub_list.height > j)
-// 	{
-// 		i = 0;
-// 		while (info->cub_list.width > i)
-// 		{
-// 			color = info->img.data[i + (info->cub_list.height - 1 - j) * info->cub_list.width];
-// 			write(fd, &color, 3);
-// 			i++;
-// 		}
-// 		i = -1;
-// 		while (++i < (4 - (info->cub_list.width * 3) % 4) % 4)
-// 			write(fd, &zero, 1);
-// 		j++;
-// 	}
-	
-// }
 
 void	draw(t_info *info)
 {
