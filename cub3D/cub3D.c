@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:51:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:52:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,72 +145,72 @@ char *make_decimal_color(t_rgb color)
 	return (ans);
 }
 
-int cub_line_check(char **line, t_info *info)
-{
-	int i;
-	char *map_line;
-	char **line_split;
-	char **rgb_split;
-	char **tmp;
+// int cub_line_check(char **line, t_info *info)
+// {
+// 	int i;
+// 	char *map_line;
+// 	char **line_split;
+// 	char **rgb_split;
+// 	char **tmp;
 	
-	if (!(line_split = ft_split(line, ' ')))
-		return (-1);
-	if (line_split[0] == NULL)
-		return (0);
-	else if (i = ft_strcmp("NO", line_split[0]) == 0)
-		info->cub_list.n_texture = line_split[1];
-	else if (i = ft_strcmp("SO", line_split[0]) == 0)
-		info->cub_list.s_texture = line_split[1];
-	else if (i = ft_strcmp("WE", line_split[0]) == 0)
-		info->cub_list.w_texture = line_split[1];
-	else if (i = ft_strcmp("EA", line_split[0]) == 0)
-		info->cub_list.e_texture = line_split[1];
-	else if (i = ft_strcmp("S", line_split[0]) == 0)
-	{
-		info->cub_list.sprite = line_split[1];
-		info->cub_list.sprite_flag = 1;
-	}
-	else if (i = ft_strcmp("F", line_split[0]) == 0)
-	{
-		if (!(rgb_split = ft_split(line_split[1], ',')))
-			return (-1);
-		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
-		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
-		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
-		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
-	}
-	else if (i = ft_strcmp("C", line_split[0]) == 0)
-	{
-		if (!(rgb_split = ft_split(line_split[1], ',')))
-			return (-1);
-		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
-		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
-		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
-		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
-	}
-	else if (map_line_check(line_split) == 0)
-	{
-		info->cub_list.map_y++;
-		if (!(map_line = ft_strdup(line)))
-			return (-1);
-		if (ft_strlen(map_line) > info->cub_list.map_x)
-			info->cub_list.map_x = ft_strlen(map_line);
-		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y))))
-			return (-1);
-		i = 0;
-		while (i < info->cub_list.map_y - 1)
-		{
-			if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
-				return (-1);
-			tmp[i] = info->cub_list.map[i];
-			i++;
-		}
-		tmp[i] = map_line;
-		free(info->cub_list.map);
-		info->cub_list.map = tmp;
-	}
-	return (0);
-}
+// 	if (!(line_split = ft_split(line, ' ')))
+// 		return (-1);
+// 	if (line_split[0] == NULL)
+// 		return (0);
+// 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
+// 		info->cub_list.n_texture = line_split[1];
+// 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
+// 		info->cub_list.s_texture = line_split[1];
+// 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
+// 		info->cub_list.w_texture = line_split[1];
+// 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
+// 		info->cub_list.e_texture = line_split[1];
+// 	else if (i = ft_strcmp("S", line_split[0]) == 0)
+// 	{
+// 		info->cub_list.sprite = line_split[1];
+// 		info->cub_list.sprite_flag = 1;
+// 	}
+// 	else if (i = ft_strcmp("F", line_split[0]) == 0)
+// 	{
+// 		if (!(rgb_split = ft_split(line_split[1], ',')))
+// 			return (-1);
+// 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
+// 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
+// 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
+// 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
+// 	}
+// 	else if (i = ft_strcmp("C", line_split[0]) == 0)
+// 	{
+// 		if (!(rgb_split = ft_split(line_split[1], ',')))
+// 			return (-1);
+// 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
+// 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
+// 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
+// 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
+// 	}
+// 	else if (map_line_check(line_split) == 0)
+// 	{
+// 		info->cub_list.map_y++;
+// 		if (!(map_line = ft_strdup(line)))
+// 			return (-1);
+// 		if (ft_strlen(map_line) > info->cub_list.map_x)
+// 			info->cub_list.map_x = ft_strlen(map_line);
+// 		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y))))
+// 			return (-1);
+// 		i = 0;
+// 		while (i < info->cub_list.map_y - 1)
+// 		{
+// 			if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
+// 				return (-1);
+// 			tmp[i] = info->cub_list.map[i];
+// 			i++;
+// 		}
+// 		tmp[i] = map_line;
+// 		free(info->cub_list.map);
+// 		info->cub_list.map = tmp;
+// 	}
+// 	return (0);
+// }
 
 int convert_int_matrix(t_info *info)
 {

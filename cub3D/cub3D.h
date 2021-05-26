@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:47:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:52:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,6 @@ void	calc(t_info *info);
 char			*ft_itoa_hex(unsigned int n, char *arg);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strchr_place(const char *str, int c);
+int cub_line_check(char **line, t_info *info);
 
 #endif
