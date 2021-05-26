@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:22:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:23:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1089,10 +1089,10 @@ int	main(int argc, char *argv[])
 		}
 	}
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	// info.cub_list.width = 1080;
+	info.cub_list.width = sizex;
 	info.cub_list.height = sizey;
-	if (info.cub_list.width > sizex)
-		info.cub_list.width = sizex;
+	// if (info.cub_list.width > sizex)
+		// info.cub_list.width = sizex;
 	// if (info.cub_list.height > sizey)
 	// 	info.cub_list.height = sizey;
 	printf("sizex: %d sizey: %d\n", info.cub_list.width, info.cub_list.height);
