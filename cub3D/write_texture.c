@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 20:59:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:34:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ void	calc(t_info *info)
 {
 	int	x;
 	int y;
+	int stepX;
+	int stepY;
+	double cameraX;
+	double sideDistX;
+	double sideDistY;
+	double deltaDistX;
+	double deltaDistY;
+	double perpWallDist;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -23,26 +31,14 @@ void	calc(t_info *info)
 	printf("posX: %f posY: %f\n", info->posX, info->posY);
 	while (x < info->cub_list.width)
 	{
-		double cameraX = 2 * x / (double)info->cub_list.width - 1;
+		cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
-		
 		int mapX = (int)info->posX;
 		int mapY = (int)info->posY;
-
-		//length of ray from current position to next x or y-side
-		double sideDistX;
-		double sideDistY;
-		
 		 //length of ray from one x or y-side to next x or y-side
-		double deltaDistX = fabs(1 / rayDirX);
-		double deltaDistY = fabs(1 / rayDirY);
-		double perpWallDist;
-		
-		//what direction to step in x or y-direction (either +1 or -1)
-		int stepX;
-		int stepY;
-		
+		deltaDistX = fabs(1 / rayDirX);
+		deltaDistY = fabs(1 / rayDirY);
 		int hit = 0; //was there a wall hit?
 		int side; //was a NS or a EW wall hit?
 
