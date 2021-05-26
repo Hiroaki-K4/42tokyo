@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:11:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:29:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,6 @@ typedef struct	s_info
 }				t_info;
 
 int		get_next_line(int fd, char **line, int BUFFER_SIZE);
+void draw_sprite(t_info *info);
 
 #endif
