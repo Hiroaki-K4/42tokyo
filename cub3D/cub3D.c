@@ -6,50 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:45:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:46:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
-
-// char			*ft_itoa_hex(unsigned int n, char *arg)
-// {
-// 	int				len;
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	char			*ans;
-
-// 	i = n / 16;
-// 	if (i != 0)
-// 	{
-// 		len = 2;
-// 		while (i > 16)
-// 		{
-// 			len++;
-// 			i = i / 16;
-// 		}
-// 	}
-// 	else
-// 		len = 1;
-// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-// 		return (NULL);
-// 	ans[len] = '\0';
-// 	i = n;
-// 	len--;
-// 	if (i == 0)
-// 	{
-// 		ans[0] = '0';
-// 		return (ans);
-// 	}
-// 	while (i > 0)
-// 	{
-// 		j = i % 16;
-// 		ans[len] = arg[j];
-// 		i = i / 16;
-// 		len--;
-// 	}
-// 	return (ans);
-// }
 
 void	draw(t_info *info)
 {
@@ -107,17 +68,17 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-int		ft_strcmp(const char *s1, const char *s2)
-{
-	size_t	i;
+// int		ft_strcmp(const char *s1, const char *s2)
+// {
+// 	size_t	i;
 
-	if (!s1 || !s2)
-		return (-1);
-	i = 0;
-	while (s1[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
+// 	if (!s1 || !s2)
+// 		return (-1);
+// 	i = 0;
+// 	while (s1[i] && s1[i] == s2[i])
+// 		i++;
+// 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+// }
 
 int map_line_check(char **line_split)
 {
