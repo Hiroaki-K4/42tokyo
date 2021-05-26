@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:31:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:46:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	key_press(int key, t_info *info)
 		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
 	}
-	//move backwards if no wall behind you
 	if (key == K_S)
 	{
 		if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
@@ -46,10 +45,8 @@ int	key_press(int key, t_info *info)
 		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->planeY * info->moveSpeed)])
 			info->posY -= info->planeY * info->moveSpeed;
 	}
-	//rotate to the right
 	if (key == K_R)
 	{
-		//both camera direction and camera plane must be rotated
 		oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(-info->rotSpeed) - info->dirY * sin(-info->rotSpeed);
 		info->dirY = oldDirX * sin(-info->rotSpeed) + info->dirY * cos(-info->rotSpeed);
@@ -57,10 +54,8 @@ int	key_press(int key, t_info *info)
 		info->planeX = info->planeX * cos(-info->rotSpeed) - info->planeY * sin(-info->rotSpeed);
 		info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY * cos(-info->rotSpeed);
 	}
-	//rotate to the left
 	if (key == K_L)
 	{
-		//both camera direction and camera plane must be rotated
 		oldDirX = info->dirX;
 		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY * sin(info->rotSpeed);
 		info->dirY = oldDirX * sin(info->rotSpeed) + info->dirY * cos(info->rotSpeed);

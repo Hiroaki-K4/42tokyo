@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:41:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:47:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,9 @@ void	calc(t_info *info)
 		rayDirY = info->dirY + info->planeY * cameraX;
 		mapX = (int)info->posX;
 		mapY = (int)info->posY;
-		 //length of ray from one x or y-side to next x or y-side
 		deltaDistX = fabs(1 / rayDirX);
 		deltaDistY = fabs(1 / rayDirY);
-		hit = 0; //was there a wall hit?
+		hit = 0;
 		if (rayDirX < 0)
 		{
 			stepX = -1;
@@ -79,7 +78,6 @@ void	calc(t_info *info)
 
 		while (hit == 0)
 		{
-			//jump to next map square, OR in x-direction, OR in y-direction
 			if (sideDistX < sideDistY)
 			{
 				sideDistX += deltaDistX;
@@ -92,7 +90,6 @@ void	calc(t_info *info)
 				mapY += stepY;
 				side = 1;
 			}
-			//Check if ray has hit a wall
 			if (info->cub_list.map_matrix[mapX][mapY] > 0 && info->cub_list.map_matrix[mapX][mapY] != 2)
 				hit = 1;
 		}
@@ -100,19 +97,13 @@ void	calc(t_info *info)
 			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
 		else
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
-
-		//Calculate height of line to draw on screen
 		lineHeight = (int)(info->cub_list.height / perpWallDist);
-
-		//calculate lowest and highest pixel to fill in current stripe
 		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if(drawStart < 0)
 			drawStart = 0;
 		drawEnd = lineHeight / 2 + info->cub_list.height / 2;
 		if(drawEnd >= info->cub_list.height)
 			drawEnd = info->cub_list.height - 1;
-
-		// texturing calculations
 		texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
 		{
