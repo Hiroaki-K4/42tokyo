@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:41:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:45:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,6 @@ void draw_sprite(t_info *info);
 int save_bmp(t_info *info);
 int	key_press(int key, t_info *info);
 void	calc(t_info *info);
+char			*ft_itoa_hex(unsigned int n, char *arg);
 
 #endif
