@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:37:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:39:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@ void	calc(t_info *info)
 	int drawStart;
 	int drawEnd;
 	int texNum;
+	int texX;
 	double cameraX;
 	double sideDistX;
 	double sideDistY;
 	double deltaDistX;
 	double deltaDistY;
 	double perpWallDist;
+	double wallX;
+	double step;
+	double texPos;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		return (-1);
@@ -159,7 +163,6 @@ void	calc(t_info *info)
 		}
 
 		// calculate value of wallX
-		double wallX;
 		if (side == 0)
 			wallX = info->posY + perpWallDist * rayDirY;
 		else
@@ -167,17 +170,16 @@ void	calc(t_info *info)
 		wallX -= floor(wallX);
 
 		// x coordinate on the texture
-		int texX = (int)(wallX * (double)texWidth);
+		texX = (int)(wallX * (double)texWidth);
 		if (side == 0 && rayDirX > 0)
 			texX = texWidth - texX - 1;
 		if (side == 1 && rayDirY < 0)
 			texX = texWidth - texX - 1;
 
 		// How much to increase the texture coordinate perscreen pixel
-		double step = 1.0 * texHeight / lineHeight;
+		step = 1.0 * texHeight / lineHeight;
 		// Starting texture coordinate
-		double texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
-		// printf("ok\n");
+		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		y = 0;
 		while (y < drawStart)
 		{
