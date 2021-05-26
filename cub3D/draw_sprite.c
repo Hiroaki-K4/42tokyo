@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:26:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:27:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,9 @@ void draw_sprite(t_info *info)
     int spriteScreenX;
     int spriteHeight;
     int drawStartY;
+    int drawStartX;
+    int drawEndX;
+    int spriteWidth;
     double spriteX;
     double spriteY;
 	double invDet;
@@ -161,11 +164,13 @@ void draw_sprite(t_info *info)
 			drawEndY = info->cub_list.height - 1;
 
 		//calculate width of the sprite
-		int spriteWidth = (int)fabs(info->cub_list.height / transformY);
-		int drawStartX = -spriteWidth / 2 + spriteScreenX;
-		if(drawStartX < 0) drawStartX = 0;
-		int drawEndX = spriteWidth / 2 + spriteScreenX;
-		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
+		spriteWidth = (int)fabs(info->cub_list.height / transformY);
+		drawStartX = -spriteWidth / 2 + spriteScreenX;
+		if (drawStartX < 0)
+            drawStartX = 0;
+		drawEndX = spriteWidth / 2 + spriteScreenX;
+		if (drawEndX >= info->cub_list.width)
+            drawEndX = info->cub_list.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
 		stripe = drawStartX;
