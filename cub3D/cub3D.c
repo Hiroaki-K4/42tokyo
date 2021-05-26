@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:25:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:25:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1041,9 +1041,6 @@ int	main(int argc, char *argv[])
 		// printf("~~~fd: %d line: %s first: %c return: %d~~~\n", fd, line, line[0], i);
 		free(line);
 	}
-	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	info.cub_list.width = sizex;
-	info.cub_list.height = sizey;
 	printf("map_x: %d\n", info.cub_list.map_x);
 	i = 0;
 	while (i < info.cub_list.map_y)
@@ -1055,6 +1052,9 @@ int	main(int argc, char *argv[])
 	printf("initX: %d initY: %d\n", (int)info.posX, (int)info.posY);
 	get_sprite_pos(&info);
 	info.mlx = mlx_init();
+	mlx_get_screen_size(info.mlx, &sizex, &sizey);
+	info.cub_list.width = sizex;
+	info.cub_list.height = sizey;
 	info.save_flag = 0;
 	if (argc == 3)
 	{
