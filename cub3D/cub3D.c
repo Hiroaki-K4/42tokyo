@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:36:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:36:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1117,6 +1117,7 @@ int	main(int argc, char *argv[])
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
+	printf("loop_hook");
 	mlx_hook(info.win, 33, 1<<33, &win_close, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
 	mlx_loop(info.mlx);
