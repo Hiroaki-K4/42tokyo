@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:10:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:11:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,13 @@ void draw_sprite(t_info *info)
     int i;
     int y;
     int stripe;
+    int spriteScreenX;
     double spriteX;
     double spriteY;
-	int		spriteOrder[info->cub_list.num_sprites];
+	double invDet;
+    double transformX;
+    double transformY;
+    int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	
     i = 0;
@@ -138,10 +142,10 @@ void draw_sprite(t_info *info)
 		// [               ]       =  1/(planeX*dirY-dirX*planeY) *   [                 ]
 		// [ planeY   dirY ]                                          [ -planeY  planeX ]
 
-		double invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY); //required for correct matrix multiplication
-		double transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
-		double transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
-		int spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
+		invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY); //required for correct matrix multiplication
+		transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
+		transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
+		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
 		//parameters for scaling and moving the sprites
 		#define uDiv 1
 		#define vDiv 1
