@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 10:55:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 10:56:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -574,7 +574,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 		keta = ft_strlen(str_num);
 		if (num < 0)
 			keta--;
-		len = print_digit(flag_list, num, str_num, keta);
+		len = print_digit(flag_list, str_num, num, keta);
 	}
 	else if (flag_list.format == 2)
 	{
