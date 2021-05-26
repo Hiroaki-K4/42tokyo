@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:24:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:24:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void draw_sprite(t_info *info)
 		//parameters for scaling and moving the sprites
 		// #define uDiv 1
 		// #define vDiv 1
-		#define vMove 0.0
+		// #define vMove 0.0
 		// int vMoveScreen = (int)(vMove / transformY);
         // printf("vmove: %d\n", vMoveScreen);
 
