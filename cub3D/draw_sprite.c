@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:22:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:23:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,8 +150,8 @@ void draw_sprite(t_info *info)
 		#define uDiv 1
 		#define vDiv 1
 		#define vMove 0.0
-		int vMoveScreen = (int)(vMove / transformY);
-        printf("vmove: %d\n", vMoveScreen);
+		// int vMoveScreen = (int)(vMove / transformY);
+        // printf("vmove: %d\n", vMoveScreen);
 
 		//calculate height of the sprite on screen
 		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
