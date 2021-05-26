@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:15:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:22:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,10 +156,10 @@ void draw_sprite(t_info *info)
 		//calculate height of the sprite on screen
 		int spriteHeight = (int)fabs((info->cub_list.height / transformY) / vDiv); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2 + vMoveScreen;
+		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
 
@@ -185,7 +185,7 @@ void draw_sprite(t_info *info)
                 y = drawStartY;
                 while (y < drawEndY)
                 {
-                    int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
+                    int d = y * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
                     int texY = ((d * texHeight) / spriteHeight) / 256;
                     int color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
                     if((color & 0x00FFFFFF) != 0)
