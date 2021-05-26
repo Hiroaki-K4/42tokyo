@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:47:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:50:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ void	sortSprites(int *order, double *dist, int amount)
 
 	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
 	i = 0;
-    // for (int i = 0; i < amount; i++)
 	while (i < amount)
     {
 		sprites[i].first = dist[i];
@@ -99,7 +98,6 @@ void	sortSprites(int *order, double *dist, int amount)
     }
 	sort_order(sprites, amount);
 	i = 0;
-    // for (int i = 0; i < amount; i++)
 	while (i < amount)
     {
 		dist[i] = sprites[amount - i - 1].first;
@@ -111,18 +109,24 @@ void	sortSprites(int *order, double *dist, int amount)
 
 void draw_sprite(t_info *info)
 {
+    int i;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	
-	for(int i = 0; i < info->cub_list.num_sprites; i++)
-	{
+    i = 0;
+	// for(int i = 0; i < info->cub_list.num_sprites; i++)
+	while (i < info->cub_list.num_sprites)
+    {
 		spriteOrder[i] = i;
 		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i].x) * (info->posX - info->cub_list.sprites[i].x) + (info->posY - info->cub_list.sprites[i].y) * (info->posY - info->cub_list.sprites[i].y)); //sqrt not taken, unneeded
-	}
+        i++;
+    }
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
-	for(int i = 0; i < info->cub_list.num_sprites; i++)
-	{
+	i = 0;
+    // for(int i = 0; i < info->cub_list.num_sprites; i++)
+	while (i < info->cub_list.num_sprites)
+    {
 		//translate sprite position to relative to camera
 		// double spriteX = sprite[spriteOrder[i]].x - info->posX;
 		double spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
@@ -182,5 +186,6 @@ void draw_sprite(t_info *info)
 					info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
 			}
 		}
+        i++;
 	}
 }
