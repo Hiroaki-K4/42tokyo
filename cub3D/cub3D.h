@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 08:47:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 08:49:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ typedef struct	s_info
 
 int		get_next_line(int fd, char **line, int BUFFER_SIZE);
 void draw_sprite(t_info *info);
-int save_bmp(t_info *info);
 int	key_press(int key, t_info *info);
 void	calc(t_info *info);
 char			*ft_itoa_hex(unsigned int n, char *arg);
