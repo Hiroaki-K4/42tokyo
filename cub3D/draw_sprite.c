@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:50:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:52:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ void	sortSprites(int *order, double *dist, int amount)
 void draw_sprite(t_info *info)
 {
     int i;
+    int stripe;
 	int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	
     i = 0;
-	// for(int i = 0; i < info->cub_list.num_sprites; i++)
 	while (i < info->cub_list.num_sprites)
     {
 		spriteOrder[i] = i;
@@ -124,7 +124,6 @@ void draw_sprite(t_info *info)
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	//after sorting the sprites, do the projection and draw them
 	i = 0;
-    // for(int i = 0; i < info->cub_list.num_sprites; i++)
 	while (i < info->cub_list.num_sprites)
     {
 		//translate sprite position to relative to camera
@@ -166,8 +165,10 @@ void draw_sprite(t_info *info)
 		if(drawEndX >= info->cub_list.width) drawEndX = info->cub_list.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
-		for(int stripe = drawStartX; stripe < drawEndX; stripe++)
-		{
+		stripe = drawStartX;
+        // for(int stripe = drawStartX; stripe < drawEndX; stripe++)
+		while (stripe < drawEndX)
+        {
 			int texX = (int)((256 * (stripe - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
 			//the conditions in the if are:
 			//1) it's in front of camera plane so you don't see things behind you
@@ -185,6 +186,7 @@ void draw_sprite(t_info *info)
 				if((color & 0x00FFFFFF) != 0)
 					info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
 			}
+            stripe++;
 		}
         i++;
 	}
