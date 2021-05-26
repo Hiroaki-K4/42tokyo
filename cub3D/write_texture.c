@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:47:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:48:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,24 +156,17 @@ void	calc(t_info *info)
 					texNum = 3;
 			}
 		}
-
-		// calculate value of wallX
 		if (side == 0)
 			wallX = info->posY + perpWallDist * rayDirY;
 		else
 			wallX = info->posX + perpWallDist * rayDirX;
 		wallX -= floor(wallX);
-
-		// x coordinate on the texture
 		texX = (int)(wallX * (double)texWidth);
 		if (side == 0 && rayDirX > 0)
 			texX = texWidth - texX - 1;
 		if (side == 1 && rayDirY < 0)
 			texX = texWidth - texX - 1;
-
-		// How much to increase the texture coordinate perscreen pixel
 		step = 1.0 * texHeight / lineHeight;
-		// Starting texture coordinate
 		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
 		y = 0;
 		while (y < drawStart)
@@ -184,11 +177,9 @@ void	calc(t_info *info)
 		y = drawStart;
 		while (y < drawEnd)
 		{
-			// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 			texY = (int)texPos & (texHeight - 1);
 			texPos += step;
 			color = info->texture[texNum][texHeight * texY + texX];
-			// make color darker for y-sides: R, G and B byte each divided through two with a "shift" and an "and"
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
@@ -203,9 +194,6 @@ void	calc(t_info *info)
 		}
 		x++;
 	}
-	
-	//SPRITE CASTING
-	//sort sprites from far to close
 	if (info->cub_list.sprite_flag == 1)
 		draw_sprite(info);
 	free(info->zBuffer);
