@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 20:58:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 20:59:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,9 +199,12 @@ void	calc(t_info *info)
 			y++;
 		}
 		info->zBuffer[x] = perpWallDist;
-		for (int y = drawEnd; y < info->cub_list.height; y++)
+		y = drawEnd;
+		// for (int y = drawEnd; y < info->cub_list.height; y++)
+		while (y < info->cub_list.height)
 		{
 			info->buf[y][x] = info->cub_list.floor_dec;
+			y++;
 		}
 		x++;
 	}
