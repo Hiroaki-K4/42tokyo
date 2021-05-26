@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:29:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:30:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void draw_sprite(t_info *info)
 {
     int i;
     int y;
+    int d;
     int stripe;
     int spriteScreenX;
     int spriteHeight;
@@ -120,6 +121,8 @@ void draw_sprite(t_info *info)
     int drawEndX;
     int spriteWidth;
     int texX;
+    int texY;
+    int color;
     double spriteX;
     double spriteY;
 	double invDet;
@@ -189,9 +192,9 @@ void draw_sprite(t_info *info)
                 y = drawStartY;
                 while (y < drawEndY)
                 {
-                    int d = y * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
-                    int texY = ((d * texHeight) / spriteHeight) / 256;
-                    int color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
+                    d = y * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
+                    texY = ((d * texHeight) / spriteHeight) / 256;
+                    color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
                     if ((color & 0x00FFFFFF) != 0)
                         info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
                     y++;
