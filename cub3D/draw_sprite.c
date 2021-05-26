@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:24:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:26:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ void draw_sprite(t_info *info)
     int y;
     int stripe;
     int spriteScreenX;
+    int spriteHeight;
+    int drawStartY;
     double spriteX;
     double spriteY;
 	double invDet;
@@ -147,16 +149,11 @@ void draw_sprite(t_info *info)
 		transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D, the distance of sprite to player, matching sqrt(spriteDistance[i])
 		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
 		//parameters for scaling and moving the sprites
-		// #define uDiv 1
-		// #define vDiv 1
-		// #define vMove 0.0
-		// int vMoveScreen = (int)(vMove / transformY);
-        // printf("vmove: %d\n", vMoveScreen);
-
+		
 		//calculate height of the sprite on screen
-		int spriteHeight = (int)fabs(info->cub_list.height / transformY); //using "transformY" instead of the real distance prevents fisheye
+		spriteHeight = (int)fabs(info->cub_list.height / transformY); //using "transformY" instead of the real distance prevents fisheye
 		//calculate lowest and highest pixel to fill in current stripe
-		int drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
+		drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
 		int drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
