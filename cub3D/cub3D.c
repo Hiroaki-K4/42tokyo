@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 16:37:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:38:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,9 +310,12 @@ void	draw(t_info *info)
 void	calc(t_info *info)
 {
 	int	x;
-	int		spriteOrder[info->cub_list.num_sprites];
-	double	spriteDistance[info->cub_list.num_sprites];
-
+	
+	if (info->cub_list.sprite_flag == 1)
+	{
+		int		spriteOrder[info->cub_list.num_sprites];
+		double	spriteDistance[info->cub_list.num_sprites];
+	}
 
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
