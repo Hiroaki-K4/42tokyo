@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:00:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:05:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,9 +178,8 @@ void draw_sprite(t_info *info)
 			//4) ZBuffer, with perpendicular distance
 			if(transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
 			// if(transformY > 0 && stripe > 0 && stripe < width && transformY < zBuffer[stripe])
-			y = drawStartY;
-            // for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
-            while (y < drawEndY)
+			// y = drawStartY;
+            for(int y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
             {
 				int d = (y-vMoveScreen) * 256 - info->cub_list.height * 128 + spriteHeight * 128; //256 and 128 factors to avoid floats
 				int texY = ((d * texHeight) / spriteHeight) / 256;
@@ -188,7 +187,6 @@ void draw_sprite(t_info *info)
 				int color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX]; //get current color from the texture
 				if((color & 0x00FFFFFF) != 0)
 					info->buf[y][stripe] = color; //paint pixel if it isn't black, black is the invisible color
-                y++;
             }
             stripe++;
 		}
