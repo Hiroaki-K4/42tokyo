@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:45:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 20:53:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ int	main(int argc, char *argv[])
 		get_sprite_pos(&info);
 	info.mlx = mlx_init();
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	info.cub_list.width = sizex;
-	info.cub_list.height = sizey;
+	info.cub_list.width = 1280;
+	info.cub_list.height = 720;
 	info.save_flag = 0;
 	if (argc == 3)
 	{
