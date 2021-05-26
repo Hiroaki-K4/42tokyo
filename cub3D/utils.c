@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:43:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:46:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:47:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,18 @@ int		ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] && s1[i] == s2[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+int		ft_strchr_place(const char *str, int c)
+{
+	int	j;
+
+	j = 0;
+	while (j < (int)ft_strlen(str))
+	{
+		if (str[j] == c)
+			return (j);
+		j++;
+	}
+	return (-1);
 }

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:46:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:47:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,6 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-// int		ft_strcmp(const char *s1, const char *s2)
-// {
-// 	size_t	i;
-
-// 	if (!s1 || !s2)
-// 		return (-1);
-// 	i = 0;
-// 	while (s1[i] && s1[i] == s2[i])
-// 		i++;
-// 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-// }
-
 int map_line_check(char **line_split)
 {
 	int i;
@@ -101,19 +89,19 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int		ft_strchr_place(const char *str, int c)
-{
-	int	j;
+// int		ft_strchr_place(const char *str, int c)
+// {
+// 	int	j;
 
-	j = 0;
-	while (j < (int)ft_strlen(str))
-	{
-		if (str[j] == c)
-			return (j);
-		j++;
-	}
-	return (-1);
-}
+// 	j = 0;
+// 	while (j < (int)ft_strlen(str))
+// 	{
+// 		if (str[j] == c)
+// 			return (j);
+// 		j++;
+// 	}
+// 	return (-1);
+// }
 
 int hex_to_decimal(char *hex)
 {
