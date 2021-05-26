@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:34:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 21:36:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	calc(t_info *info)
 	int y;
 	int stepX;
 	int stepY;
+	int side;
+	int hit;
+	int mapX;
+	int mapY;
 	double cameraX;
 	double sideDistX;
 	double sideDistY;
@@ -34,15 +38,12 @@ void	calc(t_info *info)
 		cameraX = 2 * x / (double)info->cub_list.width - 1;
 		double rayDirX = info->dirX + info->planeX * cameraX;
 		double rayDirY = info->dirY + info->planeY * cameraX;
-		int mapX = (int)info->posX;
-		int mapY = (int)info->posY;
+		mapX = (int)info->posX;
+		mapY = (int)info->posY;
 		 //length of ray from one x or y-side to next x or y-side
 		deltaDistX = fabs(1 / rayDirX);
 		deltaDistY = fabs(1 / rayDirY);
-		int hit = 0; //was there a wall hit?
-		int side; //was a NS or a EW wall hit?
-
-		// printf("DirX: %f DirY: %f\n", info->dirX, info->dirY);
+		hit = 0; //was there a wall hit?
 		if (rayDirX < 0)
 		{
 			stepX = -1;
