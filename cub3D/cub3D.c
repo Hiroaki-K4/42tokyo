@@ -6,25 +6,25 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/26 17:10:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:11:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
-#define X_EVENT_KEY_PRESS	2
-#define X_EVENT_KEY_EXIT	17
-#define texWidth 64
-#define texHeight 64
-#define mapWidth 24
-#define mapHeight 24
-#define numSprites 19
-#define K_W 119
-#define K_S 115
-#define K_D 100
-#define K_A 97
-#define K_ESC 65307
-#define K_R 65363
-#define K_L 65361
+// #define X_EVENT_KEY_PRESS	2
+// #define X_EVENT_KEY_EXIT	17
+// #define texWidth 64
+// #define texHeight 64
+// #define mapWidth 24
+// #define mapHeight 24
+// #define numSprites 19
+// #define K_W 119
+// #define K_S 115
+// #define K_D 100
+// #define K_A 97
+// #define K_ESC 65307
+// #define K_R 65363
+// #define K_L 65361
 
 void	sort_order(t_pair *orders, int amount)
 {
