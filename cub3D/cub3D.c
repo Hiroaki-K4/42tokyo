@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 18:18:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 18:39:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,32 +68,6 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-// void	init_info(t_info *info, int fd)
-// {
-// 	int buffer_size;
-// 	int i;
-// 	char **line;
-// 	// int fd;
-
-// 	buffer_size = 10;
-//     // fd = open(argv[1], O_RDONLY);
-// 	info->cub_list.map_x = 0;
-// 	info->cub_list.map_y = 0;
-// 	info->cub_list.size = 0;
-// 	info->cub_list.sprite_flag = 0;
-// 	i = 1;
-// 	while (i > 0)
-// 	{
-// 		i = get_next_line(fd, &line, buffer_size);
-// 		cub_line_check(line, &info);
-// 		free(line);
-// 	}
-// 	convert_int_matrix(&info);
-// 	if (info->cub_list.sprite_flag == 1)
-// 		get_sprite_pos(&info);
-// 	info->mlx = mlx_init();
-// }
-
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -110,7 +84,6 @@ int	main(int argc, char *argv[])
 		printf("Error\n");
 		return (-1);
 	}
-	// init_info(&info, fd);
 	buffer_size = 10;
     fd = open(argv[1], O_RDONLY);
 	info.cub_list.map_x = 0;
@@ -146,12 +119,18 @@ int	main(int argc, char *argv[])
 			return (-1);
 		i++;
 	}
-	for (int i = 0; i < info.cub_list.height; i++)
+	i = 0;
+	// for (int i = 0; i < info.cub_list.height; i++)
+	while (i < info.cub_list.height)
 	{
-		for (int j = 0; j < info.cub_list.width; j++)
+		j = 0;
+		// for (int j = 0; j < info.cub_list.width; j++)
+		while (j < info.cub_list.width)
 		{
 			info.buf[i][j] = 0;
+			j++;
 		}
+		i++;
 	}
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
 		return (-1);
