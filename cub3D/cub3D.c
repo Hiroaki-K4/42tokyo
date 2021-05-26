@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 15:18:03 by yohlee            #+#    #+#             */
-/*   Updated: 2021/05/25 22:24:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/26 16:19:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -782,11 +782,11 @@ int line_check(char **line, t_info *info)
 		return (-1);
 	if (line_split[0] == NULL)
 		return (0);
-	else if (i = ft_strcmp("R", line_split[0]) == 0)
-	{
-		info->cub_list.width = ft_atoi(line_split[1]);
-		info->cub_list.height = ft_atoi(line_split[2]);
-	}
+	// else if (i = ft_strcmp("R", line_split[0]) == 0)
+	// {
+	// 	info->cub_list.width = ft_atoi(line_split[1]);
+	// 	info->cub_list.height = ft_atoi(line_split[2]);
+	// }
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 		info->cub_list.n_texture = line_split[1];
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
@@ -1089,10 +1089,12 @@ int	main(int argc, char *argv[])
 		}
 	}
 	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	if (info.cub_list.width > sizex)
-		info.cub_list.width = sizex;
-	if (info.cub_list.height > sizey)
-		info.cub_list.height = sizey;
+	info.cub_list.width = sizex;
+	info.cub_list.height = sizey;
+	// if (info.cub_list.width > sizex)
+	// 	info.cub_list.width = sizex;
+	// if (info.cub_list.height > sizey)
+	// 	info.cub_list.height = sizey;
 	printf("sizex: %d sizey: %d\n", info.cub_list.width, info.cub_list.height);
 	load_texture(&info);
 	info.moveSpeed = 0.05;
