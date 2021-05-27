@@ -1,7 +1,7 @@
 #!/bin/bash
 
 make re
-./cub3D sample.cub
+./cub3D sampl.cub
 # ./cub3D test.cub
 make fclean
 cd ..
