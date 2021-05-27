@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:04:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:04:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ int	main(int argc, char *argv[])
 	if (fd == -1)
 	{
 		// perror("error");
+		printf("Error\n");
 		printf("%s\n", strerror(errno));
 		exit(1);
 	}
