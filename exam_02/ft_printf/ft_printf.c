@@ -212,7 +212,7 @@ int	field_precision(t_plist flag_list, char *str_num, int num, int i)
 		j = 0;
 	}
 	while ((ft_strlen(str_num) - j) > 0)
-		tmp[i++] = str[j++];
+		tmp[i++] = str_num[j++];
 	tmp[i] = '\0';
 	i = 0;
 	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
