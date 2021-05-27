@@ -269,7 +269,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	keta = ft_strlen(str_num);
 	if (num < 0)
 		keta--;
-	if (flag_list.precision > keta)
+	if (flag_list.precision > (int)ft_strlen(str_num))
 	{
 		len = flag_list.precision;
 		if (num < 0)
@@ -280,7 +280,6 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 			while (flag_list.precision - (keta++) > 0)
 				write(1, "0", 1);
 			write(1, tmp, ft_strlen(tmp));
-			free(tmp);
 			len = flag_list.precision + 1;
 		}
 		else
