@@ -224,7 +224,7 @@ int		ft_isdigit(int c)
 // 	return (flag_list.field);
 // }
 
-itn 
+
 
 // int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // {
