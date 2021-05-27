@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:04:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:12:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (-1);
+		printf("The number of arguments is wrong\n");
+		exit(1);
 	}
 	buffer_size = 10;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		// perror("error");
 		printf("Error\n");
 		printf("%s\n", strerror(errno));
 		exit(1);
