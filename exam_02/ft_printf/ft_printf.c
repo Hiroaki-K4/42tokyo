@@ -228,7 +228,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
 	int j;
 	char *tmp;
-	
+
 	if (num < 0)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
@@ -247,7 +247,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 			tmp[i++] = '0';
 		j = 0;
 	}
-	while ((ft_strlen(str_num - j) > 0))
+	while ((ft_strlen(str_num) - j) > 0)
 		tmp[i++] = str_num[j++];
 	tmp[i] = '\0';
 	i = 0;
