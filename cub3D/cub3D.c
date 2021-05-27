@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:15:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:17:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,9 @@ int	main(int argc, char *argv[])
 		exit(1);
 	}
 	buffer_size = 10;
+	i = ft_strlen(argv[1]);
+	printf("filename: %d %c\n", i, argv[1][0]);
 	fd = open(argv[1], O_RDONLY);
-	printf("filename: %c\n", argv[1][0]);
 	if (fd == -1)
 	{
 		printf("Error\n");
