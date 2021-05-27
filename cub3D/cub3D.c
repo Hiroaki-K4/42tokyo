@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 21:58:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 21:58:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	main(int argc, char *argv[])
 	if (fd == -1)
 	{
 		perror("error");
-		return (-1);
+		exit(1);
 	}
 	info.cub_list.map_x = 0;
 	info.cub_list.map_y = 0;
