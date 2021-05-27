@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:24:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:25:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(int argc, char *argv[])
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 	{
 		printf("Error\n");
-		printf("Map file is wrong\n");
+		printf("Not a cub file\n");
 		exit(1);
 	}
 	printf("filename: %d %s\n", i, &argv[1][i - 4]);
