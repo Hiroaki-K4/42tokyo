@@ -199,7 +199,7 @@ int	field_precision(t_plist flag_list, char *str_num, int num, int i)
 			return (-1);
 		tmp[0] = '-';
 		i = 1;
-		while ((flag_list.precision + 2 - (int)ft_strlen(str_num) - i) > 0)
+		while ((flag_list.precision + 1 - (int)ft_strlen(str_num) - i) > 0)
 			tmp[i++] = '0';
 		j = 1;
 	}
@@ -224,9 +224,27 @@ int	field_precision(t_plist flag_list, char *str_num, int num, int i)
 	return (flag_list.field);
 }
 
-// int field_precision(t_plist flag_list, char *str, int num, int i)
+// int field_precision(t_plist flag_list, char *str_num, int num, int i)
 // {
+// 	int j;
+// 	char *tmp;
 	
+// 	if (num < 0)
+// 	{
+// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
+// 			return (-1);
+// 		tmp[0] = '-';
+// 		i = 1;
+// 		while ((flag_list.precision + 2 - (int)ft_strlen(str_num) - i) > 0)
+// 			tmp[i++] = '0';
+// 		j = 1;
+// 	}
+// 	else
+// 	{
+// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+// 			return (-1);
+// 		while 
+// 	}
 // }
 
 // int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
