@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 08:49:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:03:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <math.h>
 #include <string.h>
 #include <stdint.h>
+#include <errno.h>
 # include "mlx_linux/mlx.h"
 
 #define X_EVENT_KEY_PRESS	2
