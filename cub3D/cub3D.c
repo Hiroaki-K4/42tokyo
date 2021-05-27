@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:17:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:20:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,12 @@ int	main(int argc, char *argv[])
 	}
 	buffer_size = 10;
 	i = ft_strlen(argv[1]);
+	if ((i = ft_strlen(argv[1])) < 5)
+	{
+		printf("Error\n");
+		printf("Map file is wrong\n");
+		exit(1);
+	}
 	printf("filename: %d %c\n", i, argv[1][0]);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
