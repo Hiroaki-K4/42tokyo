@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:24:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 22:24:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,12 @@ int	main(int argc, char *argv[])
 		printf("Map file is wrong\n");
 		exit(1);
 	}
-	if (strcmp(&argv[1][i - 4], ".cub") == 0)
-		printf("ok\n");
+	if (strcmp(&argv[1][i - 4], ".cub") != 0)
+	{
+		printf("Error\n");
+		printf("Map file is wrong\n");
+		exit(1);
+	}
 	printf("filename: %d %s\n", i, &argv[1][i - 4]);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
