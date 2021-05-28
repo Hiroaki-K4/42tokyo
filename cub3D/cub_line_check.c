@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 21:26:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 21:47:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int cub_line_check(char **line, t_info *info)
+int cub_line_check(char **line, int count, t_info *info)
 {
 	int i;
 	char *map_line;
@@ -85,6 +85,13 @@ int cub_line_check(char **line, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
+		if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
+		{
+			printf("Error\n");
+			printf("Map is wrong\n");
+			exit(1);
+		}
+		info->cub_list.line_num = count;
 		info->cub_list.map_y++;
 		if (!(map_line = ft_strdup(line)))
 			return (-1);

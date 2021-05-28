@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 21:44:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 21:44:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,7 @@ int	main(int argc, char *argv[])
 	{
 		i = get_next_line(fd, &line, buffer_size);
 		count++;
-		printf("line: %d\n", count);
-		cub_line_check(line, &info);
+		cub_line_check(line, count, &info);
 		free(line);
 	}
 	convert_int_matrix(&info);
