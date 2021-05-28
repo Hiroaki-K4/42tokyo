@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 09:21:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 11:29:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,48 +188,11 @@ int		ft_isdigit(int c)
 	return (0);
 }
 
-// int	field_precision(t_plist flag_list, char *str_num, int num, int i)
-// {
-// 	int		j;
-// 	char	*tmp;
-
-// 	if (num < 0)
-// 	{
-// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
-// 			return (-1);
-// 		tmp[0] = '-';
-// 		i = 1;
-// 		while ((flag_list.precision + 2 - (int)ft_strlen(str_num) - i) > 0)
-// 			tmp[i++] = '0';
-// 		j = 1;
-// 	}
-// 	else
-// 	{
-// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
-// 			return (-1);
-// 		while ((flag_list.precision - (int)ft_strlen(str_num) - i) > 0)
-// 			tmp[i++] = '0';
-// 		j = 0;
-// 	}
-// 	while ((ft_strlen(str_num) - j) > 0)
-// 		tmp[i++] = str_num[j++];
-// 	tmp[i] = '\0';
-// 	i = 0;
-// 	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
-// 		write(1, " ", 1);
-// 	write(1, tmp, ft_strlen(tmp));
-// 	free(tmp);
-// 	if (flag_list.precision > flag_list.field)
-// 		return (flag_list.precision);
-// 	return (flag_list.field);
-// }
-
-int field_precision(t_plist flag_list, char *str_num, int num, int i)
+int	field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
-	int len;
-	char *tmp;
+	int		j;
+	char	*tmp;
 
-	len = 0;
 	if (num < 0)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
@@ -252,7 +215,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 		tmp[i++] = str_num[j++];
 	tmp[i] = '\0';
 	i = 0;
-	whlie ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
+	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
 		write(1, " ", 1);
 	write(1, tmp, ft_strlen(tmp));
 	free(tmp);
