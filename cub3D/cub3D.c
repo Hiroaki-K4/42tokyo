@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:26:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 18:45:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ int	main(int argc, char *argv[])
 	info.cub_list.map_y = 0;
 	info.cub_list.size = 0;
 	info.cub_list.sprite_flag = 0;
+	info.cub_list.init_pos_count = 0;
 	i = 1;
 	while (i > 0)
 	{
@@ -127,6 +128,7 @@ int	main(int argc, char *argv[])
 		free(line);
 	}
 	convert_int_matrix(&info);
+	printf("count: %d\n", info.cub_list.init_pos_count);
 	if (info.cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
 	info.mlx = mlx_init();

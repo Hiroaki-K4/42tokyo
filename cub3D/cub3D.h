@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:03:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 18:43:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ typedef struct		s_cub
 	int sprite_flag;
 	int floor_dec;
 	int ceiling_dec;
+	int init_pos_count;
 	t_rgb floor;
 	t_rgb ceiling;
 }					t_cub;
