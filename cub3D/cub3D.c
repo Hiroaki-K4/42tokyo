@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 18:46:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 21:44:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	main(int argc, char *argv[])
 	int j;
 	int sizex;
 	int sizey;
+	int count;
 	char **line;
 	char *sin;
 	
@@ -120,10 +121,14 @@ int	main(int argc, char *argv[])
 	info.cub_list.size = 0;
 	info.cub_list.sprite_flag = 0;
 	info.cub_list.init_pos_count = 0;
+	info.cub_list.line_num = 0;
+	count = 0;
 	i = 1;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
+		count++;
+		printf("line: %d\n", count);
 		cub_line_check(line, &info);
 		free(line);
 	}
