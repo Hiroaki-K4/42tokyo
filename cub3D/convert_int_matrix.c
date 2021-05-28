@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 18:49:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 18:49:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ int convert_int_matrix(t_info *info)
 		print("Error\n");
 		printf("Map file is wrong\n");
 		exit(1);
+		return (0);
 	}
 	return (0);
 }
