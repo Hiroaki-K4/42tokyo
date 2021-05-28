@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:58:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/27 23:00:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int convert_int_matrix(t_info *info)
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
-		if (ft_strchr(info->cub_list.map[i], ' ') != NULL)
-		{
-			printf("Error\n");
-			printf("Map includes the space\n");
-			exit(1);
-		}
+		// if (ft_strchr(info->cub_list.map[i], ' ') != NULL)
+		// {
+		// 	printf("Error\n");
+		// 	printf("Map includes the space\n");
+		// 	exit(1);
+		// }
 		j = 0;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{

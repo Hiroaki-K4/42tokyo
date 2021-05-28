@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 10:07:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 09:23:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,98 +211,6 @@
 //     return (0);
 // }
 
-size_t ft_strlen(const char *src)
-{
-    size_t i;
-
-    i = 0;
-    while (src[i])
-        i++;
-    return (i);
-}
-
-char *ft_strchr(const char *src, int c)
-{
-    unsigned const char *ptr_s;
-    int i;
-
-    ptr_s = (unsigned const char *)src;
-    i = 0;
-    while (ptr_s[i])
-    {
-        if (ptr_s[i] == (unsigned const char)c)
-            return (char *)(src + i);
-        i++;
-    }
-    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
-        return (char *)(src + i);
-    return (NULL);
-}
-
-size_t ft_strlcpy(char *dst, const char *src, size_t n)
-{
-    size_t i;
-    size_t ans;
-
-    ans = ft_strlen(src);
-    if (n == 0)
-        return (ans);
-    i = 0;
-    while (src[i] && i < n - 1)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (ans);
-}
-
-char *ft_strjoin(const char *s1, const char *s2)
-{
-    size_t i;
-    size_t j;
-    char *dst;
-
-    if (!s1 || !s2)
-        return (NULL);
-    if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-        return (NULL);
-    i = 0;
-    while (s1[i])
-    {
-        dst[i] = s1[i];
-        i++;
-    }
-    j = 0;
-    while (s2[j])
-    {
-        dst[i] = s2[j];
-        i++;
-        j++;
-    }
-    dst[i] = '\0';
-    return (dst);
-}
-
-char *ft_strdup(const char *src)
-{
-    size_t i;
-    char *dst;
-
-    if (!src)
-        return (NULL);
-    if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
-        return (NULL);
-    i = 0;
-    while (src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
-}
-
 char *get_from_store(char *store, char **line)
 {
     int i;
@@ -326,7 +234,7 @@ char *save_new_line(char *store, char **line, char *buf)
     int i;
     int j;
     char *tmp;
-
+    
     i = 0;
     while (buf[i] && buf[i] != '\n')
         i++;
@@ -334,7 +242,7 @@ char *save_new_line(char *store, char **line, char *buf)
         return (NULL);
     ft_strlcpy(tmp, store, ft_strlen(store) + 1);
     j = -1;
-    while (buf[++j] && j < i)
+    while (buf[j++] && j < i)
         tmp[ft_strlen(store) + j] = buf[j];
     tmp[ft_strlen(store) + j] = '\0';
     if (!(*line = ft_strdup(tmp)))
@@ -343,8 +251,7 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-    // free(store);
-    // free(buf);
+    free(store);
     return (tmp);
 }
 
@@ -352,8 +259,8 @@ int read_line(int fd, char **store, char **line)
 {
     int buffer_size;
     int i;
-    char *tmp;
     char *buf;
+    char *tmp;
     
     buffer_size = 128;
     if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
@@ -377,8 +284,8 @@ int read_line(int fd, char **store, char **line)
     }
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
-    // free(store[fd]);
     free(buf);
+    free(store[fd]);
     return (0);
 }
 
@@ -390,8 +297,6 @@ int get_next_line(int fd, char **line)
     *line = NULL;
     if (fd < 0 || fd > 255)
         return (-1);
-    if (store[fd] == NULL)
-        store[fd] = ft_strdup("");
     if (ft_strchr(store[fd], '\n') == NULL)
     {
         if ((i = read_line(fd, store, line)) == 0)
