@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 18:44:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 18:46:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,6 @@ int convert_int_matrix(t_info *info)
 		write(1, "\n", 1);
 		i++;
 	}
-
+	printf("count: %d\n", info->cub_list.init_pos_count);
 	return (0);
 }
