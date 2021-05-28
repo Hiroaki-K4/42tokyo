@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 11:41:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 11:48:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -553,7 +553,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	unsigned int hex_num;
 	char *str_num;
 	t_plist flag_list;
-
+	
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i, 0);
 	flag_list.precision = -1;
@@ -582,7 +582,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
-	return (len);
+	return (l)
 }
 
 // int		ft_printf_str(const char *arg, int *i)
