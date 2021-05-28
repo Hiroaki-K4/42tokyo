@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/27 22:47:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/28 21:26:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ int cub_line_check(char **line, t_info *info)
 	if (!(line_split = ft_split(line, ' ')))
 		return (-1);
 	if (line_split[0] == NULL)
+	{
+		printf("ok\n");
 		return (0);
+	}
 	else if (i = ft_strcmp("NO", line_split[0]) == 0)
 		info->cub_list.n_texture = line_split[1];
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
