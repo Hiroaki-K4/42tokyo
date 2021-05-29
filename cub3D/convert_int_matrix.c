@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:45:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:50:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,30 @@ void map_col_check(t_info *info)
 {
 	int i;
 	int j;
+	int first_no_wall_col;
+	int last_no_wall_col;
 	
+	first_no_wall_col = 2147483647;
+	last_no_wall_col = -1;
 	j = 0;
 	while (j < info->cub_list.map_x)
 	{
 		i = 0;
 		while (i < info->cub_list.map_y)
 		{
+			if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+			{
+				if (j < first_no_wall_col)
+					first_no_wall_col = i;
+				if (j > last_no_wall_col)
+					last_no_wall_col = i;
+			}
 			write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 			i++;
 		}
-		j++;
 		write(1, "\n", 1);
+		j++;
+		printf("col_first: %d col_last: %d\n", first_no_wall_col, last_no_wall_col);
 	}
 }
 
@@ -36,9 +48,7 @@ int convert_int_matrix(t_info *info)
 	int i;
 	int j;
 	int first_no_wall_row;
-	int first_no_wall_col;
 	int last_no_wall_row;
-	int last_no_wall_col;
 	
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		return (-1);
