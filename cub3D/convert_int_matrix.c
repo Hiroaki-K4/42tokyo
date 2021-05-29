@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:33:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:47:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,7 +294,7 @@ int convert_int_matrix(t_info *info)
 		i++;
 	}
 	map_not_srrounded_check(info);
-	map_space_check(info);
+	// map_space_check(info);
 	if (info->cub_list.init_pos_count != 1)
 	{
 		printf("Error\n");
