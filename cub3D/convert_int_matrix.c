@@ -6,18 +6,39 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:31:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:43:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+void map_col_check(t_info *info)
+{
+	int i;
+	int j;
+	
+	j = 0;
+	while (j < info->cub_list.map_y)
+	{
+		i = 0;
+		while (i < info->cub_list.map_x)
+		{
+			write(1, &info->cub_list.map_matrix[i][j]);
+			i++;
+		}
+		j++;
+		write(1, "\n", 1);
+	}
+}
 
 int convert_int_matrix(t_info *info)
 {
 	int i;
 	int j;
 	int first_no_wall_row;
+	int first_no_wall_col;
 	int last_no_wall_row;
+	int last_no_wall_col;
 	
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		return (-1);
@@ -191,6 +212,7 @@ int convert_int_matrix(t_info *info)
 		write(1, "\n", 1);
 		i++;
 	}
+	map_col_check(info);
 	if (info->cub_list.init_pos_count != 1)
 	{
 		printf("Error\n");
