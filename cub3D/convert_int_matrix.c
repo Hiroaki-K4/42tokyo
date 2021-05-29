@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 18:43:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 18:47:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,33 @@ void map_space_check(t_info *info)
 				}
 				else
 				{
-					
+					if (j == 0)
+					{
+						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+						{
+							printf("Error\n");
+							printf("Map file is wrong\n");
+							exit(1);
+						}
+					}
+					else if (j == info->cub_list.map_x - 1)
+					{
+						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+						{
+							printf("Error\n");
+							printf("Map file is wrong\n");
+							exit(1);
+						}
+					}
+					else
+					{
+						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+						{
+							printf("Error\n");
+							printf("Map file is wrong\n");
+							exit(1);
+						}
+					}
 				}
 			}
 			j++;
