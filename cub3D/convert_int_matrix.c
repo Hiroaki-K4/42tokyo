@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:50:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:52:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void map_col_check(t_info *info)
 		{
 			if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 			{
-				if (j < first_no_wall_col)
+				if (i < first_no_wall_col)
 					first_no_wall_col = i;
-				if (j > last_no_wall_col)
+				if (i > last_no_wall_col)
 					last_no_wall_col = i;
 			}
 			write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
