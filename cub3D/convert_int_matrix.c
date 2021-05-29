@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 18:08:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 18:11:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void map_not_srrounded_check(t_info *info)
 			write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 			i++;
 		}
+		printf("fisrt: %d last: %d\n", first_no_wall_col, last_no_wall_col);
 		if (j == 0 || j == info->cub_list.map_x - 1)
 		{
 			if (last_no_wall_col != -1)
@@ -66,7 +67,6 @@ void map_not_srrounded_check(t_info *info)
 		}
 		write(1, "\n", 1);
 		j++;
-		printf("col_first: %d col_last: %d\n", first_no_wall_col, last_no_wall_col);
 	}
 }
 
@@ -129,7 +129,6 @@ int convert_int_matrix(t_info *info)
 			return (-1);
 		i++;
 	}
-	printf("mapx: %d mapy: %d\n", info->cub_list.map_x, info->cub_list.map_y);
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
@@ -292,7 +291,7 @@ int convert_int_matrix(t_info *info)
 				}
 			}
 		}
-		printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
+		// printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
 		write(1, "\n", 1);
 		i++;
 	}
