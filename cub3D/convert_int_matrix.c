@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:29:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:29:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,7 +288,7 @@ int convert_int_matrix(t_info *info)
 				}
 			}
 		}
-		printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
+		// printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
 		write(1, "\n", 1);
 		i++;
 	}
