@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:02:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:05:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,10 +157,10 @@ int convert_int_matrix(t_info *info)
 						last_zero = j;
 				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
-				printf("fisrt: %d last: %d\n", first_zero, last_zero);
 				j++;
 			}
 		}
+		printf("fisrt: %d last: %d\n", first_zero, last_zero);
 		write(1, "\n", 1);
 		i++;
 	}
