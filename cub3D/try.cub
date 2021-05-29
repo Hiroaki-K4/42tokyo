@@ -4,8 +4,8 @@ WE ./textures/purplestone.xpm
 EA ./textures/purplestone.xpm
 
 S textures/barrel.xpm
-F 220,100,300
-C 225,30,300
+F 220,100
+C 225,30,200
 
          1
         1111111111111111111111111
