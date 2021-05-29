@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 16:11:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 16:12:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,6 @@ int convert_int_matrix(t_info *info)
 	int first_no_wall_row;
 	int last_no_wall_row;
 	
-	if (info->cub_list.map_x > 2147483647 || info->cub_list.map_y > 2147483647)
-	{
-		printf("Error\n");
-		printf("Map is too big\n");
-		exit(1);
-	}
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		return (-1);
 	i = 0;
