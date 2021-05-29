@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:13:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:21:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,45 @@ void map_not_srrounded_check(t_info *info)
 
 void map_space_check(t_info *info)
 {
-	int i;
-	int j;
+	// int i;
+	// int j;
 
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		while (j < info->cub_list.map_x)
-		{
-			if (info->cub_list.map_matrix[i][j] == 5)
-				printf("ok\n");
-			j++;
-		}
-		i++;
-	}
+	// i = 0;
+	// while (i < info->cub_list.map_y)
+	// {
+	// 	j = 0;
+	// 	while (j < info->cub_list.map_x)
+	// 	{
+	// 		if (info->cub_list.map_matrix[i][j] == 5)
+	// 		{
+	// 			if (i == 0)
+	// 			{
+	// 				if (j == 0)
+	// 				{
+	// 					if (info->cub_list.map_matrix[i][j + 1] ==)
+	// 				}
+	// 				else if (j == info->cub_list.map_x - 1)
+	// 				{
+
+	// 				}
+	// 				else
+	// 				{
+						
+	// 				}
+	// 			}
+	// 			else if (i == info->cub_list.map_y - 1)
+	// 			{
+					
+	// 			}
+	// 			else
+	// 			{
+					
+	// 			}
+	// 		}
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
 }
 
 int convert_int_matrix(t_info *info)
