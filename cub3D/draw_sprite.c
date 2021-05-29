@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:46:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 21:07:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int get_sprite_pos(t_info *info)
 		i++;
 	}
 	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
-		return (-1);
+	{
+		printf("Error\n");
+		printf("Malloc failed\n");
+		exit(1);
+	}
 	count = 0;
 	i = 0;
 	while (i < info->cub_list.map_y)
@@ -88,7 +92,12 @@ void	sortSprites(int *order, double *dist, int amount)
     int i;
 	t_pair	*sprites;
 
-	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
+	if (!(sprites = (t_pair*)malloc(sizeof(t_pair) * amount)))
+	{
+		printf("Error\n");
+		printf("Malloc failed\n");
+		exit(1);
+	}
 	i = 0;
 	while (i < amount)
     {
