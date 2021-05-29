@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:52:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:53:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,24 +271,24 @@ int convert_int_matrix(t_info *info)
 				exit(1);
 			}
 		}
-		// else
-		// {
-		// 	if (first_no_wall_row == 0 || last_no_wall_row == info->cub_list.map_x - 1)
-		// 	{
-		// 		printf("Error\n");
-		// 		printf("Map file is wrong\n");
-		// 		exit(1);
-		// 	}
-		// 	if (first_no_wall_row != -1)
-		// 	{
-		// 		if (info->cub_list.map_matrix[i][first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][last_no_wall_row + 1] != 1)
-		// 		{
-		// 			printf("Error\n");
-		// 			printf("Map file is wrong\n");
-		// 			exit(1);
-		// 		}
-		// 	}
-		// }
+		else
+		{
+			if (first_no_wall_row == 0 || last_no_wall_row == info->cub_list.map_x - 1)
+			{
+				printf("Error\n");
+				printf("Map file is wrong\n");
+				exit(1);
+			}
+			// if (first_no_wall_row != -1)
+			// {
+			// 	if (info->cub_list.map_matrix[i][first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][last_no_wall_row + 1] != 1)
+			// 	{
+			// 		printf("Error\n");
+			// 		printf("Map file is wrong\n");
+			// 		exit(1);
+			// 	}
+			// }
+		}
 		printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
 		write(1, "\n", 1);
 		i++;
