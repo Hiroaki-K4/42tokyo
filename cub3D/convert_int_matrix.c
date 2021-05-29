@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:44:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:45:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void map_col_check(t_info *info)
 		i = 0;
 		while (i < info->cub_list.map_y)
 		{
-			write(1, &info->cub_list.map_matrix[i][j], 1);
+			write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 			i++;
 		}
 		j++;
