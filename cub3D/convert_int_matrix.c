@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:12:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:14:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				if (info->cub_list.map_matrix[i][j] == 0)
+				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
 					if (j < first_zero)
 						first_zero = j;
@@ -149,7 +149,7 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				if (info->cub_list.map_matrix[i][j] == 0)
+				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
 					if (j < first_zero)
 						first_zero = j;
