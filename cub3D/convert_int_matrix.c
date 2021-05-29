@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:04:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 21:27:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,12 +208,6 @@ int convert_int_matrix(t_info *info)
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
-		// if (ft_strchr(info->cub_list.map[i], ' ') != NULL)
-		// {
-		// 	printf("Error\n");
-		// 	printf("Map includes the space\n");
-		// 	exit(1);
-		// }
 		j = 0;
 		first_no_wall_row = 2147483647;
 		last_no_wall_row = -1;
