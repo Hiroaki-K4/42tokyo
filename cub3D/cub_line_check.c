@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:52:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 21:54:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ int cub_line_check(char **line, int count, t_info *info)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		printf("len: %d\n", ft_strlen(rgb_split));
+		int count = 0;
+		while (rgb_split[count])
+			count++;
+		printf("len: %d\n", count);
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
