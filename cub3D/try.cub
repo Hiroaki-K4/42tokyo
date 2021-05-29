@@ -1,6 +1,5 @@
 NO ./textures/eagle.xpm
 SO ./textures/eagle.xpm
-WE ./textures/purplestone.xpm
 EA ./textures/purplestone.xpm
 
 S textures/barrel.xpm
