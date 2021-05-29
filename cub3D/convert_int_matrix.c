@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:48:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:49:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ int convert_int_matrix(t_info *info)
 			return (-1);
 		i++;
 	}
+	printf("mapx: %d mapy: %d\n", info->cub_list.map_x, info->cub_list.map_y);
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
