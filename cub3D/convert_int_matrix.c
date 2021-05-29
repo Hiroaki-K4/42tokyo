@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:54:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:56:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,7 +281,7 @@ int convert_int_matrix(t_info *info)
 			}
 			if (first_no_wall_row != -1)
 			{
-				printf("first_no_wall: %d\n", first_no_wall_row);
+				printf("first_no_wall: %d\n", last_no_wall_row);
 				if (info->cub_list.map_matrix[i][first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][last_no_wall_row + 1] != 1)
 				{
 					printf("Error\n");
