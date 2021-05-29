@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 18:13:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 18:13:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,9 @@ void map_not_srrounded_check(t_info *info)
 		}
 		else if (j == 0 || j == info->cub_list.map_x - 1)
 		{
-			if (last_no_wall_col != -1)
-			{
-				printf("Error\n");
-				printf("Map file is wrong\n");
-				exit(1);
-			}
+			printf("Error\n");
+			printf("Map file is wrong\n");
+			exit(1);
 		}
 		else
 		{
