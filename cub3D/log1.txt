@@ -1,0 +1,69 @@
+==134339== Memcheck, a memory error detector
+==134339== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==134339== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==134339== Command: ./cub3D sample.cub
+==134339== Parent PID: 134205
+==134339== 
+==134339== Conditional jump or move depends on uninitialised value(s)
+==134339==    at 0x115405: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x115430: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x1158A6: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x11265E: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339== 
+==134339== Conditional jump or move depends on uninitialised value(s)
+==134339==    at 0x115405: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x115430: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x1158A6: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112815: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339== 
+==134339== Invalid read of size 1
+==134339==    at 0x115194: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112D7B: make_decimal_color (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112968: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==  Address 0x60 is not stack'd, malloc'd or (recently) free'd
+==134339== 
+==134339== 
+==134339== Process terminating with default action of signal 11 (SIGSEGV)
+==134339==  Access not within mapped region at address 0x60
+==134339==    at 0x115194: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112D7B: make_decimal_color (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112968: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==  If you believe this happened as a result of a stack
+==134339==  overflow in your program's main thread (unlikely but
+==134339==  possible), you can try to increase the size of the
+==134339==  main thread stack using the --main-stacksize= flag.
+==134339==  The main thread stack size used in this run was 8388608.
+==134339== 
+==134339== HEAP SUMMARY:
+==134339==     in use at exit: 359 bytes in 26 blocks
+==134339==   total heap usage: 75 allocs, 49 frees, 1,024 bytes allocated
+==134339== 
+==134339== 3 bytes in 1 blocks are definitely lost in loss record 3 of 11
+==134339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==134339==    by 0x112318: ft_itoa_hex (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112D5B: make_decimal_color (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x112968: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339== 
+==134339== 142 (128 direct, 14 indirect) bytes in 6 blocks are definitely lost in loss record 11 of 11
+==134339==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==134339==    by 0x11587C: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x11265E: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==134339== 
+==134339== LEAK SUMMARY:
+==134339==    definitely lost: 131 bytes in 7 blocks
+==134339==    indirectly lost: 14 bytes in 5 blocks
+==134339==      possibly lost: 0 bytes in 0 blocks
+==134339==    still reachable: 214 bytes in 14 blocks
+==134339==         suppressed: 0 bytes in 0 blocks
+==134339== Reachable blocks (those to which a pointer was found) are not shown.
+==134339== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==134339== 
+==134339== Use --track-origins=yes to see where uninitialised values come from
+==134339== For lists of detected and suppressed errors, rerun with: -s
+==134339== ERROR SUMMARY: 11 errors from 5 contexts (suppressed: 0 from 0)
