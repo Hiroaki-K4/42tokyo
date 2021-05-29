@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:24:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:25:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ int convert_int_matrix(t_info *info)
 			}
 			if (first_zero != -1)
 			{
-				if (info->cub_list.map_matrix[i][first_zero - 1] != 1 || info->cub_list.map_matrix[i][last_zero - 1] != 1)
+				if (info->cub_list.map_matrix[i][first_zero - 1] != 1 || info->cub_list.map_matrix[i][last_zero + 1] != 1)
 				{
 					// printf("Error\n");
 					// printf("Map file is wrong\n");
