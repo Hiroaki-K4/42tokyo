@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:43:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:44:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void map_col_check(t_info *info)
 	int j;
 	
 	j = 0;
-	while (j < info->cub_list.map_y)
+	while (j < info->cub_list.map_x)
 	{
 		i = 0;
-		while (i < info->cub_list.map_x)
+		while (i < info->cub_list.map_y)
 		{
 			write(1, &info->cub_list.map_matrix[i][j], 1);
 			i++;
