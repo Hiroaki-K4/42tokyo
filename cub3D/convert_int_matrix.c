@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:13:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:13:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void map_space_check(t_info *info)
 		{
 			if (info->cub_list.map_matrix[i][j] == 5)
 				printf("ok\n");
-			j++
+			j++;
 		}
 		i++;
 	}
