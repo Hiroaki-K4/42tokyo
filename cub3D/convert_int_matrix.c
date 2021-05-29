@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:02:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:13:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void not_srrounded_check(t_info *info)
+void map_not_srrounded_check(t_info *info)
 {
 	int i;
 	int j;
@@ -67,6 +67,25 @@ void not_srrounded_check(t_info *info)
 		write(1, "\n", 1);
 		j++;
 		printf("col_first: %d col_last: %d\n", first_no_wall_col, last_no_wall_col);
+	}
+}
+
+void map_space_check(t_info *info)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < info->cub_list.map_y)
+	{
+		j = 0;
+		while (j < info->cub_list.map_x)
+		{
+			if (info->cub_list.map_matrix[i][j] == 5)
+				printf("ok\n");
+			j++
+		}
+		i++;
 	}
 }
 
@@ -249,7 +268,8 @@ int convert_int_matrix(t_info *info)
 		write(1, "\n", 1);
 		i++;
 	}
-	not_srrounded_check(info);
+	map_not_srrounded_check(info);
+	map_space_check(info);
 	if (info->cub_list.init_pos_count != 1)
 	{
 		printf("Error\n");
