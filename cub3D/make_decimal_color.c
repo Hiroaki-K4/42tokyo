@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 22:10:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 22:13:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ int hex_to_decimal(char *hex)
 	return (ans);
 }
 
+void error_exit()
+{
+	printf("Error\n");
+	printf("Malloc failed\n");
+	exit(1);
+}
+
 char *make_decimal_color(t_rgb color)
 {
 	char *hex;
@@ -46,18 +53,18 @@ char *make_decimal_color(t_rgb color)
 	int ans;
 	
 	if (!(red = ft_strdup(ft_itoa_hex(color.red, "0123456789ABCDEF"))))
-		return (NULL);
+		error_exit();
 	if (!(green = ft_strdup(ft_itoa_hex(color.green, "0123456789ABCDEF"))))
-		return (NULL);
+		error_exit();
 	if (!(blue = ft_strdup(ft_itoa_hex(color.blue, "0123456789ABCDEF"))))
-		return (NULL);
+		error_exit();
 	if (!(hex = ft_strjoin(red, green)))
-		return (NULL);
+		error_exit();
 	if (!(tmp = ft_strdup(hex)))
-		return (NULL);
+		error_exit();
 	free(hex);
 	if (!(hex = ft_strjoin(tmp, blue)))
-		return (NULL);
+		error_exit();
 	free(red);
 	free(green);
 	free(blue);
