@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:55:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 21:57:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int map_line_check(char **line_split)
 int cub_line_check(char **line, int count, t_info *info)
 {
 	int i;
-	int count;
+	int j;
 	char *map_line;
 	char **line_split;
 	char **rgb_split;
@@ -67,10 +67,10 @@ int cub_line_check(char **line, int count, t_info *info)
 	{
 		if (!(rgb_split = ft_split(line_split[1], ',')))
 			return (-1);
-		count = 0;
-		while (rgb_split[count])
-			count++;
-		if (count != 3)
+		j = 0;
+		while (rgb_split[j])
+			j++;
+		if (j != 3)
 		{
 			printf("Error\n");
 			printf("Color is wrong\n");
