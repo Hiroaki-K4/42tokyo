@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 16:12:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:02:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void map_col_check(t_info *info)
+void not_srrounded_check(t_info *info)
 {
 	int i;
 	int j;
@@ -249,7 +249,7 @@ int convert_int_matrix(t_info *info)
 		write(1, "\n", 1);
 		i++;
 	}
-	map_col_check(info);
+	not_srrounded_check(info);
 	if (info->cub_list.init_pos_count != 1)
 	{
 		printf("Error\n");
