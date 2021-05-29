@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:52:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:52:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void map_col_check(t_info *info)
 	int first_no_wall_col;
 	int last_no_wall_col;
 	
-	first_no_wall_col = 2147483647;
-	last_no_wall_col = -1;
 	j = 0;
 	while (j < info->cub_list.map_x)
 	{
+		first_no_wall_col = 2147483647;
+		last_no_wall_col = -1;
 		i = 0;
 		while (i < info->cub_list.map_y)
 		{
