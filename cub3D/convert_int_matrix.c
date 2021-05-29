@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:01:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:02:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int convert_int_matrix(t_info *info)
 						first_zero = j;
 					if (j > last_zero)
 						last_zero = j;
-					printf("fisrt: %d last: %d\n", first_zero, last_zero);
 				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
@@ -150,7 +149,15 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
+				if (info->cub_list.map_matrix[i][j] == 0)
+				{
+					if (j < first_zero)
+						first_zero = j;
+					if (j > last_zero)
+						last_zero = j;
+				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+				printf("fisrt: %d last: %d\n", first_zero, last_zero);
 				j++;
 			}
 		}
