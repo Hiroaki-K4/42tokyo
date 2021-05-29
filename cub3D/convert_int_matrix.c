@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 18:13:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 18:32:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,45 +73,55 @@ void map_not_srrounded_check(t_info *info)
 
 void map_space_check(t_info *info)
 {
-	// int i;
-	// int j;
+	int i;
+	int j;
 
-	// i = 0;
-	// while (i < info->cub_list.map_y)
-	// {
-	// 	j = 0;
-	// 	while (j < info->cub_list.map_x)
-	// 	{
-	// 		if (info->cub_list.map_matrix[i][j] == 5)
-	// 		{
-	// 			if (i == 0)
-	// 			{
-	// 				if (j == 0)
-	// 				{
-	// 					if (info->cub_list.map_matrix[i][j + 1] ==)
-	// 				}
-	// 				else if (j == info->cub_list.map_x - 1)
-	// 				{
-
-	// 				}
-	// 				else
-	// 				{
+	i = 0;
+	while (i < info->cub_list.map_y)
+	{
+		j = 0;
+		while (j < info->cub_list.map_x)
+		{
+			if (info->cub_list.map_matrix[i][j] == 5)
+			{
+				if (i == 0)
+				{
+					if (j == 0)
+					{
+						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2)
+						{
+							printf("Error\n");
+							printf("Map file is wrong\n");
+							exit(1);
+						}
+					}
+					else if (j == info->cub_list.map_x - 1)
+					{
+						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2)
+						{
+							printf("Error\n");
+							printf("Map file is wrong\n");
+							exit(1);
+						}
+					}
+					else
+					{
 						
-	// 				}
-	// 			}
-	// 			else if (i == info->cub_list.map_y - 1)
-	// 			{
+					}
+				}
+				else if (i == info->cub_list.map_y - 1)
+				{
 					
-	// 			}
-	// 			else
-	// 			{
+				}
+				else
+				{
 					
-	// 			}
-	// 		}
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
+				}
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 int convert_int_matrix(t_info *info)
