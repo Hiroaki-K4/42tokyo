@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:08:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:09:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,14 @@ int convert_int_matrix(t_info *info)
 			}
 		}
 		if (i == 0 || i == info->cub_list.map_y - 1)
-			printf("ok\n");
+		{
+			if (last_zero == -1)
+			{
+				printf("Error\n");
+				printf("Map file is wrong\n");
+				exit(1);
+			}
+		}
 		printf("fisrt: %d last: %d\n", first_zero, last_zero);
 		write(1, "\n", 1);
 		i++;
