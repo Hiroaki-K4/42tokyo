@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 13:50:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:01:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int convert_int_matrix(t_info *info)
 		i++;
 	}
 	i = 0;
-	first_zero = 2147483647;
-	last_zero = 0;
 	while (i < info->cub_list.map_y)
 	{
 		// if (ft_strchr(info->cub_list.map[i], ' ') != NULL)
@@ -40,6 +38,8 @@ int convert_int_matrix(t_info *info)
 		// 	exit(1);
 		// }
 		j = 0;
+		first_zero = 2147483647;
+		last_zero = 0;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{
 			while (j < ft_strlen(info->cub_list.map[i]))
@@ -88,7 +88,11 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
 				if (info->cub_list.map_matrix[i][j] == 0)
 				{
-					printf("pos: %d\n", j);
+					if (j < first_zero)
+						first_zero = j;
+					if (j > last_zero)
+						last_zero = j;
+					printf("fisrt: %d last: %d\n", first_zero, last_zero);
 				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
