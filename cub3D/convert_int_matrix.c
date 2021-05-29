@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 18:04:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 18:04:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,7 @@ int convert_int_matrix(t_info *info)
 		}
 		// if (last_no_wall_row == -1)
 		// 	continue;
-		else if (i == 0 || i == info->cub_list.map_y - 1)
+		if (i == 0 || i == info->cub_list.map_y - 1)
 		{
 			if (last_no_wall_row != -1)
 			{
