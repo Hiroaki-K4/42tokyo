@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:14:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:17:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,8 @@ int convert_int_matrix(t_info *info)
 				exit(1);
 			}
 		}
+		else
+			printf("i: %d\n", i);
 		printf("fisrt: %d last: %d\n", first_zero, last_zero);
 		write(1, "\n", 1);
 		i++;
