@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/28 20:52:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 13:49:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int convert_int_matrix(t_info *info)
 {
 	int i;
 	int j;
+	int first_zero;
+	int last_zero;
 	
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		return (-1);
@@ -27,6 +29,8 @@ int convert_int_matrix(t_info *info)
 		i++;
 	}
 	i = 0;
+	first_zero = 2147483647;
+	last_zero = 0;
 	while (i < info->cub_list.map_y)
 	{
 		// if (ft_strchr(info->cub_list.map[i], ' ') != NULL)
@@ -82,6 +86,10 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
+				if (info->cub_list.map_matrix[i][j] == '0')
+				{
+					printf("pos: %d\n", j);
+				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
