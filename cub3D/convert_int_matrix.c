@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 17:51:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 17:52:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,13 +188,13 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				// if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-				// {
-				// 	if (j < first_no_wall_row)
-				// 		first_no_wall_row = j;
-				// 	if (j > last_no_wall_row)
-				// 		last_no_wall_row = j;
-				// }
+				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+				{
+					if (j < first_no_wall_row)
+						first_no_wall_row = j;
+					if (j > last_no_wall_row)
+						last_no_wall_row = j;
+				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
@@ -251,13 +251,13 @@ int convert_int_matrix(t_info *info)
 					info->cub_list.map_matrix[i][j] = 5;
 				else
 					info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
-				// if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-				// {
-				// 	if (j < first_no_wall_row)
-				// 		first_no_wall_row = j;
-				// 	if (j > last_no_wall_row)
-				// 		last_no_wall_row = j;
-				// }
+				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+				{
+					if (j < first_no_wall_row)
+						first_no_wall_row = j;
+					if (j > last_no_wall_row)
+						last_no_wall_row = j;
+				}
 				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
