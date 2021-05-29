@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:05:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 21:05:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,11 @@ int cub_line_check(char **line, int count, t_info *info)
 		while (i < info->cub_list.map_y - 1)
 		{
 			if (!(tmp[i] = (char **)malloc(sizeof(char) * (ft_strlen(map_line) + 1))))
-				return (-1);
+			{
+				printf("Error\n");
+				printf("Malloc failed\n");
+				exit(1);
+			}
 			tmp[i] = info->cub_list.map[i];
 			i++;
 		}
