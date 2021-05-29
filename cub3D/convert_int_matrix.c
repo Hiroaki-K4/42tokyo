@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 14:54:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/29 14:58:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,24 @@ void map_col_check(t_info *info)
 				printf("Error\n");
 				printf("Map file is wrong\n");
 				exit(1);
+			}
+		}
+		else
+		{
+			if (first_no_wall_col == 0 || last_no_wall_col == info->cub_list.map_y - 1)
+			{
+				printf("Error\n");
+				printf("Map file is wrong\n");
+				exit(1);
+			}
+			if (first_no_wall_col != -1)
+			{
+				if (info->cub_list.map_matrix[first_no_wall_col - 1][j] != 1 || info->cub_list.map_matrix[last_no_wall_col + 1][j] != 1)
+				{
+					printf("Error\n");
+					printf("Map file is wrong\n");
+					exit(1);
+				}
 			}
 		}
 		write(1, "\n", 1);
