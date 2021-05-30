@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 22:23:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 11:36:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ char *make_decimal_color(t_rgb color)
 	free(blue);
 	free(tmp);
 	ans = hex_to_decimal(hex);
+	free(hex);
 	return (ans);
 }
