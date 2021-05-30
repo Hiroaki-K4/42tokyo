@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:19:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:23:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,23 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
+void info_init(t_info *info)
+{
+	int		sizex;
+	int		sizey;
+
+	info->cub_list.map_x = 0;
+	info->cub_list.map_y = 0;
+	info->cub_list.size = 0;
+	info->cub_list.sprite_flag = 0;
+	info->cub_list.init_pos_count = 0;
+	info->cub_list.line_num = 0;
+	info->mlx = mlx_init();
+	mlx_get_screen_size(info->mlx, &sizex, &sizey);
+	info->cub_list.width = sizex;
+	info->cub_list.height = sizey;
+}
+
 int		main(int argc, char *argv[])
 {
 	t_info	info;
@@ -81,8 +98,8 @@ int		main(int argc, char *argv[])
 	int		fd;
 	int		i;
 	int		j;
-	int		sizex;
-	int		sizey;
+	// int		sizex;
+	// int		sizey;
 	int		count;
 	char	**line;
 	char	*sin;
@@ -98,17 +115,18 @@ int		main(int argc, char *argv[])
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
-	info.cub_list.map_x = 0;
-	info.cub_list.map_y = 0;
-	info.cub_list.size = 0;
-	info.cub_list.sprite_flag = 0;
-	info.cub_list.init_pos_count = 0;
-	info.cub_list.line_num = 0;
+	// info.cub_list.map_x = 0;
+	// info.cub_list.map_y = 0;
+	// info.cub_list.size = 0;
+	// info.cub_list.sprite_flag = 0;
+	// info.cub_list.init_pos_count = 0;
+	// info.cub_list.line_num = 0;
+	// info.mlx = mlx_init();
+	// mlx_get_screen_size(info.mlx, &sizex, &sizey);
+	// info.cub_list.width = sizex;
+	// info.cub_list.height = sizey;
+	info_init(&info);
 	count = 0;
-	info.mlx = mlx_init();
-	mlx_get_screen_size(info.mlx, &sizex, &sizey);
-	info.cub_list.width = sizex;
-	info.cub_list.height = sizey;
 	i = 1;
 	while (i > 0)
 	{
