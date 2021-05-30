@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 17:53:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:57:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void finish_free(t_info *info)
 	free(info->cub_list.e_texture);
 	free(info->cub_list.w_texture);
 	// i = 0;
-	free(info->cub_list.map);
+	double_array_free(info->cub_list.map);
 }
 
 int win_close(t_info *info)
