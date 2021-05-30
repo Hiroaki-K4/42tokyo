@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:07:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:40:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ int get_sprite_pos(t_info *info)
 		i++;
 	}
 	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
-	{
-		printf("Error\n");
-		printf("Malloc failed\n");
-		exit(1);
-	}
+		error_process("Malloc failed");
 	count = 0;
 	i = 0;
 	while (i < info->cub_list.map_y)
@@ -48,7 +44,6 @@ int get_sprite_pos(t_info *info)
 			{
 				info->cub_list.sprites[count].x = i;
 				info->cub_list.sprites[count].y = j;
-				printf("spriteX: %f spriteY: %f\n", info->cub_list.sprites[count].x, info->cub_list.sprites[count].y);
 				info->cub_list.sprites[count].texture = 4;
 				count++;
 			} 
@@ -93,11 +88,7 @@ void	sortSprites(int *order, double *dist, int amount)
 	t_pair	*sprites;
 
 	if (!(sprites = (t_pair*)malloc(sizeof(t_pair) * amount)))
-	{
-		printf("Error\n");
-		printf("Malloc failed\n");
-		exit(1);
-	}
+		error_process("Malloc failed");
 	i = 0;
 	while (i < amount)
     {

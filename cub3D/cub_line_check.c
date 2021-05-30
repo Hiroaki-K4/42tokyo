@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 15:08:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:39:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@ int map_line_check(char **line_split)
 		{
 			if (line_split[i][j] != '0' && line_split[i][j] != '1' && line_split[i][j] != '2' 
 			&& line_split[i][j] != 'N' && line_split[i][j] != 'S' && line_split[i][j] != 'E' && line_split[i][j] != 'W')
-			{
-				printf("Error\n");
-				printf("Map is wrong\n");
-				exit(1);
-			}
+				error_process("Map is wrong");
 			j++;
 		}
 		i++;
@@ -103,22 +99,14 @@ int cub_line_check(char **line, int count, t_info *info)
 		while (rgb_split[j])
 			j++;
 		if (j != 3)
-		{
-			printf("Error\n");
-			printf("Color is wrong\n");
-			exit(1);
-		}
+			error_process("Color is wrong");
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
 		if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0 || info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255 
 			|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue > 255)
-		{
-			printf("Error\n");
-			printf("Color is wrong\n");
-			exit(1);
-		}
+			error_process("Color is wrong");
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
@@ -136,11 +124,7 @@ int cub_line_check(char **line, int count, t_info *info)
 	{
 		double_array_free(line_split);
 		if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
-		{
-			printf("Error\n");
-			printf("Map is wrong\n");
-			exit(1);
-		}
+			error_process("Map is wrong");
 		info->cub_list.line_num = count;
 		info->cub_list.map_y++;
 		if (!(map_line = ft_strdup(line)))
@@ -148,20 +132,12 @@ int cub_line_check(char **line, int count, t_info *info)
 		if (ft_strlen(map_line) > info->cub_list.map_x)
 			info->cub_list.map_x = ft_strlen(map_line);
 		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
-		{
-			printf("Error\n");
-			printf("Malloc failed\n");
-			exit(1);
-		}
+			error_process("Malloc failed");
 		i = 0;
 		while (i < info->cub_list.map_y - 1)
 		{
 			if (!(tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1))))
-			{
-				printf("Error\n");
-				printf("Malloc failed\n");
-				exit(1);
-			}
+				error_process("Malloc failed");
 			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
 			i++;
 		}
