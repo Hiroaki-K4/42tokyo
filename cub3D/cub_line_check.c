@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 14:55:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 14:58:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,26 @@ int cub_line_check(char **line, int count, t_info *info)
 	{
 		info->cub_list.n_texture = ft_strdup(line_split[1]);
 		double_array_free(line_split);
-		// free(line_split[0]);
-		// free(line_split[1]);
 	}
 	else if (i = ft_strcmp("SO", line_split[0]) == 0)
 	{
 		info->cub_list.s_texture = ft_strdup(line_split[1]);
-		free(line_split[0]);
-		free(line_split[1]);
+		double_array_free(line_split);
 	}
 	else if (i = ft_strcmp("WE", line_split[0]) == 0)
-		info->cub_list.w_texture = line_split[1];
+	{
+		info->cub_list.w_texture = ft_strdup(line_split[1]);
+		double_array_free(line_split);
+	}
 	else if (i = ft_strcmp("EA", line_split[0]) == 0)
-		info->cub_list.e_texture = line_split[1];
+	{
+		info->cub_list.e_texture = ft_strdup(line_split[1]);
+		double_array_free(line_split);
+	}
 	else if (i = ft_strcmp("S", line_split[0]) == 0)
 	{
-		info->cub_list.sprite = line_split[1];
+		info->cub_list.sprite = ft_strdup(line_split[1]);
+		double_array_free(line_split);
 		info->cub_list.sprite_flag = 1;
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
