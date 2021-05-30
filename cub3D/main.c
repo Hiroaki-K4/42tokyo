@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:27:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:29:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,7 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 	int y;
 
 	if (!(img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width, &img->img_height)))
-	{
-		printf("Error\n");
-		printf("The path of texture is wrong\n");
-		exit(1);
-	}
+		error_process("The path of texture is wrong");
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
 	y = 0;
 	while (y < img->img_height)
@@ -103,25 +99,14 @@ int		main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Error\n");
-		printf("The number of arguments is wrong\n");
-		exit(1);
+		error_process("The number of arguments is wrong");
 	}
 	buffer_size = 10;
 	i = ft_strlen(argv[1]);
 	if ((i = ft_strlen(argv[1])) < 5)
-	{
-		printf("Error\n");
-		printf("Map file is wrong\n");
-		exit(1);
-	}
+		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
-	{
 		error_process("Not a cub file");
-		// printf("Error\n");
-		// printf("Not a cub file\n");
-		// exit(1);
-	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
