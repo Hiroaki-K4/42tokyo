@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:08:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:09:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,5 +127,6 @@ char *make_decimal_color(t_rgb color);
 int convert_int_matrix(t_info *info);
 void double_array_free(char **array);
 void	error_process(char *error);
+int		win_close(t_info *info);
 
 #endif
