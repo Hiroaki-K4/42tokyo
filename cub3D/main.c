@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:20:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:23:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	draw(t_info *info)
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
 
-int	main_loop(t_info *info)
+int		main_loop(t_info *info)
 {
 	calc(info);
 	draw(info);
 	return (0);
 }
 
-int win_close(t_info *info)
+int		win_close(t_info *info)
 {
 	exit(0);
 }
@@ -81,7 +81,7 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	t_info info;
 	int buffer_size;
@@ -93,7 +93,7 @@ int	main(int argc, char *argv[])
 	int count;
 	char **line;
 	char *sin;
-	
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -206,7 +206,7 @@ int	main(int argc, char *argv[])
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
-	mlx_hook(info.win, 33, 1<<33, &win_close, &info);
-	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L<<0, &key_press, &info);
+	mlx_hook(info.win, 33, 1 << 33, &win_close, &info);
+	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L << 0, &key_press, &info);
 	mlx_loop(info.mlx);
 }
