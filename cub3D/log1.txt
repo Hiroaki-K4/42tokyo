@@ -1,49 +1,22 @@
-==86024== Memcheck, a memory error detector
-==86024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==86024== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==86024== Command: ./cub3D sample.cub
-==86024== Parent PID: 85887
-==86024== 
-==86024== Conditional jump or move depends on uninitialised value(s)
-==86024==    at 0x1154C8: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x1154F3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x115969: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==  Uninitialised value was created by a stack allocation
-==86024==    at 0x1158E8: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024== 
-==86024== Conditional jump or move depends on uninitialised value(s)
-==86024==    at 0x1154C8: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x1154F3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x115969: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x11291E: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==  Uninitialised value was created by a stack allocation
-==86024==    at 0x1158E8: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024== 
-==86024== Conditional jump or move depends on uninitialised value(s)
-==86024==    at 0x1154C8: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x1154F3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x115969: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x112ADD: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024==  Uninitialised value was created by a stack allocation
-==86024==    at 0x1158E8: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==86024== 
-==86024== 
-==86024== HEAP SUMMARY:
-==86024==     in use at exit: 23,196,094 bytes in 2,003 blocks
-==86024==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
-==86024== 
-==86024== LEAK SUMMARY:
-==86024==    definitely lost: 0 bytes in 0 blocks
-==86024==    indirectly lost: 0 bytes in 0 blocks
-==86024==      possibly lost: 0 bytes in 0 blocks
-==86024==    still reachable: 23,196,094 bytes in 2,003 blocks
-==86024==         suppressed: 0 bytes in 0 blocks
-==86024== Reachable blocks (those to which a pointer was found) are not shown.
-==86024== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==86024== 
-==86024== For lists of detected and suppressed errors, rerun with: -s
-==86024== ERROR SUMMARY: 26 errors from 3 contexts (suppressed: 0 from 0)
+==89418== Memcheck, a memory error detector
+==89418== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==89418== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==89418== Command: ./cub3D sample.cub
+==89418== Parent PID: 89284
+==89418== 
+==89418== 
+==89418== HEAP SUMMARY:
+==89418==     in use at exit: 23,196,094 bytes in 2,003 blocks
+==89418==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
+==89418== 
+==89418== LEAK SUMMARY:
+==89418==    definitely lost: 0 bytes in 0 blocks
+==89418==    indirectly lost: 0 bytes in 0 blocks
+==89418==      possibly lost: 0 bytes in 0 blocks
+==89418==    still reachable: 23,196,094 bytes in 2,003 blocks
+==89418==         suppressed: 0 bytes in 0 blocks
+==89418== Reachable blocks (those to which a pointer was found) are not shown.
+==89418== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==89418== 
+==89418== For lists of detected and suppressed errors, rerun with: -s
+==89418== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
