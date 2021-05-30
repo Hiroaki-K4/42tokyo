@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:30:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:31:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,20 +131,12 @@ int		main(int argc, char *argv[])
 	info.cub_list.width = sizex;
 	info.cub_list.height = sizey;
 	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
-	{
-		printf("Error\n");
-		printf("Malloc failed\n");
-		exit(1);
-	}
+		error_process("Malloc failed");
 	i = 0;
 	while (i < info.cub_list.height)
 	{
 		if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.width))))
-		{
-			printf("Error\n");
-			printf("Malloc failed\n");
-			exit(1);
-		}
+			error_process("Malloc failed");
 		i++;
 	}
 	i = 0;
@@ -159,20 +151,12 @@ int		main(int argc, char *argv[])
 		i++;
 	}
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
-	{
-		printf("Error\n");
-		printf("Malloc failed\n");
-		exit(1);
-	}
+		error_process("Malloc failed");
 	i = 0;
 	while (i < 5)
 	{
 		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
-		{
-			printf("Error\n");
-			printf("Malloc failed\n");
-			exit(1);
-		}
+			error_process("Malloc failed");
 		i++;
 	}
 	i = 0;
