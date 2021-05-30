@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:48:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:48:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void read_cub_line(t_info *info, int i, char *path)
 	printf("fd: %d\n", fd);
 	if (fd == -1)
 		error_process(strerror(errno));
-	info_init(&info);
+	info_init(info);
 	count = 0;
 	i = 1;
 	while (i > 0)
