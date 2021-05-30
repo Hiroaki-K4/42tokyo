@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:58:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:58:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,24 +157,6 @@ int		main(int argc, char *argv[])
 	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
 		error_process("Malloc failed");
 	buf_init(&info, 0, 0);
-	// i = 0;
-	// while (i < info.cub_list.height)
-	// {
-	// 	if (!(info.buf[i] = (int *)malloc(sizeof(int) * (info.cub_list.width))))
-	// 		error_process("Malloc failed");
-	// 	i++;
-	// }
-	// i = 0;
-	// while (i < info.cub_list.height)
-	// {
-	// 	j = 0;
-	// 	while (j < info.cub_list.width)
-	// 	{
-	// 		info.buf[i][j] = 0;
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
 		error_process("Malloc failed");
 	i = 0;
