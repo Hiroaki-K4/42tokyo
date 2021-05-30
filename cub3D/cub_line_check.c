@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 14:23:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 14:25:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,8 @@ int cub_line_check(char **line, int count, t_info *info)
 				printf("Malloc failed\n");
 				exit(1);
 			}
-			tmp[i] = info->cub_list.map[i];
+			// tmp[i] = info->cub_list.map[i];
+			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
 			printf("tmp: %s\n", tmp[i]);
 			i++;
 		}
