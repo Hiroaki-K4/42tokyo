@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:31:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:07:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ int		main_loop(t_info *info)
 	return (0);
 }
 
-void	error_process(char *error)
-{
-	printf("Error\n");
-	printf("%s\n", error);
-	exit(1);
-}
+// void	error_process(char *error)
+// {
+// 	printf("Error\n");
+// 	printf("%s\n", error);
+// 	exit(1);
+// }
 
 int		win_close(t_info *info)
 {
