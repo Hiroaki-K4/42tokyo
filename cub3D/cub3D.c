@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 20:48:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 20:49:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,11 @@ void finish_free(t_info *info)
 	while (i < info->cub_list.map_y)
 	{
 		free(info->cub_list.map_matrix[i]);
+		info->cub_list.map_matrix[i] = NULL;
 		i++;
 	}
 	free(info->cub_list.map_matrix);
+	info->cub_list.map_matrix = NULL;
 	double_array_free(info->cub_list.map);
 }
 
