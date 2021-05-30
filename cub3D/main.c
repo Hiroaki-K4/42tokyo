@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:29:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:30:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,7 @@ int		main(int argc, char *argv[])
 	char	*sin;
 
 	if (argc != 2)
-	{
 		error_process("The number of arguments is wrong");
-	}
 	buffer_size = 10;
 	i = ft_strlen(argv[1]);
 	if ((i = ft_strlen(argv[1])) < 5)
@@ -109,11 +107,7 @@ int		main(int argc, char *argv[])
 		error_process("Not a cub file");
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-	{
-		printf("Error\n");
-		printf("%s\n", strerror(errno));
-		exit(1);
-	}
+		error_process(strerror(errno));
 	info.cub_list.map_x = 0;
 	info.cub_list.map_y = 0;
 	info.cub_list.size = 0;
