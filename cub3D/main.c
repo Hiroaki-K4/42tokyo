@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:33:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:34:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void read_cub_line(t_info *info, int i, char *path)
 	{
 		i = get_next_line(fd, &line, buffer_size);
 		count++;
-		cub_line_check(line, count, &info);
+		cub_line_check(line, count, info);
 		free(line);
 	}
 }
