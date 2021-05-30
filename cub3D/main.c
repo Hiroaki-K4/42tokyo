@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:23:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:23:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,16 @@ void	load_texture(t_info *info)
 
 int		main(int argc, char *argv[])
 {
-	t_info info;
-	int buffer_size;
-	int fd;
-	int i;
-	int j;
-	int sizex;
-	int sizey;
-	int count;
-	char **line;
-	char *sin;
+	t_info	info;
+	int		buffer_size;
+	int		fd;
+	int		i;
+	int		j;
+	int		sizex;
+	int		sizey;
+	int		count;
+	char	**line;
+	char	*sin;
 
 	if (argc != 2)
 	{
