@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 22:42:10 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 15:12:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 15:12:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char			**ft_split(char const *s, char c)
 	char	div[2];
 	char	**ptr_ptr;
 
-	div = NULL;
+	*div = NULL;
 	if (s == NULL)
 		return (NULL);
 	if (!(ptr_ptr = (char **)malloc(sizeof(char *) * (num_str(s, c) + 1))))
