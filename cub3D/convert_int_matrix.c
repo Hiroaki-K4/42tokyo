@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:37:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:46:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void map_not_srrounded_check(t_info *info)
 					error_process("Map file is wrong");
 			}
 		}
-		write(1, "\n", 1);
 		j++;
 	}
 }
