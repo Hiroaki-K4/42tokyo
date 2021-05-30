@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:24:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:32:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-void info_init(t_info *info)
+void	info_init(t_info *info)
 {
 	int		sizex;
 	int		sizey;
@@ -93,25 +93,14 @@ void info_init(t_info *info)
 	info->rotSpeed = 0.05;
 }
 
-int		main(int argc, char *argv[])
+void read_cub_line(t_info *info, int i, char **argv)
 {
-	t_info	info;
 	int		buffer_size;
 	int		fd;
-	int		i;
-	int		j;
 	int		count;
 	char	**line;
-	char	*sin;
 
-	if (argc != 2)
-		error_process("The number of arguments is wrong");
 	buffer_size = 10;
-	i = ft_strlen(argv[1]);
-	if ((i = ft_strlen(argv[1])) < 5)
-		error_process("Map file is wrong");
-	if (strcmp(&argv[1][i - 4], ".cub") != 0)
-		error_process("Not a cub file");
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
@@ -125,6 +114,41 @@ int		main(int argc, char *argv[])
 		cub_line_check(line, count, &info);
 		free(line);
 	}
+}
+
+int		main(int argc, char *argv[])
+{
+	t_info	info;
+	// int		buffer_size;
+	// int		fd;
+	int		i;
+	int		j;
+	// int		count;
+	char	**line;
+	char	*sin;
+
+	if (argc != 2)
+		error_process("The number of arguments is wrong");
+	// buffer_size = 10;
+	i = ft_strlen(argv[1]);
+	if ((i = ft_strlen(argv[1])) < 5)
+		error_process("Map file is wrong");
+	if (strcmp(&argv[1][i - 4], ".cub") != 0)
+		error_process("Not a cub file");
+	read_cub_line(&info, i, argv);
+	// fd = open(argv[1], O_RDONLY);
+	// if (fd == -1)
+	// 	error_process(strerror(errno));
+	// info_init(&info);
+	// count = 0;
+	// i = 1;
+	// while (i > 0)
+	// {
+	// 	i = get_next_line(fd, &line, buffer_size);
+	// 	count++;
+	// 	cub_line_check(line, count, &info);
+	// 	free(line);
+	// }
 	convert_int_matrix(&info);
 	if (info.cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
@@ -170,8 +194,6 @@ int		main(int argc, char *argv[])
 		i++;
 	}
 	load_texture(&info);
-	// info.moveSpeed = 0.05;
-	// info.rotSpeed = 0.05;
 	info.win = mlx_new_window(info.mlx, info.cub_list.width,
 		info.cub_list.height, "mlx");
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width,
