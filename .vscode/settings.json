@@ -5,6 +5,7 @@
     "ros.distro": "foxy",
     "files.associations": {
         "string.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "map": "c"
     }
 }
