@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 17:34:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:38:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,6 @@ int	main_loop(t_info *info)
 
 int win_close(t_info *info)
 {
-	mlx_destroy_window(info->mlx, info->win);
-	mlx_destroy_image(info->mlx, info->img.img);
-	mlx_destroy_display(info->mlx);
-	free(info->mlx);
 	exit(0);
 }
 

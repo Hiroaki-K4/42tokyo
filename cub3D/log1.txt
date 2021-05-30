@@ -1,22 +1,402 @@
-==95803== Memcheck, a memory error detector
-==95803== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==95803== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==95803== Command: ./cub3D sample.cub
-==95803== Parent PID: 95669
-==95803== 
-==95803== 
-==95803== HEAP SUMMARY:
-==95803==     in use at exit: 23,196,094 bytes in 2,003 blocks
-==95803==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
-==95803== 
-==95803== LEAK SUMMARY:
-==95803==    definitely lost: 0 bytes in 0 blocks
-==95803==    indirectly lost: 0 bytes in 0 blocks
-==95803==      possibly lost: 0 bytes in 0 blocks
-==95803==    still reachable: 23,196,094 bytes in 2,003 blocks
-==95803==         suppressed: 0 bytes in 0 blocks
-==95803== Reachable blocks (those to which a pointer was found) are not shown.
-==95803== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==95803== 
-==95803== For lists of detected and suppressed errors, rerun with: -s
-==95803== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==96490== Memcheck, a memory error detector
+==96490== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==96490== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==96490== Command: ./cub3D sample.cub
+==96490== Parent PID: 96343
+==96490== 
+==96490== 
+==96490== HEAP SUMMARY:
+==96490==     in use at exit: 23,196,094 bytes in 2,003 blocks
+==96490==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
+==96490== 
+==96490== 3 bytes in 1 blocks are still reachable in loss record 1 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4BCC50E: strdup (strdup.c:42)
+==96490==    by 0x48CC385: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 8 bytes in 1 blocks are still reachable in loss record 2 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4BCC50E: strdup (strdup.c:42)
+==96490==    by 0x48C625E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48973F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 8 bytes in 1 blocks are still reachable in loss record 3 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4897144: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48971AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 10 bytes in 1 blocks are still reachable in loss record 4 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4BCC50E: strdup (strdup.c:42)
+==96490==    by 0x48C625E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x4932C43: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CCE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 16 bytes in 1 blocks are still reachable in loss record 5 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4D2CF81: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2B3FB: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D298F5: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2DB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x48DBD29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 20 bytes in 1 blocks are still reachable in loss record 6 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11284D: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 20 bytes in 1 blocks are still reachable in loss record 7 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x1129A5: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 21 bytes in 1 blocks are still reachable in loss record 8 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC83C: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 24 bytes in 1 blocks are still reachable in loss record 9 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x1128A3: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 24 bytes in 1 blocks are still reachable in loss record 10 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4897351: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x4896E1C: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x489719B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 24 bytes in 1 blocks are still reachable in loss record 11 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4BCC50E: strdup (strdup.c:42)
+==96490==    by 0x48C625E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48973F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x4896E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x489719B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 24 bytes in 1 blocks are still reachable in loss record 12 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48971CD: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 24 bytes in 1 blocks are still reachable in loss record 13 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48DC2B5: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48DC83E: _XSend (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48DCE63: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48C31EA: _XGetWindowAttributes (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48C335D: XGetWindowAttributes (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x117BB4: mlx_get_screen_size (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x110035: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 25 bytes in 1 blocks are still reachable in loss record 14 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11294F: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 27 bytes in 1 blocks are still reachable in loss record 15 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x1128F9: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 30 bytes in 1 blocks are still reachable in loss record 16 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115361: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x112EC3: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 32 bytes in 1 blocks are still reachable in loss record 17 of 52
+==96490==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4D2CB9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2CC2B: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2A13E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2A1B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x48CCCD8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 32 bytes in 1 blocks are still reachable in loss record 18 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4D2C0C5: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D29E9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2B61E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2B734: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2CC82: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2A13E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2A1B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x48CCCD8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 32 bytes in 1 blocks are still reachable in loss record 19 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48973CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 32 bytes in 1 blocks are still reachable in loss record 20 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48973CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x4896E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x489719B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 33 bytes in 1 blocks are still reachable in loss record 21 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48C714D: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48C7519: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115EDF: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 40 bytes in 1 blocks are still reachable in loss record 22 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48DDDD1: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC66F: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 40 bytes in 1 blocks are still reachable in loss record 23 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x11018C: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 48 bytes in 1 blocks are still reachable in loss record 24 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48DBCB1: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 48 bytes in 1 blocks are still reachable in loss record 25 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48DBCC7: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 72 bytes in 1 blocks are still reachable in loss record 26 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC721: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 104 bytes in 1 blocks are still reachable in loss record 27 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48DBBB2: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 112 bytes in 1 blocks are still reachable in loss record 28 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC9A0: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 120 bytes in 1 blocks are still reachable in loss record 29 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x11402D: convert_int_matrix (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFE8: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 30 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x112D79: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 31 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x115E3F: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 32 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC8D0: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 33 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48C624E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x4932C43: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CCE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 34 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48C624E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48973F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 128 bytes in 1 blocks are still reachable in loss record 35 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48C624E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48973F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x4896E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x489719B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 145 bytes in 1 blocks are still reachable in loss record 36 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CCE81: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 152 bytes in 1 blocks are still reachable in loss record 37 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4932E3E: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CCE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 160 bytes in 1 blocks are still reachable in loss record 38 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48BA82F: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CCD48: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 168 bytes in 1 blocks are still reachable in loss record 39 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x11048D: get_sprite_pos (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x110004: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 168 bytes in 1 blocks are still reachable in loss record 40 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CCC37: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 208 bytes in 1 blocks are still reachable in loss record 41 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48970F9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48971AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48975A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x48927B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==96490==    by 0x115C63: mlx_int_deal_shm (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x115EEE: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 428 bytes in 14 blocks are still reachable in loss record 42 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x112DF7: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFC1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 512 bytes in 1 blocks are still reachable in loss record 43 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48C70BA: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48C743E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115EDF: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 2,040 bytes in 15 blocks are still reachable in loss record 44 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x1140A7: convert_int_matrix (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x10FFE8: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 3,380 bytes in 1 blocks are still reachable in loss record 45 of 52
+==96490==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4D29A62: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2DB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x48DBD29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 4,688 bytes in 1 blocks are still reachable in loss record 46 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC371: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 7,392 bytes in 2 blocks are still reachable in loss record 47 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CCA24: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 15,360 bytes in 1 blocks are still reachable in loss record 48 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x110061: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 16,384 bytes in 1 blocks are still reachable in loss record 49 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x48CC6BF: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 21,168 bytes in 1 blocks are still reachable in loss record 50 of 52
+==96490==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x4D29884: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x4D2DB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==96490==    by 0x48DBD29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x48CC3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==96490==    by 0x115E57: mlx_init (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490==    by 0x11000E: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 81,920 bytes in 5 blocks are still reachable in loss record 51 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x1101EF: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== 23,040,000 bytes in 1,920 blocks are still reachable in loss record 52 of 52
+==96490==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96490==    by 0x1100CE: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96490== 
+==96490== LEAK SUMMARY:
+==96490==    definitely lost: 0 bytes in 0 blocks
+==96490==    indirectly lost: 0 bytes in 0 blocks
+==96490==      possibly lost: 0 bytes in 0 blocks
+==96490==    still reachable: 23,196,094 bytes in 2,003 blocks
+==96490==         suppressed: 0 bytes in 0 blocks
+==96490== 
+==96490== For lists of detected and suppressed errors, rerun with: -s
+==96490== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
