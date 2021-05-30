@@ -4,7 +4,7 @@
 # for i in `seq 6`
 # do
 make re
-valgrind --log-file="log1.txt" --leak-check=full ./cub3D sample.cub | grep "ERROR SUMMARY"
+valgrind --log-file="log1.txt" --leak-check=full --track-origins=yes ./cub3D sample.cub | grep "ERROR SUMMARY"
 # done
 
 
