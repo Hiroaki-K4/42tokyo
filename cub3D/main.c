@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:32:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:33:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	info_init(t_info *info)
 	info->rotSpeed = 0.05;
 }
 
-void read_cub_line(t_info *info, int i, char **argv)
+void read_cub_line(t_info *info, int i, char *path)
 {
 	int		buffer_size;
 	int		fd;
@@ -101,7 +101,7 @@ void read_cub_line(t_info *info, int i, char **argv)
 	char	**line;
 
 	buffer_size = 10;
-	fd = open(argv[1], O_RDONLY);
+	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
 	info_init(&info);
@@ -135,7 +135,7 @@ int		main(int argc, char *argv[])
 		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 		error_process("Not a cub file");
-	read_cub_line(&info, i, argv);
+	read_cub_line(&info, i, argv[1]);
 	// fd = open(argv[1], O_RDONLY);
 	// if (fd == -1)
 	// 	error_process(strerror(errno));
