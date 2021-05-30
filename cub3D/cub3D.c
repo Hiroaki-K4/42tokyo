@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 17:22:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:24:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main_loop(t_info *info)
 
 int win_close(t_info *info)
 {
+	free(info->mlx);
 	printf("finish: %d\n", info->rotSpeed);
 	exit(0);
 }
@@ -68,7 +69,6 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 		y++;
 	}
 	mlx_destroy_image(info->mlx, img->img);
-	// free(path);
 }
 
 void	load_texture(t_info *info)
