@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:34:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:34:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void read_cub_line(t_info *info, int i, char *path)
 	int		count;
 	char	**line;
 
+	printf("path: %s\n", path);
 	buffer_size = 10;
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
