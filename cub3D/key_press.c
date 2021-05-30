@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 17:27:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:35:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ int	key_press(int key, t_info *info)
 	}
 	if (key == K_ESC)
 	{
+		mlx_destroy_window(info->mlx, info->win);
+		mlx_destroy_image(info->mlx, info->img.img);
+		mlx_destroy_display(info->mlx);
 		free(info->mlx);
 		exit(0);
 	}
