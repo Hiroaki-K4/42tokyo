@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:21:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:48:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,6 @@ int		ft_strchr_place(const char *str, int c);
 int cub_line_check(char **line, int count, t_info *info);
 char *make_decimal_color(t_rgb color);
 int convert_int_matrix(t_info *info);
+void finish_free(t_info *info);
 
 #endif
