@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:48:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:49:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void read_cub_line(t_info *info, int i, char *path)
 	printf("fd: %d\n", fd);
 	if (fd == -1)
 		error_process(strerror(errno));
-	info_init(info);
+	// info_init(info);
 	count = 0;
 	i = 1;
 	while (i > 0)
@@ -138,6 +138,7 @@ int		main(int argc, char *argv[])
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 		error_process("Not a cub file");
 	read_cub_line(&info, i, argv[1]);
+	info_init(&info);
 	// fd = open(argv[1], O_RDONLY);
 	// if (fd == -1)
 	// 	error_process(strerror(errno));
