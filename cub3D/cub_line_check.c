@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 15:07:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 15:08:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ int cub_line_check(char **line, int count, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
+		double_array_free(line_split);
 		if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
 		{
 			printf("Error\n");
