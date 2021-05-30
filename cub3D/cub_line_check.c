@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 15:05:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 15:05:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ int cub_line_check(char **line, int count, t_info *info)
 	char **tmp;
 	
 	if (!(line_split = ft_split(line, ' ')))
+	{
+		double_array_free(line_split);
 		return (-1);
+	}
 	if (line_split[0] == NULL)
 	{
 		double_array_free(line_split);
