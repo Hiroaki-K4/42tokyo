@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 23:01:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 23:01:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void	buf_init(t_info *info, int i, int j)
 	}
 }
 
-void texture_init(t_info *info, int i, int j)
+void	texture_init(t_info *info, int i, int j)
 {
 	while (i < 5)
 	{
@@ -183,25 +183,6 @@ int		main(int argc, char *argv[])
 	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
 		error_process("Malloc failed");
 	texture_init(&info, 0, 0);
-	// i = 0;
-	// while (i < 5)
-	// {
-	// 	if (!(info.texture[i] = (int *)malloc(sizeof(int) *
-	// 		(texHeight * texWidth))))
-	// 		error_process("Malloc failed");
-	// 	i++;
-	// }
-	// i = 0;
-	// while (i < 5)
-	// {
-	// 	j = 0;
-	// 	while (j < texHeight * texWidth)
-	// 	{
-	// 		info.texture[i][j] = 0;
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
 	load_texture(&info);
 	info.win = mlx_new_window(info.mlx, info.cub_list.width,
 		info.cub_list.height, "mlx");
