@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 14:33:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 14:39:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ int cub_line_check(char **line, int count, t_info *info)
 			exit(1);
 		}
 		i = 0;
-		printf("map_y: %d\n", info->cub_list.map_y - 1);
 		while (i < info->cub_list.map_y - 1)
 		{
 			if (!(tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1))))
@@ -127,12 +126,9 @@ int cub_line_check(char **line, int count, t_info *info)
 				printf("Malloc failed\n");
 				exit(1);
 			}
-			// tmp[i] = info->cub_list.map[i];
 			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
-			printf("tmp: %s\n", tmp[i]);
 			i++;
 		}
-		printf("map_line: %s\n", map_line);
 		tmp[i] = ft_strdup(map_line);
 		tmp[i + 1] = NULL;
 		if (i > 0)
@@ -147,11 +143,5 @@ int cub_line_check(char **line, int count, t_info *info)
 		free(info->cub_list.map);
 		info->cub_list.map = tmp;
 	}
-	// i = 0;
-	// while (line_split[i])
-	// {
-	// 	free(line_split[i]);
-	// 	i++;
-	// }
 	return (0);
 }
