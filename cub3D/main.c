@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:15:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:15:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,12 @@ int		main(int argc, char *argv[])
 	load_texture(&info);
 	info.moveSpeed = 0.05;
 	info.rotSpeed = 0.05;
-	info.win = mlx_new_window(info.mlx, info.cub_list.width, info.cub_list.height, "mlx");
-	info.img.img = mlx_new_image(info.mlx, info.cub_list.width, info.cub_list.height);
-	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
+	info.win = mlx_new_window(info.mlx, info.cub_list.width,
+		info.cub_list.height, "mlx");
+	info.img.img = mlx_new_image(info.mlx, info.cub_list.width,
+		info.cub_list.height);
+	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp,
+		&info.img.size_l, &info.img.endian);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	mlx_hook(info.win, 33, 1 << 33, &win_close, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L << 0, &key_press, &info);
