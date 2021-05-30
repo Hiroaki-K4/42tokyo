@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:50:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:51:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,8 @@ void read_cub_line(t_info *info, int i, char *path)
 	int		count;
 	char	**line;
 
-	printf("path: %s\n", path);
 	buffer_size = 10;
 	fd = open(path, O_RDONLY);
-	printf("fd: %d\n", fd);
 	if (fd == -1)
 		error_process(strerror(errno));
 	info_init(info);
@@ -121,36 +119,18 @@ void read_cub_line(t_info *info, int i, char *path)
 int		main(int argc, char *argv[])
 {
 	t_info	info;
-	// int		buffer_size;
-	// int		fd;
 	int		i;
 	int		j;
-	// int		count;
-	// char	**line;
 	char	*sin;
 
 	if (argc != 2)
 		error_process("The number of arguments is wrong");
-	// buffer_size = 10;
 	i = ft_strlen(argv[1]);
 	if ((i = ft_strlen(argv[1])) < 5)
 		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 		error_process("Not a cub file");
 	read_cub_line(&info, i, argv[1]);
-	// fd = open(argv[1], O_RDONLY);
-	// if (fd == -1)
-	// 	error_process(strerror(errno));
-	// info_init(&info);
-	// count = 0;
-	// i = 1;
-	// while (i > 0)
-	// {
-	// 	i = get_next_line(fd, &line, buffer_size);
-	// 	count++;
-	// 	cub_line_check(line, count, &info);
-	// 	free(line);
-	// }
 	convert_int_matrix(&info);
 	if (info.cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
