@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 20:46:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:37:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void map_not_srrounded_check(t_info *info)
 				if (i > last_no_wall_col)
 					last_no_wall_col = i;
 			}
-			// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 			i++;
 		}
 		if (last_no_wall_col == -1)
@@ -43,27 +42,15 @@ void map_not_srrounded_check(t_info *info)
 			continue;
 		}
 		else if (j == 0 || j == info->cub_list.map_x - 1)
-		{
-			printf("Error\n");
-			printf("Map file is wrong\n");
-			exit(1);
-		}
+			error_process("Map file is wrong");
 		else
 		{
 			if (first_no_wall_col == 0 || last_no_wall_col == info->cub_list.map_y - 1)
-			{
-				printf("Error\n");
-				printf("Map file is wrong\n");
-				exit(1);
-			}
+				error_process("Map file is wrong");
 			if (first_no_wall_col != -1)
 			{
 				if (info->cub_list.map_matrix[first_no_wall_col - 1][j] != 1 || info->cub_list.map_matrix[last_no_wall_col + 1][j] != 1)
-				{
-					printf("Error\n");
-					printf("Map file is wrong\n");
-					exit(1);
-				}
+					error_process("Map file is wrong");
 			}
 		}
 		write(1, "\n", 1);
@@ -89,29 +76,17 @@ void map_space_check(t_info *info)
 					if (j == 0)
 					{
 						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else if (j == info->cub_list.map_x - 1)
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 				}
 				else if (i == info->cub_list.map_y - 1)
@@ -119,29 +94,17 @@ void map_space_check(t_info *info)
 					if (j == 0)
 					{
 						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else if (j == info->cub_list.map_x - 1)
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 				}
 				else
@@ -149,29 +112,17 @@ void map_space_check(t_info *info)
 					if (j == 0)
 					{
 						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else if (j == info->cub_list.map_x - 1)
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 					else
 					{
 						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-						{
-							printf("Error\n");
-							printf("Map file is wrong\n");
-							exit(1);
-						}
+							error_process("Map file is wrong");
 					}
 				}
 			}
@@ -189,20 +140,12 @@ int convert_int_matrix(t_info *info)
 	int last_no_wall_row;
 	
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
-	{
-		printf("Error\n");
-		printf("Malloc failed\n");
-		exit(1);
-	}
+		error_process("Malloc failed");
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
 		if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
-		{
-			printf("Error\n");
-			printf("Malloc failed\n");
-			exit(1);
-		}
+			error_process("Malloc failed");
 		i++;
 	}
 	i = 0;
@@ -264,13 +207,11 @@ int convert_int_matrix(t_info *info)
 					if (j > last_no_wall_row)
 						last_no_wall_row = j;
 				}
-				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 			while (j < info->cub_list.map_x)
 			{
 				info->cub_list.map_matrix[i][j] = 5;
-				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 		}
@@ -327,7 +268,6 @@ int convert_int_matrix(t_info *info)
 					if (j > last_no_wall_row)
 						last_no_wall_row = j;
 				}
-				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 		}
@@ -337,41 +277,22 @@ int convert_int_matrix(t_info *info)
 			continue;
 		}
 		else if (i == 0 || i == info->cub_list.map_y - 1)
-		{
-			printf("Error\n");
-			printf("Map file is wrong\n");
-			exit(1);
-		}
+			error_process("Map file is wrong");
 		else
 		{
 			if (first_no_wall_row == 0 || last_no_wall_row == info->cub_list.map_x - 1)
-			{
-				printf("Error\n");
-				printf("Map file is wrong\n");
-				exit(1);
-			}
+				error_process("Map file is wrong");
 			if (last_no_wall_row != -1)
 			{
-				printf("first_no_wall: %d\n", last_no_wall_row);
 				if (info->cub_list.map_matrix[i][first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][last_no_wall_row + 1] != 1)
-				{
-					printf("Error\n");
-					printf("Map file is wrong\n");
-					exit(1);
-				}
+					error_process("Map file is wrong");
 			}
 		}
-		// printf("fisrt: %d last: %d\n", first_no_wall_row, last_no_wall_row);
-		write(1, "\n", 1);
 		i++;
 	}
 	map_not_srrounded_check(info);
 	map_space_check(info);
 	if (info->cub_list.init_pos_count != 1)
-	{
-		printf("Error\n");
-		printf("Map file is wrong\n");
-		exit(1);
-	}
+		error_process("Map file is wrong");
 	return (0);
 }
