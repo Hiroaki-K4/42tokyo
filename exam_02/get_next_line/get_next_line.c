@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 10:05:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 10:08:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,24 @@ size_t ft_strlen(const char *src)
     return (i);
 }
 
+char *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+    
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(src + i);
+    return (NULL);
+}
+
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t ans;
@@ -349,6 +367,7 @@ int read_line(int fd, char **store, char **line)
         {
             if (!(store[fd] = save_new_line(store[fd], line, buf)))
                 return (-1);
+            return (1);
         }
         if (!(tmp = ft_strjoin(store[fd], buf)))
             return (-1);
