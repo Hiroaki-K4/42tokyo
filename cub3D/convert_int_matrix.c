@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/29 21:27:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 11:48:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void map_not_srrounded_check(t_info *info)
 				if (i > last_no_wall_col)
 					last_no_wall_col = i;
 			}
-			write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+			// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 			i++;
 		}
 		if (last_no_wall_col == -1)
@@ -264,13 +264,13 @@ int convert_int_matrix(t_info *info)
 					if (j > last_no_wall_row)
 						last_no_wall_row = j;
 				}
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 			while (j < info->cub_list.map_x)
 			{
 				info->cub_list.map_matrix[i][j] = 5;
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 		}
@@ -327,7 +327,7 @@ int convert_int_matrix(t_info *info)
 					if (j > last_no_wall_row)
 						last_no_wall_row = j;
 				}
-				write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
+				// write(1, ft_itoa(info->cub_list.map_matrix[i][j]), 1);
 				j++;
 			}
 		}
