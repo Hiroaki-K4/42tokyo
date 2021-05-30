@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 14:46:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:22:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ int	main_loop(t_info *info)
 	return (0);
 }
 
-int win_close()
+int win_close(t_info *info)
 {
+	printf("finish: %d\n", info->rotSpeed);
 	exit(0);
 }
 
