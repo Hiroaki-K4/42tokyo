@@ -1,56 +1,50 @@
-==78489== Memcheck, a memory error detector
-==78489== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==78489== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==78489== Command: ./cub3D sample.cub
-==78489== Parent PID: 78352
-==78489== 
-==78489== Conditional jump or move depends on uninitialised value(s)
-==78489==    at 0x11548C: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x1154B7: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x11592D: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489== 
-==78489== Conditional jump or move depends on uninitialised value(s)
-==78489==    at 0x11548C: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x1154B7: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x11592D: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x112912: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489== 
-==78489== Conditional jump or move depends on uninitialised value(s)
-==78489==    at 0x11548C: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x1154B7: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x11592D: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x112AC5: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489== 
-==78489== 
-==78489== HEAP SUMMARY:
-==78489==     in use at exit: 23,197,336 bytes in 2,061 blocks
-==78489==   total heap usage: 2,448 allocs, 387 frees, 23,215,187 bytes allocated
-==78489== 
-==78489== 458 bytes in 15 blocks are definitely lost in loss record 45 of 56
-==78489==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==78489==    by 0x115231: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x112BEF: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489== 
-==78489== 784 (344 direct, 440 indirect) bytes in 19 blocks are definitely lost in loss record 47 of 56
-==78489==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==78489==    by 0x115903: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==78489== 
-==78489== LEAK SUMMARY:
-==78489==    definitely lost: 802 bytes in 34 blocks
-==78489==    indirectly lost: 440 bytes in 24 blocks
-==78489==      possibly lost: 0 bytes in 0 blocks
-==78489==    still reachable: 23,196,094 bytes in 2,003 blocks
-==78489==         suppressed: 0 bytes in 0 blocks
-==78489== Reachable blocks (those to which a pointer was found) are not shown.
-==78489== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==78489== 
-==78489== Use --track-origins=yes to see where uninitialised values come from
-==78489== For lists of detected and suppressed errors, rerun with: -s
-==78489== ERROR SUMMARY: 28 errors from 5 contexts (suppressed: 0 from 0)
+==78995== Memcheck, a memory error detector
+==78995== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==78995== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==78995== Command: ./cub3D sample.cub
+==78995== Parent PID: 78861
+==78995== 
+==78995== Conditional jump or move depends on uninitialised value(s)
+==78995==    at 0x115498: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x1154C3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x115939: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995== 
+==78995== Conditional jump or move depends on uninitialised value(s)
+==78995==    at 0x115498: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x1154C3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x115939: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x112912: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995== 
+==78995== Conditional jump or move depends on uninitialised value(s)
+==78995==    at 0x115498: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x1154C3: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x115939: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x112AC5: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995== 
+==78995== 
+==78995== HEAP SUMMARY:
+==78995==     in use at exit: 23,196,878 bytes in 2,046 blocks
+==78995==   total heap usage: 2,448 allocs, 402 frees, 23,215,187 bytes allocated
+==78995== 
+==78995== 784 (344 direct, 440 indirect) bytes in 19 blocks are definitely lost in loss record 46 of 55
+==78995==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==78995==    by 0x11590F: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==78995== 
+==78995== LEAK SUMMARY:
+==78995==    definitely lost: 344 bytes in 19 blocks
+==78995==    indirectly lost: 440 bytes in 24 blocks
+==78995==      possibly lost: 0 bytes in 0 blocks
+==78995==    still reachable: 23,196,094 bytes in 2,003 blocks
+==78995==         suppressed: 0 bytes in 0 blocks
+==78995== Reachable blocks (those to which a pointer was found) are not shown.
+==78995== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==78995== 
+==78995== Use --track-origins=yes to see where uninitialised values come from
+==78995== For lists of detected and suppressed errors, rerun with: -s
+==78995== ERROR SUMMARY: 27 errors from 4 contexts (suppressed: 0 from 0)
