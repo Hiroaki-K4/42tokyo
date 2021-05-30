@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 21:46:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 17:27:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ int	key_press(int key, t_info *info)
 		info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
 	}
 	if (key == K_ESC)
+	{
+		free(info->mlx);
 		exit(0);
+	}
 	return (0);
 }

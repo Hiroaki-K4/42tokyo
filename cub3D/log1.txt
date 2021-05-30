@@ -1,22 +1,22 @@
-==89418== Memcheck, a memory error detector
-==89418== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==89418== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==89418== Command: ./cub3D sample.cub
-==89418== Parent PID: 89284
-==89418== 
-==89418== 
-==89418== HEAP SUMMARY:
-==89418==     in use at exit: 23,196,094 bytes in 2,003 blocks
-==89418==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
-==89418== 
-==89418== LEAK SUMMARY:
-==89418==    definitely lost: 0 bytes in 0 blocks
-==89418==    indirectly lost: 0 bytes in 0 blocks
-==89418==      possibly lost: 0 bytes in 0 blocks
-==89418==    still reachable: 23,196,094 bytes in 2,003 blocks
-==89418==         suppressed: 0 bytes in 0 blocks
-==89418== Reachable blocks (those to which a pointer was found) are not shown.
-==89418== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==89418== 
-==89418== For lists of detected and suppressed errors, rerun with: -s
-==89418== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==92514== Memcheck, a memory error detector
+==92514== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==92514== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==92514== Command: ./cub3D sample.cub
+==92514== Parent PID: 92380
+==92514== 
+==92514== 
+==92514== HEAP SUMMARY:
+==92514==     in use at exit: 23,196,094 bytes in 2,003 blocks
+==92514==   total heap usage: 2,448 allocs, 445 frees, 23,215,187 bytes allocated
+==92514== 
+==92514== LEAK SUMMARY:
+==92514==    definitely lost: 0 bytes in 0 blocks
+==92514==    indirectly lost: 0 bytes in 0 blocks
+==92514==      possibly lost: 0 bytes in 0 blocks
+==92514==    still reachable: 23,196,094 bytes in 2,003 blocks
+==92514==         suppressed: 0 bytes in 0 blocks
+==92514== Reachable blocks (those to which a pointer was found) are not shown.
+==92514== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==92514== 
+==92514== For lists of detected and suppressed errors, rerun with: -s
+==92514== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
