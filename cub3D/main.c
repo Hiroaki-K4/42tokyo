@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:58:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:59:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,8 @@ void	buf_init(t_info *info, int i, int j)
 {
 	while (i < info->cub_list.height)
 	{
-		if (!(info->buf[i] = (int *)malloc(sizeof(int) * (info->cub_list.width))))
+		if (!(info->buf[i] = (int *)malloc(sizeof(int) *
+			(info->cub_list.width))))
 			error_process("Malloc failed");
 		i++;
 	}
