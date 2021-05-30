@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 11:51:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 11:53:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 		y++;
 	}
 	mlx_destroy_image(info->mlx, img->img);
-	free(path);
+	// free(path);
 }
 
 void	load_texture(t_info *info)
