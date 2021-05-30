@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:14:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:15:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,8 @@ int		main(int argc, char *argv[])
 	i = 0;
 	while (i < 5)
 	{
-		if (!(info.texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth))))
+		if (!(info.texture[i] = (int *)malloc(sizeof(int) *
+			(texHeight * texWidth))))
 			error_process("Malloc failed");
 		i++;
 	}
