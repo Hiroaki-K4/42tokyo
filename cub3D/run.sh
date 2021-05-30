@@ -2,7 +2,7 @@
 
 make re
 # ./cub3D sample.cub
-./cub3D try.cub
+./cub3D try.cu
 make fclean
 cd ..
 sh git.sh
