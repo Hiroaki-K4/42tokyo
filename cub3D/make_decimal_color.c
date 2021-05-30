@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:42:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 21:42:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,6 @@ int hex_to_decimal(char *hex)
 	}
 	return (ans);
 }
-
-// void error_exit()
-// {
-// 	printf("Error\n");
-// 	printf("Malloc failed\n");
-// 	exit(1);
-// }
 
 char *make_decimal_color(t_rgb color)
 {
