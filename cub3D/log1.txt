@@ -1,61 +1,61 @@
-==76926== Memcheck, a memory error detector
-==76926== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==76926== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==76926== Command: ./cub3D sample.cub
-==76926== Parent PID: 76783
-==76926== 
-==76926== Conditional jump or move depends on uninitialised value(s)
-==76926==    at 0x115546: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x115571: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x1159E7: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== Conditional jump or move depends on uninitialised value(s)
-==76926==    at 0x115546: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x115571: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x1159E7: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x112912: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== Conditional jump or move depends on uninitialised value(s)
-==76926==    at 0x115546: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x115571: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x1159E7: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x112AFA: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== Conditional jump or move depends on uninitialised value(s)
-==76926==    at 0x483C9F5: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==76926==    by 0x112E94: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== 
-==76926== HEAP SUMMARY:
-==76926==     in use at exit: 23,197,336 bytes in 2,061 blocks
-==76926==   total heap usage: 2,448 allocs, 387 frees, 23,215,187 bytes allocated
-==76926== 
-==76926== 458 bytes in 15 blocks are definitely lost in loss record 45 of 56
-==76926==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==76926==    by 0x1152EB: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x112C59: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== 784 (344 direct, 440 indirect) bytes in 19 blocks are definitely lost in loss record 47 of 56
-==76926==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==76926==    by 0x1159BD: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==76926== 
-==76926== LEAK SUMMARY:
-==76926==    definitely lost: 802 bytes in 34 blocks
-==76926==    indirectly lost: 440 bytes in 24 blocks
-==76926==      possibly lost: 0 bytes in 0 blocks
-==76926==    still reachable: 23,196,094 bytes in 2,003 blocks
-==76926==         suppressed: 0 bytes in 0 blocks
-==76926== Reachable blocks (those to which a pointer was found) are not shown.
-==76926== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==76926== 
-==76926== Use --track-origins=yes to see where uninitialised values come from
-==76926== For lists of detected and suppressed errors, rerun with: -s
-==76926== ERROR SUMMARY: 29 errors from 6 contexts (suppressed: 0 from 0)
+==77391== Memcheck, a memory error detector
+==77391== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==77391== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==77391== Command: ./cub3D sample.cub
+==77391== Parent PID: 77257
+==77391== 
+==77391== Conditional jump or move depends on uninitialised value(s)
+==77391==    at 0x115511: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x11553C: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x1159B2: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== Conditional jump or move depends on uninitialised value(s)
+==77391==    at 0x115511: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x11553C: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x1159B2: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x112912: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== Conditional jump or move depends on uninitialised value(s)
+==77391==    at 0x115511: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x11553C: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x1159B2: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x112AC5: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== Conditional jump or move depends on uninitialised value(s)
+==77391==    at 0x483C9F5: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77391==    by 0x112E5F: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== 
+==77391== HEAP SUMMARY:
+==77391==     in use at exit: 23,197,336 bytes in 2,061 blocks
+==77391==   total heap usage: 2,448 allocs, 387 frees, 23,215,187 bytes allocated
+==77391== 
+==77391== 458 bytes in 15 blocks are definitely lost in loss record 45 of 56
+==77391==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77391==    by 0x1152B6: ft_strdup (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x112C24: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== 784 (344 direct, 440 indirect) bytes in 19 blocks are definitely lost in loss record 47 of 56
+==77391==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77391==    by 0x115988: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==77391== 
+==77391== LEAK SUMMARY:
+==77391==    definitely lost: 802 bytes in 34 blocks
+==77391==    indirectly lost: 440 bytes in 24 blocks
+==77391==      possibly lost: 0 bytes in 0 blocks
+==77391==    still reachable: 23,196,094 bytes in 2,003 blocks
+==77391==         suppressed: 0 bytes in 0 blocks
+==77391== Reachable blocks (those to which a pointer was found) are not shown.
+==77391== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==77391== 
+==77391== Use --track-origins=yes to see where uninitialised values come from
+==77391== For lists of detected and suppressed errors, rerun with: -s
+==77391== ERROR SUMMARY: 29 errors from 6 contexts (suppressed: 0 from 0)
