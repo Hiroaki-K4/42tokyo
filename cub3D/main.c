@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 22:09:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 22:10:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ int		main_loop(t_info *info)
 	draw(info);
 	return (0);
 }
-
-// int		win_close(t_info *info)
-// {
-// 	exit(0);
-// }
 
 void	load_image(t_info *info, int *texture, char *path, t_img *img)
 {
