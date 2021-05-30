@@ -1,50 +1,50 @@
-==79535== Memcheck, a memory error detector
-==79535== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==79535== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==79535== Command: ./cub3D sample.cub
-==79535== Parent PID: 79401
-==79535== 
-==79535== Conditional jump or move depends on uninitialised value(s)
-==79535==    at 0x1154A4: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x1154CF: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x115945: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535== 
-==79535== Conditional jump or move depends on uninitialised value(s)
-==79535==    at 0x1154A4: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x1154CF: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x115945: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x11291E: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535== 
-==79535== Conditional jump or move depends on uninitialised value(s)
-==79535==    at 0x1154A4: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x1154CF: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x115945: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x112AD1: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535== 
-==79535== 
-==79535== HEAP SUMMARY:
-==79535==     in use at exit: 23,196,862 bytes in 2,044 blocks
-==79535==   total heap usage: 2,448 allocs, 404 frees, 23,215,187 bytes allocated
-==79535== 
-==79535== 768 (328 direct, 440 indirect) bytes in 17 blocks are definitely lost in loss record 46 of 55
-==79535==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==79535==    by 0x11591B: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==79535== 
-==79535== LEAK SUMMARY:
-==79535==    definitely lost: 328 bytes in 17 blocks
-==79535==    indirectly lost: 440 bytes in 24 blocks
-==79535==      possibly lost: 0 bytes in 0 blocks
-==79535==    still reachable: 23,196,094 bytes in 2,003 blocks
-==79535==         suppressed: 0 bytes in 0 blocks
-==79535== Reachable blocks (those to which a pointer was found) are not shown.
-==79535== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==79535== 
-==79535== Use --track-origins=yes to see where uninitialised values come from
-==79535== For lists of detected and suppressed errors, rerun with: -s
-==79535== ERROR SUMMARY: 27 errors from 4 contexts (suppressed: 0 from 0)
+==80005== Memcheck, a memory error detector
+==80005== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==80005== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==80005== Command: ./cub3D sample.cub
+==80005== Parent PID: 79871
+==80005== 
+==80005== Conditional jump or move depends on uninitialised value(s)
+==80005==    at 0x1154B0: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x1154DB: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x115951: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005== 
+==80005== Conditional jump or move depends on uninitialised value(s)
+==80005==    at 0x1154B0: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x1154DB: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x115951: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x11292A: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005== 
+==80005== Conditional jump or move depends on uninitialised value(s)
+==80005==    at 0x1154B0: ft_strlen (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x1154DB: ft_strlcpy (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x115951: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x112ADD: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005== 
+==80005== 
+==80005== HEAP SUMMARY:
+==80005==     in use at exit: 23,196,862 bytes in 2,044 blocks
+==80005==   total heap usage: 2,448 allocs, 404 frees, 23,215,187 bytes allocated
+==80005== 
+==80005== 768 (328 direct, 440 indirect) bytes in 17 blocks are definitely lost in loss record 46 of 55
+==80005==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==80005==    by 0x115927: ft_split (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x1126E8: cub_line_check (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005==    by 0x10FF23: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==80005== 
+==80005== LEAK SUMMARY:
+==80005==    definitely lost: 328 bytes in 17 blocks
+==80005==    indirectly lost: 440 bytes in 24 blocks
+==80005==      possibly lost: 0 bytes in 0 blocks
+==80005==    still reachable: 23,196,094 bytes in 2,003 blocks
+==80005==         suppressed: 0 bytes in 0 blocks
+==80005== Reachable blocks (those to which a pointer was found) are not shown.
+==80005== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==80005== 
+==80005== Use --track-origins=yes to see where uninitialised values come from
+==80005== For lists of detected and suppressed errors, rerun with: -s
+==80005== ERROR SUMMARY: 27 errors from 4 contexts (suppressed: 0 from 0)
