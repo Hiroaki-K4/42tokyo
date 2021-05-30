@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 14:41:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/30 14:43:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@ int cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
+		free(rgb_split[0]);
+		free(rgb_split[1]);
+		free(rgb_split[2]);
+		free(rgb_split);
 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
 	}
 	else if (map_line_check(line_split) == 0)
