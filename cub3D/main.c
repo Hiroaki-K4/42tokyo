@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:30:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:30:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void xpm_file_check(t_info *info, int i, char *path)
 	{
 		i = get_next_line(fd, &line, buffer_size);
 		count++;
-		printf("*line: %s\n", *line);
+		printf("*line: %s\n", line);
 		// cub_line_check(line, count, info);
 		free(line);
 	}
