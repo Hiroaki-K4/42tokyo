@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:08:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:09:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 	int x;
 	int y;
 
-	// xpm_file_check(info, 1, path);
+	xpm_file_check(info, 1, path);
 	if (!(img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
 		&img->img_height)))
 		error_process("The path of texture is wrong");
