@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:52:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:57:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,11 @@ int		main_loop(t_info *info)
 void get_xpm_size(t_info *info, char *line)
 {
 	char **xpm;
-	int i;
-	
+
 	if (!(xpm = ft_split(&line[1], ' ')))
 		error_process("ft_split failed");
-	i = 0;
-	if (ft_atoi(xpm[0]) == 64 && ft_atoi(xpm[1]) == 64)
-		printf("ok\n");
-	else
+	if (ft_atoi(xpm[0]) != 64 || ft_atoi(xpm[1]) != 64)
 		error_process("xpm file is wrong");
-	printf("line: %s\n", line);
 }
 
 void xpm_file_check(t_info *info, int i, char *path)
