@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:54:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:54:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ void	texture_init(t_info *info, int i, int j)
 	}
 }
 
-void arg_error_check(int argc, char **argv)
+void	arg_error_check(int argc, char **argv)
 {
 	int i;
 
