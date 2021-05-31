@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 09:03:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 09:11:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -588,7 +588,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+		if (!(str_num = ft_itoa_hex(hex_num, "012356789abcdef")))
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
