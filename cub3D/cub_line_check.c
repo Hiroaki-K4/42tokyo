@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:24:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:28:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ int cub_line_check(char **line, int count, t_info *info)
 			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
 			i++;
 		}
-		tmp[i] = ft_strdup(map_line);
+		if (!(tmp[i] = ft_strdup(map_line)))
+			error_process("ft_strdup failed");
 		free(map_line);
 		tmp[i + 1] = NULL;
 		if (i > 0)
