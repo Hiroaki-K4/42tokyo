@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:28:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:29:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void xpm_file_check(t_info *info, int i, char *path)
 	char	**line;
 
 	buffer_size = 10;
+	printf("path: %s\n", path);
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
 	info_init(info);
 	count = 0;
-	i = 1;
+	// i = 1;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line, buffer_size);
@@ -96,7 +97,7 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[3], info->cub_list.e_texture, &img);
 	if (info->cub_list.sprite_flag == 1)
 	{
-		xpm_file_check(info, 0, info->cub_list.sprite);
+		xpm_file_check(info, 1, info->cub_list.sprite);
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 	}
 }
