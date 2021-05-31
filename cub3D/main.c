@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:53:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:54:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,13 +216,6 @@ int		main(int argc, char *argv[])
 	int		i;
 
 	arg_error_check(argc, argv);
-	// if (argc != 2)
-	// 	error_process("The number of arguments is wrong");
-	// i = ft_strlen(argv[1]);
-	// if ((i = ft_strlen(argv[1])) < 5)
-	// 	error_process("Map file is wrong");
-	// if (strcmp(&argv[1][i - 4], ".cub") != 0)
-	// 	error_process("Not a cub file");
 	read_cub_line(&info, i, argv[1]);
 	convert_int_matrix(&info);
 	if (info.cub_list.sprite_flag == 1)
