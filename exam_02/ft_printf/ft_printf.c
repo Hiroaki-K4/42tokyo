@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 09:38:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 09:38:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,7 +358,7 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
 				write(1, " ", 1);
 			write(1, str_num, ft_strlen(str_num));
-			len = ft_strlen(str_num);
+			len = flag_list.field;
 		}
 	}
 	else
