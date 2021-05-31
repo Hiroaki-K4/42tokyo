@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:22:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:24:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.line_num = count;
 		info->cub_list.map_y++;
 		if (!(map_line = ft_strdup(line)))
-			return (-1);
+			error_process("ft_strdup failed");
 		if (ft_strlen(map_line) > info->cub_list.map_x)
 			info->cub_list.map_x = ft_strlen(map_line);
 		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
