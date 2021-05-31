@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:51:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:51:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,12 @@ void xpm_file_check(t_info *info, int i, char *path)
 		error_process(strerror(errno));
 	info_init(info);
 	count = 0;
-	// i = 1;
 	while (i > 0 && count < 4)
 	{
 		i = get_next_line(fd, &line, buffer_size);
 		if (count == 3)
 			get_xpm_size(info, line);
 		count++;
-		// cub_line_check(line, count, info);
 		free(line);
 	}
 }
