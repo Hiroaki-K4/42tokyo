@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:43:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:43:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,16 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 void get_xpm_size(t_info *info, char *line)
 {
 	char **xmp;
+	int i;
 	
 	if (!(xmp = ft_split(line, ' ')))
 		error_process("ft_split failed");
+	i = 0;
+	while (xmp[i])
+	{
+		printf("xmp: %s\n", xmp[i]);
+		i++;
+	}
 	printf("line: %s\n", line);
 }
 
