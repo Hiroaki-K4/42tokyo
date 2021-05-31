@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 23:01:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:11:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[2], info->cub_list.w_texture, &img);
 	load_image(info, info->texture[3], info->cub_list.e_texture, &img);
 	if (info->cub_list.sprite_flag == 1)
+	{
+		
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
+	}
 }
 
 void	info_init(t_info *info)
