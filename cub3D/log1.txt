@@ -1,22 +1,22 @@
-==109211== Memcheck, a memory error detector
-==109211== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==109211== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==109211== Command: ./cub3D sample.cub
-==109211== Parent PID: 109075
-==109211== 
-==109211== 
-==109211== HEAP SUMMARY:
-==109211==     in use at exit: 23,212,656 bytes in 2,072 blocks
-==109211==   total heap usage: 2,785 allocs, 713 frees, 23,299,111 bytes allocated
-==109211== 
-==109211== LEAK SUMMARY:
-==109211==    definitely lost: 0 bytes in 0 blocks
-==109211==    indirectly lost: 0 bytes in 0 blocks
-==109211==      possibly lost: 0 bytes in 0 blocks
-==109211==    still reachable: 23,212,656 bytes in 2,072 blocks
-==109211==         suppressed: 0 bytes in 0 blocks
-==109211== Reachable blocks (those to which a pointer was found) are not shown.
-==109211== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==109211== 
-==109211== For lists of detected and suppressed errors, rerun with: -s
-==109211== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
+==109688== Memcheck, a memory error detector
+==109688== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==109688== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==109688== Command: ./cub3D sample.cub
+==109688== Parent PID: 109552
+==109688== 
+==109688== 
+==109688== HEAP SUMMARY:
+==109688==     in use at exit: 23,213,488 bytes in 2,076 blocks
+==109688==   total heap usage: 2,802 allocs, 726 frees, 23,324,335 bytes allocated
+==109688== 
+==109688== LEAK SUMMARY:
+==109688==    definitely lost: 0 bytes in 0 blocks
+==109688==    indirectly lost: 0 bytes in 0 blocks
+==109688==      possibly lost: 0 bytes in 0 blocks
+==109688==    still reachable: 23,213,488 bytes in 2,076 blocks
+==109688==         suppressed: 0 bytes in 0 blocks
+==109688== Reachable blocks (those to which a pointer was found) are not shown.
+==109688== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==109688== 
+==109688== For lists of detected and suppressed errors, rerun with: -s
+==109688== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
