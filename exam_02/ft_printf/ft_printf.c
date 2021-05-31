@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 11:03:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 09:01:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -657,7 +657,7 @@ int ft_printf(const char *arg, ...)
 	int j;
 	int print_len;
 	va_list ap;
-	
+
 	va_start(ap, arg);
 	i = 0;
 	print_len = 0;
