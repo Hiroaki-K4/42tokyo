@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 09:13:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 09:15:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -477,30 +477,11 @@ int print_string(va_list *ap, t_plist flag_list)
 	return (len);
 }
 
-// int		str_to_num(const char *arg, int *i, int flag)
-// {
-// 	int	num;
-// 	int	j;
-
-// 	if (ft_isdigit(arg[0]) == 0 && flag == 1)
-// 		return (0);
-// 	num = ft_atoi(arg);
-// 	if (num >= 0)
-// 	{
-// 		j = 0;
-// 		while (ft_isdigit(arg[j++]))
-// 			(*i)++;
-// 	}
-// 	else
-// 		num = -1;
-// 	return (num);
-// }
-
-int str_to_num(const char *arg, int *i, int flag)
+int		str_to_num(const char *arg, int *i, int flag)
 {
-	int num;
-	int j;
-	
+	int	num;
+	int	j;
+
 	if (ft_isdigit(arg[0]) == 0 && flag == 1)
 		return (0);
 	num = ft_atoi(arg);
@@ -514,6 +495,25 @@ int str_to_num(const char *arg, int *i, int flag)
 		num = -1;
 	return (num);
 }
+
+// int str_to_num(const char *arg, int *i, int flag)
+// {
+// 	int num;
+// 	int j;
+	
+// 	if (ft_isdigit(arg[0]) == 0 && flag == 1)
+// 		return (0);
+// 	num = ft_atoi(arg);
+// 	if (num >= 0)
+// 	{
+// 		j = 0;
+// 		while (ft_isdigit(arg[j++]))
+// 			(*i)++;
+// 	}
+// 	else
+// 		num = -1;
+// 	return (num);
+// }
 
 // int		ft_printf_per(const char *arg, int *i, va_list *ap)
 // {
