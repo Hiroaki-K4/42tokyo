@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:12:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 22:50:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		main_loop(t_info *info)
 	return (0);
 }
 
-void get_xpm_size(t_info *info, char *line)
+void	get_xpm_size(t_info *info, char *line)
 {
 	char **xpm;
 
@@ -52,7 +52,7 @@ void get_xpm_size(t_info *info, char *line)
 	double_array_free(xpm);
 }
 
-void xpm_file_check(t_info *info, int i, char *path)
+void	xpm_file_check(t_info *info, int i, char *path)
 {
 	int		buffer_size;
 	int		fd;
@@ -201,7 +201,7 @@ int		main(int argc, char *argv[])
 {
 	t_info	info;
 	int		i;
-	int		j;
+	// int		j;
 
 	if (argc != 2)
 		error_process("The number of arguments is wrong");
