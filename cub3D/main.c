@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:49:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:51:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,6 @@ int		main_loop(t_info *info)
 	calc(info);
 	draw(info);
 	return (0);
-}
-
-void	load_image(t_info *info, int *texture, char *path, t_img *img)
-{
-	int x;
-	int y;
-
-	if (!(img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
-		&img->img_height)))
-		error_process("The path of texture is wrong");
-	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
-		&img->endian);
-	y = 0;
-	while (y < img->img_height)
-	{
-		x = 0;
-		while (x < img->img_width)
-		{
-			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
-			x++;
-		}
-		y++;
-	}
-	mlx_destroy_image(info->mlx, img->img);
 }
 
 void get_xpm_size(t_info *info, char *line)
@@ -104,6 +80,31 @@ void xpm_file_check(t_info *info, int i, char *path)
 	}
 }
 
+void	load_image(t_info *info, int *texture, char *path, t_img *img)
+{
+	int x;
+	int y;
+
+	xpm_file_check(info, 1, path);
+	if (!(img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
+		&img->img_height)))
+		error_process("The path of texture is wrong");
+	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
+		&img->endian);
+	y = 0;
+	while (y < img->img_height)
+	{
+		x = 0;
+		while (x < img->img_width)
+		{
+			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
+			x++;
+		}
+		y++;
+	}
+	mlx_destroy_image(info->mlx, img->img);
+}
+
 void	load_texture(t_info *info)
 {
 	t_img	img;
@@ -114,7 +115,7 @@ void	load_texture(t_info *info)
 	load_image(info, info->texture[3], info->cub_list.e_texture, &img);
 	if (info->cub_list.sprite_flag == 1)
 	{
-		xpm_file_check(info, 1, info->cub_list.sprite);
+		// xpm_file_check(info, 1, info->cub_list.sprite);
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 	}
 }
@@ -229,7 +230,6 @@ int		main(int argc, char *argv[])
 		error_process("Malloc failed");
 	texture_init(&info, 0, 0);
 	load_texture(&info);
-	printf("ccc\n");
 	info.win = mlx_new_window(info.mlx, info.cub_list.width,
 		info.cub_list.height, "mlx");
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width,
