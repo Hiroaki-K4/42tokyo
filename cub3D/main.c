@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:49:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/05/31 21:49:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,6 +229,7 @@ int		main(int argc, char *argv[])
 		error_process("Malloc failed");
 	printf("aaa\n");
 	texture_init(&info, 0, 0);
+	printf("bbb\n");
 	load_texture(&info);
 	info.win = mlx_new_window(info.mlx, info.cub_list.width,
 		info.cub_list.height, "mlx");
