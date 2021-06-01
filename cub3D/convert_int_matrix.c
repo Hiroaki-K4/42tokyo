@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 20:47:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 20:57:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,28 @@ void	map_space_check(t_info *info)
 	}
 }
 
+void	init_dir_plane(t_info *info, double x, double y, int type)
+{
+	if (type == 0)
+	{
+		info->dirX = x;
+		info->planeY = y;
+	}
+	else if (type == 1)
+	{
+		info->dirX = x;
+		info->planeY = y;
+	}
+	else if (type == 2)
+	{
+		
+	}
+	else if (type == 3)
+	{
+		
+	}
+}
+
 int		convert_int_matrix(t_info *info)
 {
 	int i;
@@ -166,23 +188,22 @@ int		convert_int_matrix(t_info *info)
 				}
 				if (info->cub_list.map[i][j] == 'N')
 				{
-					// info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = -1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = 0.66;
+					init_dir_plane(info, -1.0, 0.66, 0);
+					// info->dirX = -1.0;
+					// info->dirY = 0.0;
+					// info->planeX = 0.0;
+					// info->planeY = 0.66;
 				}
 				else if (info->cub_list.map[i][j] == 'S')
 				{
-					// info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = -0.66;
+					init_dir_plane(info, 1.0, -0.66, 1);
+					// info->dirX = 1.0;
+					// info->dirY = 0.0;
+					// info->planeX = 0.0;
+					// info->planeY = -0.66;
 				}
 				else if (info->cub_list.map[i][j] == 'W')
 				{
-					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 0.0;
 					info->dirY = -1.0;
 					info->planeX = -0.66;
@@ -190,7 +211,6 @@ int		convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'E')
 				{
-					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 0.0;
 					info->dirY = 1.0;
 					info->planeX = 0.66;
