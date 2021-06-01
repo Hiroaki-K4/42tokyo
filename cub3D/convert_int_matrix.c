@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:12:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:16:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,13 +182,10 @@ void	init_setting(t_info *info, int i, int j)
 		info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
 }
 
-int		convert_int_matrix(t_info *info)
+void	map_malloc(t_info *info)
 {
 	int i;
-	int j;
-	int first_no_wall_row;
-	int last_no_wall_row;
-	
+
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		error_process("Malloc failed");
 	i = 0;
@@ -198,6 +195,25 @@ int		convert_int_matrix(t_info *info)
 			error_process("Malloc failed");
 		i++;
 	}
+}
+
+int		convert_int_matrix(t_info *info)
+{
+	int i;
+	int j;
+	int first_no_wall_row;
+	int last_no_wall_row;
+	
+	// if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
+	// 	error_process("Malloc failed");
+	// i = 0;
+	// while (i < info->cub_list.map_y)
+	// {
+	// 	if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
+	// 		error_process("Malloc failed");
+	// 	i++;
+	// }
+	map_malloc(info);
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
@@ -209,25 +225,6 @@ int		convert_int_matrix(t_info *info)
 			while (j < ft_strlen(info->cub_list.map[i]))
 			{
 				init_setting(info, i, j);
-				// if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
-				// {
-				// 	info->posX = (double)i + 0.5;
-				// 	info->posY = (double)j + 0.5;
-				// 	info->cub_list.init_pos_count++;
-				// 	info->cub_list.map_matrix[i][j] = 0;
-				// }
-				// if (info->cub_list.map[i][j] == 'N')
-				// 	init_dir_plane(info, -1.0, 0.66, 0);
-				// else if (info->cub_list.map[i][j] == 'S')
-				// 	init_dir_plane(info, 1.0, -0.66, 1);
-				// else if (info->cub_list.map[i][j] == 'W')
-				// 	init_dir_plane(info, -1.0, -0.66, 2);
-				// else if (info->cub_list.map[i][j] == 'E')
-				// 	init_dir_plane(info, 1.0, 0.66, 3);
-				// else if (info->cub_list.map[i][j] == ' ')
-				// 	info->cub_list.map_matrix[i][j] = 5;
-				// else
-				// 	info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
 				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
 					if (j < first_no_wall_row)
@@ -248,27 +245,6 @@ int		convert_int_matrix(t_info *info)
 			while (j < info->cub_list.map_x)
 			{
 				init_setting(info, i, j);
-				// if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
-				// {
-				// 	info->posX = (double)i + 0.5;
-				// 	info->posY = (double)j + 0.5;
-				// 	info->cub_list.init_pos_count++;
-				// 	info->cub_list.map_matrix[i][j] = 0;
-				// }
-				// if (info->cub_list.map[i][j] == 'N')
-				// 	init_dir_plane(info, -1.0, 0.66, 0);
-				// else if (info->cub_list.map[i][j] == 'S')
-				// 	init_dir_plane(info, 1.0, -0.66, 1);
-				// else if (info->cub_list.map[i][j] == 'W')
-				// 	init_dir_plane(info, -1.0, -0.66, 2);
-				// else if (info->cub_list.map[i][j] == 'E')
-				// 	init_dir_plane(info, 1.0, 0.66, 3);
-				// else if (info->cub_list.map[i][j] == ' ')
-				// 	info->cub_list.map_matrix[i][j] = 5;
-				// else if (info->cub_list.map[i][j] == ' ')
-				// 	info->cub_list.map_matrix[i][j] = 5;
-				// else
-				// 	info->cub_list.map_matrix[i][j] = info->cub_list.map[i][j] - '0';
 				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
 					if (j < first_no_wall_row)
