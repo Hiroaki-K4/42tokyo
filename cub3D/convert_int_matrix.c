@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:56:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 22:05:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,8 @@ void set_nowall_edge(t_info *info, int i, int j, int max)
 	}
 }
 
+
+
 int		convert_int_matrix(t_info *info)
 {
 	int i;
@@ -231,39 +233,9 @@ int		convert_int_matrix(t_info *info)
 		info->cub_list.first_no_wall_row = 2147483647;
 		info->cub_list.last_no_wall_row = -1;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
-		{
 			set_nowall_edge(info, i, j, ft_strlen(info->cub_list.map[i]));
-			// while (j < ft_strlen(info->cub_list.map[i]))
-			// {
-			// 	init_setting(info, i, j);
-			// 	if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-			// 	{
-			// 		if (j < info->cub_list.first_no_wall_row)
-			// 			info->cub_list.first_no_wall_row = j;
-			// 		if (j > info->cub_list.last_no_wall_row)
-			// 			info->cub_list.last_no_wall_row = j;
-			// 	}
-			// 	j++;
-			// }
-			// while (j < info->cub_list.map_x)
-			// 	info->cub_list.map_matrix[i][j++] = 5;
-		}
 		else
-		{
 			set_nowall_edge(info, i, j, info->cub_list.map_x);
-			// while (j < info->cub_list.map_x)
-			// {
-			// 	init_setting(info, i, j);
-			// 	if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-			// 	{
-			// 		if (j < info->cub_list.first_no_wall_row)
-			// 			info->cub_list.first_no_wall_row = j;
-			// 		if (j > info->cub_list.last_no_wall_row)
-			// 			info->cub_list.last_no_wall_row = j;
-			// 	}
-			// 	j++;
-			// }
-		}
 		if (info->cub_list.last_no_wall_row == -1)
 		{
 			i++;
@@ -275,10 +247,10 @@ int		convert_int_matrix(t_info *info)
 		{
 			if (info->cub_list.first_no_wall_row == 0 || info->cub_list.last_no_wall_row == info->cub_list.map_x - 1)
 				error_process("Map file is wrong");
-			if (info->cub_list.last_no_wall_row != -1)
+			if (info->cub_list.last_no_wall_row != -1 && (info->cub_list.map_matrix[i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][info->cub_list.last_no_wall_row + 1] != 1))
 			{
-				if (info->cub_list.map_matrix[i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][info->cub_list.last_no_wall_row + 1] != 1)
-					error_process("Map file is wrong");
+				// if (info->cub_list.map_matrix[i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][info->cub_list.last_no_wall_row + 1] != 1)
+				error_process("Map file is wrong");
 			}
 		}
 		i++;
