@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:54:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 11:48:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,18 +197,18 @@ void	texture_init(t_info *info, int i, int j)
 	}
 }
 
-void	arg_error_check(int argc, char **argv)
-{
-	int i;
+// void	arg_error_check(int argc, char **argv)
+// {
+// 	int i;
 
-	if (argc != 2)
-		error_process("The number of arguments is wrong");
-	i = ft_strlen(argv[1]);
-	if ((i = ft_strlen(argv[1])) < 5)
-		error_process("Map file is wrong");
-	if (strcmp(&argv[1][i - 4], ".cub") != 0)
-		error_process("Not a cub file");
-}
+// 	if (argc != 2)
+// 		error_process("The number of arguments is wrong");
+// 	i = ft_strlen(argv[1]);
+// 	if ((i = ft_strlen(argv[1])) < 5)
+// 		error_process("Map file is wrong");
+// 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
+// 		error_process("Not a cub file");
+// }
 
 int		main(int argc, char *argv[])
 {

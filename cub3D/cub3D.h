@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 21:55:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 11:49:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,6 @@ void double_array_free(char **array);
 void	error_process(char *error);
 int		win_close(t_info *info);
 void double_array_free(char **array);
+void	arg_error_check(int argc, char **argv);
 
 #endif
