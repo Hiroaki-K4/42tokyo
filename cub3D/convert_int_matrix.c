@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:41:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:56:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,12 +197,31 @@ void	map_malloc(t_info *info)
 	}
 }
 
+void set_nowall_edge(t_info *info, int i, int j, int max)
+{
+	while (j < max)
+	{
+		init_setting(info, i, j);
+		if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+		{
+			if (j < info->cub_list.first_no_wall_row)
+				info->cub_list.first_no_wall_row = j;
+			if (j > info->cub_list.last_no_wall_row)
+				info->cub_list.last_no_wall_row = j;
+		}
+		j++;
+	}
+	if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
+	{
+		while (j < info->cub_list.map_x)
+			info->cub_list.map_matrix[i][j++] = 5;
+	}
+}
+
 int		convert_int_matrix(t_info *info)
 {
 	int i;
 	int j;
-	// int first_no_wall_row;
-	// int last_no_wall_row;
 
 	map_malloc(info);
 	i = 0;
@@ -213,35 +232,37 @@ int		convert_int_matrix(t_info *info)
 		info->cub_list.last_no_wall_row = -1;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{
-			while (j < ft_strlen(info->cub_list.map[i]))
-			{
-				init_setting(info, i, j);
-				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-				{
-					if (j < info->cub_list.first_no_wall_row)
-						info->cub_list.first_no_wall_row = j;
-					if (j > info->cub_list.last_no_wall_row)
-						info->cub_list.last_no_wall_row = j;
-				}
-				j++;
-			}
-			while (j < info->cub_list.map_x)
-				info->cub_list.map_matrix[i][j++] = 5;
+			set_nowall_edge(info, i, j, ft_strlen(info->cub_list.map[i]));
+			// while (j < ft_strlen(info->cub_list.map[i]))
+			// {
+			// 	init_setting(info, i, j);
+			// 	if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+			// 	{
+			// 		if (j < info->cub_list.first_no_wall_row)
+			// 			info->cub_list.first_no_wall_row = j;
+			// 		if (j > info->cub_list.last_no_wall_row)
+			// 			info->cub_list.last_no_wall_row = j;
+			// 	}
+			// 	j++;
+			// }
+			// while (j < info->cub_list.map_x)
+			// 	info->cub_list.map_matrix[i][j++] = 5;
 		}
 		else
 		{
-			while (j < info->cub_list.map_x)
-			{
-				init_setting(info, i, j);
-				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
-				{
-					if (j < info->cub_list.first_no_wall_row)
-						info->cub_list.first_no_wall_row = j;
-					if (j > info->cub_list.last_no_wall_row)
-						info->cub_list.last_no_wall_row = j;
-				}
-				j++;
-			}
+			set_nowall_edge(info, i, j, info->cub_list.map_x);
+			// while (j < info->cub_list.map_x)
+			// {
+			// 	init_setting(info, i, j);
+			// 	if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+			// 	{
+			// 		if (j < info->cub_list.first_no_wall_row)
+			// 			info->cub_list.first_no_wall_row = j;
+			// 		if (j > info->cub_list.last_no_wall_row)
+			// 			info->cub_list.last_no_wall_row = j;
+			// 	}
+			// 	j++;
+			// }
 		}
 		if (info->cub_list.last_no_wall_row == -1)
 		{
