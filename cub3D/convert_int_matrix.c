@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:02:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:07:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,39 +228,46 @@ int		convert_int_matrix(t_info *info)
 					info->posX = (double)i + 0.5;
 					info->posY = (double)j + 0.5;
 					info->cub_list.init_pos_count++;
+					info->cub_list.map_matrix[i][j] = 0;
 				}
 				if (info->cub_list.map[i][j] == 'N')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = -1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = 0.66;
-				}
+					init_dir_plane(info, -1.0, 0.66, 0);
 				else if (info->cub_list.map[i][j] == 'S')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 1.0;
-					info->dirY = 0.0;
-					info->planeX = 0.0;
-					info->planeY = -0.66;
-				}
+					init_dir_plane(info, 1.0, -0.66, 1);
 				else if (info->cub_list.map[i][j] == 'W')
-				{
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = -1.0;
-					info->planeX = -0.66;
-					info->planeY = 0.0;
-				}
+					init_dir_plane(info, -1.0, -0.66, 2);
 				else if (info->cub_list.map[i][j] == 'E')
-				{	
-					info->cub_list.map_matrix[i][j] = 0;
-					info->dirX = 0.0;
-					info->dirY = 1.0;
-					info->planeX = 0.66;
-					info->planeY = 0.0;
-				}
+					init_dir_plane(info, 1.0, 0.66, 3);
+				else if (info->cub_list.map[i][j] == ' ')
+					info->cub_list.map_matrix[i][j] = 5;
+				// if (info->cub_list.map[i][j] == 'N')
+				// {
+				// 	info->dirX = -1.0;
+				// 	info->dirY = 0.0;
+				// 	info->planeX = 0.0;
+				// 	info->planeY = 0.66;
+				// }
+				// else if (info->cub_list.map[i][j] == 'S')
+				// {
+				// 	info->dirX = 1.0;
+				// 	info->dirY = 0.0;
+				// 	info->planeX = 0.0;
+				// 	info->planeY = -0.66;
+				// }
+				// else if (info->cub_list.map[i][j] == 'W')
+				// {
+				// 	info->dirX = 0.0;
+				// 	info->dirY = -1.0;
+				// 	info->planeX = -0.66;
+				// 	info->planeY = 0.0;
+				// }
+				// else if (info->cub_list.map[i][j] == 'E')
+				// {	
+				// 	info->dirX = 0.0;
+				// 	info->dirY = 1.0;
+				// 	info->planeX = 0.66;
+				// 	info->planeY = 0.0;
+				// }
 				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 5;
 				else
