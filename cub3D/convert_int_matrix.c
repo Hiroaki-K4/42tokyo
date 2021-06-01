@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:32:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:41:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,16 +201,16 @@ int		convert_int_matrix(t_info *info)
 {
 	int i;
 	int j;
-	int first_no_wall_row;
-	int last_no_wall_row;
+	// int first_no_wall_row;
+	// int last_no_wall_row;
 
 	map_malloc(info);
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
 		j = 0;
-		first_no_wall_row = 2147483647;
-		last_no_wall_row = -1;
+		info->cub_list.first_no_wall_row = 2147483647;
+		info->cub_list.last_no_wall_row = -1;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 		{
 			while (j < ft_strlen(info->cub_list.map[i]))
@@ -218,18 +218,15 @@ int		convert_int_matrix(t_info *info)
 				init_setting(info, i, j);
 				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
-					if (j < first_no_wall_row)
-						first_no_wall_row = j;
-					if (j > last_no_wall_row)
-						last_no_wall_row = j;
+					if (j < info->cub_list.first_no_wall_row)
+						info->cub_list.first_no_wall_row = j;
+					if (j > info->cub_list.last_no_wall_row)
+						info->cub_list.last_no_wall_row = j;
 				}
 				j++;
 			}
 			while (j < info->cub_list.map_x)
-			{
 				info->cub_list.map_matrix[i][j++] = 5;
-				// j++;
-			}
 		}
 		else
 		{
@@ -238,15 +235,15 @@ int		convert_int_matrix(t_info *info)
 				init_setting(info, i, j);
 				if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 				{
-					if (j < first_no_wall_row)
-						first_no_wall_row = j;
-					if (j > last_no_wall_row)
-						last_no_wall_row = j;
+					if (j < info->cub_list.first_no_wall_row)
+						info->cub_list.first_no_wall_row = j;
+					if (j > info->cub_list.last_no_wall_row)
+						info->cub_list.last_no_wall_row = j;
 				}
 				j++;
 			}
 		}
-		if (last_no_wall_row == -1)
+		if (info->cub_list.last_no_wall_row == -1)
 		{
 			i++;
 			continue;
@@ -255,11 +252,11 @@ int		convert_int_matrix(t_info *info)
 			error_process("Map file is wrong");
 		else
 		{
-			if (first_no_wall_row == 0 || last_no_wall_row == info->cub_list.map_x - 1)
+			if (info->cub_list.first_no_wall_row == 0 || info->cub_list.last_no_wall_row == info->cub_list.map_x - 1)
 				error_process("Map file is wrong");
-			if (last_no_wall_row != -1)
+			if (info->cub_list.last_no_wall_row != -1)
 			{
-				if (info->cub_list.map_matrix[i][first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][last_no_wall_row + 1] != 1)
+				if (info->cub_list.map_matrix[i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[i][info->cub_list.last_no_wall_row + 1] != 1)
 					error_process("Map file is wrong");
 			}
 		}

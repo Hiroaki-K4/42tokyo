@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:55:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:38:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ typedef struct		s_cub
 	int ceiling_dec;
 	int init_pos_count;
 	int line_num;
+	int first_no_wall_row;
+	int last_no_wall_row;
 	t_rgb floor;
 	t_rgb ceiling;
 }					t_cub;
