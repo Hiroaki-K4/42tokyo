@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:51:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 11:52:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,6 @@ void double_array_free(char **array);
 void	arg_error_check(int argc, char **argv);
 void	buf_init(t_info *info, int i, int j);
 void	texture_init(t_info *info, int i, int j);
+void	info_init(t_info *info);
 
 #endif

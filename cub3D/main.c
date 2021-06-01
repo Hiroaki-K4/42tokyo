@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:50:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 11:51:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,24 +111,24 @@ void	load_texture(t_info *info)
 		load_image(info, info->texture[4], info->cub_list.sprite, &img);
 }
 
-void	info_init(t_info *info)
-{
-	int		sizex;
-	int		sizey;
+// void	info_init(t_info *info)
+// {
+// 	int		sizex;
+// 	int		sizey;
 
-	info->cub_list.map_x = 0;
-	info->cub_list.map_y = 0;
-	info->cub_list.size = 0;
-	info->cub_list.sprite_flag = 0;
-	info->cub_list.init_pos_count = 0;
-	info->cub_list.line_num = 0;
-	info->mlx = mlx_init();
-	mlx_get_screen_size(info->mlx, &sizex, &sizey);
-	info->cub_list.width = sizex;
-	info->cub_list.height = sizey;
-	info->moveSpeed = 0.05;
-	info->rotSpeed = 0.05;
-}
+// 	info->cub_list.map_x = 0;
+// 	info->cub_list.map_y = 0;
+// 	info->cub_list.size = 0;
+// 	info->cub_list.sprite_flag = 0;
+// 	info->cub_list.init_pos_count = 0;
+// 	info->cub_list.line_num = 0;
+// 	info->mlx = mlx_init();
+// 	mlx_get_screen_size(info->mlx, &sizex, &sizey);
+// 	info->cub_list.width = sizex;
+// 	info->cub_list.height = sizey;
+// 	info->moveSpeed = 0.05;
+// 	info->rotSpeed = 0.05;
+// }
 
 void	read_cub_line(t_info *info, int i, char *path)
 {
@@ -152,50 +152,6 @@ void	read_cub_line(t_info *info, int i, char *path)
 		free(line);
 	}
 }
-
-// void	buf_init(t_info *info, int i, int j)
-// {
-// 	while (i < info->cub_list.height)
-// 	{
-// 		if (!(info->buf[i] = (int *)malloc(sizeof(int) *
-// 			(info->cub_list.width))))
-// 			error_process("Malloc failed");
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < info->cub_list.height)
-// 	{
-// 		j = 0;
-// 		while (j < info->cub_list.width)
-// 		{
-// 			info->buf[i][j] = 0;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
-
-// void	texture_init(t_info *info, int i, int j)
-// {
-// 	while (i < 5)
-// 	{
-// 		if (!(info->texture[i] = (int *)malloc(sizeof(int) *
-// 			(texHeight * texWidth))))
-// 			error_process("Malloc failed");
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < 5)
-// 	{
-// 		j = 0;
-// 		while (j < texHeight * texWidth)
-// 		{
-// 			info->texture[i][j] = 0;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 
 int		main(int argc, char *argv[])
 {
