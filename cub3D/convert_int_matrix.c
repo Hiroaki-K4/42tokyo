@@ -6,19 +6,19 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:46:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 20:47:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void map_not_srrounded_check(t_info *info)
+void	map_not_srrounded_check(t_info *info)
 {
 	int i;
 	int j;
 	int first_no_wall_col;
 	int last_no_wall_col;
-	
+
 	j = 0;
 	while (j < info->cub_list.map_x)
 	{
@@ -57,7 +57,7 @@ void map_not_srrounded_check(t_info *info)
 	}
 }
 
-void map_space_check(t_info *info)
+void	map_space_check(t_info *info)
 {
 	int i;
 	int j;
@@ -131,7 +131,7 @@ void map_space_check(t_info *info)
 	}
 }
 
-int convert_int_matrix(t_info *info)
+int		convert_int_matrix(t_info *info)
 {
 	int i;
 	int j;
@@ -162,10 +162,11 @@ int convert_int_matrix(t_info *info)
 					info->posX = (double)i + 0.5;
 					info->posY = (double)j + 0.5;
 					info->cub_list.init_pos_count++;
+					info->cub_list.map_matrix[i][j] = 0;
 				}
 				if (info->cub_list.map[i][j] == 'N')
 				{
-					info->cub_list.map_matrix[i][j] = 0;
+					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = -1.0;
 					info->dirY = 0.0;
 					info->planeX = 0.0;
@@ -173,7 +174,7 @@ int convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'S')
 				{
-					info->cub_list.map_matrix[i][j] = 0;
+					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 1.0;
 					info->dirY = 0.0;
 					info->planeX = 0.0;
@@ -181,7 +182,7 @@ int convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'W')
 				{
-					info->cub_list.map_matrix[i][j] = 0;
+					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 0.0;
 					info->dirY = -1.0;
 					info->planeX = -0.66;
@@ -189,7 +190,7 @@ int convert_int_matrix(t_info *info)
 				}
 				else if (info->cub_list.map[i][j] == 'E')
 				{
-					info->cub_list.map_matrix[i][j] = 0;
+					// info->cub_list.map_matrix[i][j] = 0;
 					info->dirX = 0.0;
 					info->dirY = 1.0;
 					info->planeX = 0.66;
