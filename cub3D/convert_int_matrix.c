@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:16:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:16:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,16 +203,7 @@ int		convert_int_matrix(t_info *info)
 	int j;
 	int first_no_wall_row;
 	int last_no_wall_row;
-	
-	// if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
-	// 	error_process("Malloc failed");
-	// i = 0;
-	// while (i < info->cub_list.map_y)
-	// {
-	// 	if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
-	// 		error_process("Malloc failed");
-	// 	i++;
-	// }
+
 	map_malloc(info);
 	i = 0;
 	while (i < info->cub_list.map_y)
