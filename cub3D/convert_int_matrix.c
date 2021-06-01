@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:00:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/01 21:02:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,10 @@ void	map_space_check(t_info *info)
 
 void	init_dir_plane(t_info *info, double x, double y, int type)
 {
+	info->dirX = 0.0;
+	info->dirY = 0.0;
+	info->planeX = 0.0;
+	info->planeY = 0.0;
 	if (type == 0)
 	{
 		info->dirX = x;
@@ -193,21 +197,9 @@ int		convert_int_matrix(t_info *info)
 				else if (info->cub_list.map[i][j] == 'S')
 					init_dir_plane(info, 1.0, -0.66, 1);
 				else if (info->cub_list.map[i][j] == 'W')
-				{
 					init_dir_plane(info, -1.0, -0.66, 2);
-					// info->dirX = 0.0;
-					// info->dirY = -1.0;
-					// info->planeX = -0.66;
-					// info->planeY = 0.0;
-				}
 				else if (info->cub_list.map[i][j] == 'E')
-				{
 					init_dir_plane(info, 1.0, 0.66, 3);
-					// info->dirX = 0.0;
-					// info->dirY = 1.0;
-					// info->planeX = 0.66;
-					// info->planeY = 0.0;
-				}
 				else if (info->cub_list.map[i][j] == ' ')
 					info->cub_list.map_matrix[i][j] = 5;
 				else
