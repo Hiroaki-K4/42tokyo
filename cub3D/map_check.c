@@ -42,12 +42,12 @@ void	map_not_srrounded_check(t_info *info)
 			}
 			i++;
 		}
-		if (info->cub_list.last_no_wall_col == -1)
-		{
-			j++;
-			continue;
-		}
-		else if (j == 0 || j == info->cub_list.map_x - 1)
+		// if (info->cub_list.last_no_wall_col == -1)
+		// {
+		// 	j++;
+		// 	continue;
+		// }
+		if (j == 0 || j == info->cub_list.map_x - 1)
 			error_process("Map file is wrong");
 		else
 		{
