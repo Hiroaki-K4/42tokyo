@@ -451,17 +451,17 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 
 int print_string(va_list *ap, t_plist flag_list)
 {
-	int len;
 	int i;
+	int len;
 	char *str;
-	
+
 	len = 0;
 	str = va_arg(*ap, char *);
 	if (str == NULL)
 		str = "(null)";
 	if (flag_list.field != -1)
 	{
-		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
+		if (flag_list.precision != -1 && flag_list.precision > (int)ft_strlen(str))
 		{
 			i = flag_list.precision;
 			while (flag_list.field - i > 0)
@@ -488,7 +488,7 @@ int print_string(va_list *ap, t_plist flag_list)
 	{
 		if (flag_list.precision != -1)
 		{
-			while (len < flag_list.precision && str[len])
+			while (flag_list.precision - (int)ft_strlen(str) - len > 0)
 			{
 				write(1, &str[len], 1);
 				len++;
