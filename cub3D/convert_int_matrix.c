@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:26:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:30:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	init_dir_plane(t_info *info, double x, double y, int type)
 
 void	init_setting(t_info *info, int i, int j)
 {
-	if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' || info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
+	if (info->cub_list.map[i][j] == 'N' || info->cub_list.map[i][j] == 'S' ||
+		info->cub_list.map[i][j] == 'W' || info->cub_list.map[i][j] == 'E')
 	{
 		info->posX = (double)i + 0.5;
 		info->posY = (double)j + 0.5;
@@ -67,12 +68,16 @@ void	map_malloc(t_info *info)
 {
 	int	i;
 
-	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
+	info->cub_list.map_matrix = (int **)malloc(sizeof(int *) *
+		(info->cub_list.map_y));
+	if (info->cub_list.map_matrix == NULL)
 		error_process("Malloc failed");
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
-		if (!(info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) * (info->cub_list.map_x))))
+		info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) *
+			(info->cub_list.map_x));
+		if (info->cub_list.map_matrix[i] == NULL)
 			error_process("Malloc failed");
 		i++;
 	}
@@ -83,7 +88,8 @@ void	set_nowall_edge(t_info *info, int i, int j, int max)
 	while (j < max)
 	{
 		init_setting(info, i, j);
-		if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+		if (info->cub_list.map_matrix[i][j] == 0 ||
+			info->cub_list.map_matrix[i][j] == 2)
 		{
 			if (j < info->cub_list.first_no_wall_row)
 				info->cub_list.first_no_wall_row = j;
