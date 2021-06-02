@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:51:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:54:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int	col_edge_check(t_info *info, int *j)
 		error_process("Map file is wrong");
 	else
 	{
-		if (info->cub_list.f_nowall_col == 0 || info->cub_list.l_nowall_col ==
-			info->cub_list.map_y - 1)
+		if (info->cub_list.f_nowall_col == 0 || info->cub_list.l_nowall_col
+			== info->cub_list.map_y - 1)
 			error_process("Map file is wrong");
 		if (info->cub_list.f_nowall_col != -1)
 		{
-			if (info->cub_list.map_matrix[info->cub_list.f_nowall_col - 1][*j]
-				!= 1 || info->cub_list.map_matrix[info->cub_list.l_nowall_col + 1][*j] != 1)
+			if (info->cub_list.map_matrix[info->cub_list.f_nowall_col - 1][*j] != 1
+				|| info->cub_list.map_matrix[info->cub_list.l_nowall_col + 1][*j] != 1)
 				error_process("Map file is wrong");
 		}
 	}
@@ -85,6 +85,6 @@ void	map_not_srrounded_check(t_info *info)
 			}
 			i++;
 		}
-        col_edge_check(info, &j);
+		col_edge_check(info, &j);
 	}
 }
