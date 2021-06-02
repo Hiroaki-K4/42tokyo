@@ -3,7 +3,7 @@ NAME = cub3D
 
 .PHONY: all, clean, fclean, re
 
-SRCS = main.c map_check.c end_process.c load_texture.c init_process.c draw_sprite.c key_press.c write_texture.c ft_utils.c cub_line_check.c make_decimal_color.c convert_int_matrix.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+SRCS = main.c map_space_check.c map_check.c end_process.c load_texture.c init_process.c draw_sprite.c key_press.c write_texture.c ft_utils.c cub_line_check.c make_decimal_color.c convert_int_matrix.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

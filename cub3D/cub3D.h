@@ -6,7 +6,7 @@
 /*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 19:00:01 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/02 19:19:49 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,6 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img);
 void	load_texture(t_info *info);
 int		map_edge_check(t_info *info, int *i);
 void	map_not_srrounded_check(t_info *info);
+void	map_space_check(t_info *info);
 
 #endif
