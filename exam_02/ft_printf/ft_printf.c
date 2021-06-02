@@ -526,8 +526,8 @@ int str_to_num(const char *arg, int *i, int flag)
 {
 	int num;
 	int j;
-	
-	if (ft_isdigit(arg[0]) == 0 && flag == 1)
+
+	if (ft_isdigit(arg[0]) && flag == 1)
 		return (0);
 	num = ft_atoi(arg);
 	if (num >= 0)
