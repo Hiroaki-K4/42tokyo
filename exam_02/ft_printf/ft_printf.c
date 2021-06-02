@@ -614,7 +614,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+		if (!(str_num = ft_itoa_hex(hex_num)))
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
