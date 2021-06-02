@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:56:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:25:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	draw(t_info *info)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < info->cub_list.height)
@@ -31,7 +31,7 @@ void	draw(t_info *info)
 	mlx_put_image_to_window(info->mlx, info->win, info->img.img, 0, 0);
 }
 
-int		main_loop(t_info *info)
+int	main_loop(t_info *info)
 {
 	calc(info);
 	draw(info);
@@ -61,7 +61,7 @@ void	read_cub_line(t_info *info, int i, char *path)
 	}
 }
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_info	info;
 	int		i;
@@ -71,19 +71,19 @@ int		main(int argc, char *argv[])
 	convert_int_matrix(&info);
 	if (info.cub_list.sprite_flag == 1)
 		get_sprite_pos(&info);
-	if (!(info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height))))
+	info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height));
+	info.texture = (int **)malloc(sizeof(int *) * 5);
+	if (info.buf == NULL || info.texture == NULL)
 		error_process("Malloc failed");
 	buf_init(&info, 0, 0);
-	if (!(info.texture = (int **)malloc(sizeof(int *) * 5)))
-		error_process("Malloc failed");
 	texture_init(&info, 0, 0);
 	load_texture(&info);
 	info.win = mlx_new_window(info.mlx, info.cub_list.width,
-		info.cub_list.height, "mlx");
+			info.cub_list.height, "mlx");
 	info.img.img = mlx_new_image(info.mlx, info.cub_list.width,
-		info.cub_list.height);
+			info.cub_list.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp,
-		&info.img.size_l, &info.img.endian);
+			&info.img.size_l, &info.img.endian);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	mlx_hook(info.win, 33, 1 << 33, &win_close, &info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 1L << 0, &key_press, &info);
