@@ -222,6 +222,24 @@ size_t ft_strlen(const char *src)
     return (i);
 }
 
+char *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(src + i);
+    return (NULL);
+}
+
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
     size_t i;
@@ -260,6 +278,7 @@ char *ft_strjoin(const char *s1, const char *s2)
     while (s2[j])
     {
         dst[i] = s2[j];
+        i++;
         j++;
     }
     dst[i] = '\0';
@@ -291,7 +310,7 @@ char *get_from_store(char *store, char **line)
     char *tmp;
 
     i = 0;
-    while (store[i] && store[i] != '%')
+    while (store[i] && store[i] != '\n')
         i++;
     if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
         return (NULL);
@@ -310,7 +329,7 @@ char *save_new_line(char *store, char **line, char *buf)
     char *tmp;
 
     i = 0;
-    while (buf[i] && buf[i] != '%')
+    while (buf[i] && buf[i] != '\n')
         i++;
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
         return (NULL);
@@ -324,7 +343,7 @@ char *save_new_line(char *store, char **line, char *buf)
     free(tmp);
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
-    ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]));
+    ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
     free(buf);
     return (tmp);
 }
@@ -356,7 +375,7 @@ int read_line(int fd, char **store, char **line)
         free(store[fd]);
         store[fd] = tmp;
     }
-    if (!(*line = ft_strdup(tmp)))
+    if (!(*line = ft_strdup(store[fd])))
         return (-1);
     return (0);
 }
