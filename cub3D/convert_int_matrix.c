@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_int_matrix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 19:20:29 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/02 22:26:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	init_setting(t_info *info, int i, int j)
 
 void	map_malloc(t_info *info)
 {
-	int i;
+	int	i;
 
 	if (!(info->cub_list.map_matrix = (int **)malloc(sizeof(int *) * (info->cub_list.map_y))))
 		error_process("Malloc failed");
@@ -78,7 +78,7 @@ void	map_malloc(t_info *info)
 	}
 }
 
-void set_nowall_edge(t_info *info, int i, int j, int max)
+void	set_nowall_edge(t_info *info, int i, int j, int max)
 {
 	while (j < max)
 	{
@@ -99,10 +99,10 @@ void set_nowall_edge(t_info *info, int i, int j, int max)
 	}
 }
 
-int		convert_int_matrix(t_info *info)
+int	convert_int_matrix(t_info *info)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	map_malloc(info);
 	i = 0;
