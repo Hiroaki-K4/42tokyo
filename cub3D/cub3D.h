@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 21:38:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 18:40:55 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,5 +139,6 @@ void	get_xpm_size(t_info *info, char *line);
 void	xpm_file_check(t_info *info, int i, char *path);
 void	load_image(t_info *info, int *texture, char *path, t_img *img);
 void	load_texture(t_info *info);
+int		map_edge_check(t_info *info, int *i);
 
 #endif

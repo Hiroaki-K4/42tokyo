@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_int_matrix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 22:24:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 18:40:26 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,25 +218,25 @@ void set_nowall_edge(t_info *info, int i, int j, int max)
 	}
 }
 
-int		map_edge_check(t_info *info, int *i)
-{
-	if (info->cub_list.last_no_wall_row == -1)
-	{
-		(*i)++;
-		return (0);
-	}
-	else if (*i == 0 || *i == info->cub_list.map_y - 1)
-		error_process("Map file is wrong");
-	else
-	{
-		if (info->cub_list.first_no_wall_row == 0 || info->cub_list.last_no_wall_row == info->cub_list.map_x - 1)
-			error_process("Map file is wrong");
-		if (info->cub_list.last_no_wall_row != -1 && (info->cub_list.map_matrix[*i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[*i][info->cub_list.last_no_wall_row + 1] != 1))
-			error_process("Map file is wrong");
-	}
-	(*i)++;
-	return (0);
-}
+// int		map_edge_check(t_info *info, int *i)
+// {
+// 	if (info->cub_list.last_no_wall_row == -1)
+// 	{
+// 		(*i)++;
+// 		return (0);
+// 	}
+// 	else if (*i == 0 || *i == info->cub_list.map_y - 1)
+// 		error_process("Map file is wrong");
+// 	else
+// 	{
+// 		if (info->cub_list.first_no_wall_row == 0 || info->cub_list.last_no_wall_row == info->cub_list.map_x - 1)
+// 			error_process("Map file is wrong");
+// 		if (info->cub_list.last_no_wall_row != -1 && (info->cub_list.map_matrix[*i][info->cub_list.first_no_wall_row - 1] != 1 || info->cub_list.map_matrix[*i][info->cub_list.last_no_wall_row + 1] != 1))
+// 			error_process("Map file is wrong");
+// 	}
+// 	(*i)++;
+// 	return (0);
+// }
 
 int		convert_int_matrix(t_info *info)
 {
