@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:45:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:49:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ int	map_edge_check(t_info *info, int *i)
 		error_process("Map file is wrong");
 	else
 	{
-		if (info->cub_list.f_nowall_row == 0 || info->cub_list.l_nowall_row == info->cub_list.map_x - 1)
+		if (info->cub_list.f_nowall_row == 0 || info->cub_list.l_nowall_row
+			== info->cub_list.map_x - 1)
 			error_process("Map file is wrong");
-		if (info->cub_list.l_nowall_row != -1 && (info->cub_list.map_matrix[*i][info->cub_list.f_nowall_row - 1] != 1 || info->cub_list.map_matrix[*i][info->cub_list.l_nowall_row + 1] != 1))
+		if (info->cub_list.l_nowall_row != -1 &&
+			(info->cub_list.map_matrix[*i][info->cub_list.f_nowall_row - 1] != 1
+			|| info->cub_list.map_matrix[*i][info->cub_list.l_nowall_row + 1]
+			!= 1))
 			error_process("Map file is wrong");
 	}
 	(*i)++;
@@ -43,11 +47,13 @@ int	col_edge_check(t_info *info, int *j)
         error_process("Map file is wrong");
     else
     {
-        if (info->cub_list.f_nowall_col == 0 || info->cub_list.l_nowall_col == info->cub_list.map_y - 1)
+        if (info->cub_list.f_nowall_col == 0 || info->cub_list.l_nowall_col ==
+			info->cub_list.map_y - 1)
             error_process("Map file is wrong");
         if (info->cub_list.f_nowall_col != -1)
         {
-            if (info->cub_list.map_matrix[info->cub_list.f_nowall_col - 1][*j] != 1 || info->cub_list.map_matrix[info->cub_list.l_nowall_col + 1][*j] != 1)
+            if (info->cub_list.map_matrix[info->cub_list.f_nowall_col - 1][*j]
+				!= 1 || info->cub_list.map_matrix[info->cub_list.l_nowall_col + 1][*j] != 1)
                 error_process("Map file is wrong");
         }
     }
@@ -68,7 +74,8 @@ void	map_not_srrounded_check(t_info *info)
 		i = 0;
 		while (i < info->cub_list.map_y)
 		{
-			if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
+			if (info->cub_list.map_matrix[i][j] == 0 ||
+				info->cub_list.map_matrix[i][j] == 2)
 			{
 				if (i < info->cub_list.f_nowall_col)
 					info->cub_list.f_nowall_col = i;
