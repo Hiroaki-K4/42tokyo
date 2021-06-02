@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:42:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:46:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ void	set_nowall_edge(t_info *info, int i, int j, int max)
 		if (info->cub_list.map_matrix[i][j] == 0 ||
 			info->cub_list.map_matrix[i][j] == 2)
 		{
-			if (j < info->cub_list.first_nowall_row)
-				info->cub_list.first_nowall_row = j;
-			if (j > info->cub_list.last_nowall_row)
-				info->cub_list.last_nowall_row = j;
+			if (j < info->cub_list.f_nowall_row)
+				info->cub_list.f_nowall_row = j;
+			if (j > info->cub_list.l_nowall_row)
+				info->cub_list.l_nowall_row = j;
 		}
 		j++;
 	}
@@ -115,8 +115,8 @@ int	convert_int_matrix(t_info *info)
 	while (i < info->cub_list.map_y)
 	{
 		j = 0;
-		info->cub_list.first_nowall_row = 2147483647;
-		info->cub_list.last_nowall_row = -1;
+		info->cub_list.f_nowall_row = 2147483647;
+		info->cub_list.l_nowall_row = -1;
 		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 			set_nowall_edge(info, i, j, ft_strlen(info->cub_list.map[i]));
 		else
