@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:49:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:50:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	map_edge_check(t_info *info, int *i)
 		if (info->cub_list.f_nowall_row == 0 || info->cub_list.l_nowall_row
 			== info->cub_list.map_x - 1)
 			error_process("Map file is wrong");
-		if (info->cub_list.l_nowall_row != -1 &&
-			(info->cub_list.map_matrix[*i][info->cub_list.f_nowall_row - 1] != 1
+		if (info->cub_list.l_nowall_row != -1
+			&& (info->cub_list.map_matrix[*i][info->cub_list.f_nowall_row - 1]
+			!= 1
 			|| info->cub_list.map_matrix[*i][info->cub_list.l_nowall_row + 1]
 			!= 1))
 			error_process("Map file is wrong");
