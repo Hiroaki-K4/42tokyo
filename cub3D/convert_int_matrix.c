@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:30:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:35:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,15 @@ void	map_malloc(t_info *info)
 {
 	int	i;
 
-	info->cub_list.map_matrix = (int **)malloc(sizeof(int *) *
-		(info->cub_list.map_y));
+	info->cub_list.map_matrix = (int **)malloc(sizeof(int *)
+			* (info->cub_list.map_y));
 	if (info->cub_list.map_matrix == NULL)
 		error_process("Malloc failed");
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
-		info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int) *
-			(info->cub_list.map_x));
+		info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int)
+				* (info->cub_list.map_x));
 		if (info->cub_list.map_matrix[i] == NULL)
 			error_process("Malloc failed");
 		i++;
