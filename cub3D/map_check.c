@@ -24,8 +24,6 @@ void	map_not_srrounded_check(t_info *info)
 {
 	int i;
 	int j;
-	// int first_no_wall_col;
-	// int last_no_wall_col;
 
 	j = 0;
 	while (j < info->cub_list.map_x)
