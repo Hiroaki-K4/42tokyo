@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:36:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:39:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int		map_edge_check(t_info *info, int *i)
+int	map_edge_check(t_info *info, int *i)
 {
 	if (info->cub_list.last_no_wall_row == -1)
 	{
@@ -32,7 +32,7 @@ int		map_edge_check(t_info *info, int *i)
 	return (0);
 }
 
-int     col_edge_check(t_info *info, int *j)
+int	col_edge_check(t_info *info, int *j)
 {
     if (info->cub_list.last_no_wall_col == -1)
     {
@@ -57,8 +57,8 @@ int     col_edge_check(t_info *info, int *j)
 
 void	map_not_srrounded_check(t_info *info)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (j < info->cub_list.map_x)
