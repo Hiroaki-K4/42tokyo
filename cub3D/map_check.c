@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:33 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:06:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/02 22:36:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,5 @@ void	map_not_srrounded_check(t_info *info)
 			i++;
 		}
         col_edge_check(info, &j);
-		// if (info->cub_list.last_no_wall_col == -1)
-		// {
-		// 	j++;
-		// 	continue;
-		// }
-		// if (j == 0 || j == info->cub_list.map_x - 1)
-		// 	error_process("Map file is wrong");
-		// else
-		// {
-		// 	if (info->cub_list.first_no_wall_col == 0 || info->cub_list.last_no_wall_col == info->cub_list.map_y - 1)
-		// 		error_process("Map file is wrong");
-		// 	if (info->cub_list.first_no_wall_col != -1)
-		// 	{
-		// 		if (info->cub_list.map_matrix[info->cub_list.first_no_wall_col - 1][j] != 1 || info->cub_list.map_matrix[info->cub_list.last_no_wall_col + 1][j] != 1)
-		// 			error_process("Map file is wrong");
-		// 	}
-		// }
-		// j++;
 	}
 }
