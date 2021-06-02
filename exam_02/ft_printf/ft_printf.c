@@ -304,7 +304,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	keta = ft_strlen(str_num);
 	if (num < 0)
 		keta--;
-	if (flag_list.precision > keta)
+	if (flag_list.field > keta)
 	{
 		len = flag_list.precision;
 		if (num < 0)
