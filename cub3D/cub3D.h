@@ -6,7 +6,7 @@
 /*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 18:42:10 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/02 19:00:01 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ typedef struct		s_cub
 	int line_num;
 	int first_no_wall_row;
 	int last_no_wall_row;
+	int first_no_wall_col;
+	int last_no_wall_col;
 	t_rgb floor;
 	t_rgb ceiling;
 }					t_cub;

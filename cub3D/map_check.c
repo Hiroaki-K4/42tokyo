@@ -24,27 +24,27 @@ void	map_not_srrounded_check(t_info *info)
 {
 	int i;
 	int j;
-	int first_no_wall_col;
-	int last_no_wall_col;
+	// int first_no_wall_col;
+	// int last_no_wall_col;
 
 	j = 0;
 	while (j < info->cub_list.map_x)
 	{
-		first_no_wall_col = 2147483647;
-		last_no_wall_col = -1;
+		info->cub_list.first_no_wall_col = 2147483647;
+		info->cub_list.last_no_wall_col = -1;
 		i = 0;
 		while (i < info->cub_list.map_y)
 		{
 			if (info->cub_list.map_matrix[i][j] == 0 || info->cub_list.map_matrix[i][j] == 2)
 			{
-				if (i < first_no_wall_col)
-					first_no_wall_col = i;
-				if (i > last_no_wall_col)
-					last_no_wall_col = i;
+				if (i < info->cub_list.first_no_wall_col)
+					info->cub_list.first_no_wall_col = i;
+				if (i > info->cub_list.last_no_wall_col)
+					info->cub_list.last_no_wall_col = i;
 			}
 			i++;
 		}
-		if (last_no_wall_col == -1)
+		if (info->cub_list.last_no_wall_col == -1)
 		{
 			j++;
 			continue;
@@ -53,11 +53,11 @@ void	map_not_srrounded_check(t_info *info)
 			error_process("Map file is wrong");
 		else
 		{
-			if (first_no_wall_col == 0 || last_no_wall_col == info->cub_list.map_y - 1)
+			if (info->cub_list.first_no_wall_col == 0 || info->cub_list.last_no_wall_col == info->cub_list.map_y - 1)
 				error_process("Map file is wrong");
-			if (first_no_wall_col != -1)
+			if (info->cub_list.first_no_wall_col != -1)
 			{
-				if (info->cub_list.map_matrix[first_no_wall_col - 1][j] != 1 || info->cub_list.map_matrix[last_no_wall_col + 1][j] != 1)
+				if (info->cub_list.map_matrix[info->cub_list.first_no_wall_col - 1][j] != 1 || info->cub_list.map_matrix[info->cub_list.last_no_wall_col + 1][j] != 1)
 					error_process("Map file is wrong");
 			}
 		}
