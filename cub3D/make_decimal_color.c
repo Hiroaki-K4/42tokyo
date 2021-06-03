@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:59:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 22:09:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ int	hex_to_decimal(char *hex)
 	return (ans);
 }
 
+char	*convert_color(int color)
+{
+	char	*int_to_hex;
+	char	*rgb;
+
+	int_to_hex = ft_itoa_hex(color, "0123456789ABCDEF");
+	if (!int_to_hex)
+		error_process("Malloc failed");
+	rgb = ft_strdup(int_to_hex);
+	if (!rgb)
+		error_process("Malloc failed");
+	free(int_to_hex);
+	return (rgb);
+}
+
 char	*make_decimal_color(t_rgb color)
 {
 	char	*int_to_hex;
@@ -47,13 +62,14 @@ char	*make_decimal_color(t_rgb color)
 	char	*tmp;
 	int		ans;
 
-	int_to_hex = ft_itoa_hex(color.red, "0123456789ABCDEF");
-	if (!int_to_hex)
-		error_process("Malloc failed");
-	red = ft_strdup(int_to_hex);
-	if (!red)
-		error_process("Malloc failed");
-	free(int_to_hex);
+	// int_to_hex = ft_itoa_hex(color.red, "0123456789ABCDEF");
+	// if (!int_to_hex)
+	// 	error_process("Malloc failed");
+	// red = ft_strdup(int_to_hex);
+	// if (!red)
+	// 	error_process("Malloc failed");
+	// free(int_to_hex);
+	red = convert_color(color.red);
 	int_to_hex = ft_itoa_hex(color.green, "0123456789ABCDEF");
 	if (!int_to_hex)
 		error_process("Malloc failed");
