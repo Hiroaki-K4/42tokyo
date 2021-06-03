@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:59:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:59:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	make_string_map(t_info *info, char **tmp, char *map_line)
 		if (tmp[i] == NULL)
 			error_process("Malloc failed");
 		ft_strlcpy(tmp[i], info->cub_list.map[i],
-				ft_strlen(info->cub_list.map[i]) + 1);
+			ft_strlen(info->cub_list.map[i]) + 1);
 		i++;
 	}
 	tmp[i] = ft_strdup(map_line);
