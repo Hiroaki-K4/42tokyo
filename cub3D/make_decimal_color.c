@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 22:17:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 22:17:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,9 @@ int	unite_color(char *red, char *green, char *blue)
 
 char	*make_decimal_color(t_rgb color)
 {
-	// char	*hex;
 	char	*red;
 	char	*green;
 	char	*blue;
-	// char	*tmp;
 	int		ans;
 
 	red = convert_color(color.red);
