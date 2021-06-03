@@ -6,16 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/31 22:28:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:35:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int map_line_check(char **line_split)
+int	map_line_check(char **line_split)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	
 	i = 0;
 	while (line_split[i])
@@ -33,14 +33,14 @@ int map_line_check(char **line_split)
 	return (0);
 }
 
-int cub_line_check(char **line, int count, t_info *info)
+int	cub_line_check(char **line, int count, t_info *info)
 {
-	int i;
-	int j;
-	char *map_line;
-	char **line_split;
-	char **rgb_split;
-	char **tmp;
+	int	i;
+	int	j;
+	char	*map_line;
+	char	**line_split;
+	char	**rgb_split;
+	char	**tmp;
 	
 	if (!(line_split = ft_split(line, ' ')))
 		error_process("ft_split failed");
