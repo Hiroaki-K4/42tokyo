@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 11:24:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 11:25:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,25 @@ void	first_row_check(t_info *info, int i, int j)
 	else
 	{
 		if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i + 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i + 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
+			error_process("Map file is wrong");
+	}
+}
+
+void last_row_check(t_info *info, int i, int j)
+{
+	if (j == 0)
+	{
+		if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+			error_process("Map file is wrong");
+	}
+	else if (j == info->cub_list.map_x - 1)
+	{
+		if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+			error_process("Map file is wrong");
+	}
+	else
+	{
+		if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
 			error_process("Map file is wrong");
 	}
 }
@@ -65,21 +84,22 @@ void	map_space_check(t_info *info)
 				}
 				else if (i == info->cub_list.map_y - 1)
 				{
-					if (j == 0)
-					{
-						if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-							error_process("Map file is wrong");
-					}
-					else if (j == info->cub_list.map_x - 1)
-					{
-						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
-							error_process("Map file is wrong");
-					}
-					else
-					{
-						if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
-							error_process("Map file is wrong");
-					}
+					last_row_check(info, i, j);
+					// if (j == 0)
+					// {
+					// 	if (info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+					// 		error_process("Map file is wrong");
+					// }
+					// else if (j == info->cub_list.map_x - 1)
+					// {
+					// 	if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2)
+					// 		error_process("Map file is wrong");
+					// }
+					// else
+					// {
+					// 	if (info->cub_list.map_matrix[i][j - 1] == 0 || info->cub_list.map_matrix[i - 1][j] == 0 || info->cub_list.map_matrix[i][j + 1] == 0 || info->cub_list.map_matrix[i][j - 1] == 2 || info->cub_list.map_matrix[i - 1][j] == 2 || info->cub_list.map_matrix[i][j + 1] == 2)
+					// 		error_process("Map file is wrong");
+					// }
 				}
 				else
 				{
