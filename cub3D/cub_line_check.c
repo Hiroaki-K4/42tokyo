@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:47:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:50:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,26 @@ void	not_special_word(t_info *info, int count, char **line, char **line_split)
 		error_process("Map is wrong");
 	info->cub_list.line_num = count;
 	info->cub_list.map_y++;
-	if (!(map_line = ft_strdup(line)))
+	map_line = ft_strdup(line);
+	if (map_line == NULL)
 		error_process("ft_strdup failed");
 	if (ft_strlen(map_line) > info->cub_list.map_x)
 		info->cub_list.map_x = ft_strlen(map_line);
-	if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
+	tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1));
+	if (tmp == NULL)
 		error_process("Malloc failed");
 	i = 0;
 	while (i < info->cub_list.map_y - 1)
 	{
-		if (!(tmp[i] = (char *)malloc(sizeof(char)
-			* (ft_strlen(info->cub_list.map[i]) + 1))))
+		tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1));
+		if (tmp[i] == NULL)
 			error_process("Malloc failed");
 		ft_strlcpy(tmp[i], info->cub_list.map[i],
 			ft_strlen(info->cub_list.map[i]) + 1);
 		i++;
 	}
-	if (!(tmp[i] = ft_strdup(map_line)))
+	tmp[i] = ft_strdup(map_line);
+	if (tmp[i] == NULL)
 		error_process("ft_strdup failed");
 	free(map_line);
 	tmp[i + 1] = NULL;
