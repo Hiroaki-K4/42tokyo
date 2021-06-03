@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:30:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:32:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	arg_error_check(int argc, char **argv)
 
 	if (argc != 2)
 		error_process("The number of arguments is wrong");
-	i = ft_strlen(argv[1]);
+	// i = ft_strlen(argv[1]);
 	if ((i = ft_strlen(argv[1])) < 5)
 		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
