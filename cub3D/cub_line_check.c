@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 14:27:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 14:28:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,8 @@ int	cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.sprite_flag = 1;
 		return (0);
 	}
-	else if (i = ft_strcmp("F", line_split[0]) == 0)
+	i = ft_strcmp("F", line_split[0]);
+	if (i == 0)
 	{
 		rgb_split = ft_split(line_split[1], ',');
 		if (rgb_split == NULL)
@@ -154,6 +155,7 @@ int	cub_line_check(char **line, int count, t_info *info)
 			> 255)
 			error_process("Color is wrong");
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
+		return (0);
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
