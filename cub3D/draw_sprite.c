@@ -6,17 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:40:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 22:21:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int get_sprite_pos(t_info *info)
+int	get_sprite_pos(t_info *info)
 {
-	int i;
-	int j;
-	int count;
+	int	i;
+	int	j;
+	int	count;
 
 	count = 0;
 	i = 0;
@@ -57,8 +57,8 @@ int get_sprite_pos(t_info *info)
 
 void	sort_order(t_pair *orders, int amount)
 {
-    int i;
-    int j;
+    int		i;
+    int		j;
 	t_pair	tmp;
 
     i = 0;
@@ -84,7 +84,7 @@ void	sort_order(t_pair *orders, int amount)
 
 void	sortSprites(int *order, double *dist, int amount)
 {
-    int i;
+    int		i;
 	t_pair	*sprites;
 
 	if (!(sprites = (t_pair*)malloc(sizeof(t_pair) * amount)))
@@ -109,25 +109,25 @@ void	sortSprites(int *order, double *dist, int amount)
 
 void draw_sprite(t_info *info)
 {
-    int i;
-    int y;
-    int d;
-    int stripe;
-    int spriteScreenX;
-    int spriteHeight;
-    int drawStartY;
-    int drawEndY;
-    int drawStartX;
-    int drawEndX;
-    int spriteWidth;
-    int texX;
-    int texY;
-    int color;
-    double spriteX;
-    double spriteY;
-	double invDet;
-    double transformX;
-    double transformY;
+    int		i;
+    int		y;
+    int		d;
+    int		stripe;
+    int		spriteScreenX;
+    int		spriteHeight;
+    int		drawStartY;
+    int		drawEndY;
+    int		drawStartX;
+    int		drawEndX;
+    int		spriteWidth;
+    int		texX;
+    int		texY;
+    int		color;
+    double	spriteX;
+    double	spriteY;
+	double	invDet;
+    double	transformX;
+    double	transformY;
     int		spriteOrder[info->cub_list.num_sprites];
 	double	spriteDistance[info->cub_list.num_sprites];
 	
