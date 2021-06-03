@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:36:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:37:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ int	key_press(int key, t_info *info)
 		if (!info->cub_list.map_matrix[(int)(info->posX + info->dirX
 				* info->moveSpeed)][(int)(info->posY)])
 			info->posX += info->dirX * info->moveSpeed;
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY + info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY
+				+ info->dirY * info->moveSpeed)])
 			info->posY += info->dirY * info->moveSpeed;
 	}
 	if (key == K_S)
 	{
-		if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX * info->moveSpeed)][(int)(info->posY)])
+		if (!info->cub_list.map_matrix[(int)(info->posX - info->dirX
+				* info->moveSpeed)][(int)(info->posY)])
 			info->posX -= info->dirX * info->moveSpeed;
-		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY - info->dirY * info->moveSpeed)])
+		if (!info->cub_list.map_matrix[(int)(info->posX)][(int)(info->posY
+				- info->dirY * info->moveSpeed)])
 			info->posY -= info->dirY * info->moveSpeed;
 	}
 	if (key == K_D)
