@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 11:40:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 11:41:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	first_row_check(t_info *info, int i, int j)
 			|| info->cub_list.map_matrix[i][j + 1] == 2
 			|| info->cub_list.map_matrix[i + 1][j] == 2)
 			error_process("Map file is wrong");
-		return;
+		return ;
 	}
 	else if (j == info->cub_list.map_x - 1)
 	{
@@ -30,10 +30,8 @@ void	first_row_check(t_info *info, int i, int j)
 			|| info->cub_list.map_matrix[i][j - 1] == 2
 			|| info->cub_list.map_matrix[i + 1][j] == 2)
 			error_process("Map file is wrong");
-		return;
+		return ;
 	}
-	// else
-	// {
 	if (info->cub_list.map_matrix[i][j - 1] == 0
 		|| info->cub_list.map_matrix[i + 1][j] == 0
 		|| info->cub_list.map_matrix[i][j + 1] == 0
@@ -41,7 +39,6 @@ void	first_row_check(t_info *info, int i, int j)
 		|| info->cub_list.map_matrix[i + 1][j] == 2
 		|| info->cub_list.map_matrix[i][j + 1] == 2)
 		error_process("Map file is wrong");
-	// }
 }
 
 void	last_row_check(t_info *info, int i, int j)
