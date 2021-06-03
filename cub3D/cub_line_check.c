@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 14:28:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 14:29:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,8 @@ int	cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 		return (0);
 	}
-	else if (i = ft_strcmp("C", line_split[0]) == 0)
+	i = ft_strcmp("C", line_split[0]);
+	if (i == 0)
 	{
 		rgb_split = ft_split(line_split[1], ',');
 		if (rgb_split == NULL)
@@ -168,8 +169,9 @@ int	cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
 		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
+		return (0);
 	}
-	else if (map_line_check(line_split) == 0)
+	if (map_line_check(line_split) == 0)
 		not_special_word(info, count, line, line_split);
 	return (0);
 }
