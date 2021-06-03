@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 11:47:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 11:48:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,18 +106,7 @@ void	middle_row_check(t_info *info, int i, int j)
 			error_process("Map file is wrong");
 	}
 	else
-	{
 		middle_row_check_other(info, i, j);
-		// if (info->cub_list.map_matrix[i][j - 1] == 0
-		// 	|| info->cub_list.map_matrix[i + 1][j] == 0
-		// 	|| info->cub_list.map_matrix[i][j + 1] == 0
-		// 	|| info->cub_list.map_matrix[i - 1][j] == 0
-		// 	|| info->cub_list.map_matrix[i][j - 1] == 2
-		// 	|| info->cub_list.map_matrix[i + 1][j] == 2
-		// 	|| info->cub_list.map_matrix[i][j + 1] == 2
-		// 	|| info->cub_list.map_matrix[i - 1][j] == 2)
-		// 	error_process("Map file is wrong");
-	}
 }
 
 void	map_space_check(t_info *info)
