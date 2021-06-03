@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:50:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:51:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	map_line_check(char **line_split)
 	return (0);
 }
 
-void	not_special_word(t_info *info, int count, char **line, char **line_split)
+void	not_special_word(t_info *info, int count, char **line,
+	char **line_split)
 {
 	int		i;
 	char	**tmp;
@@ -57,7 +58,8 @@ void	not_special_word(t_info *info, int count, char **line, char **line_split)
 	i = 0;
 	while (i < info->cub_list.map_y - 1)
 	{
-		tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1));
+		tmp[i] = (char *)malloc(sizeof(char)
+			* (ft_strlen(info->cub_list.map[i]) + 1));
 		if (tmp[i] == NULL)
 			error_process("Malloc failed");
 		ft_strlcpy(tmp[i], info->cub_list.map[i],
