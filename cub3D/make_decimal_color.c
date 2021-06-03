@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:57:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:59:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,29 @@ char	*make_decimal_color(t_rgb color)
 	if (!red)
 		error_process("Malloc failed");
 	free(int_to_hex);
-	if (!(int_to_hex = ft_itoa_hex(color.green, "0123456789ABCDEF")))
+	int_to_hex = ft_itoa_hex(color.green, "0123456789ABCDEF");
+	if (!int_to_hex)
 		error_process("Malloc failed");
-	if (!(green = ft_strdup(int_to_hex)))
-		error_process("Malloc failed");
-	free(int_to_hex);
-	if (!(int_to_hex = ft_itoa_hex(color.blue, "0123456789ABCDEF")))
-		error_process("Malloc failed");
-	if (!(blue = ft_strdup(int_to_hex)))
+	green = ft_strdup(int_to_hex);
+	if (!green)
 		error_process("Malloc failed");
 	free(int_to_hex);
-	if (!(hex = ft_strjoin(red, green)))
+	int_to_hex = ft_itoa_hex(color.blue, "0123456789ABCDEF");
+	if (!int_to_hex)
 		error_process("Malloc failed");
-	if (!(tmp = ft_strdup(hex)))
+	blue = ft_strdup(int_to_hex);
+	if (!blue)
+		error_process("Malloc failed");
+	free(int_to_hex);
+	hex = ft_strjoin(red, green);
+	if (!hex)
+		error_process("Malloc failed");
+	tmp = ft_strdup(hex);
+	if (!tmp)
 		error_process("Malloc failed");
 	free(hex);
-	if (!(hex = ft_strjoin(tmp, blue)))
+	hex = ft_strjoin(tmp, blue);
+	if (!hex)
 		error_process("Malloc failed");
 	free(red);
 	free(green);
