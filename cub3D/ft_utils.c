@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:43:41 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/26 17:48:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:20:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-char			*ft_itoa_hex(unsigned int n, char *arg)
+char	*ft_itoa_hex(unsigned int n, char *arg)
 {
 	int				len;
 	unsigned int	i;
@@ -31,7 +31,8 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	}
 	else
 		len = 1;
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+	ans = (char *)malloc(sizeof(char) * (len + 1));
+	if (ans == NULL)
 		return (NULL);
 	ans[len] = '\0';
 	i = n;
@@ -51,7 +52,7 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
