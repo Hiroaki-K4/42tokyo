@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:39:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:40:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,15 @@ int	key_press(int key, t_info *info)
 	if (key == K_L)
 	{
 		oldDirX = info->dirX;
-		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY * sin(info->rotSpeed);
-		info->dirY = oldDirX * sin(info->rotSpeed) + info->dirY * cos(info->rotSpeed);
+		info->dirX = info->dirX * cos(info->rotSpeed) - info->dirY
+			* sin(info->rotSpeed);
+		info->dirY = oldDirX * sin(info->rotSpeed) + info->dirY
+			* cos(info->rotSpeed);
 		oldPlaneX = info->planeX;
-		info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY * sin(info->rotSpeed);
-		info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
+		info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY
+			* sin(info->rotSpeed);
+		info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY
+			* cos(info->rotSpeed);
 	}
 	if (key == K_ESC)
 		exit(0);
