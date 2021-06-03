@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:45:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:47:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,11 @@ void	key_da(t_info *info, int key)
 	}
 }
 
-int	key_press(int key, t_info *info)
+void	key_right(t_info *info, int key)
 {
 	double	oldDirX;
 	double	oldPlaneX;
 
-	key_ws(info, key);
-	key_da(info, key);
 	if (key == K_R)
 	{
 		oldDirX = info->dirX;
@@ -76,6 +74,29 @@ int	key_press(int key, t_info *info)
 		info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY
 			* cos(-info->rotSpeed);
 	}
+}
+
+int	key_press(int key, t_info *info)
+{
+	double	oldDirX;
+	double	oldPlaneX;
+
+	key_ws(info, key);
+	key_da(info, key);
+	// if (key == K_R)
+	// {
+	// 	oldDirX = info->dirX;
+	// 	info->dirX = info->dirX * cos(-info->rotSpeed) - info->dirY
+	// 		* sin(-info->rotSpeed);
+	// 	info->dirY = oldDirX * sin(-info->rotSpeed) + info->dirY
+	// 		* cos(-info->rotSpeed);
+	// 	oldPlaneX = info->planeX;
+	// 	info->planeX = info->planeX * cos(-info->rotSpeed) - info->planeY
+	// 		* sin(-info->rotSpeed);
+	// 	info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY
+	// 		* cos(-info->rotSpeed);
+	// }
+	key_right(info, key);
 	if (key == K_L)
 	{
 		oldDirX = info->dirX;
