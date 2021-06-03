@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:52:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:30:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	info_init(t_info *info)
 {
-	int		sizex;
-	int		sizey;
+	int	sizex;
+	int	sizey;
 
 	info->cub_list.map_x = 0;
 	info->cub_list.map_y = 0;
@@ -35,8 +35,8 @@ void	buf_init(t_info *info, int i, int j)
 {
 	while (i < info->cub_list.height)
 	{
-		if (!(info->buf[i] = (int *)malloc(sizeof(int) *
-			(info->cub_list.width))))
+		info->buf[i] = (int *)malloc(sizeof(int) * (info->cub_list.width));
+		if (info->buf[i] == NULL)
 			error_process("Malloc failed");
 		i++;
 	}
@@ -57,8 +57,8 @@ void	texture_init(t_info *info, int i, int j)
 {
 	while (i < 5)
 	{
-		if (!(info->texture[i] = (int *)malloc(sizeof(int) *
-			(texHeight * texWidth))))
+		info->texture[i] = (int *)malloc(sizeof(int) * (texHeight * texWidth));
+		if (info->texture[i] == NULL)
 			error_process("Malloc failed");
 		i++;
 	}
@@ -77,7 +77,7 @@ void	texture_init(t_info *info, int i, int j)
 
 void	arg_error_check(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	if (argc != 2)
 		error_process("The number of arguments is wrong");
