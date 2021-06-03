@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 14:09:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 14:11:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,8 +137,10 @@ int	cub_line_check(char **line, int count, t_info *info)
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
-		if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0 || info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255 
-			|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue > 255)
+		if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0
+			|| info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255
+			|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
+			> 255)
 			error_process("Color is wrong");
 		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 	}
