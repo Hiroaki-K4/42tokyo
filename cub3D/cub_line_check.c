@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 14:11:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 14:13:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,8 @@ int	cub_line_check(char **line, int count, t_info *info)
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
-		if (!(rgb_split = ft_split(line_split[1], ',')))
+		rgb_split = ft_split(line_split[1], ',');
+		if (rgb_split == NULL)
 			error_process("ft_split failed");
 		double_array_free(line_split);
 		j = 0;
@@ -146,7 +147,8 @@ int	cub_line_check(char **line, int count, t_info *info)
 	}
 	else if (i = ft_strcmp("C", line_split[0]) == 0)
 	{
-		if (!(rgb_split = ft_split(line_split[1], ',')))
+		rgb_split = ft_split(line_split[1], ',');
+		if (rgb_split == NULL)
 			error_process("ft_split failed");
 		double_array_free(line_split);
 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
