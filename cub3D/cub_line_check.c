@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 20:53:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 20:55:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,31 @@ void	not_special_word(t_info *info, int count, char **line,
 	if (tmp == NULL)
 		error_process("Malloc failed");
 	make_string_map(info, tmp, map_line);
+}
+
+void	floor_check(t_info *info, char **line_split, char **rgb_split)
+{
+	int	j;
+
+	rgb_split = ft_split(line_split[1], ',');
+	if (rgb_split == NULL)
+		error_process("ft_split failed");
+	double_array_free(line_split);
+	j = 0;
+	while (rgb_split[j])
+		j++;
+	if (j != 3)
+		error_process("Color is wrong");
+	info->cub_list.floor.red = ft_atoi(rgb_split[0]);
+	info->cub_list.floor.green = ft_atoi(rgb_split[1]);
+	info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
+	double_array_free(rgb_split);
+	if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0
+		|| info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255
+		|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
+		> 255)
+		error_process("Color is wrong");
+	info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 }
 
 int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
@@ -181,21 +206,6 @@ int	cub_line_check(char **line, int count, t_info *info)
 	i = ceiling_check(info, line_split, rgb_split);
 	if (i == 1)
 		return (0);
-		
-	// i = ft_strcmp("C", line_split[0]);
-	// if (i == 0)
-	// {
-	// 	rgb_split = ft_split(line_split[1], ',');
-	// 	if (rgb_split == NULL)
-	// 		error_process("ft_split failed");
-	// 	double_array_free(line_split);
-	// 	info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
-	// 	info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
-	// 	info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
-	// 	double_array_free(rgb_split);
-	// 	info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
-	// 	return (0);
-	// }
 	if (map_line_check(line_split) == 0)
 		not_special_word(info, count, line, line_split);
 	return (0);
