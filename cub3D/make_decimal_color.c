@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:55:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:57:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ char	*make_decimal_color(t_rgb color)
 	char	*blue;
 	char	*tmp;
 	int		ans;
-	
-	if (!(int_to_hex = ft_itoa_hex(color.red, "0123456789ABCDEF")))
+
+	int_to_hex = ft_itoa_hex(color.red, "0123456789ABCDEF");
+	if (!int_to_hex)
 		error_process("Malloc failed");
-	if (!(red = ft_strdup(int_to_hex)))
+	red = ft_strdup(int_to_hex);
+	if (!red)
 		error_process("Malloc failed");
 	free(int_to_hex);
 	if (!(int_to_hex = ft_itoa_hex(color.green, "0123456789ABCDEF")))
