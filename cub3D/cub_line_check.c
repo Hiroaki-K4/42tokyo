@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:58:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:59:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	make_string_map(t_info *info, char **tmp, char *map_line)
 		if (tmp[i] == NULL)
 			error_process("Malloc failed");
 		ft_strlcpy(tmp[i], info->cub_list.map[i],
-			ft_strlen(info->cub_list.map[i]) + 1);
+				ft_strlen(info->cub_list.map[i]) + 1);
 		i++;
 	}
 	tmp[i] = ft_strdup(map_line);
@@ -63,7 +63,6 @@ void	make_string_map(t_info *info, char **tmp, char *map_line)
 void	not_special_word(t_info *info, int count, char **line,
 	char **line_split)
 {
-	// int		i;
 	char	**tmp;
 	char	*map_line;
 
@@ -81,25 +80,6 @@ void	not_special_word(t_info *info, int count, char **line,
 	if (tmp == NULL)
 		error_process("Malloc failed");
 	make_string_map(info, tmp, map_line);
-	// i = 0;
-	// while (i < info->cub_list.map_y - 1)
-	// {
-	// 	tmp[i] = (char *)malloc(sizeof(char)
-	// 			* (ft_strlen(info->cub_list.map[i]) + 1));
-	// 	if (tmp[i] == NULL)
-	// 		error_process("Malloc failed");
-	// 	ft_strlcpy(tmp[i], info->cub_list.map[i],
-	// 		ft_strlen(info->cub_list.map[i]) + 1);
-	// 	i++;
-	// }
-	// tmp[i] = ft_strdup(map_line);
-	// if (tmp[i] == NULL)
-	// 	error_process("ft_strdup failed");
-	// free(map_line);
-	// tmp[i + 1] = NULL;
-	// if (i > 0)
-	// 	double_array_free(info->cub_list.map);
-	// info->cub_list.map = tmp;
 }
 
 int	cub_line_check(char **line, int count, t_info *info)
