@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:08:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:09:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,7 @@ int	map_we_check(t_info *info, char **line_split)
 int	cub_line_check(char **line, int count, t_info *info)
 {
 	int		i;
-	int		j;
+	// int		j;
 	char	**line_split;
 	char	**rgb_split;
 
