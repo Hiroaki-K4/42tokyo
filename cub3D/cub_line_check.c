@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 20:57:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 20:57:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,25 +182,6 @@ int	cub_line_check(char **line, int count, t_info *info)
 	i = ft_strcmp("F", line_split[0]);
 	if (i == 0)
 	{
-		// rgb_split = ft_split(line_split[1], ',');
-		// if (rgb_split == NULL)
-		// 	error_process("ft_split failed");
-		// double_array_free(line_split);
-		// j = 0;
-		// while (rgb_split[j])
-		// 	j++;
-		// if (j != 3)
-		// 	error_process("Color is wrong");
-		// info->cub_list.floor.red = ft_atoi(rgb_split[0]);
-		// info->cub_list.floor.green = ft_atoi(rgb_split[1]);
-		// info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
-		// double_array_free(rgb_split);
-		// if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0
-		// 	|| info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255
-		// 	|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
-		// 	> 255)
-		// 	error_process("Color is wrong");
-		// info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
 		floor_check(info, line_split, rgb_split);
 		return (0);
 	}
