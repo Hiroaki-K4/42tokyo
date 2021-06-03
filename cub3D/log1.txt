@@ -1,22 +1,22 @@
-==117044== Memcheck, a memory error detector
-==117044== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==117044== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==117044== Command: ./cub3D sample.cub
-==117044== Parent PID: 116902
-==117044== 
-==117044== 
-==117044== HEAP SUMMARY:
-==117044==     in use at exit: 23,213,311 bytes in 2,080 blocks
-==117044==   total heap usage: 2,960 allocs, 880 frees, 23,302,077 bytes allocated
-==117044== 
-==117044== LEAK SUMMARY:
-==117044==    definitely lost: 0 bytes in 0 blocks
-==117044==    indirectly lost: 0 bytes in 0 blocks
-==117044==      possibly lost: 0 bytes in 0 blocks
-==117044==    still reachable: 23,213,311 bytes in 2,080 blocks
-==117044==         suppressed: 0 bytes in 0 blocks
-==117044== Reachable blocks (those to which a pointer was found) are not shown.
-==117044== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==117044== 
-==117044== For lists of detected and suppressed errors, rerun with: -s
-==117044== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
+==61501== Memcheck, a memory error detector
+==61501== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==61501== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==61501== Command: ./cub3D sample.cub
+==61501== Parent PID: 61357
+==61501== 
+==61501== 
+==61501== HEAP SUMMARY:
+==61501==     in use at exit: 23,213,458 bytes in 2,081 blocks
+==61501==   total heap usage: 2,965 allocs, 884 frees, 23,302,305 bytes allocated
+==61501== 
+==61501== LEAK SUMMARY:
+==61501==    definitely lost: 0 bytes in 0 blocks
+==61501==    indirectly lost: 0 bytes in 0 blocks
+==61501==      possibly lost: 0 bytes in 0 blocks
+==61501==    still reachable: 23,213,458 bytes in 2,081 blocks
+==61501==         suppressed: 0 bytes in 0 blocks
+==61501== Reachable blocks (those to which a pointer was found) are not shown.
+==61501== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==61501== 
+==61501== For lists of detected and suppressed errors, rerun with: -s
+==61501== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
