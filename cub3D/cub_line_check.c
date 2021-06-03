@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 14:26:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 14:27:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,13 @@ int	cub_line_check(char **line, int count, t_info *info)
 		double_array_free(line_split);
 		return (0);
 	}
-	else if (i = ft_strcmp("S", line_split[0]) == 0)
+	i = ft_strcmp("S", line_split[0]);
+	if (i == 0)
 	{
 		info->cub_list.sprite = ft_strdup(line_split[1]);
 		double_array_free(line_split);
 		info->cub_list.sprite_flag = 1;
+		return (0);
 	}
 	else if (i = ft_strcmp("F", line_split[0]) == 0)
 	{
