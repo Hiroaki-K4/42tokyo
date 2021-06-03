@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 22:10:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 22:10:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*convert_color(int color)
 
 char	*make_decimal_color(t_rgb color)
 {
-	char	*int_to_hex;
+	// char	*int_to_hex;
 	char	*hex;
 	char	*red;
 	char	*green;
