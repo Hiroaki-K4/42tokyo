@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:37:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:44:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,47 @@ int	map_line_check(char **line_split)
 	return (0);
 }
 
+void not_special_word(t_info *info, int count, char **line, char **line_split)
+{
+	char	**tmp;
+	char	*map_line;
+
+	double_array_free(line_split);
+	if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
+		error_process("Map is wrong");
+	info->cub_list.line_num = count;
+	info->cub_list.map_y++;
+	if (!(map_line = ft_strdup(line)))
+		error_process("ft_strdup failed");
+	if (ft_strlen(map_line) > info->cub_list.map_x)
+		info->cub_list.map_x = ft_strlen(map_line);
+	if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
+		error_process("Malloc failed");
+	i = 0;
+	while (i < info->cub_list.map_y - 1)
+	{
+		if (!(tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1))))
+			error_process("Malloc failed");
+		ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
+		i++;
+	}
+	if (!(tmp[i] = ft_strdup(map_line)))
+		error_process("ft_strdup failed");
+	free(map_line);
+	tmp[i + 1] = NULL;
+	if (i > 0)
+		double_array_free(info->cub_list.map);
+	info->cub_list.map = tmp;
+}
+
 int	cub_line_check(char **line, int count, t_info *info)
 {
 	int		i;
 	int		j;
-	char	*map_line;
+	// char	*map_line;
 	char	**line_split;
 	char	**rgb_split;
-	char	**tmp;
+	// char	**tmp;
 	
 	if (!(line_split = ft_split(line, ' ')))
 		error_process("ft_split failed");
@@ -109,32 +142,33 @@ int	cub_line_check(char **line, int count, t_info *info)
 	}
 	else if (map_line_check(line_split) == 0)
 	{
-		double_array_free(line_split);
-		if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
-			error_process("Map is wrong");
-		info->cub_list.line_num = count;
-		info->cub_list.map_y++;
-		if (!(map_line = ft_strdup(line)))
-			error_process("ft_strdup failed");
-		if (ft_strlen(map_line) > info->cub_list.map_x)
-			info->cub_list.map_x = ft_strlen(map_line);
-		if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
-			error_process("Malloc failed");
-		i = 0;
-		while (i < info->cub_list.map_y - 1)
-		{
-			if (!(tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1))))
-				error_process("Malloc failed");
-			ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
-			i++;
-		}
-		if (!(tmp[i] = ft_strdup(map_line)))
-			error_process("ft_strdup failed");
-		free(map_line);
-		tmp[i + 1] = NULL;
-		if (i > 0)
-			double_array_free(info->cub_list.map);
-		info->cub_list.map = tmp;
+		not_special_word(info, count, line, line_split);
+		// double_array_free(line_split);
+		// if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
+		// 	error_process("Map is wrong");
+		// info->cub_list.line_num = count;
+		// info->cub_list.map_y++;
+		// if (!(map_line = ft_strdup(line)))
+		// 	error_process("ft_strdup failed");
+		// if (ft_strlen(map_line) > info->cub_list.map_x)
+		// 	info->cub_list.map_x = ft_strlen(map_line);
+		// if (!(tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1))))
+		// 	error_process("Malloc failed");
+		// i = 0;
+		// while (i < info->cub_list.map_y - 1)
+		// {
+		// 	if (!(tmp[i] = (char *)malloc(sizeof(char) * (ft_strlen(info->cub_list.map[i]) + 1))))
+		// 		error_process("Malloc failed");
+		// 	ft_strlcpy(tmp[i], info->cub_list.map[i], ft_strlen(info->cub_list.map[i]) + 1);
+		// 	i++;
+		// }
+		// if (!(tmp[i] = ft_strdup(map_line)))
+		// 	error_process("ft_strdup failed");
+		// free(map_line);
+		// tmp[i + 1] = NULL;
+		// if (i > 0)
+		// 	double_array_free(info->cub_list.map);
+		// info->cub_list.map = tmp;
 	}
 	return (0);
 }
