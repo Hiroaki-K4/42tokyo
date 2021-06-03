@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/01 11:54:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:51:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	get_xpm_size(t_info *info, char *line)
 {
-	char **xpm;
+	char	**xpm;
 
 	if (!(xpm = ft_split(&line[1], ' ')))
 		error_process("ft_split failed");
@@ -50,15 +50,16 @@ void	xpm_file_check(t_info *info, int i, char *path)
 
 void	load_image(t_info *info, int *texture, char *path, t_img *img)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	xpm_file_check(info, 1, path);
-	if (!(img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
-		&img->img_height)))
+	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
+		&img->img_height);
+	if (img->img == NULL)
 		error_process("The path of texture is wrong");
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
-		&img->endian);
+			&img->endian);
 	y = 0;
 	while (y < img->img_height)
 	{
