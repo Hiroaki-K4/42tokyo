@@ -6,19 +6,19 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:42:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 21:55:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int hex_to_decimal(char *hex)
+int	hex_to_decimal(char *hex)
 {
-	int i;
-	int j;
-	int ans;
-	int hex_pow;
-	
+	int	i;
+	int	j;
+	int	ans;
+	int	hex_pow;
+
 	ans = 0;
 	i = 0;
 	while (i < ft_strlen(hex))
@@ -30,21 +30,22 @@ int hex_to_decimal(char *hex)
 			hex_pow *= 16;
 			j++;
 		}
-		ans += hex_pow * (ft_strchr_place("0123456789ABCDEF", hex[ft_strlen(hex) - 1 - i]));
+		ans += hex_pow * (ft_strchr_place("0123456789ABCDEF",
+					hex[ft_strlen(hex) - 1 - i]));
 		i++;
 	}
 	return (ans);
 }
 
-char *make_decimal_color(t_rgb color)
+char	*make_decimal_color(t_rgb color)
 {
-	char *int_to_hex;
-	char *hex;
-	char *red;
-	char *green;
-	char *blue;
-	char *tmp;
-	int ans;
+	char	*int_to_hex;
+	char	*hex;
+	char	*red;
+	char	*green;
+	char	*blue;
+	char	*tmp;
+	int		ans;
 	
 	if (!(int_to_hex = ft_itoa_hex(color.red, "0123456789ABCDEF")))
 		error_process("Malloc failed");
