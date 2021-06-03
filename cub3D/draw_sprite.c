@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 22:21:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 22:22:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	get_sprite_pos(t_info *info)
 				info->cub_list.sprites[count].y = j;
 				info->cub_list.sprites[count].texture = 4;
 				count++;
-			} 
+			}
 			j++;
 		}
 		i++;
