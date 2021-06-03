@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 13:35:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/03 13:36:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ int	map_line_check(char **line_split)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (line_split[i])
 	{
 		j = 0;
 		while (line_split[i][j])
 		{
-			if (line_split[i][j] != '0' && line_split[i][j] != '1' && line_split[i][j] != '2' 
-			&& line_split[i][j] != 'N' && line_split[i][j] != 'S' && line_split[i][j] != 'E' && line_split[i][j] != 'W')
+			if (line_split[i][j] != '0' && line_split[i][j] != '1'
+				&& line_split[i][j] != '2' && line_split[i][j] != 'N'
+				&& line_split[i][j] != 'S' && line_split[i][j] != 'E'
+				&& line_split[i][j] != 'W')
 				error_process("Map is wrong");
 			j++;
 		}
