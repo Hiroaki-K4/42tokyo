@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:52:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:56:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,10 @@ typedef struct	s_info
 	int		spriteScreenX;
 	int		spriteH;
 	int		spriteW;
+	int		drawStartY;
+	int		drawEndY;
+	int		drawStartX;
+	int		drawEndX;
 	t_cub cub_list;
 }				t_info;
 
