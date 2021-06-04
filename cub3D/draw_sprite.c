@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 22:22:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:09:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	get_sprite_pos(t_info *info)
 		}
 		i++;
 	}
-	if (!(info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count)))
+	info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count);
+	if (!info->cub_list.sprites)
 		error_process("Malloc failed");
 	count = 0;
 	i = 0;
