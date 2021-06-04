@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:21:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:29:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,41 +118,28 @@ void	sortSprites(int *order, double *dist, int amount)
 	free(sprites);
 }
 
-void	draw_sprite(t_info *info)
+void	insert_pixel(t_info *info, int *spriteOrder)
 {
 	int		i;
 	int		y;
 	int		d;
-	int		stripe;
-	int		spriteScreenX;
-	int		spriteHeight;
-	int		drawStartY;
-	int		drawEndY;
-	int		drawStartX;
-	int		drawEndX;
-	int		spriteWidth;
-	int		texX;
-	int		texY;
-	int		color;
 	double	spriteX;
 	double	spriteY;
 	double	invDet;
 	double	transformX;
 	double	transformY;
-	int		spriteOrder[info->cub_list.num_sprites];
-	double	spriteDistance[info->cub_list.num_sprites];
+	int		spriteScreenX;
+	int		spriteHeight;
+	int		spriteWidth;
+	int		drawStartY;
+	int		drawEndY;
+	int		drawStartX;
+	int		drawEndX;
+	int		sprite;
+	int		texX;
+	int		texY;
+	int		color;
 
-	i = 0;
-	while (i < info->cub_list.num_sprites)
-	{
-		spriteOrder[i] = i;
-		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i].x)
-				* (info->posX - info->cub_list.sprites[i].x) + (info->posY
-					- info->cub_list.sprites[i].y) * (info->posY
-					- info->cub_list.sprites[i].y));
-		i++;
-	}
-	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	i = 0;
 	while (i < info->cub_list.num_sprites)
 	{
@@ -176,11 +163,11 @@ void	draw_sprite(t_info *info)
 		drawEndX = spriteWidth / 2 + spriteScreenX;
 		if (drawEndX >= info->cub_list.width)
 			drawEndX = info->cub_list.width - 1;
-		stripe = drawStartX;
-		while (stripe < drawEndX)
+		sprite = drawStartX;
+		while (sprite < drawEndX)
 		{
-			texX = (int)((256 * (stripe - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
-			if (transformY > 0 && stripe > 0 && stripe < info->cub_list.width && transformY < info->zBuffer[stripe])
+			texX = (int)((256 * (sprite - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
+			if (transformY > 0 && sprite > 0 && sprite < info->cub_list.width && transformY < info->zBuffer[sprite])
 			{
 				y = drawStartY;
 				while (y < drawEndY)
@@ -189,12 +176,94 @@ void	draw_sprite(t_info *info)
 					texY = ((d * texHeight) / spriteHeight) / 256;
 					color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
 					if ((color & 0x00FFFFFF) != 0)
-						info->buf[y][stripe] = color;
+						info->buf[y][sprite] = color;
 					y++;
 				}
 			}
-			stripe++;
+			sprite++;
 		}
 		i++;
 	}
+}
+
+void	draw_sprite(t_info *info)
+{
+	int		i;
+	// int		y;
+	// int		d;
+	// int		sprite;
+	// int		spriteScreenX;
+	// int		spriteHeight;
+	// int		drawStartY;
+	// int		drawEndY;
+	// int		drawStartX;
+	// int		drawEndX;
+	// int		spriteWidth;
+	// int		texX;
+	// int		texY;
+	// int		color;
+	// double	spriteX;
+	// double	spriteY;
+	// double	invDet;
+	// double	transformX;
+	// double	transformY;
+	int		spriteOrder[info->cub_list.num_sprites];
+	double	spriteDistance[info->cub_list.num_sprites];
+
+	i = 0;
+	while (i < info->cub_list.num_sprites)
+	{
+		spriteOrder[i] = i;
+		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i].x)
+				* (info->posX - info->cub_list.sprites[i].x) + (info->posY
+					- info->cub_list.sprites[i].y) * (info->posY
+					- info->cub_list.sprites[i].y));
+		i++;
+	}
+	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
+	insert_pixel(info, spriteOrder);
+	// i = 0;
+	// while (i < info->cub_list.num_sprites)
+	// {
+	// 	spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
+	// 	spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
+	// 	invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
+	// 	transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
+	// 	transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY);
+	// 	spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
+	// 	spriteHeight = (int)fabs(info->cub_list.height / transformY);
+	// 	drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
+	// 	if (drawStartY < 0)
+	// 		drawStartY = 0;
+	// 	drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
+	// 	if (drawEndY >= info->cub_list.height)
+	// 		drawEndY = info->cub_list.height - 1;
+	// 	spriteWidth = (int)fabs(info->cub_list.height / transformY);
+	// 	drawStartX = -spriteWidth / 2 + spriteScreenX;
+	// 	if (drawStartX < 0)
+	// 		drawStartX = 0;
+	// 	drawEndX = spriteWidth / 2 + spriteScreenX;
+	// 	if (drawEndX >= info->cub_list.width)
+	// 		drawEndX = info->cub_list.width - 1;
+	// 	sprite = drawStartX;
+	// 	while (sprite < drawEndX)
+	// 	{
+	// 		texX = (int)((256 * (sprite - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
+	// 		if (transformY > 0 && sprite > 0 && sprite < info->cub_list.width && transformY < info->zBuffer[sprite])
+	// 		{
+	// 			y = drawStartY;
+	// 			while (y < drawEndY)
+	// 			{
+	// 				d = y * 256 - info->cub_list.height * 128 + spriteHeight * 128;
+	// 				texY = ((d * texHeight) / spriteHeight) / 256;
+	// 				color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
+	// 				if ((color & 0x00FFFFFF) != 0)
+	// 					info->buf[y][sprite] = color;
+	// 				y++;
+	// 			}
+	// 		}
+	// 		sprite++;
+	// 	}
+	// 	i++;
+	// }
 }
