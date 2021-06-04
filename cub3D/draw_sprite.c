@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:47:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:53:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,11 @@ void	sortSprites(int *order, double *dist, int amount)
 	free(sprites);
 }
 
-void	insert_pixel(t_info *info, int *spriteOrder)
+void	calc_sprite(t_info *info, int *spriteOrder)
 {
 	int		i;
 	int		y;
 	int		d;
-	// int		spriteScreenX;
-	// int		spriteH;
-	// int		spriteW;
 	int		drawStartY;
 	int		drawEndY;
 	int		drawStartX;
@@ -205,6 +202,6 @@ void	draw_sprite(t_info *info)
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
 	free(spriteDistance);
-	insert_pixel(info, spriteOrder);
+	calc_sprite(info, spriteOrder);
 	free(spriteOrder);
 }
