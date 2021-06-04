@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:44:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:44:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 	int		d;
 	int		spriteScreenX;
 	int		spriteH;
-	int		spriteWidth;
+	int		spriteW;
 	int		drawStartY;
 	int		drawEndY;
 	int		drawStartX;
@@ -151,17 +151,17 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 		drawEndY = spriteH / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
-		spriteWidth = (int)fabs(info->cub_list.height / info->transformY);
-		drawStartX = -spriteWidth / 2 + spriteScreenX;
+		spriteW = (int)fabs(info->cub_list.height / info->transformY);
+		drawStartX = -spriteW / 2 + spriteScreenX;
 		if (drawStartX < 0)
 			drawStartX = 0;
-		drawEndX = spriteWidth / 2 + spriteScreenX;
+		drawEndX = spriteW / 2 + spriteScreenX;
 		if (drawEndX >= info->cub_list.width)
 			drawEndX = info->cub_list.width - 1;
 		sprite = drawStartX;
 		while (sprite < drawEndX)
 		{
-			texX = (int)((256 * (sprite - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
+			texX = (int)((256 * (sprite - (-spriteW / 2 + spriteScreenX)) * texWidth / spriteW) / 256);
 			if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width && info->transformY < info->zBuffer[sprite])
 			{
 				y = drawStartY;
