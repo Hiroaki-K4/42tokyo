@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:59:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:59:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,16 +151,6 @@ void	insert_pixel(t_info *info, int *spriteOrder, int i)
 void	calc_sprite(t_info *info, int *spriteOrder)
 {
 	int		i;
-	// int		y;
-	// int		d;
-	// int		drawStartY;
-	// int		drawEndY;
-	// int		drawStartX;
-	// int		drawEndX;
-	// int		sprite;
-	// int		texX;
-	// int		texY;
-	// int		color;
 
 	i = 0;
 	while (i < info->cub_list.num_sprites)
@@ -186,25 +176,6 @@ void	calc_sprite(t_info *info, int *spriteOrder)
 		if (info->drawEndX >= info->cub_list.width)
 			info->drawEndX = info->cub_list.width - 1;
 		insert_pixel(info, spriteOrder, i);
-		// sprite = drawStartX;
-		// while (sprite < drawEndX)
-		// {
-		// 	texX = (int)((256 * (sprite - (-info->spriteW / 2 + info->spriteScreenX)) * texWidth / info->spriteW) / 256);
-		// 	if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width && info->transformY < info->zBuffer[sprite])
-		// 	{
-		// 		y = drawStartY;
-		// 		while (y < drawEndY)
-		// 		{
-		// 			d = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
-		// 			texY = ((d * texHeight) / info->spriteH) / 256;
-		// 			color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
-		// 			if ((color & 0x00FFFFFF) != 0)
-		// 				info->buf[y][sprite] = color;
-		// 			y++;
-		// 		}
-		// 	}
-		// 	sprite++;
-		// }
 		i++;
 	}
 }
