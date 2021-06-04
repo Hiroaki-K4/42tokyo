@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:37:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:42:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,11 +123,11 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 	int		i;
 	int		y;
 	int		d;
-	double	spriteX;
-	double	spriteY;
-	double	invDet;
-	double	transformX;
-	double	transformY;
+	// double	spriteX;
+	// double	spriteY;
+	// double	invDet;
+	// double	transformX;
+	// double	transformY;
 	int		spriteScreenX;
 	int		spriteHeight;
 	int		spriteWidth;
@@ -143,13 +143,13 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 	i = 0;
 	while (i < info->cub_list.num_sprites)
 	{
-		spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
-		spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
-		invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
-		transformX = invDet * (info->dirY * spriteX - info->dirX * spriteY);
-		transformY = invDet * (-info->planeY * spriteX + info->planeX * spriteY);
-		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + transformX / transformY));
-		spriteHeight = (int)fabs(info->cub_list.height / transformY);
+		info->spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
+		info->spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
+		info->invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
+		info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
+		info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
+		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
+		spriteHeight = (int)fabs(info->cub_list.height / info->transformY);
 		drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
