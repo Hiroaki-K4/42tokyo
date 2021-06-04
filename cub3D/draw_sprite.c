@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:11:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:12:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	sortSprites(int *order, double *dist, int amount)
 	int		i;
 	t_pair	*sprites;
 
-	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
+	sprites = (t_pair *)malloc(sizeof(t_pair) * amount);
 	if (!sprites)
 		error_process("Malloc failed");
 	i = 0;
