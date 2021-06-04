@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:42:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:43:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 		while (sprite < drawEndX)
 		{
 			texX = (int)((256 * (sprite - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth) / 256);
-			if (transformY > 0 && sprite > 0 && sprite < info->cub_list.width && transformY < info->zBuffer[sprite])
+			if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width && info->transformY < info->zBuffer[sprite])
 			{
 				y = drawStartY;
 				while (y < drawEndY)
