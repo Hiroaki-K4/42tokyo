@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 09:18:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 09:49:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -479,11 +479,8 @@ int print_string(va_list *ap, t_plist flag_list)
 		else
 		{
 			i = 0;
-			while (flag_list.field - (int)ft_strlen(str) - i > 0)
-			{
+			while (flag_list.field - (int)ft_strlen(str) - (i++) > 0)
 				write(1, " ", 1);
-				i++;
-			}
 			write(1, str, ft_strlen(str));
 			len = ft_strlen(str) + i;
 		}
