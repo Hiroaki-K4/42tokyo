@@ -1,30 +1,30 @@
-==95585== Memcheck, a memory error detector
-==95585== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==95585== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==95585== Command: ./cub3D sample.cub
-==95585== Parent PID: 95438
-==95585== 
-==95585== 
-==95585== HEAP SUMMARY:
-==95585==     in use at exit: 23,213,306 bytes in 2,082 blocks
-==95585==   total heap usage: 2,968 allocs, 886 frees, 23,302,265 bytes allocated
-==95585== 
-==95585== 56 bytes in 2 blocks are definitely lost in loss record 33 of 75
-==95585==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==95585==    by 0x112354: draw_sprite (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==95585==    by 0x113703: calc (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==95585==    by 0x10FA8A: main_loop (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==95585==    by 0x115DE0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==95585==    by 0x10FDA1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
-==95585== 
-==95585== LEAK SUMMARY:
-==95585==    definitely lost: 56 bytes in 2 blocks
-==95585==    indirectly lost: 0 bytes in 0 blocks
-==95585==      possibly lost: 0 bytes in 0 blocks
-==95585==    still reachable: 23,213,250 bytes in 2,080 blocks
-==95585==         suppressed: 0 bytes in 0 blocks
-==95585== Reachable blocks (those to which a pointer was found) are not shown.
-==95585== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==95585== 
-==95585== For lists of detected and suppressed errors, rerun with: -s
-==95585== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 2 from 1)
+==96019== Memcheck, a memory error detector
+==96019== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==96019== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==96019== Command: ./cub3D sample.cub
+==96019== Parent PID: 95873
+==96019== 
+==96019== 
+==96019== HEAP SUMMARY:
+==96019==     in use at exit: 23,213,514 bytes in 2,083 blocks
+==96019==   total heap usage: 2,969 allocs, 886 frees, 23,302,473 bytes allocated
+==96019== 
+==96019== 56 bytes in 2 blocks are definitely lost in loss record 33 of 75
+==96019==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==96019==    by 0x112354: draw_sprite (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96019==    by 0x113703: calc (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96019==    by 0x10FA8A: main_loop (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96019==    by 0x115DE0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96019==    by 0x10FDA1: main (in /home/hiroaki-k4/my_project/42tokyo/cub3D/cub3D)
+==96019== 
+==96019== LEAK SUMMARY:
+==96019==    definitely lost: 56 bytes in 2 blocks
+==96019==    indirectly lost: 0 bytes in 0 blocks
+==96019==      possibly lost: 0 bytes in 0 blocks
+==96019==    still reachable: 23,213,458 bytes in 2,081 blocks
+==96019==         suppressed: 0 bytes in 0 blocks
+==96019== Reachable blocks (those to which a pointer was found) are not shown.
+==96019== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==96019== 
+==96019== For lists of detected and suppressed errors, rerun with: -s
+==96019== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 2 from 1)
