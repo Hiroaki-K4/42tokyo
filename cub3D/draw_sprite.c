@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:14:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:15:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,10 @@ void	draw_sprite(t_info *info)
 	while (i < info->cub_list.num_sprites)
 	{
 		spriteOrder[i] = i;
-		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i].x) * (info->posX - info->cub_list.sprites[i].x) + (info->posY - info->cub_list.sprites[i].y) * (info->posY - info->cub_list.sprites[i].y)); //sqrt not taken, unneeded
+		spriteDistance[i] = ((info->posX - info->cub_list.sprites[i].x)
+			* (info->posX - info->cub_list.sprites[i].x) + (info->posY
+			- info->cub_list.sprites[i].y) * (info->posY
+			- info->cub_list.sprites[i].y)); //sqrt not taken, unneeded
 		i++;
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
