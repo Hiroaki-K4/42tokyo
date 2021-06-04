@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:42:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:42:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 		drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
-		spriteWidth = (int)fabs(info->cub_list.height / transformY);
+		spriteWidth = (int)fabs(info->cub_list.height / info->transformY);
 		drawStartX = -spriteWidth / 2 + spriteScreenX;
 		if (drawStartX < 0)
 			drawStartX = 0;
