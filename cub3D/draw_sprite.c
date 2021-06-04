@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:09:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:11:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ int	get_sprite_pos(t_info *info)
 
 void	sort_order(t_pair *orders, int amount)
 {
-    int		i;
-    int		j;
+	int		i;
+	int		j;
 	t_pair	tmp;
 
-    i = 0;
+	i = 0;
 	while (i < amount)
-    {
-        j = 0;
+	{
+		j = 0;
 		while (j < amount - 1)
-        {
+		{
 			if (orders[j].first > orders[j + 1].first)
 			{
 				tmp.first = orders[j].first;
@@ -77,34 +77,35 @@ void	sort_order(t_pair *orders, int amount)
 				orders[j + 1].first = tmp.first;
 				orders[j + 1].second = tmp.second;
 			}
-            j++;
+			j++;
 		}
-        i++;
+		i++;
 	}
 }
 
 void	sortSprites(int *order, double *dist, int amount)
 {
-    int		i;
+	int		i;
 	t_pair	*sprites;
 
-	if (!(sprites = (t_pair*)malloc(sizeof(t_pair) * amount)))
+	sprites = (t_pair*)malloc(sizeof(t_pair) * amount);
+	if (!sprites)
 		error_process("Malloc failed");
 	i = 0;
 	while (i < amount)
-    {
+	{
 		sprites[i].first = dist[i];
 		sprites[i].second = order[i];
-        i++;
-    }
+		i++;
+	}
 	sort_order(sprites, amount);
 	i = 0;
 	while (i < amount)
-    {
+	{
 		dist[i] = sprites[amount - i - 1].first;
 		order[i] = sprites[amount - i - 1].second;
-        i++;
-    }
+		i++;
+	}
 	free(sprites);
 }
 
