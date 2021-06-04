@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:41:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:45:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,9 @@ typedef struct	s_info
 	double	invDet;
 	double	transformX;
 	double	transformY;
+	int		spriteScreenX;
+	int		spriteH;
+	int		spriteW;
 	t_cub cub_list;
 }				t_info;
 

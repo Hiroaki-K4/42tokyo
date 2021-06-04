@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:44:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:47:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,9 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 	int		i;
 	int		y;
 	int		d;
-	int		spriteScreenX;
-	int		spriteH;
-	int		spriteW;
+	// int		spriteScreenX;
+	// int		spriteH;
+	// int		spriteW;
 	int		drawStartY;
 	int		drawEndY;
 	int		drawStartX;
@@ -143,32 +143,32 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 		info->invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
 		info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
 		info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
-		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
-		spriteH = (int)fabs(info->cub_list.height / info->transformY);
-		drawStartY = -spriteH / 2 + info->cub_list.height / 2;
+		info->spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
+		info->spriteH = (int)fabs(info->cub_list.height / info->transformY);
+		drawStartY = -info->spriteH / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		drawEndY = spriteH / 2 + info->cub_list.height / 2;
+		drawEndY = info->spriteH / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
-		spriteW = (int)fabs(info->cub_list.height / info->transformY);
-		drawStartX = -spriteW / 2 + spriteScreenX;
+		info->spriteW = (int)fabs(info->cub_list.height / info->transformY);
+		drawStartX = -info->spriteW / 2 + info->spriteScreenX;
 		if (drawStartX < 0)
 			drawStartX = 0;
-		drawEndX = spriteW / 2 + spriteScreenX;
+		drawEndX = info->spriteW / 2 + info->spriteScreenX;
 		if (drawEndX >= info->cub_list.width)
 			drawEndX = info->cub_list.width - 1;
 		sprite = drawStartX;
 		while (sprite < drawEndX)
 		{
-			texX = (int)((256 * (sprite - (-spriteW / 2 + spriteScreenX)) * texWidth / spriteW) / 256);
+			texX = (int)((256 * (sprite - (-info->spriteW / 2 + info->spriteScreenX)) * texWidth / info->spriteW) / 256);
 			if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width && info->transformY < info->zBuffer[sprite])
 			{
 				y = drawStartY;
 				while (y < drawEndY)
 				{
-					d = y * 256 - info->cub_list.height * 128 + spriteH * 128;
-					texY = ((d * texHeight) / spriteH) / 256;
+					d = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
+					texY = ((d * texHeight) / info->spriteH) / 256;
 					color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
 					if ((color & 0x00FFFFFF) != 0)
 						info->buf[y][sprite] = color;
