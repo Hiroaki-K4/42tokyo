@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:43:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:44:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,13 +123,8 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 	int		i;
 	int		y;
 	int		d;
-	// double	spriteX;
-	// double	spriteY;
-	// double	invDet;
-	// double	transformX;
-	// double	transformY;
 	int		spriteScreenX;
-	int		spriteHeight;
+	int		spriteH;
 	int		spriteWidth;
 	int		drawStartY;
 	int		drawEndY;
@@ -149,11 +144,11 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 		info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
 		info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
 		spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
-		spriteHeight = (int)fabs(info->cub_list.height / info->transformY);
-		drawStartY = -spriteHeight / 2 + info->cub_list.height / 2;
+		spriteH = (int)fabs(info->cub_list.height / info->transformY);
+		drawStartY = -spriteH / 2 + info->cub_list.height / 2;
 		if (drawStartY < 0)
 			drawStartY = 0;
-		drawEndY = spriteHeight / 2 + info->cub_list.height / 2;
+		drawEndY = spriteH / 2 + info->cub_list.height / 2;
 		if (drawEndY >= info->cub_list.height)
 			drawEndY = info->cub_list.height - 1;
 		spriteWidth = (int)fabs(info->cub_list.height / info->transformY);
@@ -172,8 +167,8 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 				y = drawStartY;
 				while (y < drawEndY)
 				{
-					d = y * 256 - info->cub_list.height * 128 + spriteHeight * 128;
-					texY = ((d * texHeight) / spriteHeight) / 256;
+					d = y * 256 - info->cub_list.height * 128 + spriteH * 128;
+					texY = ((d * texHeight) / spriteH) / 256;
 					color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
 					if ((color & 0x00FFFFFF) != 0)
 						info->buf[y][sprite] = color;
