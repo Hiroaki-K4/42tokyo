@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:33:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/04 22:36:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,9 +189,7 @@ void	insert_pixel(t_info *info, int *spriteOrder)
 void	draw_sprite(t_info *info)
 {
 	int		i;
-	// int		spriteOrder[info->cub_list.num_sprites];
 	int		*spriteOrder;
-	// double	spriteDistance[info->cub_list.num_sprites];
 	double	*spriteDistance;
 
 	spriteOrder = (int *)malloc(sizeof(int) * (info->cub_list.num_sprites));
@@ -211,5 +209,6 @@ void	draw_sprite(t_info *info)
 		i++;
 	}
 	sortSprites(spriteOrder, spriteDistance, info->cub_list.num_sprites);
+	free(spriteDistance);
 	insert_pixel(info, spriteOrder);
 }
