@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:42:31 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/27 08:25:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:20:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		ptr_dst[i] = ptr_src[i];
 		if (ptr_dst[i] == (unsigned char)c)
-		{
-			return (void *)(dest + i + 1);
-		}
+			return ((void *)(dest + i + 1));
 		i++;
 	}
 	return (NULL);
