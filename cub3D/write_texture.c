@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:51:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:52:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,10 @@ void	calc(t_info *info)
 			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
 		lineHeight = (int)(info->cub_list.height / perpWallDist);
 		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
-		if(drawStart < 0)
+		if (drawStart < 0)
 			drawStart = 0;
 		drawEnd = lineHeight / 2 + info->cub_list.height / 2;
-		if(drawEnd >= info->cub_list.height)
+		if (drawEnd >= info->cub_list.height)
 			drawEnd = info->cub_list.height - 1;
 		texNum = info->cub_list.map_matrix[mapX][mapY];
 		if (texNum == 1)
