@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:07:04 by hkubo             #+#    #+#             */
-/*   Updated: 2021/03/07 22:42:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:08:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strdup(const char *s)
 	size = 0;
 	while (s[size] != '\0')
 		size++;
-	if (!(new_ptr = (char *)malloc(sizeof(char) * (size + 1))))
+	new_ptr = (char *)malloc(sizeof(char) * (size + 1));
+	if (!new_ptr)
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
@@ -43,15 +44,11 @@ char	*ft_strchr(const char *s, int c)
 	while (ptr_s[i] != '\0')
 	{
 		if (ptr_s[i] == (unsigned char)c)
-		{
-			return (char *)(s + i);
-		}
+			return ((char *)(s + i));
 		i++;
 	}
 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-	{
-		return (char *)(s + i);
-	}
+		return ((char *)(s + i));
 	return (NULL);
 }
 
@@ -65,7 +62,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	new_str_len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(new_str = (char *)malloc(sizeof(char) * (new_str_len + 1))))
+	new_str = (char *)malloc(sizeof(char) * (new_str_len + 1));
+	if (!new_str)
 		return (NULL);
 	i = 0;
 	j = 0;
