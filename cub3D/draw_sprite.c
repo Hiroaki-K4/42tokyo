@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/04 22:59:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:13:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	insert_pixel(t_info *info, int *spriteOrder, int i)
 	int		texY;
 	int		color;
 	int		y;
-	int		d;
+	int		j;
 
 	sprite = info->drawStartX;
 	while (sprite < info->drawEndX)
@@ -136,8 +136,8 @@ void	insert_pixel(t_info *info, int *spriteOrder, int i)
 			y = info->drawStartY;
 			while (y < info->drawEndY)
 			{
-				d = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
-				texY = ((d * texHeight) / info->spriteH) / 256;
+				j = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
+				texY = ((j * texHeight) / info->spriteH) / 256;
 				color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
 				if ((color & 0x00FFFFFF) != 0)
 					info->buf[y][sprite] = color;
@@ -189,7 +189,8 @@ void	draw_sprite(t_info *info)
 	spriteOrder = (int *)malloc(sizeof(int) * (info->cub_list.num_sprites));
 	if (!spriteOrder)
 		error_process("Malloc failed");
-	spriteDistance = (double *)malloc(sizeof(double) * (info->cub_list.num_sprites));
+	spriteDistance = (double *)malloc(sizeof(double)
+			* (info->cub_list.num_sprites));
 	if (!spriteDistance)
 		error_process("Malloc failed");
 	i = 0;
