@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 21:43:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:50:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 void	calc(t_info *info)
 {
-	int	x;
-	int y;
-	int stepX;
-	int stepY;
-	int side;
-	int hit;
-	int mapX;
-	int mapY;
-	int lineHeight;
-	int drawStart;
-	int drawEnd;
-	int texNum;
-	int texX;
-	int texY;
-	int color;
-	double cameraX;
-	double rayDirX;
-	double rayDirY;
-	double sideDistX;
-	double sideDistY;
-	double deltaDistX;
-	double deltaDistY;
-	double perpWallDist;
-	double wallX;
-	double step;
-	double texPos;
+	int		x;
+	int		y;
+	int		stepX;
+	int		stepY;
+	int		side;
+	int		hit;
+	int		mapX;
+	int		mapY;
+	int		lineHeight;
+	int		drawStart;
+	int		drawEnd;
+	int		texNum;
+	int		texX;
+	int		texY;
+	int		color;
+	double	cameraX;
+	double	rayDirX;
+	double	rayDirY;
+	double	sideDistX;
+	double	sideDistY;
+	double	deltaDistX;
+	double	deltaDistY;
+	double	perpWallDist;
+	double	wallX;
+	double	step;
+	double	texPos;
 
 	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
 		error_process("Malloc failed");
