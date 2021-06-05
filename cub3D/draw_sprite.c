@@ -6,64 +6,64 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:40:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:43:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	malloc_sprites(t_info *info)
-{
-	int	i;
-	int	j;
-	int	count;
+// void	malloc_sprites(t_info *info)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	count;
 
-	count = 0;
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		while (j < info->cub_list.map_x)
-		{
-			if (info->cub_list.map_matrix[i][j] == 2)
-				count++;
-			j++;
-		}
-		i++;
-	}
-	info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count);
-	if (!info->cub_list.sprites)
-		error_process("Malloc failed");
-}
+// 	count = 0;
+// 	i = 0;
+// 	while (i < info->cub_list.map_y)
+// 	{
+// 		j = 0;
+// 		while (j < info->cub_list.map_x)
+// 		{
+// 			if (info->cub_list.map_matrix[i][j] == 2)
+// 				count++;
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count);
+// 	if (!info->cub_list.sprites)
+// 		error_process("Malloc failed");
+// }
 
-int	get_sprite_pos(t_info *info)
-{
-	int	i;
-	int	j;
-	int	count;
+// int	get_sprite_pos(t_info *info)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	count;
 
-	malloc_sprites(info);
-	count = 0;
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		while (j < info->cub_list.map_x)
-		{
-			if (info->cub_list.map_matrix[i][j] == 2)
-			{
-				info->cub_list.sprites[count].x = i;
-				info->cub_list.sprites[count].y = j;
-				info->cub_list.sprites[count].texture = 4;
-				count++;
-			}
-			j++;
-		}
-		i++;
-	}
-	info->cub_list.num_sprites = count;
-	return (0);
-}
+// 	malloc_sprites(info);
+// 	count = 0;
+// 	i = 0;
+// 	while (i < info->cub_list.map_y)
+// 	{
+// 		j = 0;
+// 		while (j < info->cub_list.map_x)
+// 		{
+// 			if (info->cub_list.map_matrix[i][j] == 2)
+// 			{
+// 				info->cub_list.sprites[count].x = i;
+// 				info->cub_list.sprites[count].y = j;
+// 				info->cub_list.sprites[count].texture = 4;
+// 				count++;
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	info->cub_list.num_sprites = count;
+// 	return (0);
+// }
 
 void	sort_order(t_pair *orders, int amount)
 {
