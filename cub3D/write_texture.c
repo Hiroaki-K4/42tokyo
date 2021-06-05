@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:05:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:07:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,16 @@ void	calc_wall_height(t_info *info)
 			info->mapY += info->stepY;
 			info->side = 1;
 		}
-		if (info->cub_list.map_matrix[info->mapX][info->mapY] > 0 && info->cub_list.map_matrix[info->mapX][info->mapY] != 2)
+		if (info->cub_list.map_matrix[info->mapX][info->mapY] > 0
+			&& info->cub_list.map_matrix[info->mapX][info->mapY] != 2)
 			info->hit = 1;
 	}
 	if (info->side == 0)
-		info->perpWallDist = (info->mapX - info->posX + (1 - info->stepX) / 2) / info->rayDirX;
+		info->perpWallDist = (info->mapX - info->posX + (1 - info->stepX) / 2)
+			/ info->rayDirX;
 	else
-		info->perpWallDist = (info->mapY - info->posY + (1 - info->stepY) / 2) / info->rayDirY;
+		info->perpWallDist = (info->mapY - info->posY + (1 - info->stepY) / 2)
+			/ info->rayDirY;
 	info->lineHeight = (int)(info->cub_list.height / info->perpWallDist);
 }
 
