@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:18:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:20:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	insert_pixel_loop(t_info *info, int sprite, int *spriteOrder, int i)
 		while (y < info->drawEndY)
 		{
 			j = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
-			info->texY = ((j * texHeight) / info->spriteH) / 256;
+			info->texY = ((j * TEX_HEIGHT) / info->spriteH) / 256;
 			color = info->texture[info->cub_list.sprites
 			[spriteOrder[i]].texture][TEX_WIDTH * info->texY + info->texX];
 			if ((color & 0x00FFFFFF) != 0)

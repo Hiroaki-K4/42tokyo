@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:19:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:21:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@
 # define X_EVENT_KEY_EXIT	17
 // # define texWidth 64
 # define TEX_WIDTH 64
-# define texHeight 64
+// # define texHeight 64
+# define TEX_HEIGHT 64
 # define K_W 119
 # define K_S 115
 # define K_D 100

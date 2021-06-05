@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:19:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:21:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ void	draw_img(t_info *info, int x, int texX)
 	y = info->drawStart;
 	while (y < info->drawEnd)
 	{
-		texY = (int)info->texPos & (texHeight - 1);
+		texY = (int)info->texPos & (TEX_HEIGHT - 1);
 		info->texPos += info->step;
-		color = info->texture[info->texNum][texHeight * texY + texX];
+		color = info->texture[info->texNum][TEX_HEIGHT * texY + texX];
 		if (info->side == 1)
 			color = (color >> 1) & 8355711;
 		info->buf[y][x] = color;
@@ -114,7 +114,7 @@ void	calc_loop(t_info *info, int x)
 		texX = TEX_WIDTH - texX - 1;
 	if (info->side == 1 && info->rayDirY < 0)
 		texX = TEX_WIDTH - texX - 1;
-	info->step = 1.0 * texHeight / info->lineHeight;
+	info->step = 1.0 * TEX_HEIGHT / info->lineHeight;
 	info->texPos = (info->drawStart - info->cub_list.height / 2
 			+ info->lineHeight / 2) * info->step;
 	draw_img(info, x, texX);
