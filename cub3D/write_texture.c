@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:52:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:06:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ void	calc(t_info *info)
 	int		texX;
 	int		texY;
 	int		color;
-	double	cameraX;
-	double	rayDirX;
-	double	rayDirY;
-	double	sideDistX;
-	double	sideDistY;
-	double	deltaDistX;
-	double	deltaDistY;
-	double	perpWallDist;
-	double	wallX;
-	double	step;
-	double	texPos;
+	// double	cameraX;
+	// double	rayDirX;
+	// double	info->rayDirY;
+	// double	info->sideDistX;
+	// double	info->sideDistY;
+	// double	info->deltaDistX;
+	// double	info->deltaDistY;
+	// double	info->perpWallDist;
+	// double	info->wallX;
+	// double	step;
+	// double	info->texPos;
 
 	info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width));
 	if (!info->zBuffer)
@@ -47,45 +47,45 @@ void	calc(t_info *info)
 	x = 0;
 	while (x < info->cub_list.width)
 	{
-		cameraX = 2 * x / (double)info->cub_list.width - 1;
-		rayDirX = info->dirX + info->planeX * cameraX;
-		rayDirY = info->dirY + info->planeY * cameraX;
+		info->cameraX = 2 * x / (double)info->cub_list.width - 1;
+		info->rayDirX = info->dirX + info->planeX * info->cameraX;
+		info->rayDirY = info->dirY + info->planeY * info->cameraX;
 		mapX = (int)info->posX;
 		mapY = (int)info->posY;
-		deltaDistX = fabs(1 / rayDirX);
-		deltaDistY = fabs(1 / rayDirY);
+		info->deltaDistX = fabs(1 / info->rayDirX);
+		info->deltaDistY = fabs(1 / info->rayDirY);
 		hit = 0;
-		if (rayDirX < 0)
+		if (info->rayDirX < 0)
 		{
 			stepX = -1;
-			sideDistX = (info->posX - mapX) * deltaDistX;
+			info->sideDistX = (info->posX - mapX) * info->deltaDistX;
 		}
 		else
 		{
 			stepX = 1;
-			sideDistX = (mapX + 1.0 - info->posX) * deltaDistX;
+			info->sideDistX = (mapX + 1.0 - info->posX) * info->deltaDistX;
 		}
-		if (rayDirY < 0)
+		if (info->rayDirY < 0)
 		{
 			stepY = -1;
-			sideDistY = (info->posY - mapY) * deltaDistY;
+			info->sideDistY = (info->posY - mapY) * info->deltaDistY;
 		}
 		else
 		{
 			stepY = 1;
-			sideDistY = (mapY + 1.0 - info->posY) * deltaDistY;
+			info->sideDistY = (mapY + 1.0 - info->posY) * info->deltaDistY;
 		}
 		while (hit == 0)
 		{
-			if (sideDistX < sideDistY)
+			if (info->sideDistX < info->sideDistY)
 			{
-				sideDistX += deltaDistX;
+				info->sideDistX += info->deltaDistX;
 				mapX += stepX;
 				side = 0;
 			}
 			else
 			{
-				sideDistY += deltaDistY;
+				info->sideDistY += info->deltaDistY;
 				mapY += stepY;
 				side = 1;
 			}
@@ -93,10 +93,10 @@ void	calc(t_info *info)
 				hit = 1;
 		}
 		if (side == 0)
-			perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / rayDirX;
+			info->perpWallDist = (mapX - info->posX + (1 - stepX) / 2) / info->rayDirX;
 		else
-			perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / rayDirY;
-		lineHeight = (int)(info->cub_list.height / perpWallDist);
+			info->perpWallDist = (mapY - info->posY + (1 - stepY) / 2) / info->rayDirY;
+		lineHeight = (int)(info->cub_list.height / info->perpWallDist);
 		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
 		if (drawStart < 0)
 			drawStart = 0;
@@ -110,7 +110,7 @@ void	calc(t_info *info)
 			{
 				if (side == 1)
 				{
-					if (rayDirY > 0)
+					if (info->rayDirY > 0)
 						texNum = 3;
 					else
 						texNum = 2;
@@ -122,7 +122,7 @@ void	calc(t_info *info)
 			{
 				if (side == 1)
 				{
-					if (rayDirY > 0)
+					if (info->rayDirY > 0)
 						texNum = 3;
 					else
 						texNum = 2;
@@ -134,7 +134,7 @@ void	calc(t_info *info)
 			{
 				if (side == 0)
 				{
-					if (rayDirX > 0)
+					if (info->rayDirX > 0)
 						texNum = 1;
 					else
 						texNum = 0;
@@ -146,7 +146,7 @@ void	calc(t_info *info)
 			{
 				if (side == 0)
 				{
-					if (rayDirX > 0)
+					if (info->rayDirX > 0)
 						texNum = 1;
 					else
 						texNum = 0;
@@ -156,17 +156,17 @@ void	calc(t_info *info)
 			}
 		}
 		if (side == 0)
-			wallX = info->posY + perpWallDist * rayDirY;
+			info->wallX = info->posY + info->perpWallDist * info->rayDirY;
 		else
-			wallX = info->posX + perpWallDist * rayDirX;
-		wallX -= floor(wallX);
-		texX = (int)(wallX * (double)texWidth);
-		if (side == 0 && rayDirX > 0)
+			info->wallX = info->posX + info->perpWallDist * info->rayDirX;
+		info->wallX -= floor(info->wallX);
+		texX = (int)(info->wallX * (double)texWidth);
+		if (side == 0 && info->rayDirX > 0)
 			texX = texWidth - texX - 1;
-		if (side == 1 && rayDirY < 0)
+		if (side == 1 && info->rayDirY < 0)
 			texX = texWidth - texX - 1;
-		step = 1.0 * texHeight / lineHeight;
-		texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * step;
+		info->step = 1.0 * texHeight / lineHeight;
+		info->texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * info->step;
 		y = 0;
 		while (y < drawStart)
 		{
@@ -176,15 +176,15 @@ void	calc(t_info *info)
 		y = drawStart;
 		while (y < drawEnd)
 		{
-			texY = (int)texPos & (texHeight - 1);
-			texPos += step;
+			texY = (int)info->texPos & (texHeight - 1);
+			info->texPos += info->step;
 			color = info->texture[texNum][texHeight * texY + texX];
 			if (side == 1)
 				color = (color >> 1) & 8355711;
 			info->buf[y][x] = color;
 			y++;
 		}
-		info->zBuffer[x] = perpWallDist;
+		info->zBuffer[x] = info->perpWallDist;
 		y = drawEnd;
 		while (y < info->cub_list.height)
 		{

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:23:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:01:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,18 @@ typedef struct	s_info
 	int		drawEndX;
 	int		texX;
 	int		texY;
+	double	cameraX;
+	double	rayDirX;
+	double	rayDirY;
+	double	sideDistX;
+	double	sideDistY;
+	double	deltaDistX;
+	double	deltaDistY;
+	double	perpWallDist;
+	double	wallX;
+	double	step;
+	double	texPos;
+
 	t_cub cub_list;
 }				t_info;
 
