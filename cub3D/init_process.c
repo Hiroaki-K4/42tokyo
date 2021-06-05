@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:43:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:44:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,57 +86,4 @@ void	arg_error_check(int argc, char **argv)
 		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 		error_process("Not a cub file");
-}
-
-void	malloc_sprites(t_info *info)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	count = 0;
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		while (j < info->cub_list.map_x)
-		{
-			if (info->cub_list.map_matrix[i][j] == 2)
-				count++;
-			j++;
-		}
-		i++;
-	}
-	info->cub_list.sprites = (t_sprite *)malloc(sizeof(t_sprite) * count);
-	if (!info->cub_list.sprites)
-		error_process("Malloc failed");
-}
-
-int	get_sprite_pos(t_info *info)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	malloc_sprites(info);
-	count = 0;
-	i = 0;
-	while (i < info->cub_list.map_y)
-	{
-		j = 0;
-		while (j < info->cub_list.map_x)
-		{
-			if (info->cub_list.map_matrix[i][j] == 2)
-			{
-				info->cub_list.sprites[count].x = i;
-				info->cub_list.sprites[count].y = j;
-				info->cub_list.sprites[count].texture = 4;
-				count++;
-			}
-			j++;
-		}
-		i++;
-	}
-	info->cub_list.num_sprites = count;
-	return (0);
 }
