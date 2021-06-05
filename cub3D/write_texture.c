@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:44:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:46:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,22 +62,8 @@ void	calc_wall_height(t_info *info)
 	info->lineHeight = (int)(info->cub_list.height / info->perpWallDist);
 }
 
-void	calc_loop(t_info *info, int x)
+void	decide_texture(t_info *info)
 {
-	int		y;
-	// int		info->texNum;
-	int		texX;
-	int		texY;
-	int		color;
-
-	dist_init(info);
-	calc_wall_height(info);
-	info->drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
-	if (info->drawStart < 0)
-		info->drawStart = 0;
-	info->drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
-	if (info->drawEnd >= info->cub_list.height)
-		info->drawEnd = info->cub_list.height - 1;
 	info->texNum = info->cub_list.map_matrix[info->mapX][info->mapY];
 	if (info->texNum == 1)
 	{
@@ -130,6 +116,76 @@ void	calc_loop(t_info *info, int x)
 				info->texNum = 3;
 		}
 	}
+}
+
+void	calc_loop(t_info *info, int x)
+{
+	int		y;
+	int		texX;
+	int		texY;
+	int		color;
+
+	dist_init(info);
+	calc_wall_height(info);
+	info->drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
+	if (info->drawStart < 0)
+		info->drawStart = 0;
+	info->drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
+	if (info->drawEnd >= info->cub_list.height)
+		info->drawEnd = info->cub_list.height - 1;
+	decide_texture(info);
+	// info->texNum = info->cub_list.map_matrix[info->mapX][info->mapY];
+	// if (info->texNum == 1)
+	// {
+	// 	if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
+	// 	{
+	// 		if (info->side == 1)
+	// 		{
+	// 			if (info->rayDirY > 0)
+	// 				info->texNum = 3;
+	// 			else
+	// 				info->texNum = 2;
+	// 		}
+	// 		else
+	// 			info->texNum = 0;
+	// 	}
+	// 	else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
+	// 	{
+	// 		if (info->side == 1)
+	// 		{
+	// 			if (info->rayDirY > 0)
+	// 				info->texNum = 3;
+	// 			else
+	// 				info->texNum = 2;
+	// 		}
+	// 		else
+	// 			info->texNum = 1;
+	// 	}
+	// 	else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
+	// 	{
+	// 		if (info->side == 0)
+	// 		{
+	// 			if (info->rayDirX > 0)
+	// 				info->texNum = 1;
+	// 			else
+	// 				info->texNum = 0;
+	// 		}
+	// 		else
+	// 			info->texNum = 2;
+	// 	}
+	// 	else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
+	// 	{
+	// 		if (info->side == 0)
+	// 		{
+	// 			if (info->rayDirX > 0)
+	// 				info->texNum = 1;
+	// 			else
+	// 				info->texNum = 0;
+	// 		}
+	// 		else
+	// 			info->texNum = 3;
+	// 	}
+	// }
 	if (info->side == 0)
 		info->wallX = info->posY + info->perpWallDist * info->rayDirY;
 	else
