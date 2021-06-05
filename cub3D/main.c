@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:25:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:26:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int	main_loop(t_info *info)
 
 void	read_cub_line(t_info *info, int i, char *path)
 {
-	int		buffer_size;
+	// int		buffer_size;
 	int		fd;
 	int		count;
 	char	**line;
 
-	buffer_size = 10;
+	// buffer_size = 10;
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
@@ -54,7 +54,7 @@ void	read_cub_line(t_info *info, int i, char *path)
 	i = 1;
 	while (i > 0)
 	{
-		i = get_next_line(fd, &line, buffer_size);
+		i = get_next_line(fd, &line);
 		count++;
 		cub_line_check(line, count, info);
 		free(line);
