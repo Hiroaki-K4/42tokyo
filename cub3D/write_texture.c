@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:56:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:02:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,34 +130,13 @@ void	decide_texture(t_info *info)
 	}
 }
 
-void	calc_loop(t_info *info, int x)
+void	draw(t_info *info, int x, int texX)
 {
 	int		y;
-	int		texX;
+	// int		texX;
 	int		texY;
 	int		color;
 
-	dist_init(info);
-	calc_wall_height(info);
-	info->drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
-	if (info->drawStart < 0)
-		info->drawStart = 0;
-	info->drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
-	if (info->drawEnd >= info->cub_list.height)
-		info->drawEnd = info->cub_list.height - 1;
-	decide_texture(info);
-	if (info->side == 0)
-		info->wallX = info->posY + info->perpWallDist * info->rayDirY;
-	else
-		info->wallX = info->posX + info->perpWallDist * info->rayDirX;
-	info->wallX -= floor(info->wallX);
-	texX = (int)(info->wallX * (double)texWidth);
-	if (info->side == 0 && info->rayDirX > 0)
-		texX = texWidth - texX - 1;
-	if (info->side == 1 && info->rayDirY < 0)
-		texX = texWidth - texX - 1;
-	info->step = 1.0 * texHeight / info->lineHeight;
-	info->texPos = (info->drawStart - info->cub_list.height / 2 + info->lineHeight / 2) * info->step;
 	y = 0;
 	while (y < info->drawStart)
 	{
@@ -182,6 +161,61 @@ void	calc_loop(t_info *info, int x)
 		info->buf[y][x] = info->cub_list.floor_dec;
 		y++;
 	}
+}
+
+void	calc_loop(t_info *info, int x)
+{
+	// int		y;
+	int		texX;
+	// int		texY;
+	// int		color;
+
+	dist_init(info);
+	calc_wall_height(info);
+	info->drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
+	if (info->drawStart < 0)
+		info->drawStart = 0;
+	info->drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
+	if (info->drawEnd >= info->cub_list.height)
+		info->drawEnd = info->cub_list.height - 1;
+	decide_texture(info);
+	if (info->side == 0)
+		info->wallX = info->posY + info->perpWallDist * info->rayDirY;
+	else
+		info->wallX = info->posX + info->perpWallDist * info->rayDirX;
+	info->wallX -= floor(info->wallX);
+	texX = (int)(info->wallX * (double)texWidth);
+	if (info->side == 0 && info->rayDirX > 0)
+		texX = texWidth - texX - 1;
+	if (info->side == 1 && info->rayDirY < 0)
+		texX = texWidth - texX - 1;
+	info->step = 1.0 * texHeight / info->lineHeight;
+	info->texPos = (info->drawStart - info->cub_list.height / 2 + info->lineHeight / 2) * info->step;
+	draw(info, x, texX);
+	// y = 0;
+	// while (y < info->drawStart)
+	// {
+	// 	info->buf[y][x] = info->cub_list.ceiling_dec;
+	// 	y++;
+	// }
+	// y = info->drawStart;
+	// while (y < info->drawEnd)
+	// {
+	// 	texY = (int)info->texPos & (texHeight - 1);
+	// 	info->texPos += info->step;
+	// 	color = info->texture[info->texNum][texHeight * texY + texX];
+	// 	if (info->side == 1)
+	// 		color = (color >> 1) & 8355711;
+	// 	info->buf[y][x] = color;
+	// 	y++;
+	// }
+	// info->zBuffer[x] = info->perpWallDist;
+	// y = info->drawEnd;
+	// while (y < info->cub_list.height)
+	// {
+	// 	info->buf[y][x] = info->cub_list.floor_dec;
+	// 	y++;
+	// }
 }
 
 void	calc(t_info *info)
