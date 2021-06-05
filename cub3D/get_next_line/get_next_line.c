@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 18:11:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:17:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,49 +66,58 @@ char	*save_new_line(char *store, char **line, char *buf)
 	return (tmp);
 }
 
-int		get_make_line(int fd, char **store, char **line, int i, int BUFFER_SIZE)
+int	get_make_line(int fd, char **store, char **line, int i, int BUFFER_SIZE)
 {
 	char	*buf;
 	char	*tmp;
 
-	if (!(buf = (char *)malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1))))
+	buf = (char *)malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
+	if (!buf)
 		return (-1);
 	while (i > 0)
 	{
-		if ((i = read(fd, buf, BUFFER_SIZE)) == -1)
+		i = read(fd, buf, BUFFER_SIZE);
+		if (i == -1)
 			return (-1);
 		buf[i] = '\0';
 		if (ft_strchr(buf, '\n') != NULL)
 		{
-			if (!(store[fd] = save_new_line(store[fd], line, buf)))
+			store[fd] = save_new_line(store[fd], line, buf);
+			if (!store[fd])
 				return (-1);
 			return (1);
 		}
-		if (!(tmp = ft_strjoin(store[fd], buf)))
+		tmp = ft_strjoin(store[fd], buf);
+		if (!tmp)
 			return (-1);
 		free(store[fd]);
 		store[fd] = tmp;
 	}
-	if (!(*line = ft_strdup(store[fd])))
+	*line = ft_strdup(store[fd]);
+	if (!*line)
 		return (-1);
 	free(buf);
 	return (0);
 }
 
-int		get_next_line(int fd, char **line, int BUFFER_SIZE)
+int	get_next_line(int fd, char **line, int BUFFER_SIZE)
 {
 	int			i;
-	static char *store[255];
+	static char	*store[255];
 
 	*line = NULL;
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
 	if (store[fd] == NULL)
-		if (!(store[fd] = ft_strdup("")))
+	{
+		store[fd] = ft_strdup("");
+		if (!store[fd])
 			return (-1);
+	}
 	if (ft_strchr(store[fd], '\n') == NULL)
 	{
-		if ((i = get_make_line(fd, store, line, 1, BUFFER_SIZE)) == 0)
+		i = get_make_line(fd, store, line, 1, BUFFER_SIZE);
+		if (i == 0)
 		{
 			free(store[fd]);
 			store[fd] = NULL;
@@ -117,7 +126,8 @@ int		get_next_line(int fd, char **line, int BUFFER_SIZE)
 	}
 	else
 	{
-		if (!(store[fd] = get_new_line(store[fd], line)))
+		store[fd] = get_new_line(store[fd], line);
+		if (!store[fd])
 			return (-1);
 		return (1);
 	}
