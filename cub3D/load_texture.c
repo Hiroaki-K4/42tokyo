@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:51:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:28:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,17 @@ void	get_xpm_size(t_info *info, char *line)
 
 void	xpm_file_check(t_info *info, int i, char *path)
 {
-	int		buffer_size;
 	int		fd;
 	int		count;
 	char	**line;
 
-	buffer_size = 10;
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		error_process(strerror(errno));
 	count = 0;
 	while (i > 0 && count < 4)
 	{
-		i = get_next_line(fd, &line, buffer_size);
+		i = get_next_line(fd, &line);
 		if (count == 3)
 			get_xpm_size(info, line);
 		count++;
