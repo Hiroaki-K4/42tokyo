@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:24:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:26:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,32 +72,32 @@ typedef struct s_rgb
 
 typedef struct s_cub
 {
-	int width;
-	int height;
-	int count;
-	int **map_matrix;
-	int map_x;
-	int map_y;
-	int size;
-	int num_sprites;
-	int sprite_flag;
-	int floor_dec;
-	int ceiling_dec;
-	int init_pos_count;
-	int line_num;
-	int f_nowall_row;
-	int l_nowall_row;
-	int f_nowall_col;
-	int l_nowall_col;
-	char *n_texture;
-	char *s_texture;
-	char *w_texture;
-	char *e_texture;
-	char *sprite;
-	char **map;
-	t_rgb floor;
-	t_rgb ceiling;
-	t_sprite *sprites;
+	int			width;
+	int			height;
+	int			count;
+	int			**map_matrix;
+	int			map_x;
+	int			map_y;
+	int			size;
+	int			num_sprites;
+	int			sprite_flag;
+	int			floor_dec;
+	int			ceiling_dec;
+	int			init_pos_count;
+	int			line_num;
+	int			f_nowall_row;
+	int			l_nowall_row;
+	int			f_nowall_col;
+	int			l_nowall_col;
+	char		*n_texture;
+	char		*s_texture;
+	char		*w_texture;
+	char		*e_texture;
+	char		*sprite;
+	char		**map;
+	t_rgb		floor;
+	t_rgb		ceiling;
+	t_sprite	*sprites;
 }				t_cub;
 
 typedef struct s_info
