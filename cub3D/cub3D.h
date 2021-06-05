@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:28:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:29:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,19 +154,19 @@ typedef struct s_info
 }				t_info;
 
 int		get_next_line(int fd, char **line, int BUFFER_SIZE);
-void draw_sprite(t_info *info);
-int	key_press(int key, t_info *info);
+void	draw_sprite(t_info *info);
+int		key_press(int key, t_info *info);
 void	calc(t_info *info);
-char			*ft_itoa_hex(unsigned int n, char *arg);
+char	*ft_itoa_hex(unsigned int n, char *arg);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strchr_place(const char *str, int c);
-int cub_line_check(char **line, int count, t_info *info);
-char *make_decimal_color(t_rgb color);
-int convert_int_matrix(t_info *info);
-void double_array_free(char **array);
+int		cub_line_check(char **line, int count, t_info *info);
+char	*make_decimal_color(t_rgb color);
+int		convert_int_matrix(t_info *info);
+void	double_array_free(char **array);
 void	error_process(char *error);
 int		win_close(t_info *info);
-void double_array_free(char **array);
+void	double_array_free(char **array);
 void	arg_error_check(int argc, char **argv);
 void	buf_init(t_info *info, int i, int j);
 void	texture_init(t_info *info, int i, int j);
@@ -179,9 +179,9 @@ int		map_edge_check(t_info *info, int *i);
 void	map_not_srrounded_check(t_info *info);
 void	map_space_check(t_info *info);
 void	floor_check(t_info *info, char **line_split, char **rgb_split);
-int	ceiling_check(t_info *info, char **line_split, char **rgb_split);
-int	map_ns_check(t_info *info, char **line_split);
-int	map_we_check(t_info *info, char **line_split);
+int		ceiling_check(t_info *info, char **line_split, char **rgb_split);
+int		map_ns_check(t_info *info, char **line_split);
+int		map_we_check(t_info *info, char **line_split);
 void	decide_texture(t_info *info);
 
 #endif
