@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:21:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:24:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@
 
 # define X_EVENT_KEY_PRESS	2
 # define X_EVENT_KEY_EXIT	17
-// # define texWidth 64
 # define TEX_WIDTH 64
-// # define texHeight 64
 # define TEX_HEIGHT 64
 # define K_W 119
 # define K_S 115
@@ -39,14 +37,14 @@
 # define K_R 65363
 # define K_L 65361
 
-typedef struct	s_sprite
+typedef struct s_sprite
 {
 	double		x;
 	double		y;
 	int			texture;
 }				t_sprite;
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*img;
 	int		*data;
@@ -58,36 +56,29 @@ typedef struct	s_img
 	int		img_height;
 }				t_img;
 
-typedef struct		s_pair
+typedef struct s_pair
 {
 	double	first;
 	int		second;
-}					t_pair;
+}				t_pair;
 
-typedef struct		s_rgb
+typedef struct s_rgb
 {
-	int red;
-	int green;
-	int blue;
-}					t_rgb;
+	int	red;
+	int	green;
+	int	blue;
+}				t_rgb;
 
 
-typedef struct		s_cub
+typedef struct s_cub
 {
 	int width;
 	int height;
 	int count;
-	char **map;
 	int **map_matrix;
 	int map_x;
 	int map_y;
 	int size;
-	char *n_texture;
-	char *s_texture;
-	char *w_texture;
-	char *e_texture;
-	char *sprite;
-	t_sprite *sprites;
 	int num_sprites;
 	int sprite_flag;
 	int floor_dec;
@@ -98,11 +89,18 @@ typedef struct		s_cub
 	int l_nowall_row;
 	int f_nowall_col;
 	int l_nowall_col;
+	char *n_texture;
+	char *s_texture;
+	char *w_texture;
+	char *e_texture;
+	char *sprite;
+	char **map;
 	t_rgb floor;
 	t_rgb ceiling;
-}					t_cub;
+	t_sprite *sprites;
+}				t_cub;
 
-typedef struct	s_info
+typedef struct s_info
 {
 	double posX;
 	double posY;
