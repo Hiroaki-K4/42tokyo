@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 22:10:21 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/28 19:43:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:23:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

@@ -6,16 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 22:42:10 by hkubo             #+#    #+#             */
-/*   Updated: 2021/05/30 17:09:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:24:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		num_str(char const *s1, char c)
+static	int	num_str(char const *s1, char c)
 {
-	int count;
-	int c_flag;
+	int	count;
+	int	c_flag;
 
 	if (*s1 == '\0')
 		return (0);
@@ -74,14 +74,15 @@ static	char	**main_div(char const *s, char c, char *div, char **ptr)
 	return (ptr);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	div[2];
 	char	**ptr_ptr;
 
 	if (s == NULL)
 		return (NULL);
-	if (!(ptr_ptr = (char **)malloc(sizeof(char *) * (num_str(s, c) + 1))))
+	ptr_ptr = (char **)malloc(sizeof(char *) * (num_str(s, c) + 1));
+	if (!ptr_ptr)
 		return (NULL);
 	div[0] = c;
 	div[1] = '\0';
