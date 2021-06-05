@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:09:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:10:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ void	calc(t_info *info)
 {
 	int		x;
 	int		y;
-	// int		info->stepX;
-	// int		info->stepY;
-	// int		info->side;
-	// int		info->hit;
 	int		mapX;
 	int		mapY;
-	int		lineHeight;
+	// int		info->lineHeight;
 	int		drawStart;
 	int		drawEnd;
 	int		texNum;
@@ -85,11 +81,11 @@ void	calc(t_info *info)
 			info->perpWallDist = (mapX - info->posX + (1 - info->stepX) / 2) / info->rayDirX;
 		else
 			info->perpWallDist = (mapY - info->posY + (1 - info->stepY) / 2) / info->rayDirY;
-		lineHeight = (int)(info->cub_list.height / info->perpWallDist);
-		drawStart = -lineHeight / 2 + info->cub_list.height / 2;
+		info->lineHeight = (int)(info->cub_list.height / info->perpWallDist);
+		drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
 		if (drawStart < 0)
 			drawStart = 0;
-		drawEnd = lineHeight / 2 + info->cub_list.height / 2;
+		drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
 		if (drawEnd >= info->cub_list.height)
 			drawEnd = info->cub_list.height - 1;
 		texNum = info->cub_list.map_matrix[mapX][mapY];
@@ -154,8 +150,8 @@ void	calc(t_info *info)
 			texX = texWidth - texX - 1;
 		if (info->side == 1 && info->rayDirY < 0)
 			texX = texWidth - texX - 1;
-		info->step = 1.0 * texHeight / lineHeight;
-		info->texPos = (drawStart - info->cub_list.height / 2 + lineHeight / 2) * info->step;
+		info->step = 1.0 * texHeight / info->lineHeight;
+		info->texPos = (drawStart - info->cub_list.height / 2 + info->lineHeight / 2) * info->step;
 		y = 0;
 		while (y < drawStart)
 		{
