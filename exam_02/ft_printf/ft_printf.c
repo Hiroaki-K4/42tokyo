@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 10:06:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 10:13:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -460,7 +460,7 @@ int print_string(va_list *ap, t_plist flag_list)
 	char *str;
 
 	str = va_arg(*ap, char*);
-	if (str == NULL)
+	if (str == NULL);
 		str = "(null)";
 	len = 0;
 	if (flag_list.field != -1)
