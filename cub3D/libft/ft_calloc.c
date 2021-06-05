@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 08:49:01 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/28 19:47:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:30:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (!(ptr = malloc(nmemb * size)))
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
