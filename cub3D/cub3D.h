@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:10:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:13:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,8 @@ typedef struct	s_info
 	int		side;
 	int		hit;
 	int		lineHeight;
+	int		mapX;
+	int		mapY;
 	t_cub cub_list;
 }				t_info;
 
