@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 12:01:33 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/28 19:44:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:25:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (ptr_src[i] == (unsigned char)c)
-			return (void *)(s + i);
+			return ((void *)(s + i));
 		i++;
 	}
 	return (NULL);

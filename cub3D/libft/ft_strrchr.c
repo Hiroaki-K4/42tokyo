@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 15:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/28 19:42:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:24:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
-		return (char *)(s + i);
+		return ((char *)(s + i));
 	if (count != -1)
-		return (char *)(s + count);
+		return ((char *)(s + count));
 	return (NULL);
 }
