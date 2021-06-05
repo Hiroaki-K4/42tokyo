@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 10:18:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 10:19:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -465,21 +465,10 @@ int print_string(va_list *ap, t_plist flag_list)
 	len = 0;
 	if (flag_list.field != -1)
 	{
-		// if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-		// {
-		// 	i = flag_list.precision;
-		// 	while (flag_list.field - i > 0)
-		// 	{
-		// 		write(1, " ", 1);
-		// 		i++;
-		// 	}
-		// 	write(1, str, flag_list.precision);
-		// 	len = i;
-		// }
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
 		{
 			i = flag_list.precision;
-			while ((flag_list.field - i) > 0)
+			while (flag_list.field - i > 0)
 			{
 				write(1, " ", 1);
 				i++;
@@ -487,10 +476,21 @@ int print_string(va_list *ap, t_plist flag_list)
 			write(1, str, flag_list.precision);
 			len = i;
 		}
+		// else
+		// {
+		// 	i = 0;
+		// 	while (flag_list.field - (int)ft_strlen(str) - i > 0)
+		// 	{
+		// 		write(1, " ", 1);
+		// 		i++;
+		// 	}
+		// 	write(1, str, ft_strlen(str));
+		// 	len = (int)ft_strlen(str) + i;
+		// }
 		else
 		{
 			i = 0;
-			while (flag_list.field - (int)ft_strlen(str) - i > 0)
+			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
 			{
 				write(1, " ", 1);
 				i++;
