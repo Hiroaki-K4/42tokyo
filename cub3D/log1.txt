@@ -1,22 +1,62 @@
-==121322== Memcheck, a memory error detector
-==121322== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==121322== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==121322== Command: ./cub3D sample.cub
-==121322== Parent PID: 121160
-==121322== 
-==121322== 
-==121322== HEAP SUMMARY:
-==121322==     in use at exit: 23,213,454 bytes in 2,081 blocks
-==121322==   total heap usage: 2,927 allocs, 846 frees, 23,301,999 bytes allocated
-==121322== 
-==121322== LEAK SUMMARY:
-==121322==    definitely lost: 0 bytes in 0 blocks
-==121322==    indirectly lost: 0 bytes in 0 blocks
-==121322==      possibly lost: 0 bytes in 0 blocks
-==121322==    still reachable: 23,213,454 bytes in 2,081 blocks
-==121322==         suppressed: 0 bytes in 0 blocks
-==121322== Reachable blocks (those to which a pointer was found) are not shown.
-==121322== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==121322== 
-==121322== For lists of detected and suppressed errors, rerun with: -s
-==121322== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
+==123491== Memcheck, a memory error detector
+==123491== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==123491== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==123491== Command: ./cub3D sample.cub
+==123491== Parent PID: 123341
+==123491== 
+==123491== 
+==123491== Process terminating with default action of signal 2 (SIGINT)
+==123491==    at 0x401EF56: __open_nocancel (open64_nocancel.c:45)
+==123491==    by 0x40083BA: open_verify.constprop.0 (dl-load.c:1536)
+==123491==    by 0x4008C15: open_path (dl-load.c:1827)
+==123491==    by 0x400A7A2: _dl_map_object (dl-load.c:2067)
+==123491==    by 0x400F504: openaux (dl-deps.c:64)
+==123491==    by 0x401DCA9: _dl_catch_exception (dl-error-skeleton.c:208)
+==123491==    by 0x400F952: _dl_map_object_deps (dl-deps.c:248)
+==123491==    by 0x4004063: dl_main (rtld.c:1805)
+==123491==    by 0x401CC3A: _dl_sysdep_start (dl-sysdep.c:252)
+==123491==    by 0x400204B: _dl_start_final (rtld.c:449)
+==123491==    by 0x400204B: _dl_start (rtld.c:539)
+==123491==    by 0x4001107: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==123491==    by 0x1: ???
+==123491== Jump to the invalid address stated on the next line
+==123491==    at 0x1030: ???
+==123491==    by 0x40083BA: open_verify.constprop.0 (dl-load.c:1536)
+==123491==    by 0x4008C15: open_path (dl-load.c:1827)
+==123491==    by 0x400A7A2: _dl_map_object (dl-load.c:2067)
+==123491==    by 0x400F504: openaux (dl-deps.c:64)
+==123491==    by 0x401DCA9: _dl_catch_exception (dl-error-skeleton.c:208)
+==123491==    by 0x400F952: _dl_map_object_deps (dl-deps.c:248)
+==123491==    by 0x4004063: dl_main (rtld.c:1805)
+==123491==    by 0x401CC3A: _dl_sysdep_start (dl-sysdep.c:252)
+==123491==    by 0x400204B: _dl_start_final (rtld.c:449)
+==123491==    by 0x400204B: _dl_start (rtld.c:539)
+==123491==    by 0x4001107: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==123491==    by 0x1: ???
+==123491==  Address 0x1030 is not stack'd, malloc'd or (recently) free'd
+==123491== 
+==123491== 
+==123491== Process terminating with default action of signal 11 (SIGSEGV)
+==123491==  Bad permissions for mapped region at address 0x1030
+==123491==    at 0x1030: ???
+==123491==    by 0x40083BA: open_verify.constprop.0 (dl-load.c:1536)
+==123491==    by 0x4008C15: open_path (dl-load.c:1827)
+==123491==    by 0x400A7A2: _dl_map_object (dl-load.c:2067)
+==123491==    by 0x400F504: openaux (dl-deps.c:64)
+==123491==    by 0x401DCA9: _dl_catch_exception (dl-error-skeleton.c:208)
+==123491==    by 0x400F952: _dl_map_object_deps (dl-deps.c:248)
+==123491==    by 0x4004063: dl_main (rtld.c:1805)
+==123491==    by 0x401CC3A: _dl_sysdep_start (dl-sysdep.c:252)
+==123491==    by 0x400204B: _dl_start_final (rtld.c:449)
+==123491==    by 0x400204B: _dl_start (rtld.c:539)
+==123491==    by 0x4001107: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==123491==    by 0x1: ???
+==123491== 
+==123491== HEAP SUMMARY:
+==123491==     in use at exit: 0 bytes in 0 blocks
+==123491==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==123491== 
+==123491== All heap blocks were freed -- no leaks are possible
+==123491== 
+==123491== For lists of detected and suppressed errors, rerun with: -s
+==123491== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
