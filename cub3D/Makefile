@@ -7,8 +7,6 @@ SRCS = main.c decide_texture.c sprite_utils.c map_space_check.c map_word_check.c
 
 OBJS = $(SRCS:.c=.o)
 
-# INCLUDE = -I. -I./libft
-
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
