@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:50:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:51:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	calc(t_info *info)
 	double	step;
 	double	texPos;
 
-	if (!(info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width))))
+	info->zBuffer = (double *)malloc(sizeof(double) * (info->cub_list.width));
+	if (!info->zBuffer)
 		error_process("Malloc failed");
 	x = 0;
 	while (x < info->cub_list.width)
