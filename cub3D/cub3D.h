@@ -6,36 +6,37 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:15:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:19:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-#include "get_next_line/get_next_line.h"
-#include "libft/libft.h"
-#include <stdio.h>
+# include "get_next_line/get_next_line.h"
+# include "libft/libft.h"
+# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <math.h>
-#include <string.h>
-#include <stdint.h>
-#include <errno.h>
+# include <string.h>
+# include <stdint.h>
+# include <errno.h>
 # include "mlx_linux/mlx.h"
 
-#define X_EVENT_KEY_PRESS	2
-#define X_EVENT_KEY_EXIT	17
-#define texWidth 64
-#define texHeight 64
-#define K_W 119
-#define K_S 115
-#define K_D 100
-#define K_A 97
-#define K_ESC 65307
-#define K_R 65363
-#define K_L 65361
+# define X_EVENT_KEY_PRESS	2
+# define X_EVENT_KEY_EXIT	17
+// # define texWidth 64
+# define TEX_WIDTH 64
+# define texHeight 64
+# define K_W 119
+# define K_S 115
+# define K_D 100
+# define K_A 97
+# define K_ESC 65307
+# define K_R 65363
+# define K_L 65361
 
 typedef struct	s_sprite
 {
