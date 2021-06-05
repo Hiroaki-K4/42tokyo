@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:02:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:04:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	decide_texture(t_info *info)
 	}
 }
 
-void	draw(t_info *info, int x, int texX)
+void	draw_img(t_info *info, int x, int texX)
 {
 	int		y;
 	// int		texX;
@@ -191,7 +191,7 @@ void	calc_loop(t_info *info, int x)
 		texX = texWidth - texX - 1;
 	info->step = 1.0 * texHeight / info->lineHeight;
 	info->texPos = (info->drawStart - info->cub_list.height / 2 + info->lineHeight / 2) * info->step;
-	draw(info, x, texX);
+	draw_img(info, x, texX);
 	// y = 0;
 	// while (y < info->drawStart)
 	// {
