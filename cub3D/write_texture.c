@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:55:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:56:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,19 @@ void	face_west(t_info *info)
 		info->texNum = 2;
 }
 
+void	face_east(t_info *info)
+{
+	if (info->side == 0)
+	{
+		if (info->rayDirX > 0)
+			info->texNum = 1;
+		else
+			info->texNum = 0;
+	}
+	else
+		info->texNum = 3;
+}
+
 void	decide_texture(t_info *info)
 {
 	info->texNum = info->cub_list.map_matrix[info->mapX][info->mapY];
@@ -111,8 +124,10 @@ void	decide_texture(t_info *info)
 		else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
 			face_south(info);
 		else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
-		{
 			face_west(info);
+		else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
+		{
+			face_east(info);
 			// if (info->side == 0)
 			// {
 			// 	if (info->rayDirX > 0)
@@ -121,19 +136,7 @@ void	decide_texture(t_info *info)
 			// 		info->texNum = 0;
 			// }
 			// else
-			// 	info->texNum = 2;
-		}
-		else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
-		{
-			if (info->side == 0)
-			{
-				if (info->rayDirX > 0)
-					info->texNum = 1;
-				else
-					info->texNum = 0;
-			}
-			else
-				info->texNum = 3;
+			// 	info->texNum = 3;
 		}
 	}
 }
