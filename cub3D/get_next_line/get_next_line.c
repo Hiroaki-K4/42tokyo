@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 22:16:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 22:18:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ int	get_make_line(int fd, char **store, char **line, int i)
 			return (1);
 		}
 		tmp = ft_strjoin(store[fd], buf);
-		if (!tmp)
-			return (-1);
 		free(store[fd]);
 		store[fd] = tmp;
 	}
