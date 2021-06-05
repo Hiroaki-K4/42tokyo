@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:01:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:07:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,10 @@ typedef struct	s_info
 	double	wallX;
 	double	step;
 	double	texPos;
-
+	int		stepX;
+	int		stepY;
+	int		side;
+	int		hit;
 	t_cub cub_list;
 }				t_info;
 
