@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:26:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:28:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ typedef struct s_rgb
 	int	blue;
 }				t_rgb;
 
-
 typedef struct s_cub
 {
 	int			width;
@@ -109,11 +108,6 @@ typedef struct s_info
 	double planeX;
 	double planeY;
 	double	*zBuffer;
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	int		**buf;
-	int		**texture;
 	double	moveSpeed;
 	double	rotSpeed;
 	double	spriteX;
@@ -121,15 +115,6 @@ typedef struct s_info
 	double	invDet;
 	double	transformX;
 	double	transformY;
-	int		spriteScreenX;
-	int		spriteH;
-	int		spriteW;
-	int		drawStartY;
-	int		drawEndY;
-	int		drawStartX;
-	int		drawEndX;
-	int		texX;
-	int		texY;
 	double	cameraX;
 	double	rayDirX;
 	double	rayDirY;
@@ -141,6 +126,19 @@ typedef struct s_info
 	double	wallX;
 	double	step;
 	double	texPos;
+	void	*mlx;
+	void	*win;
+	int		**buf;
+	int		**texture;
+	int		spriteScreenX;
+	int		spriteH;
+	int		spriteW;
+	int		drawStartY;
+	int		drawEndY;
+	int		drawStartX;
+	int		drawEndX;
+	int		texX;
+	int		texY;
 	int		stepX;
 	int		stepY;
 	int		side;
@@ -151,6 +149,7 @@ typedef struct s_info
 	int		drawStart;
 	int		drawEnd;
 	int		texNum;
+	t_img	img;
 	t_cub cub_list;
 }				t_info;
 
