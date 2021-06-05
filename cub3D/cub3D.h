@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:28:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:28:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,12 @@ typedef struct s_cub
 
 typedef struct s_info
 {
-	double posX;
-	double posY;
-	double dirX;
-	double dirY;
-	double planeX;
-	double planeY;
+	double	posX;
+	double	posY;
+	double	dirX;
+	double	dirY;
+	double	planeX;
+	double	planeY;
 	double	*zBuffer;
 	double	moveSpeed;
 	double	rotSpeed;
@@ -150,7 +150,7 @@ typedef struct s_info
 	int		drawEnd;
 	int		texNum;
 	t_img	img;
-	t_cub cub_list;
+	t_cub	cub_list;
 }				t_info;
 
 int		get_next_line(int fd, char **line, int BUFFER_SIZE);
