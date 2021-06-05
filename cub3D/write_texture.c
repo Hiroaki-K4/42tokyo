@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:07:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:08:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,8 @@ void	calc_loop(t_info *info, int x)
 	if (info->side == 1 && info->rayDirY < 0)
 		texX = texWidth - texX - 1;
 	info->step = 1.0 * texHeight / info->lineHeight;
-	info->texPos = (info->drawStart - info->cub_list.height / 2 + info->lineHeight / 2) * info->step;
+	info->texPos = (info->drawStart - info->cub_list.height / 2
+			+ info->lineHeight / 2) * info->step;
 	draw_img(info, x, texX);
 }
 
