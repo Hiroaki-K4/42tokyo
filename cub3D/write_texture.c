@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:43:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:44:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,7 @@ void	calc_wall_height(t_info *info)
 void	calc_loop(t_info *info, int x)
 {
 	int		y;
-	// int		info->drawStart;
-	// int		info->drawEnd;
-	int		texNum;
+	// int		info->texNum;
 	int		texX;
 	int		texY;
 	int		color;
@@ -80,56 +78,56 @@ void	calc_loop(t_info *info, int x)
 	info->drawEnd = info->lineHeight / 2 + info->cub_list.height / 2;
 	if (info->drawEnd >= info->cub_list.height)
 		info->drawEnd = info->cub_list.height - 1;
-	texNum = info->cub_list.map_matrix[info->mapX][info->mapY];
-	if (texNum == 1)
+	info->texNum = info->cub_list.map_matrix[info->mapX][info->mapY];
+	if (info->texNum == 1)
 	{
 		if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
 		{
 			if (info->side == 1)
 			{
 				if (info->rayDirY > 0)
-					texNum = 3;
+					info->texNum = 3;
 				else
-					texNum = 2;
+					info->texNum = 2;
 			}
 			else
-				texNum = 0;
+				info->texNum = 0;
 		}
 		else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
 		{
 			if (info->side == 1)
 			{
 				if (info->rayDirY > 0)
-					texNum = 3;
+					info->texNum = 3;
 				else
-					texNum = 2;
+					info->texNum = 2;
 			}
 			else
-				texNum = 1;
+				info->texNum = 1;
 		}
 		else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
 		{
 			if (info->side == 0)
 			{
 				if (info->rayDirX > 0)
-					texNum = 1;
+					info->texNum = 1;
 				else
-					texNum = 0;
+					info->texNum = 0;
 			}
 			else
-				texNum = 2;
+				info->texNum = 2;
 		}
 		else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
 		{
 			if (info->side == 0)
 			{
 				if (info->rayDirX > 0)
-					texNum = 1;
+					info->texNum = 1;
 				else
-					texNum = 0;
+					info->texNum = 0;
 			}
 			else
-				texNum = 3;
+				info->texNum = 3;
 		}
 	}
 	if (info->side == 0)
@@ -155,7 +153,7 @@ void	calc_loop(t_info *info, int x)
 	{
 		texY = (int)info->texPos & (texHeight - 1);
 		info->texPos += info->step;
-		color = info->texture[texNum][texHeight * texY + texX];
+		color = info->texture[info->texNum][texHeight * texY + texX];
 		if (info->side == 1)
 			color = (color >> 1) & 8355711;
 		info->buf[y][x] = color;

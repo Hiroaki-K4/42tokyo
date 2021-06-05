@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:43:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:44:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ typedef struct	s_info
 	int		mapY;
 	int		drawStart;
 	int		drawEnd;
+	int		texNum;
 	t_cub cub_list;
 }				t_info;
 
