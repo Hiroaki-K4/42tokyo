@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:22:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:27:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,37 +36,8 @@ void	dist_init(t_info *info)
 	}
 }
 
-void	calc_loop(t_info *info, int x)
+void	calc_wall_height(t_info *info)
 {
-	int		y;
-	int		drawStart;
-	int		drawEnd;
-	int		texNum;
-	int		texX;
-	int		texY;
-	int		color;
-
-	dist_init(info);
-	// if (info->rayDirX < 0)
-	// {
-	// 	info->stepX = -1;
-	// 	info->sideDistX = (info->posX - info->mapX) * info->deltaDistX;
-	// }
-	// else
-	// {
-	// 	info->stepX = 1;
-	// 	info->sideDistX = (info->mapX + 1.0 - info->posX) * info->deltaDistX;
-	// }
-	// if (info->rayDirY < 0)
-	// {
-	// 	info->stepY = -1;
-	// 	info->sideDistY = (info->posY - info->mapY) * info->deltaDistY;
-	// }
-	// else
-	// {
-	// 	info->stepY = 1;
-	// 	info->sideDistY = (info->mapY + 1.0 - info->posY) * info->deltaDistY;
-	// }
 	while (info->hit == 0)
 	{
 		if (info->sideDistX < info->sideDistY)
@@ -89,6 +60,42 @@ void	calc_loop(t_info *info, int x)
 	else
 		info->perpWallDist = (info->mapY - info->posY + (1 - info->stepY) / 2) / info->rayDirY;
 	info->lineHeight = (int)(info->cub_list.height / info->perpWallDist);
+}
+
+void	calc_loop(t_info *info, int x)
+{
+	int		y;
+	int		drawStart;
+	int		drawEnd;
+	int		texNum;
+	int		texX;
+	int		texY;
+	int		color;
+
+	dist_init(info);
+	calc_wall_height(info);
+	// while (info->hit == 0)
+	// {
+	// 	if (info->sideDistX < info->sideDistY)
+	// 	{
+	// 		info->sideDistX += info->deltaDistX;
+	// 		info->mapX += info->stepX;
+	// 		info->side = 0;
+	// 	}
+	// 	else
+	// 	{
+	// 		info->sideDistY += info->deltaDistY;
+	// 		info->mapY += info->stepY;
+	// 		info->side = 1;
+	// 	}
+	// 	if (info->cub_list.map_matrix[info->mapX][info->mapY] > 0 && info->cub_list.map_matrix[info->mapX][info->mapY] != 2)
+	// 		info->hit = 1;
+	// }
+	// if (info->side == 0)
+	// 	info->perpWallDist = (info->mapX - info->posX + (1 - info->stepX) / 2) / info->rayDirX;
+	// else
+	// 	info->perpWallDist = (info->mapY - info->posY + (1 - info->stepY) / 2) / info->rayDirY;
+	// info->lineHeight = (int)(info->cub_list.height / info->perpWallDist);
 	drawStart = -info->lineHeight / 2 + info->cub_list.height / 2;
 	if (drawStart < 0)
 		drawStart = 0;
