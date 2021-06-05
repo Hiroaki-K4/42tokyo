@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/04/23 22:14:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:11:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ char	*get_new_line(char *store, char **line)
 	size = 0;
 	while (store[i] != '\n' && store[i] != '\0')
 		i++;
-	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+	*line = (char *)malloc(sizeof(char) * (i + 1));
+	if (!*line)
 		return (NULL);
 	ft_strlcpy(*line, store, i + 1);
 	size = (int)ft_strlen(&store[i + 1]) + 1;
-	if (!(tmp = (char *)malloc(sizeof(char) * size)))
+	tmp = (char *)malloc(sizeof(char) * size);
+	if (!tmp)
 		return (NULL);
 	ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
 	free(store);
@@ -41,9 +43,10 @@ char	*save_new_line(char *store, char **line, char *buf)
 	char	*tmp;
 
 	i = 0;
-	while (buf[i] != '\n')
+	while (buf[i] && buf[i] != '\n')
 		i++;
-	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1));
+	if (!tmp)
 		return (NULL);
 	ft_strlcpy(tmp, store, ft_strlen(store) + 1);
 	j = -1;
@@ -51,10 +54,12 @@ char	*save_new_line(char *store, char **line, char *buf)
 		tmp[ft_strlen(store) + j] = buf[j];
 	tmp[ft_strlen(store) + j] = '\0';
 	free(store);
-	if (!(*line = ft_strdup(tmp)))
+	*line = ft_strdup(tmp);
+	if (!*line)
 		return (NULL);
 	free(tmp);
-	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1));
+	if (!tmp)
 		return (NULL);
 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
 	free(buf);
