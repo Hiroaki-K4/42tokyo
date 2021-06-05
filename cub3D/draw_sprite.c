@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:13:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:22:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,23 @@ void	sortSprites(int *order, double *dist, int amount)
 	}
 	free(sprites);
 }
+
+// void	insert_pixel_loop(t_info *info, int sprite, int texX)
+// {
+// 	if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width && info->transformY < info->zBuffer[sprite])
+// 	{
+// 		y = info->drawStartY;
+// 		while (y < info->drawEndY)
+// 		{
+// 			j = y * 256 - info->cub_list.height * 128 + info->spriteH * 128;
+// 			texY = ((j * texHeight) / info->spriteH) / 256;
+// 			color = info->texture[info->cub_list.sprites[spriteOrder[i]].texture][texWidth * texY + texX];
+// 			if ((color & 0x00FFFFFF) != 0)
+// 				info->buf[y][sprite] = color;
+// 			y++;
+// 		}
+// 	}
+// }
 
 void	insert_pixel(t_info *info, int *spriteOrder, int i)
 {
