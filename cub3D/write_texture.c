@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:56:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:56:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,18 +126,7 @@ void	decide_texture(t_info *info)
 		else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
 			face_west(info);
 		else if (fabs(info->dirY) >= fabs(info->dirX) && info->dirY >= 0)
-		{
 			face_east(info);
-			// if (info->side == 0)
-			// {
-			// 	if (info->rayDirX > 0)
-			// 		info->texNum = 1;
-			// 	else
-			// 		info->texNum = 0;
-			// }
-			// else
-			// 	info->texNum = 3;
-		}
 	}
 }
 
