@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 10:16:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 10:16:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -485,7 +485,7 @@ int print_string(va_list *ap, t_plist flag_list)
 				i++;
 			}
 			write(1, str, ft_strlen(str));
-			len = ft_strlen(str) + i;
+			len = (int)ft_strlen(str) + i;
 		}
 	}
 	else
