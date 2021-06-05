@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:53:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:54:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,18 @@ void	face_north(t_info *info)
 		info->texNum = 0;
 }
 
-
+void	face_south(t_info *info)
+{
+	if (info->side == 1)
+	{
+		if (info->rayDirY > 0)
+			info->texNum = 3;
+		else
+			info->texNum = 2;
+	}
+	else
+		info->texNum = 1;
+}
 
 void	decide_texture(t_info *info)
 {
@@ -83,8 +94,10 @@ void	decide_texture(t_info *info)
 	if (info->texNum == 1)
 	{
 		if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX <= 0)
-		{
 			face_north(info);
+		else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
+		{
+			face_south(info);
 			// if (info->side == 1)
 			// {
 			// 	if (info->rayDirY > 0)
@@ -93,19 +106,7 @@ void	decide_texture(t_info *info)
 			// 		info->texNum = 2;
 			// }
 			// else
-			// 	info->texNum = 0;
-		}
-		else if (fabs(info->dirX) >= fabs(info->dirY) && info->dirX >= 0)
-		{
-			if (info->side == 1)
-			{
-				if (info->rayDirY > 0)
-					info->texNum = 3;
-				else
-					info->texNum = 2;
-			}
-			else
-				info->texNum = 1;
+			// 	info->texNum = 1;
 		}
 		else if (fabs(info->dirY) >= fabs(info->dirX) && 0 >= info->dirY)
 		{
