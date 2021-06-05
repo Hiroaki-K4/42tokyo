@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:29:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 18:27:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,7 @@ typedef struct s_info
 	t_cub	cub_list;
 }				t_info;
 
-int		get_next_line(int fd, char **line, int BUFFER_SIZE);
+int		get_next_line(int fd, char **line);
 void	draw_sprite(t_info *info);
 int		key_press(int key, t_info *info);
 void	calc(t_info *info);
