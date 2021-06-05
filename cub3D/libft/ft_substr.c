@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 08:52:17 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 17:28:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:28:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*new_ptr;
 	unsigned int	i;
-	// size_t			s_len;
 
 	if (!s)
 		return (NULL);
-	// s_len = ft_strlen(s);
 	if (ft_strlen(s) < start)
 	{
 		new_ptr = (char *)malloc(sizeof(char) * 1);
