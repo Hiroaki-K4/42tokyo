@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 21:55:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 22:04:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*get_new_line(char *store, char **line)
 
 char	*save_new_line_support(char *store, char *tmp, char *buf, int i)
 {
-	int		j;
+	int	j;
 
 	j = -1;
 	while (buf[++j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
