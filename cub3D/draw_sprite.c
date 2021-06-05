@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:27:46 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 11:31:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:38:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ void	insert_pixel_loop(t_info *info, int sprite, int *spriteOrder, int i)
 	int		y;
 	int		j;
 
-	info->texX = (int)((256 * (sprite - (-info->spriteW / 2
-					+ info->spriteScreenX)) * texWidth / info->spriteW) / 256);
+	info->texX = (int)((256 * (sprite - (-info->spriteW / 2 + info
+						->spriteScreenX)) * texWidth / info->spriteW) / 256);
 	if (info->transformY > 0 && sprite > 0 && sprite < info->cub_list.width
 		&& info->transformY < info->zBuffer[sprite])
 	{
@@ -155,6 +155,18 @@ void	insert_pixel(t_info *info, int *spriteOrder, int i)
 	}
 }
 
+void	calc_sprite_init(t_info *info, int *spriteOrder, int i)
+{
+	info->spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
+	info->spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
+	info->invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
+	info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
+	info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
+	info->spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
+	info->spriteH = (int)fabs(info->cub_list.height / info->transformY);
+	info->drawStartY = -info->spriteH / 2 + info->cub_list.height / 2;
+}
+
 void	calc_sprite(t_info *info, int *spriteOrder)
 {
 	int		i;
@@ -162,14 +174,15 @@ void	calc_sprite(t_info *info, int *spriteOrder)
 	i = 0;
 	while (i < info->cub_list.num_sprites)
 	{
-		info->spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
-		info->spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
-		info->invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
-		info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
-		info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
-		info->spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
-		info->spriteH = (int)fabs(info->cub_list.height / info->transformY);
-		info->drawStartY = -info->spriteH / 2 + info->cub_list.height / 2;
+		// info->spriteX = info->cub_list.sprites[spriteOrder[i]].x + 0.5 - info->posX;
+		// info->spriteY = info->cub_list.sprites[spriteOrder[i]].y + 0.5 - info->posY;
+		// info->invDet = 1.0 / (info->planeX * info->dirY - info->dirX * info->planeY);
+		// info->transformX = info->invDet * (info->dirY * info->spriteX - info->dirX * info->spriteY);
+		// info->transformY = info->invDet * (-info->planeY * info->spriteX + info->planeX * info->spriteY);
+		// info->spriteScreenX = (int)((info->cub_list.width / 2) * (1 + info->transformX / info->transformY));
+		// info->spriteH = (int)fabs(info->cub_list.height / info->transformY);
+		// info->drawStartY = -info->spriteH / 2 + info->cub_list.height / 2;
+		calc_sprite_init(info, spriteOrder, i);
 		if (info->drawStartY < 0)
 			info->drawStartY = 0;
 		info->drawEndY = info->spriteH / 2 + info->cub_list.height / 2;
