@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 14:17:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 14:18:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	calc_loop(t_info *info)
+void	calc_loop(t_info *info, int x)
 {
 	int		y;
 	int		drawStart;
@@ -185,6 +185,7 @@ void	calc(t_info *info)
 		info->deltaDistX = fabs(1 / info->rayDirX);
 		info->deltaDistY = fabs(1 / info->rayDirY);
 		info->hit = 0;
+		calc_loop(info, x);
 		// if (info->rayDirX < 0)
 		// {
 		// 	info->stepX = -1;
