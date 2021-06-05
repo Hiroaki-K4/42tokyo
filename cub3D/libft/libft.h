@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 15:29:06 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/29 16:09:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:18:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct		s_list
+typedef	struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dst, const char *src, size_t n);
@@ -36,7 +36,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *big, const char *little,
-								size_t len);
+							size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *nptr);
 int					ft_isalpha(int c);
@@ -67,6 +67,6 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-								void (*del)(void *));
+							void (*del)(void *));
 
 #endif

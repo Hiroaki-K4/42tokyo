@@ -6,20 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 21:53:04 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/23 21:40:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:17:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }

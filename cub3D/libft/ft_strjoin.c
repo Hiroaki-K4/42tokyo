@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 09:09:12 by hkubo             #+#    #+#             */
-/*   Updated: 2020/11/28 19:47:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:17:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	new_str_len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(new_str = (char *)malloc(sizeof(char) * (new_str_len + 1))))
+	new_str = (char *)malloc(sizeof(char) * (new_str_len + 1));
+	if (!new_str)
 		return (NULL);
 	i = 0;
 	j = 0;
