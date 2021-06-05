@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 11:07:53 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 17:32:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 17:42:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ static	int	digit_size(int number)
 	return (count);
 }
 
+char	*make_word(char *ans, int len, int n)
+{
+	ans[len] = '\0';
+	len--;
+	while (len >= 0)
+	{
+		ans[len--] = '0' + (n % 10);
+		n = n / 10;
+	}
+	return (ans);
+}
+
 char	*ft_itoa(int n)
 {
 	int		len;
@@ -45,13 +57,14 @@ char	*ft_itoa(int n)
 		n = n * (-1);
 		flag = '-';
 	}
-	ans[len] = '\0';
-	len--;
-	while (len >= 0)
-	{
-		ans[len--] = '0' + (n % 10);
-		n = n / 10;
-	}
+	// ans[len] = '\0';
+	// len--;
+	// while (len >= 0)
+	// {
+	// 	ans[len--] = '0' + (n % 10);
+	// 	n = n / 10;
+	// }
+	make_word(ans, len, n);
 	if (flag == '-')
 		ans[0] = '-';
 	return (ans);
