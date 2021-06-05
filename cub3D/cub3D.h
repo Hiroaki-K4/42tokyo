@@ -6,12 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:09:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:15:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 #include "get_next_line/get_next_line.h"
 #include "libft/libft.h"
