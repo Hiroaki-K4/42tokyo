@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:05:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/05 15:05:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,7 @@ void	draw_img(t_info *info, int x, int texX)
 
 	y = 0;
 	while (y < info->drawStart)
-	{
 		info->buf[y++][x] = info->cub_list.ceiling_dec;
-		// y++;
-	}
 	y = info->drawStart;
 	while (y < info->drawEnd)
 	{
@@ -156,10 +153,7 @@ void	draw_img(t_info *info, int x, int texX)
 	info->zBuffer[x] = info->perpWallDist;
 	y = info->drawEnd;
 	while (y < info->cub_list.height)
-	{
 		info->buf[y++][x] = info->cub_list.floor_dec;
-		// y++;
-	}
 }
 
 void	calc_loop(t_info *info, int x)
