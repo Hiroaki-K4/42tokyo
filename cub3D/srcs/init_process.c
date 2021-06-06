@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 15:20:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/06 11:57:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void	texture_init(t_info *info, int i, int j)
 {
 	while (i < 5)
 	{
-		info->texture[i] = (int *)malloc(sizeof(int) * (TEX_HEIGHT * TEX_WIDTH));
+		info->texture[i] = (int *)malloc(sizeof(int)
+				* (TEX_HEIGHT * TEX_WIDTH));
 		if (info->texture[i] == NULL)
 			error_process("Malloc failed");
 		i++;
