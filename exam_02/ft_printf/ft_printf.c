@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/06 10:23:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/06 10:29:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,6 +303,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
 	int keta;
+	int len;
 	char *tmp;
 
 	keta = ft_strlen(str_num);
@@ -316,17 +317,17 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 			if (!(tmp = ft_itoa(num * (-1))))
 				return (-1);
 			write(1, "-", 1);
-			while (flag_list.precision - (keta++) > 0)
+			while (flag_list.field - (int)ft_strlen(tmp) - (len++) > 0)
 				write(1, "0", 1);
 			write(1, tmp, ft_strlen(tmp));
+			free(tmp);
 			len = flag_list.precision + 1;
 		}
 		else
 		{
-			while (flag_list.precision - (keta++) > 0)
+			while (flag_list.field - (keta++) > 0)
 				write(1, "0", 1);
 			write(1, str_num, ft_strlen(str_num));
-			len = ft_strlen(str_num);
 		}
 	}
 	else
