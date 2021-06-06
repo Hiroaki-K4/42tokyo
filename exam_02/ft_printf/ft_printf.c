@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/06 10:29:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/06 10:29:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,7 +303,6 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
 	int keta;
-	int len;
 	char *tmp;
 
 	keta = ft_strlen(str_num);
