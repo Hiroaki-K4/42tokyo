@@ -6,15 +6,15 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 18:27:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/06 11:43:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "get_next_line/get_next_line.h"
-# include "libft/libft.h"
+# include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -23,7 +23,7 @@
 # include <string.h>
 # include <stdint.h>
 # include <errno.h>
-# include "mlx_linux/mlx.h"
+# include "../mlx_linux/mlx.h"
 
 # define X_EVENT_KEY_PRESS	2
 # define X_EVENT_KEY_EXIT	17
