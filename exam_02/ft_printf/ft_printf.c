@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 11:48:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 11:58:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -582,7 +582,7 @@ int str_to_num(const char *arg, int *i, int flag)
 // 	return (len);
 // }
 
-int ft_printf_per(const char *arg, int *i, va_list *ap)
+int ft_printf_per(const char *arg ,int *i, va_list *ap)
 {
 	int len;
 	int num;
@@ -592,12 +592,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	t_plist flag_list;
 
 	(*i)++;
-	flag_list.field = str_to_num(&arg[*i], i, 0);
+	flag_list.field = str_to_num(arg[*i], i, 0);
 	flag_list.precision = -1;
 	if (arg[*i] == '.')
 	{
 		(*i)++;
-		flag_list.precision = str_to_num(&arg[*i], i, 1);
+		flag_list.precision = str_to_num(arg[*i], i, 1);
 	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	if (flag_list.format == 0)
@@ -619,6 +619,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
+	free(str_num);
 	return (len);
 }
 
