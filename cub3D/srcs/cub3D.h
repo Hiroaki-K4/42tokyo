@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:30:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:32:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,15 +130,15 @@ typedef struct s_info
 	void	*win;
 	int		**buf;
 	int		**texture;
-	int		spriteScreenX;
-	int		spriteH;
-	int		spriteW;
-	int		drawStartY;
-	int		drawEndY;
-	int		drawStartX;
-	int		drawEndX;
-	int		texX;
-	int		texY;
+	// int		spriteScreenX;
+	// int		spriteH;
+	// int		spriteW;
+	// int		drawStartY;
+	// int		drawEndY;
+	// int		drawStartX;
+	// int		drawEndX;
+	// int		texX;
+	// int		texY;
 	int		stepX;
 	int		stepY;
 	int		side;
