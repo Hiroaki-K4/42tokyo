@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:15:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:27:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,13 @@ int	map_we_check(t_info *info, char **line_split)
 		double_array_free(line_split);
 		return (1);
 	}
-	i = ft_strcmp("S", line_split[0]);
-	if (i == 0)
-	{
-		info->cub_list.sprite = ft_strdup(line_split[1]);
-		double_array_free(line_split);
-		info->cub_list.sprite_flag = 1;
-		return (1);
-	}
+	// i = ft_strcmp("S", line_split[0]);
+	// if (i == 0)
+	// {
+	// 	info->cub_list.sprite = ft_strdup(line_split[1]);
+	// 	double_array_free(line_split);
+	// 	info->cub_list.sprite_flag = 1;
+	// 	return (1);
+	// }
 	return (0);
 }
