@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:34:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:35:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@
 # define K_ESC 65307
 # define K_R 65363
 # define K_L 65361
-
-// typedef struct s_sprite
-// {
-// 	double		x;
-// 	double		y;
-// 	int			texture;
-// }				t_sprite;
 
 typedef struct s_img
 {
@@ -78,8 +71,6 @@ typedef struct s_cub
 	int			map_x;
 	int			map_y;
 	int			size;
-	// int			num_sprites;
-	// int			sprite_flag;
 	int			floor_dec;
 	int			ceiling_dec;
 	int			init_pos_count;
@@ -92,11 +83,9 @@ typedef struct s_cub
 	char		*s_texture;
 	char		*w_texture;
 	char		*e_texture;
-	// char		*sprite;
 	char		**map;
 	t_rgb		floor;
 	t_rgb		ceiling;
-	// t_sprite	*sprites;
 }				t_cub;
 
 typedef struct s_info
@@ -110,11 +99,6 @@ typedef struct s_info
 	double	*zBuffer;
 	double	moveSpeed;
 	double	rotSpeed;
-	// double	spriteX;
-	// double	spriteY;
-	// double	invDet;
-	// double	transformX;
-	// double	transformY;
 	double	cameraX;
 	double	rayDirX;
 	double	rayDirY;
@@ -130,15 +114,6 @@ typedef struct s_info
 	void	*win;
 	int		**buf;
 	int		**texture;
-	// int		spriteScreenX;
-	// int		spriteH;
-	// int		spriteW;
-	// int		drawStartY;
-	// int		drawEndY;
-	// int		drawStartX;
-	// int		drawEndX;
-	// int		texX;
-	// int		texY;
 	int		stepX;
 	int		stepY;
 	int		side;
@@ -154,7 +129,6 @@ typedef struct s_info
 }				t_info;
 
 int		get_next_line(int fd, char **line);
-// void	draw_sprite(t_info *info);
 int		key_press(int key, t_info *info);
 void	calc(t_info *info);
 char	*ft_itoa_hex(unsigned int n, char *arg);
