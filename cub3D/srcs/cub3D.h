@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/06 11:43:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:25:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@
 # define K_R 65363
 # define K_L 65361
 
-typedef struct s_sprite
-{
-	double		x;
-	double		y;
-	int			texture;
-}				t_sprite;
+// typedef struct s_sprite
+// {
+// 	double		x;
+// 	double		y;
+// 	int			texture;
+// }				t_sprite;
 
 typedef struct s_img
 {
@@ -78,8 +78,8 @@ typedef struct s_cub
 	int			map_x;
 	int			map_y;
 	int			size;
-	int			num_sprites;
-	int			sprite_flag;
+	// int			num_sprites;
+	// int			sprite_flag;
 	int			floor_dec;
 	int			ceiling_dec;
 	int			init_pos_count;
@@ -96,7 +96,7 @@ typedef struct s_cub
 	char		**map;
 	t_rgb		floor;
 	t_rgb		ceiling;
-	t_sprite	*sprites;
+	// t_sprite	*sprites;
 }				t_cub;
 
 typedef struct s_info
