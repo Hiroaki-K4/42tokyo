@@ -582,14 +582,14 @@ int str_to_num(const char *arg, int *i, int flag)
 // 	return (len);
 // }
 
-int ft_printf_per(const char *arg ,int *i, va_list *ap)
+int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int len;
 	int num;
 	int keta;
 	unsigned int hex_num;
-	char *str_num;
 	t_plist flag_list;
+	char *str_num;
 
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i, 0);
@@ -615,9 +615,9 @@ int ft_printf_per(const char *arg ,int *i, va_list *ap)
 	else if (flag_list.format == 2)
 	{
 		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+		if (!(str_num = ft_itoa_hex(hex_num)))
 			return (-1);
-		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
+		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num))
 	}
 	return (len);
 }
