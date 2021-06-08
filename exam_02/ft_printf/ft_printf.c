@@ -636,7 +636,7 @@ int ft_printf_per(const char *arg ,int *i, va_list *ap)
 // 	return (len);
 // }
 
-int ft_printf_str(const char *arg, int *i)
+int ft_printf_per(const char *arg, int *i)
 {
 	int len;
 
