@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:33:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:34:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ typedef struct s_cub
 	char		*s_texture;
 	char		*w_texture;
 	char		*e_texture;
-	char		*sprite;
+	// char		*sprite;
 	char		**map;
 	t_rgb		floor;
 	t_rgb		ceiling;
