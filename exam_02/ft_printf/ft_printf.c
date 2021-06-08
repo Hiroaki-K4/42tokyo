@@ -689,7 +689,7 @@ int ft_printf(const char *arg, ...)
 	i = 0;
 	print_len = 0;
 	if (arg == NULL)
-		arg = -1;
+		i = -1;
 	while (i >= 0 && arg[i])
 	{
 		if (arg[i] != '%')
@@ -699,7 +699,7 @@ int ft_printf(const char *arg, ...)
 			j = ft_printf_per(arg, &i, &ap);
 			if (j == -1)
 				return (-1);
-			print_len += j;
+			print_len+= j;
 		}
 	}
 	va_end(ap);
