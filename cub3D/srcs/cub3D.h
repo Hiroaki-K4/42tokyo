@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:32:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:33:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ typedef struct s_info
 	double	*zBuffer;
 	double	moveSpeed;
 	double	rotSpeed;
-	double	spriteX;
-	double	spriteY;
-	double	invDet;
-	double	transformX;
-	double	transformY;
+	// double	spriteX;
+	// double	spriteY;
+	// double	invDet;
+	// double	transformX;
+	// double	transformY;
 	double	cameraX;
 	double	rayDirX;
 	double	rayDirY;
