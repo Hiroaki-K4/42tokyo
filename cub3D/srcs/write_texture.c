@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:40:26 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:22:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/08 21:24:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,5 @@ void	calc(t_info *info)
 		calc_loop(info, x);
 		x++;
 	}
-	// if (info->cub_list.sprite_flag == 1)
-	// 	draw_sprite(info);
 	free(info->zBuffer);
 }
