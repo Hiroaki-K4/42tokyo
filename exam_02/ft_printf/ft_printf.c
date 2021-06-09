@@ -491,7 +491,7 @@ int print_string(va_list *ap, t_plist flag_list)
 		{
 			while (len < flag_list.precision && str[len])
 			{
-				wrirte(1, &str[len], 1);
+				write(1, &str[len], 1);
 				len++;
 			}
 		}
