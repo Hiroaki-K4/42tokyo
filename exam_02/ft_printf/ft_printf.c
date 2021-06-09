@@ -456,10 +456,10 @@ int print_string(va_list *ap, t_plist flag_list)
 	int i;
 	char *str;
 
-	len = 0;
 	str = va_arg(*ap, char*);
 	if (str == NULL)
 		str = "(null)";
+	len = 0;
 	if (flag_list.field != -1)
 	{
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
@@ -491,7 +491,7 @@ int print_string(va_list *ap, t_plist flag_list)
 		{
 			while (len < flag_list.precision && str[len])
 			{
-				write(1, &str[len], 1);
+				wrirte(1, &str[len], 1);
 				len++;
 			}
 		}
@@ -499,7 +499,7 @@ int print_string(va_list *ap, t_plist flag_list)
 		{
 			write(1, str, ft_strlen(str));
 			len = ft_strlen(str);
-		}
+		}		
 	}
 	return (len);
 }
