@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:15:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 21:52:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	not_special_word(t_info *info, int count, char **line,
 	make_string_map(info, tmp, map_line);
 }
 
-int	cub_line_check(char **line, int count, t_info *info)
+int	cub_line_check(char *line, int count, t_info *info)
 {
 	int		i;
 	char	**line_split;
