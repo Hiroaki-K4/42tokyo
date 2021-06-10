@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/02 22:46:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:41:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	set_nowall_edge(t_info *info, int i, int j, int max)
 		}
 		j++;
 	}
-	if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
+	if ((int)ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 	{
 		while (j < info->cub_list.map_x)
 			info->cub_list.map_matrix[i][j++] = 5;
