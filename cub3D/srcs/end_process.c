@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:17:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:21:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	error_process(char *error)
 	exit(1);
 }
 
-int	win_close(t_info *info)
+int	win_close()
 {
 	exit(0);
 }
