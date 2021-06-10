@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/11 08:46:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/11 08:47:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	key_press(int key, t_info *info)
 	{
 		int_double_array_free(info->buf);
 		int_double_array_free(info->texture);
+		free(info->mlx);
 		exit(0);
 	}
 	return (0);

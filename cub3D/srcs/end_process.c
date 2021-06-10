@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/11 08:45:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/11 08:48:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	win_close(t_info *info)
 {
 	int_double_array_free(info->buf);
 	int_double_array_free(info->texture);
+	free(info->mlx);
 	exit(0);
 }
 
