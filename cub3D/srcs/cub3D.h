@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:06:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:08:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@
 # include <errno.h>
 # include "../mlx_linux/mlx.h"
 
-// # define X_EVENT_KEY_PRESS	2
-# define X_EVENT_KEY_EXIT	17
+// # define X_EVENT_KEY_EXIT	17
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
 # define K_W 119
