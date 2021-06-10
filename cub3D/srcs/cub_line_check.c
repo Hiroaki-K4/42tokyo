@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:26:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:27:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	not_special_word(t_info *info, int count, char *line,
 	map_line = ft_strdup(line);
 	if (map_line == NULL)
 		error_process("ft_strdup failed");
-	if (ft_strlen(map_line) > info->cub_list.map_x)
+	if ((int)ft_strlen(map_line) > info->cub_list.map_x)
 		info->cub_list.map_x = ft_strlen(map_line);
 	tmp = (char **)malloc(sizeof(char *) * (info->cub_list.map_y + 1));
 	if (tmp == NULL)
