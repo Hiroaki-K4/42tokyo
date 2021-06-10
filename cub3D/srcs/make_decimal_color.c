@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:55:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:19:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:40:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	hex_to_decimal(char *hex)
 
 	ans = 0;
 	i = 0;
-	while (i < ft_strlen(hex))
+	while (i < (int)ft_strlen(hex))
 	{
 		hex_pow = 1;
 		j = 0;
