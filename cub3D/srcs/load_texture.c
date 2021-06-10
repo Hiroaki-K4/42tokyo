@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:24:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:25:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	get_xpm_size(char *line)
 	double_array_free(xpm);
 }
 
-void	xpm_file_check(t_info *info, int i, char *path)
+void	xpm_file_check(int i, char *path)
 {
 	int		fd;
 	int		count;
@@ -54,7 +54,7 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 	int	x;
 	int	y;
 
-	xpm_file_check(info, 1, path);
+	xpm_file_check(1, path);
 	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
 			&img->img_height);
 	if (img->img == NULL)
