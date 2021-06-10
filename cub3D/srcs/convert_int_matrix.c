@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:41:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:41:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	convert_int_matrix(t_info *info)
 		j = 0;
 		info->cub_list.f_nowall_row = 2147483647;
 		info->cub_list.l_nowall_row = -1;
-		if (ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
+		if ((int)ft_strlen(info->cub_list.map[i]) < info->cub_list.map_x)
 			set_nowall_edge(info, i, j, ft_strlen(info->cub_list.map[i]));
 		else
 			set_nowall_edge(info, i, j, info->cub_list.map_x);
