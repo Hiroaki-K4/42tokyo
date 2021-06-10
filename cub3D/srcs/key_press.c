@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/03 21:47:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 23:14:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,9 @@ int	key_press(int key, t_info *info)
 			* cos(info->rotSpeed);
 	}
 	if (key == K_ESC)
+	{
+		int_double_array_free(info->buf);
 		exit(0);
+	}
 	return (0);
 }
