@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 22:19:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:42:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*get_new_line(char *store, char **line)
 	return (tmp);
 }
 
-char	*save_new_line_support(char *store, char *tmp, char *buf, int i)
+void	save_new_line_support(char *store, char *tmp, char *buf, int i)
 {
 	int	j;
 
