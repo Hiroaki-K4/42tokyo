@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 21:52:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:26:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	make_string_map(t_info *info, char **tmp, char *map_line)
 	info->cub_list.map = tmp;
 }
 
-void	not_special_word(t_info *info, int count, char **line,
+void	not_special_word(t_info *info, int count, char *line,
 	char **line_split)
 {
 	char	**tmp;
