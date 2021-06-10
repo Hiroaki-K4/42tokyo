@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:15:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:18:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	read_cub_line(t_info *info, int i, char *path)
 		error_process(strerror(errno));
 	info_init(info);
 	count = 0;
-	i = 1;
+	// i = 1;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line);
@@ -64,10 +64,10 @@ void	read_cub_line(t_info *info, int i, char *path)
 int	main(int argc, char *argv[])
 {
 	t_info	info;
-	int		i;
+	// int		i;
 
 	arg_error_check(argc, argv);
-	read_cub_line(&info, i, argv[1]);
+	read_cub_line(&info, 1, argv[1]);
 	convert_int_matrix(&info);
 	info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height));
 	info.texture = (int **)malloc(sizeof(int *) * 5);
