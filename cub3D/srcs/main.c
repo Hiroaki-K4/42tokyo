@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 21:46:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 21:47:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	read_cub_line(t_info *info, int i, char *path)
 	i = 1;
 	while (i > 0)
 	{
-		i = get_next_line(fd, line);
+		i = get_next_line(fd, &line);
 		if (i == -1)
 			error_process("get_next_line failed");
 		count++;
