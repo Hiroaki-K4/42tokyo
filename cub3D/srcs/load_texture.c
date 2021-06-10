@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:36:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:23:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	get_xpm_size(t_info *info, char *line)
+void	get_xpm_size(char *line)
 {
 	char	**xpm;
 
