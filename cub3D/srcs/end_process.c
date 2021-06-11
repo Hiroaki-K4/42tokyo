@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/11 09:09:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/11 09:12:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	win_close(t_info *info)
 	int_double_array_free(info->buf);
 	int_double_array_free(info->texture);
 	int_double_array_free(info->cub_list.map_matrix);
+	mlx_destroy_window(info->mlx, info->win);
 	mlx_destroy_display(info->mlx);
 	free(info->mlx);
 	exit(0);
