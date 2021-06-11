@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:37:55 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/11 08:53:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/11 09:09:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	key_press(int key, t_info *info)
 	{
 		int_double_array_free(info->buf);
 		int_double_array_free(info->texture);
+		int_double_array_free(info->cub_list.map_matrix);
 		mlx_destroy_display(info->mlx);
 		free(info->mlx);
 		exit(0);
