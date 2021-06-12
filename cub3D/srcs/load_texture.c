@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 23:08:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/12 15:01:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	xpm_file_check(int i, char *path)
 	if (fd == -1)
 		error_process(strerror(errno));
 	count = 0;
-	while (i > 0 && count < 4)
+	while (i > 0)
 	{
 		i = get_next_line(fd, &line);
 		if (i == -1)

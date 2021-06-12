@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/10 22:18:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/12 15:13:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int	main(int argc, char *argv[])
 	arg_error_check(argc, argv);
 	read_cub_line(&info, 1, argv[1]);
 	convert_int_matrix(&info);
-	info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height));
 	info.texture = (int **)malloc(sizeof(int *) * 5);
 	if (info.buf == NULL || info.texture == NULL)
 		error_process("Malloc failed");
