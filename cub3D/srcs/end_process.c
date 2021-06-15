@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/13 21:36:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:13:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,6 @@ void	error_process(char *error)
 	printf("Error\n");
 	printf("%s\n", error);
 	exit(1);
-}
-
-void	t_double_array_free(int **array, int max)
-{
-	int	i;
-
-	i = 0;
-	while (i < max)
-	{
-		free(array[i]);
-		array[i] = NULL;
-		i++;
-	}
-	free(array);
-	array = NULL;
 }
 
 void	all_free(t_info *info)

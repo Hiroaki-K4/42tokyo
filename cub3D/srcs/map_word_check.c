@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/15 22:07:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:28:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	floor_check(t_info *info, char **line_split, char **rgb_split)
 		|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
 		> 255)
 		error_process("Color is wrong");
-	info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
+	if (info->cub_list.f_count == 0)
+		info->cub_list.floor_dec = make_decimal_color(info->cub_list.floor);
+	info->cub_list.f_count++;
 }
 
 int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
@@ -52,7 +54,9 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
-		info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
+		if (info->cub_list.c_count == 0)
+			info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
+		info->cub_list.c_count++;
 		return (1);
 	}
 	return (0);
