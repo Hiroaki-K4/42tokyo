@@ -6,17 +6,21 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/15 22:37:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:42:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	map_line_check(char **line_split)
+int	map_line_check(t_info *info, char **line_split)
 {
 	int	i;
 	int	j;
 
+	if (info->cub_list.n_count != 1 || info->cub_list.s_count != 1
+		|| info->cub_list.e_count != 1 || info->cub_list.w_count != 1
+		|| info->cub_list.f_count != 1 || info->cub_list.c_count != 1)
+		error_process("Map is wrong");
 	i = 0;
 	while (line_split[i])
 	{
@@ -64,7 +68,6 @@ void	build_map(t_info *info, int count, char *line,
 {
 	char	**tmp;
 	char	*map_line;
-
 	double_array_free(line_split);
 	if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
 		error_process("Map is wrong");
@@ -104,7 +107,7 @@ int	cub_line_check(char *line, int count, t_info *info)
 	i = ceiling_check(info, line_split, NULL);
 	if (i == 1)
 		return (0);
-	if (map_line_check(line_split) == 0)
+	if (map_line_check(info, line_split) == 0)
 		build_map(info, count, line, line_split);
 	return (0);
 }
