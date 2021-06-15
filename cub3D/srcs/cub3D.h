@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/13 21:34:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:03:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ typedef struct s_cub
 	int			l_nowall_row;
 	int			f_nowall_col;
 	int			l_nowall_col;
+	int			n_count;
+	int			s_count;
+	int			e_count;
+	int			w_count;
+	int			f_count;
+	int			c_count;
 	char		*n_texture;
 	char		*s_texture;
 	char		*w_texture;

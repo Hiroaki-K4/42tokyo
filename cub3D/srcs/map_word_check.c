@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/08 21:37:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:07:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,18 @@ int	map_ns_check(t_info *info, char **line_split)
 	i = ft_strcmp("NO", line_split[0]);
 	if (i == 0)
 	{
-		info->cub_list.n_texture = ft_strdup(line_split[1]);
+		if (info->cub_list.n_count == 0)
+			info->cub_list.n_texture = ft_strdup(line_split[1]);
+		info->cub_list.n_count++;
 		double_array_free(line_split);
 		return (1);
 	}
 	i = ft_strcmp("SO", line_split[0]);
 	if (i == 0)
 	{
-		info->cub_list.s_texture = ft_strdup(line_split[1]);
+		if (info->cub_list.s_count == 0)
+			info->cub_list.s_texture = ft_strdup(line_split[1]);
+		info->cub_list.s_count++;
 		double_array_free(line_split);
 		return (1);
 	}
@@ -91,14 +95,18 @@ int	map_we_check(t_info *info, char **line_split)
 	i = ft_strcmp("WE", line_split[0]);
 	if (i == 0)
 	{
-		info->cub_list.w_texture = ft_strdup(line_split[1]);
+		if (info->cub_list.w_count == 0)
+			info->cub_list.w_texture = ft_strdup(line_split[1]);
+		info->cub_list.w_count++;
 		double_array_free(line_split);
 		return (1);
 	}
 	i = ft_strcmp("EA", line_split[0]);
 	if (i == 0)
 	{
-		info->cub_list.e_texture = ft_strdup(line_split[1]);
+		if (info->cub_list.e_count == 0)
+			info->cub_list.e_texture = ft_strdup(line_split[1]);
+		info->cub_list.e_count++;
 		double_array_free(line_split);
 		return (1);
 	}

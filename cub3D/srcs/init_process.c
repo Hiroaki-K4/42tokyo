@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/12 17:28:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:03:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	info_init(t_info *info)
 	int	sizex;
 	int	sizey;
 
+	info->cub_list.n_count = 0;
+	info->cub_list.s_count = 0;
+	info->cub_list.e_count = 0;
+	info->cub_list.w_count = 0;
+	info->cub_list.f_count = 0;
+	info->cub_list.c_count = 0;
 	info->cub_list.map_x = 0;
 	info->cub_list.map_y = 0;
 	info->cub_list.size = 0;
