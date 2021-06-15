@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/15 22:28:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/15 22:55:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
 		if (info->cub_list.c_count == 0)
-			info->cub_list.ceiling_dec = make_decimal_color(info->cub_list.ceiling);
+			info->cub_list.ceiling_dec = make_decimal_color
+				(info->cub_list.ceiling);
 		info->cub_list.c_count++;
 		return (1);
 	}
@@ -74,9 +75,9 @@ int	map_ns_check(t_info *info, char **line_split)
 	i = ft_strcmp("NO", line_split[0]);
 	if (i == 0)
 	{
-		if (info->cub_list.n_count == 0)
+		if (info->cub_list.n_count++ == 0)
 			info->cub_list.n_texture = ft_strdup(line_split[1]);
-		info->cub_list.n_count++;
+		// info->cub_list.n_count++;
 		double_array_free(line_split);
 		return (1);
 	}
