@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:02:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:16:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int argc, char *argv[])
 {
 	t_info	info;
 
+	insert_null(&info);
 	arg_error_check(argc, argv);
 	read_cub_line(&info, 1, argv[1]);
 	convert_int_matrix(&info);

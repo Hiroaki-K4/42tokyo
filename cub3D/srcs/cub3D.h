@@ -161,5 +161,6 @@ int		map_ns_check(t_info *info, char **line_split);
 int		map_we_check(t_info *info, char **line_split);
 void	decide_texture(t_info *info);
 void	all_free(t_info *info);
+void	insert_null(t_info *info);
 
 #endif

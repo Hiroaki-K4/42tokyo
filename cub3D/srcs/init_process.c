@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:02:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:15:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,19 @@ void	arg_error_check(int argc, char **argv)
 		error_process("Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
 		error_process("Not a cub file");
+}
+
+void	insert_null(t_info *info)
+{
+	info->buf = NULL;
+	info->texture = NULL;
+	info->cub_list.map_matrix = NULL;
+	info->cub_list.map = NULL;
+	info->cub_list.n_texture = NULL;
+	info->cub_list.s_texture = NULL;
+	info->cub_list.e_texture = NULL;
+	info->cub_list.w_texture = NULL;
+	info->win = NULL;
+	info->img.img = NULL;
+	info->mlx = NULL;
 }
