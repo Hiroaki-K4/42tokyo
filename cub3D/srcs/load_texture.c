@@ -6,28 +6,28 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:54:14 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/12 15:56:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:23:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	get_xpm_size(char *line)
+void	get_xpm_size(t_info *info, char *line)
 {
 	char	**xpm;
 
 	xpm = ft_split(&line[1], ' ');
 	if (xpm == NULL)
-		error_process("ft_split failed");
+		error_process(info, "ft_split failed");
 	if (ft_atoi(xpm[0]) != 64 || ft_atoi(xpm[1]) != 64)
 	{
 		double_array_free(xpm);
-		error_process("xpm file size is wrong");
+		error_process(info, "xpm file size is wrong");
 	}
 	double_array_free(xpm);
 }
 
-void	xpm_file_check(int i, char *path)
+void	xpm_file_check(t_info *info, int i, char *path)
 {
 	int		fd;
 	int		count;
@@ -35,15 +35,15 @@ void	xpm_file_check(int i, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		error_process(strerror(errno));
+		error_process(info, strerror(errno));
 	count = 0;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line);
 		if (i == -1)
-			error_process("get_next_line failed");
+			error_process(info, "get_next_line failed");
 		if (count == 3)
-			get_xpm_size(line);
+			get_xpm_size(info, line);
 		count++;
 		free(line);
 	}
@@ -54,11 +54,11 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 	int	x;
 	int	y;
 
-	xpm_file_check(1, path);
+	xpm_file_check(info, 1, path);
 	img->img = mlx_xpm_file_to_image(info->mlx, path, &img->img_width,
 			&img->img_height);
 	if (img->img == NULL)
-		error_process("The path of texture is wrong");
+		error_process(info, "The path of texture is wrong");
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
 			&img->endian);
 	y = 0;

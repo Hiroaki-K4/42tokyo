@@ -6,16 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:13:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:17:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	error_process(char *error)
+void	error_process(t_info *info, char *error)
 {
 	printf("Error\n");
 	printf("%s\n", error);
+	all_free(info);
 	exit(1);
 }
 

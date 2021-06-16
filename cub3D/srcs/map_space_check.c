@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 22:06:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/12 18:14:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:28:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	first_row_check(t_info *info, int i, int j)
 	{
 		if (info->cub_list.map_matrix[i][j + 1] == 0
 			|| info->cub_list.map_matrix[i + 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 		return ;
 	}
 	else if (j == info->cub_list.map_x - 1)
 	{
 		if (info->cub_list.map_matrix[i][j - 1] == 0
 			|| info->cub_list.map_matrix[i + 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 		return ;
 	}
 	if (info->cub_list.map_matrix[i][j - 1] == 0
 		|| info->cub_list.map_matrix[i + 1][j] == 0
 		|| info->cub_list.map_matrix[i][j + 1] == 0)
-		error_process("Map file is wrong");
+		error_process(info, "Map file is wrong");
 }
 
 void	last_row_check(t_info *info, int i, int j)
@@ -40,20 +40,20 @@ void	last_row_check(t_info *info, int i, int j)
 	{
 		if (info->cub_list.map_matrix[i][j + 1] == 0
 			|| info->cub_list.map_matrix[i - 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 		return ;
 	}
 	else if (j == info->cub_list.map_x - 1)
 	{
 		if (info->cub_list.map_matrix[i][j - 1] == 0
 			|| info->cub_list.map_matrix[i - 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 		return ;
 	}
 	if (info->cub_list.map_matrix[i][j - 1] == 0
 		|| info->cub_list.map_matrix[i - 1][j] == 0
 		|| info->cub_list.map_matrix[i][j + 1] == 0)
-		error_process("Map file is wrong");
+		error_process(info, "Map file is wrong");
 }
 
 void	middle_row_check_other(t_info *info, int i, int j)
@@ -62,7 +62,7 @@ void	middle_row_check_other(t_info *info, int i, int j)
 		|| info->cub_list.map_matrix[i + 1][j] == 0
 		|| info->cub_list.map_matrix[i][j + 1] == 0
 		|| info->cub_list.map_matrix[i - 1][j] == 0)
-		error_process("Map file is wrong");
+		error_process(info, "Map file is wrong");
 }
 
 void	middle_row_check(t_info *info, int i, int j)
@@ -72,14 +72,14 @@ void	middle_row_check(t_info *info, int i, int j)
 		if (info->cub_list.map_matrix[i][j + 1] == 0
 			|| info->cub_list.map_matrix[i + 1][j] == 0
 			|| info->cub_list.map_matrix[i - 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 	}
 	else if (j == info->cub_list.map_x - 1)
 	{
 		if (info->cub_list.map_matrix[i][j - 1] == 0
 			|| info->cub_list.map_matrix[i + 1][j] == 0
 			|| info->cub_list.map_matrix[i - 1][j] == 0)
-			error_process("Map file is wrong");
+			error_process(info, "Map file is wrong");
 	}
 	else
 		middle_row_check_other(info, i, j);

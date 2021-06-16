@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/15 22:03:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:27:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,19 +137,19 @@ char	*ft_itoa_hex(unsigned int n, char *arg);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strchr_place(const char *str, int c);
 int		cub_line_check(char *line, int count, t_info *info);
-int		make_decimal_color(t_rgb color);
+int		make_decimal_color(t_info *info, t_rgb color);
 int		convert_int_matrix(t_info *info);
 void	double_array_free(char **array);
-void	error_process(char *error);
+void	error_process(t_info *info, char *error);
 int		win_close(t_info *info);
 void	double_array_free(char **array);
 void	int_double_array_free(int **array, int max);
-void	arg_error_check(int argc, char **argv);
+void	arg_error_check(int argc, char **argv, t_info *info);
 void	buf_init(t_info *info, int i, int j);
 void	texture_init(t_info *info, int i, int j);
 void	info_init(t_info *info);
-void	get_xpm_size(char *line);
-void	xpm_file_check(int i, char *path);
+void	get_xpm_size(t_info *info, char *line);
+void	xpm_file_check(t_info *info, int i, char *path);
 void	load_image(t_info *info, int *texture, char *path, t_img *img);
 void	load_texture(t_info *info);
 int		map_edge_check(t_info *info, int *i);

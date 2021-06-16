@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:15:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:18:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	buf_init(t_info *info, int i, int j)
 	{
 		info->buf[i] = (int *)malloc(sizeof(int) * (info->cub_list.width));
 		if (info->buf[i] == NULL)
-			error_process("Malloc failed");
+			error_process(info, "Malloc failed");
 		i++;
 	}
 	i = 0;
@@ -65,7 +65,7 @@ void	texture_init(t_info *info, int i, int j)
 		info->texture[i] = (int *)malloc(sizeof(int)
 				* (TEX_HEIGHT * TEX_WIDTH));
 		if (info->texture[i] == NULL)
-			error_process("Malloc failed");
+			error_process(info, "Malloc failed");
 		i++;
 	}
 	i = 0;
@@ -81,17 +81,17 @@ void	texture_init(t_info *info, int i, int j)
 	}
 }
 
-void	arg_error_check(int argc, char **argv)
+void	arg_error_check(int argc, char **argv, t_info *info)
 {
 	int	i;
 
 	if (argc != 2)
-		error_process("The number of arguments is wrong");
+		error_process(info, "The number of arguments is wrong");
 	i = ft_strlen(argv[1]);
 	if (i < 5)
-		error_process("Map file is wrong");
+		error_process(info, "Map file is wrong");
 	if (strcmp(&argv[1][i - 4], ".cub") != 0)
-		error_process("Not a cub file");
+		error_process(info, "Not a cub file");
 }
 
 void	insert_null(t_info *info)

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:28:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:16:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:24:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void	read_cub_line(t_info *info, int i, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		error_process(strerror(errno));
+		error_process(info, strerror(errno));
 	info_init(info);
 	count = 0;
 	while (i > 0)
 	{
 		i = get_next_line(fd, &line);
 		if (i == -1)
-			error_process("get_next_line failed");
+			error_process(info, "get_next_line failed");
 		count++;
 		cub_line_check(line, count, info);
 		free(line);
@@ -71,13 +71,13 @@ int	main(int argc, char *argv[])
 	t_info	info;
 
 	insert_null(&info);
-	arg_error_check(argc, argv);
+	arg_error_check(argc, argv, &info);
 	read_cub_line(&info, 1, argv[1]);
 	convert_int_matrix(&info);
 	info.buf = (int **)malloc(sizeof(int *) * (info.cub_list.height));
 	info.texture = (int **)malloc(sizeof(int *) * 4);
 	if (info.buf == NULL || info.texture == NULL)
-		error_process("Malloc failed");
+		error_process(&info, "Malloc failed");
 	buf_init(&info, 0, 0);
 	texture_init(&info, 0, 0);
 	load_texture(&info);

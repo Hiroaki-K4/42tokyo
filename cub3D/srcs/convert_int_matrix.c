@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:58:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/12 18:11:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:20:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ void	map_malloc(t_info *info)
 	info->cub_list.map_matrix = (int **)malloc(sizeof(int *)
 			* (info->cub_list.map_y));
 	if (info->cub_list.map_matrix == NULL)
-		error_process("Malloc failed");
+		error_process(info, "Malloc failed");
 	i = 0;
 	while (i < info->cub_list.map_y)
 	{
 		info->cub_list.map_matrix[i] = (int *)malloc(sizeof(int)
 				* (info->cub_list.map_x));
 		if (info->cub_list.map_matrix[i] == NULL)
-			error_process("Malloc failed");
+			error_process(info, "Malloc failed");
 		i++;
 	}
 }
@@ -125,6 +125,6 @@ int	convert_int_matrix(t_info *info)
 	map_not_srrounded_check(info);
 	map_space_check(info);
 	if (info->cub_list.init_pos_count != 1)
-		error_process("Map file is wrong");
+		error_process(info, "Map file is wrong");
 	return (0);
 }
