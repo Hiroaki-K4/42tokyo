@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:17:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 23:05:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,19 @@ void	error_process(t_info *info, char *error)
 	printf("%s\n", error);
 	all_free(info);
 	exit(1);
+}
+
+void	all_free_core(t_info *info)
+{
+	if (info->win)
+		mlx_destroy_window(info->mlx, info->win);
+	if (info->img.img)
+		mlx_destroy_image(info->mlx, info->img.img);
+	if (info->mlx)
+	{
+		mlx_destroy_display(info->mlx);
+		free(info->mlx);
+	}
 }
 
 void	all_free(t_info *info)
@@ -38,15 +51,7 @@ void	all_free(t_info *info)
 		free(info->cub_list.e_texture);
 	if (info->cub_list.w_texture)
 		free(info->cub_list.w_texture);
-	if (info->win)
-		mlx_destroy_window(info->mlx, info->win);
-	if (info->img.img)
-		mlx_destroy_image(info->mlx, info->img.img);
-	if (info->mlx)
-	{
-		mlx_destroy_display(info->mlx);
-		free(info->mlx);
-	}
+	all_free_core(info);
 	exit(0);
 }
 
