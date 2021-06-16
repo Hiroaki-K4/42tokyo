@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:29:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 23:02:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	floor_check(t_info *info, char **line_split, char **rgb_split)
 		> 255)
 		error_process(info, "Color is wrong");
 	if (info->cub_list.f_count == 0)
-		info->cub_list.floor_dec = make_decimal_color(info, info->cub_list.floor);
+		info->cub_list.floor_dec = make_decimal_color(info,
+				info->cub_list.floor);
 	info->cub_list.f_count++;
 }
 
