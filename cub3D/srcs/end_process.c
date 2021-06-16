@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 22:04:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/15 22:13:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/16 22:08:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void	int_double_array_free(int **array, int max)
 	i = 0;
 	while (i < max)
 	{
-		free(array[i]);
-		array[i] = NULL;
+		if (!array[i])
+		{
+			free(array[i]);
+			array[i] = NULL;
+		}
 		i++;
 	}
 	free(array);
@@ -58,8 +61,11 @@ void	double_array_free(char **array)
 	i = 0;
 	while (array[i])
 	{
-		free(array[i]);
-		array[i] = NULL;
+		if (!array[i])
+		{
+			free(array[i]);
+			array[i] = NULL;
+		}
 		i++;
 	}
 	free(array);
