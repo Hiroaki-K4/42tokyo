@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 21:43:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 21:43:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,12 +194,12 @@ int ft_atoi(const char *arg)
 		i++;
 }
 
-int		ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+// int		ft_isdigit(int c)
+// {
+// 	if (c >= '0' && c <= '9')
+// 		return (1);
+// 	return (0);
+// }
 
 int ft_isdigit(int c)
 {
