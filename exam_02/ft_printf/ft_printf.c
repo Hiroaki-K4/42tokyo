@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 22:34:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 22:41:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,10 +212,10 @@ char *ft_itoa(int n)
 
 int ft_atoi(const char *arg)
 {
-	int flag;
 	int i;
+	int flag;
 	int ans;
-
+	
 	flag = 1;
 	i = 0;
 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
@@ -230,7 +230,7 @@ int ft_atoi(const char *arg)
 	ans = 0;
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans = (ans * 10) + (arg[i] - '9');
+		ans = (ans * 10) + (arg[i] - '0');
 		i++;
 	}
 	ans = ans * flag;
