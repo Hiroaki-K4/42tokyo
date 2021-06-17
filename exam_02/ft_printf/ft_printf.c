@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 22:05:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 22:15:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,6 @@ size_t		ft_strlen(const char *str)
 	return (count);
 }
 
-static	int		digit_size(int number)
-{
-	int		count;
-
-	count = 0;
-	if (number <= 0)
-		count++;
-	while (number != 0)
-	{
-		number = number / 10;
-		count++;
-	}
-	return (count);
-}
-
 char	*ft_strdup(const char *s)
 {
 	char	*new_ptr;
@@ -68,35 +53,6 @@ char	*ft_strdup(const char *s)
 	new_ptr[i] = '\0';
 	return (new_ptr);
 }
-
-// char			*ft_itoa(int n)
-// {
-// 	int		len;
-// 	char	flag;
-// 	char	*ans;
-
-// 	if (n == -2147483648)
-// 		return (ft_strdup("-2147483648"));
-// 	len = digit_size(n);
-// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-// 		return (NULL);
-// 	flag = '+';
-// 	if (n < 0)
-// 	{
-// 		n = n * (-1);
-// 		flag = '-';
-// 	}
-// 	ans[len] = '\0';
-// 	len--;
-// 	while (len >= 0)
-// 	{
-// 		ans[len--] = '0' + (n % 10);
-// 		n = n / 10;
-// 	}
-// 	if (flag == '-')
-// 		ans[0] = '-';
-// 	return (ans);
-// }
 
 int		ft_strchr_place(const char *str, int c, int *i)
 {
@@ -154,10 +110,25 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
+static	int		digit_size(int number)
+{
+	int		count;
+
+	count = 0;
+	if (number <= 0)
+		count++;
+	while (number != 0)
+	{
+		number = number / 10;
+		count++;
+	}
+	return (count);
+}
+
 char			*ft_itoa(int n)
 {
 	int		len;
-	char	flag;
+	int		flag;
 	char	*ans;
 
 	if (n == -2147483648)
@@ -165,11 +136,11 @@ char			*ft_itoa(int n)
 	len = digit_size(n);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	flag = '+';
+	flag = 1;
 	if (n < 0)
 	{
 		n = n * (-1);
-		flag = '-';
+		flag = -1;
 	}
 	ans[len] = '\0';
 	len--;
@@ -178,10 +149,28 @@ char			*ft_itoa(int n)
 		ans[len--] = '0' + (n % 10);
 		n = n / 10;
 	}
-	if (flag == '-')
+	if (flag == -1)
 		ans[0] = '-';
 	return (ans);
 }
+
+// char *ft_itoa(int n)
+// {
+// 	int len;
+// 	char flag;
+// 	char *ans;
+
+// 	if (n == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	len = digit_size(n);
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	flag = '+';
+// 	if (n < 0)
+// 	{
+// 		n = n * (-1);
+// 	}
+// }
 
 // int		ft_atoi(const char *arg)
 // {
