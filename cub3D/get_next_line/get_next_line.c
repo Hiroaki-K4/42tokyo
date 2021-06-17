@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 17:31:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 17:34:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,26 @@ int	get_make_line(int fd, char **store, char **line, int i)
 	return (0);
 }
 
+int	store_not_null(int fd, char **store, char **line)
+{
+	int i;
+
+	if (ft_strchr(store[fd], '\n') == NULL)
+	{
+		i = get_make_line(fd, store, line, 1);
+		if (i == 0)
+			free(store[fd]);
+		return (i);
+	}
+	else
+	{
+		store[fd] = get_new_line(store[fd], line);
+		if (!store[fd])
+			return (-1);
+		return (1);
+	}
+}
+
 int	get_next_line(int fd, char **line, int flag)
 {
 	int			i;
@@ -117,19 +137,20 @@ int	get_next_line(int fd, char **line, int flag)
 		if (!store[fd])
 			return (-1);
 	}
-	if (ft_strchr(store[fd], '\n') == NULL)
-	{
-		i = get_make_line(fd, store, line, 1);
-		if (i == 0)
-			free(store[fd]);
-		return (i);
-	}
-	else
-	{
-		store[fd] = get_new_line(store[fd], line);
-		if (!store[fd])
-			return (-1);
-		return (1);
-	}
-	// return (0);
+	// if (ft_strchr(store[fd], '\n') == NULL)
+	// {
+	// 	i = get_make_line(fd, store, line, 1);
+	// 	if (i == 0)
+	// 		free(store[fd]);
+	// 	return (i);
+	// }
+	// else
+	// {
+	// 	store[fd] = get_new_line(store[fd], line);
+	// 	if (!store[fd])
+	// 		return (-1);
+	// 	return (1);
+	// }
+	i = store_not_null(fd, store, line);
+	return (i);
 }
