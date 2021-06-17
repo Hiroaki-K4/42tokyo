@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 17:37:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 17:39:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,6 @@ char	*get_new_line(char *store, char **line)
 	free(store);
 	return (tmp);
 }
-
-// void	save_new_line_support(char *store, char *tmp, char *buf, int i)
-// {
-// 	int	j;
-
-// 	j = -1;
-// 	while (buf[++j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
-// 		tmp[ft_strlen(store) + j] = buf[j];
-// 	tmp[ft_strlen(store) + j] = '\0';
-// 	free(store);
-// }
 
 char	*save_new_line(char *store, char **line, char *buf)
 {
@@ -102,7 +91,7 @@ int	get_make_line(int fd, char **store, char **line, int i)
 
 int	store_not_null(int fd, char **store, char **line)
 {
-	int i;
+	int	i;
 
 	if (ft_strchr(store[fd], '\n') == NULL)
 	{
