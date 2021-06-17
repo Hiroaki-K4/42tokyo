@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 11:36:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 11:40:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	build_map(t_info *info, int count, char *line,
 	char	**tmp;
 	char	*map_line;
 
+	printf("ok\n");
 	double_array_free(line_split);
 	if (info->cub_list.line_num != 0 && count - info->cub_list.line_num != 1)
 		error_process(info, "Map is wrong");
