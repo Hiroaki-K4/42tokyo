@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 11:24:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 17:37:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 
 int		get_next_line(int fd, char **line, int flag);
+void	save_new_line_support(char *store, char *tmp, char *buf, int i);
 char	*ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *str);

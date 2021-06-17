@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 17:34:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 17:37:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ char	*get_new_line(char *store, char **line)
 	return (tmp);
 }
 
-void	save_new_line_support(char *store, char *tmp, char *buf, int i)
-{
-	int	j;
+// void	save_new_line_support(char *store, char *tmp, char *buf, int i)
+// {
+// 	int	j;
 
-	j = -1;
-	while (buf[++j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
-		tmp[ft_strlen(store) + j] = buf[j];
-	tmp[ft_strlen(store) + j] = '\0';
-	free(store);
-}
+// 	j = -1;
+// 	while (buf[++j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
+// 		tmp[ft_strlen(store) + j] = buf[j];
+// 	tmp[ft_strlen(store) + j] = '\0';
+// 	free(store);
+// }
 
 char	*save_new_line(char *store, char **line, char *buf)
 {
@@ -137,20 +137,6 @@ int	get_next_line(int fd, char **line, int flag)
 		if (!store[fd])
 			return (-1);
 	}
-	// if (ft_strchr(store[fd], '\n') == NULL)
-	// {
-	// 	i = get_make_line(fd, store, line, 1);
-	// 	if (i == 0)
-	// 		free(store[fd]);
-	// 	return (i);
-	// }
-	// else
-	// {
-	// 	store[fd] = get_new_line(store[fd], line);
-	// 	if (!store[fd])
-	// 		return (-1);
-	// 	return (1);
-	// }
 	i = store_not_null(fd, store, line);
 	return (i);
 }
