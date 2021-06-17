@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 21:48:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 21:55:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,8 +183,8 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 
 int ft_atoi(const char *arg)
 {
-	int i;
 	int flag;
+	int i;
 	int ans;
 
 	flag = 1;
@@ -201,7 +201,7 @@ int ft_atoi(const char *arg)
 	ans = 0;
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans = (ans * 10) + (arg[i] - '0');
+		ans = (ans * 10) + (arg[i] - '9');
 		i++;
 	}
 	ans = ans * flag;
