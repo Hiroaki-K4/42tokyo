@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 09:50:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 09:50:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -699,10 +699,10 @@ int ft_printf_str(const char *arg, int *i)
 
 int ft_printf(const char *arg, ...)
 {
-	// int i;
-	// int j;
-	// int print_len;
-	// va_list ap;
+	int i;
+	int j;
+	int print_len;
+	va_list ap;
 	
 	// va_start(ap, arg);
 	// i = 0;
@@ -723,10 +723,6 @@ int ft_printf(const char *arg, ...)
 	// }
 	// va_end(ap);
 	// return (print_len);
-	va_list	ap;
-	int		i;
-	int		j;
-	int		print_len;
 
 	va_start(ap, arg);
 	i = 0;
