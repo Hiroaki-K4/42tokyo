@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 23:04:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 11:36:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	map_line_check(t_info *info, char **line_split)
+int	map_line_check(int fd, t_info *info, char **line_split, char *line)
 {
 	int	i;
 	int	j;
@@ -20,7 +20,12 @@ int	map_line_check(t_info *info, char **line_split)
 	if (info->cub_list.n_count != 1 || info->cub_list.s_count != 1
 		|| info->cub_list.e_count != 1 || info->cub_list.w_count != 1
 		|| info->cub_list.f_count != 1 || info->cub_list.c_count != 1)
+	{
+		double_array_free(line_split);
+		get_next_line(fd, &line, -1);
+		free(line);
 		error_process(info, "Map is wrong");
+	}
 	i = 0;
 	while (line_split[i])
 	{
@@ -30,7 +35,12 @@ int	map_line_check(t_info *info, char **line_split)
 			if (line_split[i][j] != '0' && line_split[i][j] != '1'
 				&& line_split[i][j] != 'N' && line_split[i][j] != 'S'
 				&& line_split[i][j] != 'E' && line_split[i][j] != 'W')
+			{
+				double_array_free(line_split);
+				get_next_line(fd, &line, -1);
+				free(line);
 				error_process(info, "Map is wrong");
+			}
 			j++;
 		}
 		i++;
@@ -85,7 +95,7 @@ void	build_map(t_info *info, int count, char *line,
 	make_string_map(info, tmp, map_line);
 }
 
-int	cub_line_check(char *line, int count, t_info *info)
+int	cub_line_check(int fd, char *line, int count, t_info *info)
 {
 	int		i;
 	char	**line_split;
@@ -108,7 +118,7 @@ int	cub_line_check(char *line, int count, t_info *info)
 	i = ceiling_check(info, line_split, NULL);
 	if (i == 1)
 		return (0);
-	if (map_line_check(info, line_split) == 0)
+	if (map_line_check(fd, info, line_split, line) == 0)
 		build_map(info, count, line, line_split);
 	return (0);
 }

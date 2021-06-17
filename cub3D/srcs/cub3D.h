@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 22:27:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/17 11:28:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,13 +130,13 @@ typedef struct s_info
 	t_cub	cub_list;
 }				t_info;
 
-int		get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line, int flag);
 int		key_press(int key, t_info *info);
 void	calc(t_info *info);
 char	*ft_itoa_hex(unsigned int n, char *arg);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strchr_place(const char *str, int c);
-int		cub_line_check(char *line, int count, t_info *info);
+int		cub_line_check(int fd, char *line, int count, t_info *info);
 int		make_decimal_color(t_info *info, t_rgb color);
 int		convert_int_matrix(t_info *info);
 void	double_array_free(char **array);
