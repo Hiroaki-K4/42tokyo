@@ -6,7 +6,7 @@
 /*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/18 19:03:23 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/18 19:03:30 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,7 +244,7 @@ int ft_atoi(const char *arg)
 // 	return (0);
 // }
 
-int ft_isditi(int c)
+int ft_isditit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
