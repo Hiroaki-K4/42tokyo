@@ -6,7 +6,7 @@
 /*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/18 19:18:07 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/18 19:22:42 by hiroaki-k4       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ char *ft_itoa(int n)
 	int len;
 	int flag;
 	char *ans;
-	
+
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = digit_size(n);
