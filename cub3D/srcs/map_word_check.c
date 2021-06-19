@@ -6,13 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:26:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:40:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	floor_check(t_info *info, char **line_split, char **rgb_split, char *line)
+void	floor_check(t_info *info, char **line_split, char **rgb_split,
+	char *line)
 {
 	int	j;
 
@@ -79,14 +80,14 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 			free(line);
 			error_process(info, "Color is wrong");
 		}
-		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
-		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
-		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
+		info->cub_list.ceil.red = ft_atoi(rgb_split[0]);
+		info->cub_list.ceil.green = ft_atoi(rgb_split[1]);
+		info->cub_list.ceil.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
-		if (info->cub_list.ceiling.red < 0 || info->cub_list.ceiling.green < 0
-		|| info->cub_list.ceiling.blue < 0 || info->cub_list.ceiling.red > 255
-		|| info->cub_list.ceiling.green > 255 || info->cub_list.ceiling.blue
-		> 255)
+		if (info->cub_list.ceil.red < 0 || info->cub_list.ceil.green < 0
+			|| info->cub_list.ceil.blue < 0 || info->cub_list.ceil.red > 255
+			|| info->cub_list.ceil.green > 255 || info->cub_list.ceil.blue
+			> 255)
 		{
 			get_next_line(info->cub_list.fd, &line, -1);
 			free(line);
@@ -94,7 +95,7 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 		}
 		if (info->cub_list.c_count == 0)
 			info->cub_list.ceiling_dec = make_decimal_color
-				(info, info->cub_list.ceiling);
+				(info, info->cub_list.ceil);
 		info->cub_list.c_count++;
 		return (1);
 	}

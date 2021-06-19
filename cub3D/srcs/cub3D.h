@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:15:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:39:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ typedef struct s_cub
 	char		*e_texture;
 	char		**map;
 	t_rgb		floor;
-	t_rgb		ceiling;
+	t_rgb		ceil;
 }				t_cub;
 
 typedef struct s_info
@@ -156,8 +156,10 @@ void	load_texture(t_info *info);
 int		map_edge_check(t_info *info, int *i);
 void	map_not_srrounded_check(t_info *info);
 void	map_space_check(t_info *info);
-void	floor_check(t_info *info, char **line_split, char **rgb_split, char *line);
-int		ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line);
+void	floor_check(t_info *info, char **line_split, char **rgb_split,
+			char *line);
+int		ceiling_check(t_info *info, char **line_split, char **rgb_split,
+			char *line);
 int		map_ns_check(t_info *info, char **line_split, char *line);
 int		map_we_check(t_info *info, char **line_split, char *line);
 void	decide_texture(t_info *info);
