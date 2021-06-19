@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 18:07:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:16:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
 		if (rgb_split == NULL)
 			error_process(info, "ft_split failed");
 		double_array_free(line_split);
+		while (rgb_split[i])
+			i++;
+		if (i != 3)
+			error_process(info, "Color is wrong");
 		info->cub_list.ceiling.red = ft_atoi(rgb_split[0]);
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
