@@ -21,6 +21,8 @@ MLX = mlx_linux
 
 all: $(NAME)
 
+bonus: $(NAME)
+
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
 		make -C $(MLX)
