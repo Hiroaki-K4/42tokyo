@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 16:56:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 16:56:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -320,7 +320,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 	free(tmp);
 	if (flag_list.precision > flag_list.field)
 		return (flag_list.precision);
-	return (flag_list.field)
+	return (flag_list.field);
 }
 
 // int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
