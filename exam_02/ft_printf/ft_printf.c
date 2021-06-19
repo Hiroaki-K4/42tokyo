@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 17:27:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 17:27:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ int ft_atoi(const char *arg)
 	}
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans = (ans * 10) + (arg[i] + '0');
+		ans = (ans * 10) + (arg[i] - '0');
 		i++;
 	}
 	ans = ans * flag;
