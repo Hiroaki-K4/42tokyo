@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiroaki-k4 <hiroaki-k4@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/18 19:22:42 by hiroaki-k4       ###   ########.fr       */
+/*   Updated: 2021/06/19 11:26:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -739,12 +739,12 @@ int ft_printf(const char *arg, ...)
 	int j;
 	int print_len;
 	va_list ap;
-	
+
 	va_start(ap, arg);
 	i = 0;
+	print_len = 0;
 	if (arg == NULL)
 		i = -1;
-	print_len = 0;
 	while (i >= 0 && arg[i])
 	{
 		if (arg[i] != '%')
