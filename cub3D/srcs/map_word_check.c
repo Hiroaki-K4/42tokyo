@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:49:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:50:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ char **split_rgb(t_info *info, char **line_split, char **rgb_split, char *line)
 void	floor_check(t_info *info, char **line_split, char **rgb_split,
 	char *line)
 {
-	int	j;
-
 	// rgb_split = ft_split(line_split[1], ',');
 	// if (rgb_split == NULL)
 	// 	error_process(info, "ft_split failed");
