@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:40:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:45:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	floor_check(t_info *info, char **line_split, char **rgb_split,
 		free(line);
 		error_process(info, "Color is wrong");
 	}
-	if (info->cub_list.f_count == 0)
+	if (info->cub_list.f_count++ == 0)
 		info->cub_list.floor_dec = make_decimal_color(info,
 				info->cub_list.floor);
-	info->cub_list.f_count++;
+	// info->cub_list.f_count++;
 }
 
 int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
@@ -93,10 +93,10 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 			free(line);
 			error_process(info, "Color is wrong");
 		}
-		if (info->cub_list.c_count == 0)
+		if (info->cub_list.c_count++ == 0)
 			info->cub_list.ceiling_dec = make_decimal_color
 				(info, info->cub_list.ceil);
-		info->cub_list.c_count++;
+		// info->cub_list.c_count++;
 		return (1);
 	}
 	return (0);
