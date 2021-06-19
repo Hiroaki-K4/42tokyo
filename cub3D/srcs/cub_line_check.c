@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/17 11:56:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:36:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	cub_line_check(char *line, int count, t_info *info)
 	line_split = ft_split(line, ' ');
 	if (line_split == NULL)
 		error_process(info, "ft_split failed");
-	i = map_ns_check(info, line_split);
+	i = map_ns_check(info, line_split, line);
 	if (i == 1)
 		return (0);
 	i = map_we_check(info, line_split);
