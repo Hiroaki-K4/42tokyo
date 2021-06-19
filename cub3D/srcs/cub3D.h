@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 21:37:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:47:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void	map_space_check(t_info *info);
 void	floor_check(t_info *info, char **line_split, char **rgb_split);
 int		ceiling_check(t_info *info, char **line_split, char **rgb_split);
 int		map_ns_check(t_info *info, char **line_split, char *line);
-int		map_we_check(t_info *info, char **line_split);
+int		map_we_check(t_info *info, char **line_split, char *line);
 void	decide_texture(t_info *info);
 void	all_free(t_info *info);
 void	insert_null(t_info *info);
