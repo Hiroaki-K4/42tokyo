@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/16 23:02:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 18:06:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
 		info->cub_list.ceiling.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceiling.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
+		if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0
+		|| info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255
+		|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
+		> 255)
+			error_process(info, "Color is wrong");
 		if (info->cub_list.c_count == 0)
 			info->cub_list.ceiling_dec = make_decimal_color
 				(info, info->cub_list.ceiling);
