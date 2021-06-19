@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 23:01:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 23:10:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,6 @@ int	map_ns_check(t_info *info, char **line_split, char *line)
 {
 	int	i;
 
-	// if (line_split[0] == NULL)
-	// {
-	// 	double_array_free(line_split);
-	// 	return (1);
-	// }
 	i = ft_strcmp("NO", line_split[0]);
 	if (i == 0)
 	{
