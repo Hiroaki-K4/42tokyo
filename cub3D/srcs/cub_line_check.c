@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 21:48:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:53:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ int	cub_line_check(char *line, int count, t_info *info)
 	i = ft_strcmp("F", line_split[0]);
 	if (i == 0)
 	{
-		floor_check(info, line_split, NULL);
+		floor_check(info, line_split, NULL, line);
 		return (0);
 	}
-	i = ceiling_check(info, line_split, NULL);
+	i = ceiling_check(info, line_split, NULL, line);
 	if (i == 1)
 		return (0);
 	if (map_line_check(info, line_split, line) == 0)

@@ -6,19 +6,21 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 21:48:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:53:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	floor_check(t_info *info, char **line_split, char **rgb_split)
+void	floor_check(t_info *info, char **line_split, char **rgb_split, char *line)
 {
 	int	j;
 
 	rgb_split = ft_split(line_split[1], ',');
 	if (rgb_split == NULL)
 		error_process(info, "ft_split failed");
+	if (info->cub_list.line_num != 0)
+		map_wrong_process(info, line_split, line);
 	double_array_free(line_split);
 	j = 0;
 	while (rgb_split[j])
@@ -40,7 +42,7 @@ void	floor_check(t_info *info, char **line_split, char **rgb_split)
 	info->cub_list.f_count++;
 }
 
-int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
+int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 {
 	int	i;
 
@@ -50,6 +52,8 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split)
 		rgb_split = ft_split(line_split[1], ',');
 		if (rgb_split == NULL)
 			error_process(info, "ft_split failed");
+		if (info->cub_list.line_num != 0)
+			map_wrong_process(info, line_split, line);
 		double_array_free(line_split);
 		while (rgb_split[i])
 			i++;
