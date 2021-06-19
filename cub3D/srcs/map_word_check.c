@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:49:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:49:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-char *split_rgb(t_info *info, char **line_split, char **rgb_split, char *line)
+char **split_rgb(t_info *info, char **line_split, char **rgb_split, char *line)
 {
 	int i;
 
@@ -35,6 +35,7 @@ char *split_rgb(t_info *info, char **line_split, char **rgb_split, char *line)
 		free(line);
 		error_process(info, "Color is wrong");
 	}
+	return (rgb_split);
 }
 
 void	floor_check(t_info *info, char **line_split, char **rgb_split,
