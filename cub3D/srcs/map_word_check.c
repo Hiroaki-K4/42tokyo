@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 21:16:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 21:30:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	map_ns_check(t_info *info, char **line_split)
 	i = ft_strcmp("NO", line_split[0]);
 	if (i == 0)
 	{
-		if (info->cub_list.n_count++ == 0)
+		if (info->cub_list.n_count++ == 0 && info->cub_list.line_num == 0)
 			info->cub_list.n_texture = ft_strdup(line_split[1]);
 		double_array_free(line_split);
 		return (1);
@@ -93,7 +93,7 @@ int	map_ns_check(t_info *info, char **line_split)
 	i = ft_strcmp("SO", line_split[0]);
 	if (i == 0)
 	{
-		if (info->cub_list.s_count++ == 0)
+		if (info->cub_list.s_count++ == 0 && info->cub_list.line_num == 0)
 			info->cub_list.s_texture = ft_strdup(line_split[1]);
 		double_array_free(line_split);
 		return (1);
@@ -108,7 +108,7 @@ int	map_we_check(t_info *info, char **line_split)
 	i = ft_strcmp("WE", line_split[0]);
 	if (i == 0)
 	{
-		if (info->cub_list.w_count == 0)
+		if (info->cub_list.w_count == 0 && info->cub_list.line_num == 0)
 			info->cub_list.w_texture = ft_strdup(line_split[1]);
 		info->cub_list.w_count++;
 		double_array_free(line_split);
@@ -117,7 +117,7 @@ int	map_we_check(t_info *info, char **line_split)
 	i = ft_strcmp("EA", line_split[0]);
 	if (i == 0)
 	{
-		if (info->cub_list.e_count == 0)
+		if (info->cub_list.e_count == 0 && info->cub_list.line_num == 0)
 			info->cub_list.e_texture = ft_strdup(line_split[1]);
 		info->cub_list.e_count++;
 		double_array_free(line_split);
