@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 23:16:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 23:17:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**split_rgb(t_info *info, char **line_split, char **rgb_split,
 int	floor_check(t_info *info, char **line_split, char **rgb_split, char *line)
 {
 	int	i;
-	
+
 	i = ft_strcmp("F", line_split[0]);
 	if (i == 0)
 	{
