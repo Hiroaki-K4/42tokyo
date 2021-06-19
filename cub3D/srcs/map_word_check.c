@@ -6,13 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 22:51:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/19 22:56:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-char **split_rgb(t_info *info, char **line_split, char **rgb_split, char *line)
+char	**split_rgb(t_info *info, char **line_split, char **rgb_split,
+	char *line)
 {
 	int	i;
 
@@ -93,6 +94,7 @@ int	map_ns_check(t_info *info, char **line_split, char *line)
 {
 	int	i;
 
+	printf("line_split: %s\n", line_split);
 	if (line_split[0] == NULL)
 	{
 		double_array_free(line_split);
