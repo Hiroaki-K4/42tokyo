@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 23:00:21 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/05 17:30:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 10:25:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	int		i;
 	int		size;
 
+	if (!s)
+		return (NULL);
 	size = 0;
 	while (s[size] != '\0')
 		size++;

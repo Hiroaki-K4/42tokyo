@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/19 23:17:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 10:29:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ int	map_ns_check(t_info *info, char **line_split, char *line)
 	i = ft_strcmp("NO", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		if (info->cub_list.n_count++ == 0 && info->cub_list.line_num == 0)
 			info->cub_list.n_texture = ft_strdup(line_split[1]);
 		if (info->cub_list.line_num != 0)
@@ -114,6 +116,8 @@ int	map_ns_check(t_info *info, char **line_split, char *line)
 	i = ft_strcmp("SO", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		if (info->cub_list.s_count++ == 0 && info->cub_list.line_num == 0)
 			info->cub_list.s_texture = ft_strdup(line_split[1]);
 		if (info->cub_list.line_num != 0)
@@ -131,6 +135,8 @@ int	map_we_check(t_info *info, char **line_split, char *line)
 	i = ft_strcmp("WE", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		if (info->cub_list.w_count == 0 && info->cub_list.line_num == 0)
 			info->cub_list.w_texture = ft_strdup(line_split[1]);
 		info->cub_list.w_count++;
@@ -142,6 +148,8 @@ int	map_we_check(t_info *info, char **line_split, char *line)
 	i = ft_strcmp("EA", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		if (info->cub_list.e_count == 0 && info->cub_list.line_num == 0)
 			info->cub_list.e_texture = ft_strdup(line_split[1]);
 		info->cub_list.e_count++;

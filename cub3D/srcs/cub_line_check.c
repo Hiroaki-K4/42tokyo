@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 09:53:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 10:10:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ void	build_map(t_info *info, int count, char *line,
 
 int	cub_line_check(char *line, int count, t_info *info, int i)
 {
-	// int		i;
 	char	**line_split;
 
 	line_split = ft_split(line, ' ');
