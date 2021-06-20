@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 21:30:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 10:00:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 11:17:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,5 +166,6 @@ void	decide_texture(t_info *info);
 void	all_free(t_info *info);
 void	insert_null(t_info *info);
 void	map_wrong_process(t_info *info, char **line_split, char *line);
+void	check_rgb(t_info *info, char *line, int flag);
 
 #endif

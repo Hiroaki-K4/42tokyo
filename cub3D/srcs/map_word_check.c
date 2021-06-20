@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 10:39:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 11:17:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,7 @@ int	floor_check(t_info *info, char **line_split, char **rgb_split, char *line)
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
 		info->cub_list.floor.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
-		if (info->cub_list.floor.red < 0 || info->cub_list.floor.green < 0
-			|| info->cub_list.floor.blue < 0 || info->cub_list.floor.red > 255
-			|| info->cub_list.floor.green > 255 || info->cub_list.floor.blue
-			> 255)
-		{
-			get_next_line(info->cub_list.fd, &line, -1);
-			free(line);
-			error_process(info, "Color is wrong");
-		}
+		check_rgb(info, line, 0);
 		if (info->cub_list.f_count++ == 0)
 			info->cub_list.floor_dec = make_decimal_color(info,
 					info->cub_list.floor);
@@ -84,15 +76,7 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 		info->cub_list.ceil.green = ft_atoi(rgb_split[1]);
 		info->cub_list.ceil.blue = ft_atoi(rgb_split[2]);
 		double_array_free(rgb_split);
-		if (info->cub_list.ceil.red < 0 || info->cub_list.ceil.green < 0
-			|| info->cub_list.ceil.blue < 0 || info->cub_list.ceil.red > 255
-			|| info->cub_list.ceil.green > 255 || info->cub_list.ceil.blue
-			> 255)
-		{
-			get_next_line(info->cub_list.fd, &line, -1);
-			free(line);
-			error_process(info, "Color is wrong");
-		}
+		check_rgb(info, line, 1);
 		if (info->cub_list.c_count++ == 0)
 			info->cub_list.ceiling_dec = make_decimal_color
 				(info, info->cub_list.ceil);
