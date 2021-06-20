@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 10:29:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 10:39:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	floor_check(t_info *info, char **line_split, char **rgb_split, char *line)
 	i = ft_strcmp("F", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		rgb_split = split_rgb(info, line_split, rgb_split, line);
 		info->cub_list.floor.red = ft_atoi(rgb_split[0]);
 		info->cub_list.floor.green = ft_atoi(rgb_split[1]);
@@ -75,6 +77,8 @@ int	ceiling_check(t_info *info, char **line_split, char **rgb_split, char *line)
 	i = ft_strcmp("C", line_split[0]);
 	if (i == 0)
 	{
+		if (!line_split[1])
+			map_wrong_process(info, line_split, line);
 		rgb_split = split_rgb(info, line_split, rgb_split, line);
 		info->cub_list.ceil.red = ft_atoi(rgb_split[0]);
 		info->cub_list.ceil.green = ft_atoi(rgb_split[1]);
