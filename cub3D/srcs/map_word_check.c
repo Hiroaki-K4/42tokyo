@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:10:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 13:27:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 13:27:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,6 @@ int	map_ns_check(t_info *info, char **line_split, char *line)
 
 int	map_we_check(t_info *info, char **line_split, char *line)
 {
-	// int	i;
-
-	// i = ft_strcmp("WE", line_split[0]);
 	if (ft_strcmp("WE", line_split[0]) == 0)
 	{
 		if (!line_split[1])
@@ -129,7 +126,6 @@ int	map_we_check(t_info *info, char **line_split, char *line)
 		double_array_free(line_split);
 		return (1);
 	}
-	// i = ft_strcmp("EA", line_split[0]);
 	if (ft_strcmp("EA", line_split[0]) == 0)
 	{
 		if (!line_split[1])
