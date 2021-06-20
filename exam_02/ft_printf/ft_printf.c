@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 21:00:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 21:20:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	return (ans);
 }
 
-static	int		digit_size(int num)
+int		digit_size(int num)
 {
 	int		len;
 
@@ -124,6 +124,8 @@ static	int		digit_size(int num)
 	}
 	return (len);
 }
+
+
 
 // char			*ft_itoa(int n)
 // {
