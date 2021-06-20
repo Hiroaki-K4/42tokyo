@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/20 20:26:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/20 20:34:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -291,7 +291,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
 	int j;
 	char *tmp;
-	
+
 	if (num < 0)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
@@ -320,7 +320,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 	free(tmp);
 	if (flag_list.precision > flag_list.field)
 		return (flag_list.precision);
-	return (flag_list.field);
+	return (flag_list.field)
 }
 
 // int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
