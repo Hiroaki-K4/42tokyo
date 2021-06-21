@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/21 21:17:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/21 21:18:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,6 +227,8 @@ char *ft_strdup(const char *src)
     char *dst;
     
     if (!src)
+        return (NULL);
+    if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
         return (NULL);
     i = 0;
     while (src[i])
