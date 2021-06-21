@@ -7,8 +7,7 @@ We are producing many engineers who are active in society with new systems such 
 <br>
 
 # About this repository
-This repository contains the code I wrote when solving the problems of 42tokyo.
-
+This is the repository used for the development of 42. Don't worry if the commit name is just edit. The final submission code for each assignment is the link below.
 <br>
 
 # My source code
