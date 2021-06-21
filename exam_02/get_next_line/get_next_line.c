@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/21 11:52:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/21 18:58:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,7 +213,7 @@
 
 
 
-int read_line(int fd, char *store, char **line)
+int read_line(int fd, char **store, char **line)
 {
     int buffer_size;
     int i;
