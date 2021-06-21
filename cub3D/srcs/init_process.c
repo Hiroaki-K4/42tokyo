@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 11:47:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/21 11:32:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/21 11:33:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	info_init(t_info *info)
 	info->mlx = mlx_init();
 	mlx_get_screen_size(info->mlx, &sizex, &sizey);
 	// info->cub_list.width = sizex;
-	info->cub_list.width = 1920;
+	info->cub_list.width = 1280;
 	// info->cub_list.height = sizey;
-	info->cub_list.height = 1080;
+	info->cub_list.height = 720;
 	info->movespeed = 0.05;
 	info->rotspeed = 0.05;
 }
