@@ -3,7 +3,7 @@ SO ./textures/redbrick.xpm
 WE ./textures/purplestone.xpm
 EA ./textures/greystone.xpm
 
-F 200,100,250
+F 20,100,250
 C 225,30,0
 
         1111111111111111111111111
