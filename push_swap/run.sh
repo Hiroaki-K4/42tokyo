@@ -1,7 +1,7 @@
 #!/bin/bash
 
 make re
-./push_swap 3
+./push_swap a
 make fclean
 cd ..
 sh git.sh
