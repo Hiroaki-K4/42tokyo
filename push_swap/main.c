@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/23 10:54:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/23 11:25:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 int main(int argc, char *argv[])
 {
-    printf("argc: %d\n", argc);
-    printf("argv: %s\n", argv[0]);
+    int i;
+
+    i = 1;
+    while (i < argc)
+    {
+        printf("argv: %s\n", argv[i]);
+        i++;
+    }
     return (0);
 }
