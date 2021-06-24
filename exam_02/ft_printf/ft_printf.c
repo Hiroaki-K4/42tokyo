@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:11:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:15:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,12 +171,12 @@ int digit_size(int num)
 
 char *ft_itoa(int n)
 {
-	int i;
 	int flag;
 	int len;
 	char *ans;
 
-	i = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	flag = 1;
 	if (n < 0)
 	{
@@ -233,7 +233,7 @@ int ft_atoi(const char *arg)
 
 	i = 0;
 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
-			arg[i] == '\r' || arg[i] == '\t' || arg[i] == \v)
+			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
 		i++;
 	if (arg[i] == '-' || arg[i] == '+')
 	{
@@ -241,6 +241,7 @@ int ft_atoi(const char *arg)
 			flag = -1;
 		i++;
 	}
+	ans = 0;
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
 		ans = (10 * ans) + (arg[i] - '0');
