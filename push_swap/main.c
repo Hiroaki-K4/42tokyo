@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:33:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:34:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int str_to_digit(const char *arg)
             flag = flag * (-1);
         i++;
     }
+    num = 0;
     while (arg[i])
     {
         if (arg[i] < '0' || arg[i] > '9')
