@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:40:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:43:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int str_to_digit(const char *arg)
     int i;
     int flag;
     size_t num;
+    int ans;
 
     flag = 1;
     i = 0;
@@ -37,10 +38,10 @@ int str_to_digit(const char *arg)
         num = (10 * num) + (arg[i] - '0');
         i++;
     }
-    num = num * flag;
-    if (num > 2147483647 || num < -2147483648)
+    if ((flag == 1 && num > 2147483647) || (flag == -1 && num > 2147483648))
         return (-1);
-    return (num);
+    ans = num * flag;
+    return (ans);
 }
 
 int main(int argc, char *argv[])
