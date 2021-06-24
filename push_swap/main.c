@@ -6,14 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:54:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:54:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-int str_to_digit(const char *arg)
+int digit_check(const char *arg)
 {
     int i;
     int flag;
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     i = 1;
     while (i < argc)
     {
-        if (str_to_digit(argv[i]) == -1)
+        if (digit_check(argv[i]) == -1)
             error_process();
         num = ft_atoi(argv[i]);
         printf("arg: %d\n", num);
