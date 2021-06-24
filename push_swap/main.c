@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:38:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:40:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int str_to_digit(const char *arg)
         i++;
     }
     num = num * flag;
+    if (num > 2147483647 || num < -2147483648)
+        return (-1);
     return (num);
 }
 
