@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:49:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:50:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ int str_to_digit(const char *arg)
     return (0);
 }
 
+void    error_process()
+{
+    write(1, "Error\n", 6);
+    exit(0);
+}
+
 int main(int argc, char *argv[])
 {
     int i;
@@ -52,10 +58,7 @@ int main(int argc, char *argv[])
     {
         num = str_to_digit(argv[i]);
         if (num == -1)
-        {
-            write(1, "Error\n", 6);
-            exit(0);
-        }
+            error_process();
         printf("arg: %d\n", num);
         i++;
     }
