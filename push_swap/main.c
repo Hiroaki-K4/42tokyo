@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:50:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:54:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int main(int argc, char *argv[])
     i = 1;
     while (i < argc)
     {
-        num = str_to_digit(argv[i]);
-        if (num == -1)
+        if (str_to_digit(argv[i]) == -1)
             error_process();
+        num = ft_atoi(argv[i]);
         printf("arg: %d\n", num);
         i++;
     }
