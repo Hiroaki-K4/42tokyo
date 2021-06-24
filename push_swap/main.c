@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/24 22:34:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/24 22:36:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int str_to_digit(const char *arg)
     {
         if (arg[i] == '-')
             flag = flag * (-1);
+        if (i == (int)ft_strlen(arg))
+            return (-1);
         i++;
     }
     num = 0;
