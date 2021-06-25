@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $1
+echo $*
 git add .
 git commit -m "$1"
 git push origin main
