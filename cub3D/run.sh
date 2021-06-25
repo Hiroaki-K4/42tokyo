@@ -5,5 +5,5 @@ make re
 # ./cub3D try.cub
 make fclean
 cd ..
-sh git.sh
+sh git.sh $*
 cd cub3D
