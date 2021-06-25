@@ -4,5 +4,5 @@ make re
 ./push_swap 3 2 a -10 + -0 -- -2147483649 -1
 make fclean
 cd ..
-sh git.sh $1
+sh git.sh $*
 cd push_swap
