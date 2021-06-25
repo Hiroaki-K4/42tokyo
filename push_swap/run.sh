@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $s1
+echo $1
 make re
 ./push_swap 3 2 a -10 + -0 -- -2147483649 -1
 make fclean
