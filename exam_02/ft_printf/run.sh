@@ -14,5 +14,5 @@ gcc ft_printf.c test.c -o ft_printf
 # diff -y --suppress-common-lines r y
 # rm -rf yy y r ft_printf printf
 cd ../../
-sh git.sh
+sh git.sh $*
 cd exam_02/ft_printf

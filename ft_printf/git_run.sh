@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd ..
-sh git.sh
+sh git.sh $*
 cd printf
