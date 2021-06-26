@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 16:10:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 16:19:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,26 @@ void	error_process()
 	exit(0);
 }
 
+t_bi_list	*last_list(t_bi_list *list)
+{
+	while (list->next != NULL)
+		list = list->next;
+	return (list);
+}
+
 void	add_list(t_bi_list *list, int num)
 {
 	t_bi_list	*new;
 
-	printf("list: %d\n", list->data);
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	// if (!new)
 	// 	return (NULL);
+	list = last_list(list);
 	new->data = num;
 	new->prev = list;
 	new->next = NULL;
 	list->next = new;
+	// printf("list: %d\n", list->next->data);
 }
 
 void	show_list(t_bi_list *list)
@@ -75,21 +83,20 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list *list;
-
-	list = NULL;
-	list->prev = NULL;
-	list->next = NULL;
+	t_bi_list list;
+	
+	list.prev = NULL;
+	list.next = NULL;
 	i = 1;
 	while (i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		num = ft_atoi(argv[i]);
-		printf("arg: %d\n", num);
-		add_list(list, num);
+		// printf("arg: %d\n", num);
+		add_list(&list, num);
 		i++;
 	}
-	show_list(list);
+	show_list(&list);
 	return (0);
 }
