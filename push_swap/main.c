@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 23:07:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 23:08:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
 	}
 	else
 		last_list(stack_b)->next = stack_a;
+	// stack_aの先頭を削除し、1個ずつ先頭にずらす処理を書く
 	printf("stack_b: %d\n", stack_b->data);
 }
 
