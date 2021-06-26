@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:33:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:36:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	duplicate_check(int argc, char *argv[])
 		j = i + 1;
 		while (j < argc)
 		{
-			if (argv[i] == argv[j])
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				return (1);
 			j++;
 		}
@@ -130,6 +130,6 @@ int	main(int argc, char *argv[])
 	}
 	show_list(&list);
 	if (duplicate_check(argc, argv) == 1)
-		printf("dup\n");
+		error_process();
 	return (0);
 }
