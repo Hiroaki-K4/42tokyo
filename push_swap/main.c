@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 15:16:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 15:18:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	main(int argc, char *argv[])
 	int num;
 	t_bi_list list;
 
+	list.prev = NULL;
+	list.next = NULL;
 	i = 1;
 	while (i < argc)
 	{
