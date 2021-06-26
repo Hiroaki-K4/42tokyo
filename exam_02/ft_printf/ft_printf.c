@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 12:28:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 12:33:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,40 @@ int		digit_size(int num)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+// char			*ft_itoa(int n)
+// {
+// 	int		len;
+// 	int		flag;
+// 	char	*ans;
+
+// 	if (n == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	len = digit_size(n);
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	flag = 1;
+// 	if (n < 0)
+// 	{
+// 		n = n * (-1);
+// 		flag = -1;
+// 	}
+// 	ans[len] = '\0';
+// 	len--;
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = '0' + (n % 10);
+// 		n = n / 10;
+// 	}
+// 	if (flag == -1)
+// 		ans[0] = '-';
+// 	return (ans);
+// }
+
+char *ft_itoa(int n)
 {
-	int		len;
-	int		flag;
-	char	*ans;
+	int len;
+	int flag;
+	char *ans;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -146,7 +175,7 @@ char			*ft_itoa(int n)
 	len--;
 	while (len >= 0)
 	{
-		ans[len--] = '0' + (n % 10);
+		ans[len--] = (n % 10) + '0';
 		n = n / 10;
 	}
 	if (flag == -1)
