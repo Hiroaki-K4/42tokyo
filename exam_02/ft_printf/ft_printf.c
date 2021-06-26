@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 12:25:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 12:26:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -695,26 +695,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	return (len);
 }
 
-int		ft_printf_str(const char *arg, int *i)
-{
-	int	len;
-
-	len = 0;
-	while (arg[*i] != '%' && arg[*i])
-	{
-		write(1, &arg[*i], 1);
-		(*i)++;
-		len++;
-	}
-	return (len);
-}
-
-// int ft_printf_str(const char *arg, int *i)
+// int		ft_printf_str(const char *arg, int *i)
 // {
-// 	int len;
+// 	int	len;
 
 // 	len = 0;
-// 	while (arg[*i] && arg[*i] != '%')
+// 	while (arg[*i] != '%' && arg[*i])
 // 	{
 // 		write(1, &arg[*i], 1);
 // 		(*i)++;
@@ -723,46 +709,32 @@ int		ft_printf_str(const char *arg, int *i)
 // 	return (len);
 // }
 
-// int		ft_printf(const char *arg, ...)
-// {
-// 	va_list	ap;
-// 	int		i;
-// 	int		j;
-// 	int		print_len;
-
-// 	va_start(ap, arg);
-// 	i = 0;
-// 	if (arg == NULL)
-// 		i = -1;
-// 	print_len = 0;
-// 	while (i >= 0 && arg[i])
-// 	{
-// 		if (arg[i] != '%')
-// 			print_len += ft_printf_str(arg, &i);
-// 		else
-// 		{
-// 			j = ft_printf_per(arg, &i, &ap);
-// 			if (j == -1)
-// 				return (-1);
-// 			print_len += j;
-// 		}
-// 	}
-// 	va_end(ap);
-// 	return (print_len);
-// }
-
-int ft_printf(const char *arg, ...)
+int ft_printf_str(const char *arg, int *i)
 {
-	int i;
-	int j;
-	int print_len;
-	va_list ap;
+	int len;
 
+	len = 0;
+	while (arg[*i] && arg[*i] != '%')
+	{
+		write(1, &arg[*i], 1);
+		(*i)++;
+		len++;
+	}
+	return (len);
+}
+
+int		ft_printf(const char *arg, ...)
+{
+	va_list	ap;
+	int		i;
+	int		j;
+	int		print_len;
+
+	va_start(ap, arg);
 	i = 0;
-	print_len = 0;
 	if (arg == NULL)
 		i = -1;
-	va_start(ap, arg);
+	print_len = 0;
 	while (i >= 0 && arg[i])
 	{
 		if (arg[i] != '%')
@@ -778,3 +750,31 @@ int ft_printf(const char *arg, ...)
 	va_end(ap);
 	return (print_len);
 }
+
+// int ft_printf(const char *arg, ...)
+// {
+// 	int i;
+// 	int j;
+// 	int print_len;
+// 	va_list ap;
+
+// 	i = 0;
+// 	print_len = 0;
+// 	if (arg == NULL)
+// 		i = -1;
+// 	va_start(ap, arg);
+// 	while (i >= 0 && arg[i])
+// 	{
+// 		if (arg[i] != '%')
+// 			print_len += ft_printf_str(arg, &i);
+// 		else
+// 		{
+// 			j = ft_printf_per(arg, &i, &ap);
+// 			if (j == -1)
+// 				return (-1);
+// 			print_len += j;
+// 		}
+// 	}
+// 	va_end(ap);
+// 	return (print_len);
+// }
