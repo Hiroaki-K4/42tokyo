@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 22:45:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 23:02:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,18 @@ int	duplicate_check(int argc, char *argv[])
 	return (0);
 }
 
+void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
+{
+	last_list(stack_b)->next = stack_a;
+	printf("stack_b: %d\n", stack_b->data);
+}
+
 int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
 	t_bi_list stack_a;
+	t_bi_list stack_b;
 	
 	stack_a.prev = NULL;
 	stack_a.next = NULL;
@@ -131,5 +138,6 @@ int	main(int argc, char *argv[])
 	show_list(&stack_a);
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
+	swap_a(stack_a, &stack_b);
 	return (0);
 }
