@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 16:01:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:16:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_bi_list
 {
     int data;
+    int start;
     struct  s_bi_list *prev;
     struct  s_bi_list *next;
 }	t_bi_list;

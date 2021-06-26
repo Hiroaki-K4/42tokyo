@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:04:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:20:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,23 @@ void	add_list(t_bi_list *list, int num)
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	// if (!new)
 	// 	return (NULL);
-	new->data = num;
-	if (list->prev == NULL)
+	if (list->start == 1)
 	{
-		new->prev = NULL;
-		new->next = NULL;
-		list = new;
+		list->data = num;
+		list->start = 0;
+		list->prev = NULL;
+		list->next = NULL;
+		list->start = 0;
 	}
 	else
 	{
+		new->data = num;
+		new->start = 0;
 		list = last_list(list);
 		new->prev = list;
 		new->next = NULL;
 		list->next = new;
 	}
-	// printf("list: %d\n", list->next->data);
 }
 
 void	show_list(t_bi_list *list)
@@ -96,6 +98,7 @@ int	main(int argc, char *argv[])
 	
 	list.prev = NULL;
 	list.next = NULL;
+	list.start = 1;
 	i = 1;
 	while (i < argc)
 	{
