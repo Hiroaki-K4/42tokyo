@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 16:09:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 16:09:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int	main(int argc, char *argv[])
 		add_list(list, num);
 		i++;
 	}
-	show_list(&list);
+	show_list(list);
 	return (0);
 }
