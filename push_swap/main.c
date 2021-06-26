@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:20:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:31:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,26 @@ void	show_list(t_bi_list *list)
 	}
 }
 
+int	duplicate_check(int argc, char *argv[])
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (argv[i] == argv[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	int i;
@@ -105,10 +125,11 @@ int	main(int argc, char *argv[])
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		num = ft_atoi(argv[i]);
-		// printf("arg: %d\n", num);
 		add_list(&list, num);
 		i++;
 	}
 	show_list(&list);
+	if (duplicate_check(argc, argv) == 1)
+		printf("dup\n");
 	return (0);
 }
