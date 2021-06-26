@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:31:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:33:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	duplicate_check(int argc, char *argv[])
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		j = i + 1;
