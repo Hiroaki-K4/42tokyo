@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:36:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 22:45:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,21 +114,21 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list list;
+	t_bi_list stack_a;
 	
-	list.prev = NULL;
-	list.next = NULL;
-	list.start = 1;
+	stack_a.prev = NULL;
+	stack_a.next = NULL;
+	stack_a.start = 1;
 	i = 1;
 	while (i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		num = ft_atoi(argv[i]);
-		add_list(&list, num);
+		add_list(&stack_a, num);
 		i++;
 	}
-	show_list(&list);
+	show_list(&stack_a);
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	return (0);
