@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 15:58:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 16:03:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@ void	add_list(t_bi_list *list, int num)
 	list->next = new;
 }
 
+void	show_list(t_bi_list *list)
+{
+	while (list != NULL)
+	{
+		printf("data: %d\n", list->data);
+		list = list->next;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	int i;
@@ -79,5 +88,6 @@ int	main(int argc, char *argv[])
 		add_list(&list, num);
 		i++;
 	}
+	show_list(&list);
 	return (0);
 }
