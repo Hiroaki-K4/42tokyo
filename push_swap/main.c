@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 17:04:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:04:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	add_list(t_bi_list *list, int num)
 	// if (!new)
 	// 	return (NULL);
 	new->data = num;
-	if (list->prev = NULL)
+	if (list->prev == NULL)
 	{
 		new->prev = NULL;
 		new->next = NULL;
