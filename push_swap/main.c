@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 23:03:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 23:03:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,9 @@ int	main(int argc, char *argv[])
 	stack_a.prev = NULL;
 	stack_a.next = NULL;
 	stack_a.start = 1;
+	stack_b.prev = NULL;
+	stack_b.next = NULL;
+	stack_b.start = 1;
 	i = 1;
 	while (i < argc)
 	{
