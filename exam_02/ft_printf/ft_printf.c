@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/26 12:20:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/26 12:23:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,39 +198,13 @@ char *ft_itoa(int n)
 	return (ans);
 }
 
-int		ft_atoi(const char *arg)
-{
-	int		i;
-	int		flag;
-	int		ans;
-
-	flag = 1;
-	i = 0;
-	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
-			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
-		i++;
-	if (arg[i] == '-' || arg[i] == '+')
-	{
-		if (arg[i] == '-')
-			flag = -1;
-		i++;
-	}
-	ans = 0;
-	while (arg[i] >= '0' && arg[i] <= '9')
-	{
-		ans = (ans * 10) + (arg[i] - '0');
-		i++;
-	}
-	ans = ans * flag;
-	return (ans);
-}
-
-// int ft_atoi(const char *arg)
+// int		ft_atoi(const char *arg)
 // {
-// 	int flag;
-// 	int ans;
-// 	int i;
-	
+// 	int		i;
+// 	int		flag;
+// 	int		ans;
+
+// 	flag = 1;
 // 	i = 0;
 // 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
 // 			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
@@ -244,12 +218,38 @@ int		ft_atoi(const char *arg)
 // 	ans = 0;
 // 	while (arg[i] >= '0' && arg[i] <= '9')
 // 	{
-// 		ans = (10 * ans) + (arg[i] - '0');
+// 		ans = (ans * 10) + (arg[i] - '0');
 // 		i++;
 // 	}
 // 	ans = ans * flag;
 // 	return (ans);
 // }
+
+int ft_atoi(const char *arg)
+{
+	int flag;
+	int ans;
+	int i;
+	
+	i = 0;
+	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
+			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
+		i++;
+	if (arg[i] == '-' || arg[i] == '+')
+	{
+		if (arg[i] == '-')
+			flag = -1;
+		i++;
+	}
+	ans = 0;
+	while (arg[i] >= '0' && arg[i] <= '9')
+	{
+		ans = (10 * ans) + (arg[i] - '0');
+		i++;
+	}
+	ans = ans * flag;
+	return (ans);
+}
 
 // int		ft_isdigit(int c)
 // {
@@ -615,54 +615,14 @@ int str_to_num(const char *arg, int *i, int flag)
 	return (num);
 }
 
-int		ft_printf_per(const char *arg, int *i, va_list *ap)
-{
-	int		len;
-	int		num;
-	int		keta;
-	unsigned	int	hex_num;
-	char	*str_num;
-	t_plist	flag_list;
-
-	(*i)++;
-	flag_list.field = str_to_num(&arg[*i], i, 0);
-	flag_list.precision = -1;
-	if (arg[*i] == '.')
-	{
-		(*i)++;
-		flag_list.precision = str_to_num(&arg[*i], i, 1);
-	}
-	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
-	if (flag_list.format == 0)
-		len = print_string(ap, flag_list);
-	else if (flag_list.format == 1)
-	{
-		num = va_arg(*ap, int);
-		if (!(str_num = ft_itoa(num)))
-			return (-1);
-		keta = ft_strlen(str_num);
-		if (num < 0)
-			keta--;
-		len = print_digit(flag_list, str_num, num, keta);
-	}
-	else if (flag_list.format == 2)
-	{
-		hex_num = va_arg(*ap, unsigned int);
-		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
-			return (-1);
-		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
-	}
-	return (len);
-}
-
-// int ft_printf_per(const char *arg, int *i, va_list *ap)
+// int		ft_printf_per(const char *arg, int *i, va_list *ap)
 // {
-// 	int num;
-// 	int len;
-// 	int keta;
-// 	unsigned int hex_num;
-// 	char *str_num;
-// 	t_plist flag_list;
+// 	int		len;
+// 	int		num;
+// 	int		keta;
+// 	unsigned	int	hex_num;
+// 	char	*str_num;
+// 	t_plist	flag_list;
 
 // 	(*i)++;
 // 	flag_list.field = str_to_num(&arg[*i], i, 0);
@@ -694,6 +654,46 @@ int		ft_printf_per(const char *arg, int *i, va_list *ap)
 // 	}
 // 	return (len);
 // }
+
+int ft_printf_per(const char *arg, int *i, va_list *ap)
+{
+	int num;
+	int len;
+	int keta;
+	unsigned int hex_num;
+	char *str_num;
+	t_plist flag_list;
+
+	(*i)++;
+	flag_list.field = str_to_num(&arg[*i], i, 0);
+	flag_list.precision = -1;
+	if (arg[*i] == '.')
+	{
+		(*i)++;
+		flag_list.precision = str_to_num(&arg[*i], i, 1);
+	}
+	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
+	if (flag_list.format == 0)
+		len = print_string(ap, flag_list);
+	else if (flag_list.format == 1)
+	{
+		num = va_arg(*ap, int);
+		if (!(str_num = ft_itoa(num)))
+			return (-1);
+		keta = ft_strlen(str_num);
+		if (num < 0)
+			keta--;
+		len = print_digit(flag_list, str_num, num, keta);
+	}
+	else if (flag_list.format == 2)
+	{
+		hex_num = va_arg(*ap, unsigned int);
+		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+			return (-1);
+		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
+	}
+	return (len);
+}
 
 // int		ft_printf_str(const char *arg, int *i)
 // {
