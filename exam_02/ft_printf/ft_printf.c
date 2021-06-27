@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 10:14:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 10:14:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -486,7 +486,6 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 			return (-1);
 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
 	}
-	free(str_num);
 	return (len);
 }
 
