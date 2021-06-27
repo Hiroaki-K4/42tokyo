@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 14:26:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 14:36:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int	duplicate_check(int argc, char *argv[])
 
 void	top_del(t_bi_list *list)
 {
-	while (list != NULL)
+	while (list->next != NULL)
 	{
 		printf("ok\n");
 		list = list->next;
