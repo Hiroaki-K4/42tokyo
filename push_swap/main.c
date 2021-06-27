@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 16:12:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 18:28:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,30 +108,33 @@ int	duplicate_check(int argc, char *argv[])
 	return (0);
 }
 
-t_bi_list	*top_del(t_bi_list *list)
+void	top_del(t_bi_list *list)
 {
 	if (list->next)
 	{
-		list->next->prev = NULL;
+		// list->next->prev = NULL;
 		list = list->next;
 		list->prev = NULL;
 	}
-	return (list);
+	// show_list(list);
+	// return (list);
 }
 
-// void	push_b(t_bi_list *stack_a, t_bi_list *stack_b)
-// {
-// 	printf("ok\n");
-// 	if (stack_b->start == 1)
-// 	{
-// 		stack_b->data = stack_a->data;
-// 		stack_b->start = 0;
-// 	}
-// 	else
-// 		last_list(stack_b)->next = stack_a;
-// 	stack_a = top_del(stack_a);
-// 	write(1, "pb\n", 3);
-// }
+void	push_b(t_bi_list *stack_a, t_bi_list *stack_b)
+{
+	if (stack_b->next == NULL)
+	{
+		stack_b->data = stack_a->data;
+		stack_b->start = 0;
+	}
+	else
+		last_list(stack_b)->next = stack_a;
+	// last_list(stack_b)->next = stack_a;
+	// stack_a = top_del(stack_a);
+	top_del(stack_a);
+	show_list(stack_a);
+	write(1, "pb\n", 3);
+}
 
 // void	push_a(t_bi_list *stack_a, t_bi_list *stack_b)
 // {
@@ -146,74 +149,52 @@ t_bi_list	*top_del(t_bi_list *list)
 // 	write(1, "pa\n", 3);
 // }
 
-t_bi_list	*swap_a(t_bi_list *stack_a)
+void	swap_a(t_bi_list *stack_a)
 {
-	t_bi_list *tmp;
-	
+	int	tmp;
 	if (stack_a && stack_a->next)
 	{
-		tmp = stack_a;
-		stack_a = stack_a->next;
-		stack_a->prev = NULL;
-		tmp->next = stack_a->next;
-		tmp->prev = stack_a;
-		stack_a->next = tmp;
+		tmp = stack_a->data;
+		stack_a->data = stack_a->next->data;
+		stack_a->next->data = tmp;
 	}
 	write(1, "sa\n", 3);
-	return (stack_a);
-}
-
-t_bi_list	*swap_b(t_bi_list *stack_b)
-{
-	t_bi_list *tmp;
-	
-	if (stack_b && stack_b->next)
-	{
-		tmp = stack_b;
-		stack_b = stack_b->next;
-		stack_b->prev = NULL;
-		tmp->next = stack_b->next;
-		tmp->prev = stack_b;
-		stack_b->next = tmp;
-	}
-	write(1, "sb\n", 3);
-	return (stack_b);
 }
 
 int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list *first;
-	t_bi_list *stack_a;
-	// t_bi_list *stack_b;
+	t_bi_list stack_a;
+	t_bi_list stack_b;
 	
-	first = (t_bi_list *)malloc(sizeof(t_bi_list));
-	first->prev = NULL;
-	first->next = NULL;
-	first->start = 1;
-	stack_a = first;
-	free(first);
-	first = (t_bi_list *)malloc(sizeof(t_bi_list));
-	first->prev = NULL;
-	first->next = NULL;
-	first->start = 1;
-	// stack_b = first;
+	stack_a.prev = NULL;
+	stack_a.next = NULL;
+	stack_a.start = 1;
+	stack_a.data = 0;
+	stack_b.prev = NULL;
+	stack_b.next = NULL;
+	stack_b.start = 1;
+	stack_b.data = 0;
 	i = 1;
 	while (i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		num = ft_atoi(argv[i]);
-		add_list(stack_a, num);
+		add_list(&stack_a, num);
 		i++;
 	}
+	// show_list(&stack_a);
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
+	push_b(&stack_a, &stack_b);
+	// show_list(&stack_b);
+	// show_list(&stack_a);
 	// push_b(stack_a, stack_b);
-	// push_b(stack_a, stack_b);
-	stack_a = swap_b(stack_a);
-	show_list(stack_a);
+	// swap_a(&stack_a);
+	show_list(&stack_a);
+	show_list(&stack_b);
 	// show_list(stack_b);
 	return (0);
 }
