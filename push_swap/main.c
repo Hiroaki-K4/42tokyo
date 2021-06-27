@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 14:48:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 14:48:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	top_del(t_bi_list *list)
 {
 	if (list->next)
 	{
-		printf("top: %d\n", line->next->data);
+		printf("top: %d\n", list->next->data);
 		list->next->prev = NULL;
 	}
 	show_list(list);
