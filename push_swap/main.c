@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 15:47:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 15:50:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ t_bi_list	*top_del(t_bi_list *list)
 	return (list);
 }
 
-void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
+void	push_b(t_bi_list *stack_a, t_bi_list *stack_b)
 {
 	if (stack_b->start == 1)
 	{
@@ -129,10 +129,10 @@ void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
 	else
 		last_list(stack_b)->next = stack_a;
 	stack_a = top_del(stack_a);
-	write(1, "sa\n", 3);
+	write(1, "pb\n", 3);
 }
 
-void	swap_b(t_bi_list *stack_a, t_bi_list *stack_b)
+void	push_a(t_bi_list *stack_a, t_bi_list *stack_b)
 {
 	if (stack_b->start == 1)
 	{
@@ -175,8 +175,8 @@ int	main(int argc, char *argv[])
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
-	swap_a(&stack_a, &stack_b);
-	swap_a(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
 	// show_list(&stack_a);
 	show_list(&stack_b);
 	return (0);
