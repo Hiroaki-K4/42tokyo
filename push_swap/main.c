@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 14:03:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 14:07:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,11 @@ int	duplicate_check(int argc, char *argv[])
 	return (0);
 }
 
+void	top_del(t_bi_list *list)
+{
+	printf("top: %d\n", list->data);
+}
+
 void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
 {
 	if (stack_b->start == 1)
@@ -118,7 +123,7 @@ void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
 	else
 		last_list(stack_b)->next = stack_a;
 	// stack_aの先頭を削除し、1個ずつ先頭にずらす処理を書く
-	// printf("stack_b: %d\n", stack_b->data);
+	top_del(stack_a);
 	show_list(stack_b);
 }
 
