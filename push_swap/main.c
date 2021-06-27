@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 15:41:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 15:43:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,8 @@ void	swap_a(t_bi_list *stack_a, t_bi_list *stack_b)
 	else
 		last_list(stack_b)->next = stack_a;
 	stack_a = top_del(stack_a);
-	printf("~~\n");
-	show_list(stack_a);
+	// show_list(stack_a);
+	write(1, "sa\n", 3);
 }
 
 int	main(int argc, char *argv[])
