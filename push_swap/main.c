@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 14:21:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 14:22:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,9 +147,12 @@ int	main(int argc, char *argv[])
 	first->next = NULL;
 	first->start = 1;
 	stack_a = *first;
-	stack_b.prev = NULL;
-	stack_b.next = NULL;
-	stack_b.start = 1;
+	free(first);
+	first = (t_bi_list *)malloc(sizeof(t_bi_list));
+	first->prev = NULL;
+	first->next = NULL;
+	first->start = 1;
+	stack_b = *first;
 	i = 1;
 	while (i < argc)
 	{
