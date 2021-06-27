@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/27 14:10:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/27 14:11:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	top_del(t_bi_list *list)
 		list = list->next;
 		free(list->prev);
 	}
-	free(list);
+	// free(list);
 	printf("top: %d\n", list->data);
 }
 
