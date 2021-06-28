@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 21:56:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:00:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,13 +198,39 @@ char *ft_itoa(int n)
 	return (ans);
 }
 
-int		ft_atoi(const char *arg)
-{
-	int		i;
-	int		flag;
-	int		ans;
+// int		ft_atoi(const char *arg)
+// {
+// 	int		i;
+// 	int		flag;
+// 	int		ans;
 
-	flag = 1;
+// 	flag = 1;
+// 	i = 0;
+// 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
+// 			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
+// 		i++;
+// 	if (arg[i] == '-' || arg[i] == '+')
+// 	{
+// 		if (arg[i] == '-')
+// 			flag = -1;
+// 		i++;
+// 	}
+// 	ans = 0;
+// 	while (arg[i] >= '0' && arg[i] <= '9')
+// 	{
+// 		ans = (ans * 10) + (arg[i] - '0');
+// 		i++;
+// 	}
+// 	ans = ans * flag;
+// 	return (ans);
+// }
+
+int ft_atoi(const char *arg)
+{
+	int ans;
+	int flag;
+	int i;
+
 	i = 0;
 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
 			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
@@ -218,7 +244,7 @@ int		ft_atoi(const char *arg)
 	ans = 0;
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans = (ans * 10) + (arg[i] - '0');
+		ans = (10 * ans) + (arg[i] - '0');
 		i++;
 	}
 	ans = ans * flag;
