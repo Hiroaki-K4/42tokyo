@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 22:06:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:07:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,8 @@ int digit_size(int num)
 		len++;
 	while (num != 0)
 	{
-		len++;
 		num = num / 10;
+		len++;
 	}
 	return (len);
 }
