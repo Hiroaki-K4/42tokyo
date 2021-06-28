@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 22:07:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:08:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
-char			*ft_itoa_hex(unsigned int n, char *arg)
+char			*ft_itoa_hex(unsigned int num, char *arg)
 {
 	int				len;
 	unsigned int	i;
 	unsigned int	j;
 	char			*ans;
 
-	i = n / 16;
+	i = num / 16;
 	if (i != 0)
 	{
 		len = 2;
@@ -93,7 +93,7 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
-	i = n;
+	i = num;
 	len--;
 	if (i == 0)
 	{
@@ -109,6 +109,8 @@ char			*ft_itoa_hex(unsigned int n, char *arg)
 	}
 	return (ans);
 }
+
+
 
 // int		digit_size(int num)
 // {
