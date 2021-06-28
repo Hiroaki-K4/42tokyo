@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 22:42:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:42:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,9 +182,10 @@ int	main(int argc, char *argv[])
 			error_process();
 		num = ft_atoi(argv[i]);
 		add_list(&stack_a, num);
+		add_list(&stack_a, num);
 		i++;
 	}
-	show_list(&stack_a);
+	show_list(&stack_b);
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	push_b(&stack_a, &stack_b);
