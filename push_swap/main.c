@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 22:38:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:40:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	add_list(t_bi_list *list, int num)
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	// if (!new)
 	// 	return (NULL);
-	if (list->start == 1)
+	// if (list->start == 1)
+	if (list->prev == 1)
 	{
 		list->data = num;
-		list->start = 0;
 		list->start = 0;
 	}
 	else
@@ -116,7 +116,7 @@ void	top_del(t_bi_list *list)
 		list = list->next;
 		list->prev = NULL;
 	}
-	// show_list(list);
+	show_list(list);
 	// return (list);
 }
 
@@ -183,10 +183,9 @@ int	main(int argc, char *argv[])
 			error_process();
 		num = ft_atoi(argv[i]);
 		add_list(&stack_a, num);
-		add_list(&stack_b, num);
 		i++;
 	}
-	// show_list(&stack_a);
+	show_list(&stack_a);
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	push_b(&stack_a, &stack_b);
