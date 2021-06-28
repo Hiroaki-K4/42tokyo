@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/28 22:31:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/06/28 22:32:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ void	push_b(t_bi_list *stack_a, t_bi_list *stack_b)
 {
 	if (stack_b->next == NULL)
 	{
+		printf("ok\n");
 		stack_b->data = stack_a->data;
 		stack_b->start = 0;
 	}
