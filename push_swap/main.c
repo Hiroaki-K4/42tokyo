@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 23:04:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/01 23:05:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	duplicate_check(int argc, char *argv[])
 	return (0);
 }
 
-t_bi_list	top_del(t_bi_list *list)
+t_bi_list	*top_del(t_bi_list *list)
 {
 	if (list->next)
 	{
