@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 23:25:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/01 23:27:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,29 +168,29 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list **stack_a;
-	t_bi_list **stack_b;
+	t_bi_list *stack_a;
+	t_bi_list *stack_b;
 	
 	// if (!(stack_a = (t_bi_list *)malloc(sizeof(t_bi_list))))
 	// 	return (-1);
-	(*stack_a) = NULL;
-	*stack_b = NULL;
-	(*stack_a)->prev = NULL;
-	(*stack_a)->next = NULL;
-	(*stack_a)->start = 1;
-	(*stack_a)->data = 0;
-	(*stack_b)->prev = NULL;
-	(*stack_b)->next = NULL;
-	(*stack_b)->start = 1;
-	(*stack_b)->data = 0;
+	stack_a = NULL;
+	stack_b = NULL;
+	stack_a->prev = NULL;
+	stack_a->next = NULL;
+	stack_a->start = 1;
+	stack_a->data = 0;
+	stack_b->prev = NULL;
+	stack_b->next = NULL;
+	stack_b->start = 1;
+	stack_b->data = 0;
 	i = 1;
 	while (i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		num = ft_atoi(argv[i]);
-		add_list(*stack_a, num);
-		add_list(*stack_b, num);
+		add_list(stack_a, num);
+		add_list(stack_b, num);
 		i++;
 	}
 	// show_list(&stack_a);
@@ -199,7 +199,7 @@ int	main(int argc, char *argv[])
 		error_process();
 	push_b(stack_a, stack_b);
 	// show_list(&stack_b);
-	show_list(*stack_a);
+	show_list(stack_a);
 	// push_b(stack_a, stack_b);
 	// swap_a(&stack_a);
 	// show_list(&stack_a);
