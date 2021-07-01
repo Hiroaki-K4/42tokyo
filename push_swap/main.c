@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 23:03:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/01 23:03:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void	push_b(t_bi_list *stack_a, t_bi_list *stack_b)
 	// stack_a = top_del(stack_a);
 	top_del(stack_a);
 	show_list(stack_a);
-	// show_list(stack_b);
+	show_list(stack_b);
 	write(1, "pb\n", 3);
 }
 
