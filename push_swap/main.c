@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 23:18:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/01 23:19:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,10 +168,9 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list *stack_a;
+	t_bi_list *stack_a = NULL;
 	t_bi_list *stack_b;
 	
-	stack_a = NULL;
 	stack_a->prev = NULL;
 	stack_a->next = NULL;
 	stack_a->start = 1;
