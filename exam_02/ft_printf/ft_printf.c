@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 22:29:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/01 22:38:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ char			*ft_itoa_hex(unsigned int num, char *str)
 	ans[len] = '\0';
 	i = num;
 	len--;
-	if (i == 0)
-		ans[0] = '0';
+	// if (i == 0)
+		// ans[0] = '0';
 	while (len >= 0)
 	{
 		ans[len--] = str[i % 16];
@@ -98,6 +98,25 @@ char			*ft_itoa_hex(unsigned int num, char *str)
 	}
 	return (ans);
 }
+
+// char *ft_itoa_hex(unsigned int num, char *str)
+// {
+// 	int len;
+// 	unsigned int i;
+// 	char *ans;
+
+// 	len = 1;
+// 	i = num;
+// 	while (i > 16)
+// 	{
+// 		len++;
+// 		i = i / 16;
+// 	}
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	i = num;
+// }
 
 // int		digit_size(int num)
 // {
