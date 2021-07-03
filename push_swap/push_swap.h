@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 22:48:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:49:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	rotate_b(t_bi_list **stack_b);
 void	rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b);
 void	reverse_rotate_a(t_bi_list **stack_a);
 void	reverse_rotate_b(t_bi_list **stack_b);
+void	reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b);
 int	    digit_check(const char *arg);
 int	    duplicate_check(int argc, char *argv[]);
 t_bi_list	*last_stack(t_bi_list *stack);
