@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:27:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:31:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ int	digit_check(const char *arg)
 	if ((flag == 1 && num > 2147483647) || (flag == -1 && num > 2147483648))
 		return (-1);
 	return (0);
-}
-
-void	error_process()
-{
-	write(1, "Error\n", 6);
-	exit(0);
 }
 
 t_bi_list	*last_list(t_bi_list *list)
@@ -111,12 +105,9 @@ void	top_del(t_bi_list **list)
 {
 	if ((*list)->next)
 	{
-		// list->next->prev = NULL;
 		(*list) = (*list)->next;
 		(*list)->prev = NULL;
 	}
-	// show_list(list);
-	// return (list);
 }
 
 void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
@@ -124,25 +115,12 @@ void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 	t_bi_list *top;
 
 	top = (t_bi_list *)malloc(sizeof(t_bi_list));
-	// if ((*stack_b)->next == NULL)
-	// {
-	// 	(*stack_b)->data = (*stack_a)->data;
-	// 	(*stack_b)->start = 0;
-	// }
-	// else
-	// 	last_list((*stack_b))->next = (*stack_a);
-
-	//stack_aの先頭をstack_bの先頭に入れる処理を書く
-	
-	// last_list(stack_b)->next = stack_a;
-	// stack_a = top_del(stack_a);
 	top->data = (*stack_a)->data;
 	top->prev = NULL;
 	top->next = (*stack_b);
 	(*stack_b)->prev = top;
 	(*stack_b) = top;
 	top_del(stack_a);
-	// show_list(*stack_a);
 	show_list(*stack_b);
 	write(1, "pb\n", 3);
 }

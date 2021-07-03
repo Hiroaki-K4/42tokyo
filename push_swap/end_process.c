@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   end_process.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:31:55 by hkubo            ###   ########.fr       */
+/*   Created: 2021/07/03 18:30:34 by hkubo             #+#    #+#             */
+/*   Updated: 2021/07/03 18:31:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft/libft.h"
-
-typedef struct	s_bi_list
+void	error_process()
 {
-    int data;
-    int start;
-    struct  s_bi_list *prev;
-    struct  s_bi_list *next;
-}	t_bi_list;
-
-void	error_process();
-
-#endif
+	write(1, "Error\n", 6);
+	exit(0);
+}
