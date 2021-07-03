@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:36:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:37:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ typedef struct	s_bi_list
 void	error_process();
 void	push_b(t_bi_list **stack_a, t_bi_list **stack_b);
 void	swap_a(t_bi_list *stack_a);
+void	top_del(t_bi_list **list);
 
 #endif
