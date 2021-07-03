@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:34:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:35:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,18 +108,6 @@ void	top_del(t_bi_list **list)
 		(*list) = (*list)->next;
 		(*list)->prev = NULL;
 	}
-}
-
-void	swap_a(t_bi_list *stack_a)
-{
-	int	tmp;
-	if (stack_a && stack_a->next)
-	{
-		tmp = stack_a->data;
-		stack_a->data = stack_a->next->data;
-		stack_a->next->data = tmp;
-	}
-	write(1, "sa\n", 3);
 }
 
 int	main(int argc, char *argv[])

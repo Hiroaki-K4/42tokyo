@@ -6,11 +6,23 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:35:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:36:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	swap_a(t_bi_list *stack_a)
+{
+	int	tmp;
+	if (stack_a && stack_a->next)
+	{
+		tmp = stack_a->data;
+		stack_a->data = stack_a->next->data;
+		stack_a->next->data = tmp;
+	}
+	write(1, "sa\n", 3);
+}
 
 void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 {
