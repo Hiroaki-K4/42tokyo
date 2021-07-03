@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:32:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:48:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	add_list(t_bi_list *list, int num)
 {
 	t_bi_list	*new;
 
-	printf("ok3\n");
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	// if (!new)
 	// 	return (NULL);
@@ -169,39 +168,31 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	// t_bi_list stack_a_sub;
-	// t_bi_list *stack_a = &stack_a_sub;
 	t_bi_list *stack_a;
 	t_bi_list *stack_b;
 	
 	if (!(stack_a = (t_bi_list *)malloc(sizeof(t_bi_list))))
 		return (-1);
-	// stack_a = NULL;
-	// stack_b = NULL;
-	// stack_a = &stack_a_sub;
+	if (!(stack_b = (t_bi_list *)malloc(sizeof(t_bi_list))))
+		return (-1);
 	stack_a->prev = NULL;
 	stack_a->next = NULL;
 	stack_a->start = 1;
 	stack_a->data = 0;
-	printf("ok\n");
 	stack_b->prev = NULL;
 	stack_b->next = NULL;
 	stack_b->start = 1;
 	stack_b->data = 0;
 	i = 1;
-	printf("ok2: %s\n", argv[0]);
 	while (i < argc)
 	{
-		printf("ok2.1: %s\n", argv[i]);
 		if (digit_check(argv[i]) == -1)
 			error_process();
-		printf("ok2.5\n");
 		num = ft_atoi(argv[i]);
 		add_list(stack_a, num);
 		add_list(stack_b, num);
 		i++;
 	}
-	printf("ok4\n");
 	// show_list(&stack_a);
 	// show_list(&stack_b);
 	if (duplicate_check(argc, argv) == 1)
@@ -216,3 +207,16 @@ int	main(int argc, char *argv[])
 	// show_list(stack_b);
 	return (0);
 }
+
+// int main(int argc, char *argv[])
+// {
+// 	int i;
+	
+// 	i = 0;
+// 	while (i < argc)
+// 	{
+// 		printf("arg: %s\n", argv[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
