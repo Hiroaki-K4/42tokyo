@@ -3,7 +3,7 @@ NAME = push_swap
 
 .PHONY: all, clean, fclean, re
 
-SRCS = main.c end_process.c
+SRCS = main.c end_process.c list_process.c
 
 OBJS = $(SRCS:.c=.o)
 

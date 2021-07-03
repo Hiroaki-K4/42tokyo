@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:33:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:34:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,21 +108,6 @@ void	top_del(t_bi_list **list)
 		(*list) = (*list)->next;
 		(*list)->prev = NULL;
 	}
-}
-
-void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
-{
-	t_bi_list *top;
-
-	top = (t_bi_list *)malloc(sizeof(t_bi_list));
-	top->data = (*stack_a)->data;
-	top->prev = NULL;
-	top->next = (*stack_b);
-	(*stack_b)->prev = top;
-	(*stack_b) = top;
-	top_del(stack_a);
-	show_list(*stack_b);
-	write(1, "pb\n", 3);
 }
 
 void	swap_a(t_bi_list *stack_a)
