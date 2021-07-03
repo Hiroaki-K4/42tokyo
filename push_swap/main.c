@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:06:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:07:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	add_stack(t_bi_list **stack, int num)
 	printf("last: %d\n", last->data);
 	new->prev = last;
 	new->next = NULL;
-	(*stack)->next = new;
+	last->next = new;
 	// }
 	return (0);
 }
