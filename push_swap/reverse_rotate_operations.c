@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 22:30:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 22:33:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:45:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	reverse_rotate_a(t_bi_list **stack_a)
 	{
 		if ((*stack_a)->next->next != NULL)
 		{
-			(*stack_a)->next->next->prev = *stack_a;
-			tmp = (*stack_a)->next->next;
 			last = last_stack(*stack_a);
-			(*stack_a)->next->prev = last;
-			last->next = (*stack_a)->next;
-			(*stack_a)->next->next = NULL;
-			(*stack_a)->next = tmp;
-			write(1, "ra\n", 3);
+			last->prev->next = NULL;
+			tmp = (*stack_a)->next;
+			last->next = tmp;
+			tmp->prev = last;
+			last->prev = *stack_a;
+			(*stack_a)->next = last; 
+			write(1, "rra\n", 4);
 		}
 	}
 }
