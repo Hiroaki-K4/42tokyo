@@ -6,7 +6,8 @@
 # ./a.out
 gcc ft_printf.c test.c -o ft_printf
 ./ft_printf
-valgrind ./ft_printf | grep "ERROR SUMMARY"
+# valgrind ./ft_printf | grep "ERROR SUMMARY"
+valgrind ./ft_printf
 # cat yy
 # cat -e yy > y
 # gcc -Wall -Werror -Wextra -D REAL main.c -o printf
