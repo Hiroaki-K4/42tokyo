@@ -6,14 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 20:59:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:00:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-void	*last_stack(t_bi_list **stack)
+void	last_stack(t_bi_list **stack)
 {
 	while ((*stack)->next != NULL)
 		*stack = (*stack)->next;
