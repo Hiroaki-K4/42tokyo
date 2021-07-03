@@ -6,8 +6,7 @@
 # ./a.out
 gcc ft_printf.c test.c -o ft_printf
 ./ft_printf
-# valgrind ./ft_printf | grep "ERROR SUMMARY"
-valgrind ./ft_printf
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./ft_printf | grep "ERROR SUMMARY"
 # cat yy
 # cat -e yy > y
 # gcc -Wall -Werror -Wextra -D REAL main.c -o printf
