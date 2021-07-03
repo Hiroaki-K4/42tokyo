@@ -6,17 +6,18 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:02:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:05:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-void	last_stack(t_bi_list **stack)
+t_bi_list	*last_stack(t_bi_list *stack)
 {
-	while ((*stack)->next != NULL)
-		*stack = (*stack)->next;
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
 // int	add_list(t_bi_list *list, int num)
@@ -46,6 +47,7 @@ void	last_stack(t_bi_list **stack)
 int	add_stack(t_bi_list **stack, int num)
 {
 	t_bi_list	*new;
+	t_bi_list	*last;
 
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!new)
@@ -58,8 +60,8 @@ int	add_stack(t_bi_list **stack, int num)
 	// else
 	// {
 	new->data = num;
-	// last_stack(stack);
-	new->prev = *stack;
+	last = last_stack(*stack);
+	new->prev = last;
 	new->next = NULL;
 	(*stack)->next = new;
 	// }
