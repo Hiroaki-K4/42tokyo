@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/01 23:32:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 10:59:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	digit_check(const char *arg)
 {
-	int i;
-	int flag;
-	size_t num;
+	int		i;
+	int		flag;
+	size_t	num;
 
 	flag = 1;
 	i = 0;
