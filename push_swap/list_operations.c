@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:26:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:32:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	swap_a(t_bi_list *stack_a)
 			tmp = stack_a->next->data;
 			stack_a->next->data = stack_a->next->next->data;
 			stack_a->next->next->data = tmp;
+			write(1, "sa\n", 3);
 		}
 	}
-	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_bi_list *stack_b)
@@ -32,18 +32,33 @@ void	swap_b(t_bi_list *stack_b)
 	int	tmp;
 	if (stack_b && stack_b->next)
 	{
-		tmp = stack_b->data;
-		stack_b->data = stack_b->next->data;
-		stack_b->next->data = tmp;
+		if (stack_b->next->next)
+		{
+			tmp = stack_b->next->data;
+			stack_b->next->data = stack_b->next->next->data;
+			stack_b->next->next->data = tmp;
+			write(1, "sb\n", 3);
+		}
 	}
-	write(1, "sb\n", 3);
 }
 
 void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	swap_a(*stack_a);
-	swap_b(*stack_b);
-	write(1, "ss\n", 3);
+	int	tmp;
+
+	if (*stack_a && (*stack_a)->next && *stack_b && (*stack_b)->next)
+	{
+		if ((*stack_a)->next->next && (*stack_b)->next->next)
+		{
+			tmp = (*stack_a)->next->data;
+			(*stack_a)->next->data = (*stack_a)->next->next->data;
+			(*stack_a)->next->next->data = tmp;
+			tmp = (*stack_b)->next->data;
+			(*stack_b)->next->data = (*stack_b)->next->next->data;
+			(*stack_b)->next->next->data = tmp;
+			write(1, "ss\n", 3);
+		}
+	}
 }
 
 void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
