@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:07:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:09:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	add_stack(t_bi_list **stack, int num)
 
 void	show_list(t_bi_list *list)
 {
-	while (list != NULL)
+	while (!list && !list->prev)
 	{
 		printf("data: %d\n", list->data);
 		list = list->next;
