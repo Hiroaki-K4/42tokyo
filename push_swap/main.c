@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:27:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:27:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,6 +198,7 @@ int	main(int argc, char *argv[])
 		add_list(stack_b, num);
 		i++;
 	}
+	printf("ok4\n");
 	// show_list(&stack_a);
 	// show_list(&stack_b);
 	if (duplicate_check(argc, argv) == 1)
