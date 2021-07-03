@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 20:32:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 20:33:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:13:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,25 @@ int	digit_check(const char *arg)
 	}
 	if ((flag == 1 && num > 2147483647) || (flag == -1 && num > 2147483648))
 		return (-1);
+	return (0);
+}
+
+int	duplicate_check(int argc, char *argv[])
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }
