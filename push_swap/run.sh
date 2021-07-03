@@ -2,7 +2,8 @@
 
 make re
 ./push_swap 1 2 3 4 5
-valgrind ./push_swap 1 2 3 4 5
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap 1 2 3 4 5 | grep "ERROR SUMMARY"
+
 make fclean
 cd ..
 sh git.sh $*
