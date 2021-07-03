@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:21:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:22:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ int	main(int argc, char *argv[])
 	
 	tmp = "aaa";
 	printf("tmp: %s\n", tmp);
-	if (!(stack_a = (t_bi_list *)malloc(sizeof(t_bi_list))))
+	if (!((*stack_a) = (t_bi_list *)malloc(sizeof(t_bi_list))))
 		return (-1);
 	// stack_a = NULL;
 	// stack_b = NULL;
