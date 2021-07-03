@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:07:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:08:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 		(*stack_b)->start = 0;
 	}
 	else
-		last_list((*stack_b))->next = (*stack_a);
+		last_list((*stack_b))->next = (**stack_a);
 
 	//stack_aの先頭をstack_bの先頭に入れる処理を書く
 	
