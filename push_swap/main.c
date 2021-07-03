@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:27:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:27:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,7 @@ int	main(int argc, char *argv[])
 	stack_b->start = 1;
 	stack_b->data = 0;
 	i = 1;
+	printf("ok2\n");
 	while (i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
