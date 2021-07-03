@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:42:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:58:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ void	show_list(t_bi_list *list)
 
 void	top_del(t_bi_list **list)
 {
-	if ((*list)->next)
+	if ((*list)->next->next)
 	{
-		(*list) = (*list)->next;
-		(*list)->prev = NULL;
+		(*list)->next = (*list)->next->next;
+		// (*list)->prev = NULL;
 	}
 }
 
