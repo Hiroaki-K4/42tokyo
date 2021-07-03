@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 11:37:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 11:44:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -374,13 +374,13 @@ int	print_string(va_list *ap, t_plist flag_list)
 // 	return (num);
 // }
 
-int str_to_num(const char *arg, int *i, int flag)
+int str_to_num(const char *arg, int *i)
 {
 	int num;
 	int j;
 
-	if (ft_isdigit(arg[0]) == 0 && flag == 1)
-		return (0);
+	// if (ft_isdigit(arg[0]) == 0 && flag == 1)
+		// return (0);
 	num = ft_atoi(arg);
 	if (num >= 0)
 	{
@@ -443,12 +443,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	t_plist flag_list;
 
 	(*i)++;
-	flag_list.field = str_to_num(&arg[*i], i, 0);
+	flag_list.field = str_to_num(&arg[*i], i);
 	flag_list.precision = -1;
 	if (arg[*i] == '.')
 	{
 		(*i)++;
-		flag_list.precision = str_to_num(&arg[*i], i, 0);
+		flag_list.precision = str_to_num(&arg[*i], i);
 	}
 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
 	if (flag_list.format == 0)
