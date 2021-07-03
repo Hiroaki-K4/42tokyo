@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:09:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:10:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,18 +168,17 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	int num;
-	t_bi_list **stack_a;
+	t_bi_list *stack_a;
 	t_bi_list *stack_b;
 	
-	(*stack_a) = NULL;
 	// if (!(*stack_a = (t_bi_list *)malloc(sizeof(t_bi_list))))
 		// return (-1);
 	// stack_a = NULL;
 	// stack_b = NULL;
-	(*stack_a)->prev = NULL;
-	(*stack_a)->next = NULL;
-	(*stack_a)->start = 1;
-	(*stack_a)->data = 0;
+	stack_a->prev = NULL;
+	stack_a->next = NULL;
+	stack_a->start = 1;
+	stack_a->data = 0;
 	stack_b->prev = NULL;
 	stack_b->next = NULL;
 	stack_b->start = 1;
