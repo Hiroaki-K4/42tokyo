@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:10:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:11:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	show_list(t_bi_list *list)
 {
 	while (list != NULL)
 	{
-		printf("data: %d\n", list->data);
+		if (list->prev != NULL)
+			printf("data: %d\n", list->data);
 		list = list->next;
 	}
 }
