@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 20:41:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 20:44:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,50 @@ t_bi_list	*last_list(t_bi_list *list)
 	return (list);
 }
 
-int	add_list(t_bi_list *list, int num)
+// int	add_list(t_bi_list *list, int num)
+// {
+// 	t_bi_list	*new;
+
+// 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
+// 	if (!new)
+// 		return (-1);
+// 	if (list->start == 1)
+// 	{
+// 		list->data = num;
+// 		list->start = 0;
+// 	}
+// 	else
+// 	{
+// 		new->data = num;
+// 		new->start = 0;
+// 		list = last_list(list);
+// 		new->prev = list;
+// 		new->next = NULL;
+// 		list->next = new;
+// 	}
+// 	return (0);
+// }
+
+int	add_stack(t_bi_list *stack, int num)
 {
 	t_bi_list	*new;
 
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!new)
 		return (-1);
-	if (list->start == 1)
+	if (stack->start == 1)
 	{
-		list->data = num;
-		list->start = 0;
+		stack->data = num;
+		stack->start = 0;
 	}
 	else
 	{
 		new->data = num;
 		new->start = 0;
-		list = last_list(list);
-		new->prev = list;
+		stack = last_list(stack);
+		new->prev = stack;
 		new->next = NULL;
-		list->next = new;
+		stack->next = new;
 	}
 	return (0);
 }
