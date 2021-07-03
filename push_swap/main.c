@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:29:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:32:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,7 +189,7 @@ int	main(int argc, char *argv[])
 	stack_b->start = 1;
 	stack_b->data = 0;
 	i = 1;
-	printf("ok2\n");
+	printf("ok2: %s\n", argv[0]);
 	while (i < argc)
 	{
 		printf("ok2.1: %s\n", argv[i]);
