@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 22:04:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 22:19:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:20:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,27 @@ void	rotate_a(t_bi_list **stack_a)
 			(*stack_a)->next->next = NULL;
 			(*stack_a)->next = tmp;
 			write(1, "ra\n", 3);
+		}
+	}
+}
+
+void	rotate_b(t_bi_list **stack_b)
+{
+	t_bi_list *last;
+	t_bi_list *tmp;
+
+	if ((*stack_b)->next != NULL)
+	{
+		if ((*stack_b)->next->next != NULL)
+		{
+			(*stack_b)->next->next->prev = *stack_b;
+			tmp = (*stack_b)->next->next;
+			last = last_stack(*stack_b);
+			(*stack_b)->next->prev = last;
+			last->next = (*stack_b)->next;
+			(*stack_b)->next->next = NULL;
+			(*stack_b)->next = tmp;
+			write(1, "rb\n", 3);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 22:07:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:21:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	main(int argc, char *argv[])
 	// swap_b(stack_b);
 	// swap_ab(&stack_a, &stack_b);
 	rotate_a(&stack_a);
+	rotate_b(&stack_b);
 	show_list(stack_a);
 	show_list(stack_b);
 	return (0);
