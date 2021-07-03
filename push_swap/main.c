@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 17:28:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:29:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ int	main(int argc, char *argv[])
 	printf("ok2\n");
 	while (i < argc)
 	{
+		printf("ok2.1\n");
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		printf("ok2.5\n");
