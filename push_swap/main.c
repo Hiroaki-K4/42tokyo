@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:05:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:05:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,8 @@ int	main(int argc, char *argv[])
 		error_process();
 	// push_a(&stack_a, &stack_b);
 	// push_b(&stack_a, &stack_b);
-	swap_ab(&stack_a, &stack_b);
+	// swap_ab(&stack_a, &stack_b);
 	show_list(stack_a);
-	show_list(stack_b);
+	// show_list(stack_b);
 	return (0);
 }
