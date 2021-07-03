@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:24:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 21:26:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	swap_a(t_bi_list *stack_a)
 	{
 		if (stack_a->next->next)
 		{
-			tmp = stack_a->data;
-			stack_a->data = stack_a->next->data;
-			stack_a->next->data = tmp;
+			tmp = stack_a->next->data;
+			stack_a->next->data = stack_a->next->next->data;
+			stack_a->next->next->data = tmp;
 		}
 	}
 	write(1, "sa\n", 3);
