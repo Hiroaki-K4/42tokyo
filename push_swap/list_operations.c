@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:58:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:00:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
 		top->data = (*stack_b)->next->data;
 		top->prev = *stack_a;
 		top->next = (*stack_a)->next;
-		printf("top: %d\n", top->next->data);
 		(*stack_a)->next->prev = top;
 		*stack_a = top;
 		top_del(stack_b);
@@ -83,13 +82,15 @@ void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	t_bi_list *top;
 
-	top = (t_bi_list *)malloc(sizeof(t_bi_list));
-	top->data = (*stack_a)->data;
-	top->prev = NULL;
-	top->next = (*stack_b);
-	(*stack_b)->prev = top;
-	(*stack_b) = top;
-	top_del(stack_a);
-	show_list(*stack_b);
-	write(1, "pb\n", 3);
+	if ((*stack_a)->next != NULL)
+	{
+		top = (t_bi_list *)malloc(sizeof(t_bi_list));
+		top->data = (*stack_a)->next->data;
+		top->prev = *stack_b;
+		top->next = (*stack_b)->next;
+		(*stack_b)->next->prev = top;
+		(*stack_b) = top;
+		top_del(stack_a);
+		write(1, "pb\n", 3);
+	}
 }
