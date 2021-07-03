@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 20:25:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 20:30:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,18 @@ void	top_del(t_bi_list **list)
 	}
 }
 
+void	stack_init(t_bi_list **stack_a, t_bi_list **stack_b)
+{
+	(*stack_a)->prev = NULL;
+	(*stack_a)->next = NULL;
+	(*stack_a)->start = 1;
+	(*stack_a)->data = 0;
+	(*stack_b)->prev = NULL;
+	(*stack_b)->next = NULL;
+	(*stack_b)->start = 1;
+	(*stack_b)->data = 0;
+}
+
 int	main(int argc, char *argv[])
 {
 	int i;
@@ -124,14 +136,15 @@ int	main(int argc, char *argv[])
 	stack_b = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!stack_b)
 		return (-1);
-	stack_a->prev = NULL;
-	stack_a->next = NULL;
-	stack_a->start = 1;
-	stack_a->data = 0;
-	stack_b->prev = NULL;
-	stack_b->next = NULL;
-	stack_b->start = 1;
-	stack_b->data = 0;
+	stack_init(&stack_a, &stack_b);
+	// stack_a->prev = NULL;
+	// stack_a->next = NULL;
+	// stack_a->start = 1;
+	// stack_a->data = 0;
+	// stack_b->prev = NULL;
+	// stack_b->next = NULL;
+	// stack_b->start = 1;
+	// stack_b->data = 0;
 	i = 1;
 	while (i < argc)
 	{
@@ -144,7 +157,7 @@ int	main(int argc, char *argv[])
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
-	push_a(&stack_a, &stack_b);
+	// push_a(&stack_a, &stack_b);
 	// push_b(&stack_a, &stack_b);
 	show_list(stack_b);
 	return (0);
