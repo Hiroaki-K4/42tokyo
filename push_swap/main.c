@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 18:35:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 20:24:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	add_list(t_bi_list *list, int num)
 	t_bi_list	*new;
 
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
-	// if (!new)
-	// 	return (NULL);
+	if (!new)
+		return (NULL);
 	if (list->start == 1)
 	{
 		list->data = num;
@@ -117,9 +117,11 @@ int	main(int argc, char *argv[])
 	t_bi_list *stack_a;
 	t_bi_list *stack_b;
 	
-	if (!(stack_a = (t_bi_list *)malloc(sizeof(t_bi_list))))
+	stack_a = (t_bi_list *)malloc(sizeof(t_bi_list));
+	if (!stack_a)
 		return (-1);
-	if (!(stack_b = (t_bi_list *)malloc(sizeof(t_bi_list))))
+	stack_b = (t_bi_list *)malloc(sizeof(t_bi_list));
+	if (!stack_b)
 		return (-1);
 	stack_a->prev = NULL;
 	stack_a->next = NULL;
@@ -141,7 +143,8 @@ int	main(int argc, char *argv[])
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
-	push_b(&stack_a, &stack_b);
+	push_a(&stack_a, &stack_b);
+	// push_b(&stack_a, &stack_b);
 	show_list(stack_b);
 	return (0);
 }
