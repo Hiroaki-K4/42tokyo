@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 20:45:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 20:46:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,26 @@ t_bi_list	*last_list(t_bi_list *list)
 // 	return (0);
 // }
 
-int	add_stack(t_bi_list *stack, int num)
+int	add_stack(t_bi_list **stack, int num)
 {
 	t_bi_list	*new;
 
 	new = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!new)
 		return (-1);
-	if (stack->start == 1)
+	if (!(*stack)->prev)
 	{
-		stack->data = num;
-		stack->start = 0;
+		(*stack)->data = num;
+		(*stack)->start = 0;
 	}
 	else
 	{
 		new->data = num;
 		new->start = 0;
-		stack = last_list(stack);
-		new->prev = stack;
+		(*stack) = last_list(*stack);
+		new->prev = *stack;
 		new->next = NULL;
-		stack->next = new;
+		(*stack)->next = new;
 	}
 	return (0);
 }
