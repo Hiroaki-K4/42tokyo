@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 21:42:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/03 22:06:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b);
 void	top_del(t_bi_list **list);
 void	show_list(t_bi_list *list);
 void	stack_init(t_bi_list **stack_a, t_bi_list **stack_b);
+void	rotate_a(t_bi_list **stack_a);
 int	    digit_check(const char *arg);
-int	duplicate_check(int argc, char *argv[]);
+int	    duplicate_check(int argc, char *argv[]);
 
 #endif
