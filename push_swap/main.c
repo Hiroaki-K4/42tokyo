@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 17:23:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 19:59:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ int	sorted_check(t_bi_list *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (0);
+}
+
+void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
+{
+	printf("topa: %d\n", (*stack_a)->data);
+	printf("topb: %d\n", (*stack_b)->data);
 }
 
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
@@ -38,8 +44,8 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		sort_three(stack_a);
 	else if (argc < 7)
 		under_six(stack_a, stack_b, argc);
-	// else
-	
+	else
+		quick_sort(stack_a, stack_b);
 }
 
 int	main(int argc, char *argv[])
