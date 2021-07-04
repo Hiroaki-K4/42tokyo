@@ -6,15 +6,30 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 17:15:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 17:23:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	sorted_check(t_bi_list *stack_a)
+{
+	int	min;
+
+	while (stack_a->next != NULL)
+	{
+		if (stack_a->data > stack_a->next->data)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
+}
+
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	if (argc <= 2)
+		return;
+	else if (sorted_check((*stack_a)->next) == 0)
 		return;
 	else if (argc == 3)
 	{
