@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:30:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:34:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,21 @@ int	min_data(t_bi_list *stack)
 void	min_to_top(t_bi_list **stack_a)
 {
 	while (min_data((*stack_a)->next) != (*stack_a)->next->data)
-	{
 		rotate_a(stack_a);
-	}
 	show_list(*stack_a);
 }
 
-void	under_six(t_bi_list **stack_a, t_bi_list **stack_b)
+void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 {
-	min_to_top(stack_a);
+	int	i;
+
+	i = 4;
+	while (i < argc)
+	{
+		min_to_top(stack_a);
+		push_b(stack_a, stack_b);
+		i++;
+	}
 	show_list(*stack_a);
 	printf("topb: %d\n", (*stack_b)->data);
 }
@@ -76,7 +82,7 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	else if (argc == 4)
 		sort_three(stack_a);
 	else if (argc < 7)
-		under_six(stack_a, stack_b);
+		under_six(stack_a, stack_b, argc);
 	// else
 	
 }
