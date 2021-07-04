@@ -6,11 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 12:00:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 13:57:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
+{
+	// if (argc )
+}
 
 int	main(int argc, char *argv[])
 {
@@ -33,11 +38,12 @@ int	main(int argc, char *argv[])
 			error_process();
 		num = ft_atoi(argv[i]);
 		add_stack(&stack_a, num);
-		add_stack(&stack_b, num);
+		// add_stack(&stack_b, num);
 		i++;
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
+	branch_process(argc, &stack_a, &stack_b);
 	// push_a(&stack_a, &stack_b);
 	// push_b(&stack_a, &stack_b);
 	// swap_b(stack_a);
@@ -48,7 +54,7 @@ int	main(int argc, char *argv[])
 	// rotate_ab(&stack_a, &stack_b);
 	// reverse_rotate_a(&stack_a);
 	// reverse_rotate_b(&stack_b);
-	reverse_rotate_ab(&stack_a, &stack_b);
+	// reverse_rotate_ab(&stack_a, &stack_b);
 	show_list(stack_a);
 	show_list(stack_b);
 	return (0);
