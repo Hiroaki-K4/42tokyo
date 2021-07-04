@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:28:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:30:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,10 @@ int	min_data(t_bi_list *stack)
 
 void	min_to_top(t_bi_list **stack_a)
 {
-	int	min;
-	while (stack_a->next->next != NULL)
+	while (min_data((*stack_a)->next) != (*stack_a)->next->data)
 	{
-		min = min_data((*stack_a)->next);
-		if ((*stack_a)->next->data != min)
-			rotate_a(stack_a);
+		rotate_a(stack_a);
 	}
-	printf("min: %d\n", min);
 	show_list(*stack_a);
 }
 
