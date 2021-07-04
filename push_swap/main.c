@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 14:45:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 15:57:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,22 @@ void	sort_three(t_bi_list **stack_a)
 		reverse_rotate_a(stack_a);
 }
 
+void	min_to_top(t_bi_list **stack_a)
+{
+	while ((*stack_a)->next->next != NULL)
+	{
+		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
+			swap_a(*stack_a);
+		*stack_a = (*stack_a)->next;
+	}
+}
+
+void	under_six(t_bi_list **stack_a, t_bi_list **stack_b)
+{
+	min_to_top(stack_a);
+	show_list(*stack_a);
+}
+
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	printf("topa: %d\n", (*stack_a)->data);
@@ -45,10 +61,8 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	}
 	else if (argc == 4)
 		sort_three(stack_a);
-	// else if (argc < 7)
-	// {
-		
-	// }
+	else if (argc < 7)
+		under_six(stack_a, stack_b);
 	// else
 	
 }
