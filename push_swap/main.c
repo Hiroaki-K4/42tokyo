@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 14:16:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 14:18:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	printf("topb: %d\n", (*stack_b)->data);
 	if (argc <= 2)
 		return;
-	// else if (argc == 3)
-	// {
-	// 	if (stack)
-	// }
+	else if (argc == 3)
+	{
+		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
+			swap_a(*stack_a);
+	}
 	// else if (argc < 6)
 	// {
 		
