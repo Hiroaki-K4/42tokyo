@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 15:58:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:01:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ void	sort_three(t_bi_list **stack_a)
 
 void	min_to_top(t_bi_list **stack_a)
 {
-	while ((*stack_a)->next->next != NULL)
+	t_bi_list *tmp;
+
+	tmp = *stack_a;
+	while (tmp->next->next != NULL)
 	{
-		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
+		if (tmp->next->data > tmp->next->next->data)
 			swap_a(*stack_a);
-		*stack_a = (*stack_a)->next;
+		tmp = tmp->next;
 	}
 }
 
