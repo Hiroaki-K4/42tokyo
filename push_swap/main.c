@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:26:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:26:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	min_to_top(t_bi_list **stack_a)
 	int	min;
 	// while (stack_a)
 	
-	min = min_data(*stack_a);
+	min = min_data(*stack_a->next);
 	printf("min: %d\n", min);
 	show_list(*stack_a);
 }
