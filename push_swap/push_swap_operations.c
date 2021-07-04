@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:49:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:53:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,9 @@ void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
 		top->data = (*stack_b)->next->data;
 		top->prev = *stack_a;
 		top->next = (*stack_a)->next;
-		(*stack_a)->next->prev = top;
-		*stack_a = top;
+		if ((*stack_a)->next != NULL)
+			(*stack_a)->next->prev = top;
+		(*stack_a)->next = top;
 		top_del(stack_b);
 		write(1, "pa\n", 3);
 	}
