@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 17:23:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 17:23:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	sorted_check(t_bi_list *stack_a)
 {
-	int	min;
-
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->data > stack_a->next->data)
