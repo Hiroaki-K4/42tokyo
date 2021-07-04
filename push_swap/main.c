@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 19:59:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 21:58:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int	sorted_check(t_bi_list *stack_a)
 
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 {
+	t_bi_list *first;
+
+	first = last_stack(stack_a);
+	printf("first: %d\n", first->data);
 	printf("topa: %d\n", (*stack_a)->data);
 	printf("topb: %d\n", (*stack_b)->data);
 }
