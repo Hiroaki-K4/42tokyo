@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:58:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 17:08:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,12 @@ int	min_data(t_bi_list *stack)
 void	min_to_top(t_bi_list **stack_a)
 {
 	while (min_data((*stack_a)->next) != (*stack_a)->next->data)
-		rotate_a(stack_a);
+	{
+		if (min_data((*stack_a)->next) == last_stack(*stack_a)->data)
+			reverse_rotate_a(stack_a);
+		else
+			rotate_a(stack_a);
+	}
 }
 
 void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
