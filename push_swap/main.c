@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:35:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:36:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 	while (i < argc)
 	{
 		min_to_top(stack_a);
-		push_b(stack_a, stack_b);
+		// push_b(stack_a, stack_b);
 		i++;
 	}
 	// printf("topb: %d\n", (*stack_b)->data);
-	// show_list(*stack_a);
+	show_list(*stack_a);
 }
 
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
