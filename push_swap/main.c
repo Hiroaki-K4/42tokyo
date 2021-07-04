@@ -6,11 +6,22 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 14:18:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 14:31:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_three(t_bi_list **stack_a)
+{
+	if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data < (*stack_a)->next->next->next->data)
+		swap_a(*stack_a);
+	else if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data > (*stack_a)->next->next->next->data)
+	{
+		swap_a(*stack_a);
+		reverse_rotate_a(*stack_a);
+	}
+}
 
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
@@ -23,7 +34,9 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
 			swap_a(*stack_a);
 	}
-	// else if (argc < 6)
+	else if (argc == 4)
+		sort_three(stack_a);
+	// else if (argc < 7)
 	// {
 		
 	// }
