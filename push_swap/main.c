@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 14:31:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 14:32:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_three(t_bi_list **stack_a)
 	else if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data > (*stack_a)->next->next->next->data)
 	{
 		swap_a(*stack_a);
-		reverse_rotate_a(*stack_a);
+		reverse_rotate_a(stack_a);
 	}
 }
 
