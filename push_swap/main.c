@@ -6,22 +6,27 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 14:12:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 14:14:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
-// {
-// 	if (argc == 2)
-// 		return (0);
-// 	else if (argc == 3)
-// 	{
+void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
+{
+	if (argc <= 2)
+		return (0);
+	else if (argc == 3)
+	{
+		if ()
+	}
+	// else if (argc < 6)
+	// {
 		
-// 	}
-// 	else if (argc )
-// }
+	// }
+	// else
+	
+}
 
 int	main(int argc, char *argv[])
 {
