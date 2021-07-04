@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:01:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 16:02:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	min_to_top(t_bi_list **stack_a)
 	{
 		if (tmp->next->data > tmp->next->next->data)
 			swap_a(*stack_a);
-		tmp = tmp->next;
+		tmp->next = tmp->next->next;
 	}
 }
 
