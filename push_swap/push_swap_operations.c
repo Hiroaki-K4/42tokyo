@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/03 22:04:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 10:27:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	swap_a(t_bi_list *stack_a)
 {
 	int	tmp;
+
 	if (stack_a && stack_a->next)
 	{
 		if (stack_a->next->next)
@@ -30,6 +31,7 @@ void	swap_a(t_bi_list *stack_a)
 void	swap_b(t_bi_list *stack_b)
 {
 	int	tmp;
+
 	if (stack_b && stack_b->next)
 	{
 		if (stack_b->next->next)
@@ -63,7 +65,7 @@ void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b)
 
 void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	t_bi_list *top;
+	t_bi_list	*top;
 
 	if ((*stack_b)->next != NULL)
 	{
@@ -80,7 +82,7 @@ void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
 
 void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	t_bi_list *top;
+	t_bi_list	*top;
 
 	if ((*stack_a)->next != NULL)
 	{
