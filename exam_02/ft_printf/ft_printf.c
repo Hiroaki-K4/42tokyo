@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 11:49:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/04 11:53:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,36 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
-char			*ft_itoa_hex(unsigned int num, char *str)
+// char			*ft_itoa_hex(unsigned int num, char *str)
+// {
+// 	int				len;
+// 	unsigned int	i;
+// 	char			*ans;
+
+// 	len = 1;
+// 	i = num;
+// 	while (i > 16)
+// 	{
+// 		len++;
+// 		i = i / 16;
+// 	}
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	len--;
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = str[num % 16];
+// 		num = num / 16;
+// 	}
+// 	return (ans);
+// }
+
+char *ft_itoa_hex(unsigned int num, char *str)
 {
-	int				len;
-	unsigned int	i;
-	char			*ans;
+	int len;
+	unsigned int i;
+	char *ans;
 
 	len = 1;
 	i = num;
@@ -87,7 +112,6 @@ char			*ft_itoa_hex(unsigned int num, char *str)
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
-	// i = num;
 	len--;
 	while (len >= 0)
 	{
@@ -96,16 +120,6 @@ char			*ft_itoa_hex(unsigned int num, char *str)
 	}
 	return (ans);
 }
-
-// char *ft_itoa_hex(unsigned int num, char *str)
-// {
-// 	int len;
-// 	unsigned int i;
-// 	char *ans;
-
-// 	len = 1;
-// 	char 
-// }
 
 // int		digit_size(int num)
 // {
