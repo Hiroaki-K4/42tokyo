@@ -118,7 +118,7 @@ echo "~~none.txt~~"
 echo "~~Stdin check~~"
 gcc -Wall -Wextra -Werror -g main_stdin.c get_next_line.c
 ./a.out
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out | grep "ERROR SUMMARY"
+# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out | grep "ERROR SUMMARY"
 cd ../../
 sh git.sh $*
 cd exam_02/get_next_line
