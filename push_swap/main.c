@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 21:59:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 22:03:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,36 @@ int	stack_min(t_bi_list *stack)
 	return (min);
 }
 
+int	stack_max(t_bi_list *stack)
+{
+	int	max;
+
+	max = stack->next->data;
+	while (stack->next != NULL)
+	{
+		if (max < stack->next->data)
+			max = stack->next->data;
+		stack = stack->next;
+	}
+	if (max > stack->data)
+		max = stack->data;
+	return (max);
+}
+
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	// t_bi_list	*first;
 	int	min;
+	int	max;
 
 	// while (sorted_check(*stack_a) == 1 || (*stack_b)->next == NULL)
 	// {
 	// 	min = 
 	// }
 	min = stack_min(*stack_a);
+	max = stack_min(*stack_a);
 	printf("min: %d\n", min);
+	printf("max: %d\n", max);
 	// printf("first: %d\n", first->data);
 	printf("topa: %d\n", (*stack_a)->data);
 	printf("topb: %d\n", (*stack_b)->data);
