@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/06/30 23:12:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 09:58:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 //     return (0);
 // }
 
+
 char *get_from_store(char *store, char **line)
 {
     int i;
@@ -251,7 +252,7 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-    free(store);
+    free(buf);
     return (tmp);
 }
 
@@ -261,7 +262,7 @@ int read_line(int fd, char **store, char **line)
     int i;
     char *buf;
     char *tmp;
-    
+
     buffer_size = 128;
     if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
         return (-1);
@@ -282,9 +283,9 @@ int read_line(int fd, char **store, char **line)
         free(store[fd]);
         store[fd] = tmp;
     }
-    free(buf);
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
+    free(buf);
     return (0);
 }
 
@@ -298,14 +299,14 @@ int get_next_line(int fd, char **line)
         return (-1);
     if (store[fd] == NULL)
         store[fd] = ft_strdup("");
-    if (ft_strchr(store[fd], '\n') == NULL)
+    if (ft_strchr(store[fd], '\n') != NULL)
     {
         if ((i = read_line(fd, store, line)) == 0)
         {
             free(store[fd]);
             store[fd] = NULL;
         }
-        return (i);
+        return (1);
     }
     else
     {
