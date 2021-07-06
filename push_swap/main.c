@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 22:03:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 22:04:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	stack_max(t_bi_list *stack)
 		if (max < stack->next->data)
 			max = stack->next->data;
 		stack = stack->next;
+		printf("max: %d\n", max);
 	}
 	if (max > stack->data)
 		max = stack->data;
