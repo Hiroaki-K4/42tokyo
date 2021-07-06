@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 22:17:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 09:09:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	sorted_check(t_bi_list *stack_a)
 
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	t_bi_list *first;
+	t_bi_list	*first;
 
 	first = last_stack(*stack_a);
 	// while (first->prev->prev != NULL)
@@ -40,9 +40,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	if (argc <= 2)
-		return;
+		return ;
 	else if (sorted_check((*stack_a)->next) == 0)
-		return;
+		return ;
 	else if (argc == 3)
 	{
 		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
@@ -58,10 +58,10 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 
 int	main(int argc, char *argv[])
 {
-	int i;
-	int num;
-	t_bi_list *stack_a;
-	t_bi_list *stack_b;
+	int			i;
+	int			num;
+	t_bi_list	*stack_a;
+	t_bi_list	*stack_b;
 
 	stack_a = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!stack_a)
@@ -77,7 +77,6 @@ int	main(int argc, char *argv[])
 			error_process();
 		num = ft_atoi(argv[i]);
 		add_stack(&stack_a, num);
-		// add_stack(&stack_b, num);
 		i++;
 	}
 	if (duplicate_check(argc, argv) == 1)
