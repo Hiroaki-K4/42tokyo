@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 22:04:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 22:33:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,23 @@ int	stack_max(t_bi_list *stack)
 		if (max < stack->next->data)
 			max = stack->next->data;
 		stack = stack->next;
-		printf("max: %d\n", max);
 	}
 	if (max < stack->data)
 		max = stack->data;
 	return (max);
+}
+
+int find_pivot(t_bi_list *stack, int min, int max)
+{
+	while (stack->next != NULL)
+	{
+		if (stack->next->data != min && stack->next->data != max)
+			return (stack->next->data);
+		stack = stack->next;
+	}
+	if (stack->data != min && stack->data != max)
+		return (stack->data);
+	return (0);
 }
 
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
@@ -61,15 +73,14 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	// t_bi_list	*first;
 	int	min;
 	int	max;
+	int pivot;
 
-	// while (sorted_check(*stack_a) == 1 || (*stack_b)->next == NULL)
-	// {
-	// 	min = 
-	// }
-	min = stack_min(*stack_a);
-	max = stack_max(*stack_a);
-	printf("min: %d\n", min);
-	printf("max: %d\n", max);
+	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
+	{
+		min = stack_min(*stack_a);
+		max = stack_max(*stack_a); 
+		pivot = find_pivot(*stack_a, min, max);
+	}
 	// printf("first: %d\n", first->data);
 	printf("topa: %d\n", (*stack_a)->data);
 	printf("topb: %d\n", (*stack_b)->data);
