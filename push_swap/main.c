@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 09:09:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 21:59:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,34 @@ int	sorted_check(t_bi_list *stack_a)
 	return (0);
 }
 
+int	stack_min(t_bi_list *stack)
+{
+	int	min;
+
+	min = stack->next->data;
+	while (stack->next != NULL)
+	{
+		if (min > stack->next->data)
+			min = stack->next->data;
+		stack = stack->next;
+	}
+	if (min > stack->data)
+		min = stack->data;
+	return (min);
+}
+
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	t_bi_list	*first;
+	// t_bi_list	*first;
+	int	min;
 
-	first = last_stack(*stack_a);
-	// while (first->prev->prev != NULL)
+	// while (sorted_check(*stack_a) == 1 || (*stack_b)->next == NULL)
 	// {
-		
+	// 	min = 
 	// }
-	printf("first: %d\n", first->data);
+	min = stack_min(*stack_a);
+	printf("min: %d\n", min);
+	// printf("first: %d\n", first->data);
 	printf("topa: %d\n", (*stack_a)->data);
 	printf("topb: %d\n", (*stack_b)->data);
 }
