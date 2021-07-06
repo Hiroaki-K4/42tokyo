@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 22:33:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/06 22:55:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,14 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
+		if ((*stack_b)->next == NULL)
+		{
+			printf("b_emp\n");
+		}
+		else
+		{
+			printf("b_noemp\n");
+		}
 		min = stack_min(*stack_a);
 		max = stack_max(*stack_a); 
 		pivot = find_pivot(*stack_a, min, max);
