@@ -6,67 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 23:09:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/07 23:12:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	sorted_check(t_bi_list *stack_a)
-{
-	while (stack_a->next != NULL)
-	{
-		if (stack_a->data > stack_a->next->data)
-			return (1);
-		stack_a = stack_a->next;
-	}
-	return (0);
-}
-
-int	stack_min(t_bi_list *stack)
-{
-	int	min;
-
-	min = stack->next->data;
-	while (stack->next != NULL)
-	{
-		if (min > stack->next->data)
-			min = stack->next->data;
-		stack = stack->next;
-	}
-	if (min > stack->data)
-		min = stack->data;
-	return (min);
-}
-
-int	stack_max(t_bi_list *stack)
-{
-	int	max;
-
-	max = stack->next->data;
-	while (stack->next != NULL)
-	{
-		if (max < stack->next->data)
-			max = stack->next->data;
-		stack = stack->next;
-	}
-	if (max < stack->data)
-		max = stack->data;
-	return (max);
-}
-
-int	stack_len(t_bi_list *stack)
-{
-	int	len;
-
-	len = 0;
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		len++;
-	}
-	return (len);
-}
 
 int find_pivot(t_bi_list *stack, int min, int max, int len)
 {
@@ -112,16 +56,15 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			max = stack_max(*stack_a);
 			len = stack_len(*stack_a);
 			pivot = find_pivot(*stack_a, min, max, len);
-			printf("pivot: %d\n", pivot);
-			// i = 0;
-			// while (i < len)
-			// {
-			// 	if ((*stack_a)->next->data < pivot)
-			// 		push_b(stack_a, stack_b);
-			// 	else
-			// 		rotate_a(stack_a);
-			// 	i++;
-			// }
+			i = 0;
+			while (i < len)
+			{
+				if ((*stack_a)->next->data < pivot)
+					push_b(stack_a, stack_b);
+				else
+					rotate_a(stack_a);
+				i++;
+			}
 		}
 		min = stack_min(*stack_a);
 		max = stack_max(*stack_a);
