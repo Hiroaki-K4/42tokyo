@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 20:49:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/07 20:56:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -332,6 +332,7 @@ int ft_isdigit(int c)
 
 int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
+	int i;
 	int j;
 	char *tmp;
 
@@ -341,7 +342,7 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 			return (-1);
 		tmp[0] = '-';
 		i = 1;
-		while (flag_list.field + 2 - (int)ft_strlen(str_num) - i > 0)
+		while (flag_list.precision + 2 - (int)ft_strlen(str_num) - i > 0)
 			tmp[i++] = '0';
 		j = 1;
 	}
@@ -349,8 +350,8 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
 			return (-1);
-		while (flag_list.field - (int)ft_strlen(str_num) - i > 0)
-			tmp[i++] = '0';
+		while (flag_list.precision - (int)ft_strlen(str_num) - i > 0)
+			tmp[i] = '0';
 		j = 0;
 	}
 	while (ft_strlen(str_num) - j > 0)
