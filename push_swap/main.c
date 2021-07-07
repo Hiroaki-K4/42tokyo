@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 09:36:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/07 22:12:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,6 +165,7 @@ int	main(int argc, char *argv[])
 		add_stack(&stack_a, num);
 		i++;
 	}
+	printf("ok\n");
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	branch_process(argc, &stack_a, &stack_b);
