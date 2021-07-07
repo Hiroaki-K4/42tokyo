@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 22:12:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/07 23:08:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,16 @@ int	stack_len(t_bi_list *stack)
 	return (len);
 }
 
-int find_pivot(t_bi_list *stack, int min, int max)
+int find_pivot(t_bi_list *stack, int min, int max, int len)
 {
+	int	middle;
+
+	middle = len / 2;
+	while (middle > 0)
+	{
+		stack = stack->next;
+		middle--;
+	}
 	while (stack->next != NULL)
 	{
 		if (stack->next->data != min && stack->next->data != max)
@@ -101,19 +109,19 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		else
 		{
 			min = stack_min(*stack_a);
-			max = stack_max(*stack_a); 
-			pivot = find_pivot(*stack_a, min, max);
+			max = stack_max(*stack_a);
 			len = stack_len(*stack_a);
-			printf("len: %d\n", len);
-			i = 0;
-			while (i < len)
-			{
-				if ((*stack_a)->next->data < pivot)
-					push_b(stack_a, stack_b);
-				else
-					rotate_a(stack_a);
-				i++;
-			}
+			pivot = find_pivot(*stack_a, min, max, len);
+			printf("pivot: ", pivot);
+			// i = 0;
+			// while (i < len)
+			// {
+			// 	if ((*stack_a)->next->data < pivot)
+			// 		push_b(stack_a, stack_b);
+			// 	else
+			// 		rotate_a(stack_a);
+			// 	i++;
+			// }
 		}
 		min = stack_min(*stack_a);
 		max = stack_max(*stack_a); 
