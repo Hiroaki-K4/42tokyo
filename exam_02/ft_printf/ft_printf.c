@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/08 23:26:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/08 23:26:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -635,7 +635,7 @@ int str_to_num(const char *arg, int *i)
 	}
 	else
 		num = -1;
-	return (num)
+	return (num);
 }
 
 // int		ft_printf_per(const char *arg, int *i, va_list *ap)
