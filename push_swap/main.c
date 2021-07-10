@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 18:28:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 18:29:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,19 +208,5 @@ int	main(int argc, char *argv[])
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	branch_process(argc, &stack_a, &stack_b);
-	// push_a(&stack_a, &stack_b);
-	// push_b(&stack_a, &stack_b);
-	// swap_b(stack_a);
-	// swap_b(stack_b);
-	// swap_ab(&stack_a, &stack_b);
-	// rotate_a(&stack_a);
-	// rotate_b(&stack_b);
-	// rotate_ab(&stack_a, &stack_b);
-	// reverse_rotate_a(&stack_a);
-	// reverse_rotate_b(&stack_b);
-	// reverse_rotate_ab(&stack_a, &stack_b);
-	// show_list(stack_a);
-	// printf("~~~~~\n");
-	// show_list(stack_b);
 	return (0);
 }
