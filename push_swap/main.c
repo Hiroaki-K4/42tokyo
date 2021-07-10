@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 21:09:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 21:10:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 						i++;
 					}
 					printf("a1\n");
-					// show_list(*stack_a);
+					show_list(*stack_a);
 					printf("b1\n");
-					// show_list(*stack_b);
+					show_list(*stack_b);
 				}
 				else
 				{
@@ -67,9 +67,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 						i++;
 					}
 					printf("a2\n");
-					// show_list(*stack_a);
+					show_list(*stack_a);
 					printf("b2\n");
-					// show_list(*stack_b);
+					show_list(*stack_b);
 				}
 			}
 			else
@@ -104,9 +104,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 					i++;
 				}
 				printf("a3\n");
-				// show_list(*stack_a);
+				show_list(*stack_a);
 				printf("b3\n");
-				// show_list(*stack_b);
+				show_list(*stack_b);
 			}
 			else
 			{
@@ -153,11 +153,12 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 					}
 				}
 				printf("a4\n");
-				// show_list(*stack_a);
+				show_list(*stack_a);
 				printf("b4\n");
-				// show_list(*stack_b);
+				show_list(*stack_b);
 			}
 		}
+		write(1, "loop_end\n", 9);
 	}
 	write(1, "end\n", 4);
 }
