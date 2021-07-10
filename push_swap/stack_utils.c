@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 12:00:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:32:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:46:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,4 @@ void	top_del(t_bi_list **list)
 		else
 			((*list)->next = NULL);
 	}
-}
-
-int	stack_len(t_bi_list *stack)
-{
-	int	len;
-
-	len = 0;
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		len++;
-	}
-	return (len);
 }
