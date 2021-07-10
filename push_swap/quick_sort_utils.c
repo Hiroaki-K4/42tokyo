@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 22:18:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 22:21:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	find_pivot(t_bi_list *stack, int min, int max, int len)
 {
-	int	middle;
+	// int	middle;
 
-	middle = len / 2;
-	while (middle > 0)
-	{
-		stack = stack->next;
-		middle--;
-	}
+	// middle = len / 2;
+	// while (middle > 0)
+	// {
+		// stack = stack->next;
+		// middle--;
+	// }
 	while (stack->next != NULL)
 	{
 		if (stack->next->data != min && stack->next->data != max)
 			return (stack->next->data);
-		if (stack->next->next->data == min || stack->next->next->data == max)
-			stack = stack->prev;
-		else if (stack->data == min || stack->data == max)
-			stack = stack->next;
+		// if (stack->next->next->data == min || stack->next->next->data == max)
+		// 	stack = stack->prev;
+		// else if (stack->data == min || stack->data == max)
+		stack = stack->next;
 	}
 	if (stack->data != min && stack->data != max)
 		return (stack->data);
