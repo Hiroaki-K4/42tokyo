@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 15:39:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 15:41:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 				pivot = find_pivot(*stack_b, min, max, len);
 				if (len < 6)
 				{
+					stack_init(tmp);
 					branch_process(len + 1, stack_b, tmp);
 					show_list(*stack_b);
 					printf("end\n");
@@ -127,7 +128,8 @@ int	main(int argc, char *argv[])
 	stack_b = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!stack_b)
 		return (-1);
-	stack_init(&stack_a, &stack_b);
+	stack_init(&stack_a);
+	stack_init(&stack_b);
 	i = 1;
 	while (i < argc)
 	{

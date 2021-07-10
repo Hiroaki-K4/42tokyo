@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 15:39:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 15:40:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		swap_b(t_bi_list *stack_b);
 void		swap_ab(t_bi_list **stack_a, t_bi_list **stack_b);
 void		top_del(t_bi_list **list);
 void		show_list(t_bi_list *list);
-void		stack_init(t_bi_list **stack_a, t_bi_list **stack_b);
+void		stack_init(t_bi_list **stack_a);
 void		rotate_a(t_bi_list **stack_a);
 void		rotate_b(t_bi_list **stack_b);
 void		rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b);
@@ -40,7 +40,7 @@ void		reverse_rotate_b(t_bi_list **stack_b);
 void		reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b);
 void		under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void		sort_three(t_bi_list **stack_a);
-void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b);
+void		branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b);
 int			digit_check(const char *arg);
 int			duplicate_check(int argc, char *argv[]);
 int			sorted_check(t_bi_list *stack_a);
