@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:02:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:08:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	sort_three(t_bi_list **stack_a)
 {
-	printf("show\n");
-	show_list(*stack_a);
 	if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data < (*stack_a)->next->next->next->data)
 		swap_a(*stack_a);
 	else if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->next->data > (*stack_a)->next->next->next->data)
@@ -73,12 +71,10 @@ void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 		push_b(stack_a, stack_b);
 		i++;
 	}
-	printf("under_six\n");
 	sort_three(stack_a);
 	i = 4;
 	while (i < argc)
 	{
-		printf("under_six2\n");
 		push_a(stack_a, stack_b);
 		i++;
 	}
