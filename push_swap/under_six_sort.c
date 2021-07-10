@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 17:15:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:00:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 		push_b(stack_a, stack_b);
 		i++;
 	}
+	printf("under_six\n");
 	sort_three(stack_a);
 	i = 4;
 	while (i < argc)
