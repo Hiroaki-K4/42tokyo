@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 22:40:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 22:40:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	int top_flag;
 	int all_min;
 	int count;
-	t_bi_list *tmp;
 
 	top_flag = 0;
 	all_min = stack_min(*stack_a);
