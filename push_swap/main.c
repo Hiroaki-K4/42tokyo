@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 18:27:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 18:27:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,7 +219,7 @@ int	main(int argc, char *argv[])
 	// reverse_rotate_b(&stack_b);
 	// reverse_rotate_ab(&stack_a, &stack_b);
 	// show_list(stack_a);
-	printf("~~~~~\n");
+	// printf("~~~~~\n");
 	// show_list(stack_b);
 	return (0);
 }
