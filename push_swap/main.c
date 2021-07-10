@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 21:10:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 21:18:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 				if (len < 6)
 				{
 					stack_init(&tmp);
-					branch_process(len + 1, stack_b, &tmp);
+					switch_by_args_num(len + 1, stack_b, &tmp);
 					i = 0;
 					while (i < len)
 					{
@@ -163,7 +163,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	write(1, "end\n", 4);
 }
 
-void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
+void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	if (argc <= 2)
 		return ;
@@ -209,7 +209,7 @@ int	main(int argc, char *argv[])
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
-	branch_process(argc, &stack_a, &stack_b);
+	switch_by_args_num(argc, &stack_a, &stack_b);
 	// show_list(stack_a);
 	// printf("b_top: %d\n", stack_b->data);
 	write(1, "final\n", 6);
