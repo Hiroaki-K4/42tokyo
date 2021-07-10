@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:09:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:27:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	min;
 	int	max;
 	int	pivot;
+	int top_flag;
+	int all_min;
 	t_bi_list *tmp;
 
+	top_flag = 0;
+	all_min = stack_min(*stack_a);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
+		if (top_flag == 1 && (*stack_a)->next->data == all_min && (*stack_b)->next != NULL)
+			return ;
 		if ((*stack_b)->next != NULL)
 		{
 			if (sorted_check(*stack_b) == 1)
@@ -37,9 +43,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 					{
 						push_a(stack_a, stack_b);
 						rotate_a(stack_a);
+						top_flag = 1;
 						i++;
 					}
-					// show_list(*stack_b);
 				}
 				else
 				{
@@ -59,28 +65,39 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 				}
 			}
 			printf("pivot: %d b_min: %d b_max: %d b_len: %d\n", pivot, min, max, len);
-			printf("a\n");
-			show_list(*stack_a);
-			printf("b\n");
-			show_list(*stack_b);
+			// printf("a\n");
+			// show_list(*stack_a);
+			// printf("b\n");
+			// show_list(*stack_b);
 		}
 		else
 		{
-			min = stack_min(*stack_a);
-			max = stack_max(*stack_a);
-			len = stack_len(*stack_a);
-			pivot = find_pivot(*stack_a, min, max, len);
-			printf("pivot: %d\n", pivot);
-			i = 0;
-			while (i < len)
+			if (top_flag == 0)
 			{
-				if ((*stack_a)->next->data < pivot)
-					push_b(stack_a, stack_b);
-				else
-					rotate_a(stack_a);
-				i++;
+				min = stack_min(*stack_a);
+				max = stack_max(*stack_a);
+				len = stack_len(*stack_a);
+				pivot = find_pivot(*stack_a, min, max, len);
+				i = 0;
+				while (i < len)
+				{
+					if ((*stack_a)->next->data < pivot)
+						push_b(stack_a, stack_b);
+					else
+						rotate_a(stack_a);
+					i++;
+				}
 			}
+			// else
+			// {
+			// 	stack_min_limit(*stack_a);
+				
+			// }
 		}
+		printf("a\n");
+		show_list(*stack_a);
+		printf("b\n");
+		show_list(*stack_b);
 	}
 }
 

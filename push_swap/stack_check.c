@@ -6,19 +6,19 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 23:12:15 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 23:12:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:28:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sorted_check(t_bi_list *stack_a)
+int	sorted_check(t_bi_list *stack)
 {
-	while (stack_a->next != NULL)
+	while (stack->next != NULL)
 	{
-		if (stack_a->data > stack_a->next->data)
+		if (stack->data > stack->next->data)
 			return (1);
-		stack_a = stack_a->next;
+		stack = stack->next;
 	}
 	return (0);
 }

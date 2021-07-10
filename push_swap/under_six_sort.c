@@ -6,30 +6,30 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:08:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:29:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_bi_list **stack_a)
+void	sort_three(t_bi_list **stack)
 {
-	if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data < (*stack_a)->next->next->next->data)
-		swap_a(*stack_a);
-	else if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->next->data > (*stack_a)->next->next->next->data)
+	if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->data < (*stack)->next->next->next->data)
+		swap_a(*stack);
+	else if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
-		swap_a(*stack_a);
-		reverse_rotate_a(stack_a);
+		swap_a(*stack);
+		reverse_rotate_a(stack);
 	}
-	else if ((*stack_a)->next->data > (*stack_a)->next->next->next->data && (*stack_a)->next->next->data < (*stack_a)->next->next->next->data)
-		rotate_a(stack_a);
-	else if ((*stack_a)->next->data < (*stack_a)->next->next->next->data && (*stack_a)->next->next->data > (*stack_a)->next->next->next->data)
+	else if ((*stack)->next->data > (*stack)->next->next->next->data && (*stack)->next->next->data < (*stack)->next->next->next->data)
+		rotate_a(stack);
+	else if ((*stack)->next->data < (*stack)->next->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
-		swap_a(*stack_a);
-		rotate_a(stack_a);
+		swap_a(*stack);
+		rotate_a(stack);
 	}
-	else if ((*stack_a)->next->data < (*stack_a)->next->next->data && (*stack_a)->next->data > (*stack_a)->next->next->next->data)
-		reverse_rotate_a(stack_a);
+	else if ((*stack)->next->data < (*stack)->next->next->data && (*stack)->next->data > (*stack)->next->next->next->data)
+		reverse_rotate_a(stack);
 }
 
 int	min_data(t_bi_list *stack)
