@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:59:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 18:24:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	pivot;
 	int top_flag;
 	int all_min;
+	int count;
 	t_bi_list *tmp;
 
 	top_flag = 0;
@@ -71,6 +72,14 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 					show_list(*stack_b);
 				}
 			}
+			else
+			{
+				while ((*stack_b)->next != NULL)
+				{
+					push_a(stack_a, stack_b);
+					rotate_a(stack_a);
+				}
+			}
 			// printf("pivot: %d b_min: %d b_max: %d b_len: %d\n", pivot, min, max, len);
 			// printf("a\n");
 			// show_list(*stack_a);
@@ -103,18 +112,45 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			{
 				min = stack_min_limit(*stack_a, all_min);
 				max = stack_max(*stack_a);
-				printf("min: %d\n", min);
-				printf("max: %d\n", max);
 				len = stack_len_limit(*stack_a, all_min);
-				pivot = find_pivot(*stack_a, min, max, len);
-				i = 0;
-				while (i < len)
+				if (len == 1)
+					rotate_a(stack_a);
+				else if (len == 2)
 				{
-					if ((*stack_a)->next->data < pivot)
-						push_b(stack_a, stack_b);
-					else
+					if ((*stack_a)->next->data == min)
+					{
 						rotate_a(stack_a);
-					i++;
+						rotate_a(stack_a);
+					}
+					else
+					{
+						push_b(stack_a, stack_b);
+						rotate_a(stack_a);
+						push_a(stack_a, stack_b);
+						rotate_a(stack_a);
+					}
+				}
+				else
+				{
+					pivot = find_pivot(*stack_a, min, max, len);
+					count = 0;
+					i = 0;
+					while (i < len)
+					{
+						if ((*stack_a)->next->data < pivot)
+							push_b(stack_a, stack_b);
+						else
+						{	count++;
+							rotate_a(stack_a);
+						}
+						i++;
+					}
+					i = 0;
+					while (i < count)
+					{
+						reverse_rotate_a(stack_a);
+						i++;
+					}
 				}
 				printf("a4\n");
 				show_list(*stack_a);
