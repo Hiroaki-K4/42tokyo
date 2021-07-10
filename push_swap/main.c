@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 15:58:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 15:59:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 					printf("end\n");
 					stack_init(&tmp);
 					branch_process(len + 1, stack_b, &tmp);
+					printf("end1\n");
 					i = 0;
 					while (i < len)
 					{
