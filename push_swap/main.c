@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 15:56:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 15:58:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			{
 				if (len < 6)
 				{
+					printf("end\n");
 					stack_init(&tmp);
 					branch_process(len + 1, stack_b, &tmp);
 					i = 0;
@@ -60,7 +61,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 						i++;
 					}
 					// show_list(*stack_b);
-					printf("end\n");
 				}
 				else
 				{
