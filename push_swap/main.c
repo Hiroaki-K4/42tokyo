@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 18:26:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 18:27:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,6 @@ void	branch_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		under_six(stack_a, stack_b, argc);
 	else
 		quick_sort(stack_a, stack_b);
-	printf("branch\n");
 }
 
 int	main(int argc, char *argv[])
@@ -219,8 +218,8 @@ int	main(int argc, char *argv[])
 	// reverse_rotate_a(&stack_a);
 	// reverse_rotate_b(&stack_b);
 	// reverse_rotate_ab(&stack_a, &stack_b);
-	show_list(stack_a);
+	// show_list(stack_a);
 	printf("~~~~~\n");
-	show_list(stack_b);
+	// show_list(stack_b);
 	return (0);
 }
