@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:01:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 16:02:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort_three(t_bi_list **stack_a)
 {
+	printf("show\n");
+	show_list(*stack_a);
 	if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->data < (*stack_a)->next->next->next->data)
 		swap_a(*stack_a);
 	else if ((*stack_a)->next->data > (*stack_a)->next->next->data && (*stack_a)->next->next->data > (*stack_a)->next->next->next->data)
