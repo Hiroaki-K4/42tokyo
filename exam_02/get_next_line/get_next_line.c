@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/06 09:59:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/10 11:16:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,12 +211,11 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 //     return (0);
 // }
 
-
 char *get_from_store(char *store, char **line)
 {
     int i;
     char *tmp;
-
+    
     i = 0;
     while (store[i] && store[i] != '\n')
         i++;
@@ -249,6 +248,7 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(*line = ft_strdup(tmp)))
         return (NULL);
     free(tmp);
+    free(store);
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
@@ -258,8 +258,8 @@ char *save_new_line(char *store, char **line, char *buf)
 
 int read_line(int fd, char **store, char **line)
 {
-    int buffer_size;
     int i;
+    int buffer_size;
     char *buf;
     char *tmp;
 
@@ -285,14 +285,13 @@ int read_line(int fd, char **store, char **line)
     }
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
-    free(buf);
     return (0);
 }
 
 int get_next_line(int fd, char **line)
 {
     int i;
-    static char *store[256];
+    static char *store[255];
 
     *line = NULL;
     if (fd < 0 || fd > 255)
