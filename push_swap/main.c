@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 14:07:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 14:24:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	// t_bi_list	*tmp;
 
 	len = stack_len(*stack_b);
-	if (len == 1)
-	{
-		push_a(stack_a, stack_b);
-		rotate_a(stack_a);
-		return (1);
-	}
-	else if (len == 2)
+	if (len == 2)
 	{
 		write(1, "branch1\n", 8);
 		// stack_init(&tmp);
@@ -46,11 +40,10 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 		// 	i++;
 		// }
 		// write(1, "ok4\n", 4);
-		if ((*stack_b)->next->data > (*stack_b)->next->next->data)
-			rotate_b(stack_b);
-		push_a(stack_a, stack_a);
+		rotate_b(stack_b);
 		push_a(stack_a, stack_a);
 		rotate_a(stack_a);
+		push_a(stack_a, stack_a);
 		rotate_a(stack_a);
 		show_list(*stack_a);
 		write(1, "~~~~~\n", 6);
