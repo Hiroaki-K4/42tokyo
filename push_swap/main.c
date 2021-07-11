@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 18:15:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 18:17:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,11 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	min;
 	int	max;
 	int	pivot;
-	// t_bi_list	*tmp;
 
 	len = stack_len(*stack_b);
-	// if (len == 1)
-	// {
-	// 	write(1, "branch1.0\n", 10);
-	// 	push_a(stack_a, stack_b);
-	// 	rotate_a(stack_a);
-	// 	return (1);
-	// }
 	if (len == 2)
 	{
 		write(1, "branch1.1\n", 10);
-		// stack_init(&tmp);
-		// show_list(*stack_a);
-		// switch_by_args_num(len + 1, stack_b, &tmp);
-		// i = 0;
-		// write(1, "ok1\n", 4);
-		// while (i < len)
-		// {
-		// 	write(1, "okk\n", 4);
-		// 	push_a(stack_a, stack_b);
-		// 	write(1, "ok2\n", 4);
-		// 	rotate_a(stack_a);
-		// 	write(1, "ok3\n", 4);
-		// 	i++;
-		// }
-		// write(1, "ok4\n", 4);
-		// rotate_b(stack_b);
-		// push_a(stack_a, stack_a);
-		// rotate_a(stack_a);
-		// push_a(stack_a, stack_a);
-		// rotate_a(stack_a);
 		push_a(stack_a, stack_b);
 		push_a(stack_a, stack_b);
 		rotate_a(stack_a);
@@ -93,7 +65,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	int top_flag;
 	int all_min;
 	int count;
-	// t_bi_list *tmp;
 
 	top_flag = 0;
 	all_min = stack_min(*stack_a);
@@ -105,7 +76,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
-				// i = stack_b_not_sorted(stack_a, stack_b);
 				if (stack_b_not_sorted(stack_a, stack_b) == 1)
 					top_flag = 1;
 			}
@@ -152,7 +122,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 				max = stack_max(*stack_a);
 				len = stack_len_limit(*stack_a, all_min);
 				write(1, "branch4\n", 8);
-				// printf("len: %d\n", len);
 				if (len == 1)
 					rotate_a(stack_a);
 				else if (len == 2)
