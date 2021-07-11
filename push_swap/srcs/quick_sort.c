@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 21:18:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 22:36:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min)
 	write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min);
 	len = stack_len_limit(*stack_a, all_min);
-	show_list(*stack_a);
+	// show_list(*stack_a);
 	if (len == 1)
 		rotate_a(stack_a);
 	else if (len == 2)
