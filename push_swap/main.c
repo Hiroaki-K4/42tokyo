@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 14:24:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 14:28:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 				max = stack_max(*stack_a);
 				len = stack_len_limit(*stack_a, all_min);
 				write(1, "branch4\n", 8);
+				printf("len: %d\n", len);
 				if (len == 1)
 					rotate_a(stack_a);
 				else if (len == 2)
