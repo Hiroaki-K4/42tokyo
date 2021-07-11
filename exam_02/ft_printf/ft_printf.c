@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 11:16:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 11:23:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_strdup(const char *s)
 // 	int	j;
 
 // 	j = 0;
-// 	while (j < (int)ft_strlen(str))
+// 	while ((int)ft_strlen(str) - j > 0)
 // 	{
 // 		if (str[j] == c)
 // 		{
@@ -118,7 +118,7 @@ char *ft_itoa_hex(unsigned int num, char *str)
 	int len;
 	unsigned int i;
 	char *ans;
-	
+
 	len = 1;
 	i = num;
 	while (i > 16)
@@ -135,7 +135,7 @@ char *ft_itoa_hex(unsigned int num, char *str)
 		ans[len--] = str[num % 16];
 		num = num / 16;
 	}
-	return (ans);
+	return (ans)
 }
 
 // int		digit_size(int num)
