@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 22:53:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 10:36:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	int	i;
 	int	len;
-	int min;
+	int	min;
 	int	max;
 	int	pivot;
-	t_bi_list *tmp;
+	t_bi_list	*tmp;
 
 	len = stack_len(*stack_b);
 	if (len < 6)
