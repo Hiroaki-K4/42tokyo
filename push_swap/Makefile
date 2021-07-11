@@ -3,7 +3,7 @@ NAME = push_swap
 
 .PHONY: all, clean, fclean, re
 
-SRCS = main.c quick_sort.c quick_sort_utils.c stack_min_max.c under_six_sort.c end_process.c stack_utils.c reverse_rotate_operations.c rotate_operations.c push_swap_operations.c init_process.c error_check.c
+SRCS = srcs/main.c srcs/quick_sort.c srcs/quick_sort_utils.c srcs/stack_min_max.c srcs/under_six_sort.c srcs/end_process.c srcs/stack_utils.c srcs/reverse_rotate_operations.c srcs/rotate_operations.c srcs/push_swap_operations.c srcs/init_process.c srcs/error_check.c
 
 OBJS = $(SRCS:.c=.o)
 
