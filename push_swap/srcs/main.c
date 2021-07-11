@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 21:57:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 22:36:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	all_min = stack_min(*stack_a);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
-		show_list(*stack_a);
-		printf("~~~~~\n");
-		show_list(*stack_b);
+		// show_list(*stack_a);
+		// printf("~~~~~\n");
+		// show_list(*stack_b);
 		if (top_flag == 1 && (*stack_a)->next->data == all_min && (*stack_b)->next != NULL)
 			return ;
 		if ((*stack_b)->next != NULL)
