@@ -3,8 +3,8 @@
 make re
 # ./push_swap 1 2 3 4 5
 # ./push_swap 4 5 2 3 1 6
-# ARG="4 5 2 3 1 6"; ./push_swap $ARG | wc -l
-# ARG="4 5 2 3 1 6"; ./push_swap $ARG | ./checker $ARG
+ARG="4 5 2 3 1 6"; ./push_swap $ARG | wc -l
+ARG="4 5 2 3 1 6"; ./push_swap $ARG | ./checker $ARG
 # ./push_swap 4 5 2 3 8 1 6 7
 # ./push_swap 16 3 11 2 15 8 4 20 18 5 13 19 1 9 17 12 6 7 10 14
 # ./push_swap 16 3 11 2 15 8
