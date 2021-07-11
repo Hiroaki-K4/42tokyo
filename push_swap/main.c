@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 15:16:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 18:15:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,49 +105,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
-				i = stack_b_not_sorted(stack_a, stack_b);
-				if (i == 1)
+				// i = stack_b_not_sorted(stack_a, stack_b);
+				if (stack_b_not_sorted(stack_a, stack_b) == 1)
 					top_flag = 1;
-				// write(1, "branch1\n", 8);
-				// len = stack_len(*stack_b);
-				// if (len < 6)
-				// {
-				// 	stack_init(&tmp);
-				// 	switch_by_args_num(len + 1, stack_b, &tmp);
-				// 	i = 0;
-				// 	while (i < len)
-				// 	{
-				// 		push_a(stack_a, stack_b);
-				// 		rotate_a(stack_a);
-				// 		top_flag = 1;
-				// 		i++;
-				// 	}
-				// 	write(1, "a1\n", 3);
-				// 	show_list(*stack_a);
-				// 	write(1, "b1\n", 3);
-				// 	show_list(*stack_b);
-				// }
-				// else
-				// {
-				// 	write(1, "branch2\n", 8);
-				// 	min = stack_min(*stack_b);
-				// 	max = stack_max(*stack_b);
-				// 	pivot = find_pivot(*stack_b, min, max, len);
-				// 	printf("min: %d max: %d pivot: %d\n", min, max, pivot);
-				// 	i = 0;
-				// 	while (i < len)
-				// 	{
-				// 		if ((*stack_b)->next->data > pivot)
-				// 			push_a(stack_a, stack_b);
-				// 		else
-				// 			rotate_b(stack_b);
-				// 		i++;
-				// 	}
-				// 	write(1, "a2\n", 3);
-				// 	show_list(*stack_a);
-				// 	write(1, "b2\n", 3);
-				// 	show_list(*stack_b);
-				// }
 			}
 			else
 			{
