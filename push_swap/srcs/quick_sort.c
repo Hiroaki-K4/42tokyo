@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 20:32:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 20:34:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 		max = stack_max(*stack_b);
 		pivot = find_pivot(*stack_b, min, max, len);
 		i = 0;
-		while (i < len)
+		while (i <= len)
 		{
 			if ((*stack_b)->next->data > pivot)
 				push_a(stack_a, stack_b);
