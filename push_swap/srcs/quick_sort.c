@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 20:51:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 21:18:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,35 +20,35 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	max;
 	int	pivot;
 
+	write(1, "stack_b_not_sorted\n", 19);
 	len = stack_len(*stack_b);
-	// if (len == 2)
-	// {
-	// 	// write(1, "branch1.1\n", 10);
-	// 	push_a(stack_a, stack_b);
-	// 	push_a(stack_a, stack_b);
-	// 	rotate_a(stack_a);
-	// 	rotate_a(stack_a);
-	// 	// show_list(*stack_a);
-	// 	// write(1, "~~~~~\n", 6);
-	// 	// show_list(*stack_b);
-	// 	return (1);
-	// }
-	if (len < 6)
+	if (len == 2)
 	{
-		switch_by_args_num(len + 1, stack_b, stack_a);
-		// show_list(*stack_b);
-		while (len > 0)
-		{
-			push_a(stack_a, stack_b);
-			rotate_a(stack_a);
-			len--;
-		}
+		// write(1, "branch1.1\n", 10);
+		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b);
+		rotate_a(stack_a);
+		rotate_a(stack_a);
 		// show_list(*stack_a);
+		// write(1, "~~~~~\n", 6);
+		// show_list(*stack_b);
 		return (1);
+	}
+	// if (len < 6)
+	// {
+	// 	switch_by_args_num(len + 1, stack_b, stack_a);
+	// 	// show_list(*stack_b);
+	// 	while (len > 0)
+	// 	{
+	// 		push_a(stack_a, stack_b);
+	// 		rotate_a(stack_a);
+	// 		len--;
+	// 	}
+	// 	// show_list(*stack_a);
+	// 	return (1);
 	}
 	else
 	{
-		// write(1, "branch1.2\n", 10);
 		min = stack_min(*stack_b);
 		max = stack_max(*stack_b);
 		pivot = find_pivot(*stack_b, min, max, len);
@@ -76,7 +76,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	len;
 	int pivot;
 
-	// write(1, "branch3\n", 8);
+	write(1, "first_partition\n", 16);
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
 	len = stack_len(*stack_a);
@@ -102,6 +102,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
 	int	pivot;
 	int	count;
 
+	write(1, "partition_to_b\n", 15);
 	max = stack_max(*stack_a);
 	pivot = find_pivot(*stack_a, min, max, len);
 	count = 0;
@@ -129,10 +130,10 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min)
 	int	min;
 	int	len;
 
-
+	write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min);
 	len = stack_len_limit(*stack_a, all_min);
-	// write(1, "branch4\n", 8);
+	show_list(*stack_a);
 	if (len == 1)
 		rotate_a(stack_a);
 	else if (len == 2)

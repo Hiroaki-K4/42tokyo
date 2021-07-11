@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 20:52:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 21:14:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			}
 			else
 			{
-				// write(1, "branch2\n", 8);
+				write(1, "branch2\n", 8);
 				while ((*stack_b)->next != NULL)
 				{
 					push_a(stack_a, stack_b);
