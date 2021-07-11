@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 20:48:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 20:51:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	if (len < 6)
 	{
 		switch_by_args_num(len + 1, stack_b, stack_a);
-		show_list(*stack_b);
+		// show_list(*stack_b);
 		while (len > 0)
 		{
 			push_a(stack_a, stack_b);
 			rotate_a(stack_a);
 			len--;
 		}
-		show_list(*stack_a);
+		// show_list(*stack_a);
 		return (1);
 	}
 	else
