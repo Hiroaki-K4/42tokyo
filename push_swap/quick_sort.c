@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 19:54:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 20:05:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,91 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b)
 		else
 			rotate_a(stack_a);
 		i++;
+	}
+	// show_list(*stack_a);
+	// write(1, "~~~~~\n", 6);
+	// show_list(*stack_b);
+}
+
+void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
+{
+	int	i;
+	int	max;
+	int	pivot;
+	int	count;
+
+	max = stack_max(*stack_a);
+	pivot = find_pivot(*stack_a, min, max, len);
+	count = 0;
+	i = 0;
+	while (i < len)
+	{
+		if ((*stack_a)->next->data < pivot)
+			push_b(stack_a, stack_b);
+		else
+		{	count++;
+			rotate_a(stack_a);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < count)
+	{
+		reverse_rotate_a(stack_a);
+		i++;
+	}
+}
+
+void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min)
+{
+	int	min;
+	int	max;
+	int	len;
+
+
+	min = stack_min_limit(*stack_a, all_min);
+	// max = stack_max(*stack_a);
+	len = stack_len_limit(*stack_a, all_min);
+	// write(1, "branch4\n", 8);
+	if (len == 1)
+		rotate_a(stack_a);
+	else if (len == 2)
+	{
+		if ((*stack_a)->next->data == min)
+		{
+			rotate_a(stack_a);
+			rotate_a(stack_a);
+		}
+		else
+		{
+			push_b(stack_a, stack_b);
+			rotate_a(stack_a);
+			push_a(stack_a, stack_b);
+			rotate_a(stack_a);
+		}
+	}
+	else if (len > 2)
+	{
+		partition_to_b(stack_a, stack_b, min, len);
+		// pivot = find_pivot(*stack_a, min, max, len);
+		// count = 0;
+		// i = 0;
+		// while (i < len)
+		// {
+		// 	if ((*stack_a)->next->data < pivot)
+		// 		push_b(stack_a, stack_b);
+		// 	else
+		// 	{	count++;
+		// 		rotate_a(stack_a);
+		// 	}
+		// 	i++;
+		// }
+		// i = 0;
+		// while (i < count)
+		// {
+		// 	reverse_rotate_a(stack_a);
+		// 	i++;
+		// }
 	}
 	// show_list(*stack_a);
 	// write(1, "~~~~~\n", 6);
