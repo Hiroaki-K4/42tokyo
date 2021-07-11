@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 21:18:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 21:18:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	// 	}
 	// 	// show_list(*stack_a);
 	// 	return (1);
-	}
+	// }
 	else
 	{
 		min = stack_min(*stack_b);
