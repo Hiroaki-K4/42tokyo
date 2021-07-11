@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 14:06:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 14:07:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	{
 		push_a(stack_a, stack_b);
 		rotate_a(stack_a);
+		return (1);
 	}
 	else if (len == 2)
 	{
