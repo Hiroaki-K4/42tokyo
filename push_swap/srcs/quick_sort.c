@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 20:35:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 20:46:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,28 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	pivot;
 
 	len = stack_len(*stack_b);
-	if (len == 2)
+	// if (len == 2)
+	// {
+	// 	// write(1, "branch1.1\n", 10);
+	// 	push_a(stack_a, stack_b);
+	// 	push_a(stack_a, stack_b);
+	// 	rotate_a(stack_a);
+	// 	rotate_a(stack_a);
+	// 	// show_list(*stack_a);
+	// 	// write(1, "~~~~~\n", 6);
+	// 	// show_list(*stack_b);
+	// 	return (1);
+	// }
+	if (len < 6)
 	{
-		// write(1, "branch1.1\n", 10);
-		push_a(stack_a, stack_b);
-		push_a(stack_a, stack_b);
-		rotate_a(stack_a);
-		rotate_a(stack_a);
-		// show_list(*stack_a);
-		// write(1, "~~~~~\n", 6);
-		// show_list(*stack_b);
+		switch_by_args_num(len + 1, stack_b, stack_a);
+		show_list(*stack_a);
+		while (len > 0)
+		{
+			push_a(stack_a, stack_b);
+			rotate_a(stack_a);
+			len--;
+		}
 		return (1);
 	}
 	else
