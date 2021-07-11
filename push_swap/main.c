@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 11:42:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 11:43:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,7 +227,7 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		under_six(stack_a, stack_b, argc);
 	else
 		quick_sort(stack_a, stack_b);
-	write(1, "branch\n", 7);
+	// write(1, "branch\n", 7);
 }
 
 int	main(int argc, char *argv[])
