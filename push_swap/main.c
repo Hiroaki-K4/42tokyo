@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 19:55:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 19:55:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		else
 		{
 			if (top_flag == 0)
-			{
-				// // write(1, "branch3\n", 8);
-				// min = stack_min(*stack_a);
-				// max = stack_max(*stack_a);
-				// len = stack_len(*stack_a);
-				// pivot = find_pivot(*stack_a, min, max, len);
-				// i = 0;
-				// while (i < len)
-				// {
-				// 	if ((*stack_a)->next->data < pivot)
-				// 		push_b(stack_a, stack_b);
-				// 	else
-				// 		rotate_a(stack_a);
-				// 	i++;
-				// }
-				// // show_list(*stack_a);
-				// // write(1, "~~~~~\n", 6);
-				// // show_list(*stack_b);
 				first_partition(stack_a, stack_b);
-			}
 			else
 			{
 				min = stack_min_limit(*stack_a, all_min);
