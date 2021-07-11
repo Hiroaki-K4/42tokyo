@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 11:09:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 11:16:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int ft_strchr_place(const char *str, int c, int *i)
 	int j;
 
 	j = 0;
-	while (j < (int)ft_strlen(str))
+	while ((int)ft_strlen(str) - j > 0)
 	{
 		if (str[j] == c)
 		{
