@@ -1,0 +1,77 @@
+branch3
+ra
+ra
+ra
+pb
+ra
+ra
+~~~~~
+branch2
+pa
+ra
+branch4
+ra
+pb
+ra
+ra
+pb
+rra
+rra
+rra
+~~~~~
+branch1.1
+pa
+pa
+ra
+ra
+~~~~~
+branch4
+ra
+pb
+ra
+rra
+rra
+~~~~~
+branch2
+pa
+ra
+branch4
+pb
+ra
+pa
+ra
+~~~~~
+loop_end
+final
+pivot: 3
+pushb
+data: 16
+data: 3
+data: 11
+data: 15
+data: 8
+data: 2
+data: 16
+data: 11
+data: 15
+data: 2
+data: 8
+data: 3
+data: 16
+data: 11
+data: 15
+data: 2
+data: 3
+data: 8
+data: 16
+data: 15
+data: 2
+data: 3
+data: 8
+data: 11
+data: 2
+data: 3
+data: 8
+data: 11
+data: 15
+data: 16
