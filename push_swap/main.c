@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 18:17:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/11 18:25:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	len = stack_len(*stack_b);
 	if (len == 2)
 	{
-		write(1, "branch1.1\n", 10);
+		// write(1, "branch1.1\n", 10);
 		push_a(stack_a, stack_b);
 		push_a(stack_a, stack_b);
 		rotate_a(stack_a);
 		rotate_a(stack_a);
-		show_list(*stack_a);
-		write(1, "~~~~~\n", 6);
-		show_list(*stack_b);
+		// show_list(*stack_a);
+		// write(1, "~~~~~\n", 6);
+		// show_list(*stack_b);
 		return (1);
 	}
 	else
 	{
-		write(1, "branch1.2\n", 10);
+		// write(1, "branch1.2\n", 10);
 		min = stack_min(*stack_b);
 		max = stack_max(*stack_b);
 		pivot = find_pivot(*stack_b, min, max, len);
@@ -48,9 +48,9 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 				rotate_b(stack_b);
 			i++;
 		}
-		show_list(*stack_a);
-		write(1, "~~~~~\n", 6);
-		show_list(*stack_b);
+		// show_list(*stack_a);
+		// write(1, "~~~~~\n", 6);
+		// show_list(*stack_b);
 		return (0);
 	}
 }
@@ -81,7 +81,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			}
 			else
 			{
-				write(1, "branch2\n", 8);
+				// write(1, "branch2\n", 8);
 				while ((*stack_b)->next != NULL)
 				{
 					push_a(stack_a, stack_b);
@@ -94,34 +94,30 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		{
 			if (top_flag == 0)
 			{
-				write(1, "branch3\n", 8);
+				// write(1, "branch3\n", 8);
 				min = stack_min(*stack_a);
 				max = stack_max(*stack_a);
 				len = stack_len(*stack_a);
 				pivot = find_pivot(*stack_a, min, max, len);
-				printf("pivot: %d\n", pivot);
 				i = 0;
 				while (i < len)
 				{
 					if ((*stack_a)->next->data < pivot)
-					{
-						printf("pushb\n");
 						push_b(stack_a, stack_b);
-					}
 					else
 						rotate_a(stack_a);
 					i++;
 				}
-				show_list(*stack_a);
-				write(1, "~~~~~\n", 6);
-				show_list(*stack_b);
+				// show_list(*stack_a);
+				// write(1, "~~~~~\n", 6);
+				// show_list(*stack_b);
 			}
 			else
 			{
 				min = stack_min_limit(*stack_a, all_min);
 				max = stack_max(*stack_a);
 				len = stack_len_limit(*stack_a, all_min);
-				write(1, "branch4\n", 8);
+				// write(1, "branch4\n", 8);
 				if (len == 1)
 					rotate_a(stack_a);
 				else if (len == 2)
@@ -161,13 +157,12 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 						i++;
 					}
 				}
-				show_list(*stack_a);
-				write(1, "~~~~~\n", 6);
-				show_list(*stack_b);
+				// show_list(*stack_a);
+				// write(1, "~~~~~\n", 6);
+				// show_list(*stack_b);
 			}
 		}
 	}
-	write(1, "loop_end\n", 9);
 }
 
 void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
@@ -187,7 +182,6 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		under_six(stack_a, stack_b, argc);
 	else
 		quick_sort(stack_a, stack_b);
-	// write(1, "branch\n", 7);
 }
 
 int	main(int argc, char *argv[])
@@ -218,7 +212,5 @@ int	main(int argc, char *argv[])
 		error_process();
 	switch_by_args_num(argc, &stack_a, &stack_b);
 	// show_list(stack_a);
-	// printf("b_top: %d\n", stack_b->data);
-	write(1, "final\n", 6);
 	return (0);
 }
