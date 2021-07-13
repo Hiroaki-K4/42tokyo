@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/13 23:14:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/13 23:17:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,8 @@ char *ft_itoa_hex(unsigned int num, char *str)
 	i = num;
 	while (i > 16)
 	{
-		i = i / 16;
 		len++;
+		i = i / 16;
 	}
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
