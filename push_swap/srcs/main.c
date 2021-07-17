@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 21:40:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 21:43:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		else
 		{
 			if (top_flag == 0)
-				pivot_list = first_partition(stack_a, stack_b);
+				pivot_list = first_partition(stack_a, stack_b, pivot_list);
 			else
 				partition(stack_a, stack_b, all_min);
 		}
