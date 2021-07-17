@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 21:53:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 21:56:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,20 +76,30 @@ int	*add_pivot(int *pivot_list, int pivot)
 	int	len;
 	int *new_pivot_list;
 
-	len = 0;
-	while (pivot_list[len])
-		len++;
-	if (!(new_pivot_list = (int *)malloc(sizeof(int) * (len + 2))))
-		return (NULL);
-	len = 0;
-	while (pivot_list[len])
+	if (pivot_list == NULL)
 	{
-		new_pivot_list[len] = pivot_list[len];
-		len++;
+		if (!(new_pivot_list = (int *)malloc(sizeof(int) * 2)))
+			return (NULL);
+		new_pivot_list[0] = pivot;
+		new_pivot_list[1] = '\0';
 	}
-	free(pivot_list);
-	new_pivot_list[len++] = pivot;
-	new_pivot_list[len] = '\0';
+	else
+	{
+		len = 0;
+		while (pivot_list[len])
+			len++;
+		if (!(new_pivot_list = (int *)malloc(sizeof(int) * (len + 2))))
+			return (NULL);
+		len = 0;
+		while (pivot_list[len])
+		{
+			new_pivot_list[len] = pivot_list[len];
+			len++;
+		}
+		free(pivot_list);
+		new_pivot_list[len++] = pivot;
+		new_pivot_list[len] = '\0';
+	}
 	return (new_pivot_list);
 }
 
