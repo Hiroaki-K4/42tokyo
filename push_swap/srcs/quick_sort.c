@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/11 22:54:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 18:07:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	max;
 	int	pivot;
 
-	write(1, "stack_b_not_sorted\n", 19);
+	// write(1, "stack_b_not_sorted\n", 19);
 	len = stack_len(*stack_b);
 	if (len == 2)
 	{
@@ -79,7 +79,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b)
 	int	len;
 	int pivot;
 
-	write(1, "first_partition\n", 16);
+	// write(1, "first_partition\n", 16);
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
 	len = stack_len(*stack_a);
@@ -105,7 +105,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
 	int	pivot;
 	int	count;
 
-	write(1, "partition_to_b\n", 15);
+	// write(1, "partition_to_b\n", 15);
 	max = stack_max(*stack_a);
 	pivot = find_pivot(*stack_a, min, max, len);
 	count = 0;
@@ -133,7 +133,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min)
 	int	min;
 	int	len;
 
-	write(1, "partition\n", 10);
+	// write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min);
 	len = stack_len_limit(*stack_a, all_min);
 	// show_list(*stack_a);
