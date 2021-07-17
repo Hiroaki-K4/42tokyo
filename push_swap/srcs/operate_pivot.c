@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 22:20:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:21:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	add_pivot(int **pivot_list, int pivot)
 		write(1, "ok4\n", 4);
 		*pivot_list[0] = pivot;
 		write(1, "ok5\n", 4);
-		*pivot_list[1] = '\0';
+		// *pivot_list[1] = '\0';
 		write(1, "ok6\n", 4);
 	}
 	else
