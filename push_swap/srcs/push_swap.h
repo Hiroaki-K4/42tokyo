@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 22:13:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:47:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ typedef struct s_bi_list
 	struct s_bi_list	*prev;
 	struct s_bi_list	*next;
 }	t_bi_list;
+
+typedef struct s_pivot_list
+{
+	int	len;
+	int	*pivot;
+}	t_pivot_list;
 
 void		error_process();
 void		push_a(t_bi_list **stack_a, t_bi_list **stack_b);
@@ -43,7 +49,7 @@ void		sort_three(t_bi_list **stack);
 void		switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b);
 void		partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min);
 void		quick_sort(t_bi_list **stack_a, t_bi_list **stack_b);
-void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b, int **pivot_list);
+void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list);
 int			digit_check(const char *arg);
 int			duplicate_check(int argc, char *argv[]);
 int			sorted_check(t_bi_list *stack);
@@ -55,7 +61,7 @@ int			stack_len(t_bi_list *stack);
 int			stack_len_limit(t_bi_list *stack, int all_min);
 int			find_pivot(t_bi_list *stack, int min, int max, int len);
 int			stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b);
-int			add_pivot(int **pivot_list, int pivot);
+int			add_pivot(t_pivot_list **pivot_list, int pivot);
 t_bi_list	*last_stack(t_bi_list *stack);
 
 #endif
