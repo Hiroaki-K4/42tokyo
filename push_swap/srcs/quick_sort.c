@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 21:56:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:03:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,38 +69,6 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 		// show_list(*stack_b);
 		return (0);
 	}
-}
-
-int	*add_pivot(int *pivot_list, int pivot)
-{
-	int	len;
-	int *new_pivot_list;
-
-	if (pivot_list == NULL)
-	{
-		if (!(new_pivot_list = (int *)malloc(sizeof(int) * 2)))
-			return (NULL);
-		new_pivot_list[0] = pivot;
-		new_pivot_list[1] = '\0';
-	}
-	else
-	{
-		len = 0;
-		while (pivot_list[len])
-			len++;
-		if (!(new_pivot_list = (int *)malloc(sizeof(int) * (len + 2))))
-			return (NULL);
-		len = 0;
-		while (pivot_list[len])
-		{
-			new_pivot_list[len] = pivot_list[len];
-			len++;
-		}
-		free(pivot_list);
-		new_pivot_list[len++] = pivot;
-		new_pivot_list[len] = '\0';
-	}
-	return (new_pivot_list);
 }
 
 int	*first_partition(t_bi_list **stack_a, t_bi_list **stack_b, int *pivot_list)
