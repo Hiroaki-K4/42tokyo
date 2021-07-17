@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 22:47:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:50:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int	find_pivot(t_bi_list *stack, int min, int max, int len)
 	if (stack->data != min && stack->data != max)
 		return (stack->data);
 	return (0);
+}
+
+void	init_pivot_list(t_pivot_list **pivot_list)
+{
+	(*pivot_list)->len = 0;
+	(*pivot_list)->pivot = NULL;
 }
 
 int	add_pivot(t_pivot_list **pivot_list, int pivot)
