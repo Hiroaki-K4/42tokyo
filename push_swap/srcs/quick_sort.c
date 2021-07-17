@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 21:42:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 21:46:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,19 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 		// show_list(*stack_b);
 		return (0);
 	}
+}
+
+int	*add_pivot(int *pivot_list, int pivot)
+{
+	int	len;
+	int *new_pivot_list;
+
+	len = 0;
+	while (pivot_list[len])
+		len++;
+	// if (!(new_pivot_list = (int *)malloc(sizeof(int) * (len + 1))))
+	// 	return (-1);
+	return (len);
 }
 
 int	*first_partition(t_bi_list **stack_a, t_bi_list **stack_b, int *pivot_list)
