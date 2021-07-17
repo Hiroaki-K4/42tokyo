@@ -6,55 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 21:43:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:07:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
-{
-	int top_flag;
-	int all_min;
-	int	*pivot_list;
-
-	pivot_list = NULL;
-	top_flag = 0;
-	all_min = stack_min(*stack_a);
-	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
-	{
-		// show_list(*stack_a);
-		// printf("~~~~~\n");
-		// show_list(*stack_b);
-		if (top_flag == 1 && (*stack_a)->next->data == all_min && (*stack_b)->next != NULL)
-			return ;
-		if ((*stack_b)->next != NULL)
-		{
-			if (sorted_check(*stack_b) == 1)
-			{
-				if (stack_b_not_sorted(stack_a, stack_b) == 1)
-					top_flag = 1;
-			}
-			else
-			{
-				// write(1, "branch2\n", 8);
-				while ((*stack_b)->next != NULL)
-				{
-					push_a(stack_a, stack_b);
-					rotate_a(stack_a);
-					top_flag = 1;
-				}
-			}
-		}
-		else
-		{
-			if (top_flag == 0)
-				pivot_list = first_partition(stack_a, stack_b, pivot_list);
-			else
-				partition(stack_a, stack_b, all_min);
-		}
-	}
-}
 
 void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
