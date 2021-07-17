@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 22:50:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/17 22:56:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,38 +45,34 @@ void	init_pivot_list(t_pivot_list **pivot_list)
 
 int	add_pivot(t_pivot_list **pivot_list, int pivot)
 {
-	int	len;
+	int	i;
 	int *new_pivot_list;
 
-	if (*pivot_list == NULL)
+	if ((*pivot_list)->len == 0)
 	{
 		write(1, "ok3\n", 4);
-		if (!(*pivot_list = (int *)malloc(sizeof(int) * 2)))
+		if (!((*pivot_list)->pivot = (int *)malloc(sizeof(int) * 1)))
 			return (-1);
 		write(1, "ok4\n", 4);
-		**pivot_list = pivot;
+		(*pivot_list)->len++;
+		(*pivot_list)->pivot = pivot;
 		write(1, "ok5\n", 4);
-		(*pivot_list)++;
-		*pivot_list[0] = 2;
 		write(1, "ok6\n", 4);
 	}
 	else
 	{
-		len = 0;
-		while (*pivot_list[len])
-			len++;
-		if (!(new_pivot_list = (int *)malloc(sizeof(int) * (len + 2))))
+		if (!(new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len + 1))))
 			return (-1);
-		len = 0;
-		while (*pivot_list[len])
+		i = 0;
+		while ((*pivot_list)->len - i > 0)
 		{
-			new_pivot_list[len] = *pivot_list[len];
-			len++;
+			new_pivot_list[i] = (*pivot_list)->pivot[i];
+			i++;
 		}
-		free(*pivot_list);
-		new_pivot_list[len++] = pivot;
-		new_pivot_list[len] = '\0';
-		*pivot_list = new_pivot_list;
+		free((*pivot_list)->pivot);
+		new_pivot_list[i++] = pivot;
+		new_pivot_list[i] = '\0';
+		(*pivot_list)->pivot = new_pivot_list;
 	}
 	return (0);
 }
