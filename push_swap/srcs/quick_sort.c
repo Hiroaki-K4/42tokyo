@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 21:10:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 21:11:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,6 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 
 void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, t_pivot_list **pivot_list)
 {
-	int	i;
-	int	max;
-	int	pivot;
-	int	count;
-
 	while ((*stack_a)->next->data != (*pivot_list)->pivot[(*pivot_list)->len - 1])
 		push_b(stack_a, stack_b);
 }
