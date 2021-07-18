@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 18:02:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 18:06:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 {
 	int	len;
 
+	printf("min_pivot: %d\n", (*pivot_list)->pivot[(*pivot_list)->len - 1]);
 	len = 0;
 	while (stack->next != NULL)
 	{
