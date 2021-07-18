@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/17 22:03:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 18:02:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	stack_len(t_bi_list *stack)
 	return (len);
 }
 
-int	stack_len_limit(t_bi_list *stack, int all_min)
+int	stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 {
 	int	len;
 
