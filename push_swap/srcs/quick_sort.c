@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 21:11:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 21:15:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,14 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 // 	}
 // }
 
-void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list)
+void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int len)
 {
-	while ((*stack_a)->next->data != (*pivot_list)->pivot[(*pivot_list)->len - 1])
+	while (len > 0)
+	{
 		push_b(stack_a, stack_b);
+		len--;
+	}
+	printf("ok\n");
 }
 
 void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list)
@@ -159,7 +163,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 		}
 	}
 	else if (len > 2)
-		partition_to_b(stack_a, stack_b, pivot_list);
+		partition_to_b(stack_a, stack_b, len);
 		// partition_to_b(stack_a, stack_b, min, len, pivot_list);
 }
 
