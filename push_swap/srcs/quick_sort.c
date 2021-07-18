@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 18:31:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 19:15:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	i = 0;
 	while (i < len)
 	{
-		if ((*stack_a)->next->data <= pivot)
+		if ((*stack_a)->next->data < pivot)
 			push_b(stack_a, stack_b);
 		else
 			rotate_a(stack_a);
@@ -106,7 +106,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
 	i = 0;
 	while (i < len)
 	{
-		if ((*stack_a)->next->data <= pivot)
+		if ((*stack_a)->next->data < pivot)
 			push_b(stack_a, stack_b);
 		else
 		{	count++;
@@ -128,9 +128,15 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	int	len;
 
 	// write(1, "partition\n", 10);
+	// show_list(*stack_a);
 	min = stack_min_limit(*stack_a, all_min, pivot_list);
 	len = stack_len_limit(*stack_a, all_min, pivot_list);
-	if (len == 1)
+	if (len == 0 && (*stack_a)->next->data != all_min)
+	{
+		rotate_a(stack_a);
+		delete_min_pivot(pivot_list);
+	}
+	else if (len == 1)
 		rotate_a(stack_a);
 	else if (len == 2)
 	{
