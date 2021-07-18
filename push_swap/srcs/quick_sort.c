@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 16:07:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 16:11:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
+int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list)
 {
 	int	i;
 	int	len;
@@ -55,6 +55,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b)
 		min = stack_min(*stack_b);
 		max = stack_max(*stack_b);
 		pivot = find_pivot(*stack_b, min, max, len);
+		add_pivot(pivot_list, pivot);
 		i = 0;
 		while (i < len)
 		{
@@ -184,7 +185,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
-				if (stack_b_not_sorted(stack_a, stack_b) == 1)
+				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list) == 1)
 					top_flag = 1;
 			}
 			else
@@ -208,7 +209,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		i = 0;
 		while (pivot_list->len - i > 0)
 		{
-			// printf("pivot%d: %d\n", i+1, pivot_list->pivot[i]);
+			printf("pivot%d: %d\n", i+1, pivot_list->pivot[i]);
 			i++;
 		}
 	}
