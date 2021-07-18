@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 21:16:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 21:16:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int	main(int argc, char *argv[])
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	switch_by_args_num(argc, &stack_a, &stack_b);
-	show_list(stack_a);
+	show_list(stack_b);
 	return (0);
 }
