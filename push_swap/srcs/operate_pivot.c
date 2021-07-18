@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 15:31:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 15:34:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ int	find_pivot(t_bi_list *stack, int min, int max, int len)
 	return (0);
 }
 
-void	init_pivot_list(t_pivot_list **pivot_list)
+void	init_pivot_list(t_pivot_list **pivot_list, int all_min)
 {
 	(*pivot_list)->len = 0;
-	(*pivot_list)->pivot = NULL;
+	if (!((*pivot_list)->pivot = (int *)malloc(sizeof(int) * 1)))
+		return (NULL);
+	(*pivot_list)->pivot = all_min;
 }
 
 int	add_pivot(t_pivot_list **pivot_list, int pivot)
