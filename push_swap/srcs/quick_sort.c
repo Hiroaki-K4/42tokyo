@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 18:16:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 18:23:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,6 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 		i++;
 	}
 	add_pivot(pivot_list, pivot);
-	// show_list(*stack_a);
-	// write(1, "~~~~~\n", 6);
-	// show_list(*stack_b);
 }
 
 void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
@@ -133,7 +130,6 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	// write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min, pivot_list);
 	len = stack_len_limit(*stack_a, all_min, pivot_list);
-	// show_list(*stack_a);
 	if (len == 1)
 		rotate_a(stack_a);
 	else if (len == 2)
@@ -152,9 +148,6 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	}
 	else if (len > 2)
 		partition_to_b(stack_a, stack_b, min, len);
-	// show_list(*stack_a);
-	// write(1, "~~~~~\n", 6);
-	// show_list(*stack_b);
 }
 
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
@@ -170,9 +163,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 	init_pivot_list(&pivot_list, all_min);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
-		// show_list(*stack_a);
-		// printf("~~~~~\n");
-		// show_list(*stack_b);
 		if (top_flag == 1 && (*stack_a)->next->data == all_min && (*stack_b)->next != NULL)
 			return ;
 		if ((*stack_b)->next != NULL)
@@ -184,7 +174,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 			}
 			else
 			{
-				// write(1, "branch2\n", 8);
 				while ((*stack_b)->next != NULL)
 				{
 					push_a(stack_a, stack_b);
