@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 15:39:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 15:49:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,15 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 		i++;
 	}
 	write(1, "ok\n", 3);
-	// add_pivot(pivot_list, pivot);
+	add_pivot(pivot_list, pivot);
 	write(1, "ok2\n", 4);
-	// i = 0;
-	// while ((*pivot_list)->len - i > 0)
-	// {
-	// 	printf("pivot: %d\n", (*pivot_list)->pivot[i]);
-	// 	printf("len: %d\n", (*pivot_list)->len);
-	// 	i++;
-	// }
-	printf("pivot: %d\n", (*pivot_list)->pivot[0]);
+	i = 0;
+	while ((*pivot_list)->len - i > 0)
+	{
+		printf("pivot: %d\n", (*pivot_list)->pivot[i]);
+		printf("len: %d\n", (*pivot_list)->len);
+		i++;
+	}
 	// show_list(*stack_a);
 	// write(1, "~~~~~\n", 6);
 	// show_list(*stack_b);
@@ -180,7 +179,8 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 
 	top_flag = 0;
 	all_min = stack_min(*stack_a);
-	// init_pivot_list(&pivot_list, all_min);
+	pivot_list = (t_pivot_list *)malloc(sizeof(t_pivot_list));
+	init_pivot_list(&pivot_list, all_min);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
 		// show_list(*stack_a);
