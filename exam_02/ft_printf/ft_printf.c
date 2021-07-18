@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 10:32:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 11:07:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,9 +258,9 @@ int ft_atoi(const char *arg)
 	int i;
 	int ans;
 	int flag;
-	
+
 	i = 0;
-	flag = 1;
+	flag = 0;
 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
 			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
 		i++;
@@ -270,10 +270,9 @@ int ft_atoi(const char *arg)
 			flag = -1;
 		i++;
 	}
-	ans = 0;
 	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans = (ans * 10) + (arg[i] - '0');
+		ans = ans * 10 + (arg[i] - '0');
 		i++;
 	}
 	ans = ans * flag;
