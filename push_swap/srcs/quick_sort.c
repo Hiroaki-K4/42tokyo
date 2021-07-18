@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 15:37:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 15:37:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	// 	printf("len: %d\n", (*pivot_list)->len);
 	// 	i++;
 	// }
+	printf("pivot: %d\n", (*pivot_list)->pivot[0]);
 	// show_list(*stack_a);
 	// write(1, "~~~~~\n", 6);
 	// show_list(*stack_b);
