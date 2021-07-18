@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/18 21:15:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/18 21:19:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,42 +92,33 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	add_pivot(pivot_list, pivot);
 }
 
-// void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
-// {
-// 	int	i;
-// 	int	max;
-// 	int	pivot;
-// 	int	count;
-
-// 	// write(1, "partition_to_b\n", 15);
-// 	max = stack_max(*stack_a);
-// 	pivot = find_pivot(*stack_a, min, max, len);
-// 	count = 0;
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		if ((*stack_a)->next->data < pivot)
-// 			push_b(stack_a, stack_b);
-// 		else
-// 		{	count++;
-// 			rotate_a(stack_a);
-// 		}
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < count)
-// 	{
-// 		reverse_rotate_a(stack_a);
-// 		i++;
-// 	}
-// }
-
-void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int len)
+void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len)
 {
-	while (len > 0)
+	int	i;
+	int	max;
+	int	pivot;
+	int	count;
+
+	// write(1, "partition_to_b\n", 15);
+	max = stack_max(*stack_a);
+	pivot = find_pivot(*stack_a, min, max, len);
+	count = 0;
+	i = 0;
+	while (i < len)
 	{
-		push_b(stack_a, stack_b);
-		len--;
+		if ((*stack_a)->next->data < pivot)
+			push_b(stack_a, stack_b);
+		else
+		{	count++;
+			rotate_a(stack_a);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < count)
+	{
+		reverse_rotate_a(stack_a);
+		i++;
 	}
 }
 
