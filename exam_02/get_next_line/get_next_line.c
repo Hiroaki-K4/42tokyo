@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/16 23:17:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/19 22:58:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,7 +310,7 @@ char *get_from_store(char *store, char **line)
 {
     int i;
     char *tmp;
-
+    
     i = 0;
     while (store[i] && store[i] != '\n')
         i++;
@@ -387,7 +387,7 @@ int get_next_line(int fd, char **line)
 {
     int i;
     static char *store[256];
-    
+
     *line = NULL;
     if (fd < 0 || fd > 255)
         return (-1);
