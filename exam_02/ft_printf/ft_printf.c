@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/22 10:54:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/22 10:56:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -742,7 +742,7 @@ int ft_printf_str(const char *arg, int *i)
 	int len;
 
 	len = 0;
-	while (arg[*i] != '%' && arg[*i])
+	while (arg[*i] && arg[*i] != '%')
 	{
 		write(1, &arg[*i], 1);
 		(*i)++;
