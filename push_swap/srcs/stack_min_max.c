@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 23:12:15 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 15:45:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 22:34:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,21 @@ int	stack_min_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 	if (stack->next == NULL && min > stack->data)
 		min = stack->data;
 	return (min);
+}
+
+int	stack_max_limint(t_bi_list *stack, int len)
+{
+	int	max;
+
+	max = stack->next->data;
+	while (stack->next != NULL && len > 0)
+	{
+		if (max < stack->next->data)
+			max = stack->next->data;
+		stack = stack->next;
+		len--;
+	}
+	if (max < stack->data)
+		max = stack->data;
+	return (max);
 }
