@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 22:29:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 22:45:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 
 int	find_pivot(t_bi_list *stack, int min, int max, int len)
 {
-	// int	middle;
-
-	// middle = len / 2;
-	// while (middle > 0)
-	// {
-		// stack = stack->next;
-		// middle--;
-	// }
 	while (stack->next != NULL && len > 0)
 	{
 		if (stack->next->data != min && stack->next->data != max)
 			return (stack->next->data);
-		// if (stack->next->next->data == min || stack->next->next->data == max)
-		// 	stack = stack->prev;
-		// else if (stack->data == min || stack->data == max)
 		stack = stack->next;
 		len--;
 	}
@@ -36,6 +25,27 @@ int	find_pivot(t_bi_list *stack, int min, int max, int len)
 		return (stack->data);
 	return (0);
 }
+
+// int	find_pivot(t_bi_list *stack, int min, int max, int len)
+// {
+// 	if (len > 4)
+// 	{
+		
+// 	}
+// 	else
+// 	{
+// 		while (stack->next != NULL && len > 0)
+// 		{
+// 			if (stack->next->data != min && stack->next->data != max)
+// 				return (stack->next->data);
+// 			stack = stack->next;
+// 			len--;
+// 		}
+// 		if (stack->data != min && stack->data != max)
+// 			return (stack->data);
+// 	}
+// 	return (0);
+// }
 
 int	init_pivot_list(t_pivot_list **pivot_list, int all_min)
 {
