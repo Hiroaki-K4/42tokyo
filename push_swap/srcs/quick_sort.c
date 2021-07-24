@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/21 23:14:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 12:12:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	// write(1, "partition_to_b\n", 15);
 	max = stack_max(*stack_a);
 	pivot = find_pivot(*stack_a, min, max, len);
-	printf("pivot: %d\n", pivot);
+	printf("pivot: %d min: %d max: %d len: %d\n", pivot, min, max, len);
 	add_pivot(pivot_list, pivot);
 	count = 0;
 	i = 0;
@@ -132,6 +132,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	// write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min, pivot_list);
 	len = stack_len_limit(*stack_a, all_min, pivot_list);
+	printf("min: %d len: %d\n", min, len);
 	if (len == 0 && (*stack_a)->next->data != all_min)
 	{
 		rotate_a(stack_a);
