@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 14:43:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 16:39:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		delete_min_pivot(pivot_list);
 		return (1);
 	}
-	else if (len < 4)
+	else if (len == 3)
 	{
 		while (len > 0)
 		{
@@ -177,13 +177,17 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
+				printf("branch1\n");
 				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list) == 1)
 					top_flag = 1;
 			}
 			else
 			{
+				printf("branch2\n");
 				while ((*stack_b)->next != NULL)
 				{
+					if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
+						delete_min_pivot(&pivot_list);
 					push_a(stack_a, stack_b);
 					rotate_a(stack_a);
 					top_flag = 1;
@@ -193,9 +197,15 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b)
 		else
 		{
 			if (top_flag == 0)
+			{
+				printf("branch3\n");
 				first_partition(stack_a, stack_b, &pivot_list);
+			}
 			else
+			{
+				printf("branch4\n");
 				partition(stack_a, stack_b, all_min, &pivot_list);
+			}
 		}
 		i = 0;
 		while (pivot_list->len - i > 0)
