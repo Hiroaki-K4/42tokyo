@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 22:37:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 22:38:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	int	count;
 
 	// write(1, "partition_to_b\n", 15);
-	// max = stack_max(*stack_a);
-	max = stack_max_limit(*stack_a, len);
+	max = stack_max(*stack_a);
+	// max = stack_max_limit(*stack_a, len);
 	// printf("max: %d\n", max);
 	pivot = find_pivot(*stack_a, min, max, len);
 	// printf("pivot: %d min: %d max: %d len: %d\n", pivot, min, max, len);
