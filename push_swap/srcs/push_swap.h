@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 22:35:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 22:36:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			stack_min(t_bi_list *stack);
 int			stack_min_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list);
 int			add_stack(t_bi_list **stack, int num);
 int			stack_max(t_bi_list *stack);
-int			stack_max_limint(t_bi_list *stack, int len);
+int			stack_max_limit(t_bi_list *stack, int len);
 int			stack_len(t_bi_list *stack);
 int			stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list);
 int			find_pivot(t_bi_list *stack, int min, int max, int len);
