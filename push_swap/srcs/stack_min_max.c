@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 23:12:15 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 12:12:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 15:45:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	stack_min(t_bi_list *stack)
 			min = stack->next->data;
 		stack = stack->next;
 	}
-	if (min > stack->data)
+	if (stack->next == NULL && min > stack->data)
 		min = stack->data;
 	return (min);
 }
@@ -50,6 +50,7 @@ int	stack_min_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 
 	// printf("min_limit: %d\n", (*pivot_list)->pivot[(*pivot_list)->len - 1]);
 	min = stack->next->data;
+	// while (stack->next != NULL && stack->next->data != all_min && stack->next->data == (*pivot_list)->pivot[(*pivot_list)->len - 1])
 	while (stack->next != NULL && stack->next->data != all_min)
 	{
 		if (stack->next->data == (*pivot_list)->pivot[(*pivot_list)->len - 1])
@@ -62,11 +63,11 @@ int	stack_min_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 			else
 				break;
 		}	
-		if (min > stack->next->data)
+		else if (min > stack->next->data)
 			min = stack->next->data;
 		stack = stack->next;
 	}
-	if (min > stack->data)
+	if (stack->next == NULL && min > stack->data)
 		min = stack->data;
 	return (min);
 }
