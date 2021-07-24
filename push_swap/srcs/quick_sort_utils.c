@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 14:42:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/24 15:54:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	sorted_check(t_bi_list *stack)
 		while (stack->next->next != NULL)
 		{
 			if (stack->next->data > stack->next->next->data)
+			{
+				printf("sort: %d\n", stack->next->data);
 				return (1);
+			}
 			stack = stack->next;
 		}
 	}
