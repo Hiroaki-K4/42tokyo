@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 22:54:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 11:53:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	{
 		min = stack_min(*stack_b);
 		max = stack_max(*stack_b);
-		pivot = find_pivot(*stack_b, min, max, len);
+		// pivot = find_pivot(*stack_b, min, max, len);
+		pivot = find_pivot((*stack_b)->next->data, (*stack_b)->next->next->data, (*stack_b)->next->next->next->data);
 		add_pivot(pivot_list, pivot);
 		i = 0;
 		while (i < len)
@@ -79,7 +80,8 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
 	len = stack_len(*stack_a);
-	pivot = find_pivot(*stack_a, min, max, len);
+	// pivot = find_pivot(*stack_a, min, max, len);
+	pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	i = 0;
 	while (i < len)
 	{
@@ -103,7 +105,8 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	max = stack_max(*stack_a);
 	// max = stack_max_limit(*stack_a, len);
 	// printf("max: %d\n", max);
-	pivot = find_pivot(*stack_a, min, max, len);
+	// pivot = find_pivot(*stack_a, min, max, len);
+	pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	// printf("pivot: %d min: %d max: %d len: %d\n", pivot, min, max, len);
 	add_pivot(pivot_list, pivot);
 	count = 0;
