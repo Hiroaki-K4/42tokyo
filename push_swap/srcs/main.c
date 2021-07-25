@@ -6,27 +6,27 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:33:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:34:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	make_sorted_list(t_bi_list **stack, int **sorted_list)
+void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 {
 	int	i;
 	int	len;
 
-	len = stack_len(*stack);
+	len = stack_len(stack);
 	printf("len: %d\n", len);
-	if (!(*sorted_list = (int *)malloc(sizeof(int) * (len))))
+	if (!(*sorted_list = (int *)malloc(sizeof(int) * (len + 1))))
 		exit(1);
 	i = 0;
-	while ((*stack)->next != NULL)
+	while (stack->next != NULL)
 	{
 		printf("i: %d\n", i);
-		*sorted_list[i] = (*stack)->next->data;
-		(*stack) = (*stack)->next;
+		*sorted_list[i] = stack->next->data;
+		stack = *stack->next;
 		i++;
 	}
 }
@@ -51,7 +51,7 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	else
 	{
 		quick_sort(stack_a, stack_b, 0);
-		// make_sorted_list(stack_a, &sorted_list);
+		make_sorted_list(*stack_a, &sorted_list);
 		quick_sort(stack_a, stack_b, 1);
 	}
 }
