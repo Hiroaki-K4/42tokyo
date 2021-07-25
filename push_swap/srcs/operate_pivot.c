@@ -6,50 +6,50 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 11:49:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 14:12:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	find_pivot(t_bi_list *stack, int min, int max, int len)
-// {
-// 	while (stack->next != NULL && len > 0)
-// 	{
-// 		if (stack->next->data != min && stack->next->data != max)
-// 			return (stack->next->data);
-// 		stack = stack->next;
-// 		len--;
-// 	}
-// 	if (stack->data != min && stack->data != max)
-// 		return (stack->data);
-// 	return (0);
-// }
-
-int	find_pivot(int arg1, int arg2, int arg3)
+int	find_pivot(t_bi_list *stack, int min, int max, int len)
 {
-	int	pivot;
-	int	min;
-	int	max;
-
-	min = arg1;
-	if (min > arg2)
-		min = arg2;
-	if (min > arg3)
-		min = arg3;
-	max = arg1;
-	if (max < arg2)
-		max = arg2;
-	if (max < arg3)
-		max = arg3;
-	if (arg1 != min && arg1 != max)
-		pivot = arg1;
-	else if (arg2 != min && arg2 != max)
-		pivot = arg2;
-	else
-		pivot = arg3;
-	return (pivot);
+	while (stack->next != NULL && len > 0)
+	{
+		if (stack->next->data != min && stack->next->data != max)
+			return (stack->next->data);
+		stack = stack->next;
+		len--;
+	}
+	if (stack->data != min && stack->data != max)
+		return (stack->data);
+	return (0);
 }
+
+// int	find_pivot(int arg1, int arg2, int arg3)
+// {
+// 	int	pivot;
+// 	int	min;
+// 	int	max;
+
+// 	min = arg1;
+// 	if (min > arg2)
+// 		min = arg2;
+// 	if (min > arg3)
+// 		min = arg3;
+// 	max = arg1;
+// 	if (max < arg2)
+// 		max = arg2;
+// 	if (max < arg3)
+// 		max = arg3;
+// 	if (arg1 != min && arg1 != max)
+// 		pivot = arg1;
+// 	else if (arg2 != min && arg2 != max)
+// 		pivot = arg2;
+// 	else
+// 		pivot = arg3;
+// 	return (pivot);
+// }
 
 int	init_pivot_list(t_pivot_list **pivot_list, int all_min)
 {
