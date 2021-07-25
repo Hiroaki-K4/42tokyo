@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:26:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:26:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*make_sorted_list(t_bi_list *stack, int **sorted_list)
+void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 {
 	int	i;
 
