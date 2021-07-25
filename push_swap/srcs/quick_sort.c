@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:01:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 22:26:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag)
+int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
 {
 	int	i;
 	int	len;
@@ -20,6 +20,8 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	int	max;
 	int	pivot;
 
+	if (sorted_list == NULL)
+		printf("ok\n");
 	// write(1, "stack_b_not_sorted\n", 19);
 	len = stack_len(*stack_b);
 	if (len == 2)
@@ -68,7 +70,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	}
 }
 
-void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag)
+void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
 {
 	int	i;
 	int	min;
@@ -76,6 +78,8 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	int	len;
 	int pivot;
 
+	if (sorted_list == NULL)
+		printf("ok\n");
 	// write(1, "first_partition\n", 16);
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
@@ -95,13 +99,15 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 }
 
 // void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int len, t_pivot_list **pivot_list)
-void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, t_pivot_list **pivot_list, int output_flag)
+void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
 {
 	int	i;
 	int	max;
 	int	pivot;
 	int	count;
 
+	if (sorted_list == NULL)
+		printf("ok\n");
 	// write(1, "partition_to_b\n", 15);
 	max = stack_max(*stack_a);
 	// max = stack_max_limit(*stack_a, len);
@@ -130,7 +136,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	}
 }
 
-void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag)
+void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
 {
 	int	min;
 	int	len;
@@ -161,11 +167,11 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 		}
 	}
 	else if (len > 2)
-		partition_to_b(stack_a, stack_b, min, len, pivot_list, output_flag);
+		partition_to_b(stack_a, stack_b, min, len, pivot_list, output_flag, sorted_list);
 		// partition_to_b(stack_a, stack_b, len, pivot_list);
 }
 
-void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
+void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *sorted_list)
 {
 	int	i;
 	int top_flag;
@@ -185,7 +191,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 			if (sorted_check(*stack_b) == 1)
 			{
 				// printf("branch1\n");
-				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, output_flag) == 1)
+				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, output_flag, sorted_list) == 1)
 					top_flag = 1;
 			}
 			else
@@ -206,12 +212,12 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 			if (top_flag == 0)
 			{
 				// printf("branch3\n");
-				first_partition(stack_a, stack_b, &pivot_list, output_flag);
+				first_partition(stack_a, stack_b, &pivot_list, output_flag, sorted_list);
 			}
 			else
 			{
 				// printf("branch4\n");
-				partition(stack_a, stack_b, all_min, &pivot_list, output_flag);
+				partition(stack_a, stack_b, all_min, &pivot_list, output_flag, sorted_list);
 			}
 		}
 		i = 0;
