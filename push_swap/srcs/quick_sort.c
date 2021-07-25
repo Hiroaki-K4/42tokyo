@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 11:53:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 11:54:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	int	i;
 	int	len;
 	int	min;
-	int	max;
+	// int	max;
 	int	pivot;
 
 	// write(1, "stack_b_not_sorted\n", 19);
@@ -51,7 +51,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	else
 	{
 		min = stack_min(*stack_b);
-		max = stack_max(*stack_b);
+		// max = stack_max(*stack_b);
 		// pivot = find_pivot(*stack_b, min, max, len);
 		pivot = find_pivot((*stack_b)->next->data, (*stack_b)->next->next->data, (*stack_b)->next->next->next->data);
 		add_pivot(pivot_list, pivot);
