@@ -6,14 +6,21 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:05:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:22:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	*make_sorted_list(t_bi_list *stack, int **sorted_list)
+{
+	
+}
+
 void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
+	int	sorted_list[argc - 1];
+
 	if (argc <= 2)
 		return ;
 	else if (sorted_check((*stack_a)->next) == 0)
@@ -29,8 +36,11 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		under_six(stack_a, stack_b, argc);
 	else
 	{
+		quick_sort(stack_a, stack_b, 0);
+		make_sorted_list(*stack_a, &sorted_list);
 		quick_sort(stack_a, stack_b, 1);
 	}
+	return (0);
 }
 
 int	main(int argc, char *argv[])
