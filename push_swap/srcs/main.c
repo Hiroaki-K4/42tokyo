@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:25:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:26:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		make_sorted_list(*stack_a, &sorted_list);
 		quick_sort(stack_a, stack_b, 1);
 	}
-	return (0);
 }
 
 int	main(int argc, char *argv[])
