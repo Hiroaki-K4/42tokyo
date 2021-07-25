@@ -6,11 +6,26 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 14:39:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 22:54:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	find_pivot_by_sorted(t_bi_list *stack, int min, int max, int len, int *sorted_list)
+{
+	printf("first: %d\n", sorted_list[0]);
+	while (stack->next != NULL && len > 0)
+	{
+		if (stack->next->data != min && stack->next->data != max)
+			return (stack->next->data);
+		stack = stack->next;
+		len--;
+	}
+	if (stack->data != min && stack->data != max)
+		return (stack->data);
+	return (0);
+}
 
 int	find_pivot(t_bi_list *stack, int min, int max, int len)
 {

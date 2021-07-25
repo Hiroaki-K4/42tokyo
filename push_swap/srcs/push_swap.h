@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 22:24:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 22:51:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int			stack_len(t_bi_list *stack);
 int			stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list);
 int			find_pivot(t_bi_list *stack, int min, int max, int len);
 // int			find_pivot(int arg1, int arg2, int arg3);
+int			find_pivot_by_sorted(t_bi_list *stack, int min, int max, int len, int *sorted_list);
 int			stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag, int *sorted_list);
 int			add_pivot(t_pivot_list **pivot_list, int pivot);
 t_bi_list	*last_stack(t_bi_list *stack);
