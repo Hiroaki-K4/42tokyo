@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 22:18:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/26 08:30:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 
 void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	int i;
+	int	i;
 	int	*sorted_list;
 	t_bi_list	*stack_tmp;
 
