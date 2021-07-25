@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:34:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 22:07:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 	int	len;
 
 	len = stack_len(stack);
-	printf("len: %d\n", len);
-	if (!(*sorted_list = (int *)malloc(sizeof(int) * (len + 1))))
+	if (!(*sorted_list = (int *)malloc(sizeof(int) * (len))))
 		exit(1);
 	i = 0;
 	while (stack->next != NULL)
 	{
-		printf("i: %d\n", i);
-		*sorted_list[i] = stack->next->data;
-		stack = *stack->next;
+		(*sorted_list)[i] = stack->next->data;
+		stack = stack->next;
 		i++;
 	}
 }
 
-void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
+void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list **stack_b)
 {
+	int i;
 	int	*sorted_list;
+	t_bi_list	*stack_tmp;
 
 	if (argc <= 2)
 		return ;
@@ -50,8 +50,16 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 		under_six(stack_a, stack_b, argc);
 	else
 	{
-		quick_sort(stack_a, stack_b, 0);
-		make_sorted_list(*stack_a, &sorted_list);
+		stack_tmp = (t_bi_list *)malloc(sizeof(t_bi_list));
+		stack_init(&stack_tmp);
+		i = 1;
+		while (i < argc)
+		{
+			add_stack(&stack_tmp, ft_atoi(argv[i]));
+			i++;
+		}
+		quick_sort(&stack_tmp, stack_b, 0);
+		make_sorted_list(stack_tmp, &sorted_list);
 		quick_sort(stack_a, stack_b, 1);
 	}
 }
@@ -82,7 +90,7 @@ int	main(int argc, char *argv[])
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
-	switch_by_args_num(argc, &stack_a, &stack_b);
+	switch_by_args_num(argc, argv, &stack_a, &stack_b);
 	// free(stack_a);
 	// free(stack_b);
 	// show_list(stack_a);

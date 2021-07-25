@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:23:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 22:03:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		reverse_rotate_b(t_bi_list **stack_b, int output_flag);
 void		reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
 void		under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void		sort_three(t_bi_list **stack);
-void		switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b);
+void		switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list **stack_b);
 void		partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag);
 void		quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
 void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag);
