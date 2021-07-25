@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 16:59:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 17:51:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_bi_list *stack_a)
+void	swap_a(t_bi_list *stack_a, int output_flag)
 {
 	int	tmp;
 
@@ -23,12 +23,13 @@ void	swap_a(t_bi_list *stack_a)
 			tmp = stack_a->next->data;
 			stack_a->next->data = stack_a->next->next->data;
 			stack_a->next->next->data = tmp;
-			write(1, "sa\n", 3);
+			if (output_flag == 1)
+				write(1, "sa\n", 3);
 		}
 	}
 }
 
-void	swap_b(t_bi_list *stack_b)
+void	swap_b(t_bi_list *stack_b, int output_flag)
 {
 	int	tmp;
 
@@ -39,12 +40,13 @@ void	swap_b(t_bi_list *stack_b)
 			tmp = stack_b->next->data;
 			stack_b->next->data = stack_b->next->next->data;
 			stack_b->next->next->data = tmp;
-			write(1, "sb\n", 3);
+			if (output_flag == 1)
+				write(1, "sb\n", 3);
 		}
 	}
 }
 
-void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b)
+void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {
 	int	tmp;
 
@@ -58,12 +60,13 @@ void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b)
 			tmp = (*stack_b)->next->data;
 			(*stack_b)->next->data = (*stack_b)->next->next->data;
 			(*stack_b)->next->next->data = tmp;
-			write(1, "ss\n", 3);
+			if (output_flag == 1)
+				write(1, "ss\n", 3);
 		}
 	}
 }
 
-void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
+void	push_a(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {
 	t_bi_list	*top;
 
@@ -77,11 +80,12 @@ void	push_a(t_bi_list **stack_a, t_bi_list **stack_b)
 			(*stack_a)->next->prev = top;
 		(*stack_a)->next = top;
 		top_del(stack_b);
-		write(1, "pa\n", 3);
+		if (output_flag == 1)
+			write(1, "pa\n", 3);
 	}
 }
 
-void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
+void	push_b(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {
 	t_bi_list	*top;
 
@@ -95,6 +99,7 @@ void	push_b(t_bi_list **stack_a, t_bi_list **stack_b)
 			(*stack_b)->next->prev = top;
 		(*stack_b)->next = top;
 		top_del(stack_a);
-		write(1, "pb\n", 3);
+		if (output_flag == 1)
+			write(1, "pb\n", 3);
 	}
 }

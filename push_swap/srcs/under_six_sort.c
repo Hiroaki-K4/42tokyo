@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:59:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:04:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 void	sort_three(t_bi_list **stack)
 {
 	if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->data < (*stack)->next->next->next->data)
-		swap_a(*stack);
+		swap_a(*stack, 1);
 	else if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
-		swap_a(*stack);
-		reverse_rotate_a(stack);
+		swap_a(*stack, 1);
+		reverse_rotate_a(stack, 1);
 	}
 	else if ((*stack)->next->data > (*stack)->next->next->next->data && (*stack)->next->next->data < (*stack)->next->next->next->data)
-		rotate_a(stack);
+		rotate_a(stack, 1);
 	else if ((*stack)->next->data < (*stack)->next->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
-		swap_a(*stack);
-		rotate_a(stack);
+		swap_a(*stack, 1);
+		rotate_a(stack, 1);
 	}
 	else if ((*stack)->next->data < (*stack)->next->next->data && (*stack)->next->data > (*stack)->next->next->next->data)
-		reverse_rotate_a(stack);
+		reverse_rotate_a(stack, 1);
 }
 
 int	min_data(t_bi_list *stack)
@@ -53,9 +53,9 @@ void	min_to_top(t_bi_list **stack_a)
 	while (min_data((*stack_a)->next) != (*stack_a)->next->data)
 	{
 		if (min_data((*stack_a)->next) == last_stack(*stack_a)->data)
-			reverse_rotate_a(stack_a);
+			reverse_rotate_a(stack_a, 1);
 		else
-			rotate_a(stack_a);
+			rotate_a(stack_a, 1);
 	}
 }
 
@@ -67,14 +67,14 @@ void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 	while (i < argc)
 	{
 		min_to_top(stack_a);
-		push_b(stack_a, stack_b);
+		push_b(stack_a, stack_b, 1);
 		i++;
 	}
 	sort_three(stack_a);
 	i = 4;
 	while (i < argc)
 	{
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, 1);
 		i++;
 	}
 }

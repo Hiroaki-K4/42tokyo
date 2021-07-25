@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 14:48:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 17:55:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ void	switch_by_args_num(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	else if (argc == 3)
 	{
 		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
-			swap_a(*stack_a);
+			swap_a(*stack_a, 1);
 	}
 	else if (argc == 4)
 		sort_three(stack_a);
 	else if (argc < 7)
 		under_six(stack_a, stack_b, argc);
 	else
-		quick_sort(stack_a, stack_b);
+	{
+		quick_sort(stack_a, stack_b, 0);
+	}
 }
 
 int	main(int argc, char *argv[])
@@ -58,8 +60,8 @@ int	main(int argc, char *argv[])
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
 	switch_by_args_num(argc, &stack_a, &stack_b);
-	free(stack_a);
-	free(stack_b);
+	// free(stack_a);
+	// free(stack_b);
 	// show_list(stack_a);
 	return (0);
 }

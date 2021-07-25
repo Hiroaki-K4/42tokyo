@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 22:04:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 10:27:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:04:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_a(t_bi_list **stack_a)
+void	rotate_a(t_bi_list **stack_a, int output_flag)
 {
 	t_bi_list	*last;
 	t_bi_list	*tmp;
@@ -28,12 +28,13 @@ void	rotate_a(t_bi_list **stack_a)
 			last->next = (*stack_a)->next;
 			(*stack_a)->next->next = NULL;
 			(*stack_a)->next = tmp;
-			write(1, "ra\n", 3);
+			if (output_flag == 1)
+				write(1, "ra\n", 3);
 		}
 	}
 }
 
-void	rotate_b(t_bi_list **stack_b)
+void	rotate_b(t_bi_list **stack_b, int output_flag)
 {
 	t_bi_list	*last;
 	t_bi_list	*tmp;
@@ -49,14 +50,16 @@ void	rotate_b(t_bi_list **stack_b)
 			last->next = (*stack_b)->next;
 			(*stack_b)->next->next = NULL;
 			(*stack_b)->next = tmp;
-			write(1, "rb\n", 3);
+			if (output_flag == 1)
+				write(1, "rb\n", 3);
 		}
 	}
 }
 
-void	rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b)
+void	rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {
-	rotate_a(stack_a);
-	rotate_b(stack_b);
-	write(1, "rr\n", 3);
+	rotate_a(stack_a, output_flag);
+	rotate_b(stack_b, output_flag);
+	if (output_flag == 1)
+		write(1, "rr\n", 3);
 }

@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 22:30:56 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/04 10:27:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/25 18:04:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_a(t_bi_list **stack_a)
+void	reverse_rotate_a(t_bi_list **stack_a, int output_flag)
 {
 	t_bi_list	*last;
 	t_bi_list	*tmp;
@@ -27,13 +27,14 @@ void	reverse_rotate_a(t_bi_list **stack_a)
 			last->next = tmp;
 			tmp->prev = last;
 			last->prev = *stack_a;
-			(*stack_a)->next = last; 
-			write(1, "rra\n", 4);
+			(*stack_a)->next = last;
+			if (output_flag == 1)
+				write(1, "rra\n", 4);
 		}
 	}
 }
 
-void	reverse_rotate_b(t_bi_list **stack_b)
+void	reverse_rotate_b(t_bi_list **stack_b, int output_flag)
 {
 	t_bi_list	*last;
 	t_bi_list	*tmp;
@@ -48,15 +49,17 @@ void	reverse_rotate_b(t_bi_list **stack_b)
 			last->next = tmp;
 			tmp->prev = last;
 			last->prev = *stack_b;
-			(*stack_b)->next = last; 
-			write(1, "rrb\n", 4);
+			(*stack_b)->next = last;
+			if (output_flag == 1)
+				write(1, "rrb\n", 4);
 		}
 	}
 }
 
-void	reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b)
+void	reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {
-	reverse_rotate_a(stack_a);
-	reverse_rotate_b(stack_b);
-	write(1, "rrr\n", 4);
+	reverse_rotate_a(stack_a, output_flag);
+	reverse_rotate_b(stack_b, output_flag);
+	if (output_flag == 1)
+		write(1, "rrr\n", 4);
 }
