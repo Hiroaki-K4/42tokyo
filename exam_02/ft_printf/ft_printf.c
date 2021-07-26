@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/26 08:59:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/26 09:07:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -473,7 +473,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 {
 	int len;
-	
+
 	len = 0;
 	if (flag_list.precision == 0 && num == 0)
 	{
