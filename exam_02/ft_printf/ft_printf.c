@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/27 08:51:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/27 08:51:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -332,7 +332,6 @@ int ft_isdigit(int c)
 
 int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
-	int i;
 	int j;
 	char *tmp;
 
