@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/27 08:56:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/27 09:00:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,30 +199,30 @@ int digit_size(int num)
 
 char *ft_itoa(int num)
 {
-	int len;
 	int flag;
+	int len;
 	char *ans;
-	
+
 	if (num == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = digit_size(num);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
-	len--;
 	flag = 1;
 	if (num < 0)
 	{
 		num = num * (-1);
 		flag = -1;
 	}
+	len--;
 	while (len >= 0)
 	{
 		ans[len--] = num % 10 + '0';
 		num = num / 10;
 	}
 	if (flag == -1)
-		ans[0] = '-';
+		ans[0] = '\0';
 	return (ans);
 }
 
