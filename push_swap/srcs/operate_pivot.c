@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/29 23:06:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/29 23:15:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 int	find_pivot_by_sorted(t_bi_list *stack, int min, int max, int len, int *sorted_list)
 {
-	// int	pivot_pos;
+	int	i;
+	int	pivot;
 
-	// pivot_pos = 0;
-	// while ()
-	printf("sorted_list: %d\n", sorted_list[0]);
-	while (stack->next != NULL && len > 0)
+	i = 1;
+	while (i < sorted_list[0] + 1)
 	{
-		if (stack->next->data != min && stack->next->data != max)
-			return (stack->next->data);
-		stack = stack->next;
-		len--;
+		if (sorted_list[i] == min)
+			break;
+		i++;
 	}
-	if (stack->data != min && stack->data != max)
-		return (stack->data);
-	return (0);
+	pivot = sorted_list[i + len / 2];
+	return (pivot);
 }
 
 int	find_pivot(t_bi_list *stack, int min, int max, int len)
