@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/29 23:01:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/29 23:16:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		if (sorted_list == NULL)
 			pivot = find_pivot(*stack_b, min, max, len);
 		else
-			pivot = find_pivot_by_sorted(*stack_b, min, max, len, sorted_list);
+			pivot = find_pivot_by_sorted(min, max, len, sorted_list);
 		// pivot = find_pivot((*stack_b)->next->data, (*stack_b)->next->next->data, (*stack_b)->next->next->next->data);
 		add_pivot(pivot_list, pivot);
 		i = 0;
@@ -86,7 +86,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	if (sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, max, len);
 	else
-		pivot = find_pivot_by_sorted(*stack_a, min, max, len, sorted_list);
+		pivot = find_pivot_by_sorted(min, max, len, sorted_list);
 	// pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	i = 0;
 	while (i < len)
@@ -115,7 +115,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	if (sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, max, len);
 	else
-		pivot = find_pivot_by_sorted(*stack_a, min, max, len, sorted_list);
+		pivot = find_pivot_by_sorted(min, max, len, sorted_list);
 	// pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	// printf("pivot: %d min: %d max: %d len: %d\n", pivot, min, max, len);
 	add_pivot(pivot_list, pivot);

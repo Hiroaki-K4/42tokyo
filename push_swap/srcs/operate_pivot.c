@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/29 23:15:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/29 23:16:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_pivot_by_sorted(t_bi_list *stack, int min, int max, int len, int *sorted_list)
+int	find_pivot_by_sorted(int min, int max, int len, int *sorted_list)
 {
 	int	i;
 	int	pivot;
