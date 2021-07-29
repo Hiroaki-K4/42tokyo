@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 22:53:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/29 23:00:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	int	len;
 	int pivot;
 
-	if (sorted_list == NULL)
-		printf("ok\n");
 	// write(1, "first_partition\n", 16);
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
