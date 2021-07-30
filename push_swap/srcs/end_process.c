@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:30:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/30 23:21:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 23:23:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_process()
 	exit(0);
 }
 
-void	free_stack(t_list **stack)
+void	free_stack(t_bi_list **stack)
 {
 	while ((*stack)->next != NULL)
 	{
