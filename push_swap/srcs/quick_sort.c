@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/30 22:41:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 22:44:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	// write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min, pivot_list);
 	len = stack_len_limit(*stack_a, all_min, pivot_list);
-	printf("min: %d len: %d last_pivot: %d\n", min, len, (*pivot_list)->pivot[(*pivot_list)->len - 1]);
+	// printf("min: %d len: %d last_pivot: %d\n", min, len, (*pivot_list)->pivot[(*pivot_list)->len - 1]);
 	if (len == 0 && (*stack_a)->next->data != all_min)
 	{
 		rotate_a(stack_a, output_flag);
@@ -232,10 +232,10 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 		// printf("ok\n");
 		if (output_flag == 1)
 		{
-			printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
-			show_list(*stack_a);
-			printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
-			show_list(*stack_b);
+			// printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
+			// show_list(*stack_a);
+			// printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
+			// show_list(*stack_b);
 		}
 	}
 }

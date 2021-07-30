@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/30 22:14:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 22:45:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	find_pivot_by_sorted(int min, int len, int *sorted_list)
 		i++;
 	}
 	pivot = sorted_list[i + len / 2];
-	printf("list_len: %d list_min: %d pivot: %d\n", len, min, pivot);
+	// printf("list_len: %d list_min: %d pivot: %d\n", len, min, pivot);
 	return (pivot);
 }
 
