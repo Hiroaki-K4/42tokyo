@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:34:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 17:51:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 23:07:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,25 @@ void	swap_b(t_bi_list *stack_b, int output_flag)
 	}
 }
 
-void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
-{
-	int	tmp;
+// void	swap_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
+// {
+// 	int	tmp;
 
-	if (*stack_a && (*stack_a)->next && *stack_b && (*stack_b)->next)
-	{
-		if ((*stack_a)->next->next && (*stack_b)->next->next)
-		{
-			tmp = (*stack_a)->next->data;
-			(*stack_a)->next->data = (*stack_a)->next->next->data;
-			(*stack_a)->next->next->data = tmp;
-			tmp = (*stack_b)->next->data;
-			(*stack_b)->next->data = (*stack_b)->next->next->data;
-			(*stack_b)->next->next->data = tmp;
-			if (output_flag == 1)
-				write(1, "ss\n", 3);
-		}
-	}
-}
+// 	if (*stack_a && (*stack_a)->next && *stack_b && (*stack_b)->next)
+// 	{
+// 		if ((*stack_a)->next->next && (*stack_b)->next->next)
+// 		{
+// 			tmp = (*stack_a)->next->data;
+// 			(*stack_a)->next->data = (*stack_a)->next->next->data;
+// 			(*stack_a)->next->next->data = tmp;
+// 			tmp = (*stack_b)->next->data;
+// 			(*stack_b)->next->data = (*stack_b)->next->next->data;
+// 			(*stack_b)->next->next->data = tmp;
+// 			if (output_flag == 1)
+// 				write(1, "ss\n", 3);
+// 		}
+// 	}
+// }
 
 void	push_a(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag)
 {

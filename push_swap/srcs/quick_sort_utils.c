@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/24 16:42:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 23:07:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ int	sorted_check(t_bi_list *stack)
 		while (stack->next->next != NULL)
 		{
 			if (stack->next->data > stack->next->next->data)
-			{
-				// printf("sort: %d\n", stack->next->data);
 				return (1);
-			}
 			stack = stack->next;
 		}
 	}
@@ -51,7 +48,6 @@ int	stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 {
 	int	len;
 
-	// printf("min_pivot: %d\n", (*pivot_list)->pivot[(*pivot_list)->len - 1]);
 	len = 0;
 	while (stack->next != NULL)
 	{

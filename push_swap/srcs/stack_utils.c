@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 12:00:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/10 16:46:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 23:08:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	add_stack(t_bi_list **stack, int num)
 	return (0);
 }
 
-void	show_list(t_bi_list *list)
-{
-	while (list != NULL)
-	{
-		if (list->prev != NULL)
-			printf("data: %d\n", list->data);
-		list = list->next;
-	}
-}
+// void	show_list(t_bi_list *list)
+// {
+// 	while (list != NULL)
+// 	{
+// 		if (list->prev != NULL)
+// 			printf("data: %d\n", list->data);
+// 		list = list->next;
+// 	}
+// }
 
 void	top_del(t_bi_list **list)
 {
