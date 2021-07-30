@@ -1,41 +1,35 @@
 ra
-pb
-ra
-pb
 ra
-pb
 pb
 ra
 ra
 ra
-ra
-ra
 pb
 ra
 pb
-ra
 pb
-ra
 ra
 ra
+pb
 ra
 pb
 pb
 pb
-ra
-ra
 pb
 pb
+ra
 pb
 pb
 pb
 ra
-ra
-ra
+pb
 ra
+pb
 ra
 ra
+pb
 ra
+pb
 ra
 pb
 pb
@@ -44,11 +38,11 @@ ra
 pb
 ra
 pb
-pb
 ra
 pb
-ra
 ra
+pb
+pb
 ra
 ra
 ra
@@ -58,26 +52,36 @@ ra
 ra
 ra
 ra
-ra
+pb
+pb
 ra
+pb
+pb
+pb
 ra
 ra
 ra
 pb
+pb
+pb
+pb
 ra
 pb
 pb
 ra
+pb
 ra
 ra
 pb
 ra
 ra
+pb
+pb
+pb
 ra
 pb
 ra
 ra
-pb
 ra
 ra
 pb
@@ -86,243 +90,226 @@ pb
 ra
 ra
 pb
-pb
+ra
 pb
 pb
 pb
 pb
-ra
-ra
-ra
-ra
 pb
 ra
 ra
-rb
+min: -20249913 len: 52 last_pivot: 4351109
+min: -19465083 len: 2 last_pivot: -18655656
+min: -18655656 len: 2 last_pivot: -16925180
+min: -16925180 len: 3 last_pivot: -16143471
+min: -16291917 len: 0 last_pivot: -16291917
+min: -16143471 len: 34 last_pivot: 788603
+min: -15650843 len: 5 last_pivot: -14263843
+min: -15414823 len: 0 last_pivot: -15414823
+min: -14766627 len: 2 last_pivot: -14263843
+min: -14263843 len: 7 last_pivot: -11847238
+min: -13794350 len: 2 last_pivot: -13366937
+min: -13366937 len: 0 last_pivot: -13366937
+min: -12995674 len: 2 last_pivot: -11847238
+min: -11847238 len: 14 last_pivot: -4323840
+min: -11001388 len: 0 last_pivot: -11001388
+min: -10905445 len: 11 last_pivot: -4323840
+min: -9255728 len: 3 last_pivot: -7812102
+min: -9156779 len: 0 last_pivot: -9156779
+min: -8643762 len: 1 last_pivot: -7812102
+min: -7812102 len: 2 last_pivot: -7560727
+min: -7560727 len: 0 last_pivot: -7560727
+min: -6783486 len: 4 last_pivot: -4323840
+min: -5218361 len: 1 last_pivot: -4323840
+min: -4323840 len: 0 last_pivot: -4323840
+min: -2778431 len: 6 last_pivot: 788603
+min: -1054974 len: 0 last_pivot: -1054974
+min: -946929 len: 4 last_pivot: 788603
+min: 440289 len: 1 last_pivot: 788603
+min: 788603 len: 4 last_pivot: 1652915
+min: 1494741 len: 1 last_pivot: 1652915
+min: 1652915 len: 0 last_pivot: 1652915
+min: 2425397 len: 3 last_pivot: 4351109
+min: 4049114 len: 1 last_pivot: 4351109
+min: 4351109 len: 18 last_pivot: 10782327
+min: 4974029 len: 12 last_pivot: 8615885
+min: 6179775 len: 0 last_pivot: 6179775
+min: 7228115 len: 1 last_pivot: 7251407
+min: 7251407 len: 0 last_pivot: 7251407
+min: 7264843 len: 5 last_pivot: 8615885
+min: 7994217 len: 3 last_pivot: 8338900
+min: 8268942 len: 0 last_pivot: 8268942
+min: 8328737 len: 1 last_pivot: 8338900
+min: 8338900 len: 0 last_pivot: 8338900
+min: 8615885 len: 0 last_pivot: 8615885
+min: 8688857 len: 4 last_pivot: 10782327
+min: 9503933 len: 0 last_pivot: 9503933
+min: 9950463 len: 2 last_pivot: 10782327
+min: 10782327 len: 0 last_pivot: 10782327
+min: 11336332 len: 28 last_pivot: 0
+min: 12727223 len: 4 last_pivot: 13390770
+min: 13271264 len: 0 last_pivot: 13271264
+min: 13271366 len: 1 last_pivot: 13390770
+min: 13390770 len: 9 last_pivot: 16419495
+min: 13679220 len: 4 last_pivot: 14236547
+min: 14190654 len: 0 last_pivot: 14190654
+min: 14201687 len: 2 last_pivot: 14236547
+min: 14236547 len: 0 last_pivot: 14236547
+min: 14945329 len: 3 last_pivot: 16419495
+min: 15567027 len: 0 last_pivot: 15567027
+min: 15975728 len: 1 last_pivot: 16419495
+min: 16419495 len: 3 last_pivot: 17095277
+min: 16436638 len: 0 last_pivot: 16436638
+min: 16498402 len: 1 last_pivot: 17095277
+min: 17095277 len: 0 last_pivot: 17095277
+min: 17170193 len: 10 last_pivot: 0
+min: 18383590 len: 0 last_pivot: 18383590
+min: 18819668 len: 7 last_pivot: 0
+min: 18961450 len: 0 last_pivot: 18961450
+min: 19384606 len: 5 last_pivot: 0
+min: 20011406 len: 0 last_pivot: 20011406
+min: 20724137 len: 3 last_pivot: 0
+min: 20909896 len: 0 last_pivot: 20909896
+min: 21236330 len: 1 last_pivot: 0
+list_len: 100 list_min: -20544515 pivot: 2425397
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -20249913
+data: 788603
+data: -16143471
+data: -11847238
+data: -7812102
+data: -16925180
+data: -14263843
+data: -15650843
+data: -18655656
+data: -19465083
+data: -2778431
+data: -14766627
+data: -6563156
+data: -19394231
+data: -17912332rb
 pa
 rb
 rb
 pa
 rb
 rb
-pa
 rb
 rb
 rb
 pa
-pa
 rb
-pa
 pa
 rb
 rb
-rb
 pa
-rb
 rb
-rb
 pa
 rb
 pa
 pa
+rb
 pa
 rb
 rb
 pa
-pa
 rb
 pa
-rb
-rb
-rb
 pa
 rb
+rb
 pa
 pa
 pa
 pa
-rb
 rb
 pa
 rb
 rb
-rb
-pa
 pa
-rb
-rb
 rb
 pa
-rb
+pa
 pa
 rb
 pa
 pa
-rb
-rb
 rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
 pa
-rb
-rb
-rb
-rb
-rb
 pa
 rb
 rb
-rb
-pa
-rb
 pa
 rb
-pa
-pa
-pa
-pa
-pa
-pa
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-rra
-rra
-rra
-rra
 pa
-ra
-ra
-ra
-pb
-pb
-rra
-pa
-ra
 pa
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-pb
-pb
-ra
-ra
-ra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
 rb
-pa
-ra
 rb
-pa
-ra
 pa
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-ra
-rra
-rra
-rra
-rra
 rb
 rb
 pa
-ra
 rb
 pa
-ra
 pa
-ra
-pb
-ra
-ra
-ra
-rra
-rra
-rra
 pa
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-ra
-ra
-ra
-pb
-ra
-ra
-ra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
 pa
-ra
+pa
 rb
 pa
-ra
 pa
-ra
-pb
-ra
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-ra
-pb
-pb
-rra
-rra
 rb
-pa
 rb
 rb
 pa
@@ -331,394 +318,7016 @@ pa
 pa
 pa
 rb
-pa
 rb
 pa
 pa
 rb
-pa
-pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-ra
-pb
-rra
-rra
-pa
-ra
 pa
-ra
+rb
+rb
+
+data: -9255728
+data: -12874133
+data: -11088129
+data: -16396894
+data: 271965
+data: -5724728
+data: -15509059
+data: -7734335
+data: -12995674
+data: -13794350
+data: -5218361
+data: -14082864
+data: -8643762
+data: -946929
+data: -14535592
+data: -19642437
+data: -6783486
+data: -9156779
+data: 1420085
+data: -7560727
+data: -15414823
+data: -10905445
+data: -13393228
+data: -16291917
+data: -11001388
+data: -20544515
+data: 280746
+data: 1296885
+data: 440289
+data: -19689762
+data: 1494741
+data: -1054974
+data: -13366937
+data: -4323840
+data: 1652915
+list_len: 50 list_min: -20544515 pivot: -11088129
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -20249913
+data: -16143471
+data: -11847238
+data: -16925180
+data: -14263843
+data: -15650843
+data: -18655656
+data: -19465083
+data: -14766627
+data: -19394231
+data: -17912332
+data: -12874133
+data: -16396894
+data: -15509059
+data: -12995674
+data: -13794350
+data: -14082864
+data: -14535592
+data: -19642437
+data: -15414823
+data: -13393228
+data: -16291917
+data: -20544515
+data: -19689762
+data: -13366937
+list_len: 25 list_min: -20544515 pivot: -15650843
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -20249913
+data: -16143471
+data: -16925180
+data: -18655656
+data: -19465083
+data: -19394231
+data: -17912332
+data: -16396894
+data: -19642437
+data: -16291917
+data: -20544515
+data: -19689762
+list_len: 12 list_min: -20544515 pivot: -18655656
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+datarb
+pa
+pa
+pa
+rb
+rb
+rb
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -20249913
+data: -19465083
+data: -19394231
+data: -19642437
+data: -20544515
+data: -19689762
+list_len: 6 list_min: -20544515 pivot: -19642437
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -19642437
+data: -19394231
+data: -19465083
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -20249913
+data: -20544515
+data: -19689762
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -19642437
+data: -19394231
+data: -19465083
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+datapb
+ra
+ra
+rra
+rra
+pa
+ra
+sa
+ra
+ra
+: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -19642437 len: 3 last_pivot: -18655656
+list_len: 3 list_min: -19642437 pivot: -19465083
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -19394231
+data: -19465083
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -19642437
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -19394231
+data: -19465083
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -19465083 len: 2 last_pivot: -18655656
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16396894
+data: -17912332
+data: -18655656
+data: -16925180
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -110013ra
+ra
+pb
+pb
+pb
+ra
+rra
+rra
+rra
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+88
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -18655656 len: 6 last_pivot: -15650843
+list_len: 6 list_min: -18655656 pivot: -16396894
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16396894
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -16925180
+data: -18655656
+data: -17912332
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16396894
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 2ra
+pb
+ra
+rra
+rra
+pa
+ra
+ra
+0724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -16396894 len: 3 last_pivot: -15650843
+list_len: 3 list_min: -16396894 pivot: -16291917
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -16396894
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16291917
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -16291917 len: 0 last_pivot: -16291917
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -16143471
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563ra
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -16143471 len: 1 last_pivot: -15650843
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -13393228
+data: -15414823
+data: -14535592
+data: -14082864
+data: -13794350
+data: -12995674
+data: -15509059
+data: -12874133
+data: -14766627
+data: -15650843
+data: -14263843
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -15650843 len: 13 last_pivot: -11088129
+list_len: 13 list_min: -15650843 pivot: -14082864
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -1639689pa
+rb
+pa
+rb
+pa
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+ra
+pb
+ra
+rra
+rra
+4
+data: -16291917
+data: -16143471
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -14263843
+data: -15650843
+data: -14766627
+data: -15509059
+data: -14535592
+data: -15414823
+list_len: 6 list_min: -15650843 pivot: -14766627
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -14535592
+data: -14766627
+data: -14263843
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -15650843
+data: -15509059
+data: -15414823
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -14535592
+data: -14766627
+data: -14263843
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -14766627 len: 3 last_pivot: -14082864
+list_len: 3 list_min: -14766627 pivot: -14535592
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -14535592
+data: -14263843
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7pa
+ra
+ra
+251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -14766627
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -14535592
+data: -14263843
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -14535592 len: 0 last_pivot: -14535592
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -14263843
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+rra
+rra
+rra
+rra
+rb
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+-14263843 len: 1 last_pivot: -14082864
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -13393228
+data: -14082864
+data: -13794350
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -14082864 len: 7 last_pivot: -11088129
+list_len: 7 list_min: -14082864 pivot: -13366937
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -13794350
+data: -14082864
+data: -13393228
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+dpb
+pb
+ra
+ra
+rra
+rra
+pa
+pa
+ra
+ra
+ra
+ra
+ata: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -13366937 len: 4 last_pivot: -11088129
+list_len: 4 list_min: -13366937 pivot: -12874133
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -12995674
+data: -13366937
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -12874133
+data: -11847238
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -12874133 len: 2 last_pivot: -11088129
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: -4323840
+data: -1054974
+data: 14ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+pa
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+rb
+94741
+data: 440289
+data: 1296885
+data: 280746
+data: -11001388
+data: -10905445
+data: -7560727
+data: 1420085
+data: -9156779
+data: -6783486
+data: -946929
+data: -8643762
+data: -5218361
+data: -7734335
+data: -5724728
+data: 271965
+data: -11088129
+data: -9255728
+data: -6563156
+data: -2778431
+data: -7812102
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -11088129 len: 25 last_pivot: 2425397
+list_len: 25 list_min: -11088129 pivot: -5218361
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -7812102
+data: -6563156
+data: -9255728
+data: -11088129
+data: -5724728
+data: -7734335
+data: -8643762
+data: -6783486
+data: -9156779
+data: -7560727
+data: -10905445
+data: -11001388
+list_len: 12 list_min: -11088129 pivot: -7812102
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+datapa
+rb
+pa
+pa
+rb
+rb
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+ra
+ra
+pb
+rra
+rra
+: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -9255728
+data: -11088129
+data: -8643762
+data: -9156779
+data: -10905445
+data: -11001388
+list_len: 6 list_min: -11088129 pivot: -9255728
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -9156779
+data: -8643762
+data: -9255728
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -11088129
+data: -10905445
+data: -11001388
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -9156779
+data: -8643762
+data: -9255728
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -9255728 len: 3 last_pivot: -7812102
+list_len: 3 list_min: -9255728 pivot: -9156779
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -9156779
+data: -8643762
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 16529pa
+ra
+ra
+15
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -9255728
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -9156779
+data: -8643762
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -9156779 len: 0 last_pivot: -9156779
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -8643762
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+dara
+pb
+ra
+pb
+ra
+ra
+pb
+rra
+rra
+rra
+pa
+ra
+pa
+ra
+pa
+ra
+ta: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -8643762 len: 1 last_pivot: -7812102
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -7560727
+data: -6783486
+data: -7734335
+data: -5724728
+data: -6563156
+data: -7812102
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -7812102 len: 6 last_pivot: -5218361
+list_len: 6 list_min: -7812102 pivot: -6783486
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -6783486
+data: -5724728
+data: -6563156
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -7812102
+data: -7734335
+data: -7560727
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -6783486
+data: -5724728
+data: -6563156
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+ra
+sa
+ra
+ra
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -6783486 len: 0 last_pivot: -6783486
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -5724728
+data: -6563156
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -6563156 len: 2 last_pivot: -5218361
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: -4323840
+data: -1054974
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: -946929
+data: -5218361
+data: 271965
+data: -2778431
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+pb
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rb
+pa
+rb
+pa
+pa
+rb
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -5218361 len: 13 last_pivot: 2425397
+list_len: 13 list_min: -5218361 pivot: 280746
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -2778431
+data: 271965
+data: -5218361
+data: -946929
+data: -1054974
+data: -4323840
+list_len: 6 list_min: -5218361 pivot: -1054974
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -1054974
+data: -946929
+data: 271965
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -2778431
+data: -5218361
+data: -4323840
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -1054974
+data: -946929
+data: 271965
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975pb
+ra
+ra
+rra
+rra
+pa
+ra
+728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -1054974 len: 3 last_pivot: 280746
+list_len: 3 list_min: -1054974 pivot: -946929
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -946929
+data: 271965
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: -1054974
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -946929
+data: 271965
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+rra
+rra
+rra
+rra
+
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: -946929 len: 0 last_pivot: -946929
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 271965
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 271965 len: 1 last_pivot: 280746
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 440289
+data: 1296885
+data: 280746
+data: 1420085
+data: 788603
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 280746 len: 7 last_pivot: 2425397
+list_len: 7 list_min: 280746 pivot: 1296885
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 1296885
+data: 1420085
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 200114rb
+pa
+ra
+pa
+ra
+pa
+ra
+ra
+ra
+pb
+pb
+rra
+rra
+06
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 788603
+data: 280746
+data: 440289
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 1296885
+data: 1420085
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 1296885 len: 4 last_pivot: 2425397
+list_len: 4 list_min: 1296885 pivot: 1494741
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746pa
 pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rb
-rb
-rb
-rb
-pa
-rb
-pa
-rb
-pa
-rb
-pa
-rb
-rb
-rb
-rb
-rb
-rb
-pa
-rb
-rb
-rb
-rb
-rb
-pa
-rb
-pa
-rb
-rb
-rb
-rb
-pa
-ra
-rb
-pa
-ra
-pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-rra
-rra
-pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-pb
-ra
-pb
-ra
-pb
-pb
-ra
-pb
-ra
-ra
-pb
-pb
-pb
-ra
-pb
-pb
-ra
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-pb
-pb
-ra
-ra
-ra
-ra
-pb
-pb
-pb
-ra
-pb
-pb
-pb
-pb
-ra
-ra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rb
-pa
-rb
-rb
-rb
-pa
-pa
-rb
-rb
-rb
-rb
-rb
-pa
-rb
-rb
-rb
-rb
-pa
-rb
-rb
-pa
-pa
-rb
-pa
-rb
-pa
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-pa
-rb
-rb
-rb
-pa
-rb
-pa
-pa
-pa
-pa
-rb
-pa
-pa
-rb
-rb
-rb
-rb
-pa
-rb
-pa
-rb
-rb
-pa
-pa
-pa
-pa
-pa
-pa
-ra
-ra
-pb
-ra
-pb
-pb
-rra
-rb
-rb
-pa
-ra
-rb
-pa
-ra
-pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-pb
-pb
-rra
-rra
-rra
-rb
-pa
-pa
-rb
-pa
-pa
-ra
-ra
-ra
 ra
 ra
 sa
 ra
 ra
+pb
+ra
+pb
 ra
 ra
+pb
+pb
+pb
+pb
+ra
+pb
 ra
 ra
+pb
+pb
+ra
+pb
+pb
+ra
+pb
 ra
 ra
 ra
 pb
+ra
+pb
+pb
+ra
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+
+data: 440289
+data: 788603
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 1420085
+data: 1296885
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 1652915
+data: 1494741
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 1494741 len: 2 last_pivot: 2425397
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 17095277
+data: 4049114
+data: 13271264
+data: 14236547
+data: 8615885
+data: 9503933
+data: 7251407
+data: 8338900
+data: 18383590
+data: 2425397
+data: 17746078
+data: 18961450
+data: 5799643
+data: 8268942
+data: 15567027
+data: 8328737
+data: 7994217
+data: 16436638
+data: 11336332
+data: 14190654
+data: 15975728
+data: 13271366
+data: 8688857
+data: 14201687
+data: 5597610
+data: 5255087
+data: 19384606
+data: 13679220
+data: 9950463
+data: 6179775
+data: 14234720
+data: 17170193
+data: 13072160
+data: 20011406
+data: 2615575
+data: 12727223
+data: 10007547
+data: 7228115
+data: 20909896
+data: 7264843
+data: 18819668
+data: 16498402
+data: 14945329
+data: 4974029
+data: 20724137
+data: 13390770
+data: 16419495
+data: 4351109
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 2425397 len: 50 last_pivot: 0
+list_len: 50 list_min: 2425397 pivot: 13271264
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+darb
+rb
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+rb
+pa
+pa
+pa
+pa
+pa
+rb
+rb
+pa
+rb
+pa
+pa
+rb
+pa
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+pa
+rb
+pa
+rb
+rb
+ta: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 4351109
+data: 4974029
+data: 7264843
+data: 7228115
+data: 10007547
+data: 12727223
+data: 2615575
+data: 13072160
+data: 6179775
+data: 9950463
+data: 5255087
+data: 5597610
+data: 8688857
+data: 11336332
+data: 7994217
+data: 8328737
+data: 8268942
+data: 5799643
+data: 2425397
+data: 8338900
+data: 7251407
+data: 9503933
+data: 8615885
+data: 4049114
+data: 10782327
+list_len: 25 list_min: 2425397 pivot: 7994217
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 4351109
+data: 4974029
+data: 7264843
+data: 7228115
+data: 2615575
+data: 6179775
+data: 5255087
+data: 5597610
+data: 5799643
+data: 2425397
+data: 7251407
+data: 4049114
+list_len: 12 list_min: 2425397 pivot: 5597610
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 4351109
+data: 4974029
+data: 2615575
+data: 5255087
+data: 2425397
+data: 4049114
+list_len: 6 list_min: 2425397 pivot: 4351109
+aaaaaaarb
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+ra
+ra
+pb
+rra
+rra
+aaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 5255087
+data: 4974029
+data: 4351109
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 2615575
+data: 2425397
+data: 4049114
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 5255087
+data: 4974029
+data: 4351109
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 4351109 len: 3 last_pivot: 5597610
+list_len: 3 list_min: 4351109 pivot: 4974029
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 5255087
+data: 4974029
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -1629191pa
+ra
+sa
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+rra
+rra
+rra
+7
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 4351109
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 5255087
+data: 4974029
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 4974029 len: 2 last_pivot: 5597610
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 5799643
+data: 5597610
+data: 6179775
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 5597610 len: 6 last_pivot: 7994217
+list_len: 6 list_min: 5597610 pivot: 7228115
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data:rb
+pa
+ra
+pa
+ra
+pa
+ra
+ra
+pb
+ra
+rra
+rra
+ 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 6179775
+data: 5597610
+data: 5799643
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 7228115
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 7228115 len: 3 last_pivot: 7994217
+list_len: 3 list_min: 7228115 pivot: 7251407
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data:pa
+ra
+ra
+ra
+ -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 7228115
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7251407
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 7251407 len: 0 last_pivot: 7251407
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 7264843
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 7264843 len: 1 last_pivot: 7994217
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 8615885
+data: 9503933
+data: 8338900
+data: 8268942
+data: 8328737
+data: 7994217
+data: 11336332
+data: 8688857
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+datra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+ra
 ra
 ra
 ra
@@ -730,154 +7339,2792 @@ rra
 rra
 rra
 pa
+rb
+rb
+rb
+pa
+pa
+a: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 7994217 len: 13 last_pivot: 13271264
+list_len: 13 list_min: 7994217 pivot: 9503933
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 8688857
+data: 7994217
+data: 8328737
+data: 8268942
+data: 8338900
+data: 8615885
+list_len: 6 list_min: 7994217 pivot: 8338900
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 8615885
+data: 8338900
+data: 8688857
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: pa
+ra
+rb
+pa
+ra
+pa
 ra
 ra
+pb
+ra
+rra
+rra
+pa
+ra
+-2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 7994217
+data: 8328737
+data: 8268942
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 8615885
+data: 8338900
+data: 8688857
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 8338900 len: 3 last_pivot: 9503933
+list_len: 3 list_min: 8338900 pivot: 8615885
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 8615885
+data: 8688857
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 8338900
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 8615885
+data: 8688857
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+datra
+ra
+a: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 8615885 len: 0 last_pivot: 8615885
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 8688857
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 8688857 len: 1 last_pivot: 9503933
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 9503933
+data: 11336332
+data: 9950463
+data: 13072160
+data: 12727223
+data: 10007547
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+datara
+pb
 ra
 pb
-pb
-pb
-pb
+ra
+ra
 pb
 rra
+rra
+rra
+rra
+rb
+rb
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+pb
+pb
+ra
+ra
+rra
+rra
+: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 9503933 len: 7 last_pivot: 13271264
+list_len: 7 list_min: 9503933 pivot: 10782327
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 11336332
+data: 13072160
+data: 12727223
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 10007547
+data: 9950463
+data: 9503933
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 10782327
+data: 11336332
+data: 13072160
+data: 12727223
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 10782327 len: 4 last_pivot: 13271264
+list_len: 4 list_min: 10782327 pivot: 12727223
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 13072160
+data: 12727223
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+dpa
+pa
+ra
+ra
+sa
+ra
+ra
+ata: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 11336332
+data: 10782327
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 13072160
+data: 12727223
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 12727223 len: 2 last_pivot: 13271264
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 17095277
+data: 13271264
+data: 14236547
+data: 18383590
+data: 17746078
+data: 18961450
+data: 15567027
+data: 16436638
+data: 14190654
+data: 15975728
+data: 13271366
+data: 14201687
+data: 19384606
+data: 13679220
+data: 14234720
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 14945329
+data: 20724137
+data: 13390770
+data: 16419495
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data:ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+rb
+pa
+pa
 rb
 rb
 rb
 pa
 rb
-rb
 pa
-rb
-rb
-pa
-ra
-rb
-pa
-ra
-pa
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-pb
-pb
-pb
-pb
-ra
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-pb
-ra
-pb
-rra
-rra
-rra
-rb
-rb
-pa
-rb
 pa
 rb
 rb
 pa
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-pa
-rb
-rb
-rb
-rb
 pa
 rb
 pa
-pa
-pa
-pa
-pa
+rb
+ 12727223
+data: 13072160
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 13271264 len: 25 last_pivot: 0
+list_len: 25 list_min: 13271264 pivot: 16436638
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 16419495
+data: 13390770
+data: 14945329
+data: 14234720
+data: 13679220
+data: 14201687
+data: 13271366
+data: 15975728
+data: 14190654
+data: 15567027
+data: 14236547
+data: 13271264
+list_len: 12 list_min: 13271264 pivot: 14234720
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 13390770
+data: 13679220
+data: 14201687
+data: 13271366
+data: 14190654
+data: 13271264
+list_len: 6 list_min: 13271264 pivot: 13679220
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14190654
+data: 14201687
+data: 13679220
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+datarb
 rb
 pa
+ra
+rb
 pa
-pa
-pa
-pa
-pa
-pa
-pa
-pa
-pa
-pa
+ra
 pa
 ra
 ra
+ra
+pb
+rra
+rra
+pa
+ra
+: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 13390770
+data: 13271366
+data: 13271264
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14190654
+data: 14201687
+data: 13679220
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 13679220 len: 3 last_pivot: 14234720
+list_len: 3 list_min: 13679220 pivot: 14190654
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14190654
+data: 14201687
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 13679220
+aaaaaaaaaaaaaaaaaaaaaaaaaaaara
+ra
+aaaaaaa
+data: 14190654
+data: 14201687
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 14190654 len: 0 last_pivot: 14190654
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14201687
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 14201687 len: 1 last_pivot: 14234720
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 14236547
+data: 15567027
+data: 15975728
+data: 14234720
+data: 14945329
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+dapb
+ra
+ra
+pb
+pb
+ra
+rra
+rra
+rra
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+pb
+ra
+ra
+rra
+rra
+ta: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 14234720 len: 6 last_pivot: 16436638
+list_len: 6 list_min: 14234720 pivot: 15567027
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 15567027
+data: 15975728
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 14945329
+data: 14234720
+data: 14236547
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 15567027
+data: 15975728
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 15567027 len: 3 last_pivot: 16436638
+list_len: 3 list_min: 15567027 pivot: 15975728
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 15975728
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 189614pa
+ra
+ra
+50
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 15567027
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 15975728
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 15975728 len: 0 last_pivot: 15975728
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 16419495
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+datara
+pb
+pb
+pb
+ra
+pb
+ra
+pb
 ra
 ra
 ra
 pb
 ra
 ra
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-pa
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-rra
-rra
 rra
 rra
 rra
@@ -888,9 +10135,268 @@ rra
 rb
 pa
 rb
+pa
+pa
 rb
-rb
-rb
+: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 16419495 len: 1 last_pivot: 16436638
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 17095277
+data: 18383590
+data: 17746078
+data: 18961450
+data: 16436638
+data: 19384606
+data: 17170193
+data: 20011406
+data: 20909896
+data: 18819668
+data: 16498402
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 16436638 len: 13 last_pivot: 0
+list_len: 13 list_min: 16436638 pivot: 18819668
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 16498402
+data: 17170193
+data: 16436638
+data: 17746078
+data: 18383590
+data: 17095277
+list_len: 6 list_min: 16436638 pivot: 17170193
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18383590
+data: 17746078
+data: 17170193
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083rb
 pa
 ra
 rb
@@ -899,47 +10405,556 @@ ra
 pa
 ra
 ra
+ra
+pb
+rra
+rra
+
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 16498402
+data: 16436638
+data: 17095277
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18383590
+data: 17746078
+data: 17170193
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 17170193 len: 3 last_pivot: 18819668
+list_len: 3 list_min: 17170193 pivot: 17746078
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18383590
+data: 17746078
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: pa
+ra
+sa
+ra
+ra
+pb
+pb
 ra
 ra
 pb
 ra
 ra
+rra
+rra
+rra
+rra
+8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 17170193
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18383590
+data: 17746078
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 17746078 len: 2 last_pivot: 18819668
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20909896
+data: 18819668
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 18819668 len: 7 last_pivot: 0
+list_len: 7 list_min: 18819668 pivot: 20011406
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 20011406
+data: 20909896
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13pa
 ra
-ra
-ra
-ra
-rra
-rra
-rra
-rra
-rra
-rra
-rra
-pa
-ra
-ra
-ra
-pb
-pb
-pb
-pb
-pb
-rra
-pa
 rb
-rb
-pa
-rb
-rb
 pa
 ra
 pa
-ra
-pa
-ra
-ra
-ra
-ra
 ra
 pb
 ra
@@ -947,215 +10962,498 @@ pb
 ra
 rra
 rra
+794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 18819668
+data: 19384606
+data: 18961450
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 20011406
+data: 20909896
+data: 20724137
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+data: 18819668
+data: 18961450
+data: 19384606
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 20011406 len: 4 last_pivot: 0
+list_len: 4 list_min: 20011406 pivot: 20909896
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 20909896
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 1423472pa
 pa
-pa
 ra
 ra
 ra
 ra
-ra
-ra
-ra
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-first: -9944
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-first: 0
-data: -9944
-data: -9806
-data: -9657
-data: -9648
-data: -9310
-data: -9272
-data: -9031
-data: -8924
-data: -8819
-data: -8730
-data: -8568
-data: -8299
-data: -8265
-data: -7941
-data: -7805
-data: -7706
-data: -7478
-data: -7263
-data: -7250
-data: -7249
-data: -6832
-data: -6464
-data: -6445
-data: -6317
-data: -6279
-data: -5934
-data: -5711
-data: -5580
-data: -5567
-data: -5045
-data: -4872
-data: -4742
-data: -4446
-data: -4425
-data: -3981
-data: -3246
-data: -3221
-data: -3185
-data: -3020
-data: -2712
-data: -2465
-data: -2292
-data: -2283
-data: -2246
-data: -2026
-data: -2003
-data: -1872
-data: -1720
-data: -1496
-data: -1388
-data: -1357
-data: -768
-data: -518
-data: -418
-data: -401
-data: -250
-data: 104
-data: 115
-data: 353
-data: 761
-data: 788
-data: 958
-data: 1479
-data: 1811
-data: 2070
-data: 2491
-data: 2600
-data: 3249
-data: 3433
-data: 3700
-data: 3795
-data: 4093
-data: 4167
-data: 4693
-data: 4705
-data: 4998
-data: 5072
-data: 5360
-data: 5379
-data: 5410
-data: 5744
-data: 5888
-data: 6107
-data: 6418
-data: 6529
-data: 6550
-data: 6664
-data: 6745
-data: 6926
-data: 7259
-data: 7299
-data: 7908
-data: 7913
-data: 8104
-data: 8203
-data: 8681
-data: 8894
-data: 9175
-data: 9857
-data: 9965
+0
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+data: 18819668
+data: 18961450
+data: 19384606
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+data: 20724137
+data: 20011406
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: 20909896
+data: 21236330
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+data: 18819668
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20724137
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+min: 20909896 len: 2 last_pivot: 0
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+data: -20544515
+data: -20249913
+data: -19689762
+data: -19642437
+data: -19465083
+data: -19394231
+data: -18655656
+data: -17912332
+data: -16925180
+data: -16396894
+data: -16291917
+data: -16143471
+data: -15650843
+data: -15509059
+data: -15414823
+data: -14766627
+data: -14535592
+data: -14263843
+data: -14082864
+data: -13794350
+data: -13393228
+data: -13366937
+data: -12995674
+data: -12874133
+data: -11847238
+data: -11088129
+data: -11001388
+data: -10905445
+data: -9255728
+data: -9156779
+data: -8643762
+data: -7812102
+data: -7734335
+data: -7560727
+data: -6783486
+data: -6563156
+data: -5724728
+data: -5218361
+data: -4323840
+data: -2778431
+data: -1054974
+data: -946929
+data: 271965
+data: 280746
+data: 440289
+data: 788603
+data: 1296885
+data: 1420085
+data: 1494741
+data: 1652915
+data: 2425397
+data: 2615575
+data: 4049114
+data: 4351109
+data: 4974029
+data: 5255087
+data: 5597610
+data: 5799643
+data: 6179775
+data: 7228115
+data: 7251407
+data: 7264843
+data: 7994217
+data: 8268942
+data: 8328737
+data: 8338900
+data: 8615885
+data: 8688857
+data: 9503933
+data: 9950463
+data: 10007547
+data: 10782327
+data: 11336332
+data: 12727223
+data: 13072160
+data: 13271264
+data: 13271366
+data: 13390770
+data: 13679220
+data: 14190654
+data: 14201687
+data: 14234720
+data: 14236547
+data: 14945329
+data: 15567027
+data: 15975728
+data: 16419495
+data: 16436638
+data: 16498402
+data: 17095277
+data: 17170193
+data: 17746078
+data: 18383590
+data: 18819668
+data: 18961450
+data: 19384606
+data: 20011406
+data: 20724137
+data: 20909896
+data: 21236330
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/29 23:16:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/30 22:41:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		if (sorted_list == NULL)
 			pivot = find_pivot(*stack_b, min, max, len);
 		else
-			pivot = find_pivot_by_sorted(min, max, len, sorted_list);
+			pivot = find_pivot_by_sorted(min, len, sorted_list);
 		// pivot = find_pivot((*stack_b)->next->data, (*stack_b)->next->next->data, (*stack_b)->next->next->next->data);
 		add_pivot(pivot_list, pivot);
 		i = 0;
 		while (i < len)
 		{
-			if ((*stack_b)->next->data > pivot)
+			if ((*stack_b)->next->data >= pivot)
 				push_a(stack_a, stack_b, output_flag);
 			else
 				rotate_b(stack_b, output_flag);
@@ -86,7 +86,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	if (sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, max, len);
 	else
-		pivot = find_pivot_by_sorted(min, max, len, sorted_list);
+		pivot = find_pivot_by_sorted(min, len, sorted_list);
 	// pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	i = 0;
 	while (i < len)
@@ -115,7 +115,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	if (sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, max, len);
 	else
-		pivot = find_pivot_by_sorted(min, max, len, sorted_list);
+		pivot = find_pivot_by_sorted(min, len, sorted_list);
 	// pivot = find_pivot((*stack_a)->next->data, (*stack_a)->next->next->data, (*stack_a)->next->next->next->data);
 	// printf("pivot: %d min: %d max: %d len: %d\n", pivot, min, max, len);
 	add_pivot(pivot_list, pivot);
@@ -147,7 +147,7 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	// write(1, "partition\n", 10);
 	min = stack_min_limit(*stack_a, all_min, pivot_list);
 	len = stack_len_limit(*stack_a, all_min, pivot_list);
-	// printf("min: %d len: %d\n", min, len);
+	printf("min: %d len: %d last_pivot: %d\n", min, len, (*pivot_list)->pivot[(*pivot_list)->len - 1]);
 	if (len == 0 && (*stack_a)->next->data != all_min)
 	{
 		rotate_a(stack_a, output_flag);
@@ -230,9 +230,12 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 			i++;
 		}
 		// printf("ok\n");
-		// printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
-		// show_list(*stack_a);
-		// printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
-		// show_list(*stack_b);
+		if (output_flag == 1)
+		{
+			printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
+			show_list(*stack_a);
+			printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
+			show_list(*stack_b);
+		}
 	}
 }
