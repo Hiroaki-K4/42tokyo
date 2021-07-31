@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:16:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:18:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 	}
 }
 
+// void	over_six()
+
 void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 	t_bi_list **stack_b)
 {
@@ -50,7 +52,7 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 	else if (argc == 4)
 		sort_three(stack_a);
 	else if (argc < 7)
-		under_six(stack_a, stack_b, argc);
+		args_under_six(stack_a, stack_b, argc);
 	else
 	{
 		stack_tmp = (t_bi_list *)malloc(sizeof(t_bi_list));

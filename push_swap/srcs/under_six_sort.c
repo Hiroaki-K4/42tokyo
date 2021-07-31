@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:59:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:18:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	min_to_top(t_bi_list **stack_a)
 	}
 }
 
-void	under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
+void	args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:10:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:19:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		reverse_rotate_a(t_bi_list **stack_a, int output_flag);
 void		reverse_rotate_b(t_bi_list **stack_b, int output_flag);
 void		reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b,
 				int output_flag);
-void		under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
+void		args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void		sort_three(t_bi_list **stack);
 void		switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 				t_bi_list **stack_b);
