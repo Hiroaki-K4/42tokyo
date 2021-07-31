@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:48:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:50:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
+int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
 	int	len;
@@ -23,10 +23,10 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	len = stack_len(*stack_b);
 	if (len == 2)
 	{
-		push_a(stack_a, stack_b, output_flag);
-		push_a(stack_a, stack_b, output_flag);
-		rotate_a(stack_a, output_flag);
-		rotate_a(stack_a, output_flag);
+		push_a(stack_a, stack_b, sort_tool.output_flag);
+		push_a(stack_a, stack_b, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
 		delete_min_pivot(pivot_list);
 		return (1);
 	}
@@ -37,12 +37,12 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 			min = stack_min(*stack_b);
 			if ((*stack_b)->next->data == min)
 			{
-				push_a(stack_a, stack_b, output_flag);
-				rotate_a(stack_a, output_flag);
+				push_a(stack_a, stack_b, sort_tool.output_flag);
+				rotate_a(stack_a, sort_tool.output_flag);
 				len--;
 			}
 			else
-				rotate_b(stack_b, output_flag);
+				rotate_b(stack_b, sort_tool.output_flag);
 		}
 		delete_min_pivot(pivot_list);
 		return (1);
@@ -51,18 +51,18 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	{
 		min = stack_min(*stack_b);
 		max = stack_max(*stack_b);
-		if (sorted_list == NULL)
+		if (sort_tool.sorted_list == NULL)
 			pivot = find_pivot(*stack_b, min, max, len);
 		else
-			pivot = find_pivot_by_sorted(min, len, sorted_list);
+			pivot = find_pivot_by_sorted(min, len, sort_tool.sorted_list);
 		add_pivot(pivot_list, pivot);
 		i = 0;
 		while (i < len)
 		{
 			if ((*stack_b)->next->data >= pivot)
-				push_a(stack_a, stack_b, output_flag);
+				push_a(stack_a, stack_b, sort_tool.output_flag);
 			else
-				rotate_b(stack_b, output_flag);
+				rotate_b(stack_b, sort_tool.output_flag);
 			i++;
 		}
 		return (0);
@@ -184,7 +184,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
-				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sort_tool.sorted_list) == 1)
+				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool) == 1)
 					top_flag = 1;
 			}
 			else
