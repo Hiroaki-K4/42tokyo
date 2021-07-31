@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:28:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:28:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,16 @@ void			push_a(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
 void			push_b(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
 void			swap_a(t_bi_list *stack_a, int output_flag);
 void			swap_b(t_bi_list *stack_b, int output_flag);
-// void		swap_ab(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
 void			top_del(t_bi_list **list);
-// void		show_list(t_bi_list *list);
 void			stack_init(t_bi_list **stack);
 void			rotate_a(t_bi_list **stack_a, int output_flag);
 void			rotate_b(t_bi_list **stack_b, int output_flag);
-// void			rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b,
-					// int output_flag);
 void			reverse_rotate_a(t_bi_list **stack_a, int output_flag);
 void			reverse_rotate_b(t_bi_list **stack_b, int output_flag);
-// void			reverse_rotate_ab(t_bi_list **stack_a, t_bi_list **stack_b,
-					// int output_flag);
 void			args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void			sort_three(t_bi_list **stack);
 void			switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
-				t_bi_list **stack_b);
+					t_bi_list **stack_b);
 void			quick_sort(t_bi_list **stack_a, t_bi_list **stack_b,
 					int output_flag, int *sorted_list);
 void			first_partition(t_bi_list **stack_a, t_bi_list **stack_b,
