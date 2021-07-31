@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:13:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:14:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 int	main(int argc, char *argv[])
 {
 	int			i;
-	// int			num;
 	t_bi_list	*stack_a;
 	t_bi_list	*stack_b;
 
@@ -86,14 +85,13 @@ int	main(int argc, char *argv[])
 		exit(1);
 	stack_init(&stack_a);
 	stack_init(&stack_b);
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
-		// num = ft_atoi(argv[i]);
 		add_stack(&stack_a, ft_atoi(argv[i]));
-		i++;
+		// i++;
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
