@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:47:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:47:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,12 +119,6 @@ void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b,
 		arg_two_operations(stack_a, sort_tool, min);
 	else if (len > 2)
 		partition_to_b(stack_a, stack_b, pivot_list, sort_tool);
-}
-
-void	free_pivot_list(t_pivot_list *pivot_list)
-{
-	free(pivot_list->pivot);
-	free(pivot_list);
 }
 
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag,

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:30:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:07:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:47:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ void	free_stack(t_bi_list **stack)
 		(*stack) = next;
 	}
 	free(*stack);
+}
+
+void	free_pivot_list(t_pivot_list *pivot_list)
+{
+	free(pivot_list->pivot);
+	free(pivot_list);
 }
