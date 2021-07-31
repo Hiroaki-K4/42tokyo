@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:25:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:25:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,6 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 	int			*sorted_list;
 	t_bi_list	*stack_tmp;
 
-	// if (argc <= 2)
-	// 	return ;
-	// else if (sorted_check((*stack_a)->next) == 0)
-	// 	return ;
-	// else if (argc == 3)
-	// {
-	// 	if ((*stack_a)->next->data > (*stack_a)->next->next->data)
-	// 		swap_a(*stack_a, 1);
-	// }
-	// else if (argc == 4)
-	// 	sort_three(stack_a);
-	// else if (argc < 7)
-	// 	args_under_six(stack_a, stack_b, argc);
 	if (argc < 7)
 		few_args_process(argc, stack_a, stack_b);
 	else
