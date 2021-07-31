@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 20:31:03 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:44:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:45:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	stack_init(t_bi_list **stack)
 	(*stack)->data = 0;
 }
 
-t_sort_tool	init_list(t_bi_list *stack, int output_flag, int *sorted_list, t_pivot_list **pivot_list)
+t_sort_tool	init_list(t_bi_list *stack, int output_flag, int *sorted_list,
+	t_pivot_list **pivot_list)
 {
 	t_sort_tool	sort_tool;
 
