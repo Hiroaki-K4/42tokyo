@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:47:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:47:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b,
 	if (len == 2)
 		return (stack_b_len_two(stack_a, stack_b, pivot_list, sort_tool));
 	else if (len < 4)
-	{
 		return (stack_b_len_three(stack_a, stack_b, pivot_list, sort_tool));
-		// while (len > 0)
-		// {
-		// 	min = stack_min(*stack_b);
-		// 	if ((*stack_b)->next->data == min)
-		// 	{
-		// 		push_a(stack_a, stack_b, sort_tool.output_flag);
-		// 		rotate_a(stack_a, sort_tool.output_flag);
-		// 		len--;
-		// 	}
-		// 	else
-		// 		rotate_b(stack_b, sort_tool.output_flag);
-		// }
-		// delete_min_pivot(pivot_list);
-		// return (1);
-	}
 	else
 	{
 		min = stack_min(*stack_b);
