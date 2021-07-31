@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:23:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:13:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 	}
 }
 
-void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list **stack_b)
+void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
+	t_bi_list **stack_b)
 {
-	int	i;
-	int	*sorted_list;
+	int			i;
+	int			*sorted_list;
 	t_bi_list	*stack_tmp;
 
 	if (argc <= 2)
@@ -73,7 +74,7 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list *
 int	main(int argc, char *argv[])
 {
 	int			i;
-	int			num;
+	// int			num;
 	t_bi_list	*stack_a;
 	t_bi_list	*stack_b;
 
@@ -90,8 +91,8 @@ int	main(int argc, char *argv[])
 	{
 		if (digit_check(argv[i]) == -1)
 			error_process();
-		num = ft_atoi(argv[i]);
-		add_stack(&stack_a, num);
+		// num = ft_atoi(argv[i]);
+		add_stack(&stack_a, ft_atoi(argv[i]));
 		i++;
 	}
 	if (duplicate_check(argc, argv) == 1)
