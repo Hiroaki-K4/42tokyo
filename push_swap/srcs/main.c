@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:21:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:22:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a, t_bi_list *
 	else
 	{
 		stack_tmp = (t_bi_list *)malloc(sizeof(t_bi_list));
+		if (!stack_tmp)
+			exit(1);
 		stack_init(&stack_tmp);
 		i = 1;
 		while (i < argc)
