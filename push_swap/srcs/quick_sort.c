@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:41:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:41:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *sorted_list)
 {
 	int				top_flag;
-	int				all_min;
+	// int				all_min;
 	t_pivot_list	*pivot_list;
 	t_sort_tool		sort_tool;
 
