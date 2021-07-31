@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:14:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:15:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 		if (!stack_tmp)
 			exit(1);
 		stack_init(&stack_tmp);
-		i = 1;
-		while (i < argc)
+		i = 0;
+		while (++i < argc)
 		{
 			add_stack(&stack_tmp, ft_atoi(argv[i]));
-			i++;
+			// i++;
 		}
 		quick_sort(&stack_tmp, stack_b, 0, NULL);
 		make_sorted_list(stack_tmp, &sorted_list);
@@ -91,7 +91,6 @@ int	main(int argc, char *argv[])
 		if (digit_check(argv[i]) == -1)
 			error_process();
 		add_stack(&stack_a, ft_atoi(argv[i]));
-		// i++;
 	}
 	if (duplicate_check(argc, argv) == 1)
 		error_process();
