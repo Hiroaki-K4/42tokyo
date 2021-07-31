@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:26:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:03:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	find_pivot_by_sorted(int min, int len, int *sorted_list)
 	while (i < sorted_list[0] + 1)
 	{
 		if (sorted_list[i] == min)
-			break;
+			break ;
 		i++;
 	}
 	pivot = sorted_list[i + len / 2];
@@ -52,10 +52,10 @@ int	init_pivot_list(t_pivot_list **pivot_list, int all_min)
 	return (0);
 }
 
-int	add_pivot(t_pivot_list **pivot_list, int pivot)
+void	add_pivot(t_pivot_list **pivot_list, int pivot)
 {
 	int	i;
-	int *new_pivot_list;
+	int	*new_pivot_list;
 
 	if ((*pivot_list)->len == 0)
 	{
@@ -73,22 +73,18 @@ int	add_pivot(t_pivot_list **pivot_list, int pivot)
 			exit(1);
 		i = 0;
 		while ((*pivot_list)->len - i > 0)
-		{
-			new_pivot_list[i] = (*pivot_list)->pivot[i];
-			i++;
-		}
+			new_pivot_list[i] = (*pivot_list)->pivot[i++];
 		free((*pivot_list)->pivot);
 		new_pivot_list[i] = pivot;
 		(*pivot_list)->pivot = new_pivot_list;
 		(*pivot_list)->len++;
 	}
-	return (0);
 }
 
 int	delete_min_pivot(t_pivot_list **pivot_list)
 {
 	int	i;
-	int *new_pivot_list;
+	int	*new_pivot_list;
 
 	new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len - 1));
 	if (!new_pivot_list)

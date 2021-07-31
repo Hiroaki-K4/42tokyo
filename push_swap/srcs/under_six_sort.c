@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/25 18:04:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:59:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 void	sort_three(t_bi_list **stack)
 {
-	if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->data < (*stack)->next->next->next->data)
+	if ((*stack)->next->data > (*stack)->next->next->data
+		&& (*stack)->next->data < (*stack)->next->next->next->data)
 		swap_a(*stack, 1);
-	else if ((*stack)->next->data > (*stack)->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
+	else if ((*stack)->next->data > (*stack)->next->next->data
+		&& (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
 		swap_a(*stack, 1);
 		reverse_rotate_a(stack, 1);
 	}
-	else if ((*stack)->next->data > (*stack)->next->next->next->data && (*stack)->next->next->data < (*stack)->next->next->next->data)
+	else if ((*stack)->next->data > (*stack)->next->next->next->data
+		&& (*stack)->next->next->data < (*stack)->next->next->next->data)
 		rotate_a(stack, 1);
-	else if ((*stack)->next->data < (*stack)->next->next->next->data && (*stack)->next->next->data > (*stack)->next->next->next->data)
+	else if ((*stack)->next->data < (*stack)->next->next->next->data
+		&& (*stack)->next->next->data > (*stack)->next->next->next->data)
 	{
 		swap_a(*stack, 1);
 		rotate_a(stack, 1);
 	}
-	else if ((*stack)->next->data < (*stack)->next->next->data && (*stack)->next->data > (*stack)->next->next->next->data)
+	else if ((*stack)->next->data < (*stack)->next->next->data
+		&& (*stack)->next->data > (*stack)->next->next->next->data)
 		reverse_rotate_a(stack, 1);
 }
 
