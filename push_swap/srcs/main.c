@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:18:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:25:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,8 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 	}
 }
 
-// void	over_six()
-
-void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
-	t_bi_list **stack_b)
+void	few_args_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
-	int			i;
-	int			*sorted_list;
-	t_bi_list	*stack_tmp;
-
 	if (argc <= 2)
 		return ;
 	else if (sorted_check((*stack_a)->next) == 0)
@@ -53,6 +46,30 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 		sort_three(stack_a);
 	else if (argc < 7)
 		args_under_six(stack_a, stack_b, argc);
+}
+
+void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
+	t_bi_list **stack_b)
+{
+	int			i;
+	int			*sorted_list;
+	t_bi_list	*stack_tmp;
+
+	// if (argc <= 2)
+	// 	return ;
+	// else if (sorted_check((*stack_a)->next) == 0)
+	// 	return ;
+	// else if (argc == 3)
+	// {
+	// 	if ((*stack_a)->next->data > (*stack_a)->next->next->data)
+	// 		swap_a(*stack_a, 1);
+	// }
+	// else if (argc == 4)
+	// 	sort_three(stack_a);
+	// else if (argc < 7)
+	// 	args_under_six(stack_a, stack_b, argc);
+	if (argc < 7)
+		few_args_process(argc, stack_a, stack_b);
 	else
 	{
 		stack_tmp = (t_bi_list *)malloc(sizeof(t_bi_list));
