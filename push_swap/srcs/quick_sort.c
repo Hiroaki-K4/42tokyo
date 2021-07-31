@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:02:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:02:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b,
 void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b,
 	t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
-	int	i;
+	// int	i;
 	int	pivot;
 	int	count;
 	int	min;
