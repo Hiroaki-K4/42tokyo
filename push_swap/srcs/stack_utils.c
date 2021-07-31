@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 12:00:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 11:42:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 11:43:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,16 @@ int	add_stack(t_bi_list **stack, int num)
 
 void	top_del(t_bi_list **list)
 {
+	t_bi_list	*next;
+
+	next = NULL;
 	if ((*list)->next != NULL)
 	{
+		next = (*list)->next;
 		if ((*list)->next->next != NULL)
 		{
 			free((*list)->next);
-			(*list)->next = (*list)->next->next;
+			(*list)->next = next->next;
 		}
 		else
 		{
