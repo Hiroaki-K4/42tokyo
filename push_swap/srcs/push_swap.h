@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:14:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:15:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ void		args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void		sort_three(t_bi_list **stack);
 void		switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 				t_bi_list **stack_b);
-// void		partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list);
-void		quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *sorted_list);
-void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool);
+void		quick_sort(t_bi_list **stack_a, t_bi_list **stack_b,
+				int output_flag, int *sorted_list);
+void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b,
+				t_pivot_list **pivot_list, t_sort_tool sort_tool);
 void		free_stack(t_bi_list **stack);
 void		add_pivot(t_pivot_list **pivot_list, int pivot);
 int			delete_min_pivot(t_pivot_list **pivot_list);
@@ -68,15 +69,18 @@ int			digit_check(const char *arg);
 int			duplicate_check(int argc, char *argv[]);
 int			sorted_check(t_bi_list *stack);
 int			stack_min(t_bi_list *stack);
-int			stack_min_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list);
+int			stack_min_limit(t_bi_list *stack, int all_min,
+				t_pivot_list **pivot_list);
 int			add_stack(t_bi_list **stack, int num);
 int			stack_max(t_bi_list *stack);
 int			stack_max_limit(t_bi_list *stack, int len);
 int			stack_len(t_bi_list *stack);
-int			stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list);
+int			stack_len_limit(t_bi_list *stack, int all_min,
+				t_pivot_list **pivot_list);
 int			find_pivot(t_bi_list *stack, int min, int max, int len);
 int			find_pivot_by_sorted(int min, int len, int *sorted_list);
-int			stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool);
+int			stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b,
+				t_pivot_list **pivot_list, t_sort_tool sort_tool);
 t_bi_list	*last_stack(t_bi_list *stack);
 t_sort_tool	init_sort_tool(int all_min, int output_flag, int *sorted_list);
 
