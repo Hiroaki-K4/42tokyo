@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:30:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/30 23:23:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 11:01:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	free_stack(t_bi_list **stack)
 		free(*stack);
 		(*stack) = (*stack)->next;
 	}
+	free(*stack);
 }
