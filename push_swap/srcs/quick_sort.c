@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:31:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:41:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 	}
 }
 
-void	partition_a_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
+void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
 {
 	int	min;
 	int	len;
@@ -167,16 +167,18 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 	int				top_flag;
 	int				all_min;
 	t_pivot_list	*pivot_list;
+	t_sort_tool		sort_tool;
 
 	top_flag = 0;
-	all_min = stack_min(*stack_a);
+	// all_min = stack_min(*stack_a);
+	sort_tool.all_min = stack_min(*stack_a);
 	pivot_list = (t_pivot_list *)malloc(sizeof(t_pivot_list));
 	if (!pivot_list)
 		exit(1);
-	init_pivot_list(&pivot_list, all_min);
+	init_pivot_list(&pivot_list, sort_tool.all_min);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
-		if (top_flag == 1 && (*stack_a)->next->data == all_min && (*stack_b)->next != NULL)
+		if (top_flag == 1 && (*stack_a)->next->data == sort_tool.all_min && (*stack_b)->next != NULL)
 			return ;
 		if ((*stack_b)->next != NULL)
 		{
@@ -202,7 +204,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 			if (top_flag == 0)
 				first_partition(stack_a, stack_b, &pivot_list, output_flag, sorted_list);
 			else
-				partition_a_to_b(stack_a, stack_b, all_min, &pivot_list, output_flag, sorted_list);
+				partition_a(stack_a, stack_b, sort_tool.all_min, &pivot_list, output_flag, sorted_list);
 		}
 	}
 	free(pivot_list->pivot);

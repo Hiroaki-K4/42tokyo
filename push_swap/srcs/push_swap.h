@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:19:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:39:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ typedef struct s_pivot_list
 	int	len;
 	int	*pivot;
 }	t_pivot_list;
+
+typedef struct s_sort_tool
+{
+	int	all_min;
+	int	output_flag;
+	int	*sorted_list;
+}	t_sort_tool;
 
 void		error_process(void);
 void		push_a(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
