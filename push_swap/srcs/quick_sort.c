@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:22:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:36:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		else
 			pivot = find_pivot_by_sorted(min, len, sort_tool.sorted_list);
 		add_pivot(pivot_list, pivot);
-		i = 0;
-		while (i < len)
+		i = -1;
+		while (++i < len)
 		{
 			if ((*stack_b)->next->data >= pivot)
 				push_a(stack_a, stack_b, sort_tool.output_flag);
 			else
 				rotate_b(stack_b, sort_tool.output_flag);
-			i++;
+			// i++;
 		}
 		return (0);
 	}
