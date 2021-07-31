@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:42:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:43:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 	top_flag = 0;
 	sort_tool.all_min = stack_min(*stack_a);
 	sort_tool.output_flag = output_flag;
+	sort_tool.sorted_list = sorted_list;
 	pivot_list = (t_pivot_list *)malloc(sizeof(t_pivot_list));
 	if (!pivot_list)
 		exit(1);
@@ -183,7 +184,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 		{
 			if (sorted_check(*stack_b) == 1)
 			{
-				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sorted_list) == 1)
+				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sort_tool.sorted_list) == 1)
 					top_flag = 1;
 			}
 			else
@@ -201,9 +202,9 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 		else
 		{
 			if (top_flag == 0)
-				first_partition(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sorted_list);
+				first_partition(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sort_tool.sorted_list);
 			else
-				partition_a(stack_a, stack_b, sort_tool.all_min, &pivot_list, sort_tool.output_flag, sorted_list);
+				partition_a(stack_a, stack_b, sort_tool.all_min, &pivot_list, sort_tool.output_flag, sort_tool.sorted_list);
 		}
 	}
 	free(pivot_list->pivot);
