@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 13:52:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 13:52:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,5 @@ int	delete_min_pivot(t_pivot_list **pivot_list)
 	(*pivot_list)->pivot = NULL;
 	(*pivot_list)->pivot = new_pivot_list;
 	(*pivot_list)->len--;
-	return (0);
+	exit (0);
 }

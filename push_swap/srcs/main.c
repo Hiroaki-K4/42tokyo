@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 13:52:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 13:52:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ int	main(int argc, char *argv[])
 	switch_by_args_num(argc, argv, &stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	exit (0);
+	return (0);
 }
