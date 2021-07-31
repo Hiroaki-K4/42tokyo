@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 16:49:21 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:13:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:14:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ int	stack_b_not_empty(t_bi_list **stack_a, t_bi_list **stack_b,
 	{
 		while ((*stack_b)->next != NULL)
 		{
-			if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
+			if ((*stack_b)->next->data
+				== pivot_list->pivot[pivot_list->len - 1])
 				delete_min_pivot(&pivot_list);
 			push_a(stack_a, stack_b, sort_tool.output_flag);
 			rotate_a(stack_a, sort_tool.output_flag);
