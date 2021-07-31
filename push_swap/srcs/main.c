@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:15:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:16:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,7 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 		stack_init(&stack_tmp);
 		i = 0;
 		while (++i < argc)
-		{
 			add_stack(&stack_tmp, ft_atoi(argv[i]));
-			// i++;
-		}
 		quick_sort(&stack_tmp, stack_b, 0, NULL);
 		make_sorted_list(stack_tmp, &sorted_list);
 		free_stack(&stack_tmp);
