@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:50:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:52:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	}
 }
 
-void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, int output_flag, int *sorted_list)
+void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
 	int	min;
@@ -80,17 +80,17 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	min = stack_min(*stack_a);
 	max = stack_max(*stack_a);
 	len = stack_len(*stack_a);
-	if (sorted_list == NULL)
+	if (sort_tool.sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, max, len);
 	else
-		pivot = find_pivot_by_sorted(min, len, sorted_list);
+		pivot = find_pivot_by_sorted(min, len, sort_tool.sorted_list);
 	i = 0;
 	while (i < len)
 	{
 		if ((*stack_a)->next->data < pivot)
-			push_b(stack_a, stack_b, output_flag);
+			push_b(stack_a, stack_b, sort_tool.output_flag);
 		else
-			rotate_a(stack_a, output_flag);
+			rotate_a(stack_a, sort_tool.output_flag);
 		i++;
 	}
 	add_pivot(pivot_list, pivot);
@@ -202,7 +202,7 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 		else
 		{
 			if (top_flag == 0)
-				first_partition(stack_a, stack_b, &pivot_list, sort_tool.output_flag, sort_tool.sorted_list);
+				first_partition(stack_a, stack_b, &pivot_list, sort_tool);
 			else
 				partition_a(stack_a, stack_b, sort_tool, &pivot_list);
 		}
