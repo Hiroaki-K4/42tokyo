@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:28:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:27:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		push_a(stack_a, stack_b, output_flag);
 		rotate_a(stack_a, output_flag);
 		rotate_a(stack_a, output_flag);
-		// *pivot_list = delete_min_pivot(*pivot_list);
 		delete_min_pivot(pivot_list);
 		return (1);
 	}
@@ -45,7 +44,6 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 			else
 				rotate_b(stack_b, output_flag);
 		}
-		// *pivot_list = delete_min_pivot(*pivot_list);
 		delete_min_pivot(pivot_list);
 		return (1);
 	}
@@ -118,7 +116,8 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, int min, int len, 
 		if ((*stack_a)->next->data < pivot)
 			push_b(stack_a, stack_b, output_flag);
 		else
-		{	count++;
+		{
+			count++;
 			rotate_a(stack_a, output_flag);
 		}
 		i++;
@@ -141,7 +140,6 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	if (len == 0 && (*stack_a)->next->data != all_min)
 	{
 		rotate_a(stack_a, output_flag);
-		// *pivot_list = delete_min_pivot(*pivot_list);
 		delete_min_pivot(pivot_list);
 	}
 	else if (len == 1)
@@ -193,7 +191,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 				{
 					if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
 						delete_min_pivot(&pivot_list);
-						// pivot_list = delete_min_pivot(pivot_list);
 					push_a(stack_a, stack_b, output_flag);
 					rotate_a(stack_a, output_flag);
 					top_flag = 1;
@@ -206,13 +203,6 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 				first_partition(stack_a, stack_b, &pivot_list, output_flag, sorted_list);
 			else
 				partition(stack_a, stack_b, all_min, &pivot_list, output_flag, sorted_list);
-		}
-		if (output_flag == 1)
-		{
-			// printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
-			// show_list(*stack_a);
-			// printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
-			// show_list(*stack_b);
 		}
 	}
 	free(pivot_list->pivot);
