@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:02:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:10:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,26 @@ void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b,
 		partition_to_b(stack_a, stack_b, pivot_list, sort_tool);
 }
 
+int	stack_b_not_empty(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list *pivot_list, t_sort_tool sort_tool)
+{
+	if (sorted_check(*stack_b) == 1)
+	{
+		if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool) == 1)
+			return (1);
+	}
+	else
+	{
+		while ((*stack_b)->next != NULL)
+		{
+			if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
+				delete_min_pivot(&pivot_list);
+			push_a(stack_a, stack_b, sort_tool.output_flag);
+			rotate_a(stack_a, sort_tool.output_flag);
+			return (1);
+		}
+	}
+}
+
 void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag,
 	int *sorted_list)
 {
@@ -140,22 +160,23 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag,
 			return ;
 		if ((*stack_b)->next != NULL)
 		{
-			if (sorted_check(*stack_b) == 1)
-			{
-				if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool) == 1)
-					top_flag = 1;
-			}
-			else
-			{
-				while ((*stack_b)->next != NULL)
-				{
-					if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
-						delete_min_pivot(&pivot_list);
-					push_a(stack_a, stack_b, sort_tool.output_flag);
-					rotate_a(stack_a, sort_tool.output_flag);
-					top_flag = 1;
-				}
-			}
+			top_flag = stack_b_not_empty(stack_a, stack_b, pivot_list, sort_tool);
+			// if (sorted_check(*stack_b) == 1)
+			// {
+			// 	if (stack_b_not_sorted(stack_a, stack_b, &pivot_list, sort_tool) == 1)
+			// 		top_flag = 1;
+			// }
+			// else
+			// {
+			// 	while ((*stack_b)->next != NULL)
+			// 	{
+			// 		if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
+			// 			delete_min_pivot(&pivot_list);
+			// 		push_a(stack_a, stack_b, sort_tool.output_flag);
+			// 		rotate_a(stack_a, sort_tool.output_flag);
+			// 		top_flag = 1;
+			// 	}
+			// }
 		}
 		else
 		{
