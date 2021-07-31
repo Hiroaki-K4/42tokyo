@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 10:26:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 10:27:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,6 +261,7 @@ int ft_strchr_place(const char *arg, int c, int *i)
 		}
 		j++;
 	}
+	return (-1);
 }
 
 char *ft_itoa_hex(unsigned int num, const char *arg)
