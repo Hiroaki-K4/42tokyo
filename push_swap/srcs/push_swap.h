@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:02:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:14:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
 void		sort_three(t_bi_list **stack);
 void		switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 				t_bi_list **stack_b);
-void		partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list);
+// void		partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_list **pivot_list, int output_flag, int *sorted_list);
 void		quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *sorted_list);
 void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool);
 void		free_stack(t_bi_list **stack);
