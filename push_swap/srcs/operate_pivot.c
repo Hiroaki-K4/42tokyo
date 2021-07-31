@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:25:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:26:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,9 @@ int	delete_min_pivot(t_pivot_list **pivot_list)
 	int	i;
 	int *new_pivot_list;
 
-	if (!(new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len - 1))))
-		return (-1);
+	new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len - 1));
+	if (!new_pivot_list)
+		exit(1);
 	i = 0;
 	while ((*pivot_list)->len - 1 - i > 0)
 	{
