@@ -6,13 +6,14 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:39:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:43:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
+int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b,
+	t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
 	int	len;
@@ -61,7 +62,8 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 	}
 }
 
-void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
+void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b,
+	t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
 	int	min;
@@ -88,7 +90,8 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	add_pivot(pivot_list, pivot);
 }
 
-void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
+void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b,
+	t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
 	int	max;
@@ -122,7 +125,8 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **piv
 		reverse_rotate_a(stack_a, sort_tool.output_flag);
 }
 
-void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, t_sort_tool sort_tool, t_pivot_list **pivot_list)
+void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b,
+	t_sort_tool sort_tool, t_pivot_list **pivot_list)
 {
 	int	min;
 	int	len;
@@ -142,7 +146,8 @@ void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, t_sort_tool sort_tool
 		partition_to_b(stack_a, stack_b, pivot_list, sort_tool);
 }
 
-void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *sorted_list)
+void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag,
+	int *sorted_list)
 {
 	int				top_flag;
 	t_pivot_list	*pivot_list;
