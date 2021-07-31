@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:12:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:15:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,8 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag,
 	init_pivot_list(&pivot_list, sort_tool.all_min);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
-		if (top_flag == 1 && (*stack_a)->next->data == sort_tool.all_min && (*stack_b)->next != NULL)
+		if (top_flag == 1 && (*stack_a)->next->data == sort_tool.all_min
+			&& (*stack_b)->next != NULL)
 			return ;
 		if ((*stack_b)->next != NULL)
 		{
