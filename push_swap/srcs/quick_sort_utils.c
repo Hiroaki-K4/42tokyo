@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 16:09:38 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:06:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:22:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,19 @@ int	stack_len_limit(t_bi_list *stack, int all_min, t_pivot_list **pivot_list)
 		len++;
 	}
 	return (len);
+}
+
+void	arg_two_operations(t_bi_list **stack_a, t_sort_tool sort_tool, int min)
+{
+	if ((*stack_a)->next->data == min)
+	{
+		rotate_a(stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+	}
+	else
+	{
+		swap_a(*stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:15:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:23:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void		first_partition(t_bi_list **stack_a, t_bi_list **stack_b,
 				t_pivot_list **pivot_list, t_sort_tool sort_tool);
 void		free_stack(t_bi_list **stack);
 void		add_pivot(t_pivot_list **pivot_list, int pivot);
+void		arg_two_operations(t_bi_list **stack_a, t_sort_tool sort_tool, int min);
 int			delete_min_pivot(t_pivot_list **pivot_list);
 int			init_pivot_list(t_pivot_list **pivot_list, int all_min);
 int			digit_check(const char *arg);

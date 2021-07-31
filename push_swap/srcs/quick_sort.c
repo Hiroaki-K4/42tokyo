@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:21:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:22:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,21 +128,6 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **piv
 	i = -1;
 	while (++i < count)
 		reverse_rotate_a(stack_a, sort_tool.output_flag);
-}
-
-void	arg_two_operations(t_bi_list **stack_a, t_sort_tool sort_tool, int min)
-{
-	if ((*stack_a)->next->data == min)
-	{
-		rotate_a(stack_a, sort_tool.output_flag);
-		rotate_a(stack_a, sort_tool.output_flag);
-	}
-	else
-	{
-		swap_a(*stack_a, sort_tool.output_flag);
-		rotate_a(stack_a, sort_tool.output_flag);
-		rotate_a(stack_a, sort_tool.output_flag);
-	}
 }
 
 void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, t_sort_tool sort_tool, t_pivot_list **pivot_list)
