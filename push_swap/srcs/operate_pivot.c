@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:03:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 15:05:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void	add_pivot(t_pivot_list **pivot_list, int pivot)
 		new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len + 1));
 		if (!new_pivot_list)
 			exit(1);
-		i = 0;
-		while ((*pivot_list)->len - i > 0)
-			new_pivot_list[i] = (*pivot_list)->pivot[i++];
+		i = -1;
+		while ((*pivot_list)->len - (++i) > 0)
+			new_pivot_list[i] = (*pivot_list)->pivot[i];
 		free((*pivot_list)->pivot);
 		new_pivot_list[i] = pivot;
 		(*pivot_list)->pivot = new_pivot_list;
