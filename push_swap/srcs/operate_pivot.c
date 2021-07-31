@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:22:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:23:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	find_pivot(t_bi_list *stack, int min, int max, int len)
 
 t_pivot_list	*init_pivot_list(int all_min)
 {
-	t_pivot_list *pivot_list;
+	t_pivot_list	*pivot_list;
 
 	pivot_list = (t_pivot_list *)malloc(sizeof(t_pivot_list));
 	if (!pivot_list)
