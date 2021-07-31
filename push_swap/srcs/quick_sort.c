@@ -6,21 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:38:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:39:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	stack_b_len_two(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
-{
-	push_a(stack_a, stack_b, sort_tool.output_flag);
-	push_a(stack_a, stack_b, sort_tool.output_flag);
-	rotate_a(stack_a, sort_tool.output_flag);
-	rotate_a(stack_a, sort_tool.output_flag);
-	delete_min_pivot(pivot_list);
-	return (1);
-}
 
 int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
@@ -32,15 +22,7 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 
 	len = stack_len(*stack_b);
 	if (len == 2)
-	{
 		return (stack_b_len_two(stack_a, stack_b, pivot_list, sort_tool));
-		// push_a(stack_a, stack_b, sort_tool.output_flag);
-		// push_a(stack_a, stack_b, sort_tool.output_flag);
-		// rotate_a(stack_a, sort_tool.output_flag);
-		// rotate_a(stack_a, sort_tool.output_flag);
-		// delete_min_pivot(pivot_list);
-		// return (1);
-	}
 	else if (len < 4)
 	{
 		while (len > 0)
