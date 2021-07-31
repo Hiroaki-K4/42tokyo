@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:30:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 11:19:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 11:31:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void	error_process()
 
 void	free_stack(t_bi_list **stack)
 {
+	t_bi_list	*next;
+
+	next = NULL;
 	while ((*stack)->next != NULL)
 	{
+		next = (*stack)->next;
 		free(*stack);
-		(*stack) = (*stack)->next;
+		(*stack) = next;
 	}
 	free(*stack);
 }
