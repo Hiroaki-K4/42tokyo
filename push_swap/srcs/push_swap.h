@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:29:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:40:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,8 @@ int				stack_b_len_three(t_bi_list **stack_a, t_bi_list **stack_b,
 int				stack_b_not_empty(t_bi_list **stack_a, t_bi_list **stack_b,
 					t_pivot_list *pivot_list, t_sort_tool sort_tool);
 t_bi_list		*last_stack(t_bi_list *stack);
-t_sort_tool		init_sort_tool(int all_min, int output_flag, int *sorted_list);
+// t_sort_tool		init_sort_tool(int all_min, int output_flag, int *sorted_list);
+t_sort_tool		init_sort_tool(int all_min, int output_flag, int *sorted_list, t_pivot_list **pivot_list);
 t_pivot_list	*init_pivot_list(int all_min);
 
 #endif
