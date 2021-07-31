@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:21:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:23:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void		arg_two_operations(t_bi_list **stack_a, t_sort_tool sort_tool,
 void		stack_b_over_three(t_bi_list **stack_a, t_bi_list **stack_b,
 				int pivot, t_sort_tool sort_tool);
 int			delete_min_pivot(t_pivot_list **pivot_list);
-// int			init_pivot_list(t_pivot_list **pivot_list, int all_min);
 int			digit_check(const char *arg);
 int			duplicate_check(int argc, char *argv[]);
 int			sorted_check(t_bi_list *stack);
