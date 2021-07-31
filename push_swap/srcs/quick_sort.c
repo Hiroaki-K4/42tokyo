@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:12:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:28:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,8 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 	top_flag = 0;
 	all_min = stack_min(*stack_a);
 	pivot_list = (t_pivot_list *)malloc(sizeof(t_pivot_list));
+	if (!pivot_list)
+		exit(1);
 	init_pivot_list(&pivot_list, all_min);
 	while (sorted_check(*stack_a) == 1 || (*stack_b)->next != NULL)
 	{
