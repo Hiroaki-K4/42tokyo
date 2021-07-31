@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:32:18 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 17:28:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 17:29:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ typedef struct s_sort_tool
 }	t_sort_tool;
 
 void			error_process(void);
-void			push_a(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
-void			push_b(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag);
+void			push_a(t_bi_list **stack_a, t_bi_list **stack_b,
+					int output_flag);
+void			push_b(t_bi_list **stack_a, t_bi_list **stack_b,
+					int output_flag);
 void			swap_a(t_bi_list *stack_a, int output_flag);
 void			swap_b(t_bi_list *stack_b, int output_flag);
 void			top_del(t_bi_list **list);
@@ -47,7 +49,8 @@ void			rotate_a(t_bi_list **stack_a, int output_flag);
 void			rotate_b(t_bi_list **stack_b, int output_flag);
 void			reverse_rotate_a(t_bi_list **stack_a, int output_flag);
 void			reverse_rotate_b(t_bi_list **stack_b, int output_flag);
-void			args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc);
+void			args_under_six(t_bi_list **stack_a, t_bi_list **stack_b,
+					int argc);
 void			sort_three(t_bi_list **stack);
 void			switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 					t_bi_list **stack_b);
