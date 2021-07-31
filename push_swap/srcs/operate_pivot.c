@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 22:02:40 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:09:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:11:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,46 +83,46 @@ int	add_pivot(t_pivot_list **pivot_list, int pivot)
 	return (0);
 }
 
-// int	delete_min_pivot(t_pivot_list **pivot_list)
-// {
-// 	int	i;
-// 	int *new_pivot_list;
-
-// 	if (!(new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len - 1))))
-// 		return (-1);
-// 	i = 0;
-// 	while ((*pivot_list)->len - 1 - i > 0)
-// 	{
-// 		new_pivot_list[i] = (*pivot_list)->pivot[i];
-// 		i++;
-// 	}
-// 	free((*pivot_list)->pivot);
-// 	(*pivot_list)->pivot = NULL;
-// 	(*pivot_list)->pivot = new_pivot_list;
-// 	(*pivot_list)->len--;
-// 	return (0);
-// }
-
-t_pivot_list	*delete_min_pivot(t_pivot_list *pivot_list)
+int	delete_min_pivot(t_pivot_list **pivot_list)
 {
 	int	i;
 	int *new_pivot_list;
 
-	new_pivot_list = (int *)malloc(sizeof(int) * (pivot_list->len - 1));
-	// if (!(new_pivot_list = (int *)malloc(sizeof(int) * (pivot_list->len - 1))))
-	// {
-	// 	free(pivot_list->pivot);
-	// 	exit (1);
-	// }
+	if (!(new_pivot_list = (int *)malloc(sizeof(int) * ((*pivot_list)->len - 1))))
+		return (-1);
 	i = 0;
-	while (pivot_list->len - 1 - i > 0)
+	while ((*pivot_list)->len - 1 - i > 0)
 	{
-		new_pivot_list[i] = pivot_list->pivot[i];
+		new_pivot_list[i] = (*pivot_list)->pivot[i];
 		i++;
 	}
-	free(pivot_list->pivot);
-	pivot_list->pivot = NULL;
-	pivot_list->pivot = new_pivot_list;
-	pivot_list->len--;
-	return (pivot_list);
+	free((*pivot_list)->pivot);
+	(*pivot_list)->pivot = NULL;
+	(*pivot_list)->pivot = new_pivot_list;
+	(*pivot_list)->len--;
+	return (0);
 }
+
+// t_pivot_list	*delete_min_pivot(t_pivot_list *pivot_list)
+// {
+// 	int	i;
+// 	int *new_pivot_list;
+
+// 	new_pivot_list = (int *)malloc(sizeof(int) * (pivot_list->len - 1));
+// 	// if (!(new_pivot_list = (int *)malloc(sizeof(int) * (pivot_list->len - 1))))
+// 	// {
+// 	// 	free(pivot_list->pivot);
+// 	// 	exit (1);
+// 	// }
+// 	i = 0;
+// 	while (pivot_list->len - 1 - i > 0)
+// 	{
+// 		new_pivot_list[i] = pivot_list->pivot[i];
+// 		i++;
+// 	}
+// 	free(pivot_list->pivot);
+// 	pivot_list->pivot = NULL;
+// 	pivot_list->pivot = new_pivot_list;
+// 	pivot_list->len--;
+// 	return (pivot_list);
+// }

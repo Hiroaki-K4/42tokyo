@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 14:10:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:12:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 		push_a(stack_a, stack_b, output_flag);
 		rotate_a(stack_a, output_flag);
 		rotate_a(stack_a, output_flag);
-		*pivot_list = delete_min_pivot(*pivot_list);
-		// delete_min_pivot(pivot_list);
+		// *pivot_list = delete_min_pivot(*pivot_list);
+		delete_min_pivot(pivot_list);
 		return (1);
 	}
 	else if (len < 4)
@@ -45,8 +45,8 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 			else
 				rotate_b(stack_b, output_flag);
 		}
-		*pivot_list = delete_min_pivot(*pivot_list);
-		// delete_min_pivot(pivot_list);
+		// *pivot_list = delete_min_pivot(*pivot_list);
+		delete_min_pivot(pivot_list);
 		return (1);
 	}
 	else
@@ -141,8 +141,8 @@ void	partition(t_bi_list **stack_a, t_bi_list **stack_b, int all_min, t_pivot_li
 	if (len == 0 && (*stack_a)->next->data != all_min)
 	{
 		rotate_a(stack_a, output_flag);
-		*pivot_list = delete_min_pivot(*pivot_list);
-		// delete_min_pivot(pivot_list);
+		// *pivot_list = delete_min_pivot(*pivot_list);
+		delete_min_pivot(pivot_list);
 	}
 	else if (len == 1)
 		rotate_a(stack_a, output_flag);
@@ -190,8 +190,8 @@ void	quick_sort(t_bi_list **stack_a, t_bi_list **stack_b, int output_flag, int *
 				while ((*stack_b)->next != NULL)
 				{
 					if ((*stack_b)->next->data == pivot_list->pivot[pivot_list->len - 1])
-						pivot_list = delete_min_pivot(pivot_list);
-						// delete_min_pivot(&pivot_list);
+						delete_min_pivot(&pivot_list);
+						// pivot_list = delete_min_pivot(pivot_list);
 					push_a(stack_a, stack_b, output_flag);
 					rotate_a(stack_a, output_flag);
 					top_flag = 1;
