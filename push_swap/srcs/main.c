@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 13:52:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 14:21:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 	int	len;
 
 	len = stack_len(stack);
-	if (!(*sorted_list = (int *)malloc(sizeof(int) * (len + 1))))
+	*sorted_list = (int *)malloc(sizeof(int) * (len + 1));
+	if (!*sorted_list)
 		exit(1);
 	(*sorted_list)[0] = len;
 	i = 1;
