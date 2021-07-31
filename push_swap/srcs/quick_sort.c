@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:14:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:21:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,29 +96,6 @@ void	first_partition(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pi
 	add_pivot(pivot_list, pivot);
 }
 
-// void	partition_to_b_oprations(t_bi_list **stack_a, t_bi_list **stack_b, int pivot, t_sort_tool sort_tool)
-// {
-// 	int	i;
-// 	int	count;
-
-// 	count = 0;
-// 	i = -1;
-// 	while (++i < len)
-// 	{
-// 		if ((*stack_a)->next->data < pivot)
-// 			push_b(stack_a, stack_b, sort_tool.output_flag);
-// 		else
-// 		{
-// 			count++;
-// 			rotate_a(stack_a, sort_tool.output_flag);
-// 		}
-// 	}
-// 	i = -1;
-// 	while (++i < count)
-// 		reverse_rotate_a(stack_a, sort_tool.output_flag);
-// }
-
-
 void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
@@ -136,7 +113,6 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **piv
 	else
 		pivot = find_pivot_by_sorted(min, len, sort_tool.sorted_list);
 	add_pivot(pivot_list, pivot);
-	
 	count = 0;
 	i = -1;
 	while (++i < len)
@@ -152,6 +128,21 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **piv
 	i = -1;
 	while (++i < count)
 		reverse_rotate_a(stack_a, sort_tool.output_flag);
+}
+
+void	partition_a_operations(t_bi_list **stack_a, t_sort_tool sort_tool, int min)
+{
+	if ((*stack_a)->next->data == min)
+	{
+		rotate_a(stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+	}
+	else
+	{
+		swap_a(*stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+		rotate_a(stack_a, sort_tool.output_flag);
+	}
 }
 
 void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, t_sort_tool sort_tool, t_pivot_list **pivot_list)
@@ -170,17 +161,18 @@ void	partition_a(t_bi_list **stack_a, t_bi_list **stack_b, t_sort_tool sort_tool
 		rotate_a(stack_a, sort_tool.output_flag);
 	else if (len == 2)
 	{
-		if ((*stack_a)->next->data == min)
-		{
-			rotate_a(stack_a, sort_tool.output_flag);
-			rotate_a(stack_a, sort_tool.output_flag);
-		}
-		else
-		{
-			swap_a(*stack_a, sort_tool.output_flag);
-			rotate_a(stack_a, sort_tool.output_flag);
-			rotate_a(stack_a, sort_tool.output_flag);
-		}
+		partition_a_operations(stack_a, sort_tool, min);
+		// if ((*stack_a)->next->data == min)
+		// {
+		// 	rotate_a(stack_a, sort_tool.output_flag);
+		// 	rotate_a(stack_a, sort_tool.output_flag);
+		// }
+		// else
+		// {
+		// 	swap_a(*stack_a, sort_tool.output_flag);
+		// 	rotate_a(stack_a, sort_tool.output_flag);
+		// 	rotate_a(stack_a, sort_tool.output_flag);
+		// }
 	}
 	else if (len > 2)
 		partition_to_b(stack_a, stack_b, pivot_list, sort_tool);
