@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:36:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:36:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int	stack_b_not_sorted(t_bi_list **stack_a, t_bi_list **stack_b, t_pivot_list **
 				push_a(stack_a, stack_b, sort_tool.output_flag);
 			else
 				rotate_b(stack_b, sort_tool.output_flag);
-			// i++;
 		}
 		return (0);
 	}
