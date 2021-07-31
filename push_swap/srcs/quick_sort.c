@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 19:50:54 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 16:59:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/07/31 16:59:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b,
 	t_pivot_list **pivot_list, t_sort_tool sort_tool)
 {
 	int	i;
-	// int	max;
 	int	pivot;
 	int	count;
 	int	min;
@@ -82,7 +81,6 @@ void	partition_to_b(t_bi_list **stack_a, t_bi_list **stack_b,
 
 	min = stack_min_limit(*stack_a, sort_tool.all_min, pivot_list);
 	len = stack_len_limit(*stack_a, sort_tool.all_min, pivot_list);
-	// max = stack_max(*stack_a);
 	if (sort_tool.sorted_list == NULL)
 		pivot = find_pivot(*stack_a, min, stack_max(*stack_a), len);
 	else
