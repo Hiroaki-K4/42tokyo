@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 14:05:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:06:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,13 @@ void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
 int	main(int argc, char *argv[])
 {
 	int			i;
+	int			j;
+	int			args_count;
 	t_bi_list	*stack_a;
 	t_bi_list	*stack_b;
+	char		**arg_split;
 
+	printf("argc: %d argv: %s\n", argc, argv[1]);
 	stack_a = (t_bi_list *)malloc(sizeof(t_bi_list));
 	if (!stack_a)
 		exit(1);
@@ -87,15 +91,32 @@ int	main(int argc, char *argv[])
 	if (!stack_b)
 		exit(1);
 	stack_init(&stack_a);
-	stack_init(&stack_b);
+	stack_init(&stack_b);	
+	args_count = 0;
 	i = 0;
 	while (++i < argc)
 	{
-		if (digit_check(argv[i]) == -1)
-			error_process();
-		add_stack(&stack_a, ft_atoi(argv[i]));
+		arg_split = ft_split(argv[i], ' ');
+		j = 0;
+		while (arg_split[j])
+		{
+			printf("split: %s\n", arg_split[j]);
+			if (digit_check(arg_split[j]) == -1)
+				error_process();
+			add_stack(&stack_a, ft_atoi(arg_split[j]));
+			j++;
+		}
+		args_count += j;
 	}
-	if (duplicate_check(argc, argv) == 1)
+	// while (stack_a->next != NULL)
+	// {
+	// 	printf("data: %d\n", stack_a->next->data);
+	// 	stack_a = stack_a->next;
+	// }
+	printf("args_count: %d\n", args_count);
+	// if (duplicate_check(argc, argv) == 1)
+		// error_process();
+	if (duplicate_check(args_count, stack_a) == 1)
 		error_process();
 	switch_by_args_num(argc, argv, &stack_a, &stack_b);
 	free_stack(&stack_a);

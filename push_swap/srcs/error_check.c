@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 20:32:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/07 22:16:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:09:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,54 @@ int	digit_check(const char *arg)
 	return (0);
 }
 
-int	duplicate_check(int argc, char *argv[])
+// int	duplicate_check(int argc, char *argv[])
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 1;
+// 	while (i < argc)
+// 	{
+// 		j = i + 1;
+// 		while (j < argc)
+// 		{
+// 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+// 				return (1);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+int	duplicate_check(int args_count, t_bi_list *stack)
 {
+	int	*args_list;
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc)
+	args_list = (int *)malloc(sizeof(int) * args_count);
+	if (!args_list)
+		exit(1);
+	i = 0;
+	while (stack->next != NULL)
+	{
+		args_list[i] = stack->next->data;
+		stack = stack->next;
+		i++;
+	}
+	i = 0;
+	while (i < args_count)
 	{
 		j = i + 1;
-		while (j < argc)
+		while (j < args_count)
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (args_list[i] == args_list[j])
 				return (1);
 			j++;
 		}
 		i++;
 	}
+	free(args_list);
 	return (0);
 }
