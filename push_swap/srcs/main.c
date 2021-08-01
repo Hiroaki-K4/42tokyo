@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 15:25:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:30:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ int	add_args(int argc, char *argv[], t_bi_list **stack)
 	return (args_count);
 }
 
-void	switch_by_args_num(int argc, char *argv[], t_bi_list **stack_a,
+void	switch_by_args_num(int argc, char *argv[], int args_count, t_bi_list **stack_a,
 	t_bi_list **stack_b)
 {
 	int			*sorted_list;
 	t_bi_list	*stack_tmp;
 
-	if (argc < 7)
-		few_args_process(argc, stack_a, stack_b);
+	if (args_count + 1 < 7)
+		few_args_process(args_count + 1, stack_a, stack_b);
 	else
 	{
 		stack_tmp = (t_bi_list *)malloc(sizeof(t_bi_list));
@@ -117,7 +117,7 @@ int	main(int argc, char *argv[])
 	args_count = add_args(argc, argv, &stack_a);
 	if (duplicate_check(args_count, stack_a) == 1)
 		error_process();
-	switch_by_args_num(argc, argv, &stack_a, &stack_b);
+	switch_by_args_num(argc, argv, args_count, &stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
