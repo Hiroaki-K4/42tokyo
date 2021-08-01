@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 15:24:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:25:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	add_args(int argc, char *argv[], t_bi_list **stack)
 	while (++i < argc)
 	{
 		arg_split = ft_split(argv[i], ' ');
+		if (!arg_split)
+			exit(1);
 		j = 0;
 		while (arg_split[j])
 		{
