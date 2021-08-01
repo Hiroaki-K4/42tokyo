@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 11:52:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 11:53:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -524,22 +524,22 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	return (len);
 // }
 
-int		str_to_num(const char *arg, int *i)
-{
-	int	num;
-	int	j;
+// int		str_to_num(const char *arg, int *i)
+// {
+// 	int	num;
+// 	int	j;
 
-	num = ft_atoi(arg);
-	if (num >= 0)
-	{
-		j = 0;
-		while (ft_isdigit(arg[j++]))
-			(*i)++;
-	}
-	else
-		num = -1;
-	return (num);
-}
+// 	num = ft_atoi(arg);
+// 	if (num >= 0)
+// 	{
+// 		j = 0;
+// 		while (ft_isdigit(arg[j++]))
+// 			(*i)++;
+// 	}
+// 	else
+// 		num = -1;
+// 	return (num);
+// }
 
 int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
@@ -698,23 +698,23 @@ int print_string(va_list *ap, t_plist flag_list)
 	return (len);
 }
 
-// int str_to_num(const char *arg, int *i)
-// {
-// 	int num;
-// 	int j;
+int str_to_num(const char *arg, int *i)
+{
+	int num;
+	int j;
 
-// 	num = ft_atoi(arg);
-// 	if (num >= 0)
-// 	{
-// 		j = 0;
-// 		while (ft_isdigit(arg[j++]))
-// 			(*i)++;
-// 		return (j);
-// 	}
-// 	else
-// 		num = -1;
-// 	return (num);
-// }
+	num = ft_atoi(arg);
+	if (num >= 0)
+	{
+		j = 0;
+		while (ft_isdigit(arg[j++]))
+			(*i)++;
+		return (j);
+	}
+	else
+		num = -1;
+	return (num);
+}
 
 // int ft_printf_per(const char *arg, int *i, va_list *ap)
 // {
