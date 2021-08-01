@@ -2,7 +2,8 @@
 
 make re
 echo "2~5"
-./push_swap 7 4
+# ./push_swap 7 4
+ARG="7 4"; ./push_swap $ARG | ./checker $ARG
 # ./push_swap 1 2 3 4 5
 # ./push_swap 4 5 2 3 1 6
 # ARG="4 5 2 3 1 6"; ./push_swap $ARG | wc -l
