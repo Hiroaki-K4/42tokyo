@@ -7,7 +7,7 @@ make re
 ps --no-heading -C server -o pid
 # ./client pid
 echo ${pid}
-kill ${pid}
+kill pid
 make fclean
 cd ..
 sh git.sh $*
