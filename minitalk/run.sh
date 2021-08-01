@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# make re
+make re
 # # gcc server.c -o server
 # # gcc client.c -o client
 # ./server &
