@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/11 22:45:38 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/29 09:37:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	unsigned char		*p_dest;
+	unsigned char const	*p_src;
+
+	p_dest = (unsigned char *)(dest);
+	p_src = (unsigned char const *)(src);
+	while (n > 0)
+	{
+		*p_dest++ = *p_src++;
+		n--;
+	}
+	return (dest);
 }

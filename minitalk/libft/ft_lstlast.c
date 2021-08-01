@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/29 13:15:09 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/05 17:14:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+t_list	*ft_lstlast(t_list *lst)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	if (lst)
+	{
+		while (lst->next != NULL)
+			lst = lst->next;
+	}
+	return (lst);
 }

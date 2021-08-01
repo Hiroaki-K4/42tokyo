@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/29 14:07:08 by hkubo             #+#    #+#             */
+/*   Updated: 2020/11/29 14:38:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	if (lst)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
 }

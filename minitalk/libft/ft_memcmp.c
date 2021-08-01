@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/14 13:59:30 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/05 17:14:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	unsigned char		*ptr_s1;
+	unsigned const char	*ptr_s2;
+	size_t				i;
+
+	ptr_s1 = (unsigned char *)s1;
+	ptr_s2 = (unsigned const char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr_s1[i] != ptr_s2[i])
+			return (ptr_s1[i] - ptr_s2[i]);
+		i++;
+	}
+	return (0);
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/29 10:17:07 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/05 17:09:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+t_list	*ft_lstnew(void *content)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	t_list	*new_list;
+
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
+		return (NULL);
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
 }

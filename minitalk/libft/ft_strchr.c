@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/14 14:42:16 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/05 17:15:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+char	*ft_strchr(const char *s, int c)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	unsigned char const	*ptr_s;
+	int					i;
+
+	ptr_s = (unsigned char const *)s;
+	i = 0;
+	while (ptr_s[i] != '\0')
+	{
+		if (ptr_s[i] == (unsigned char)c)
+			return ((char *)(s + i));
+		i++;
+	}
+	if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }

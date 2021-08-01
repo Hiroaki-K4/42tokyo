@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:15:43 by hkubo            ###   ########.fr       */
+/*   Created: 2020/11/16 23:00:21 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/20 10:25:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+char	*ft_strdup(const char *s)
 {
-	printf("argc: %d\n", argc);
-    // kill(atoi(argv[1]), SIGUSR1);
-    kill(atoi(argv[1]), SIGUSR2);
-    return 0;
+	char	*new_ptr;
+	int		i;
+	int		size;
+
+	if (!s)
+		return (NULL);
+	size = 0;
+	while (s[size] != '\0')
+		size++;
+	new_ptr = (char *)malloc(sizeof(char) * (size + 1));
+	if (!new_ptr)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		new_ptr[i] = s[i];
+		i++;
+	}
+	new_ptr[i] = '\0';
+	return (new_ptr);
 }
