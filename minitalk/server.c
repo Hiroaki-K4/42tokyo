@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:22:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 22:34:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	sigusr1_handler(int sig, siginfo_t *info, void *ucontext)
 	printf("sigusr1_handler: %d\n", sig);
 	printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
 	printf("si_pid: %d si_uid: %d\n", (int)info->si_pid, (int)info->si_uid);
+	exit(1);
 }
 
 void	sigusr2_handler(int sig, siginfo_t *info, void *ucontext)
@@ -26,6 +27,7 @@ void	sigusr2_handler(int sig, siginfo_t *info, void *ucontext)
 	printf("sigusr2_handler: %d\n", sig);
 	printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
 	printf("si_pid: %d si_uid: %d\n", (int)info->si_pid, (int)info->si_uid);
+	exit(1);
 }
 
 int	main(int argc, char *argv[])
