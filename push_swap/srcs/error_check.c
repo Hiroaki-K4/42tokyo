@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 20:32:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 15:36:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:37:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,16 @@ int	duplicate_check(int args_count, t_bi_list *stack)
 	{
 		args_list[++i] = stack->next->data;
 		stack = stack->next;
-		// i++;
 	}
-	i = 0;
-	while (i < args_count)
+	i = -1;
+	while (++i < args_count)
 	{
-		j = i + 1;
-		while (j < args_count)
+		j = i;
+		while (++j < args_count)
 		{
 			if (args_list[i] == args_list[j])
 				return (1);
-			j++;
 		}
-		i++;
 	}
 	free(args_list);
 	return (0);

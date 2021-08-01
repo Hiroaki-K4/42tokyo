@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:15:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/07/31 15:18:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 15:47:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,20 @@ void	min_to_top(t_bi_list **stack_a)
 	}
 }
 
-void	args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int argc)
+void	args_under_six(t_bi_list **stack_a, t_bi_list **stack_b, int args_count)
 {
 	int	i;
 
-	i = 4;
-	while (i < argc)
+	i = 3;
+	while (i < args_count)
 	{
 		min_to_top(stack_a);
 		push_b(stack_a, stack_b, 1);
 		i++;
 	}
 	sort_three(stack_a);
-	i = 4;
-	while (i < argc)
+	i = 3;
+	while (i < args_count)
 	{
 		push_a(stack_a, stack_b, 1);
 		i++;
