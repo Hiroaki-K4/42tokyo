@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 13:51:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 13:52:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,15 @@ void	make_sorted_list(t_bi_list *stack, int **sorted_list)
 void	few_args_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 {
 	if (argc <= 2)
+	{
+		printf("ok1\n");
 		return ;
+	}
 	else if (sorted_check((*stack_a)->next) == 0)
+	{
+		printf("ok2\n");
 		return ;
+	}
 	else if (argc == 3)
 	{
 		printf("ok\n");
