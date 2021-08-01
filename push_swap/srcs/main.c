@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:51:51 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 13:54:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 13:54:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	few_args_process(int argc, t_bi_list **stack_a, t_bi_list **stack_b)
 	}
 	else if (argc == 3)
 	{
-		printf("ok\n");
+		// printf("ok\n");
 		if ((*stack_a)->next->data > (*stack_a)->next->next->data)
 			swap_a(*stack_a, 1);
 	}
