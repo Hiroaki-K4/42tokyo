@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 11:53:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 11:54:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -709,7 +709,6 @@ int str_to_num(const char *arg, int *i)
 		j = 0;
 		while (ft_isdigit(arg[j++]))
 			(*i)++;
-		return (j);
 	}
 	else
 		num = -1;
