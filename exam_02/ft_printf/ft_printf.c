@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 11:35:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/01 11:43:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -623,6 +623,33 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	return (print_len);
 // }
 
+int print_digit(t_plist flag_list, char *str_num, int num, int keta)
+{
+	int len;
+
+	len = 0;
+	if (num == 0 && flag_list.precision == 0)
+	{
+		while (flag_list.field - (len++) > 0)
+			write(1, " ", 1);
+	}
+	else if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > keta)
+			len = field_precision(flag_list, str_num, num, keta);
+		else
+		{
+			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
+				write(1, " ", 1);
+			write(1, str_num, ft_strlen(str_num));
+			len = flag_list.field;
+		}
+	}
+	else
+		len = no_field_int(flag_list, str_num, num, keta);
+	return (len);
+}
+
 int print_string(va_list *ap, t_plist flag_list)
 {
 	int i;
@@ -755,7 +782,7 @@ int ft_printf(const char *arg, ...)
 	print_len = 0;
 	if (arg == NULL)
 		i = -1;
-	while (i >= 0)
+	while (i >= 0 && arg[i])
 	{
 		if (arg[i] != '%')
 			print_len += ft_printf_str(arg, &i);
