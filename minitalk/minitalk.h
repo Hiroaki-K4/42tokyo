@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 22:05:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/01 22:05:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/02 23:01:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,4 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
+#include "libft/libft.h"

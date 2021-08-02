@@ -5,7 +5,6 @@ make re
 # # gcc client.c -o client
 ./server &
 ps --no-heading -C server -o pid
-echo "aaa"
 ./client pid
 # echo ${pid}
 # kill ${pid}
