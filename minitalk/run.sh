@@ -5,7 +5,7 @@ make re
 # # gcc client.c -o client
 ./server &
 ps --no-heading -C server -o pid
-./client pid
+./client pid Hello
 # echo ${pid}
 # kill ${pid}
 make fclean
