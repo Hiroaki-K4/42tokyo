@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/03 23:02:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/03 23:24:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void    send_char(pid_t pid, char c)
         usleep(50);
         bit = (uc >> i) & 0x01;
         if (kill(pid, SIGUSR1 + bit) == -1)
-            fatal("kill error");
-        printf("ok\n");
+            printf("kill error\n");
         i++;
     }
 }

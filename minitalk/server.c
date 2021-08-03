@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/02 23:16:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/03 23:10:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ int	main(int argc, char *argv[])
 	sigusr.sa_sigaction = sigusr_handler;
 	sigemptyset(&sigusr.sa_mask);
 	sigusr.sa_flags = SA_SIGINFO;
+	// while (1)
+	// {
 	if (sigaction(SIGUSR1, &sigusr, NULL) < 0)
-		exit(1);
+		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
-		exit(1);
+		printf("error2\n");
+	// }
 	while (1);
     return (0);
 }
