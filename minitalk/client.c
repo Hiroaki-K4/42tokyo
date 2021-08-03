@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/03 22:58:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/03 23:02:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void    send_char(pid_t pid, char c)
     {
         usleep(50);
         bit = (uc >> i) & 0x01;
-        if (kill(pd, SIGUSR1 + bit) == -1)
-            exit(1);
+        if (kill(pid, SIGUSR1 + bit) == -1)
+            fatal("kill error");
+        printf("ok\n");
         i++;
     }
 }
@@ -35,6 +36,6 @@ int main(int argc, char *argv[])
 	printf("argc: %d word: %s\n", argc, argv[2]);
     // kill(ft_atoi(argv[1]), SIGUSR1);
     // kill(ft_atoi(argv[1]), SIGUSR2);
-    send_char(argv[2][0]);
+    send_char(ft_atoi(argv[1]), argv[2][0]);
     return 0;
 }
