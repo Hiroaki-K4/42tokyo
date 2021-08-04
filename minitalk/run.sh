@@ -7,7 +7,7 @@ make re
 pid=$(ps --no-heading -C server -o pid)
 ./client $pid Hello
 # echo ${pid}
-# kill ${pid}
+kill $pid
 make fclean
 cd ..
 sh git.sh $*
