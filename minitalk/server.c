@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/05 23:06:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/05 23:06:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 			end_pos = i;
 			continue;
 		}
-		
+		i++;
 	}
 	printf("end_pos: %d\n", end_pos);
 	if (sig == 10)
