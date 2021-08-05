@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/05 23:16:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/05 23:17:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char *argv[])
 	sigusr.sa_sigaction = sigusr_handler;
 	sigemptyset(&sigusr.sa_mask);
 	sigusr.sa_flags = SA_SIGINFO;
-	bit_store[7] = -1;
+	bit_store[0] = -1;
 	if (sigaction(SIGUSR1, &sigusr, NULL) < 0)
 		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
