@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/06 08:45:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/06 08:46:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,7 +250,6 @@ char	*ft_strdup(const char *s)
 int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
 	int i;
-	int len;
 	int keta;
 	char *tmp;
 
