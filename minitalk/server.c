@@ -6,14 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/03 23:10:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/05 22:54:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
+int	bit_store[8];
+
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
+	printf("bit_store: %d\n", bit_store[0]);
 	if (sig == 10)
 		printf("SIGUSR1\n");
 	else if (sig == 12)
@@ -31,13 +34,11 @@ int	main(int argc, char *argv[])
 	sigusr.sa_sigaction = sigusr_handler;
 	sigemptyset(&sigusr.sa_mask);
 	sigusr.sa_flags = SA_SIGINFO;
-	// while (1)
-	// {
+	bit_store[0] = -1;
 	if (sigaction(SIGUSR1, &sigusr, NULL) < 0)
 		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
 		printf("error2\n");
-	// }
 	while (1);
     return (0);
 }
