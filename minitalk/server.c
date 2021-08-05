@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/05 23:13:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/05 23:13:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	i = 0;
 	while (bit_store[i] != -1)
 	{
-		printf(bit_store[i]);
+		printf("%d", bit_store[i]);
 		i++;
 	}
 	printf("\n");
