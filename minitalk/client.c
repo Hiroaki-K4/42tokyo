@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 22:49:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:54:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void    send_char(pid_t pid, char c)
     i = 0;
     while (i < 7)
     {
-        // sleep(1/100);
-        usleep(50);
+        sleep(1/100);
         bit = (uc >> i) & 1;
         if (bit == 0)
         {
@@ -44,11 +43,13 @@ void    send_char(pid_t pid, char c)
 int main(int argc, char *argv[])
 {
     int i;
-	printf("argc: %d word: %s\n", argc, argv[2]);
+
+	// printf("argc: %d word: %s\n", argc, argv[2]);
     i = 0;
     while (i < (int)ft_strlen(argv[2]))
     {
         send_char(ft_atoi(argv[1]), argv[2][i]);
+        sleep(1/100);
         i++;
     }
     // send_char(ft_atoi(argv[1]), argv[2][0]);
