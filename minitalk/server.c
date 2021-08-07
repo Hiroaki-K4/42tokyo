@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 15:49:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 17:06:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,21 @@
 
 int	bit_store[8];
 
+void	init_bit_store()
+{
+	int	i;
+
+	i = 0;
+	while (i < 8)
+	{
+		bit_store[i] = -1;
+		i++;
+	}
+}
+
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	// int	i;
+	int	i;
 	// int	end_pos;
 	int	new_bit;
 
@@ -26,6 +38,13 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	else if (sig == 12)
 		new_bit = 1;
 	printf("new_bit: %d\n", new_bit);
+	init_bit_store();
+	i = 7;
+	while (i >= 0)
+	{
+		printf("%d", bit_store[i]);
+		i--;
+	}
 	// end_pos = -1;
 	// i = 0;
 	// while (i < 7)
