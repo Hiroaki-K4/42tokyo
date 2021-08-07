@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 22:17:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:17:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 int	main(int argc, char *argv[])
 {
 	// printf("argc: %d argv[0] %s\n", argc, argv[0]);
+	void(argc);
+	void(argv);
 	struct sigaction sigusr;
 	ft_bzero(&sigusr, sizeof(struct sigaction));
 	sigusr.sa_sigaction = sigusr_handler;
