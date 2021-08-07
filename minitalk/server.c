@@ -6,15 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:39:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 21:40:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
 int	bit_store[8];
-#define UNUSED(x) ((void)x)
-
 
 void	init_bit_store()
 {
