@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 18:37:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 20:46:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	bit_to_ascii()
 	i = 0;
 	while (i < 7)
 	{
-		// ascii += 2 ** (6 - i) * bit_store[i];
 		ascii += binary_pow(2, 6 - i) * bit_store[i];
 		i++;
 	}
@@ -76,7 +75,8 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	int	i;
 	int	end_pos;
 	int	new_bit;
-	int	ascii;
+	int	ascii_num;
+	char ascii_char;
 
 	if (sig == 10)
 		new_bit = 0;
@@ -90,8 +90,10 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	else if (end_pos == 0)
 	{
 		bit_store[end_pos] = new_bit;
-		ascii = bit_to_ascii();
-		printf("ascii: %d\n", ascii);
+		ascii_num = bit_to_ascii();
+		ascii_char = ascii_num;
+		printf("ascii: %d\n", ascii_num);
+		printf("ascii: %c\n", ascii_char);
 	}
 	else
 		bit_store[end_pos] = new_bit;
