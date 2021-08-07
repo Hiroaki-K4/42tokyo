@@ -6,12 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 22:29:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:31:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-// #include <ucontext.h>
 
 int	bit_store[8];
 
@@ -124,6 +123,6 @@ int	main(int argc, char *argv[])
 		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
 		printf("error2\n");
-	while (1);
+	while (1)
     return (0);
 }
