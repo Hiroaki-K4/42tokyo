@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 17:23:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 17:24:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_bit_store()
 	}
 }
 
-void	get_end_pos()
+int	get_end_pos()
 {
 	int	i;
 
