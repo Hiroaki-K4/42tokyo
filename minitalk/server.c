@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 17:39:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 17:55:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	get_end_pos()
 
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	// int	i;
+	int	i;
 	int	end_pos;
 	int	new_bit;
 
@@ -54,8 +54,18 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	printf("new_bit: %d\n", new_bit);
 	end_pos = get_end_pos();
 	printf("end_pos: %d\n", end_pos);
-	init_bit_store();
-	
+	if (end_pos == -1)
+		init_bit_store();
+	else
+	{
+		bit_store[end_pos] = new_bit;
+	}
+	i = 6;
+	while (i >= 0)
+	{
+		printf("%i", bit_store[i]);
+		i--;
+	}
 	// end_pos = -1;
 	// i = 0;
 	// while (i < 7)
@@ -96,7 +106,7 @@ int	main(int argc, char *argv[])
 	sigusr.sa_sigaction = sigusr_handler;
 	sigemptyset(&sigusr.sa_mask);
 	sigusr.sa_flags = SA_SIGINFO;
-	bit_store[0] = -1;
+	init_bit_store();
 	if (sigaction(SIGUSR1, &sigusr, NULL) < 0)
 		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
