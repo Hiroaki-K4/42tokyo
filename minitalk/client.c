@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:03:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:20:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int main(int argc, char *argv[])
         sleep(1/100);
         i++;
     }
+    write(1, "\n", 1);
     // send_char(ft_atoi(argv[1]), argv[2][0]);
     return (0);
 }
