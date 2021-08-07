@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/05 23:12:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 20:48:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ void    send_char(pid_t pid, char c)
 
 int main(int argc, char *argv[])
 {
+    int i;
 	printf("argc: %d word: %s\n", argc, argv[2]);
-    // kill(ft_atoi(argv[1]), SIGUSR1);
-    // kill(ft_atoi(argv[1]), SIGUSR2);
-    send_char(ft_atoi(argv[1]), argv[2][0]);
-    return 0;
+    i = 0;
+    while (i < ft_strlen(argv[2]))
+    {
+        send_char(ft_atoi(argv[1]), argv[2][i]);
+        i++;
+    }
+    // send_char(ft_atoi(argv[1]), argv[2][0]);
+    return (0);
 }
