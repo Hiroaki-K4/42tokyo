@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 20:58:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 20:58:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 		i++;
 	}
 	info->si_signo = 1;
-	ucontext = NULL;
+	ucontext = 0;
 	// printf("ucontext: %p\n", ucontext);
 	// printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
 }
