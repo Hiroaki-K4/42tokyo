@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:56:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:09:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 
 	(void)info;
 	(void)ucontext;
-	// printf("ok\n");
+	printf("ok\n");
 	if (sig == 10)
 		new_bit = 0;
 	else if (sig == 12)
@@ -131,6 +131,9 @@ int	main(int argc, char *argv[])
 		printf("error1\n");
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
 		printf("error2\n");
-	while (1);
+	while (1)
+	{
+		
+	};
     return (0);
 }
