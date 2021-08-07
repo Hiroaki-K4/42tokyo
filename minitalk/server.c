@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/05 23:19:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 15:49:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,30 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	else if (sig == 12)
 		new_bit = 1;
 	printf("new_bit: %d\n", new_bit);
-	end_pos = -1;
-	i = 0;
-	while (i < 7)
-	{
-		if (bit_store[i] == -1)
-		{
-			end_pos = i;
-			continue;
-		}
-		i++;
-	}
-	while (end_pos >= 0)
-	{
-		bit_store[end_pos + 1] = bit_store[end_pos];
-		end_pos--;
-	}
-	bit_store[0] = new_bit;
-	i = 0;
-	while (bit_store[i] != -1)
-	{
-		printf("%d", bit_store[i]);
-		i++;
-	}
-	printf("\n");
+	// end_pos = -1;
+	// i = 0;
+	// while (i < 7)
+	// {
+	// 	if (bit_store[i] == -1)
+	// 	{
+	// 		end_pos = i;
+	// 		continue;
+	// 	}
+	// 	i++;
+	// }
+	// while (end_pos >= 0)
+	// {
+	// 	bit_store[end_pos + 1] = bit_store[end_pos];
+	// 	end_pos--;
+	// }
+	// bit_store[0] = new_bit;
+	// i = 0;
+	// while (bit_store[i] != -1)
+	// {
+	// 	printf("%d", bit_store[i]);
+	// 	i++;
+	// }
+	// printf("\n");
 	// if (sig == 10)
 	// 	printf("SIGUSR1\n");
 	// else if (sig == 12)
