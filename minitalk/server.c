@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 20:46:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 20:49:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 		new_bit = 0;
 	else if (sig == 12)
 		new_bit = 1;
-	printf("new_bit: %d\n", new_bit);
+	// printf("new_bit: %d\n", new_bit);
 	end_pos = get_end_pos();
-	printf("end_pos: %d\n", end_pos);
+	// printf("end_pos: %d\n", end_pos);
 	if (end_pos == -1)
 		init_bit_store();
 	else if (end_pos == 0)
