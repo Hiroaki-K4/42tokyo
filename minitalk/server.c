@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 22:14:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:16:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 
 	(void)info;
 	(void)ucontext;
-	// printf("ok\n");
 	if (sig == 10)
 		new_bit = 0;
 	else if (sig == 12)
@@ -98,10 +97,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	{
 		bit_store[end_pos] = new_bit;
 		ascii_num = bit_to_ascii();
-		ascii_char = ascii_num;
-		// printf("ascii: %d\n", ascii_num);
-		// printf("ascii_char: %c\n", ascii_char);
-		// printf("~~~~~~~~~~~~~~~~~~~~~");
+		ascii_char = (char)ascii_num;
 		write(1, &ascii_char, 1);
 	}
 	else
@@ -112,10 +108,6 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	// 	printf("%i", bit_store[i]);
 	// 	i++;
 	// }
-	// printf("ok\n");
-	// UNUSED(ucontext);
-	// printf("\nucontext: %p\n", ucontext);
-	// printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
 }
 
 int	main(int argc, char *argv[])
