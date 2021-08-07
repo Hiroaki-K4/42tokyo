@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 20:48:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 20:49:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     int i;
 	printf("argc: %d word: %s\n", argc, argv[2]);
     i = 0;
-    while (i < ft_strlen(argv[2]))
+    while (i < (int)ft_strlen(argv[2]))
     {
         send_char(ft_atoi(argv[1]), argv[2][i]);
         i++;
