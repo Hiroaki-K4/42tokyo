@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:35:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 21:35:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	sigusr_handler(int sig, siginfo_t *info, __attribute__((unused)) void *ucon
 		ascii_char = ascii_num;
 		// printf("ascii: %d\n", ascii_num);
 		// printf("ascii_char: %c\n", ascii_char);
-		printf("~~~~~~~~~~~~~~~~~~~~~")
+		printf("~~~~~~~~~~~~~~~~~~~~~");
 		printf("%c", ascii_char);
 	}
 	else
