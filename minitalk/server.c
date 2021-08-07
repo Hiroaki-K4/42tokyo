@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 18:30:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 18:37:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,21 @@ int	get_end_pos()
 	return (i);
 }
 
+int	binary_pow(int a, int b)
+{
+	int	ans;
+
+	ans = 1;
+	if (b == 0)
+		return (1);
+	while (b > 0)
+	{
+		ans = ans * a;
+		b--;
+	}
+	return (ans);
+}
+
 int	bit_to_ascii()
 {
 	int	i;
@@ -49,7 +64,8 @@ int	bit_to_ascii()
 	i = 0;
 	while (i < 7)
 	{
-		ascii += 2 ** (6 - i) * bit_store[i];
+		// ascii += 2 ** (6 - i) * bit_store[i];
+		ascii += binary_pow(2, 6 - i) * bit_store[i];
 		i++;
 	}
 	return (ascii);
