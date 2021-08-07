@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:36:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 21:36:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	bit_to_ascii()
 	return (ascii);
 }
 
-void	sigusr_handler(int sig, siginfo_t *info, __attribute__((unused)) void *ucontext)
+void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
 	// int	i;
 	int	end_pos;
@@ -113,6 +113,7 @@ void	sigusr_handler(int sig, siginfo_t *info, __attribute__((unused)) void *ucon
 	// printf("ok\n");
 	info->si_signo = 1;
 	// (void)ucontext;
+	UNUSED(ucontext);
 	// printf("\nucontext: %p\n", ucontext);
 	// printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
 }
