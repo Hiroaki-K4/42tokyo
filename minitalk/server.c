@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 15:49:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 15:49:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	bit_store[8];
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
 	int	i;
-	int	end_pos;
+	// int	end_pos;
 	int	new_bit;
 
 	printf("bit_store: %d\n", bit_store[0]);
