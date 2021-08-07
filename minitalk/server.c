@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 17:32:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 17:39:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	get_end_pos()
 	while (i >= 0)
 	{
 		if (bit_store[i] == -1)
-			continue;
+			break;
 		i--;
 	}
 	return (i);
