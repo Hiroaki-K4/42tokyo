@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:03:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 21:04:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,9 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 		bit_store[end_pos] = new_bit;
 		ascii_num = bit_to_ascii();
 		ascii_char = ascii_num;
-		printf("ascii: %d\n", ascii_num);
-		printf("ascii_char: %c\n", ascii_char);
+		// printf("ascii: %d\n", ascii_num);
+		// printf("ascii_char: %c\n", ascii_char);
+		printf("%c", ascii_char);
 	}
 	else
 		bit_store[end_pos] = new_bit;
