@@ -6,11 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 21:46:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 21:52:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+#include <ucontext.h>
 
 int	bit_store[8];
 
@@ -110,7 +111,7 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	// }
 	// printf("ok\n");
 	(void)info;
-	ucontext.getcontext();
+	ucontext.uc_link;
 	// UNUSED(ucontext);
 	// printf("\nucontext: %p\n", ucontext);
 	// printf("signo: %d si_code: %d\n", info->si_signo, info->si_code);
