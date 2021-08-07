@@ -6,12 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/07 22:19:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/07 22:29:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-#include <ucontext.h>
+// #include <ucontext.h>
 
 int	bit_store[8];
 
