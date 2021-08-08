@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 16:13:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 16:52:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	bit_store[8];
 
-void	init_bit_store()
+void	init_bit_store(void)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ void	init_bit_store()
 	}
 }
 
-int	get_end_pos()
+int	get_end_pos(void)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	get_end_pos()
 	while (i >= 0)
 	{
 		if (bit_store[i] == -1)
-			break;
+			break ;
 		i--;
 	}
 	return (i);
@@ -55,10 +55,10 @@ int	binary_pow(int a, int b)
 	return (ans);
 }
 
-int	bit_to_ascii()
+int	bit_to_ascii(void)
 {
 	int	i;
-	int ascii;
+	int	ascii;
 
 	ascii = 0;
 	i = 0;
@@ -72,23 +72,19 @@ int	bit_to_ascii()
 
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	// int	i;
-	int	end_pos;
-	int	new_bit;
-	int	ascii_num;
-	char ascii_char;
+	int		end_pos;
+	int		new_bit;
+	int		ascii_num;
+	char	ascii_char;
 
 	(void)info;
 	(void)ucontext;
 	new_bit = -2;
-	// printf("sig: %d\n", sig);
 	if (sig == 10 || sig == 30)
 		new_bit = 0;
 	else if (sig == 12 || sig == 31)
 		new_bit = 1;
-	// printf("new_bit: %d\n", new_bit);
 	end_pos = get_end_pos();
-	// printf("end_pos: %d\n", end_pos);
 	if (end_pos == -1)
 	{
 		init_bit_store();
@@ -103,19 +99,14 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	}
 	else
 		bit_store[end_pos] = new_bit;
-	// i = 0;
-	// while (i < 7)
-	// {
-	// 	printf("%i", bit_store[i]);
-	// 	i++;
-	// }
 }
 
 int	main(int argc, char *argv[])
 {
+	struct sigaction	sigusr;
+
 	(void)argc;
 	(void)argv;
-	struct sigaction sigusr;
 	ft_bzero(&sigusr, sizeof(struct sigaction));
 	sigusr.sa_sigaction = sigusr_handler;
 	sigemptyset(&sigusr.sa_mask);
@@ -126,6 +117,8 @@ int	main(int argc, char *argv[])
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
 		printf("error2\n");
 	while (1)
-	{}
+	{
+		continue ;
+	}
     return (0);
 }
