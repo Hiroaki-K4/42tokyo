@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 16:20:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 16:20:44 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void    send_char(pid_t pid, char c)
     unsigned char   uc;
 
     uc = (unsigned char)c;
-    // if (uc > 127)
-        // return ;
+    if (uc > 127)
+        return ;
     i = 0;
     while (i < 7)
     {

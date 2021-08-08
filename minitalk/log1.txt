@@ -1,0 +1,17 @@
+==47049== Memcheck, a memory error detector
+==47049== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==47049== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==47049== Command: ./server
+==47049== Parent PID: 46927
+==47049== 
+==47049== 
+==47049== Process terminating with default action of signal 2 (SIGINT)
+==47049==    at 0x109496: main (in /home/hiroaki-k4/my_project/42tokyo/minitalk/server)
+==47049== 
+==47049== HEAP SUMMARY:
+==47049==     in use at exit: 0 bytes in 0 blocks
+==47049==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==47049== 
+==47049== All heap blocks were freed -- no leaks are possible
+==47049== 
+==47049== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
