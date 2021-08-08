@@ -9,7 +9,7 @@ SERVER_NAME = server
 
 CLIENT_SRCS = client.c
 
-SERVER_SRCS = server.c
+SERVER_SRCS = server.c bit_operation.c
 
 CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
 

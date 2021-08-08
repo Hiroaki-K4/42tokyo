@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   bit_operation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 22:05:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 17:07:03 by hkubo            ###   ########.fr       */
+/*   Created: 2021/08/08 17:03:04 by hkubo             #+#    #+#             */
+/*   Updated: 2021/08/08 17:03:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "minitalk.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <signal.h>
-# include <string.h>
-# include "libft/libft.h"
+int	bit_to_ascii(void)
+{
+	int	i;
+	int	ascii;
 
-int	g_bit_store[8];
-
-int	bit_to_ascii(void);
-int	binary_pow(int a, int b);
-
-#endif
+	ascii = 0;
+	i = 0;
+	while (i < 7)
+	{
+		ascii += binary_pow(2, 6 - i) * g_bit_store[i];
+		i++;
+	}
+	return (ascii);
+}

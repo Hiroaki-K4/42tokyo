@@ -6,13 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 17:01:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 17:03:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-int	g_bit_store[8];
 
 void	init_bit_store(void)
 {
@@ -55,21 +53,6 @@ int	binary_pow(int a, int b)
 	return (ans);
 }
 
-int	bit_to_ascii(void)
-{
-	int	i;
-	int	ascii;
-
-	ascii = 0;
-	i = 0;
-	while (i < 7)
-	{
-		ascii += binary_pow(2, 6 - i) * g_bit_store[i];
-		i++;
-	}
-	return (ascii);
-}
-
 void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 {
 	int		end_pos;
@@ -92,7 +75,6 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	else if (end_pos == 0)
 	{
 		g_bit_store[end_pos] = new_bit;
-		// ascii_num = bit_to_ascii();
 		ascii_char = (char)bit_to_ascii();
 		write(1, &ascii_char, 1);
 	}
