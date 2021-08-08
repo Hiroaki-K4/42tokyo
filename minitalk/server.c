@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 19:41:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 19:42:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 
 int	main(int argc, char *argv[])
 {
-	pid_t	pid;
+	char	*pid;
 	struct sigaction	sigusr;
 
 	(void)argc;
 	(void)argv;
-	pid = getpid();
+	pid = ft_itoa((int)getpid());
 	printf("len: %d\n", (int)ft_strlen(ft_itoa(pid)));
 	ft_bzero(&sigusr, sizeof(struct sigaction));
 	sigusr.sa_sigaction = sigusr_handler;
