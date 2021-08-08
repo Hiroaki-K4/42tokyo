@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 17:03:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 19:33:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ int	main(int argc, char *argv[])
 	if (sigaction(SIGUSR2, &sigusr, NULL) < 0)
 		printf("error2\n");
 	while (1)
-	{
 		continue ;
-	}
 	return (0);
 }
