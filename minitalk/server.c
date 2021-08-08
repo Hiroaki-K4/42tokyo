@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 16:52:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 16:54:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	bit_store[8];
+int	g_bit_store[8];
 
 void	init_bit_store(void)
 {
@@ -21,7 +21,7 @@ void	init_bit_store(void)
 	i = 0;
 	while (i < 8)
 	{
-		bit_store[i] = -1;
+		g_bit_store[i] = -1;
 		i++;
 	}
 }
@@ -33,7 +33,7 @@ int	get_end_pos(void)
 	i = 6;
 	while (i >= 0)
 	{
-		if (bit_store[i] == -1)
+		if (g_bit_store[i] == -1)
 			break ;
 		i--;
 	}
@@ -64,7 +64,7 @@ int	bit_to_ascii(void)
 	i = 0;
 	while (i < 7)
 	{
-		ascii += binary_pow(2, 6 - i) * bit_store[i];
+		ascii += binary_pow(2, 6 - i) * g_bit_store[i];
 		i++;
 	}
 	return (ascii);
@@ -88,17 +88,17 @@ void	sigusr_handler(int sig, siginfo_t *info, void *ucontext)
 	if (end_pos == -1)
 	{
 		init_bit_store();
-		bit_store[6] = new_bit;
+		g_bit_store[6] = new_bit;
 	}
 	else if (end_pos == 0)
 	{
-		bit_store[end_pos] = new_bit;
+		g_bit_store[end_pos] = new_bit;
 		ascii_num = bit_to_ascii();
 		ascii_char = (char)ascii_num;
 		write(1, &ascii_char, 1);
 	}
 	else
-		bit_store[end_pos] = new_bit;
+		g_bit_store[end_pos] = new_bit;
 }
 
 int	main(int argc, char *argv[])
@@ -120,5 +120,5 @@ int	main(int argc, char *argv[])
 	{
 		continue ;
 	}
-    return (0);
+	return (0);
 }
