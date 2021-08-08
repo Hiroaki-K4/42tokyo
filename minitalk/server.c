@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:27:23 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 19:40:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 19:40:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	main(int argc, char *argv[])
 
 	(void)argc;
 	(void)argv;
-	pid = get_pid();
+	pid = getpid();
 	printf("len: %d\n", pid);
 	ft_bzero(&sigusr, sizeof(struct sigaction));
 	sigusr.sa_sigaction = sigusr_handler;
