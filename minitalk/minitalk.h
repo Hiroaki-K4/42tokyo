@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 22:05:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 19:49:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 19:50:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MINITALK_H
 
 // # include <stdio.h>
-# include <stdlib.h>
+// # include <stdlib.h>
 # include <signal.h>
 # include <string.h>
 # include "libft/libft.h"
