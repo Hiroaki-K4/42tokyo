@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 18:44:36 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/08 16:59:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/08 19:49:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	send_char(pid_t pid, char c)
 		if (bit == 0)
 		{
 			if (kill(pid, SIGUSR1) == -1)
-				printf("kill error\n");
+				exit(1);
 		}
 		if (bit == 1)
 		{
 			if (kill(pid, SIGUSR2) == -1)
-				printf("kill error\n");
+				exit(1);
 		}
 		i++;
 	}
