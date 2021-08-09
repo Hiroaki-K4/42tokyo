@@ -6,12 +6,18 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:06:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 16:49:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
+
+void	store_fdf_value(t_info *info, char *line)
+{
+	printf("len: %d\n", info->line);
+	printf("fdf: %s\n", line);
+}
 
 void	read_fdf_file(t_info *info, char *path)
 {
@@ -32,9 +38,15 @@ void	read_fdf_file(t_info *info, char *path)
 		if (i == -1)
 			exit(1);
 		count++;
+		store_fdf_value(info, line);
 		printf("line: %s\n", line);
 		free(line);
 	}
+}
+
+void	init_info(t_info *info)
+{
+	info->line = 0;
 }
 
 int	main(int argc, char *argv[])
@@ -43,6 +55,7 @@ int	main(int argc, char *argv[])
 
 	(void)argc;
 	(void)argv;
+	init_info(&info);
 	read_fdf_file(&info, argv[1]);
 	return (0);
 }
