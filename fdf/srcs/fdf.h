@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:51:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 16:55:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 
 typedef struct s_info
 {
-	char	**fdf_list;
-	int		line;
+	int		**fdf_list;
+	int		*col_count;
+	int		row_count;
 }				t_info;
 
 #endif
