@@ -1,5 +1,5 @@
 #Makefile
-NAME = fdfd
+NAME = fdf
 
 .PHONY: all, clean, fclean, re
 
