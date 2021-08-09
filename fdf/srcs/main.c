@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:55:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:59:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,6 @@ void	add_new_row(t_info *info, char *line, char **line_split)
 		i++;
 	}
 	new_fdf_list[i] = new_row;
-	i = 0;
-	while (i < info->row_count)
-	{
-		free(info->fdf_list[i]);
-		i++;
-	}
-	// free(info->fdf_list);
 	info->fdf_list = new_fdf_list;
 }
 
