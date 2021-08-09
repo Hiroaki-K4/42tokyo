@@ -17,14 +17,18 @@ ARFLAGS = rc
 
 LIBFT = libft
 
+MLX = mlx_linux
+
 all: $(NAME)
 
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
+		make -C $(MLX)
 		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)
+	make clean -C $(MLX)
 	rm -f $(OBJS)
 
 fclean: clean
