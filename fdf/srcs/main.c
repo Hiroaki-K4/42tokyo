@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:17:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:17:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_info(t_info *info)
 	info->y_start = info->height * 0.1;
 	info->y_end = info->height * 0.9;
 	printf("width: %d height: %d\n", info->width, info->height);
-	printf("x_start: %d x_end: %d y_start: %d y_end: %d\n", info->width, info->height, info->x_start, info->x_end, info->y_start, info->y_end);
+	printf("x_start: %d x_end: %d y_start: %d y_end: %d\n", info->x_start, info->x_end, info->y_start, info->y_end);
 }
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
