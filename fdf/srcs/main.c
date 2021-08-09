@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:22:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:23:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ void	store_fdf_value(t_info *info, char *line)
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
+	i = 0;
+	while (i < info->row_count)
+	{
+		printf("col_count: %d\n", info->col_count[i]);
+		i++;
+	}
 }
 
 void	read_fdf_file(t_info *info, char *path)
