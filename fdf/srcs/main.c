@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:32:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:32:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int	main(int argc, char *argv[])
 	t_info info;
 
 	(void)argc;
-	(void)argv;
 	init_info(&info);
 	read_fdf_file(&info, argv[1]);
 	return (0);
