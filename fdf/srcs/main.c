@@ -6,12 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:23:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:32:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
+
+void	add_new_row(t_info *info, char *line, char **line_split)
+{
+	
+}
 
 void	store_fdf_value(t_info *info, char *line)
 {
@@ -27,10 +32,7 @@ void	store_fdf_value(t_info *info, char *line)
 		exit(1);
 	count = 0;
 	while (line_split[count] != NULL)
-	{
-		// printf("split: %s\n", line_split[count]);
 		count++;
-	}
 	printf("row: %d\n", count);
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
@@ -45,12 +47,7 @@ void	store_fdf_value(t_info *info, char *line)
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
-	i = 0;
-	while (i < info->row_count)
-	{
-		printf("col_count: %d\n", info->col_count[i]);
-		i++;
-	}
+	add_new_row(info, line, line_split);
 }
 
 void	read_fdf_file(t_info *info, char *path)
