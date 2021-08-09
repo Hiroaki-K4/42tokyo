@@ -6,11 +6,12 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:05:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 16:05:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include <stdio.h>
 
 void	read_fdf_file(t_info *info, char *path)
 {
