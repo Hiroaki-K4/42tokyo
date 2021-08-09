@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 19:55:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 19:57:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 
+typedef struct s_img
+{
+	void	*img;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+	int		img_width;
+	int		img_height;
+}				t_img;
+
 typedef struct s_info
 {
 	int		**fdf_list;
@@ -26,6 +37,7 @@ typedef struct s_info
 	int		height;
 	void	*mlx;
 	void	*win;
+	t_img	img;
 }				t_info;
 
 #endif
