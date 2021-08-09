@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:49:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 16:50:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	store_fdf_value(t_info *info, char *line)
 {
 	printf("len: %d\n", info->line);
 	printf("fdf: %s\n", line);
+	
 }
 
 void	read_fdf_file(t_info *info, char *path)
