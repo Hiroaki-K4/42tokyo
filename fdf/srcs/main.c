@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:32:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:38:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 
 void	add_new_row(t_info *info, char *line, char **line_split)
 {
-	
+	int	i;
+
+	(void)info;
+	(void)line;
+	i = 0;
+	while (!line_split[i])
+	{
+		printf("split: %s\n", line_split[i]);
+		i++;
+	}
 }
 
 void	store_fdf_value(t_info *info, char *line)
