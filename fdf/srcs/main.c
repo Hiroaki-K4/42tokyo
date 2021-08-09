@@ -6,21 +6,19 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 18:01:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 18:20:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
 
-void	add_new_row(t_info *info, char *line, char **line_split)
+void	add_new_row(t_info *info, char **line_split)
 {
 	int	i;
 	int	*new_row;
 	int	**new_fdf_list;
 
-	(void)info;
-	(void)line;
 	printf("row_count: %d\n", info->row_count);
 	new_row = (int *)malloc(sizeof(int) * (info->col_count[info->row_count]));
 	if (!new_row)
@@ -73,7 +71,7 @@ void	store_fdf_value(t_info *info, char *line)
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
-	add_new_row(info, line, line_split);
+	add_new_row(info, line_split);
 }
 
 void	read_fdf_file(t_info *info, char *path)
@@ -83,7 +81,6 @@ void	read_fdf_file(t_info *info, char *path)
 	int		fd;
 	char	*line;
 
-	(void)info;
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		exit(1);
@@ -117,6 +114,11 @@ void	init_info(t_info *info)
 	info->row_count = 0;
 }
 
+void	draw(t_info *info)
+{
+	(void)info;
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -124,5 +126,6 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	init_info(&info);
 	read_fdf_file(&info, argv[1]);
+	draw(info);
 	return (0);
 }
