@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:56:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 16:56:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	store_fdf_value(t_info *info, char *line)
 {
-	printf("len: %d\n", info->line_count);
+	printf("len: %d\n", info->row_count);
 	printf("fdf: %s\n", line);
 	
 }
@@ -47,7 +47,7 @@ void	read_fdf_file(t_info *info, char *path)
 
 void	init_info(t_info *info)
 {
-	info->line_count = 0;
+	info->row_count = 0;
 }
 
 int	main(int argc, char *argv[])
