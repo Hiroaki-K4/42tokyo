@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:15:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:21:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ typedef struct s_info
 	int		height;
 	int		x_start;
 	int		x_end;
+	int		x_step;
 	int		y_start;
 	int		y_end;
+	int		y_step;
 	void	*mlx;
 	void	*win;
 	t_data	img;
