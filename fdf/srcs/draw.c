@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minilibx_utils.c                                   :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:38:48 by hkubo            ###   ########.fr       */
+/*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
+/*   Updated: 2021/08/09 21:38:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	win_close(t_info *info)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	(void)info;
-	exit(1);
-	return (0);
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
 
-int	key_press(int key, t_info *info)
+
+void	draw(t_info *info)
 {
-	(void)info;
-	if (key == K_ESC)
-		exit(1);
-	return (0);
+	my_mlx_pixel_put(&info->img, 5, 5, 0x00FF0000);
+	my_mlx_pixel_put(&info->img, 10, 10, 0x00FF0000);
 }
