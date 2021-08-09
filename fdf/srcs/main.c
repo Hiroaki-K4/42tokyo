@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:07:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:19:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 void	store_fdf_value(t_info *info, char *line)
 {
 	int	i;
+	int	count;
+	int	*col_count;
 	char **line_split;
 
 	printf("len: %d\n", info->row_count);
@@ -23,13 +25,25 @@ void	store_fdf_value(t_info *info, char *line)
 	line_split = ft_split(line, ' ');
 	if (!line_split)
 		exit(1);
-	i = 0;
-	while (line_split[i] != NULL)
+	count = 0;
+	while (line_split[count] != NULL)
 	{
-		printf("split: %s\n", line_split[i]);
+		printf("split: %s\n", line_split[count]);
+		count++;
+	}
+	printf("row: %d\n", count);
+	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
+	if (!col_count)
+		exit(1);
+	i = 0;
+	while (i < info->row_count)
+	{
+		col_count[i] = info->col_count[i];
 		i++;
 	}
-	printf("row: %d\n", i);
+	col_count[i] = count;
+	free(info->row_count);
+	info->row_count = col_count;
 }
 
 void	read_fdf_file(t_info *info, char *path)
