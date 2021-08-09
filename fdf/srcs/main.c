@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:35:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:35:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	get_max_col(t_info *info)
+void	get_x_step(t_info *info)
 {
 	int	i;
 	int	max;
