@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:12:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:19:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,13 @@ void	draw(t_info *info)
 	(void)info;
 }
 
+int	win_close(t_info *info)
+{
+	(void)info;
+	exit(1);
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
@@ -141,6 +148,7 @@ int	main(int argc, char *argv[])
 	info.img.img = mlx_new_image(info.mlx, info.width, info.height);
 	info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
 			&info.img.line_length, &info.img.endian);
+	mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
 	mlx_loop(info.mlx);
 	draw(&info);
 	return (0);
