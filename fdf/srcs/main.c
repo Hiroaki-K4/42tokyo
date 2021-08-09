@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:48:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:53:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	add_new_row(t_info *info, char *line, char **line_split)
 {
 	int	i;
 	int	*new_row;
-	// int	*new_fdf_list;
+	int	*new_fdf_list;
 
 	(void)info;
 	(void)line;
@@ -31,6 +31,19 @@ void	add_new_row(t_info *info, char *line, char **line_split)
 		new_row[i] = ft_atoi(line_split[i]);
 		i++;
 	}
+	new_fdf_list = (int **)malloc(sizeof(int *) * (info->row_count + 1));
+	if (!new_fdf_list)
+		exit(1);
+	i = 0;
+	while (i < info->row_count)
+	{
+		new_fdf_list[i] = info->fdf_list[i];
+		free(info->fdf_list[i]);
+		i++;
+	}
+	new_fdf_list[i] = new_row;
+	free(info->fdf_list);
+	info->fdf_list = new_fdf_list;
 }
 
 void	store_fdf_value(t_info *info, char *line)
