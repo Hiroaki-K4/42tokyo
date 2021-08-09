@@ -6,11 +6,27 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:26:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:35:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	get_max_col(t_info *info)
+{
+	int	i;
+	int	max;
+
+	max = 0;
+	i = 0;
+	while (i < info->row_count)
+	{
+		if (max < info->col_count[i])
+			max = info->col_count[i];
+		i++;
+	}
+	info->x_step = (info->x_end - info->x_start) / info->max;
+}
 
 void	init_info(t_info *info)
 {
@@ -23,11 +39,12 @@ void	init_info(t_info *info)
 	info->height = size_y;
 	info->x_start = info->width * 0.1;
 	info->x_end = info->width * 0.9;
+	get_x_step(info);
 	info->y_start = info->height * 0.1;
 	info->y_end = info->height * 0.9;
 	info->y_step = (info->y_end - info->y_start) / info->row_count;
 	printf("width: %d height: %d\n", info->width, info->height);
-	printf("x_start: %d x_end: %d y_start: %d y_end: %d y_step: %d\n", info->x_start, info->x_end, info->y_start, info->y_end, info->y_step);
+	printf("x_start: %d x_end: %d y_start: %d y_end: %d x_step: %d y_step: %d\n", info->x_start, info->x_end, info->y_start, info->y_end, info->x_step, info->y_step);
 }
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
