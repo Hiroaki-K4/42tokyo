@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:35:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:35:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_max_col(t_info *info)
 			max = info->col_count[i];
 		i++;
 	}
-	info->x_step = (info->x_end - info->x_start) / info->max;
+	info->x_step = (info->x_end - info->x_start) / max;
 }
 
 void	init_info(t_info *info)
