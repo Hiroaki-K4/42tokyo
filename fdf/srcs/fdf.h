@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:26:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 21:15:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ typedef struct s_info
 	int		row_count;
 	int		width;
 	int		height;
+	int		x_start;
+	int		x_end;
+	int		y_start;
+	int		y_end;
 	void	*mlx;
 	void	*win;
 	t_data	img;
