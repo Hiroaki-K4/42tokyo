@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 19:52:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 19:54:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,9 @@ void	init_info(t_info *info)
 	int	size_x;
 	int	size_y;
 
+	// info->win = NULL;
+	// info->img.img = NULL;
+	// info->mlx = NULL;
 	info->row_count = 0;
 	info->mlx = mlx_init();
 	mlx_get_screen_size(info->mlx, &size_x, &size_y);
