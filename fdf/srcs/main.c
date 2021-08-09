@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 18:20:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 19:43:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,15 @@ void	read_fdf_file(t_info *info, char *path)
 
 void	init_info(t_info *info)
 {
+	int	size_x;
+	int	size_y;
+
 	info->row_count = 0;
+	info->mlx = mlx_init();
+	mlx_get_screen_size(info->mlx, &size_x, &size_y);
+	info->width = size_x;
+	info->height = size_y;
+	printf("width: %d height: %d\n", info->width, info->height);
 }
 
 void	draw(t_info *info)
