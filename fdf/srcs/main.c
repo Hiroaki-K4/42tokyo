@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 16:57:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:05:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,20 @@
 
 void	store_fdf_value(t_info *info, char *line)
 {
+	int	i;
+	char **line_split;
+
 	printf("len: %d\n", info->row_count);
 	printf("fdf: %s\n", line);
-	
+	line_split = ft_split(line, ' ');
+	if (!line_split)
+		exit(1);
+	i = 0;
+	while (line_split[i] != NULL)
+	{
+		printf("split: %s\n", line_split[i]);
+		i++;
+	}
 }
 
 void	read_fdf_file(t_info *info, char *path)
