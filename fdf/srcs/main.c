@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:43:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:48:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@
 void	add_new_row(t_info *info, char *line, char **line_split)
 {
 	int	i;
-	// int	*new_row;
+	int	*new_row;
 	// int	*new_fdf_list;
 
 	(void)info;
 	(void)line;
 	printf("row_count: %d\n", info->row_count);
+	new_row = (int *)malloc(sizeof(int) * (info->col_count[info->row_count]));
+	if (!new_row)
+		exit(1);
 	i = 0;
 	while (line_split[i] != NULL)
 	{
-		printf("split: %s\n", line_split[i]);
+		new_row[i] = line_split[i];
 		i++;
 	}
 }
