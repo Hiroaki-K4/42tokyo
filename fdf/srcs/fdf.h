@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:25:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:26:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../mlx_linux/mlx.h"
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
+#include <stdio.h>
 
 # define K_ESC 65307
 
