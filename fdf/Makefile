@@ -24,7 +24,7 @@ all: $(NAME)
 $(NAME):$(SRCS)
 		make -C $(LIBFT)
 		make -C $(MLX)
-		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(SRCS) libft/libft.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -o $(NAME)
 
 clean:
 	make clean -C $(LIBFT)
