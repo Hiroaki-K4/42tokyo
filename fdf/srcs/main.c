@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:59:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 18:01:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	store_fdf_value(t_info *info, char *line)
 void	read_fdf_file(t_info *info, char *path)
 {
 	int		i;
+	int		j;
 	int		fd;
 	char	*line;
 
@@ -96,6 +97,18 @@ void	read_fdf_file(t_info *info, char *path)
 		info->row_count++;
 		// printf("line: %s\n", line);
 		free(line);
+	}
+	i = 0;
+	while (i < info->row_count)
+	{
+		j = 0;
+		while (j < info->col_count[i])
+		{
+			printf("%d", info->fdf_list[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
 	}
 }
 
