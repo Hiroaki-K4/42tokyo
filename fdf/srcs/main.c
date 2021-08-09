@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:20:45 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:22:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,26 +123,6 @@ void	init_info(t_info *info)
 	info->width = size_x;
 	info->height = size_y;
 	printf("width: %d height: %d\n", info->width, info->height);
-}
-
-void	draw(t_info *info)
-{
-	(void)info;
-}
-
-int	win_close(t_info *info)
-{
-	(void)info;
-	exit(1);
-	return (0);
-}
-
-int	key_press(int key, t_info *info)
-{
-	(void)info;
-	if (key == K_ESC)
-		exit(1);
-	return (0);
 }
 
 int	main(int argc, char *argv[])

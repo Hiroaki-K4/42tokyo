@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:21:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:23:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ typedef struct s_info
 	void	*win;
 	t_data	img;
 }				t_info;
+
+void	draw(t_info *info);
+int		win_close(t_info *info);
+int		key_press(int key, t_info *info);
 
 #endif
