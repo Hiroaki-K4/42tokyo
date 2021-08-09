@@ -6,12 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 15:23:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 15:24:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	main(int argc, char *argv[])
 {
-	
+	(void)argc;
+	(void)argv;
 	return (0);
 }
