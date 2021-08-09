@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:01:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:12:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,9 @@ int	main(int argc, char *argv[])
 	read_fdf_file(&info, argv[1]);
 	info.win = mlx_new_window(info.mlx, info.width, info.height, "fdf");
 	info.img.img = mlx_new_image(info.mlx, info.width, info.height);
-	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp,
-			&info.img.size_l, &info.img.endian);
+	info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
+			&info.img.line_length, &info.img.endian);
+	mlx_loop(info.mlx);
 	draw(&info);
 	return (0);
 }
