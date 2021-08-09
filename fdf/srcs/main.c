@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 20:34:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 20:50:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main(int argc, char *argv[])
 	info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
 			&info.img.line_length, &info.img.endian);
 	my_mlx_pixel_put(&info.img, 5, 5, 0x00FF0000);
+	my_mlx_pixel_put(&info.img, 10, 10, 0x00FF0000);
 	mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
 	mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
 	mlx_hook(info.win, 2, 1L << 0, &key_press, &info);
