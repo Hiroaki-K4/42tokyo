@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   support.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 15:57:06 by hkubo            ###   ########.fr       */
+/*   Created: 2021/06/17 17:36:47 by hkubo             #+#    #+#             */
+/*   Updated: 2021/06/17 17:37:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "get_next_line.h"
 
-int	main(int argc, char *argv[])
+void	save_new_line_support(char *store, char *tmp, char *buf, int i)
 {
-	(void)argc;
-	(void)argv;
-	return (0);
+	int	j;
+
+	j = -1;
+	while (buf[++j] && (ft_strlen(store) + j + 1) < (ft_strlen(store) + i + 1))
+		tmp[ft_strlen(store) + j] = buf[j];
+	tmp[ft_strlen(store) + j] = '\0';
+	free(store);
 }
