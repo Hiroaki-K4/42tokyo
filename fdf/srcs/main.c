@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:48:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:48:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	add_new_row(t_info *info, char *line, char **line_split)
 	i = 0;
 	while (line_split[i] != NULL)
 	{
-		new_row[i] = line_split[i];
+		new_row[i] = ft_atoi(line_split[i]);
 		i++;
 	}
 }
