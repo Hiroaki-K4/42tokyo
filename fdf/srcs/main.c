@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 17:20:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/09 17:21:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	store_fdf_value(t_info *info, char *line)
 		i++;
 	}
 	col_count[i] = count;
-	free(info->col_count);
+	if (info->row_count > 0)
+		free(info->col_count);
 	info->col_count = col_count;
 }
 
