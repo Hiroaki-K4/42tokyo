@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 11:14:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/10 13:27:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@
 # include <stdlib.h>
 // # include <stdint.h>
 
-typedef	struct
+// typedef	struct
+// {
+// 	int field;
+// 	int precision;
+// 	int format;
+// }		t_plist;
+
+typedef struct
 {
 	int field;
 	int precision;
 	int format;
 }		t_plist;
+
 
 size_t		ft_strlen(const char *str)
 {
