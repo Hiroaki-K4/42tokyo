@@ -18,5 +18,5 @@ echo "---"
 echo "$"
 ./inter "rien" | cat -e
 cd ../../
-sh git.sh
+sh git.sh $1
 cd exam_02/inter

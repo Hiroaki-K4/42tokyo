@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/10 11:11:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/10 11:22:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ char *ft_strdup(const char *src)
     size_t i;
     char *dst;
 
+    if (!src)
+        return (NULL);
     if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
         return (NULL);
     i = 0;
@@ -136,6 +138,8 @@ char *ft_strjoin(const char *s1, const char *s2)
     int i;
     char *dst;
 
+    if (!s1 || !s2)
+        return (NULL);
     if (!(dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
         return (NULL);
     i = 0;
@@ -164,13 +168,31 @@ size_t ft_strlcpy(char *dst, const char *src, size_t n)
     if (n == 0)
         return (ans);
     i = 0;
-    while (src[i] && i < n)
+    while (src[i] && i < n - 1)
     {
         dst[i] = src[i];
         i++;
     }
     dst[i] = '\0';
     return (ans);
+}
+
+char    *ft_strchr(const char *src, int c)
+{
+    unsigned const char *ptr_s;
+    int i;
+
+    ptr_s = (unsigned const char *)src;
+    i = 0;
+    while (ptr_s[i])
+    {
+        if (ptr_s[i] == (unsigned const char)c)
+            return (char *)(src + i);
+        i++;
+    }
+    if (ptr_s[i] == '\0' && ptr_s[i] == (unsigned const char)c)
+        return (char *)(src + i);
+    return (NULL);
 }
 
 // char *get_from_store(char *store, char **line)
