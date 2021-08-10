@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/10 11:11:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/10 11:11:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ char *ft_strjoin(const char *s1, const char *s2)
 
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
-    int i;
+    size_t i;
     size_t ans;
 
     ans = ft_strlen(src);
