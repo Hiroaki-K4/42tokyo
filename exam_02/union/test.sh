@@ -18,5 +18,5 @@ echo "---"
 echo "$"
 ./union "rien" | cat -e
 cd ../../
-sh git.sh
+sh git.sh $1
 cd exam_02/union
