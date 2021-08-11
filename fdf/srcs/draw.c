@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/11 20:48:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/11 20:51:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	draw(t_info *info)
 	while (info->y_start + i <= info->y_end)
 	{
 		j = 0;
-		while (info->x_start + j <= info->x_end)
+		while (info->x_start + j <= info->x_start + info->x_step * info->col_count)
 		{
 			my_mlx_pixel_put(&info->img, info->x_start + j, info->y_start + i, 0x00FF0000);
 			j++;
