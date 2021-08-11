@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/10 21:50:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/10 21:51:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	draw(t_info *info)
 		}
 		i += info->y_step;
 	}
+	// col line
 	i = 0;
 	while (info->x_start + i <= info->x_end)
 	{
