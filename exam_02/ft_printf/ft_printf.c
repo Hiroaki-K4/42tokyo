@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/11 09:20:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/11 09:20:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,7 +247,7 @@ char	*ft_strdup(const char *s)
 // 	return (len);
 // }
 
-char *ft_itoa
+// char *ft_itoa
 
 int ft_atoi(const char *arg)
 {
