@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/11 20:46:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/11 20:48:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	draw(t_info *info)
 		}
 		i += info->x_step;
 	}
+	printf("x_end: %d\n", info->x_start + i - info->x_step);
 	// my_mlx_pixel_put(&info->img, 5, 5, 0x00FF0000);
 	// my_mlx_pixel_put(&info->img, 10, 10, 0x00FF0000);
 }
