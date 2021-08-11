@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/11 20:52:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/11 20:53:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw(t_info *info)
 
 	// draw row line
 	i = 0;
-	while (info->y_start + i <= info->y_end)
+	while (info->y_start + i <= info->y_start + info->y_step * info->row_count)
 	{
 		j = 0;
 		while (info->x_start + j <= info->x_start + info->x_step * info->col_count[0])
@@ -41,7 +41,7 @@ void	draw(t_info *info)
 	}
 	// draw col line
 	i = 0;
-	while (info->x_start + i <= info->x_end)
+	while (info->x_start + i <= info->x_start + info->x_step * info->col_count[0])
 	{
 		j = 0;
 		while (info->y_start + j <= info->y_start + info->y_step * info->row_count)
