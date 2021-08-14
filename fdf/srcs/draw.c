@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 22:03:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 22:04:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	convert_x(int x, int y, double angle)
 {
 	int convert_x;
 
-	convert_x = (int)(x * cos(PI * angle / 180.0) - y * cos(PI * angle / 180.0)) + info->width * 0.1;
+	convert_x = (int)(x * cos(PI * angle / 180.0) - y * cos(PI * angle / 180.0));
 	return (convert_x);
 }
 
@@ -55,7 +55,7 @@ void	draw(t_info *info)
 		x_pos = 0;
 		while (x_pos <= info->x_step * info->col_count[0])
 		{
-			x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0);
+			x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0) + info->width * 0.2;
 			// printf("z: %d\n", info->fdf_list[i][j]);
 			y_convert = convert_y(info->x_start + x_pos, info->y_start + y_pos, 0, 30.0);
 			if (y_pos == 0)
@@ -78,7 +78,7 @@ void	draw(t_info *info)
 		y_pos = 0;
 		while (y_pos <= info->y_step * info->row_count)
 		{
-			x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0);
+			x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0) + info->width * 0.2;
 			// printf("z: %d\n", info->fdf_list[i][j]);
 			y_convert = convert_y(info->x_start + x_pos, info->y_start + y_pos, 0, 30.0);
 			// my_mlx_pixel_put(&info->img, info->x_start + x_pos, info->y_start + y_pos, 0x00FF0000);
