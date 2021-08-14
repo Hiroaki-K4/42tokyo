@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:39:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:39:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	convert_y(int x, int y, int z, double angle)
 
 void	draw(t_info *info)
 {
-	int	i;
-	int	j;
+	// int	i;
+	// int	j;
 	int	x_pos;
 	int	y_pos;
 	// int	x_convert;
