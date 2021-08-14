@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 21:41:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 21:42:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	init_info(t_info *info)
 	info->x_end = info->width * 0.8;
 	get_x_step(info);
 	// info->y_start = info->height * 0.2;
-	info->y_start = 1;
+	info->y_start = 0;
 	info->y_end = info->height * 0.6;
 	info->y_step = (info->y_end - info->y_start) / info->row_count;
 	printf("width: %d height: %d\n", info->width, info->height);
