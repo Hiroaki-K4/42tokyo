@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:38:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:38:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	draw(t_info *info)
 	int	j;
 	int	x_pos;
 	int	y_pos;
-	int	x_convert;
+	// int	x_convert;
 	// int	y_convert;
 
 	printf("cos: %f sin: %f\n", cos(PI * 30.0 / 180.0), sin(PI * 30.0 / 180.0));
