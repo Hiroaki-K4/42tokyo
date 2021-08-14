@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:38:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:39:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,18 +64,18 @@ void	draw(t_info *info)
 		y_pos += info->y_step;
 	}
 	// draw col line
-	i = 0;
-	while (i <= info->x_step * info->col_count[0])
+	x_pos = 0;
+	while (x_pos <= info->x_step * info->col_count[0])
 	{
-		j = 0;
-		while (j <= info->y_step * info->row_count)
+		y_pos = 0;
+		while (y_pos <= info->y_step * info->row_count)
 		{
-			my_mlx_pixel_put(&info->img, info->x_start + i, info->y_start + j, 0x00FF0000);
-			j++;
+			my_mlx_pixel_put(&info->img, info->x_start + x_pos, info->y_start + y_pos, 0x00FF0000);
+			y_pos++;
 		}
-		i += info->x_step;
+		x_pos += info->x_step;
 	}
-	printf("x_end: %d\n", info->x_start + i - info->x_step);
+	printf("x_end: %d\n", info->x_start + x_pos - info->x_step);
 	// my_mlx_pixel_put(&info->img, 5, 5, 0x00FF0000);
 	// my_mlx_pixel_put(&info->img, 10, 10, 0x00FF0000);
 }
