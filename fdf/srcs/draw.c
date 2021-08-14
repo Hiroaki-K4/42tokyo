@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 16:34:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 16:35:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	draw(t_info *info)
 	int	i;
 	int	j;
 
-	printf("cos: %d sin: %d\n", cos(30.0), sin(30.0));
+	printf("cos: %f sin: %f\n", cos(30.0), sin(30.0));
 	// draw row line
 	i = 0;
 	while (i <= info->y_step * info->row_count)
