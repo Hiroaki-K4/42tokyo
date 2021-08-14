@@ -15,7 +15,7 @@ make re
 # ./fdf maps/test_maps/julia.fdf
 ./fdf maps/test_maps/mars.fdf
 ./fdf maps/test_maps/pentenegpos.fdf
-# ./fdf maps/test_maps/plat.fdf
+./fdf maps/test_maps/plat.fdf
 # ./fdf maps/test_maps/pnp_flat.fdf
 # ./fdf maps/test_maps/pylone.fdf
 make fclean
