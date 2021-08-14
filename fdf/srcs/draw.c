@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/11 20:54:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 16:34:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,19 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+// int	convert_to_rotate_x(int x, int y, int angle)
+// {
+// 	int rotate_x;
+
+// 	rotate_x = x * co
+// }
 
 void	draw(t_info *info)
 {
 	int	i;
 	int	j;
 
+	printf("cos: %d sin: %d\n", cos(30.0), sin(30.0));
 	// draw row line
 	i = 0;
 	while (i <= info->y_step * info->row_count)
