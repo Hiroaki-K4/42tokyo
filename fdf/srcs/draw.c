@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:41:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:41:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	draw(t_info *info)
 	y_pos = 0;
 	while (y_pos <= info->y_step * info->row_count)
 	{
-		y = 0;
+		j = 0;
 		x_pos = 0;
 		while (x_pos <= info->x_step * info->col_count[0])
 		{
