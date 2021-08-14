@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 10:35:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 10:36:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,7 +260,7 @@ char *ft_itoa(int num)
 		return (NULL);
 	ans[len] = '\0';
 	len--;
-	flag = 1
+	flag = 1;
 	if (num < 0)
 		flag = -1;
 	while (len >= 0)
