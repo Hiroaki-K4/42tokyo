@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 16:39:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:07:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,28 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-// int	convert_to_rotate_x(int x, int y, int angle)
-// {
-// 	int rotate_x;
+int	convert_x(int x, int y, double angle)
+{
+	int convert_x;
 
-// 	rotate_x = x * co
-// }
+	convert_x = x * (int)cos(PI * angle / 180.0) - y * (int)cos(PI * angle / 180.0);
+	return (convert_x);
+}
+
+int	convert_y(int x, int y, int z, double angle)
+{
+	int convert_y;
+
+	convert_y = x * (int)sin(PI * angle / 180.0) + y * (int)sin(PI * angle / 180.0) + z;
+	return (convert_y);
+}
 
 void	draw(t_info *info)
 {
 	int	i;
 	int	j;
+	int	convert_x;
+	int	convert_y;
 
 	printf("cos: %f sin: %f\n", cos(PI * 30.0 / 180.0), sin(PI * 30.0 / 180.0));
 	// draw row line
@@ -40,6 +51,8 @@ void	draw(t_info *info)
 		j = 0;
 		while (j <= info->x_step * info->col_count[0])
 		{
+			convert_x = convert_x(info->x_start + j, info->y_start + i);
+			printf("convert_x: %d\n", convert_x);
 			my_mlx_pixel_put(&info->img, info->x_start + j, info->y_start + i, 0x00FF0000);
 			j++;
 		}
