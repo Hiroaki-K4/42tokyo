@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:17:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:18:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	draw(t_info *info)
 		while (j <= info->x_step * info->col_count[0])
 		{
 			x_convert = convert_x(info->x_start + j, info->y_start + i, 30.0);
-			// printf("x_convert: %d\n", info->x_start + x_convert);
+			if (x_convert < 0)
+				printf("x_convert: %d\n", info->x_start + x_convert);
 			my_mlx_pixel_put(&info->img, info->x_start + j, info->y_start + i, 0x00FF0000);
 			j++;
 		}
