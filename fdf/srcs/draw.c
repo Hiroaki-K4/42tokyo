@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 17:38:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 17:38:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	draw(t_info *info)
 		x_pos = 0;
 		while (x_pos <= info->x_step * info->col_count[0])
 		{
-			x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0);
+			// x_convert = convert_x(info->x_start + x_pos, info->y_start + y_pos, 30.0);
 			// printf("z: %d\n", info->fdf_list[i][j]);
 			// y_convert = convert_y(info->x_start + j, info->y_start + i, info->fdf_list[i][j], 30.0);
 			// printf("x_convert: %d y_convert: %d\n", x_convert, y_convert);
