@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 21:24:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/14 21:25:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	convert_y(int x, int y, int z, double angle)
 {
 	int convert_y;
 
-	convert_y = (int)(x * sin(PI * angle / 180.0) + y * sin(PI * angle / 180.0) - z);
+	convert_y = (int)(x * sin(PI * angle / 180.0) + y * sin(PI * angle / 180.0) + z);
 	return (convert_y);
 }
 
