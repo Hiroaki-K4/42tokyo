@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:51:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:53:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ void	rotate(t_info *info)
 		while (j < info->col_count[i])
 		{
 			// printf("%d", info->fdf_list[i][j]);
-			printf("%d", info->map[i][j].x);
+			printf("%d", info->map[i][j].y);
 			j++;
 		}
 		printf("\n");
