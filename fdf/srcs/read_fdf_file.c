@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/09 21:29:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 16:35:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,37 @@ void	add_new_row(t_info *info, char **line_split)
 	info->fdf_list = new_fdf_list;
 }
 
+void	add_new_row2(t_info *info, char **line_split)
+{
+	int	i;
+	t_map	*new_row;
+	t_map	**new_map;
+
+	printf("row_count: %d\n", info->row_count);
+	new_map = (t_map **)malloc(sizeof(t_map *) * (info->row_count + 1));
+	if (!new_map)
+		exit(1);
+	i = 0;
+	while (i < info->row_count)
+	{
+		new_map[i] = info->map[i];
+		i++;
+	}
+	new_row = (t_map *)malloc(sizeof(t_map) * (info->col_count[info->row_count]));
+	if (!new_row)
+		exit(1);
+	i = 0;
+	while (line_split[i] != NULL)
+	{
+		new_row[i].x = i;
+		new_row[i].y = info->row_count;
+		new_row[i].z = ft_atoi(line_split[i]);
+		i++;
+	}
+	new_map[info->row_count] = new_row;
+	info->map = new_map;
+}
+
 void	store_fdf_value(t_info *info, char *line)
 {
 	int	i;
@@ -71,6 +102,7 @@ void	store_fdf_value(t_info *info, char *line)
 		free(info->col_count);
 	info->col_count = col_count;
 	add_new_row(info, line_split);
+	add_new_row2(info, line_split);
 }
 
 void	read_fdf_file(t_info *info, char *path)
@@ -94,13 +126,15 @@ void	read_fdf_file(t_info *info, char *path)
 		info->row_count++;
 		free(line);
 	}
+	printf("col_count: %d\n", info->col_count[0]);
 	i = 0;
 	while (i < info->row_count)
 	{
 		j = 0;
 		while (j < info->col_count[i])
 		{
-			printf("%d", info->fdf_list[i][j]);
+			// printf("%d", info->fdf_list[i][j]);
+			printf("%d", info->map[i][j].z);
 			j++;
 		}
 		printf("\n");

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 16:42:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 16:51:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 
 # define K_ESC 65307
 #define PI 3.14159265
+
+typedef struct s_map
+{
+	int	x;
+	int	y;
+	int	z;
+}				t_map;
 
 typedef struct s_data
 {
@@ -47,9 +54,11 @@ typedef struct s_info
 	void	*mlx;
 	void	*win;
 	t_data	img;
+	t_map	**map;
 }				t_info;
 
 void	draw(t_info *info);
+void	rotate(t_info *info);
 void	read_fdf_file(t_info *info, char *path);
 int		win_close(t_info *info);
 int		key_press(int key, t_info *info);

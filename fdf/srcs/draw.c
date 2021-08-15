@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/14 22:06:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 16:51:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,31 @@ void	draw(t_info *info)
 	printf("x_end: %d\n", info->x_start + x_pos - info->x_step);
 	// my_mlx_pixel_put(&info->img, 5, 5, 0x00FF0000);
 	// my_mlx_pixel_put(&info->img, 10, 10, 0x00FF0000);
+}
+
+
+void	rotate(t_info *info)
+{
+	int	i;
+	int	j;
+	int	x_convert;
+	int	y_convert;
+
+	i = 0;
+	while (i < info->row_count)
+	{
+		j = 0;
+		while (j < info->col_count[0])
+		{
+			printf("ok\n");
+			x_convert = convert_x(info->map[i][j].x * 10, info->map[i][j].y * 10, 30.0);
+			printf("ok2\n");
+			y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
+			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
+			if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
+				my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
+			j++;
+		}
+		i++;
+	}
 }
