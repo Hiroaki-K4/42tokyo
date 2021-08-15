@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:55:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:57:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ void	move_to_center(t_info *info)
 	int	x_move;
 	int	y_move;
 
-	x_move = info->width / 2 - (abs(info->coords.xmax) - abs(info->coords.xmin) / 2);
-	y_move = info->height / 2 - (abs(info->coords.ymax) - abs(info->coords.ymin) / 2);
+	x_move = info->width / 2 - (abs(info->coords.xmax) - abs(info->coords.xmin)) / 2;
+	y_move = info->height / 2 - (abs(info->coords.ymax) - abs(info->coords.ymin)) / 2;
 	printf("x_move: %d y_move: %d\n", x_move, y_move);
 	i = 0;
 	while (i < info->row_count - 1)
