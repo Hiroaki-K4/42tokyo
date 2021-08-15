@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:50:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:50:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void	movde_to_center(t_info *info)
 	while (i < info->row_count - 1)
 	{
 		j = 0;
-		while (j < info->col_count)
+		while (j < info->col_count[i])
 		{
 			info->map[i][j].x += x_move;
 			info->map[i][j].y += y_move;
