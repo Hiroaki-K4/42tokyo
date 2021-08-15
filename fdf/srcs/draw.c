@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:19:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:22:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	convert_y(int x, int y, int z, double angle)
 {
 	int convert_y;
 
-	convert_y = (int)(x * sin(PI * angle / 180.0) + y * sin(PI * angle / 180.0) + z);
+	convert_y = (int)(x * sin(PI * angle / 180.0) + y * sin(PI * angle / 180.0) - z);
 	return (convert_y);
 }
 
@@ -178,11 +178,8 @@ void	rotate(t_info *info)
 		while (j < info->col_count[i])
 		{
 			x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 30.0);
-			// y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
-			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 0, 30.0);
+			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
 			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
-			// if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
-				// my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
 			info->map[i][j].x = x_convert;
 			info->map[i][j].y = y_convert;
 			j++;
