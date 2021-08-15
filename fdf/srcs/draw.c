@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 21:44:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:01:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void	move_to_center(t_info *info)
 		{
 			info->map[i][j].x += x_move;
 			info->map[i][j].y += y_move;
-			// my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
+			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
 			j++;
 		}
 		i++;
@@ -214,7 +214,7 @@ void	rotate(t_info *info)
 		i++;
 	}
 	get_coordinate(info);
-	zoom_map(info);
+	// zoom_map(info);
 	move_to_center(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
