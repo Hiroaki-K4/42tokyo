@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:50:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:51:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void	get_coordinate(t_info *info)
 	}
 }
 
-void	movde_to_center(t_info *info)
+void	move_to_center(t_info *info)
 {
 	int	i;
 	int	j;
