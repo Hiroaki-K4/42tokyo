@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 21:10:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 21:18:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,10 @@ void	move_to_center(t_info *info)
 
 	x_move = info->width / 2 - (abs(info->coords.xmax) - abs(info->coords.xmin)) / 2;
 	y_move = info->height / 2 - (abs(info->coords.ymax) - abs(info->coords.ymin)) / 2;
+	info->coords.xmin += x_move;
+	info->coords.ymin += y_move;
+	info->coords.xmax += x_move;
+	info->coords.ymax += y_move;
 	printf("x_move: %d y_move: %d\n", x_move, y_move);
 	i = 0;
 	while (i < info->row_count - 1)
@@ -139,12 +143,17 @@ void	move_to_center(t_info *info)
 		{
 			info->map[i][j].x += x_move;
 			info->map[i][j].y += y_move;
-			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
+			// my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
 			j++;
 		}
 		i++;
 	}
 }
+
+// void	zoom_map(t_info *info)
+// {
+// 	int	s
+// }
 
 void	rotate(t_info *info)
 {
@@ -173,6 +182,7 @@ void	rotate(t_info *info)
 	}
 	get_coordinate(info);
 	move_to_center(info);
+	// zoom_map(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
