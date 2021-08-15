@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:23:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:37:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,7 +163,27 @@ void	get_ratio(t_info *info)
 		info->ratio = y_ratio;
 }
 
-void	rotate(t_info *info)
+void	draw_line(t_info *info)
+{
+	int	i;
+	int	j;
+	double	slope;
+
+	i = 0;
+	while (i < info->row_count - 1)
+	{
+		j = 0;
+		while (j < info->col_count[i])
+		{
+			slope = (info->map[i][j + 1].y - info->map[i][j].y) / (info->map[i][j + 1].x - info->map[i][j].x);
+			printf("slope: %f\n", slope);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	draw_map(t_info *info)
 {
 	int	i;
 	int	j;
@@ -189,6 +209,7 @@ void	rotate(t_info *info)
 	}
 	get_coordinate(info);
 	move_to_center(info);
+	draw_line(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)

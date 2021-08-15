@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:05:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:24:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ typedef struct s_info
 }				t_info;
 
 void	draw(t_info *info);
-void	rotate(t_info *info);
+void	draw_map(t_info *info);
 void	read_fdf_file(t_info *info, char *path);
 int		win_close(t_info *info);
 int		key_press(int key, t_info *info);
