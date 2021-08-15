@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 21:38:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 21:38:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,7 @@ void	zoom_map(t_info *info)
 	int	ratio;
 	int	x_move;
 
+	printf("y_min: %d\n", info->coords.ymin);
 	x_move = 0;
 	if (info->coords.xmin < 0)
 		x_move = info->coords.xmin * (-1);
