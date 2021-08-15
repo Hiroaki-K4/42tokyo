@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:00:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:06:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,7 @@ void	rotate(t_info *info)
 		j = 0;
 		while (j < info->col_count[0])
 		{
-			printf("ok\n");
 			x_convert = convert_x(info->map[i][j].x, info->map[i][j].y, 30.0);
-			printf("ok2\n");
 			// y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
 			y_convert = convert_y(info->map[i][j].x, info->map[i][j].y, 0, 30.0);
 			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
