@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:06:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:10:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	rotate(t_info *info)
 	int	y_convert;
 
 	i = 0;
+	printf("rowwwwwwwwwwwwww: %d\n", info->row_count);
 	while (i < info->row_count)
 	{
 		j = 0;
