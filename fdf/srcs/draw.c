@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:42:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:50:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,29 @@ void	get_coordinate(t_info *info)
 	}
 }
 
+void	movde_to_center(t_info *info)
+{
+	int	i;
+	int	j;
+	int	x_move;
+	int	y_move;
+
+	x_move = info->width / 2 - (abs(info->coords.xmax) - abs(info->coords.xmin) / 2);
+	y_move = info->height / 2 - (abs(info->coords.ymax) - abs(info->coords.ymin) / 2);
+	i = 0;
+	while (i < info->row_count - 1)
+	{
+		j = 0;
+		while (j < info->col_count)
+		{
+			info->map[i][j].x += x_move;
+			info->map[i][j].y += y_move;
+			j++;
+		}
+		i++;
+	}
+}
+
 void	rotate(t_info *info)
 {
 	int	i;
@@ -147,6 +170,7 @@ void	rotate(t_info *info)
 		i++;
 	}
 	get_coordinate(info);
+	move_to_center(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
