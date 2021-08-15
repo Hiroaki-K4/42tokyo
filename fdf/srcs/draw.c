@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:02:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:05:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,11 @@ void	zoom_map(t_info *info)
 	}
 }
 
+void	get_ratio(t_info *info)
+{
+	get
+}
+
 void	rotate(t_info *info)
 {
 	int	i;
@@ -195,15 +200,16 @@ void	rotate(t_info *info)
 	int	x_convert;
 	int	y_convert;
 
+	get_ratio(info);
 	i = 0;
 	while (i < info->row_count - 1)
 	{
 		j = 0;
 		while (j < info->col_count[i])
 		{
-			x_convert = convert_x(info->map[i][j].x * 0.2, info->map[i][j].y * 0.2, 30.0);
+			x_convert = convert_x(info->map[i][j].x * 20, info->map[i][j].y * 20, 30.0);
 			// y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
-			y_convert = convert_y(info->map[i][j].x * 0.2, info->map[i][j].y * 0.2, 0, 30.0);
+			y_convert = convert_y(info->map[i][j].x * 20, info->map[i][j].y * 20, 0, 30.0);
 			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
 			// if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
 				// my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
