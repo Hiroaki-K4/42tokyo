@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:37:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:38:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void	draw_line(t_info *info)
 		while (j < info->col_count[i])
 		{
 			slope = (info->map[i][j + 1].y - info->map[i][j].y) / (info->map[i][j + 1].x - info->map[i][j].x);
-			printf("slope: %f\n", slope);
+			printf("slope: %d\n", slope);
 			j++;
 		}
 		i++;
