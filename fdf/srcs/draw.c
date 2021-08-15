@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:41:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:42:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ void	rotate(t_info *info)
 {
 	int	i;
 	int	j;
+	int	x_convert;
+	int	y_convert;
 
 	i = 0;
 	while (i < info->row_count - 1)
@@ -132,18 +134,19 @@ void	rotate(t_info *info)
 		j = 0;
 		while (j < info->col_count[i])
 		{
-			info->map[i][j].x = convert_x(info->map[i][j].x * 20, info->map[i][j].y * 20, 30.0);
+			x_convert = convert_x(info->map[i][j].x * 20, info->map[i][j].y * 20, 30.0);
 			// y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
-			info->map[i][j].y = convert_y(info->map[i][j].x * 20, info->map[i][j].y * 20, 0, 30.0);
-			printf("i: %d j: %d x: %d y: %d\n", i, j, info->map[i][j].x, info->map[i][j].y);
-			if (info->map[i][j].x >= 0 && info->map[i][j].y >= 0 && info->map[i][j].x <= 640 && info->map[i][j].y <= 480)
-				my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
+			y_convert = convert_y(info->map[i][j].x * 20, info->map[i][j].y * 20, 0, 30.0);
+			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
+			if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
+				my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
+			info->map[i][j].x = x_convert;
+			info->map[i][j].y = y_convert;
 			j++;
 		}
 		i++;
 	}
 	get_coordinate(info);
-	
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
