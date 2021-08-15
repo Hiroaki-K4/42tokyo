@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 21:18:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 21:26:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,34 @@ void	move_to_center(t_info *info)
 	}
 }
 
-// void	zoom_map(t_info *info)
-// {
-// 	int	s
-// }
+void	zoom_map(t_info *info)
+{
+	int	i;
+	int	j;
+	int	x_ratio;
+	int	y_ratio;
+	int	ratio;
+
+	x_ratio = info->width / (info->coords.xmax - info->coords.xmin);
+	y_ratio = info->height / (info->coords.ymax - info->coords.ymin);
+	if (x_ratio <= y_ratio)
+		ratio = x_ratio;
+	else
+		ratio = y_ratio;
+	i = 0;
+	while (i < info->row_count - 1)
+	{
+		j = 0;
+		while (j < info->col_count[i])
+		{
+			info->map[i][j].x *= ratio;
+			info->map[i][j].y *= ratio;
+			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
+			j++;
+		}
+		i++;
+	}
+}
 
 void	rotate(t_info *info)
 {
@@ -182,7 +206,7 @@ void	rotate(t_info *info)
 	}
 	get_coordinate(info);
 	move_to_center(info);
-	// zoom_map(info);
+	zoom_map(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
