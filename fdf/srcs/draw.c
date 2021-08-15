@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 21:29:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 21:30:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,7 @@ void	zoom_map(t_info *info)
 		{
 			info->map[i][j].x = info->map[i][j].x * ratio;
 			info->map[i][j].y = info->map[i][j].y * ratio;
+			printf("x: %d y: %d\n", info->map[i][j].x, info->map[i][j].y);
 			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
 			j++;
 		}
