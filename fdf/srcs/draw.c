@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 16:51:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 16:58:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,23 @@ void	rotate(t_info *info)
 			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
 			if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
 				my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
+			info->map[i][j].x = x_convert;
+			info->map[i][j].y = y_convert;
 			j++;
 		}
+		i++;
+	}
+	i = 0;
+	while (i < info->row_count)
+	{
+		j = 0;
+		while (j < info->col_count[i])
+		{
+			// printf("%d", info->fdf_list[i][j]);
+			printf("%d", info->map[i][j].x);
+			j++;
+		}
+		printf("\n");
 		i++;
 	}
 }
