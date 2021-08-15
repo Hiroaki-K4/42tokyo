@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:57:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:58:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ void	move_to_center(t_info *info)
 		{
 			info->map[i][j].x += x_move;
 			info->map[i][j].y += y_move;
+			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
 			j++;
 		}
 		i++;
@@ -162,8 +163,8 @@ void	rotate(t_info *info)
 			// y_convert = convert_y(info->map[i][j].x * 10, info->map[i][j].y * 10, info->map[i][j].z / 10, 30.0);
 			y_convert = convert_y(info->map[i][j].x * 20, info->map[i][j].y * 20, 0, 30.0);
 			printf("i: %d j: %d x: %d y: %d\n", i, j, x_convert, y_convert);
-			if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
-				my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
+			// if (x_convert >= 0 && y_convert >= 0 && x_convert <= 640 && y_convert <= 480)
+				// my_mlx_pixel_put(&info->img, x_convert, y_convert, 0x00FF0000);
 			info->map[i][j].x = x_convert;
 			info->map[i][j].y = y_convert;
 			j++;
