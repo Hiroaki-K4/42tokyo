@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:09:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 22:19:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,44 +150,6 @@ void	move_to_center(t_info *info)
 	}
 }
 
-void	zoom_map(t_info *info)
-{
-	int	i;
-	int	j;
-	int	x_ratio;
-	int	y_ratio;
-	int	ratio;
-	int	x_move;
-
-	printf("y_min: %d\n", info->coords.ymin);
-	x_move = 0;
-	if (info->coords.xmin < 0)
-		x_move = info->coords.xmin * (-1);
-	info->coords.xmin += x_move;
-	info->coords.xmax += x_move;
-	x_ratio = info->width / (info->coords.xmax - info->coords.xmin);
-	y_ratio = info->height / (info->coords.ymax - info->coords.ymin);
-	if (x_ratio <= y_ratio)
-		ratio = x_ratio;
-	else
-		ratio = y_ratio;
-	printf("x_ratio: %d y_ratio: %d ratio: %d\n", x_ratio, y_ratio, ratio);
-	i = 0;
-	while (i < info->row_count - 1)
-	{
-		j = 0;
-		while (j < info->col_count[i])
-		{
-			info->map[i][j].x = (info->map[i][j].x + x_move) * ratio;
-			info->map[i][j].y = info->map[i][j].y * ratio;
-			printf("x: %d y: %d\n", info->map[i][j].x, info->map[i][j].y);
-			my_mlx_pixel_put(&info->img, info->map[i][j].x, info->map[i][j].y, 0x00FF0000);
-			j++;
-		}
-		i++;
-	}
-}
-
 void	get_ratio(t_info *info)
 {
 	double	x_ratio;
@@ -228,7 +190,6 @@ void	rotate(t_info *info)
 		i++;
 	}
 	get_coordinate(info);
-	// zoom_map(info);
 	move_to_center(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
