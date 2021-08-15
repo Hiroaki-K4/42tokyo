@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 16:51:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/15 17:21:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@
 # define K_ESC 65307
 #define PI 3.14159265
 
+typedef struct s_coords
+{
+	int	xmin;
+	int	ymin;
+	int	xmax;
+	int	ymax;
+}				t_coords;
 typedef struct s_map
 {
 	int	x;
@@ -55,6 +62,8 @@ typedef struct s_info
 	void	*win;
 	t_data	img;
 	t_map	**map;
+	t_coords	coords;
+	
 }				t_info;
 
 void	draw(t_info *info);
