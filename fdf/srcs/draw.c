@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 22:51:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 20:57:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,7 @@ void	draw_line(t_info *info)
 				x++;
 				my_mlx_pixel_put(&info->img, x, (int)y, 0x00FF0000);
 			}
-			printf("x: %d y: %d slope: %f\n", info->map[i][j + 1].x - info->map[i][j].x, info->map[i][j + 1].y - info->map[i][j].y, slope);
+			printf("x: %d y: %d slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
 			j++;
 		}
 		i++;
