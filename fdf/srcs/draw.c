@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 21:08:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 21:13:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void	move_to_center(t_info *info)
 	int	x_move;
 	int	y_move;
 
-	x_move = info->width / 2 - (abs(info->coords.xmax) - abs(info->coords.xmin)) / 2;
+	x_move = (int)((double)(info->width / 2) - (double)((abs(info->coords.xmax) - abs(info->coords.xmin)) / 2));
 	y_move = info->height / 2 - (abs(info->coords.ymax) - abs(info->coords.ymin)) / 2;
 	info->coords.xmin += x_move;
 	info->coords.ymin += y_move;
@@ -194,6 +194,37 @@ void	draw_row_line(t_info *info)
 	}
 }
 
+// void	draw_col_line(t_info *info)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	x;
+// 	double	y;
+// 	double	slope;
+
+// 	i = 0;
+// 	while (i < info->col_count[0])
+// 	{
+// 		j = 0;
+// 		while (j < info->row_count - 1)
+// 		{
+// 			slope = (double)(info->map[i][j + 1].y - info->map[i][j].y) / (double)(info->map[i][j + 1].x - info->map[i][j].x);
+// 			x = info->map[i][j].x;
+// 			y = (double)info->map[i][j].y;
+// 			while (x < info->map[i][j + 1].x)
+// 			{
+// 				y += slope;
+// 				x++;
+// 				// printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
+// 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
+// 			}
+// 			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
+
 void	draw_map(t_info *info)
 {
 	int	i;
@@ -221,6 +252,7 @@ void	draw_map(t_info *info)
 	get_coordinate(info);
 	move_to_center(info);
 	draw_row_line(info);
+	// draw_col_line(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
