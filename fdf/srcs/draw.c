@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 21:37:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 21:38:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,7 +207,7 @@ void	draw_col_line(t_info *info)
 	while (j < info->col_count[0])
 	{
 		i = 0;
-		while (i < info->row_count - 1)
+		while (i < info->row_count - 2)
 		{
 			slope = (double)(info->map[i + 1][j].y - info->map[i][j].y) / (double)(info->map[i][j].x - info->map[i + 1][j].x);
 			x = info->map[i][j].x;
