@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/15 17:08:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 22:05:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void	read_fdf_file(t_info *info, char *path)
 		while (j < info->col_count[i])
 		{
 			// printf("%d", info->fdf_list[i][j]);
-			printf("%d", info->map[i][j].y);
+			// printf("%d", info->map[i][j].y);
 			j++;
 		}
 		printf("\n");
