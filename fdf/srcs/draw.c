@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:09:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 22:12:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,8 @@ void	draw_row_line(t_info *info)
 			{
 				y += slope;
 				x++;
+				if (y < 0)
+					y = 0;
 				printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
