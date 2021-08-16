@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 21:18:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 21:19:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,10 +216,10 @@ void	draw_col_line(t_info *info)
 			{
 				y += slope;
 				x++;
-				// printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
+				printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
-			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
+			printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
 			j++;
 		}
 		i++;
@@ -253,7 +253,7 @@ void	draw_map(t_info *info)
 	get_coordinate(info);
 	move_to_center(info);
 	draw_row_line(info);
-	// draw_col_line(info);
+	draw_col_line(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
