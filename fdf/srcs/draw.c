@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:13:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 22:17:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,10 +185,10 @@ void	draw_row_line(t_info *info)
 			{
 				y += slope;
 				x++;
-				if (y < 0)
-					y = 0;
-				if (y > 960)
-					y = 960;
+				// if (y < 0)
+				// 	y = 0;
+				// if (y > 960)
+				// 	y = 960;
 				printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
@@ -220,10 +220,10 @@ void	draw_col_line(t_info *info)
 			{
 				y += slope;
 				x--;
-				if (y < 0)
-					y = 0;
-				if (y > 960)
-					y = 960;
+				// if (y < 0)
+				// 	y = 0;
+				// if (y > 960)
+				// 	y = 960;
 				printf("i: %d j: %d x: %d y_f: %f y_d: %f slope %f\n", i, j, x, y, round(y), slope);
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
@@ -249,7 +249,7 @@ void	draw_map(t_info *info)
 		while (j < info->col_count[i])
 		{
 			x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 30.0);
-			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.1, 30.0);
+			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.05, 30.0);
 			// y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 0, 30.0);
 			printf("i: %d j: %d x: %d y: %d ratio: %f\n", i, j, x_convert, y_convert, info->ratio);
 			info->map[i][j].x = x_convert;
