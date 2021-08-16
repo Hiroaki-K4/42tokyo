@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 21:15:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 21:18:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,7 +253,7 @@ void	draw_map(t_info *info)
 	get_coordinate(info);
 	move_to_center(info);
 	draw_row_line(info);
-	draw_col_line(info);
+	// draw_col_line(info);
 	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
 	i = 0;
 	while (i < info->row_count - 1)
