@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:52:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 20:44:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	draw_row_line(t_info *info)
 			{
 				y += slope;
 				x++;
-				printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
+				// printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
 			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
@@ -160,13 +160,33 @@ void	draw_col_line(t_info *info)
 			{
 				y += slope;
 				x--;
-				printf("i: %d j: %d x: %d y_f: %f y_d: %f slope %f\n", i, j, x, y, round(y), slope);
+				// printf("i: %d j: %d x: %d y_f: %f y_d: %f slope %f\n", i, j, x, y, round(y), slope);
 				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
 			}
 			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
 			i++;
 		}
 		j++;
+	}
+}
+
+void	get_abs_zmax(t_info *info)
+{
+	int	i;
+	int	j;
+
+	info->coords.zmax = 0;
+	i = 0;
+	while (i < info->row_count - 1)
+	{
+		j = 0;
+		while (j < info->col_count[i])
+		{
+			if (info->coords.zmax < abs(info->map[i][j].z))
+				info->coords.zmax = abs(info->map[i][j].z);
+			j++;
+		}
+		i++;
 	}
 }
 
@@ -178,6 +198,7 @@ void	draw_map(t_info *info)
 	int	y_convert;
 
 	get_ratio(info);
+	get_abs_zmax(info);
 	i = 0;
 	while (i < info->row_count - 1)
 	{
@@ -185,9 +206,9 @@ void	draw_map(t_info *info)
 		while (j < info->col_count[i])
 		{
 			x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 30.0);
-			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
+			y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax, 30.0);
 			// y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 0, 30.0);
-			printf("i: %d j: %d x: %d y: %d ratio: %f\n", i, j, x_convert, y_convert, info->ratio);
+			// printf("i: %d j: %d x: %d y: %d ratio: %f\n", i, j, x_convert, y_convert, info->ratio);
 			info->map[i][j].x = x_convert;
 			info->map[i][j].y = y_convert;
 			j++;

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:52:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 20:39:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_coords
 	int	ymin;
 	int	xmax;
 	int	ymax;
+	int	zmax;
 }				t_coords;
 typedef struct s_map
 {
