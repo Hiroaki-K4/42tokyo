@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 20:58:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 21:10:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,7 +210,7 @@ void	draw_map(t_info *info)
 			if (info->coords.zmax == 0)
 				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
 			else if (info->coords.zmax > 100)
-				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax * 10, 30.0);
+				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax * 20, 30.0);
 			else
 				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax, 30.0);
 			// y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 0, 30.0);
