@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 22:59:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 23:00:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	check_color_hex(char *color)
 {
 	int	i;
 
+	printf("check_color: %s\n", color);
 	if (color[0] != '0' || color[1] != 'x')
 		return (-1);
 	i = 2;
