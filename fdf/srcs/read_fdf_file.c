@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 22:36:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 22:54:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,41 @@ void	add_new_row(t_info *info, char **line_split)
 	info->fdf_list = new_fdf_list;
 }
 
+int	check_color_hex(char *color)
+{
+	int	i;
+
+	if (color[0] != '0' || color[1] != 'x')
+		return (-1);
+	i = 2;
+	while (i < 8)
+	{
+		if (ft_isdigit(color[i]) != 1 && (color[i] < 'A' || color[i] > 'F'))
+			return (-1);
+		i++;
+	}
+	return (0);
+}
+
 char	*get_color(char *line_split)
 {
 	char	*color;
 
 	color = ft_strchr(line_split, ',');
 	if (color != NULL)
+	{
+		if (ft_strlen(color) == 9)
+		{
+			color++;
+			if (check_color_hex(color) == -1)
+				exit(1);
+		}
+		else
+			exit(1);
 		printf("color: %s\n", color);
+	}
+	else
+		color = "0x00FFFFFF";
 	return (color);
 }
 
