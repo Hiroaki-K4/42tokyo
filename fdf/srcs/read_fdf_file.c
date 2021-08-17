@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 22:20:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 22:32:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ void	add_new_row(t_info *info, char **line_split)
 	info->fdf_list = new_fdf_list;
 }
 
+char	*get_color(char *line_split)
+{
+	char	*color;
+
+	color = ft_strchr(line_split, ',');
+	if (!color)
+		printf("color: %s\n", color);
+	return (color);
+}
+
 void	add_new_row2(t_info *info, char **line_split)
 {
 	int	i;
@@ -66,6 +76,7 @@ void	add_new_row2(t_info *info, char **line_split)
 		new_row[i].x = i;
 		new_row[i].y = info->row_count;
 		new_row[i].z = ft_atoi(line_split[i]);
+		new_row[i].color = get_color(line_split[i]);
 		i++;
 	}
 	new_map[info->row_count] = new_row;
