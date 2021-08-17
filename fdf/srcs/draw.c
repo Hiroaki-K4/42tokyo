@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 23:04:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 23:06:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,8 @@ void	draw_row_line(t_info *info)
 				x++;
 				// printf("x: %d y_f: %f y_d: %f\n", x, y, round(y));
 				// my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
-				// my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FFFFFF);
-				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FFFFFF);
+				// my_mlx_pixel_put(&info->img, x, (int)round(y), ft_atoi(info->map[i][j].color));
 			}
 			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
 			j++;
@@ -164,8 +164,9 @@ void	draw_col_line(t_info *info)
 				x--;
 				// printf("i: %d j: %d x: %d y_f: %f y_d: %f slope %f\n", i, j, x, y, round(y), slope);
 				// my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FF0000);
-				// my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FFFFFF);
-				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+				my_mlx_pixel_put(&info->img, x, (int)round(y), 0x00FFFFFF);
+				printf("color: %d\n", ft_atoi(color));
+				// my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
 			}
 			// printf("x: %f y: %f slope: %f\n", (double)(info->map[i][j + 1].x - info->map[i][j].x), (double)(info->map[i][j + 1].y - info->map[i][j].y), slope);
 			i++;
