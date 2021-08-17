@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:05:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 20:46:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	add_new_row(t_info *info, char **line_split)
 	int	*new_row;
 	int	**new_fdf_list;
 
-	printf("row_count: %d\n", info->row_count);
+	// printf("row_count: %d\n", info->row_count);
 	new_row = (int *)malloc(sizeof(int) * (info->col_count[info->row_count]));
 	if (!new_row)
 		exit(1);
@@ -47,7 +47,7 @@ void	add_new_row2(t_info *info, char **line_split)
 	t_map	*new_row;
 	t_map	**new_map;
 
-	printf("row_count: %d\n", info->row_count);
+	// printf("row_count: %d\n", info->row_count);
 	new_map = (t_map **)malloc(sizeof(t_map *) * (info->row_count + 1));
 	if (!new_map)
 		exit(1);
@@ -79,7 +79,7 @@ void	store_fdf_value(t_info *info, char *line)
 	int	*col_count;
 	char **line_split;
 
-	printf("len: %d\n", info->row_count);
+	// printf("len: %d\n", info->row_count);
 	// printf("fdf: %s\n", line);
 	line_split = ft_split(line, ' ');
 	if (!line_split)
@@ -87,7 +87,7 @@ void	store_fdf_value(t_info *info, char *line)
 	count = 0;
 	while (line_split[count] != NULL)
 		count++;
-	printf("row: %d\n", count);
+	// printf("row: %d\n", count);
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
 		exit(1);
@@ -126,7 +126,7 @@ void	read_fdf_file(t_info *info, char *path)
 		info->row_count++;
 		free(line);
 	}
-	printf("col_count: %d\n", info->col_count[0]);
+	// printf("col_count: %d\n", info->col_count[0]);
 	i = 0;
 	while (i < info->row_count)
 	{
@@ -137,7 +137,7 @@ void	read_fdf_file(t_info *info, char *path)
 			// printf("%d", info->map[i][j].y);
 			j++;
 		}
-		printf("\n");
+		// printf("\n");
 		i++;
 	}
 }

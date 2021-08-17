@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 20:44:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 20:48:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,7 @@ void	draw_map(t_info *info)
 
 	get_ratio(info);
 	get_abs_zmax(info);
+	printf("zmax: %d\n", info->coords.zmax);
 	i = 0;
 	while (i < info->row_count - 1)
 	{
@@ -227,10 +228,10 @@ void	draw_map(t_info *info)
 		while (j < info->col_count[i])
 		{
 			// printf("%d", info->fdf_list[i][j]);
-			printf("%d", info->map[i][j].y);
+			// printf("%d", info->map[i][j].y);
 			j++;
 		}
-		printf("\n");
+		// printf("\n");
 		i++;
 	}
 }
