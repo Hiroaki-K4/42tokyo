@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 22:53:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 21:59:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,19 @@ int	main(int argc, char *argv[])
 {
 	t_info info;
 
-	(void)argc;
-	read_fdf_file(&info, argv[1]);
-	init_info(&info);
-	info.win = mlx_new_window(info.mlx, info.width, info.height, "fdf");
-	info.img.img = mlx_new_image(info.mlx, info.width, info.height);
-	info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
-			&info.img.line_length, &info.img.endian);
-	draw_map(&info);
-	mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
-	mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
-	mlx_hook(info.win, 2, 1L << 0, &key_press, &info);
-	mlx_loop(info.mlx);
+	if (argc == 2)
+	{
+		read_fdf_file(&info, argv[1]);
+		init_info(&info);
+		info.win = mlx_new_window(info.mlx, info.width, info.height, "FDF");
+		info.img.img = mlx_new_image(info.mlx, info.width, info.height);
+		info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
+				&info.img.line_length, &info.img.endian);
+		draw_map(&info);
+		mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
+		mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
+		mlx_hook(info.win, 2, 1L << 0, &key_press, &info);
+		mlx_loop(info.mlx);
+	}
 	return (0);
 }
