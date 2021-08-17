@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 22:24:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 23:10:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_map
 	int		x;
 	int		y;
 	int		z;
-	char	*color;
+	int		color;
 }				t_map;
 
 typedef struct s_data
