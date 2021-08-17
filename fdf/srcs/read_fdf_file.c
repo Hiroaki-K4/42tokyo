@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 23:00:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 23:02:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	check_color_hex(char *color)
 	i = 2;
 	while (i < 8)
 	{
-		if (ft_isdigit(color[i]) != 1 && (color[i] < 'A' || color[i] > 'F'))
+		if (ft_isdigit(color[i]) != 1 && (color[i] < 'A' || color[i] > 'F') && (color[i] < 'a' || color[i] > 'f'))
 			return (-1);
 		i++;
 	}
