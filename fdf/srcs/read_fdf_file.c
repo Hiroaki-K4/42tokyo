@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 22:54:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/17 22:59:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,16 @@ char	*get_color(char *line_split)
 		{
 			color++;
 			if (check_color_hex(color) == -1)
+			{
+				printf("Error: check_color_hex\n");
 				exit(1);
+			}
 		}
 		else
+		{
+			printf("color len is zero\n");
 			exit(1);
+		}
 		printf("color: %s\n", color);
 	}
 	else
