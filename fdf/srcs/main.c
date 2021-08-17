@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/16 21:59:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/16 22:53:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	init_info(t_info *info)
 	info->x_start = info->width * 0.3;
 	info->x_end = info->width * 0.8;
 	get_x_step(info);
-	// info->y_start = info->height * 0.2;
 	info->y_start = 0.1;
 	info->y_end = info->height * 0.6;
 	info->y_step = (info->y_end - info->y_start) / info->row_count;
@@ -65,7 +64,6 @@ int	main(int argc, char *argv[])
 	info.img.img = mlx_new_image(info.mlx, info.width, info.height);
 	info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
 			&info.img.line_length, &info.img.endian);
-	// draw(&info);
 	draw_map(&info);
 	mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
 	mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
