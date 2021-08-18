@@ -9,9 +9,9 @@ make re
 # ./fdf maps/test_maps/50-4.fdf
 # ./fdf maps/test_maps/100-6.fdf
 # ./fdf maps/test_maps/basictest.fdf
-./fdf maps/test_maps/elem-col.fdf
+# ./fdf maps/test_maps/elem-col.fdf
 # ./fdf maps/test_maps/elem-fract.fdf
-# ./fdf maps/test_maps/elem.fdf
+./fdf maps/test_maps/elem.fdf
 # ./fdf maps/test_maps/elem2.fdf
 # ./fdf maps/test_maps/julia.fdf
 # ./fdf maps/test_maps/mars.fdf
