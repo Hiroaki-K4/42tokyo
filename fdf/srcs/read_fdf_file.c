@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 22:14:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:15:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ int	convert_hex_to_dec(char *color)
 	int	i;
 	int	dec;
 
+	printf("color: %s\n", color);
 	dec = 0;
 	i = 2;
 	while (i < 8 && color[i])
