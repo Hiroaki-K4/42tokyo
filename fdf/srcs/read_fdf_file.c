@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 22:16:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:21:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*get_color(char *line_split)
 			exit(1);
 	}
 	else
-		color = "0x00FFFFFF";
+		color = "0xFFFFFF";
 	return (color);
 }
 
