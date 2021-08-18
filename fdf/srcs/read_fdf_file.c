@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 22:15:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:16:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int	convert_calc(int a, int b, char word)
 	int	pos;
 
 	pos = ft_strchr_place("0123456789ABCDEF", word);
+	if (pos == -1)
+		pos = ft_strchr_place("0123456789abcdef", word);
 	if (pos == -1)
 		exit(1);
 	ans = 1;
