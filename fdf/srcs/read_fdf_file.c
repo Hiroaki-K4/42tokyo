@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/17 23:11:29 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 21:55:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,12 @@ char	*get_color(char *line_split)
 	return (color);
 }
 
-int	convert_hex_to_dec(char *color)
-{
-	int	dec;
+// int	convert_hex_to_dec(char *color)
+// {
+// 	int	dec;
 
 	
-}
+// }
 
 void	add_new_row2(t_info *info, char **line_split)
 {
@@ -110,7 +110,7 @@ void	add_new_row2(t_info *info, char **line_split)
 		new_row[i].x = i;
 		new_row[i].y = info->row_count;
 		new_row[i].z = ft_atoi(line_split[i]);
-		new_row[i].color = convert_hex_to_dec(get_color(line_split[i]));
+		// new_row[i].color = convert_hex_to_dec(get_color(line_split[i]));
 		i++;
 	}
 	new_map[info->row_count] = new_row;
