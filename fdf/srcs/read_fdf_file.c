@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 22:34:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:40:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,16 @@ int	check_color_hex(char *color)
 	return (0);
 }
 
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
 char	*get_color(char *line_split)
 {
 	char	*color;
@@ -72,7 +82,7 @@ char	*get_color(char *line_split)
 		}
 		else
 		{
-			if (color == ",0xff")
+			if (ft_strcmp(color, ",0xff") == 0 || ft_strcmp(color, ",0xFF") == 0)
 				return ("0xFFFFFF");
 			exit(1);
 		}
