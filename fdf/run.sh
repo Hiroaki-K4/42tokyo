@@ -20,8 +20,8 @@ make re
 # ./fdf maps/test_maps/pnp_flat.fdf
 # ./fdf maps/test_maps/pylone.fdf
 # ./fdf maps/test_maps/pyra.fdf
-./fdf maps/test_maps/pyramide.fdf
-# ./fdf maps/test_maps/t1.fdf
+# ./fdf maps/test_maps/pyramide.fdf
+./fdf maps/test_maps/t1.fdf
 # ./fdf maps/test_maps/t2.fdf
 make fclean
 cd ..
