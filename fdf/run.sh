@@ -12,9 +12,9 @@ make re
 # ./fdf maps/test_maps/elem-col.fdf
 # ./fdf maps/test_maps/elem-fract.fdf
 # ./fdf maps/test_maps/elem.fdf
-./fdf maps/test_maps/elem2.fdf
+# ./fdf maps/test_maps/elem2.fdf
 # ./fdf maps/test_maps/julia.fdf
-# ./fdf maps/test_maps/mars.fdf
+./fdf maps/test_maps/mars.fdf
 # ./fdf maps/test_maps/pentenegpos.fdf
 # ./fdf maps/test_maps/plat.fdf
 # ./fdf maps/test_maps/pnp_flat.fdf
