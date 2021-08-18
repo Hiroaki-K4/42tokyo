@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 22:13:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:14:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	convert_calc(int a, int b, char word)
 		ans = ans * a;
 		b--;
 	}
-	ans = ans * post
+	ans = ans * pos;
 	return (ans);
 }
 
