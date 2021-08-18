@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/18 21:55:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/18 22:13:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,55 @@ char	*get_color(char *line_split)
 	return (color);
 }
 
-// int	convert_hex_to_dec(char *color)
-// {
-// 	int	dec;
+int ft_strchr_place(const char *arg, int c)
+{
+	int j;
 
-	
-// }
+	j = 0;
+	while (arg[j])
+	{
+		if (arg[j] == c)
+			return (j);
+		j++;
+	}
+	return (-1);
+}
+
+int	convert_calc(int a, int b, char word)
+{
+	int	ans;
+	int	pos;
+
+	pos = ft_strchr_place("0123456789ABCDEF", word);
+	if (pos == -1)
+		exit(1);
+	ans = 1;
+	// if (b == 0)
+		// return (1);
+	while (b > 0)
+	{
+		ans = ans * a;
+		b--;
+	}
+	ans = ans * post
+	return (ans);
+}
+
+int	convert_hex_to_dec(char *color)
+{
+	int	i;
+	int	dec;
+
+	dec = 0;
+	i = 2;
+	while (i < 8 && color[i])
+	{
+		dec += convert_calc(16, 7 - i, color[i]);
+		i++;
+	}
+	printf("color: %s dec: %d\n", color, dec);
+	return (dec);
+}
 
 void	add_new_row2(t_info *info, char **line_split)
 {
@@ -110,7 +153,7 @@ void	add_new_row2(t_info *info, char **line_split)
 		new_row[i].x = i;
 		new_row[i].y = info->row_count;
 		new_row[i].z = ft_atoi(line_split[i]);
-		// new_row[i].color = convert_hex_to_dec(get_color(line_split[i]));
+		new_row[i].color = convert_hex_to_dec(get_color(line_split[i]));
 		i++;
 	}
 	new_map[info->row_count] = new_row;
