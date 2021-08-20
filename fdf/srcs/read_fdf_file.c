@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:29:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 18:30:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	add_new_row(t_info *info, char **line_split)
 	t_map	*new_row;
 	t_map	**new_map;
 
-	// printf("row_count: %d\n", info->row_count);
 	new_map = (t_map **)malloc(sizeof(t_map *) * (info->row_count + 1));
 	if (!new_map)
 		exit(1);

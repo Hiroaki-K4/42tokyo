@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:30:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 18:30:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ typedef struct s_data
 
 typedef struct s_info
 {
-	// int		**fdf_list;
 	int		*col_count;
 	int		row_count;
 	int		width;
