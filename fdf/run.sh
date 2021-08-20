@@ -23,6 +23,7 @@ make re
 # ./fdf maps/test_maps/pyramide.fdf
 # ./fdf maps/test_maps/t1.fdf
 # ./fdf maps/test_maps/t2.fdf
+valgrind -s --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
 cd ..
 sh git.sh $*
