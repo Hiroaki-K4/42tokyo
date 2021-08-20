@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 20:57:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 20:58:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*make_restored_color(char *color, int len)
 	}
 	else
 		exit(1);
-	printf("re_color: %s\n", re_color);
+	// printf("re_color: %s\n", re_color);
 	return (re_color);
 }
 
@@ -72,7 +72,7 @@ char	*get_color(char *line_split)
 	char	*color;
 
 	color = ft_strchr(line_split, ',');
-	printf("first_color: %s\n", color);
+	// printf("first_color: %s\n", color);
 	if (color != NULL)
 	{
 		if (ft_strlen(color) == 9)

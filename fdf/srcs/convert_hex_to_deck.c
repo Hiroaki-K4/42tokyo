@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:32:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 20:58:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	convert_hex_to_dec(char *color)
 	int	i;
 	int	dec;
 
-	printf("color: %s\n", color);
+	// printf("color: %s\n", color);
 	dec = 0;
 	i = 2;
 	while (i < 8 && color[i])
@@ -61,6 +61,6 @@ int	convert_hex_to_dec(char *color)
 		dec += convert_calc(16, 7 - i, color[i]);
 		i++;
 	}
-	printf("color: %s dec: %d\n", color, dec);
+	// printf("color: %s dec: %d\n", color, dec);
 	return (dec);
 }
