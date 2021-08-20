@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 21:42:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 22:23:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	draw_map(t_info *info)
 	int	x_convert;
 	int	y_convert;
 
+	printf("draw_map\n");
 	get_ratio(info);
 	get_abs_zmax(info);
 	i = 0;
