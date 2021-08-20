@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 21:18:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 21:42:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	draw_map(t_info *info)
 
 	get_ratio(info);
 	get_abs_zmax(info);
-	printf("zmax: %d\n", info->coords.zmax);
 	i = 0;
 	while (i < info->row_count - 1)
 	{
@@ -79,8 +78,6 @@ void	draw_map(t_info *info)
 				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax * 20, 30.0);
 			else
 				y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax, 30.0);
-			// y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 0, 30.0);
-			// printf("i: %d j: %d x: %d y: %d ratio: %f\n", i, j, x_convert, y_convert, info->ratio);
 			info->map[i][j].x = x_convert;
 			info->map[i][j].y = y_convert;
 			j++;

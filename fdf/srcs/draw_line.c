@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 21:11:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 21:41:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 21:41:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -41,7 +41,7 @@ void	draw_row_line(t_info *info)
 			{
 				y += slope;
 				x++;
-				mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
 			}
 			j++;
 		}
@@ -70,7 +70,7 @@ void	draw_col_line(t_info *info)
 			{
 				y += slope;
 				x--;
-				mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
 			}
 			i++;
 		}
