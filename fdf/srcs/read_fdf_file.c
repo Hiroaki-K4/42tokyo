@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:30:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 21:08:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,12 @@ void	store_fdf_value(t_info *info, char *line)
 	int	*col_count;
 	char **line_split;
 
-	// printf("len: %d\n", info->row_count);
-	// printf("fdf: %s\n", line);
 	line_split = ft_split(line, ' ');
-	// printf("line_split: %s\n", line_split[0]);
 	if (!line_split)
 		exit(1);
 	count = 0;
 	while (line_split[count] != NULL)
 		count++;
-	// printf("row: %d\n", count);
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
 		exit(1);
@@ -98,17 +94,17 @@ void	read_fdf_file(t_info *info, char *path)
 		free(line);
 	}
 	// printf("col_count: %d\n", info->col_count[0]);
-	i = 0;
-	while (i < info->row_count)
-	{
-		j = 0;
-		while (j < info->col_count[i])
-		{
-			// printf("%d", info->fdf_list[i][j]);
-			// printf("%d", info->map[i][j].y);
-			j++;
-		}
-		// printf("\n");
-		i++;
-	}
+	// i = 0;
+	// while (i < info->row_count)
+	// {
+	// 	j = 0;
+	// 	while (j < info->col_count[i])
+	// 	{
+	// 		// printf("%d", info->fdf_list[i][j]);
+	// 		// printf("%d", info->map[i][j].y);
+	// 		j++;
+	// 	}
+	// 	// printf("\n");
+	// 	i++;
+	// }
 }

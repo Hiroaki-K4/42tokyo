@@ -3,7 +3,7 @@ NAME = fdf
 
 .PHONY: all, clean, fclean, re
 
-SRCS = srcs/main.c srcs/convert_hex_to_deck.c srcs/get_color.c srcs/draw.c srcs/read_fdf_file.c srcs/minilibx_utils.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c get_next_line/support.c
+SRCS = srcs/main.c srcs/convert_hex_to_dec.c srcs/get_color.c srcs/draw.c srcs/read_fdf_file.c srcs/minilibx_utils.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c get_next_line/support.c
 
 OBJS = $(SRCS:.c=.o)
 

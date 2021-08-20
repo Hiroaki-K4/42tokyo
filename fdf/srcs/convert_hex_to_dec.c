@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_hex_to_deck.c                              :+:      :+:    :+:   */
+/*   convert_hex_to_dec.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 20:58:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 21:07:36 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	convert_calc(int a, int b, char word)
 	if (pos == -1)
 		exit(1);
 	ans = 1;
-	// if (b == 0)
-		// return (1);
 	while (b > 0)
 	{
 		ans = ans * a;
@@ -53,7 +51,6 @@ int	convert_hex_to_dec(char *color)
 	int	i;
 	int	dec;
 
-	// printf("color: %s\n", color);
 	dec = 0;
 	i = 2;
 	while (i < 8 && color[i])
@@ -61,6 +58,5 @@ int	convert_hex_to_dec(char *color)
 		dec += convert_calc(16, 7 - i, color[i]);
 		i++;
 	}
-	// printf("color: %s dec: %d\n", color, dec);
 	return (dec);
 }
