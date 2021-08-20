@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 20:53:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 20:54:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*make_restored_color(char *color, int len)
 
 	if (color[len - 1] == color[len])
 	{
-		re_color = (char *)malloc(sizeof(char) * 8);
+		re_color = (char *)malloc(sizeof(char) * 9);
 		if (!re_color)
 			return (NULL);
 		i = 0;
@@ -86,7 +86,6 @@ char	*get_color(char *line_split)
 			color++;
 			if (check_color_hex(color, 4) == -1)
 				exit(1);
-			printf("ok\n");
 			color = make_restored_color(color, 4);
 		}
 		else if (ft_strlen(color) == 7)
