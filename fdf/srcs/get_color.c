@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:47:04 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 20:51:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,35 @@ int		ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
+char	*make_restored_color(char *color, int len)
+{
+	int		i;
+	char	*re_color;
+
+	if (color[len - 1] == color[len])
+	{
+		re_color = (char *)malloc(sizeof(char) * 8);
+		if (!re_color)
+			return (NULL);
+		i = 0;
+		while (i < len)
+		{
+			re_color[i] = color[i];
+			i++;
+		}
+		while (i < 8)
+		{
+			re_color[i] = color[len];
+			i++;
+		}
+		re_color[i] = '\0';
+	}
+	else
+		exit(1);
+	printf("re_color: %s\n", re_color);
+	return (re_color);
+}
+
 char	*get_color(char *line_split)
 {
 	char	*color;
@@ -57,12 +86,14 @@ char	*get_color(char *line_split)
 			color++;
 			if (check_color_hex(color, 4) == -1)
 				exit(1);
+			color = make_restored_color(color, 4);
 		}
 		else if (ft_strlen(color) == 7)
 		{
 			color++;
 			if (check_color_hex(color, 6) == -1)
 				exit(1);
+			color = make_restored_color(color, 6);
 		}
 		else
 			exit(1);
