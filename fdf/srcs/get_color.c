@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 20:54:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 20:57:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*make_restored_color(char *color, int len)
 	int		i;
 	char	*re_color;
 
-	if (color[len - 1] == color[len])
+	if (color[len - 2] == color[len - 1])
 	{
 		re_color = (char *)malloc(sizeof(char) * 9);
 		if (!re_color)
@@ -56,7 +56,7 @@ char	*make_restored_color(char *color, int len)
 		}
 		while (i < 8)
 		{
-			re_color[i] = color[len];
+			re_color[i] = color[len - 1];
 			i++;
 		}
 		re_color[i] = '\0';
