@@ -6,42 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 18:29:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 18:29:48 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-// void	add_new_row(t_info *info, char **line_split)
-// {
-// 	int	i;
-// 	int	*new_row;
-// 	int	**new_fdf_list;
-
-// 	// printf("row_count: %d\n", info->row_count);
-// 	new_row = (int *)malloc(sizeof(int) * (info->col_count[info->row_count]));
-// 	if (!new_row)
-// 		exit(1);
-// 	i = 0;
-// 	while (line_split[i] != NULL)
-// 	{
-// 		new_row[i] = ft_atoi(line_split[i]);
-// 		i++;
-// 	}
-// 	new_fdf_list = (int **)malloc(sizeof(int *) * (info->row_count + 1));
-// 	if (!new_fdf_list)
-// 		exit(1);
-// 	i = 0;
-// 	while (i < info->row_count)
-// 	{
-// 		new_fdf_list[i] = info->fdf_list[i];
-// 		i++;
-// 	}
-// 	new_fdf_list[i] = new_row;
-// 	info->fdf_list = new_fdf_list;
-// }
-
-void	add_new_row2(t_info *info, char **line_split)
+void	add_new_row(t_info *info, char **line_split)
 {
 	int	i;
 	t_map	*new_row;
@@ -103,8 +74,7 @@ void	store_fdf_value(t_info *info, char *line)
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
-	// add_new_row(info, line_split);
-	add_new_row2(info, line_split);
+	add_new_row(info, line_split);
 }
 
 void	read_fdf_file(t_info *info, char *path)
