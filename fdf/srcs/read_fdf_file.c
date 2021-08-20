@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 22:48:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/20 22:48:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,7 @@ void	col_num_check(t_info *info)
 	while (i < info->row_count - 1)
 	{
 		if (info->col_count[i] != info->col_count[i + 1])
-		{
-			printf("Error\n");
 			exit(1);
-		}
-		printf("col: %d\n", info->col_count[i]);
 		i++;
 	}
 }
