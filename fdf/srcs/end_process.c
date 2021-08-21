@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:17:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:28:22 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	map_free(t_info *info)
 	i = 0;
 	while (info->map[i])
 	{
+		printf("ok\n");
 		free(info->map[i]);
 		info->map[i] = NULL;
 	}
