@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:28:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:38:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,24 @@ void	all_free_mlx(t_info *info)
 		mlx_destroy_display(info->mlx);
 		free(info->mlx);
 	}
+}
+
+void	freed_double_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		if (array[i])
+		{
+			free(array[i]);
+			array[i] = NULL;
+		}
+		i++;
+	}
+	free(array);
+	array = NULL;
 }
 
 void	map_free(t_info *info)
