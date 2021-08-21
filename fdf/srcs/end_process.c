@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:06:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:10:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	map_free(t_info *info)
 	i = 0;
 	while (i < info->row_count)
 	{
-		printf("ok\n");
 		free(info->map[i]);
 		info->map[i] = NULL;
 		i++;
@@ -62,22 +61,6 @@ void	map_free(t_info *info)
 void	all_free(t_info *info, char *message)
 {
 	write(1, message, ft_strlen(message));
-	// if (info->buf)
-	// 	int_double_array_free(info->buf, info->cub_list.height);
-	// if (info->texture)
-	// 	int_double_array_free(info->texture, 4);
-	// if (info->cub_list.map_matrix)
-	// 	int_double_array_free(info->cub_list.map_matrix, info->cub_list.map_y);
-	// if (info->cub_list.map)
-	// 	double_array_free(info->cub_list.map);
-	// if (info->cub_list.n_texture)
-	// 	free(info->cub_list.n_texture);
-	// if (info->cub_list.s_texture)
-	// 	free(info->cub_list.s_texture);
-	// if (info->cub_list.e_texture)
-	// 	free(info->cub_list.e_texture);
-	// if (info->cub_list.w_texture)
-	// 	free(info->cub_list.w_texture);
 	if (info->col_count)
 		free(info->col_count);
 	if (info->map)

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 22:23:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:10:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	move_to_center(t_info *info)
 	info->coords.ymin += y_move;
 	info->coords.xmax += x_move;
 	info->coords.ymax += y_move;
-	printf("x_move: %d y_move: %d\n", x_move, y_move);
 	i = 0;
 	while (i < info->row_count - 1)
 	{
@@ -59,11 +58,9 @@ void	move_to_center(t_info *info)
 void	draw_map(t_info *info)
 {
 	int	i;
-	int	j;
 	int	x_convert;
 	int	y_convert;
 
-	printf("draw_map\n");
 	get_ratio(info);
 	get_abs_zmax(info);
 	i = 0;
@@ -89,18 +86,4 @@ void	draw_map(t_info *info)
 	move_to_center(info);
 	draw_row_line(info);
 	draw_col_line(info);
-	printf("xmin: %d ymin: %d xmax: %d ymax: %d\n", info->coords.xmin, info->coords.ymin, info->coords.xmax, info->coords.ymax);
-	i = 0;
-	while (i < info->row_count - 1)
-	{
-		j = 0;
-		while (j < info->col_count[i])
-		{
-			// printf("%d", info->fdf_list[i][j]);
-			// printf("%d", info->map[i][j].y);
-			j++;
-		}
-		// printf("\n");
-		i++;
-	}
 }
