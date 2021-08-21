@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:12:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:22:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	add_new_row(t_info *info, char **line_split)
 {
-	int	i;
+	int		i;
 	t_map	*new_row;
 	t_map	**new_map;
 
