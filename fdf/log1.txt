@@ -1,30 +1,86 @@
-==117144== Memcheck, a memory error detector
-==117144== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==117144== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==117144== Command: ./fdf maps/test_maps/42.fdf
-==117144== Parent PID: 116835
-==117144== 
-==117144== 
-==117144== HEAP SUMMARY:
-==117144==     in use at exit: 528 bytes in 11 blocks
-==117144==   total heap usage: 776 allocs, 765 frees, 105,049 bytes allocated
-==117144== 
-==117144== 528 bytes in 11 blocks are definitely lost in loss record 1 of 1
-==117144==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==117144==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==117144==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==117144==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==117144==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==117144== 
-==117144== LEAK SUMMARY:
-==117144==    definitely lost: 528 bytes in 11 blocks
-==117144==    indirectly lost: 0 bytes in 0 blocks
-==117144==      possibly lost: 0 bytes in 0 blocks
-==117144==    still reachable: 0 bytes in 0 blocks
-==117144==         suppressed: 0 bytes in 0 blocks
-==117144== 
-==117144== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 2 from 1)
---117144-- 
---117144-- used_suppression:      2 X on SUSE11 writev uninit padding /usr/lib/x86_64-linux-gnu/valgrind/default.supp:397
-==117144== 
-==117144== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 2 from 1)
+==118213== Memcheck, a memory error detector
+==118213== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==118213== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==118213== Command: ./fdf maps/test_maps/42.fdf
+==118213== Parent PID: 117888
+==118213== 
+==118213== Invalid read of size 8
+==118213==    at 0x10C7F4: map_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C8B1: all_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C920: key_press (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10DEC0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10ABF2: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==  Address 0x4d84650 is 0 bytes after a block of size 96 alloc'd
+==118213==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118213==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213== 
+==118213== Invalid write of size 8
+==118213==    at 0x10C814: map_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C8B1: all_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C920: key_press (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10DEC0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10ABF2: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==  Address 0x4d84650 is 0 bytes after a block of size 96 alloc'd
+==118213==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118213==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213== 
+==118213== 
+==118213== HEAP SUMMARY:
+==118213==     in use at exit: 528 bytes in 11 blocks
+==118213==   total heap usage: 770 allocs, 759 frees, 104,529 bytes allocated
+==118213== 
+==118213== 528 bytes in 11 blocks are definitely lost in loss record 1 of 1
+==118213==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118213==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213== 
+==118213== LEAK SUMMARY:
+==118213==    definitely lost: 528 bytes in 11 blocks
+==118213==    indirectly lost: 0 bytes in 0 blocks
+==118213==      possibly lost: 0 bytes in 0 blocks
+==118213==    still reachable: 0 bytes in 0 blocks
+==118213==         suppressed: 0 bytes in 0 blocks
+==118213== 
+==118213== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 1)
+==118213== 
+==118213== 1 errors in context 1 of 3:
+==118213== Invalid write of size 8
+==118213==    at 0x10C814: map_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C8B1: all_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C920: key_press (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10DEC0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10ABF2: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==  Address 0x4d84650 is 0 bytes after a block of size 96 alloc'd
+==118213==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118213==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213== 
+==118213== 
+==118213== 1 errors in context 2 of 3:
+==118213== Invalid read of size 8
+==118213==    at 0x10C7F4: map_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C8B1: all_free (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C920: key_press (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10DEC0: mlx_loop (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10ABF2: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==  Address 0x4d84650 is 0 bytes after a block of size 96 alloc'd
+==118213==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118213==    by 0x10C1E8: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C4EB: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10C63D: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213==    by 0x10AAE9: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==118213== 
+--118213-- 
+--118213-- used_suppression:      2 X on SUSE11 writev uninit padding /usr/lib/x86_64-linux-gnu/valgrind/default.supp:397
+==118213== 
+==118213== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 1)
