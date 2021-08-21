@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 14:59:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 15:00:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	all_free_core(t_info *info)
+void	all_free_mlx(t_info *info)
 {
 	if (info->win)
 		mlx_destroy_window(info->mlx, info->win);
@@ -43,7 +43,7 @@ void	all_free(t_info *info)
 	// 	free(info->cub_list.e_texture);
 	// if (info->cub_list.w_texture)
 	// 	free(info->cub_list.w_texture);
-	all_free_core(info);
+	all_free_mlx(info);
 	exit(0);
 }
 
