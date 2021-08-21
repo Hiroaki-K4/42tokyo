@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 12:25:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 12:26:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,47 +247,47 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	return (len);
 }
 
-int ft_strchr_place(const char *arg, int c, int *i)
-{
-	int j;
+// int ft_strchr_place(const char *arg, int c, int *i)
+// {
+// 	int j;
 	
-	j = 0;
-	while (arg[j++])
-	{
-		if (arg[j] == c)
-		{
-			(*i)++;
-			return (j);
-		}
-		j++;
-	}
-	return (-1);
-}
+// 	j = 0;
+// 	while (arg[j++])
+// 	{
+// 		if (arg[j] == c)
+// 		{
+// 			(*i)++;
+// 			return (j);
+// 		}
+// 		j++;
+// 	}
+// 	return (-1);
+// }
 
-char *ft_itoa_hex(unsigned int num, const char *arg)
-{
-	unsigned int i;
-	int len;
-	char *ans;
+// char *ft_itoa_hex(unsigned int num, const char *arg)
+// {
+// 	unsigned int i;
+// 	int len;
+// 	char *ans;
 
-	i = num;
-	len = 1;
-	while (i > 16)
-	{
-		len++;
-		i = i / 16;
-	}
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ans[len] = '\0';
-	len--;
-	while (len >= 0)
-	{
-		ans[len--] = arg[num % 16];
-		num = num / 16;
-	}
-	return (ans);
-}
+// 	i = num;
+// 	len = 1;
+// 	while (i > 16)
+// 	{
+// 		len++;
+// 		i = i / 16;
+// 	}
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	len--;
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = arg[num % 16];
+// 		num = num / 16;
+// 	}
+// 	return (ans);
+// }
 
 // int digit_size(int num)
 // {
