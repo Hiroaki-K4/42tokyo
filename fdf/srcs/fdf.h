@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 21:22:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:24:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	get_ratio(t_info *info);
 void	get_abs_zmax(t_info *info);
 void	all_free(t_info *info, char *message);
 void	map_free(t_info *info);
-void	freed_double_array(char **array);
+void	free_double_array(char **array);
 int		win_close(t_info *info);
 int		key_press(int key, t_info *info);
 int		hex_to_dec(char *color, t_info *info);
