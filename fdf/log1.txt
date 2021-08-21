@@ -1,79 +1,79 @@
-==53724== Memcheck, a memory error detector
-==53724== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==53724== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==53724== Command: ./fdf maps/test_maps/42.fdf
-==53724== Parent PID: 53444
-==53724== 
-==53724== 
-==53724== HEAP SUMMARY:
-==53724==     in use at exit: 6,144 bytes in 243 blocks
-==53724==   total heap usage: 763 allocs, 520 frees, 104,413 bytes allocated
-==53724== 
-==53724== 22 bytes in 11 blocks are indirectly lost in loss record 1 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10D544: ft_substr (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D66B: ft_strtrim (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D2A6: core_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D3E4: main_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D4B3: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 44 bytes in 1 blocks are still reachable in loss record 2 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10C363: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 88 bytes in 1 blocks are still reachable in loss record 3 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10C140: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 440 bytes in 10 blocks are definitely lost in loss record 4 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10C140: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 446 bytes in 198 blocks are indirectly lost in loss record 5 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10D544: ft_substr (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D66B: ft_strtrim (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D2A6: core_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D34C: main_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10D4B3: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 2,228 (1,760 direct, 468 indirect) bytes in 11 blocks are definitely lost in loss record 6 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10D47E: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== 3,344 bytes in 11 blocks are still reachable in loss record 7 of 7
-==53724==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==53724==    by 0x10C1C5: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
-==53724== 
-==53724== LEAK SUMMARY:
-==53724==    definitely lost: 2,200 bytes in 21 blocks
-==53724==    indirectly lost: 468 bytes in 209 blocks
-==53724==      possibly lost: 0 bytes in 0 blocks
-==53724==    still reachable: 3,476 bytes in 13 blocks
-==53724==         suppressed: 0 bytes in 0 blocks
-==53724== 
-==53724== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 2 from 1)
---53724-- 
---53724-- used_suppression:      2 X on SUSE11 writev uninit padding /usr/lib/x86_64-linux-gnu/valgrind/default.supp:397
-==53724== 
-==53724== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 2 from 1)
+==77289== Memcheck, a memory error detector
+==77289== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==77289== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==77289== Command: ./fdf maps/test_maps/42.fdf
+==77289== Parent PID: 77009
+==77289== 
+==77289== 
+==77289== HEAP SUMMARY:
+==77289==     in use at exit: 6,144 bytes in 243 blocks
+==77289==   total heap usage: 763 allocs, 520 frees, 104,413 bytes allocated
+==77289== 
+==77289== 22 bytes in 11 blocks are indirectly lost in loss record 1 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10D544: ft_substr (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D66B: ft_strtrim (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D2A6: core_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D3E4: main_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D4B3: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 44 bytes in 1 blocks are still reachable in loss record 2 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10C363: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 88 bytes in 1 blocks are still reachable in loss record 3 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10C140: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 440 bytes in 10 blocks are definitely lost in loss record 4 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10C140: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 446 bytes in 198 blocks are indirectly lost in loss record 5 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10D544: ft_substr (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D66B: ft_strtrim (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D2A6: core_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D34C: main_div (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10D4B3: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 2,228 (1,760 direct, 468 indirect) bytes in 11 blocks are definitely lost in loss record 6 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10D47E: ft_split (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C30D: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== 3,344 bytes in 11 blocks are still reachable in loss record 7 of 7
+==77289==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==77289==    by 0x10C1C5: add_new_row (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C40F: store_fdf_value (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10C51C: read_fdf_file (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289==    by 0x10AA9B: main (in /home/hiroaki-k4/my_project/42tokyo/fdf/fdf)
+==77289== 
+==77289== LEAK SUMMARY:
+==77289==    definitely lost: 2,200 bytes in 21 blocks
+==77289==    indirectly lost: 468 bytes in 209 blocks
+==77289==      possibly lost: 0 bytes in 0 blocks
+==77289==    still reachable: 3,476 bytes in 13 blocks
+==77289==         suppressed: 0 bytes in 0 blocks
+==77289== 
+==77289== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 2 from 1)
+--77289-- 
+--77289-- used_suppression:      2 X on SUSE11 writev uninit padding /usr/lib/x86_64-linux-gnu/valgrind/default.supp:397
+==77289== 
+==77289== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 2 from 1)
