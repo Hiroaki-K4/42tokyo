@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 18:20:00 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:20:24 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:24:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	all_free_mlx(t_info *info)
 	}
 }
 
-void	freed_double_array(char **array)
+void	free_double_array(char **array)
 {
 	int	i;
 
