@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 20:56:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 20:57:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,27 +89,8 @@ char	*get_color(char *line_split, t_info *info)
 	color = ft_strchr(line_split, ',');
 	if (color != NULL)
 	{
-		// if (ft_strlen(color) == 9)
-		// {
-		// 	color++;
-		// 	if (check_color_hex(color, 8) == -1)
-		// 		all_free(info, "[End process] get_color\n");
-		// }
-		// else if (ft_strlen(color) == 5)
-		// {
-		// 	color++;
-		// 	if (check_color_hex(color, 4) == -1)
-		// 		all_free(info, "[End process] get_color\n");
-		// 	color = make_restored_color(color, 4, info);
-		// }
-		// else if (ft_strlen(color) == 7)
-		// {
-		// 	color++;
-		// 	if (check_color_hex(color, 6) == -1)
-		// 		all_free(info, "[End process] get_color");
-		// 	color = make_restored_color(color, 6, info);
-		// }
-		if (ft_strlen(color) == 9 || ft_strlen(color) == 5 || ft_strlen(color) == 7)
+		if (ft_strlen(color) == 9 || ft_strlen(color) == 5
+			|| ft_strlen(color) == 7)
 			color = make_color(color, info);
 		else
 			all_free(info, "[End process] get_color");

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:22:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:00:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	add_new_row(t_info *info, char **line_split)
 		new_map[i] = info->map[i];
 		i++;
 	}
-	new_row = (t_map *)malloc(sizeof(t_map) * (info->col_count[info->row_count]));
+	new_row = (t_map *)malloc(sizeof(t_map)
+			* (info->col_count[info->row_count]));
 	if (!new_row)
 		all_free(info, "[End process] add_new_row\n");
 	i = 0;
@@ -36,7 +37,8 @@ void	add_new_row(t_info *info, char **line_split)
 		new_row[i].x = i;
 		new_row[i].y = info->row_count;
 		new_row[i].z = ft_atoi(line_split[i]);
-		new_row[i].color = convert_hex_to_dec(get_color(line_split[i], info), info);
+		new_row[i].color = convert_hex_to_dec(get_color(line_split[i],
+					info), info);
 		i++;
 	}
 	new_map[info->row_count] = new_row;
@@ -46,10 +48,10 @@ void	add_new_row(t_info *info, char **line_split)
 
 void	store_fdf_value(t_info *info, char *line)
 {
-	int	i;
-	int	count;
-	int	*col_count;
-	char **line_split;
+	int		i;
+	int		count;
+	int		*col_count;
+	char	**line_split;
 
 	line_split = ft_split(line, ' ');
 	if (!line_split)
@@ -60,12 +62,9 @@ void	store_fdf_value(t_info *info, char *line)
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
 		all_free(info, "[End process] store_fdf_value\n");
-	i = 0;
-	while (i < info->row_count)
-	{
+	i = -1;
+	while (++i < info->row_count)
 		col_count[i] = info->col_count[i];
-		i++;
-	}
 	col_count[i] = count;
 	if (info->row_count > 0)
 		free(info->col_count);
@@ -81,7 +80,8 @@ void	col_num_check(t_info *info)
 	i = 0;
 	while (i < info->row_count - 1)
 	{
-		if (info->col_count[i] != info->col_count[i + 1] && info->col_count[i + 1] != 0)
+		if (info->col_count[i] != info->col_count[i + 1]
+			&& info->col_count[i + 1] != 0)
 			all_free(info, "[End process] col_num_check\n");
 		i++;
 	}
