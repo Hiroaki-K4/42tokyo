@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:05:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:16:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	init_info(t_info *info)
 
 void	insert_null(t_info *info)
 {
+	info->map = NULL;
 	info->win = NULL;
 	info->img.img = NULL;
 	info->mlx = NULL;
