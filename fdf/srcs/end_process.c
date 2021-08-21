@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 16:21:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:00:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	all_free_mlx(t_info *info)
 void	all_free(t_info *info, char *message)
 {
 	write(1, message, ft_strlen(message));
-	write(1, "\n", 1);
 	// if (info->buf)
 	// 	int_double_array_free(info->buf, info->cub_list.height);
 	// if (info->texture)
