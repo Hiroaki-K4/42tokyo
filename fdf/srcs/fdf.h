@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:09:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:13:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	get_abs_zmax(t_info *info);
 void	all_free(t_info *info, char *message);
 int		win_close(t_info *info);
 int		key_press(int key, t_info *info);
-int		convert_hex_to_dec(char *color);
+int		convert_hex_to_dec(char *color, t_info *info);
 char	*get_color(char *line_split, t_info *info);
 
 #endif

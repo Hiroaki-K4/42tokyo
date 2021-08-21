@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 15:31:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:14:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_strchr_place(const char *arg, int c)
 	return (-1);
 }
 
-int	convert_calc(int a, int b, char word)
+int	convert_calc(int a, int b, char word, t_info *info)
 {
 	int	ans;
 	int	pos;
@@ -35,7 +35,7 @@ int	convert_calc(int a, int b, char word)
 	if (pos == -1)
 		pos = ft_strchr_place("0123456789abcdef", word);
 	if (pos == -1)
-		exit(1);
+		all_free(info, "[End process] convert_calc\n");
 	ans = 1;
 	while (b > 0)
 	{
@@ -46,7 +46,7 @@ int	convert_calc(int a, int b, char word)
 	return (ans);
 }
 
-int	convert_hex_to_dec(char *color)
+int	convert_hex_to_dec(char *color, t_info *info)
 {
 	int	i;
 	int	dec;
@@ -55,7 +55,7 @@ int	convert_hex_to_dec(char *color)
 	i = 2;
 	while (i < 8 && color[i])
 	{
-		dec += convert_calc(16, 7 - i, color[i]);
+		dec += convert_calc(16, 7 - i, color[i], t_info *info);
 		i++;
 	}
 	return (dec);
