@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 21:00:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:03:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,22 @@ void	add_new_row(t_info *info, char **line_split)
 	new_map = (t_map **)malloc(sizeof(t_map *) * (info->row_count + 1));
 	if (!new_map)
 		all_free(info, "[End process] add_new_row\n");
-	i = 0;
-	while (i < info->row_count)
-	{
+	i = -1;
+	while (++i < info->row_count)
 		new_map[i] = info->map[i];
-		i++;
-	}
 	new_row = (t_map *)malloc(sizeof(t_map)
 			* (info->col_count[info->row_count]));
 	if (!new_row)
 		all_free(info, "[End process] add_new_row\n");
-	i = 0;
-	while (line_split[i] != NULL)
+	i = -1;
+	while (line_split[++i] != NULL)
 	{
 		new_row[i].x = i;
 		new_row[i].y = info->row_count;
 		new_row[i].z = ft_atoi(line_split[i]);
 		new_row[i].color = convert_hex_to_dec(get_color(line_split[i],
 					info), info);
-		i++;
+		// i++;
 	}
 	new_map[info->row_count] = new_row;
 	free(info->map);
