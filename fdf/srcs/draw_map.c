@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:10:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:11:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	move_to_center(t_info *info)
 void	draw_map(t_info *info)
 {
 	int	i;
+	int	j;
 	int	x_convert;
 	int	y_convert;
 
