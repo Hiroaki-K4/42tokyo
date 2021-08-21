@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 21:15:47 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/20 21:16:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:17:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	get_ratio(t_info *info)
 	else
 		info->ratio = y_ratio;
 }
-
 
 void	get_abs_zmax(t_info *info)
 {

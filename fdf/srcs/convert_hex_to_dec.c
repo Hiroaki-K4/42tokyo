@@ -6,15 +6,15 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:14:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:18:39 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int ft_strchr_place(const char *arg, int c)
+int	ft_strchr_place(const char *arg, int c)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (arg[j])
