@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:38:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:40:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	all_free(t_info *info, char *message)
 	// 	free(info->cub_list.e_texture);
 	// if (info->cub_list.w_texture)
 	// 	free(info->cub_list.w_texture);
+	if (info->col_count)
+		free(info->col_count);
 	if (info->map)
 		map_free(info);
 	all_free_mlx(info);
