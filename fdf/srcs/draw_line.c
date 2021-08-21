@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 21:11:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:10:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:18:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,35 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
+}
+
+void	draw_row_line_core(t_info *info, int i, int j)
+{
+	int		x;
+	double	y;
+	double	slope;
+
+	slope = (double)(info->map[i][j + 1].y - info->map[i][j].y) / (double)(info->map[i][j + 1].x - info->map[i][j].x);
+	x = info->map[i][j].x;
+	y = (double)info->map[i][j].y;
+	while (x < info->map[i][j + 1].x)
+	{
+		y += slope;
+		x++;
+		if (x < 0 || x > info->width || (int)round(y) < 0 || (int)round(y) > info->height)
+			all_free(info, "[End process] draw_row_line\n");
+		my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+	}
 }
 
 void	draw_row_line(t_info *info)
 {
-	int	i;
-	int	j;
-	int	x;
-	double	y;
-	double	slope;
+	int		i;
+	int		j;
+	// int		x;
+	// double	y;
+	// double	slope;
 
 	i = 0;
 	while (i < info->row_count - 1)
@@ -34,17 +53,18 @@ void	draw_row_line(t_info *info)
 		j = 0;
 		while (j < info->col_count[i] - 1)
 		{
-			slope = (double)(info->map[i][j + 1].y - info->map[i][j].y) / (double)(info->map[i][j + 1].x - info->map[i][j].x);
-			x = info->map[i][j].x;
-			y = (double)info->map[i][j].y;
-			while (x < info->map[i][j + 1].x)
-			{
-				y += slope;
-				x++;
-				if (x < 0 || x > info->width || (int)round(y) < 0 || (int)round(y) > info->height)
-					all_free(info, "[End process] draw_row_line\n");
-				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
-			}
+			// slope = (double)(info->map[i][j + 1].y - info->map[i][j].y) / (double)(info->map[i][j + 1].x - info->map[i][j].x);
+			// x = info->map[i][j].x;
+			// y = (double)info->map[i][j].y;
+			// while (x < info->map[i][j + 1].x)
+			// {
+			// 	y += slope;
+			// 	x++;
+			// 	if (x < 0 || x > info->width || (int)round(y) < 0 || (int)round(y) > info->height)
+			// 		all_free(info, "[End process] draw_row_line\n");
+			// 	my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
+			// }
+			draw_row_line_core(info, i, j);
 			j++;
 		}
 		i++;
@@ -53,9 +73,9 @@ void	draw_row_line(t_info *info)
 
 void	draw_col_line(t_info *info)
 {
-	int	i;
-	int	j;
-	int	x;
+	int		i;
+	int		j;
+	int		x;
 	double	y;
 	double	slope;
 
@@ -73,7 +93,7 @@ void	draw_col_line(t_info *info)
 				y += slope;
 				x--;
 				if (x < 0 || x > info->width || (int)round(y) < 0 || (int)round(y) > info->height)
-					all_free(info, "[End process] draw_col_line\n");;
+					all_free(info, "[End process] draw_col_line\n");
 				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
 			}
 			i++;

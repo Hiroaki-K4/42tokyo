@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 21:06:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:13:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <math.h>
 
 # define K_ESC 65307
-#define PI 3.14159265
+# define PI 3.14159265
 
 typedef struct s_coords
 {
@@ -49,21 +49,21 @@ typedef struct s_data
 
 typedef struct s_info
 {
-	int		*col_count;
-	int		row_count;
-	int		width;
-	int		height;
-	int		x_start;
-	int		x_end;
-	int		x_step;
-	int		y_start;
-	int		y_end;
-	int		y_step;
-	double	ratio;
-	void	*mlx;
-	void	*win;
-	t_data	img;
-	t_map	**map;
+	int			*col_count;
+	int			row_count;
+	int			width;
+	int			height;
+	int			x_start;
+	int			x_end;
+	int			x_step;
+	int			y_start;
+	int			y_end;
+	int			y_step;
+	double		ratio;
+	void		*mlx;
+	void		*win;
+	t_data		img;
+	t_map		**map;
 	t_coords	coords;
 }				t_info;
 
