@@ -38,7 +38,7 @@ echo "42_6"
 ./fdf maps/test_maps/42_6.fdf
 echo "42_7"
 ./fdf maps/test_maps/42_7.fdf
-# valgrind -s --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
+valgrind -s --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
 cd ..
 sh git.sh $*
