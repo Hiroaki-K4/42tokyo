@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:20:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:24:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	add_new_row(t_info *info, char **line_split)
 	while (i < info->row_count)
 	{
 		new_map[i] = info->map[i];
+		free(info->map[i]);
 		i++;
 	}
 	new_row = (t_map *)malloc(sizeof(t_map) * (info->col_count[info->row_count]));
@@ -39,7 +40,6 @@ void	add_new_row(t_info *info, char **line_split)
 		new_row[i].color = convert_hex_to_dec(get_color(line_split[i], info), info);
 		i++;
 	}
-	new_row[i] = NULL;
 	new_map[info->row_count] = new_row;
 	info->map = new_map;
 }
