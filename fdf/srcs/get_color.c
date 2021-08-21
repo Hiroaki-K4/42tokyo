@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:11:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 20:56:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	check_color_hex(char *color, int len)
 	i = 2;
 	while (i < len)
 	{
-		if (ft_isdigit(color[i]) != 1 && (color[i] < 'A' || color[i] > 'F') && (color[i] < 'a' || color[i] > 'f'))
+		if (ft_isdigit(color[i]) != 1 && (color[i] < 'A' || color[i] > 'F')
+			&& (color[i] < 'a' || color[i] > 'f'))
 			return (-1);
 		i++;
 	}
@@ -56,6 +57,31 @@ char	*make_restored_color(char *color, int len, t_info *info)
 	return (re_color);
 }
 
+char	*make_color(char *color, t_info *info)
+{
+	if (ft_strlen(color) == 9)
+	{
+		color++;
+		if (check_color_hex(color, 8) == -1)
+			all_free(info, "[End process] get_color\n");
+	}
+	else if (ft_strlen(color) == 5)
+	{
+		color++;
+		if (check_color_hex(color, 4) == -1)
+			all_free(info, "[End process] get_color\n");
+		color = make_restored_color(color, 4, info);
+	}
+	else if (ft_strlen(color) == 7)
+	{
+		color++;
+		if (check_color_hex(color, 6) == -1)
+			all_free(info, "[End process] get_color");
+		color = make_restored_color(color, 6, info);
+	}
+	return (color);
+}
+
 char	*get_color(char *line_split, t_info *info)
 {
 	char	*color;
@@ -63,26 +89,28 @@ char	*get_color(char *line_split, t_info *info)
 	color = ft_strchr(line_split, ',');
 	if (color != NULL)
 	{
-		if (ft_strlen(color) == 9)
-		{
-			color++;
-			if (check_color_hex(color, 8) == -1)
-				all_free(info, "[End process] get_color\n");
-		}
-		else if (ft_strlen(color) == 5)
-		{
-			color++;
-			if (check_color_hex(color, 4) == -1)
-				all_free(info, "[End process] get_color\n");
-			color = make_restored_color(color, 4, info);
-		}
-		else if (ft_strlen(color) == 7)
-		{
-			color++;
-			if (check_color_hex(color, 6) == -1)
-				all_free(info, "[End process] get_color");
-			color = make_restored_color(color, 6, info);
-		}
+		// if (ft_strlen(color) == 9)
+		// {
+		// 	color++;
+		// 	if (check_color_hex(color, 8) == -1)
+		// 		all_free(info, "[End process] get_color\n");
+		// }
+		// else if (ft_strlen(color) == 5)
+		// {
+		// 	color++;
+		// 	if (check_color_hex(color, 4) == -1)
+		// 		all_free(info, "[End process] get_color\n");
+		// 	color = make_restored_color(color, 4, info);
+		// }
+		// else if (ft_strlen(color) == 7)
+		// {
+		// 	color++;
+		// 	if (check_color_hex(color, 6) == -1)
+		// 		all_free(info, "[End process] get_color");
+		// 	color = make_restored_color(color, 6, info);
+		// }
+		if (ft_strlen(color) == 9 || ft_strlen(color) == 5 || ft_strlen(color) == 7)
+			color = make_color(color, info);
 		else
 			all_free(info, "[End process] get_color");
 	}
