@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 21:11:12 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:00:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:01:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	draw_row_line(t_info *info)
 				x++;
 				if (x < 0 || x > info->width || (int)round(y) < 0 || (int)round(y) > info->height)
 					all_free(info, "[End process] draw_row_line\n");
-					// exit(1);
 				// printf("x: %d y: %d\n", x, (int)round(y));
 				my_mlx_pixel_put(&info->img, x, (int)round(y), info->map[i][j].color);
 			}

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 16:55:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:03:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	add_new_row(t_info *info, char **line_split)
 
 	new_map = (t_map **)malloc(sizeof(t_map *) * (info->row_count + 1));
 	if (!new_map)
-		exit(1);
+		all_free(info, "[End process] add_new_row\n");
 	i = 0;
 	while (i < info->row_count)
 	{
@@ -29,7 +29,7 @@ void	add_new_row(t_info *info, char **line_split)
 	}
 	new_row = (t_map *)malloc(sizeof(t_map) * (info->col_count[info->row_count]));
 	if (!new_row)
-		exit(1);
+		all_free(info, "[End process] add_new_row\n");
 	i = 0;
 	while (line_split[i] != NULL)
 	{
@@ -53,13 +53,13 @@ void	store_fdf_value(t_info *info, char *line)
 	// printf("store_fdf_value\n");
 	line_split = ft_split(line, ' ');
 	if (!line_split)
-		exit(1);
+		all_free(info, "[End process] store_fdf_value\n");
 	count = 0;
 	while (line_split[count] != NULL)
 		count++;
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
-		exit(1);
+		all_free(info, "[End process] store_fdf_value\n");
 	i = 0;
 	while (i < info->row_count)
 	{
@@ -77,14 +77,14 @@ void	col_num_check(t_info *info)
 {
 	int	i;
 
-	printf("col_num_check\n");
+	// printf("col_num_check\n");
 	i = 0;
 	while (i < info->row_count - 1)
 	{
 		if (info->col_count[i] != info->col_count[i + 1] && info->col_count[i + 1] != 0)
 		{
 			// printf("col1: %d col2: %d\n", info->col_count[i], info->col_count[i + 1]);
-			exit(1);
+			all_free(info, "[End process] col_num_check\n");
 		}
 		i++;
 	}
