@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:00:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:07:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	all_free(t_info *info, char *message)
 
 int	win_close(t_info *info)
 {
-	all_free(info, "win_close");
+	all_free(info, "[End process] win_close\n");
 	return (0);
 }
 
 int	key_press(int key, t_info *info)
 {
 	if (key == K_ESC)
-		all_free(info, "key_press");
+		all_free(info, "[End process] key_press\n");
 	return (0);
 }
