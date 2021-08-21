@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:38:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 20:48:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 20:51:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,19 @@ void	convert_xy(int i, int j, t_info *info)
 	int	x_convert;
 	int	y_convert;
 
-	x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 30.0);
+	x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7,
+			info->map[i][j].y * info->ratio * 0.7, 30.0);
 	if (info->coords.zmax == 0)
-		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
+		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7,
+				info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
 	else if (info->coords.zmax > 100)
-		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax * 20, 30.0);
+		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7,
+				info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z
+				* info->ratio * 0.7 / info->coords.zmax * 20, 30.0);
 	else
-		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax, 30.0);
+		y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7,
+				info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z
+				* info->ratio * 0.7 / info->coords.zmax, 30.0);
 	info->map[i][j].x = x_convert;
 	info->map[i][j].y = y_convert;
 }
@@ -79,8 +85,6 @@ void	draw_map(t_info *info)
 {
 	int	i;
 	int	j;
-	// int	x_convert;
-	// int	y_convert;
 
 	get_ratio(info);
 	get_abs_zmax(info);
@@ -90,15 +94,6 @@ void	draw_map(t_info *info)
 		j = 0;
 		while (j < info->col_count[i])
 		{
-			// x_convert = convert_x(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, 30.0);
-			// if (info->coords.zmax == 0)
-			// 	y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z, 30.0);
-			// else if (info->coords.zmax > 100)
-			// 	y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax * 20, 30.0);
-			// else
-			// 	y_convert = convert_y(info->map[i][j].x * info->ratio * 0.7, info->map[i][j].y * info->ratio * 0.7, info->map[i][j].z * info->ratio * 0.7 / info->coords.zmax, 30.0);
-			// info->map[i][j].x = x_convert;
-			// info->map[i][j].y = y_convert;
 			convert_xy(i, j, info);
 			j++;
 		}
