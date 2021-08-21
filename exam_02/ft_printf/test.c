@@ -13,7 +13,7 @@ int main(void)
 	printf("");
 	ft_printf("--Format---");
 	printf("--Format---");
-	// ft_printf("\n");
+	ft_printf("\n");
 	printf("\n");
     // ft_printf("%d\n", 0);
 	ft_printf("%d\n", 0);
