@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:10:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:11:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_color_hex(char *color, int len)
 	return (0);
 }
 
-char	*make_restored_color(char *color, int len)
+char	*make_restored_color(char *color, int len, t_info *info)
 {
 	int		i;
 	char	*re_color;
@@ -37,7 +37,7 @@ char	*make_restored_color(char *color, int len)
 	{
 		re_color = (char *)malloc(sizeof(char) * 9);
 		if (!re_color)
-			exit(1);
+			all_free(info, "[End process] make_restored_color\n");
 		i = 0;
 		while (i < len)
 		{
@@ -52,7 +52,7 @@ char	*make_restored_color(char *color, int len)
 		re_color[i] = '\0';
 	}
 	else
-		exit(1);
+		all_free(info, "[End process] make_restored_color\n");
 	return (re_color);
 }
 
@@ -67,21 +67,21 @@ char	*get_color(char *line_split, t_info *info)
 		{
 			color++;
 			if (check_color_hex(color, 8) == -1)
-				all_free(info, "[End process] get_color");
+				all_free(info, "[End process] get_color\n");
 		}
 		else if (ft_strlen(color) == 5)
 		{
 			color++;
 			if (check_color_hex(color, 4) == -1)
-				all_free(info, "[End process] get_color");
-			color = make_restored_color(color, 4);
+				all_free(info, "[End process] get_color\n");
+			color = make_restored_color(color, 4, info);
 		}
 		else if (ft_strlen(color) == 7)
 		{
 			color++;
 			if (check_color_hex(color, 6) == -1)
 				all_free(info, "[End process] get_color");
-			color = make_restored_color(color, 6);
+			color = make_restored_color(color, 6, info);
 		}
 		else
 			all_free(info, "[End process] get_color");
