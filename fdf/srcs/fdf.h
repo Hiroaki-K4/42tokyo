@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 16:19:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:09:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	all_free(t_info *info, char *message);
 int		win_close(t_info *info);
 int		key_press(int key, t_info *info);
 int		convert_hex_to_dec(char *color);
-char	*get_color(char *line_split);
+char	*get_color(char *line_split, t_info *info);
 
 #endif
