@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 16:55:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:05:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,20 @@ void	init_info(t_info *info)
 	printf("x_start: %d x_end: %d y_start: %d y_end: %d x_step: %d y_step: %d\n", info->x_start, info->x_end, info->y_start, info->y_end, info->x_step, info->y_step);
 }
 
+void	insert_null(t_info *info)
+{
+	info->win = NULL;
+	info->img.img = NULL;
+	info->mlx = NULL;
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info info;
 
 	if (argc == 2)
 	{
+		insert_null(&info);
 		read_fdf_file(&info, argv[1]);
 		// printf("ok1\n");
 		init_info(&info);
