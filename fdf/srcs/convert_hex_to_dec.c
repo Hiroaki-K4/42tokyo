@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:14:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 17:14:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	convert_hex_to_dec(char *color, t_info *info)
 	i = 2;
 	while (i < 8 && color[i])
 	{
-		dec += convert_calc(16, 7 - i, color[i], t_info *info);
+		dec += convert_calc(16, 7 - i, color[i], info);
 		i++;
 	}
 	return (dec);
