@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:12:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:08:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	init_info(t_info *info)
 	int	size_y;
 
 	info->mlx = mlx_init();
-	// mlx_get_screen_size(info->mlx, &size_x, &size_y);
+	mlx_get_screen_size(info->mlx, &size_x, &size_y);
 	// size_x = 1920;
-	size_x = 1280;
+	// size_x = 1280;
 	// size_x = 640;
 	// size_y = 1080;
-	size_y = 960;
+	// size_y = 960;
 	// size_y = 480;
 	info->width = size_x;
 	info->height = size_y;

@@ -1,15 +1,15 @@
-==139374== Memcheck, a memory error detector
-==139374== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==139374== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==139374== Command: ./fdf maps/test_maps/42.fdf
-==139374== Parent PID: 139062
-==139374== 
-==139374== 
-==139374== HEAP SUMMARY:
-==139374==     in use at exit: 0 bytes in 0 blocks
-==139374==   total heap usage: 775 allocs, 775 frees, 100,953 bytes allocated
-==139374== 
-==139374== All heap blocks were freed -- no leaks are possible
-==139374== 
-==139374== For lists of detected and suppressed errors, rerun with: -s
-==139374== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
+==139934== Memcheck, a memory error detector
+==139934== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==139934== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==139934== Command: ./fdf maps/test_maps/42.fdf
+==139934== Parent PID: 139626
+==139934== 
+==139934== 
+==139934== HEAP SUMMARY:
+==139934==     in use at exit: 0 bytes in 0 blocks
+==139934==   total heap usage: 787 allocs, 787 frees, 101,445 bytes allocated
+==139934== 
+==139934== All heap blocks were freed -- no leaks are possible
+==139934== 
+==139934== For lists of detected and suppressed errors, rerun with: -s
+==139934== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 1)
