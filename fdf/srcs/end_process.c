@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:45 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 14:57:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 14:59:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	all_free(t_info *info)
 int	win_close(t_info *info)
 {
 	all_free(info);
-	exit(1);
 	return (0);
 }
 
