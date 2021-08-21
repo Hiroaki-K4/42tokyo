@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 17:16:32 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 18:12:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ void	init_info(t_info *info)
 	info->y_start = 0.1;
 	info->y_end = info->height * 0.6;
 	info->y_step = (info->y_end - info->y_start) / info->row_count;
-	printf("width: %d height: %d\n", info->width, info->height);
-	printf("x_start: %d x_end: %d y_start: %d y_end: %d x_step: %d y_step: %d\n", info->x_start, info->x_end, info->y_start, info->y_end, info->x_step, info->y_step);
 }
 
 void	insert_null(t_info *info)
@@ -69,16 +67,12 @@ int	main(int argc, char *argv[])
 	{
 		insert_null(&info);
 		read_fdf_file(&info, argv[1]);
-		// printf("ok1\n");
 		init_info(&info);
-		// printf("ok2\n");
 		info.win = mlx_new_window(info.mlx, info.width, info.height, "FDF");
 		info.img.img = mlx_new_image(info.mlx, info.width, info.height);
 		info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
 				&info.img.line_length, &info.img.endian);
-		// printf("ok3\n");
 		draw_map(&info);
-		// printf("ok4\n");
 		mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
 		mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
 		mlx_hook(info.win, 2, 1L << 0, &key_press, &info);
