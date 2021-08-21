@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_hex_to_dec.c                               :+:      :+:    :+:   */
+/*   hex_to_dec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 18:31:52 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 18:18:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 21:06:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	convert_calc(int a, int b, char word, t_info *info)
 	return (ans);
 }
 
-int	convert_hex_to_dec(char *color, t_info *info)
+int	hex_to_dec(char *color, t_info *info)
 {
 	int	i;
 	int	dec;
