@@ -2,7 +2,7 @@
 
 make re
 
-./fdf maps/test_maps/42.fdf
+# ./fdf maps/test_maps/42.fdf
 # ./fdf maps/test_maps/10-2.fdf
 # ./fdf maps/test_maps/10-70.fdf
 # ./fdf maps/test_maps/20-60.fdf
@@ -23,7 +23,22 @@ make re
 # ./fdf maps/test_maps/pyramide.fdf
 # ./fdf maps/test_maps/t1.fdf
 # ./fdf maps/test_maps/t2.fdf
-valgrind -s --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
+echo "Error case"
+echo "42_1"
+./fdf maps/test_maps/42_1.fdf
+echo "42_2"
+./fdf maps/test_maps/42_2.fdf
+echo "42_3"
+./fdf maps/test_maps/42_3.fdf
+echo "42_4"
+./fdf maps/test_maps/42_4.fdf
+echo "42_5"
+./fdf maps/test_maps/42_5.fdf
+echo "42_6"
+./fdf maps/test_maps/42_6.fdf
+echo "42_7"
+./fdf maps/test_maps/42_7.fdf
+# valgrind -s --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
 cd ..
 sh git.sh $*
