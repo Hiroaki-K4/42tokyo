@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 12:31:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 12:32:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,30 +71,30 @@ char	*ft_strdup(const char *s)
 // 	return (-1);
 // }
 
-char			*ft_itoa_hex(unsigned int num, char *str)
-{
-	int				len;
-	unsigned int	i;
-	char			*ans;
+// char			*ft_itoa_hex(unsigned int num, char *str)
+// {
+// 	int				len;
+// 	unsigned int	i;
+// 	char			*ans;
 
-	len = 1;
-	i = num;
-	while (i > 16)
-	{
-		len++;
-		i = i / 16;
-	}
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ans[len] = '\0';
-	len--;
-	while (len >= 0)
-	{
-		ans[len--] = str[num % 16];
-		num = num / 16;
-	}
-	return (ans);
-}
+// 	len = 1;
+// 	i = num;
+// 	while (i > 16)
+// 	{
+// 		len++;
+// 		i = i / 16;
+// 	}
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	len--;
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = str[num % 16];
+// 		num = num / 16;
+// 	}
+// 	return (ans);
+// }
 
 // int		digit_size(int num)
 // {
@@ -264,30 +264,30 @@ int ft_strchr_place(const char *arg, int c, int *i)
 	return (-1);
 }
 
-// char *ft_itoa_hex(unsigned int num, const char *arg)
-// {
-// 	unsigned int i;
-// 	int len;
-// 	char *ans;
+char *ft_itoa_hex(unsigned int num, const char *arg)
+{
+	unsigned int i;
+	int len;
+	char *ans;
 
-// 	i = num;
-// 	len = 1;
-// 	while (i > 16)
-// 	{
-// 		len++;
-// 		i = i / 16;
-// 	}
-// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-// 		return (NULL);
-// 	ans[len] = '\0';
-// 	len--;
-// 	while (len >= 0)
-// 	{
-// 		ans[len--] = arg[num % 16];
-// 		num = num / 16;
-// 	}
-// 	return (ans);
-// }
+	i = num;
+	len = 1;
+	while (i > 16)
+	{
+		len++;
+		i = i / 16;
+	}
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ans[len] = '\0';
+	len--;
+	while (len >= 0)
+	{
+		ans[len--] = arg[num % 16];
+		num = num / 16;
+	}
+	return (ans);
+}
 
 int digit_size(int num)
 {
