@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 16:24:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/21 16:55:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,16 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		read_fdf_file(&info, argv[1]);
-		printf("ok1\n");
+		// printf("ok1\n");
 		init_info(&info);
-		printf("ok2\n");
+		// printf("ok2\n");
 		info.win = mlx_new_window(info.mlx, info.width, info.height, "FDF");
 		info.img.img = mlx_new_image(info.mlx, info.width, info.height);
 		info.img.addr = mlx_get_data_addr(info.img.img, &info.img.bits_per_pixel,
 				&info.img.line_length, &info.img.endian);
-		printf("ok3\n");
+		// printf("ok3\n");
 		draw_map(&info);
-		printf("ok4\n");
+		// printf("ok4\n");
 		mlx_put_image_to_window(info.mlx, info.win, info.img.img, 0, 0);
 		mlx_hook(info.win, 33, 1 << 17, &win_close, &info);
 		mlx_hook(info.win, 2, 1L << 0, &key_press, &info);
