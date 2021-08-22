@@ -42,7 +42,9 @@ echo "42_7"
 echo "42_8"
 ./fdf maps/test_maps/42_8.fdf
 echo "42_noper"
+chmod 000 maps/test_maps/42_noper.fdf
 ./fdf maps/test_maps/42_noper.fdf
+chmod 777 maps/test_maps/42_noper.fdf
 echo "t1_1"
 ./fdf maps/test_maps/t1_1.fdf
 echo "t1_2"
