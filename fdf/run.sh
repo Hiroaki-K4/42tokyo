@@ -41,6 +41,8 @@ echo "42_7"
 ./fdf maps/test_maps/42_7.fdf
 echo "42_8"
 ./fdf maps/test_maps/42_8.fdf
+echo "42_noper"
+./fdf maps/test_maps/42_noper.fdf
 echo "t1_1"
 ./fdf maps/test_maps/t1_1.fdf
 echo "t1_2"
