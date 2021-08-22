@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:21:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/22 22:11:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/22 22:13:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	get_x_step(t_info *info)
 		i++;
 	}
 	if (max == 0)
-		all_free(info, "get_x_step\n");
+		all_free(info, "[End process] get_x_step\n");
 	info->x_step = (info->x_end - info->x_start) / max;
 }
 
