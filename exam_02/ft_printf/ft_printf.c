@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/22 09:10:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/22 09:22:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -433,3 +433,30 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	return (print_len);
 // }
 
+int ft_printf(const char *arg, ...)
+{
+	int i;
+	int j;
+	int print_len;
+	va_list ap;
+
+	va_start(ap, arg);
+	i = 0;
+	print_len = 0;
+	if (arg == NULL)
+		i = -1;
+	while (i >= 0 && arg[i])
+	{
+		if (arg[i] != '%')
+			print_len += ft_printf_str(arg, &i);
+		else
+		{
+			j = ft_printf_per(arg, &i, &ap);
+			if (j == -1)
+				return (-1);
+			print_len += j;
+		}
+	}
+	va_end(ap);
+	return (print_len);
+}
