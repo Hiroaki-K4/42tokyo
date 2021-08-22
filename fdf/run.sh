@@ -57,6 +57,8 @@ echo "t1_5"
 ./fdf maps/test_maps/t1_5.fdf
 echo "t1_6"
 ./fdf maps/test_maps/t1_6.fdf
+echo "empty"
+./fdf maps/test_maps/empty.fdf
 valgrind --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
 cd ..
