@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 22:42:08 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/21 20:57:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/22 10:47:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	*make_color(char *color, t_info *info)
 	{
 		color++;
 		if (check_color_hex(color, 6) == -1)
-			all_free(info, "[End process] get_color");
+			all_free(info, "[End process] get_color\n");
 		color = make_restored_color(color, 6, info);
 	}
 	return (color);
@@ -93,7 +93,7 @@ char	*get_color(char *line_split, t_info *info)
 			|| ft_strlen(color) == 7)
 			color = make_color(color, info);
 		else
-			all_free(info, "[End process] get_color");
+			all_free(info, "[End process] get_color\n");
 	}
 	else
 		color = "0xFFFFFF";
