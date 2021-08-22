@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/22 21:58:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/22 22:12:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	store_fdf_value(t_info *info, char *line)
 	char	**line_split;
 
 	line_split = ft_split(line, ' ');
-	printf("line_split: %s\n", line_split[0]);
+	// printf("line_split: %s\n", line_split[0]);
 	if (!line_split)
 		all_free(info, "[End process] store_fdf_value\n");
 	count = 0;
@@ -59,19 +59,19 @@ void	store_fdf_value(t_info *info, char *line)
 	if (!col_count)
 		all_free(info, "[End process] store_fdf_value\n");
 	i = -1;
-	printf("ok1\n");
-	printf("row: %d\n", info->row_count);
+	// printf("ok1\n");
+	// printf("row: %d\n", info->row_count);
 	while (++i < info->row_count)
 	{
 		if (info->row_count != 0)
 			col_count[i] = info->col_count[i];
 	}
-	printf("ok2\n");
+	// printf("ok2\n");
 	col_count[i] = count;
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
-	printf("col_count: %d\n", col_count[0]);
+	// printf("col_count: %d\n", col_count[0]);
 	add_new_row(info, line_split);
 	free_double_array(line_split);
 }
@@ -106,11 +106,11 @@ void	read_fdf_file(t_info *info, char *path)
 		i = get_next_line(fd, &line, 0);
 		if (i == -1)
 			all_free(info, "[End process] read_fdf_file\n");
-		if (strcmp(line, "") == 0)
-		{
-			free(line);
-			return ;
-		}
+		// if (strcmp(line, "") == 0)
+		// {
+		// 	free(line);
+		// 	return ;
+		// }
 		store_fdf_value(info, line);
 		info->row_count++;
 		free(line);
