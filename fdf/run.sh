@@ -60,6 +60,10 @@ echo "t1_6"
 echo "empty"
 ./fdf maps/test_maps/empty.fdf
 echo "incorrect args"
+echo "only_0"
+./fdf maps/test_maps/only_0.fdf
+echo "only_10"
+./fdf maps/test_maps/only_10.fdf
 ./fdf aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 valgrind --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
