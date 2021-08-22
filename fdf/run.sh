@@ -41,6 +41,18 @@ echo "42_7"
 ./fdf maps/test_maps/42_7.fdf
 echo "42_8"
 ./fdf maps/test_maps/42_8.fdf
+echo "t1_1"
+./fdf maps/test_maps/t1_1.fdf
+echo "t1_2"
+./fdf maps/test_maps/t1_2.fdf
+echo "t1_3"
+./fdf maps/test_maps/t1_3.fdf
+echo "t1_4"
+./fdf maps/test_maps/t1_4.fdf
+echo "t1_5"
+./fdf maps/test_maps/t1_5.fdf
+echo "t1_6"
+./fdf maps/test_maps/t1_6.fdf
 valgrind --log-file="log1.txt" --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf maps/test_maps/42.fdf | grep "ERROR SUMMARY"
 make fclean
 cd ..
