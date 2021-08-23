@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/22 22:12:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/23 22:12:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,16 @@ void	col_num_check(t_info *info)
 	}
 }
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
 void	read_fdf_file(t_info *info, char *path)
 {
 	int		i;
@@ -97,6 +107,11 @@ void	read_fdf_file(t_info *info, char *path)
 	char	*line;
 
 	info->row_count = 0;
+	i = ft_strlen(path);
+	if (i < 5)
+		all_free(info, "[End process] read_fdf_file\n");
+	if (ft_strcmp(&path[i - 4], ".fdf") != 0)
+		all_free(info, "[End process] read_fdf_file ft_strcmp\n");
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		all_free(info, "[End process] read_fdf_file\n");
@@ -106,11 +121,6 @@ void	read_fdf_file(t_info *info, char *path)
 		i = get_next_line(fd, &line, 0);
 		if (i == -1)
 			all_free(info, "[End process] read_fdf_file\n");
-		// if (strcmp(line, "") == 0)
-		// {
-		// 	free(line);
-		// 	return ;
-		// }
 		store_fdf_value(info, line);
 		info->row_count++;
 		free(line);
