@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/23 22:12:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/24 22:50:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	store_fdf_value(t_info *info, char *line)
 	char	**line_split;
 
 	line_split = ft_split(line, ' ');
-	// printf("line_split: %s\n", line_split[0]);
 	if (!line_split)
 		all_free(info, "[End process] store_fdf_value\n");
 	count = 0;
@@ -59,19 +58,15 @@ void	store_fdf_value(t_info *info, char *line)
 	if (!col_count)
 		all_free(info, "[End process] store_fdf_value\n");
 	i = -1;
-	// printf("ok1\n");
-	// printf("row: %d\n", info->row_count);
 	while (++i < info->row_count)
 	{
 		if (info->row_count != 0)
 			col_count[i] = info->col_count[i];
 	}
-	// printf("ok2\n");
 	col_count[i] = count;
 	if (info->row_count > 0)
 		free(info->col_count);
 	info->col_count = col_count;
-	// printf("col_count: %d\n", col_count[0]);
 	add_new_row(info, line_split);
 	free_double_array(line_split);
 }
@@ -111,7 +106,7 @@ void	read_fdf_file(t_info *info, char *path)
 	if (i < 5)
 		all_free(info, "[End process] read_fdf_file\n");
 	if (ft_strcmp(&path[i - 4], ".fdf") != 0)
-		all_free(info, "[End process] read_fdf_file ft_strcmp\n");
+		all_free(info, "[End process] read_fdf_file\n");
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		all_free(info, "[End process] read_fdf_file\n");
