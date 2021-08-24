@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:40:01 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/24 22:51:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/24 22:53:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include <math.h>
-// #include <stdio.h>
-// #include <string.h>
 
 # define K_ESC 65307
 # define PI 3.14159265

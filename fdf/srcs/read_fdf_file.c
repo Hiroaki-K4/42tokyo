@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/24 22:50:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/24 22:58:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	add_new_row(t_info *info, char **line_split)
 	info->map = new_map;
 }
 
-void	store_fdf_value(t_info *info, char *line)
+void	store_fdf_value(t_info *info, char *line, int i)
 {
-	int		i;
+	// int		i;
 	int		count;
 	int		*col_count;
 	char	**line_split;
@@ -57,7 +57,7 @@ void	store_fdf_value(t_info *info, char *line)
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
 		all_free(info, "[End process] store_fdf_value\n");
-	i = -1;
+	// i = -1;
 	while (++i < info->row_count)
 	{
 		if (info->row_count != 0)
@@ -116,7 +116,7 @@ void	read_fdf_file(t_info *info, char *path)
 		i = get_next_line(fd, &line, 0);
 		if (i == -1)
 			all_free(info, "[End process] read_fdf_file\n");
-		store_fdf_value(info, line);
+		store_fdf_value(info, line, -1);
 		info->row_count++;
 		free(line);
 	}
