@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/28 21:52:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/28 21:52:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	*thread1(void *arg)
 	(void)arg;
 	sleep(1);
 	printf("aaa\n");
+	return NULL;
 }
 
 int	main(int argc, char *argv[])
