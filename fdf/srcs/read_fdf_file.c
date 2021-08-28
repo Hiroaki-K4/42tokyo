@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:24:50 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/24 22:58:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/24 22:59:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	add_new_row(t_info *info, char **line_split)
 
 void	store_fdf_value(t_info *info, char *line, int i)
 {
-	// int		i;
 	int		count;
 	int		*col_count;
 	char	**line_split;
@@ -57,7 +56,6 @@ void	store_fdf_value(t_info *info, char *line, int i)
 	col_count = (int *)malloc(sizeof(int) * (info->row_count + 1));
 	if (!col_count)
 		all_free(info, "[End process] store_fdf_value\n");
-	// i = -1;
 	while (++i < info->row_count)
 	{
 		if (info->row_count != 0)
