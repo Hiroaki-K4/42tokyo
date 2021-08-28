@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/28 21:27:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/28 21:28:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char *argv[])
 		t_sleep = ft_atoi(argv[4]);
 		if (argc == 7)
 			must_eat_num = ft_atoi(argv[5]);
-		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d", philo_num, t_die, t_eat, t_sleep, must_eat_num);
+		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", philo_num, t_die, t_eat, t_sleep, must_eat_num);
 	}
 	return (0);
 }
