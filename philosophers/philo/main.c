@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/28 21:28:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/28 21:50:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ int	ft_atoi(const char *nptr)
 	return (ans);
 }
 
+void	thread1(void *arg)
+{
+	sleep(1);
+	printf("aaa\n");
+}
+
 int	main(int argc, char *argv[])
 {
 	int	philo_num;
@@ -46,6 +52,7 @@ int	main(int argc, char *argv[])
 	int	t_eat;
 	int	t_sleep;
 	int	must_eat_num;
+	pthread_t	thread;
 
 	must_eat_num = -1;
 	if (argc == 5 || argc == 6)
@@ -57,6 +64,7 @@ int	main(int argc, char *argv[])
 		if (argc == 7)
 			must_eat_num = ft_atoi(argv[5]);
 		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", philo_num, t_die, t_eat, t_sleep, must_eat_num);
+		pthread_create(&thread, NULL, thread1, NULL);
 	}
 	return (0);
 }
