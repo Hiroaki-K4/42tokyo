@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/28 21:50:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/28 21:52:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	ft_atoi(const char *nptr)
 
 void	thread1(void *arg)
 {
+	(void)arg;
 	sleep(1);
 	printf("aaa\n");
 }
