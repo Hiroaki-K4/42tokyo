@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/28 21:52:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/28 21:58:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ int	main(int argc, char *argv[])
 		if (argc == 7)
 			must_eat_num = ft_atoi(argv[5]);
 		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", philo_num, t_die, t_eat, t_sleep, must_eat_num);
-		pthread_create(&thread, NULL, thread1, NULL);
+		if (pthread_create(&thread, NULL, thread1, NULL) == 0)
+			printf("ok\n");
 	}
 	return (0);
 }
