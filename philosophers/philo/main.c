@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 20:58:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 20:58:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int argc, char *argv[])
 		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", philo_num, t_die, t_eat, t_sleep, must_eat_num);
 		if (pthread_create(&thread, NULL, thread1, NULL) != 0)
 			return (1);
+		sleep(2);
 		printf("thread: %ld\n", thread);
 	}
 	return (0);
