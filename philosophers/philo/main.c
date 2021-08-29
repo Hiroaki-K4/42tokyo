@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:11:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:12:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*thread1(void *arg)
 {
 	int	i;
 	// int date;
-	stru timeval tv;
+	struct timeval tv;
 	
 	(void)arg;
 	i = 0;
