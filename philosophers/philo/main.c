@@ -6,16 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:20:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:22:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	*thread1(int i)
+void	*thread1(void *arg)
 {
+	(void)arg;
 	usleep(50);
-	printf("philo: %d\n", i);
+	printf("aaaaaaaaaaaaaaaaaaaaa\n");
 	return (NULL);
 }
 
