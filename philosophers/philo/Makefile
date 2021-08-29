@@ -11,10 +11,6 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -pthread
 
-AR = ar
-
-ARFLAGS = rc
-
 all: $(NAME)
 
 $(NAME):$(SRCS)
