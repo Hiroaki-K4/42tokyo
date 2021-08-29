@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 23:04:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 23:06:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	*thread1(void *arg)
 	struct timeval tv;
 	t_philo philo_info;
 	
-	// (void)arg;
-	printf("i: %d\n", *(int *)arg);
+	printf("i: %d\n", arg.philo_num);
 	init_philo(&philo_info);
 	i = 0;
 	while (i < 2)
@@ -49,16 +48,10 @@ void	init_info(t_info *info)
 
 int	main(int argc, char *argv[])
 {
-	// int	philo_num;
-	// int	t_die;
-	// int	t_eat;
-	// int	t_sleep;
-	// int	must_eat_num;
 	t_info	info;
 	int	i;
 	pthread_t	*thread;
 
-	// must_eat_num = -1;
 	init_info(&info);
 	if (argc == 5 || argc == 6)
 	{
@@ -75,7 +68,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < info.philo_num)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, (void *)&i) != 0)
+			if (pthread_create(&thread[i], NULL, thread1, (void *)&info) != 0)
 				return (1);
 			i++;
 		}
