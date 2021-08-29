@@ -5,7 +5,7 @@ make re
 make fclean
 cd test
 make re
-./test
+./philo_test
 make fclean
 cd ../../../
 sh git.sh $*
