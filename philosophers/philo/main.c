@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:09:59 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:10:11 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	*thread1(void *arg)
 {
 	int	i;
-	int date;
+	// int date;
 	t_time tv;
 	
 	(void)arg;
 	i = 0;
 	while (i < 2)
 	{
-		date = 
+		// date = 
 		usleep(50);
 		gettimeofday(&tv, NULL);
 		printf("%ld %06lu\n", tv.tv_sec, tv.tv_usec);
