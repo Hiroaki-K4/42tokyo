@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:12:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:20:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	*thread1(void *arg)
 {
 	int	i;
-	// int date;
 	struct timeval tv;
 	
 	(void)arg;
 	i = 0;
 	while (i < 2)
 	{
-		// date = 
-		usleep(50);
+		usleep(200);
 		gettimeofday(&tv, NULL);
 		printf("%ld %06lu\n", tv.tv_sec, tv.tv_usec);
 		// printf("philo_test\n");
@@ -62,7 +60,7 @@ int	main(int argc, char *argv[])
 				return (1);
 			i++;
 		}
-		usleep(300);
+		usleep(1500);
 		// printf("thread: %ld\n", thread);
 	}
 	return (0);
