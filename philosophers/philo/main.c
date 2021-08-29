@@ -6,17 +6,16 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:17:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:20:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	*thread1(void *arg)
+void	*thread1(int i)
 {
-	(void)arg;
 	usleep(50);
-	printf("aaaaaaaaaaaaaaaaaaaaa\n");
+	printf("philo: %d\n", i);
 	return (NULL);
 }
 
@@ -46,7 +45,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < philo_num)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, NULL) != 0)
+			if (pthread_create(&thread[i], NULL, thread1, i) != 0)
 				return (1);
 			i++;
 		}
