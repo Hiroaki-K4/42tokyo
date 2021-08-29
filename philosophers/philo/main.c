@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:16:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:17:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 		usleep(100);
-		printf("thread: %ld\n", thread);
+		// printf("thread: %ld\n", thread);
 	}
 	return (0);
 }
