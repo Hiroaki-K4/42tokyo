@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 10:35:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 10:35:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -367,18 +367,54 @@ int ft_atoi(const char *arg)
 	return (ans);
 }
 
-int field_precision(t_plist flag_list, char *str_num, int num, int i)
-{
-	int j;
-	char *tmp;
+// int field_precision(t_plist flag_list, char *str_num, int num, int i)
+// {
+// 	int j;
+// 	char *tmp;
 	
+// 	if (num < 0)
+// 	{
+// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
+// 			return (-1);
+// 		tmp[0] = '-';
+// 		i = 1;
+// 		while (flag_list.precision + 2 - (int)ft_strlen(str_num) - i > 0)
+// 			tmp[i++] = '0';
+// 		j = 1;
+// 	}
+// 	else
+// 	{
+// 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
+// 			return (-1);
+// 		while (flag_list.precision - (int)ft_strlen(str_num) - i > 0)
+// 			tmp[i++] = '0';
+// 		j = 0;
+// 	}
+// 	while (ft_strlen(str_num) - j > 0)
+// 		tmp[i++] = str_num[j++];
+// 	tmp[i] = '\0';
+// 	i = 0;
+// 	while (flag_list.field - (int)ft_strlen(tmp) - (i++) > 0)
+// 		write(1, " ", 1);
+// 	write(1, tmp, ft_strlen(tmp));
+// 	free(tmp);
+// 	if (flag_list.precision > flag_list.field)
+// 		return (flag_list.precision);
+// 	return (flag_list.field);
+// }
+
+int	field_precision(t_plist flag_list, char *str_num, int num, int i)
+{
+	int		j;
+	char	*tmp;
+
 	if (num < 0)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 2))))
 			return (-1);
 		tmp[0] = '-';
 		i = 1;
-		while (flag_list.precision + 2 - (int)ft_strlen(str_num) - i > 0)
+		while ((flag_list.precision + 2 - (int)ft_strlen(str_num) - i) > 0)
 			tmp[i++] = '0';
 		j = 1;
 	}
@@ -386,15 +422,15 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 	{
 		if (!(tmp = (char *)malloc(sizeof(char) * (flag_list.precision + 1))))
 			return (-1);
-		while (flag_list.precision - (int)ft_strlen(str_num) - i > 0)
+		while ((flag_list.precision - (int)ft_strlen(str_num) - i) > 0)
 			tmp[i++] = '0';
 		j = 0;
 	}
-	while (ft_strlen(str_num) - j > 0)
+	while ((ft_strlen(str_num) - j) > 0)
 		tmp[i++] = str_num[j++];
 	tmp[i] = '\0';
 	i = 0;
-	while (flag_list.field - (int)ft_strlen(tmp) - (i++) > 0)
+	while ((flag_list.field - (int)ft_strlen(tmp) - (i++)) > 0)
 		write(1, " ", 1);
 	write(1, tmp, ft_strlen(tmp));
 	free(tmp);
@@ -403,48 +439,11 @@ int field_precision(t_plist flag_list, char *str_num, int num, int i)
 	return (flag_list.field);
 }
 
-// int no_field_int(t_plist flag_list, char *str_num, int num, int len)
-// {
-// 	int keta;
-// 	char *tmp;
-
-// 	keta = ft_strlen(str_num);
-// 	if (num < 0)
-// 		keta--;
-// 	if (flag_list.precision > keta)
-// 	{
-// 		len = flag_list.precision;
-// 		if (num < 0)
-// 		{
-// 			if (!(tmp = ft_itoa(num * (-1))))
-// 				return (-1);
-// 			write(1, "-", 1);
-// 			while (flag_list.precision - (keta++) > 0)
-// 				write(1, "0", 1);
-// 			write(1, tmp, ft_strlen(tmp));
-// 			free(tmp);
-// 			len = flag_list.precision + 1;
-// 		}
-// 		else
-// 		{
-// 			while (flag_list.precision - (keta++) > 0)
-// 				write(1, "0", 1);
-// 			write(1, str_num, ft_strlen(str_num));
-// 		}
-// 	}
-// 	else
-// 	{
-// 		write(1, str_num, ft_strlen(str_num));
-// 		len = ft_strlen(str_num);
-// 	}
-// 	return (len);
-// }
-
-int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
+int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
-	int		keta;
-	char	*tmp;
-	
+	int keta;
+	char *tmp;
+
 	keta = ft_strlen(str_num);
 	if (num < 0)
 		keta--;
@@ -476,6 +475,8 @@ int	no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	}
 	return (len);
 }
+
+
 
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // {
