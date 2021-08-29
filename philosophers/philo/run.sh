@@ -1,7 +1,7 @@
 #!/bin/bash
 
 make re
-./philo 1 1 1 1
+./philo 3 1 1 1
 make fclean
 cd test
 make re
