@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:08:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:11:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-typedef struct s_time {
+struct timeval {
     time_t tv_sec;            /* Seconds.  */
     suseconds_t tv_usec;      /* Microseconds.  */
-}				t_time;
+};
 
 #ifdef __cplusplus
 extern "C"{
