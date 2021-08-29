@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:58:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 23:04:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,42 @@ void	*thread1(void *arg)
 	return (NULL);
 }
 
+void	init_info(t_info *info)
+{
+	info->philo_num = -1;
+	info->t_die = -1;
+	info->t_eat = -1;
+	info->t_sleep = -1;
+	info->must_eat_num = -1;
+}
+
 int	main(int argc, char *argv[])
 {
-	int	philo_num;
-	int	t_die;
-	int	t_eat;
-	int	t_sleep;
-	int	must_eat_num;
+	// int	philo_num;
+	// int	t_die;
+	// int	t_eat;
+	// int	t_sleep;
+	// int	must_eat_num;
+	t_info	info;
 	int	i;
 	pthread_t	*thread;
 
-	must_eat_num = -1;
+	// must_eat_num = -1;
+	init_info(&info);
 	if (argc == 5 || argc == 6)
 	{
-		philo_num = ft_atoi(argv[1]);
-		t_die = ft_atoi(argv[2]);
-		t_eat = ft_atoi(argv[3]);
-		t_sleep = ft_atoi(argv[4]);
+		info.philo_num = ft_atoi(argv[1]);
+		info.t_die = ft_atoi(argv[2]);
+		info.t_eat = ft_atoi(argv[3]);
+		info.t_sleep = ft_atoi(argv[4]);
 		if (argc == 7)
-			must_eat_num = ft_atoi(argv[5]);
-		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", philo_num, t_die, t_eat, t_sleep, must_eat_num);
-		thread = (pthread_t *)malloc(sizeof(pthread_t) * philo_num);
+			info.must_eat_num = ft_atoi(argv[5]);
+		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", info.philo_num, info.t_die, info.t_eat, info.t_sleep, info.must_eat_num);
+		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_num);
 		if (!thread)
 			return (1);
 		i = 0;
-		while (i < philo_num)
+		while (i < info.philo_num)
 		{
 			if (pthread_create(&thread[i], NULL, thread1, (void *)&i) != 0)
 				return (1);
