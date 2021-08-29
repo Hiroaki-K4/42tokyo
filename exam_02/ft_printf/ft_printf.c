@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 10:18:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 10:21:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,6 +247,32 @@ char	*ft_strdup(const char *s)
 // 	return (len);
 // }
 
+int ft_atoi(const char *arg)
+{
+	int i;
+	int flag;
+	int ans;
+
+	i = 0;
+	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
+			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
+		i++;
+	flag = 1;
+	if (arg[i] == '-' || arg[i] == '+')
+	{
+		if (arg[i] == '-')
+			flag = -1;
+		i++;
+	}
+	ans = 0;
+	while (arg[i] >= '0' && arg[i] <= '9')
+	{
+		ans = ans * 10 + (arg[i] - '0');
+		i++;
+	}
+	ans = ans * flag;
+	return (ans);
+}
 
 int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
