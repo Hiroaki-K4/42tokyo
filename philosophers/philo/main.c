@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:24:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:24:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*thread1(void *arg)
 {
 	// (void)arg;
 	usleep(50);
-	printf("philo: %s\n", arg);
+	printf("philo: %s\n", (char *)arg);
 	return (NULL);
 }
 
