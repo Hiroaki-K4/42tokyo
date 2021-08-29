@@ -6,26 +6,32 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:24:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:53:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+void	init_philo(t_philo *philo_info)
+{
+	philo_info->die_flag = 0;
+}
+
 void	*thread1(void *arg)
 {
 	int	i;
 	struct timeval tv;
+	t_philo philo_info;
 	
 	(void)arg;
+	init_philo(&philo_info);
 	i = 0;
 	while (i < 2)
 	{
 		usleep(500);
 		if (gettimeofday(&tv, NULL) == -1)
 			return (NULL);
-		printf("%ld%ld\n", tv.tv_sec, tv.tv_usec / 1000);
-		// printf("philo_test\n");
+		printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo_info.die_flag);
 		i++;
 	}
 	return (NULL);
@@ -62,7 +68,6 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 		usleep(1500);
-		// printf("thread: %ld\n", thread);
 	}
 	return (0);
 }
