@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:55:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:55:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < philo_num)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, (void *)i) != 0)
+			if (pthread_create(&thread[i], NULL, thread1, (void *)&i) != 0)
 				return (1);
 			i++;
 		}
