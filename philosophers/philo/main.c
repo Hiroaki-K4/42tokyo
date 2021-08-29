@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:23:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:24:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*thread1(void *arg)
 {
 	// (void)arg;
 	usleep(50);
-	printf("philo: %d\n", (int)arg);
+	printf("philo: %s\n", arg);
 	return (NULL);
 }
 
@@ -46,7 +46,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < philo_num)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, &i) != 0)
+			if (pthread_create(&thread[i], NULL, thread1, ft_itoa(i)) != 0)
 				return (1);
 			i++;
 		}
