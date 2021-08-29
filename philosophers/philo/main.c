@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 21:26:37 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 21:26:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*thread1(void *arg)
 	while (i < 2)
 	{
 		usleep(50);
-		printf("philo_test");
+		printf("philo_test\n");
 		i++;
 	}
 	return (NULL);
