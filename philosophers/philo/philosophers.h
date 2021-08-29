@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 18:35:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 20:43:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ extern "C"{
 #endif /*__cplusplus */
 
 	int increment(int i);
+	int	ft_atoi(const char *nptr);
 
 #ifdef __cplusplus
 }

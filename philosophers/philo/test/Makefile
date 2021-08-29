@@ -3,7 +3,7 @@ NAME = philo_test
 
 .PHONY: all, clean, fclean, re
 
-SRCS = ../hoge.c test_hoge.cpp test_main.cpp
+SRCS = ../ft_utils.c test_func.cpp test_main.cpp
 
 TEST_LINK= -lgtest
 
