@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 22:20:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/29 22:20:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*thread1(void *arg)
 	i = 0;
 	while (i < 2)
 	{
-		usleep(200);
+		usleep(300);
 		gettimeofday(&tv, NULL);
 		printf("%ld %06lu\n", tv.tv_sec, tv.tv_usec);
 		// printf("philo_test\n");
