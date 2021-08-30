@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:46:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:57:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_philo
 
 typedef struct s_info
 {
-	int	philo_num;
+	int	philo_total;
 	int	t_die;
 	int	t_eat;
 	int	t_sleep;

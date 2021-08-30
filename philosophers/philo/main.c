@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:56:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:57:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,18 @@ int	main(int argc, char *argv[])
 	store = 0;
 	if (argc == 5 || argc == 6)
 	{
-		info.philo_num = ft_atoi(argv[1]);
+		info.philo_total = ft_atoi(argv[1]);
 		info.t_die = ft_atoi(argv[2]);
 		info.t_eat = ft_atoi(argv[3]);
 		info.t_sleep = ft_atoi(argv[4]);
 		if (argc == 7)
 			info.must_eat_num = ft_atoi(argv[5]);
-		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", info.philo_num, info.t_die, info.t_eat, info.t_sleep, info.must_eat_num);
-		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_num);
+		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", info.philo_total, info.t_die, info.t_eat, info.t_sleep, info.must_eat_num);
+		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
 		if (!thread)
 			return (1);
 		i = 0;
-		while (i < info.philo_num)
+		while (i < info.philo_total)
 		{
 			if (pthread_create(&thread[i], NULL, thread1, (void *)&info) != 0)
 				return (1);
@@ -72,6 +72,5 @@ int	main(int argc, char *argv[])
 		usleep(1500);
 	}
 	printf("store: %d\n", store);
-	printf("t_eat: %d\n", info.t_eat);
 	return (0);
 }
