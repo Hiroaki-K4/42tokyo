@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:20:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:21:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void	*thread1(void *arg)
 	int	i;
 	struct timeval tv;
 	t_philo philo_info;
+	t_info *info;
 	
-	printf("i: %p\n", (t_info *)arg);
+	info = (t_info *)arg;
+	printf("i: %d\n", info->philo_num);
 	init_philo(&philo_info);
 	i = 0;
 	while (i < 2)
