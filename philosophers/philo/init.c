@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:45:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:57:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_philo(t_philo *philo_info)
 
 void	init_info(t_info *info)
 {
-	info->philo_num = -1;
+	info->philo_total = -1;
 	info->t_die = -1;
 	info->t_eat = -1;
 	info->t_sleep = -1;
