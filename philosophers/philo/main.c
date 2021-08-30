@@ -6,21 +6,21 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:54:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:54:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	eating(t_info *info, t_philo *philo_info)
-{
-	struct timeval tv;
+// void	eating(t_info *info, t_philo *philo_info)
+// {
+// 	struct timeval tv;
 
-	usleep(info->t_eat);
-	if (gettimeofday(&tv, NULL) == -1)
-		return (NULL);
-	// printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo);
-}
+// 	usleep(info->t_eat);
+// 	if (gettimeofday(&tv, NULL) == -1)
+// 		return (NULL);
+// 	// printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo);
+// }
 
 void	*thread1(void *arg)
 {
