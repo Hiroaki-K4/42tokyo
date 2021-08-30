@@ -6,16 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:39:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:45:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-void	init_philo(t_philo *philo_info)
-{
-	philo_info->die_flag = 0;
-}
 
 void	*thread1(void *arg)
 {
@@ -38,15 +33,6 @@ void	*thread1(void *arg)
 		i++;
 	}
 	return (NULL);
-}
-
-void	init_info(t_info *info)
-{
-	info->philo_num = -1;
-	info->t_die = -1;
-	info->t_eat = -1;
-	info->t_sleep = -1;
-	info->must_eat_num = -1;
 }
 
 int	main(int argc, char *argv[])
