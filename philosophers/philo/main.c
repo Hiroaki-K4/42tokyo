@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:37:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:39:04 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	*thread1(void *arg)
 	i = 0;
 	while (i < 2)
 	{
-		usleep(500);
-		store = store * store;
+		// usleep(500);
+		store++;
 		if (gettimeofday(&tv, NULL) == -1)
 			return (NULL);
 		printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo_info.die_flag);
