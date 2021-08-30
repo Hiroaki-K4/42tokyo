@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:54:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:56:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*thread1(void *arg)
 	i = 0;
 	while (i < 2)
 	{
-		info->philo_num++;
+		info->t_eat++;
 		usleep(50);
 		store++;
 		i++;
@@ -72,5 +72,6 @@ int	main(int argc, char *argv[])
 		usleep(1500);
 	}
 	printf("store: %d\n", store);
+	printf("t_eat: %d\n", info.t_eat);
 	return (0);
 }
