@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:15:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:16:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_philo(t_philo *philo_info)
 	philo_info->die_flag = 0;
 }
 
-void	*thread1(t_info *arg)
+void	*thread1(void *arg)
 {
 	int	i;
 	struct timeval tv;
@@ -68,7 +68,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < info.philo_num)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, (void *)&info) != 0)
+			if (pthread_create(&thread[i], NULL, thread1, (void *)info) != 0)
 				return (1);
 			i++;
 		}
