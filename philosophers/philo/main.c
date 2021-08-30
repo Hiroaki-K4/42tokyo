@@ -6,38 +6,40 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 23:01:36 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 23:03:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-// void	eating(t_info *info, t_philo *philo_info)
-// {
-// 	struct timeval tv;
+void	eating(t_info *info, t_philo *philo_info)
+{
+	struct timeval tv;
 
-// 	usleep(info->t_eat);
-// 	if (gettimeofday(&tv, NULL) == -1)
-// 		return (NULL);
-// 	// printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo);
-// }
+	usleep(info->t_eat);
+	if (gettimeofday(&tv, NULL) == -1)
+		return (NULL);
+	printf("%ld%ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	usleep(info->t_eat);
+}
 
 void	*thread1(void *arg)
 {
-	int	i;
+	// int	i;
 	t_philo philo_info;
 	t_info *info;
 	
 	info = (t_info *)arg;
 	init_philo(&philo_info, info);
 	printf("philo: %d\n", philo_info.philo_num);
-	i = 0;
-	while (i < 2)
-	{
-		usleep(50);
-		store++;
-		i++;
-	}
+	// i = 0;
+	// while (i < 2)
+	// {
+	// 	usleep(50);
+	// 	store++;
+	// 	i++;
+	// }
+	eating(info, &philo_info);
 	return (NULL);
 }
 
