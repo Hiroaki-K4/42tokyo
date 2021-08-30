@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:36:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:36:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*thread1(void *arg)
 	t_info *info;
 	
 	info = (t_info *)arg;
+	printf("philo: %d\n", info->philo_num);
 	init_philo(&philo_info);
 	i = 0;
 	while (i < 2)
