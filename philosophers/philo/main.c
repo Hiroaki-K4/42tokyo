@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 23:03:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 23:03:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 		return (NULL);
 	printf("%ld%ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	usleep(info->t_eat);
+	return (NULL);
 }
 
 void	*thread1(void *arg)
