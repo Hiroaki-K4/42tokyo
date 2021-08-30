@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 23:03:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 23:03:40 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	eating(t_info *info, t_philo *philo_info)
+void	*eating(t_info *info, t_philo *philo_info)
 {
 	struct timeval tv;
 
