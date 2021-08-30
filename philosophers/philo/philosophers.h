@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:57:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 23:00:38 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	store;
 typedef struct s_philo
 {
 	int	die_flag;
+	int	philo_num;
 }				t_philo;
 
 typedef struct s_info
@@ -33,6 +34,7 @@ typedef struct s_info
 	int	t_eat;
 	int	t_sleep;
 	int	must_eat_num;
+	int	philo_count;
 }				t_info;
 
 #ifdef __cplusplus
@@ -41,7 +43,7 @@ extern "C"{
 
 	int increment(int i);
 	int	ft_atoi(const char *nptr);
-	void	init_philo(t_philo *philo_info);
+	void	init_philo(t_philo *philo_info, t_info *info);
 	void	init_info(t_info *info);
 
 #ifdef __cplusplus

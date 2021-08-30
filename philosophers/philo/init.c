@@ -6,15 +6,17 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:57:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 23:00:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	init_philo(t_philo *philo_info)
+void	init_philo(t_philo *philo_info, t_info *info)
 {
 	philo_info->die_flag = 0;
+	info->philo_count++;
+	philo_info->philo_num = info->philo_count;
 }
 
 void	init_info(t_info *info)
@@ -24,4 +26,5 @@ void	init_info(t_info *info)
 	info->t_eat = -1;
 	info->t_sleep = -1;
 	info->must_eat_num = -1;
+	info->philo_count = 0;
 }
