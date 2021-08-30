@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/30 22:21:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:36:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	*thread1(void *arg)
 	t_info *info;
 	
 	info = (t_info *)arg;
-	printf("i: %d\n", info->philo_num);
 	init_philo(&philo_info);
 	i = 0;
 	while (i < 2)
 	{
 		usleep(500);
+		store++;
 		if (gettimeofday(&tv, NULL) == -1)
 			return (NULL);
 		printf("%ld%ld %d\n", tv.tv_sec, tv.tv_usec / 1000, philo_info.die_flag);
@@ -55,6 +55,7 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
+	store = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_num = ft_atoi(argv[1]);
@@ -76,5 +77,6 @@ int	main(int argc, char *argv[])
 		}
 		usleep(1500);
 	}
+	printf("store: %d\n", store);
 	return (0);
 }

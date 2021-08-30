@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/29 23:01:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/30 22:35:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/time.h>
+
+int	store;
 
 typedef struct s_philo
 {
