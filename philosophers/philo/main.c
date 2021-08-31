@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:48:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:51:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	*thinking(t_info *info, t_philo *philo_info)
 	return (NULL);
 }
 
-void	*thread1(void *arg)
+void	*philo_thread(void *arg)
 {
 	t_philo philo_info;
 	t_info *info;
@@ -83,7 +83,7 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (i < info.philo_total)
 		{
-			if (pthread_create(&thread[i], NULL, thread1, (void *)&info) != 0)
+			if (pthread_create(&thread[i], NULL, philo_thread, (void *)&info) != 0)
 				return (1);
 			i++;
 		}
