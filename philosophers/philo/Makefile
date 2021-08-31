@@ -3,7 +3,7 @@ NAME = philo
 
 .PHONY: all, clean, fclean, re
 
-SRCS = main.c ft_utils.c init.c
+SRCS = main.c ft_utils.c init.c philo_status.c
 
 OBJS = $(SRCS:.c=.o)
 
