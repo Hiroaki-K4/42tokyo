@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:58:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:59:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_philo(t_philo *philo_info, t_info *info)
 	philo_info->die_flag = 0;
 	info->philo_count++;
 	philo_info->philo_num = info->philo_count;
-	philo_info->eat_date = (struct timeval){0};
+	philo_info->eat_date = 0;
 }
 
 void	init_info(t_info *info)
