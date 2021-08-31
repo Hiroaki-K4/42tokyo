@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:21:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:21:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	gg_store;
+int	store;
 
 void	*eating(t_info *info, t_philo *philo_info)
 {
@@ -53,7 +53,7 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
-	gg_store = 0;
+	store = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
@@ -75,6 +75,6 @@ int	main(int argc, char *argv[])
 		}
 		usleep(1500);
 	}
-	printf("store: %d\n", gg_store);
+	printf("store: %d\n", store);
 	return (0);
 }
