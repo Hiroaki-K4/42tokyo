@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 23:04:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 23:05:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ void	*eating(t_info *info, t_philo *philo_info)
 {
 	struct timeval tv;
 
-	printf("first_eat: %d\n", philo_info->first_eat);
 	if (philo_info->first_eat == 1)
 		philo_info->first_eat = 0;
-	printf("first_eat: %d\n", philo_info->first_eat);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld%ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
