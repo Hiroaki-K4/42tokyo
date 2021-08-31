@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:44:23 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:45:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld %ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	usleep(info->t_eat);
+	usleep(info->t_eat * 1000);
 	return (NULL);
 }
 
@@ -32,11 +32,11 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld %ld %d is sleeping\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	usleep(info->t_sleep);
+	usleep(info->t_sleep * 1000);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld %ld %d is sleeping\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	usleep(info->t_sleep);
+	usleep(info->t_sleep * 1000);
 	return (NULL);
 }
 
