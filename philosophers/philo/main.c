@@ -6,11 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:20:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:21:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+int	gg_store;
 
 void	*eating(t_info *info, t_philo *philo_info)
 {

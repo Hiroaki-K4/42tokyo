@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:19:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:21:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ extern "C"{
 	int	ft_atoi(const char *nptr);
 	void	init_philo(t_philo *philo_info, t_info *info);
 	void	init_info(t_info *info);
-	int	gg_store;
 
 #ifdef __cplusplus
 }
