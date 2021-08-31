@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:45:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:45:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	main(int argc, char *argv[])
 				return (1);
 			i++;
 		}
-		usleep(1500);
+		usleep(1500 * 1000);
 	}
 	printf("store: %d\n", store);
 	return (0);
