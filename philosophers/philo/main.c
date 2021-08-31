@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:18:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:20:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
-	g_store = 0;
+	gg_store = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
@@ -73,6 +73,6 @@ int	main(int argc, char *argv[])
 		}
 		usleep(1500);
 	}
-	printf("store: %d\n", g_store);
+	printf("store: %d\n", gg_store);
 	return (0);
 }
