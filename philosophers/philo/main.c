@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 22:31:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/08/31 22:33:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld %ld %d is eating\n", tv.tv_sec, tv.tv_usec, philo_info->philo_num);
+	printf("t_eat: %d\n", info->t_eat);
 	usleep(info->t_eat);
 	return (NULL);
 }
