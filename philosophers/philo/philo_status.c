@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 22:52:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/01 22:53:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	*eating(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	if (diff_check(tv, philo_info) > info->t_die)
+	{
+		printf("die: %d diff: %ld\n", info->t_die, diff_check(tv, philo_info));
 		exit(1);
+	}
 	printf("now_sec: %ld before_sec: %ld\n", tv.tv_sec, philo_info->eat_date.tv_sec);
 	printf("now_usec: %ld before_usec: %ld\n", tv.tv_usec, philo_info->eat_date.tv_usec);
 	printf("%ld%ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
