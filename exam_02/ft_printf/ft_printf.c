@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 09:23:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/01 09:25:58 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,6 +625,24 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	va_end(ap);
 // 	return (print_len);
 // }
+
+int str_to_num(const char *arg, int *i)
+{
+	int num;
+	int j;
+
+	num = ft_atoi(arg);
+	if (num >= 0)
+	{
+		j = 0;
+		while (ft_isdigit(arg[j++]))
+			(*i)++;
+		return (j);
+	}
+	else
+		num = -1;
+	return (num);
+}
 
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
