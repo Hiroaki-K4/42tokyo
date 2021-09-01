@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 09:37:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/01 09:40:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -648,87 +648,33 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	return (len);
 }
 
-// int print_string(va_list *ap, t_plist flag_list)
-// {
-// 	int i;
-// 	int len;
-// 	char *str;
-
-// 	len = 0;
-// 	str = va_arg(*ap, char *);
-// 	if (str == NULL)
-// 		str = "(null)";
-// 	if (flag_list.field > (int)ft_strlen(str))
-// 	{
-// 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-// 		{
-// 			i = flag_list.precision;
-// 			while (flag_list.field - (i++) > 0)
-// 				write(1, " ", 1);
-// 			write(1, str, flag_list.precision);
-// 			len = i;
-// 		}
-// 		else
-// 		{
-// 			i = 0;
-// 			while (flag_list.field - (int)ft_strlen(str) - (i++) > 0)
-// 				write(1, " ", 1);
-// 			write(1, str, ft_strlen(str));
-// 			len = ft_strlen(str) + i;
-// 		}
-// 	}
-// 	else
-// 	{
-// 		if (flag_list.precision != -1)
-// 		{
-// 			while (len < flag_list.precision && str[len])
-// 			{
-// 				write(1, &str[len], 1);
-// 				len++;
-// 			}
-// 		}
-// 		else
-// 		{
-// 			write(1, str, ft_strlen(str));
-// 			len = ft_strlen(str);
-// 		}
-// 	}
-// 	return (len);
-// }
-
-int	print_string(va_list *ap, t_plist flag_list)
+int print_string(va_list *ap, t_plist flag_list)
 {
-	int		i;
-	int		len;
-	char	*str;
+	int i;
+	int len;
+	char *str;
 
 	len = 0;
-	str = va_arg(*ap, char*);
+	str = va_arg(*ap, char *);
 	if (str == NULL)
 		str = "(null)";
-	if (flag_list.field != -1)
+	if (flag_list.field > (int)ft_strlen(str))
 	{
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
 		{
 			i = flag_list.precision;
-			while ((flag_list.field - i) > 0)
-			{
+			while (flag_list.field - (i++) > 0)
 				write(1, " ", 1);
-				i++;
-			}
 			write(1, str, flag_list.precision);
 			len = i;
 		}
 		else
 		{
 			i = 0;
-			while ((flag_list.field - (int)ft_strlen(str) - i) > 0)
-			{
+			while (flag_list.field - (int)ft_strlen(str) - (i++) > 0)
 				write(1, " ", 1);
-				i++;
-			}
 			write(1, str, ft_strlen(str));
-			len = (int)ft_strlen(str) + i;
+			len = ft_strlen(str) + i;
 		}
 	}
 	else
@@ -768,14 +714,54 @@ int str_to_num(const char *arg, int *i)
 	return (num);
 }
 
-int ft_printf_per(const char *arg, int *i, va_list *ap)
+// int ft_printf_per(const char *arg, int *i, va_list *ap)
+// {
+// 	int num;
+// 	int len;
+// 	int keta;
+// 	unsigned int hex_num;
+// 	char *str_num;
+// 	t_plist flag_list;
+
+// 	(*i)++;
+// 	flag_list.field = str_to_num(&arg[*i], i);
+// 	flag_list.precision = -1;
+// 	if (arg[*i] == '.')
+// 	{
+// 		(*i)++;
+// 		flag_list.precision = str_to_num(&arg[*i], i);
+// 	}
+// 	flag_list.format = ft_strchr_place("sdx", arg[*i], i);
+// 	if (flag_list.format == 0)
+// 		len = print_string(ap, flag_list);
+// 	else if (flag_list.format == 1)
+// 	{
+// 		num = va_arg(*ap, int);
+// 		if (!(str_num = ft_itoa(num)))
+// 			return (-1);
+// 		keta = ft_strlen(str_num);
+// 		if (num < 0)
+// 			keta--;
+// 		len = print_digit(flag_list, str_num, num, keta);
+// 	}
+// 	else if (flag_list.format == 2)
+// 	{
+// 		hex_num = va_arg(*ap, unsigned int);
+// 		if (!(str_num = ft_itoa_hex(hex_num, "0123456789abcdef")))
+// 			return (-1);
+// 		len = print_digit(flag_list, str_num, hex_num, (int)ft_strlen(str_num));
+// 	}
+// 	return (len);
+// }
+
+int		ft_printf_per(const char *arg, int *i, va_list *ap)
 {
-	int num;
-	int len;
-	int keta;
-	unsigned int hex_num;
-	char *str_num;
-	t_plist flag_list;
+	int		len;
+	int		num;
+	int		keta;
+	unsigned	int	hex_num;
+	char	*str_num;
+	t_plist	flag_list;
 
 	(*i)++;
 	flag_list.field = str_to_num(&arg[*i], i);
