@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 22:33:34 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/01 22:34:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	init_philo(t_philo *philo_info, t_info *info)
+void	*init_philo(t_philo *philo_info, t_info *info)
 {
 	struct timeval tv;
 
