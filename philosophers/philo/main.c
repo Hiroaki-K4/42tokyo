@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 21:49:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:50:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-pthread_mutex_t	*fork_mutex;
+// pthread_mutex_t	*fork_mutex;
 
 void	*philo_thread(void *arg)
 {

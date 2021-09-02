@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 22:35:16 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:51:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/time.h>
+
+pthread_mutex_t	*fork_mutex;
 
 typedef struct s_philo
 {
