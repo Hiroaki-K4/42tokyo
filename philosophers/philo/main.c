@@ -6,13 +6,11 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 21:41:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:44:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-int	store;
 
 void	*philo_thread(void *arg)
 {
@@ -35,7 +33,6 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
-	store = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
@@ -50,6 +47,7 @@ int	main(int argc, char *argv[])
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
 		if (!thread)
 			return (1);
+		
 		i = 0;
 		while (i < info.philo_total)
 		{
@@ -59,6 +57,5 @@ int	main(int argc, char *argv[])
 		}
 		usleep(1500 * 1000);
 	}
-	printf("store: %d\n", store);
 	return (0);
 }
