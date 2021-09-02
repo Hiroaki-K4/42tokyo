@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/01 22:35:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 22:21:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,14 @@ void	init_info(t_info *info)
 	info->t_sleep = -1;
 	info->must_eat_num = -1;
 	info->philo_count = 0;
+}
+
+void	init_fork_mutex(t_info *info)
+{
+	if (info->philo_total == 1)
+		fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * 2);
+	else
+		fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * info->philo_total);
+	if (!fork_mutex)
+		return (-1);
 }

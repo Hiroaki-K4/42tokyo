@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 22:02:28 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 22:21:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,13 @@ int	main(int argc, char *argv[])
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
 		if (!thread)
 			return (1);
-		if (info.philo_total == 1)
-			fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * 2);
-		else
-			fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * info.philo_total);
-		if (!fork_mutex)
-			return (-1);
+		init_fork_mutex(&info);
+		// if (info.philo_total == 1)
+		// 	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * 2);
+		// else
+		// 	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * info.philo_total);
+		// if (!fork_mutex)
+		// 	return (-1);
 		i = 0;
 		while (i < info.philo_total)
 		{
