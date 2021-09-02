@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 21:54:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:58:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ extern "C"{
 	void	*eating(t_info *info, t_philo *philo_info);
 	void	*sleeping(t_info *info, t_philo *philo_info);
 	void	*thinking(t_info *info, t_philo *philo_info);
-	static pthread_mutex_t	*fork_mutex;
+	static const pthread_mutex_t	*fork_mutex;
 
 #ifdef __cplusplus
 }
