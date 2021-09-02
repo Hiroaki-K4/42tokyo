@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 21:51:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:51:46 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-pthread_mutex_t	*fork_mutex;
+// pthread_mutex_t	*fork_mutex;
 
 typedef struct s_philo
 {
@@ -50,6 +50,8 @@ extern "C"{
 	void	*eating(t_info *info, t_philo *philo_info);
 	void	*sleeping(t_info *info, t_philo *philo_info);
 	void	*thinking(t_info *info, t_philo *philo_info);
+	pthread_mutex_t	*fork_mutex;
+
 
 #ifdef __cplusplus
 }
