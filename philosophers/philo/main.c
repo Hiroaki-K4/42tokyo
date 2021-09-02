@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/08/31 23:06:00 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/02 21:41:12 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int argc, char *argv[])
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
+		if (info.philo_total <= 0)
+			return (1);
 		info.t_die = ft_atoi(argv[2]);
 		info.t_eat = ft_atoi(argv[3]);
 		info.t_sleep = ft_atoi(argv[4]);
