@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 22:22:51 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 22:48:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_info
 	int	t_sleep;
 	int	must_eat_num;
 	int	philo_count;
+	int	die_flag;
 }				t_info;
 
 // #ifdef __cplusplus
@@ -46,6 +47,7 @@ typedef struct s_info
 int increment(int i);
 int	ft_atoi(const char *nptr);
 int	init_philo(t_philo *philo_info, t_info *info);
+long	check_time_diff(struct timeval tv, t_philo *philo_info);
 void	init_info(t_info *info);
 void	*eating(t_info *info, t_philo *philo_info);
 void	*sleeping(t_info *info, t_philo *philo_info);

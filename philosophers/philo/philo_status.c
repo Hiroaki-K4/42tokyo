@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 22:21:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 22:49:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-long	diff_check(struct timeval tv, t_philo *philo_info)
+long	check_time_diff(struct timeval tv, t_philo *philo_info)
 {
 	long	before_t;
 	long	now_t;
@@ -47,11 +47,14 @@ void	*eating(t_info *info, t_philo *philo_info)
 	}
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	// if (diff_check(tv, philo_info) > info->t_die)
-	// {
-		// printf("die: %d diff: %ld\n", info->t_die, diff_check(tv, philo_info));
-		// exit(1);
-	// }
+	printf("%ld%03ld %d has taken a fork\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	if (check_time_diff(tv, philo_info) > info->t_die)
+	{
+		printf("die: %d diff: %ld\n", info->t_die, diff_check(tv, philo_info));
+		info->die_flag = 1;
+	}
+	if (gettimeofday(&tv, NULL) == -1)
+		return (NULL);
 	printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	philo_info->eat_date = tv;
 	if (philo_info->first_eat == 1)
@@ -99,7 +102,7 @@ void	*thinking(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld%03ld %d is thinking\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	usleep(200 * 1000);
+	// usleep(200 * 1000);
 	// printf("end_think: %d\n", philo_info->philo_num);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/02 22:31:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 22:37:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_info(t_info *info)
 	info->t_sleep = -1;
 	info->must_eat_num = -1;
 	info->philo_count = 0;
+	info->die_flag = 0;
 }
 
 void	init_fork_mutex(t_info *info)
