@@ -1,7 +1,7 @@
 #!/bin/bash
 
 make re
-./philo 3 2 200 500
+./philo 2 2 200 500
 make fclean
 # cd test
 # make re
