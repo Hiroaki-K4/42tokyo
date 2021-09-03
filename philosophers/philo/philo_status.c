@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 22:08:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 22:09:32 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 	// printf("start_sleep: %d\n", philo_info->philo_num);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	printf("%ld %lu %d is sleeping\n", tv.tv_sec, tv.tv_usec, philo_info->philo_num);
+	printf("%ld %06lu %d is sleeping\n", tv.tv_sec, tv.tv_usec, philo_info->philo_num);
 	usleep(info->t_sleep * 1000);
 	// printf("end_sleep: %d\n", philo_info->philo_num);
 	return (NULL);
