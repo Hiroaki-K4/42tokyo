@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 21:24:40 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 21:30:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 		pthread_mutex_unlock(&fork_mutex[philo_info->philo_num]);
 		printf("unlock %d %d\n", philo_info->philo_num - 1, philo_info->philo_num);
 	}
+	printf("end_eat\n");
 	return (NULL);
 }
 
@@ -75,6 +76,7 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 		return (NULL);
 	printf("%ld%lu %d is sleeping\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	usleep(info->t_sleep * 1000);
+	printf("end_sleep\n");
 	return (NULL);
 }
 
@@ -86,5 +88,6 @@ void	*thinking(t_info *info, t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld%lu %d is thinking\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	printf("end_think\n");
 	return (NULL);
 }
