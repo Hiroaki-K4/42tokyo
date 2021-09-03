@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 21:40:44 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/03 21:45:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void	*thinking(t_info *info, t_philo *philo_info)
 {
 	struct timeval tv;
 
-	printf("start_think\n");
+	printf("start_think: %d\n", philo_info->philo_num);
 	(void)info;
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	printf("%ld%lu %d is thinking\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	printf("end_think\n");
+	printf("end_think: %d\n", philo_info->philo_num);
 	return (NULL);
 }
