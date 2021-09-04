@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:13:17 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:14:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	*monitor_death_thread(void *arg)
 		{
 			printf("die: %d diff: %ld\n", philo_info->t_die, check_time_diff(tv, philo_info));
 			printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+			philo_info->die_flag = 1;
 			die_flag = 1;
 		}
 	}
