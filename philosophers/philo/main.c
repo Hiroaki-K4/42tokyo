@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:06:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:13:17 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ void	*philo_thread(void *arg)
 	return (NULL);
 }
 
+void	exit_thread(pthread_t *thread, t_info *info)
+{
+	int	i;
+
+	i = 0;
+	while (i < info->philo_total)
+	{
+		if (pthread_join(thread[i], NULL) != 0)
+			printf("error\n");
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_info	info;
@@ -88,6 +100,7 @@ int	main(int argc, char *argv[])
 			usleep(10 * 1000);
 			continue ;
 		}
+		// exit_thread(thread, &info);
 	}
 	return (0);
 }
