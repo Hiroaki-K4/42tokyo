@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 18:02:09 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 18:14:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,10 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 	return (NULL);
 }
 
-void	*thinking(t_info *info, t_philo *philo_info)
+void	*thinking(t_philo *philo_info)
 {
 	struct timeval tv;
 
-	(void)info;
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	if (die_flag == 0)
