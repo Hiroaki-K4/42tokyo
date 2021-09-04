@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 19:53:01 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 20:13:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int	main(int argc, char *argv[])
 			continue ;
 		}
 		exit_thread(thread, &info);
+		free(thread);
 	}
 	return (0);
 }
