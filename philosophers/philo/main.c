@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 16:51:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:06:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ void	*philo_thread(void *arg)
 		eating(info, &philo_info);
 		sleeping(info, &philo_info);
 		thinking(info, &philo_info);
-		// printf("die_flag: %d\n", philo_info.die_flag);
 	}
-	// printf("die2_flag: %d\n", philo_info.die_flag);
 	return (NULL);
 }
 
@@ -77,12 +75,6 @@ int	main(int argc, char *argv[])
 		if (!thread)
 			return (1);
 		init_fork_mutex(&info);
-		// if (info.philo_total == 1)
-		// 	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * 2);
-		// else
-		// 	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * info.philo_total);
-		// if (!fork_mutex)
-		// 	return (-1);
 		i = 0;
 		while (i < info.philo_total)
 		{
