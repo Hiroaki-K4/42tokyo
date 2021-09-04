@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 21:40:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:10:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,8 @@ void	exit_thread(pthread_t *thread, t_info *info)
 	i = 0;
 	while (i < info->philo_total)
 	{
-		if (pthread_join(thread[i], NULL) != 0)
-			printf("error\n");
-		if (pthread_mutex_destroy(&fork_mutex[i]) != 0)
-			printf("error2\n");
+		pthread_join(thread[i], NULL);
+		pthread_mutex_destroy(&fork_mutex[i]);
 		i++;
 	}
 	free(thread);
@@ -78,7 +76,8 @@ int	main(int argc, char *argv[])
 	int	i;
 	pthread_t	*thread;
 
-	init_info(&info);
+	if (init_info(&info) == -1)
+		return (-1);
 	die_flag = 0;
 	if (argc == 5 || argc == 6)
 	{
@@ -94,7 +93,6 @@ int	main(int argc, char *argv[])
 			if (info.must_eat_num <= 0)
 				return (1);
 		}
-		// printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", info.philo_total, info.t_die, info.t_eat, info.t_sleep, info.must_eat_num);
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
 		if (!thread)
 			return (1);
