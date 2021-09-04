@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 23:06:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 23:07:26 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,13 @@ int	main(int argc, char *argv[])
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
 		if (!thread)
 			return (1);
-		i = -1;
-		while (++i < info.philo_total)
+		i = 0;
+		while (i < info.philo_total)
 		{
 			if (pthread_create(&thread[i], NULL, philo_thread,
 					(void *)&info) != 0)
 				return (1);
+			i++;
 		}
 		while (g_die_flag == 0)
 			usleep(5 * 1000);
