@@ -6,29 +6,29 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:15:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/time.h>
+# include <stdio.h>
+# include <pthread.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <sys/time.h>
 
-pthread_mutex_t	*fork_mutex;
+pthread_mutex_t	*g_fork_mutex;
 int	die_flag;
 
 typedef struct s_philo
 {
-	int	die_flag;
-	int	philo_num;
-	int	t_die;
-	int	eat_count;
-	struct timeval eat_date;
+	int				die_flag;
+	int				philo_num;
+	int				t_die;
+	int				eat_count;
+	struct timeval	eat_date;
 }				t_philo;
 
 typedef struct s_info
@@ -43,9 +43,9 @@ typedef struct s_info
 	int	philo_eat_count;
 }				t_info;
 
-int increment(int i);
-int	ft_atoi(const char *nptr);
-int	init_philo(t_philo *philo_info, t_info *info);
+int		increment(int i);
+int		ft_atoi(const char *nptr);
+int		init_philo(t_philo *philo_info, t_info *info);
 long	check_time_diff(struct timeval tv, t_philo *philo_info);
 void	init_info(t_info *info);
 void	*eating(t_info *info, t_philo *philo_info);

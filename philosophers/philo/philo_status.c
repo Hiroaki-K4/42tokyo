@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 21:46:48 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:16:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ void	*eating(t_info *info, t_philo *philo_info)
 	{
 		if (philo_info->philo_num % 2 == 1)
 			usleep(200);
-		pthread_mutex_lock(&fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_lock(&fork_mutex[0]);
+		pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_lock(&g_fork_mutex[0]);
 	}
 	else
 	{
 		if (philo_info->philo_num % 2 == 1)
 			usleep(200);
-		pthread_mutex_lock(&fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_lock(&fork_mutex[philo_info->philo_num]);
+		pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num]);
 	}
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
@@ -54,13 +54,13 @@ void	*eating(t_info *info, t_philo *philo_info)
 	usleep(info->t_eat * 1000);
 	if (philo_info->philo_num == info->philo_total)
 	{
-		pthread_mutex_unlock(&fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_unlock(&fork_mutex[0]);
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_unlock(&g_fork_mutex[0]);
 	}
 	else
 	{
-		pthread_mutex_unlock(&fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_unlock(&fork_mutex[philo_info->philo_num]);
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num]);
 	}
 	if (info->must_eat_num != -1)
 	{

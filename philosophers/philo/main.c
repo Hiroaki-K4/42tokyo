@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:11:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:16:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ void	exit_thread(pthread_t *thread, t_info *info)
 	while (i < info->philo_total)
 	{
 		pthread_join(thread[i], NULL);
-		pthread_mutex_destroy(&fork_mutex[i]);
+		pthread_mutex_destroy(&g_fork_mutex[i]);
 		i++;
 	}
 	free(thread);
-	free(fork_mutex);
+	free(g_fork_mutex);
 	i = 0;
 }
 

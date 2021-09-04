@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:47:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:14:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	init_philo(t_philo *philo_info, t_info *info)
 {
-	struct timeval tv;
+	struct timeval	tv;
 
 	if (gettimeofday(&tv, NULL) == -1)
 		return (-1);
@@ -42,8 +42,9 @@ void	init_info(t_info *info)
 void	init_fork_mutex(t_info *info)
 {
 	int	i;
-	
-	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * info->philo_total);
+
+	fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
+			* info->philo_total);
 	if (!fork_mutex)
 		exit(1);
 	i = 0;
