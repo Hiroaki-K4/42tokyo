@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 16:32:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:33:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 
 void	*monitor_death_thread(void *arg)
 {
-	
+	t_philo *philo_info;
+
+	philo_info = (t_philo *)arg;
+	(void)philo_info;
 }
 
 void	*philo_thread(void *arg)
