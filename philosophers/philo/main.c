@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:24:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:43:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*monitor_death_thread(void *arg)
 		if (check_time_diff(tv, philo_info) > philo_info->t_die)
 		{
 			die_flag = 1;
-			printf("die: %d diff: %ld\n", philo_info->t_die, check_time_diff(tv, philo_info));
+			// printf("die: %d diff: %ld\n", philo_info->t_die, check_time_diff(tv, philo_info));
 			printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 		}
 	}
@@ -64,7 +64,6 @@ void	exit_thread(pthread_t *thread, t_info *info)
 		if (pthread_join(thread[i], NULL) != 0)
 			printf("error\n");
 		i++;
-		printf("ok\n");
 	}
 }
 
@@ -84,7 +83,7 @@ int	main(int argc, char *argv[])
 		info.t_die = ft_atoi(argv[2]);
 		info.t_eat = ft_atoi(argv[3]);
 		info.t_sleep = ft_atoi(argv[4]);
-		if (argc == 7)
+		if (argc == 6)
 			info.must_eat_num = ft_atoi(argv[5]);
 		printf("philo_num: %d t_die: %d t_eat: %d t_sleep: %d must_eat: %d\n", info.philo_total, info.t_die, info.t_eat, info.t_sleep, info.must_eat_num);
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
