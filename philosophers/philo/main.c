@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:39 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 19:53:01 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*monitor_death_thread(void *arg)
 	philo_info = (t_philo *)arg;
 	while (die_flag == 0)
 	{
-		usleep(10 * 1000);
+		usleep(5 * 1000);
 		if (gettimeofday(&tv, NULL) == -1)
 			return (NULL);
 		if (check_time_diff(tv, philo_info) > philo_info->t_die)
@@ -106,7 +106,7 @@ int	main(int argc, char *argv[])
 		}
 		while (die_flag == 0)
 		{
-			usleep(10 * 1000);
+			usleep(5 * 1000);
 			continue ;
 		}
 		exit_thread(thread, &info);
