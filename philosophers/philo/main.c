@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 22:48:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:32:57 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 // pthread_mutex_t	*fork_mutex;
 
+void	*monitor_death_thread(void *arg)
+{
+	
+}
+
 void	*philo_thread(void *arg)
 {
 	t_philo philo_info;
 	t_info *info;
+	pthread_t	*monitor_death;
 	
 	info = (t_info *)arg;
 	init_philo(&philo_info, info);
+	if (pthread_create(&monitor_death, NULL, monitor_death_thread, (void *)&philo_info) != 0)
+		return (1);
 	while (philo_info.die_flag != 1)
 	{
 		eating(info, &philo_info);
@@ -39,6 +47,7 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
+	die_flag = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
@@ -67,7 +76,7 @@ int	main(int argc, char *argv[])
 				return (1);
 			i++;
 		}
-		while (info.die_flag == 0)
+		while (die_flag == 0)
 		{
 			usleep(10 * 1000);
 			continue ;
