@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:33:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:35:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,24 @@ void	lock_forks(t_info *info, t_philo *philo_info)
 	}
 }
 
+void	unlock_forks(t_info *info, t_philo *philo_info)
+{
+	if (philo_info->philo_num == info->philo_total)
+	{
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_unlock(&g_fork_mutex[0]);
+	}
+	else
+	{
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num]);
+	}
+}
+
 void	*eating(t_info *info, t_philo *philo_info)
 {
 	struct timeval	tv;
 
-	// if (philo_info->philo_num == info->philo_total)
-	// {
-	// 	if (philo_info->philo_num % 2 == 1)
-	// 		usleep(200);
-	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
-	// 	pthread_mutex_lock(&g_fork_mutex[0]);
-	// }
-	// else
-	// {
-	// 	if (philo_info->philo_num % 2 == 1)
-	// 		usleep(200);
-	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
-	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num]);
-	// }
 	lock_forks(info, philo_info);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
@@ -72,16 +72,17 @@ void	*eating(t_info *info, t_philo *philo_info)
 		printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	philo_info->eat_date = tv;
 	usleep(info->t_eat * 1000);
-	if (philo_info->philo_num == info->philo_total)
-	{
-		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_unlock(&g_fork_mutex[0]);
-	}
-	else
-	{
-		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
-		pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num]);
-	}
+	// if (philo_info->philo_num == info->philo_total)
+	// {
+	// 	pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+	// 	pthread_mutex_unlock(&g_fork_mutex[0]);
+	// }
+	// else
+	// {
+	// 	pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num - 1]);
+	// 	pthread_mutex_unlock(&g_fork_mutex[philo_info->philo_num]);
+	// }
+	unlock_forks(info, philo_info);
 	if (info->must_eat_num != -1)
 	{
 		if (philo_info->eat_count < info->must_eat_num)
