@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:10:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:11:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ int	main(int argc, char *argv[])
 	int	i;
 	pthread_t	*thread;
 
-	if (init_info(&info) == -1)
-		return (-1);
+	init_info(&info);
 	die_flag = 0;
 	if (argc == 5 || argc == 6)
 	{
