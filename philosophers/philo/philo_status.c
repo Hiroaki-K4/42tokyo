@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:44:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:44:24 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,24 +81,7 @@ int	eating_log(t_info *info, t_philo *philo_info)
 
 void	*eating(t_info *info, t_philo *philo_info)
 {
-	// struct timeval	tv;
-
 	lock_forks(info, philo_info);
-	// if (gettimeofday(&tv, NULL) == -1)
-	// {
-	// 	unlock_forks(info, philo_info);
-	// 	return (NULL);
-	// }
-	// if (g_die_flag == 0)
-	// 	printf("%ld%03ld %d has taken a fork\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	// if (gettimeofday(&tv, NULL) == -1)
-	// {
-	// 	unlock_forks(info, philo_info);
-	// 	return (NULL);
-	// }
-	// if (g_die_flag == 0)
-	// 	printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	// philo_info->eat_date = tv;
 	if (eating_log(info, philo_info) == -1)
 		return (NULL);
 	usleep(info->t_eat * 1000);
