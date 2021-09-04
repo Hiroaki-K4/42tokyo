@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:45:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:47:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	init_philo(t_philo *philo_info, t_info *info)
 	philo_info->philo_num = info->philo_count;
 	philo_info->eat_date = tv;
 	philo_info->t_die = info->t_die;
+	philo_info->eat_count = 0;
 	return (0);
 }
 
@@ -35,6 +36,7 @@ void	init_info(t_info *info)
 	info->must_eat_num = -1;
 	info->philo_count = 0;
 	info->die_flag = 0;
+	info->philo_eat_count = 0;
 }
 
 void	init_fork_mutex(t_info *info)

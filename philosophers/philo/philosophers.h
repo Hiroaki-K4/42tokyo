@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:45:13 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:47:06 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_philo
 	int	die_flag;
 	int	philo_num;
 	int	t_die;
+	int	eat_count;
 	struct timeval eat_date;
 }				t_philo;
 
@@ -38,6 +39,7 @@ typedef struct s_info
 	int	must_eat_num;
 	int	philo_count;
 	int	die_flag;
+	int	philo_eat_count;
 }				t_info;
 
 // #ifdef __cplusplus
