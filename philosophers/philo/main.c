@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 23:00:56 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 23:01:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	exit_thread(pthread_t *thread, t_info *info)
 
 int	init(int argc, char *argv, t_info *info)
 {
-	init_info(&info);
+	init_info(info);
 	g_die_flag = 0;
 	info->philo_total = ft_atoi(argv[1]);
 	if (info->philo_total <= 1)
