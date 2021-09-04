@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 18:15:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 19:35:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-// static pthread_mutex_t	*fork_mutex;
+pthread_mutex_t	*fork_mutex;
+int	die_flag;
 
 typedef struct s_philo
 {
@@ -42,10 +43,6 @@ typedef struct s_info
 	int	philo_eat_count;
 }				t_info;
 
-// #ifdef __cplusplus
-// extern "C"{
-// #endif /*__cplusplus */
-
 int increment(int i);
 int	ft_atoi(const char *nptr);
 int	init_philo(t_philo *philo_info, t_info *info);
@@ -55,12 +52,5 @@ void	*eating(t_info *info, t_philo *philo_info);
 void	*sleeping(t_info *info, t_philo *philo_info);
 void	*thinking(t_philo *philo_info);
 void	init_fork_mutex(t_info *info);
-pthread_mutex_t	*fork_mutex;
-int	die_flag;
-
-// #ifdef __cplusplus
-// }
-// #endif /*__cplusplus */
-
 
 #endif
