@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 20:14:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 20:14:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	exit_thread(pthread_t *thread, t_info *info)
 	{
 		if (pthread_join(thread[i], NULL) != 0)
 			printf("error\n");
-		free(thread[i]);
 		if (pthread_mutex_destroy(&fork_mutex[i]) != 0)
 			printf("error2\n");
 		i++;
@@ -111,6 +110,7 @@ int	main(int argc, char *argv[])
 			continue ;
 		}
 		exit_thread(thread, &info);
+		free(thread);
 	}
 	return (0);
 }
