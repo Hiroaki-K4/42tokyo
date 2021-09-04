@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 23:01:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 23:02:09 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,20 +100,6 @@ int	main(int argc, char *argv[])
 
 	if (argc == 5 || argc == 6)
 	{
-		// init_info(&info);
-		// g_die_flag = 0;
-		// info.philo_total = ft_atoi(argv[1]);
-		// if (info.philo_total <= 1)
-		// 	return (1);
-		// info.t_die = ft_atoi(argv[2]);
-		// info.t_eat = ft_atoi(argv[3]);
-		// info.t_sleep = ft_atoi(argv[4]);
-		// if (argc == 6)
-		// {
-		// 	info.must_eat_num = ft_atoi(argv[5]);
-		// 	if (info.must_eat_num <= 0)
-		// 		return (1);
-		// }
 		if (init(argc, argv, &info) == 1)
 			return (1);
 		thread = (pthread_t *)malloc(sizeof(pthread_t) * info.philo_total);
