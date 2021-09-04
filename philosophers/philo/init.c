@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/03 22:37:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:40:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	init_philo(t_philo *philo_info, t_info *info)
 	philo_info->philo_num = info->philo_count;
 	philo_info->first_eat = 1;
 	philo_info->eat_date = tv;
+	philo_info->t_die = info->t_die;
 	return (0);
 }
 
