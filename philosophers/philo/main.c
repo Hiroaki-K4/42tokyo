@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 16:33:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:34:13 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*philo_thread(void *arg)
 {
 	t_philo philo_info;
 	t_info *info;
-	pthread_t	*monitor_death;
+	pthread_t	monitor_death;
 	
 	info = (t_info *)arg;
 	init_philo(&philo_info, info);
