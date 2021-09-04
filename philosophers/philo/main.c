@@ -6,20 +6,29 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 16:34:22 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:38:59 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-// pthread_mutex_t	*fork_mutex;
-
 void	*monitor_death_thread(void *arg)
 {
 	t_philo *philo_info;
+	struct timeval tv;
 
 	philo_info = (t_philo *)arg;
 	(void)philo_info;
+	if (gettimeofday(&tv, NULL) == -1)
+		return (NULL);
+	printf("%ld%03ld %d has taken a fork\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	if (check_time_diff(tv, philo_info) > info->t_die)
+	{
+		printf("die: %d diff: %ld\n", info->t_die, check_time_diff(tv, philo_info));
+		printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+		info->die_flag = 1;
+	}
+	return (NULL);
 }
 
 void	*philo_thread(void *arg)
