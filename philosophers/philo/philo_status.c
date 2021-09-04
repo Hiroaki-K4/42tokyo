@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:21:03 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:33:52 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ long	check_time_diff(struct timeval tv, t_philo *philo_info)
 	return (diff);
 }
 
-void	*eating(t_info *info, t_philo *philo_info)
+void	lock_forks(t_info *info, t_philo *philo_info)
 {
-	struct timeval	tv;
-
 	if (philo_info->philo_num == info->philo_total)
 	{
 		if (philo_info->philo_num % 2 == 1)
@@ -43,6 +41,27 @@ void	*eating(t_info *info, t_philo *philo_info)
 		pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
 		pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num]);
 	}
+}
+
+void	*eating(t_info *info, t_philo *philo_info)
+{
+	struct timeval	tv;
+
+	// if (philo_info->philo_num == info->philo_total)
+	// {
+	// 	if (philo_info->philo_num % 2 == 1)
+	// 		usleep(200);
+	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
+	// 	pthread_mutex_lock(&g_fork_mutex[0]);
+	// }
+	// else
+	// {
+	// 	if (philo_info->philo_num % 2 == 1)
+	// 		usleep(200);
+	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num - 1]);
+	// 	pthread_mutex_lock(&g_fork_mutex[philo_info->philo_num]);
+	// }
+	lock_forks(info, philo_info);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	if (g_die_flag == 0)
