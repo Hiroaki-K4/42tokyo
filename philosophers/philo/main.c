@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:18:35 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:56:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*monitor_death_thread(void *arg)
 {
-	t_philo *philo_info;
-	struct timeval tv;
+	t_philo			*philo_info;
+	struct timeval	tv;
 
 	philo_info = (t_philo *)arg;
 	while (g_die_flag == 0)
@@ -26,7 +26,8 @@ void	*monitor_death_thread(void *arg)
 		if (check_time_diff(tv, philo_info) > philo_info->t_die)
 		{
 			g_die_flag = 1;
-			printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+			printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000,
+				philo_info->philo_num);
 		}
 	}
 	if (g_die_flag == 1)
@@ -36,14 +37,15 @@ void	*monitor_death_thread(void *arg)
 
 void	*philo_thread(void *arg)
 {
-	t_philo philo_info;
-	t_info *info;
+	t_philo		philo_info;
+	t_info		*info;
 	pthread_t	monitor_death;
-	
+
 	info = (t_info *)arg;
 	if (init_philo(&philo_info, info) == -1)
 		return (NULL);
-	if (pthread_create(&monitor_death, NULL, monitor_death_thread, (void *)&philo_info) != 0)
+	if (pthread_create(&monitor_death, NULL, monitor_death_thread,
+			(void *)&philo_info) != 0)
 		return (NULL);
 	while (philo_info.die_flag != 1)
 	{
@@ -73,14 +75,14 @@ void	exit_thread(pthread_t *thread, t_info *info)
 
 int	main(int argc, char *argv[])
 {
-	t_info	info;
-	int	i;
+	int			i;
+	t_info		info;
 	pthread_t	*thread;
 
-	init_info(&info);
-	g_die_flag = 0;
 	if (argc == 5 || argc == 6)
 	{
+		init_info(&info);
+		g_die_flag = 0;
 		info.philo_total = ft_atoi(argv[1]);
 		if (info.philo_total <= 1)
 			return (1);
