@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 17:52:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 17:55:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void	*eating(t_info *info, t_philo *philo_info)
 		return (NULL);
 	if (die_flag == 0)
 		printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
-	if (info->must_eat_num != -1 && philo_info->eat_count < info->must_eat_num)
+	if (philo_info->eat_count < info->must_eat_num)
 	{
 		philo_info->eat_count++;
-		if ()
+		if (philo_info->eat_count == info->must_eat_num)
+			info->philo_eat_count++;
 	}
 	if (philo_info->)
 	philo_info->eat_date = tv;
