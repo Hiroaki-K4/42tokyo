@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 16:46:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 16:50:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	*monitor_death_thread(void *arg)
 	struct timeval tv;
 
 	philo_info = (t_philo *)arg;
-	(void)philo_info;
 	while (die_flag == 0)
 	{
 		if (gettimeofday(&tv, NULL) == -1)
