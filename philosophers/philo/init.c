@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:17:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:17:34 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void	init_fork_mutex(t_info *info)
 
 	g_fork_mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
 			* info->philo_total);
-	if (!fork_mutex)
+	if (!g_fork_mutex)
 		exit(1);
 	i = 0;
 	while (i < info->philo_total)
 	{
-		if (pthread_mutex_init(&fork_mutex[i], NULL) != 0)
+		if (pthread_mutex_init(&g_fork_mutex[i], NULL) != 0)
 			exit(1);
 		i++;
 	}
