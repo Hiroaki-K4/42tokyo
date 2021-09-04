@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:16:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:18:35 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	*monitor_death_thread(void *arg)
 	struct timeval tv;
 
 	philo_info = (t_philo *)arg;
-	while (die_flag == 0)
+	while (g_die_flag == 0)
 	{
 		usleep(5 * 1000);
 		if (gettimeofday(&tv, NULL) == -1)
 			return (NULL);
 		if (check_time_diff(tv, philo_info) > philo_info->t_die)
 		{
-			die_flag = 1;
+			g_die_flag = 1;
 			printf("%ld%03ld %d died\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 		}
 	}
-	if (die_flag == 1)
+	if (g_die_flag == 1)
 		philo_info->die_flag = 1;
 	return (NULL);
 }
@@ -78,7 +78,7 @@ int	main(int argc, char *argv[])
 	pthread_t	*thread;
 
 	init_info(&info);
-	die_flag = 0;
+	g_die_flag = 0;
 	if (argc == 5 || argc == 6)
 	{
 		info.philo_total = ft_atoi(argv[1]);
@@ -104,7 +104,7 @@ int	main(int argc, char *argv[])
 				return (1);
 			i++;
 		}
-		while (die_flag == 0)
+		while (g_die_flag == 0)
 		{
 			usleep(5 * 1000);
 			continue ;

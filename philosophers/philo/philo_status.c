@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:16:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:18:45 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void	*eating(t_info *info, t_philo *philo_info)
 	}
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	if (die_flag == 0)
+	if (g_die_flag == 0)
 		printf("%ld%03ld %d has taken a fork\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	if (die_flag == 0)
+	if (g_die_flag == 0)
 		printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	philo_info->eat_date = tv;
 	usleep(info->t_eat * 1000);
@@ -71,7 +71,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 				info->philo_eat_count++;
 		}
 		if (info->philo_eat_count == info->philo_total)
-			die_flag = 1;
+			g_die_flag = 1;
 	}
 	return (NULL);
 }
@@ -82,7 +82,7 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	if (die_flag == 0)
+	if (g_die_flag == 0)
 		printf("%ld%03ld %d is sleeping\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	usleep(info->t_sleep * 1000);
 	return (NULL);
@@ -94,7 +94,7 @@ void	*thinking(t_philo *philo_info)
 
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
-	if (die_flag == 0)
+	if (g_die_flag == 0)
 		printf("%ld%03ld %d is thinking\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	return (NULL);
 }

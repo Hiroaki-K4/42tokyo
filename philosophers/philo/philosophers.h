@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:15:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:17:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/time.h>
 
 pthread_mutex_t	*g_fork_mutex;
-int	die_flag;
+int	g_die_flag;
 
 typedef struct s_philo
 {
