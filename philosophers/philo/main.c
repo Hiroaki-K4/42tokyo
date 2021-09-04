@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:11:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:11:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	*philo_thread(void *arg)
 	pthread_t	monitor_death;
 	
 	info = (t_info *)arg;
-	init_philo(&philo_info, info);
+	if (init_philo(&philo_info, info) == -1)
+		return (NULL);
 	if (pthread_create(&monitor_death, NULL, monitor_death_thread, (void *)&philo_info) != 0)
 		return (NULL);
 	while (philo_info.die_flag != 1)
