@@ -14,7 +14,7 @@ CFLAGS = -Wall -Wextra -Werror -pthread
 all: $(NAME)
 
 $(NAME):$(SRCS)
-		$(CC) -fsanitize=thread $(CFLAGS) $(SRCS) -o $(NAME)
+		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
