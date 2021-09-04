@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 22:36:42 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/04 22:42:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,10 @@ void	unlock_forks(t_info *info, t_philo *philo_info)
 	}
 }
 
-void	*eating(t_info *info, t_philo *philo_info)
+void	eating_log(t_info *info, t_philo *philo_info)
 {
 	struct timeval	tv;
 
-	lock_forks(info, philo_info);
 	if (gettimeofday(&tv, NULL) == -1)
 	{
 		unlock_forks(info, philo_info);
@@ -77,6 +76,29 @@ void	*eating(t_info *info, t_philo *philo_info)
 	if (g_die_flag == 0)
 		printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
 	philo_info->eat_date = tv;
+}
+
+void	*eating(t_info *info, t_philo *philo_info)
+{
+	// struct timeval	tv;
+
+	lock_forks(info, philo_info);
+	// if (gettimeofday(&tv, NULL) == -1)
+	// {
+	// 	unlock_forks(info, philo_info);
+	// 	return (NULL);
+	// }
+	// if (g_die_flag == 0)
+	// 	printf("%ld%03ld %d has taken a fork\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	// if (gettimeofday(&tv, NULL) == -1)
+	// {
+	// 	unlock_forks(info, philo_info);
+	// 	return (NULL);
+	// }
+	// if (g_die_flag == 0)
+	// 	printf("%ld%03ld %d is eating\n", tv.tv_sec, tv.tv_usec / 1000, philo_info->philo_num);
+	// philo_info->eat_date = tv;
+	eating_log(info, philo_info);
 	usleep(info->t_eat * 1000);
 	unlock_forks(info, philo_info);
 	if (info->must_eat_num != -1)
