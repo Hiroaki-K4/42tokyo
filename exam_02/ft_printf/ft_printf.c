@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:11:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:12:55 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -329,6 +329,7 @@ char *ft_itoa(int num)
 		ans[len--] = num % 10 + '0';
 		num = num / 10;
 	}
+	printf("ans: %s\n", ans);
 	printf("flag: %d\n", flag);
 	if (flag == -1);
 		ans[0] = '-';
