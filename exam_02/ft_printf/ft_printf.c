@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:09:19 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:09:50 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -734,12 +734,12 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	else if (flag_list.format == 1)
 	{
 		num = va_arg(*ap, int);
-		printf("num: %d\n", num);
 		if (!(str_num = ft_itoa(num)))
 			return (-1);
 		keta = ft_strlen(str_num);
 		if (num < 0)
 			keta--;
+		printf("str: %s\n", str_num);
 		len = print_digit(flag_list, str_num, num, keta);
 	}
 	else if (flag_list.format == 2)
