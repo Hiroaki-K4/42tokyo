@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 22:48:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 12:03:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 12:04:14 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*thinking(t_philo *philo_info)
 	if (gettimeofday(&tv, NULL) == -1)
 		return (NULL);
 	if (g_die_flag == 0)
-		printf("%ld%03d %d is thinking\n", tv.tv_sec, tv.tv_usec / 1000,
+		printf("%ld%03d %d is thinking\n", tv.tv_sec, (int)(tv.tv_usec / 1000),
 			philo_info->philo_num);
 	return (NULL);
 }
