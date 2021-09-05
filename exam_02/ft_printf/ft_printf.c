@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:15:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:16:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -655,6 +655,7 @@ int print_string(va_list *ap, t_plist flag_list)
 	str = va_arg(*ap, char *);
 	if (str == NULL)
 		str = "(null)";
+	write(1, "ok", 2);
 	if (flag_list.field > (int)ft_strlen(str))
 	{
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
@@ -686,7 +687,7 @@ int print_string(va_list *ap, t_plist flag_list)
 		}
 		else
 		{
-			write(1, "ok", 2);
+			// write(1, "ok", 2);
 			write(1, str, ft_strlen(str));
 			len = ft_strlen(str);
 		}
