@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:02:47 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:03:19 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,7 +252,7 @@ int ft_strchr_place(const char *arg, int c, int *i)
 	int j;
 
 	j = 0;
-	while (ft_isdigit(arg[j++]))
+	while (arg[j++])
 	{
 		if (arg[j] == c)
 		{
