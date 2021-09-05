@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 12:05:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 14:52:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ void	*eating(t_info *info, t_philo *philo_info)
 			if (philo_info->eat_count == info->must_eat_num)
 				info->philo_eat_count++;
 		}
-		if (info->philo_eat_count == info->philo_total)
+		if (info->philo_eat_count > info->philo_total)
 			g_die_flag = 1;
+		if (info->philo_eat_count == info->philo_total)
+			info->philo_eat_count++;
 	}
 	return (NULL);
 }
