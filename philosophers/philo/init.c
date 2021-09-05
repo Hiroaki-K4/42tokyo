@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:48:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:52:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int	init_fork_mutex(t_info *info)
 	while (i < info->philo_total)
 	{
 		if (pthread_mutex_init(&g_fork_mutex[i], NULL) != 0)
+		{
+			free(g_fork_mutex);
 			return (1);
+		}
 		i++;
 	}
 	return (0);
