@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/04 23:07:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:49:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ int	init(int argc, char *argv[], t_info *info)
 		if (info->must_eat_num <= 0)
 			return (1);
 	}
-	init_fork_mutex(info);
+	if (init_fork_mutex(info) == 1)
+		return (1);
 	return (0);
 }
 
