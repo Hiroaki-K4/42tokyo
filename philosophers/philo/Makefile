@@ -13,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror -pthread
 
 all: $(NAME)
 
-$(NAME):$(OBJS)
+$(NAME):$(SRCS)
 		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
