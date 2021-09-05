@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:18:12 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:20:20 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -655,10 +655,8 @@ int print_string(va_list *ap, t_plist flag_list)
 	str = va_arg(*ap, char *);
 	if (str == NULL)
 		str = "(null)";
-	printf("field: %d\n", flag_list.field);
 	if (flag_list.field > (int)ft_strlen(str))
 	{
-		write(1, "1", 1);
 		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
 		{
 			i = flag_list.precision;
@@ -678,7 +676,6 @@ int print_string(va_list *ap, t_plist flag_list)
 	}
 	else
 	{
-		write(1, "2", 1);
 		if (flag_list.precision != -1)
 		{
 			while (len < flag_list.precision && str[len])
@@ -689,7 +686,6 @@ int print_string(va_list *ap, t_plist flag_list)
 		}
 		else
 		{
-			// write(1, "ok", 2);
 			write(1, str, ft_strlen(str));
 			len = ft_strlen(str);
 		}
@@ -708,7 +704,6 @@ int str_to_num(const char *arg, int *i)
 		j = 0;
 		while (ft_isdigit(arg[j++]))
 			(*i)++;
-		return (j);
 	}
 	else
 		num = -1;
