@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:09:50 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/05 11:10:54 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,7 @@ char *ft_itoa(int num)
 	int len;
 	char *ans;
 	
+	printf("num: %d\n", num);
 	if (num == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = digit_size(num);
@@ -739,7 +740,6 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 		keta = ft_strlen(str_num);
 		if (num < 0)
 			keta--;
-		printf("str: %s\n", str_num);
 		len = print_digit(flag_list, str_num, num, keta);
 	}
 	else if (flag_list.format == 2)
