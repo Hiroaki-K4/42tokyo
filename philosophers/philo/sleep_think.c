@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 22:48:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 12:04:14 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/09 22:57:29 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*sleeping(t_info *info, t_philo *philo_info)
 	if (g_die_flag == 0)
 		printf("%ld%03d %d is sleeping\n", tv.tv_sec, (int)(tv.tv_usec / 1000),
 			philo_info->philo_num);
-	usleep(info->t_sleep * 1000);
+	usleep(info->t_sleep * DIGIT);
 	return (NULL);
 }
 

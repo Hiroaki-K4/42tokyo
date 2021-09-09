@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 14:52:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/09 22:57:05 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	*eating(t_info *info, t_philo *philo_info)
 	lock_forks(info, philo_info);
 	if (eating_log(info, philo_info) == -1)
 		return (NULL);
-	usleep(info->t_eat * 1000);
+	usleep(info->t_eat * DIGIT);
 	unlock_forks(info, philo_info);
 	if (info->must_eat_num != -1)
 	{
