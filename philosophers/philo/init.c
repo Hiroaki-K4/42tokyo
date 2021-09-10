@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/05 11:52:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:51:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int	init_philo(t_philo *philo_info, t_info *info)
 {
 	struct timeval	tv;
 
-	if (gettimeofday(&tv, NULL) == -1)
-		return (-1);
+	gettimeofday(&tv, NULL);
 	philo_info->die_flag = 0;
 	info->philo_count++;
 	philo_info->philo_num = info->philo_count;
