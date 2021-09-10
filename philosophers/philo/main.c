@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/10 22:41:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:43:47 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int	main(int argc, char *argv[])
 			if (pthread_create(&thread[i], NULL, philo_thread,
 					(void *)&info) != 0)
 				return (1);
-			pthread_detach(thread[i]);
+			// pthread_detach(thread[i]);
 			i++;
 		}
 		while (g_die_flag == 0)
