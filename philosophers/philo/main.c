@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/10 22:53:52 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/10 23:09:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	*monitor_death_thread(void *arg)
 	{
 		usleep(5 * DIGIT);
 		gettimeofday(&tv, NULL);
-		if (check_time_diff(tv, philo_info) > philo_info->t_die && g_die_flag == 0)
+		if (check_time_diff(tv, philo_info) > philo_info->t_die
+			&& g_die_flag == 0)
 		{
 			g_die_flag = 1;
 			printf("%ld%03d %d died\n", tv.tv_sec, (int)(tv.tv_usec / 1000),
@@ -77,6 +78,8 @@ int	init(int argc, char *argv[], t_info *info)
 	g_die_flag = 0;
 	info->philo_total = ft_atoi(argv[1]);
 	if (info->philo_total <= 1)
+		return (1);
+	if (ft_atoi(argv[2]) < 0 || ft_atoi(argv[3]) < 0 || ft_atoi(argv[4]) < 0)
 		return (1);
 	info->t_die = ft_atoi(argv[2]);
 	info->t_eat = ft_atoi(argv[3]);
