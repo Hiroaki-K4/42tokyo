@@ -6,13 +6,13 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 22:44:49 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/10 22:51:07 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:54:03 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	init_philo(t_philo *philo_info, t_info *info)
+void	init_philo(t_philo *philo_info, t_info *info)
 {
 	struct timeval	tv;
 
@@ -23,7 +23,6 @@ int	init_philo(t_philo *philo_info, t_info *info)
 	philo_info->eat_date = tv;
 	philo_info->t_die = info->t_die;
 	philo_info->eat_count = 0;
-	return (0);
 }
 
 void	init_info(t_info *info)
