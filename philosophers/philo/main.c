@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/11 14:43:26 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/11 14:43:56 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	*philo_thread(void *arg)
 	{
 		philo_info.die_flag = 1;
 		g_die_flag = 1;
-		return (NULL);
+		// return (NULL);
 	}
 	while (philo_info.die_flag != 1)
 	{
