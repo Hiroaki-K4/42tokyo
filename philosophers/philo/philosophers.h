@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/10 22:54:20 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/11 21:41:07 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <sys/time.h>
 
-# define DIGIT 990
+# define DIGIT 950
 
 pthread_mutex_t	*g_fork_mutex;
 int				g_die_flag;
