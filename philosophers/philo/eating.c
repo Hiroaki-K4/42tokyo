@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:52:16 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/09 22:57:05 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 22:23:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,12 @@ int	eating_log(t_info *info, t_philo *philo_info)
 		return (-1);
 	}
 	if (g_die_flag == 0)
+	{
+		pthread_mutex_lock(&philo_info->eat_mutex);
 		printf("%ld%03d %d is eating\n", tv.tv_sec, (int)(tv.tv_usec / 1000),
 			philo_info->philo_num);
+		pthread_mutex_unlock(&philo_info->eat_mutex);
+	}
 	philo_info->eat_date = tv;
 	return (0);
 }
