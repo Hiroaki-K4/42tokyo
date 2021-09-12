@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/12 22:19:08 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 22:25:10 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void	*monitor_death_thread(void *arg)
 			&& g_die_flag == 0)
 		{
 			g_die_flag = 1;
+			pthread_mutex_lock(&philo_info->eat_mutex);
 			printf("%ld%03d %d died\n", tv.tv_sec, (int)(tv.tv_usec / 1000),
 				philo_info->philo_num);
+			pthread_mutex_unlock(&philo_info->eat_mutex);
 		}
 	}
 	if (g_die_flag == 1)
