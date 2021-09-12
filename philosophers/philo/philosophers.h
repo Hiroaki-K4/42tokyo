@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/11 21:55:55 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 21:57:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_philo
 	int				t_die;
 	int				eat_count;
 	struct timeval	eat_date;
+	pthread_mutex_t	eat_mutex;
 }				t_philo;
 
 typedef struct s_info
