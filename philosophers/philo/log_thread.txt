@@ -1,665 +1,665 @@
-==29799== Helgrind, a thread error detector
-==29799== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
-==29799== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==29799== Command: ./philo 3 899 300 300 3
-==29799== Parent PID: 29672
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #4 was created
-==29799==    at 0x49D5282: clone (clone.S:71)
-==29799==    by 0x48982EB: create_thread (createthread.c:101)
-==29799==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
-==29799==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109718: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #2 was created
-==29799==    at 0x49D5282: clone (clone.S:71)
-==29799==    by 0x48982EB: create_thread (createthread.c:101)
-==29799==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
-==29799==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109718: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x1FFEFFF774 by thread #4
-==29799== Locks held: none
-==29799==    at 0x1099A9: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #2
-==29799== Locks held: none
-==29799==    at 0x1099B3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x1ffefff774 is on thread #1's stack
-==29799==  in frame #2, created by main (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during write of size 4 at 0x1FFEFFF774 by thread #4
-==29799== Locks held: none
-==29799==    at 0x1099B3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #2
-==29799== Locks held: none
-==29799==    at 0x1099B3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x1ffefff774 is on thread #1's stack
-==29799==  in frame #2, created by main (???:)
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #5 was created
-==29799==    at 0x49D5282: clone (clone.S:71)
-==29799==    by 0x48982EB: create_thread (createthread.c:101)
-==29799==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
-==29799==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109408: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7090 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== Possible data race during read of size 8 at 0x66A8E40 by thread #5
-==29799== Locks held: none
-==29799==    at 0x109919: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 8 by thread #4
-==29799== Locks held: 2, at addresses 0x4AA7068 0x4AA7090
-==29799==    at 0x109E26: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E82: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x66a8e40 is on thread #4's stack
-==29799==  in frame #4, created by philo_thread (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7090 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== Possible data race during read of size 8 at 0x66A8E48 by thread #5
-==29799== Locks held: none
-==29799==    at 0x109928: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 8 by thread #4
-==29799== Locks held: 2, at addresses 0x4AA7068 0x4AA7090
-==29799==    at 0x109E2A: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E82: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x66a8e48 is on thread #4's stack
-==29799==  in frame #4, created by philo_thread (???:)
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #3 was created
-==29799==    at 0x49D5282: clone (clone.S:71)
-==29799==    by 0x48982EB: create_thread (createthread.c:101)
-==29799==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
-==29799==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109408: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799==  Lock at 0x4AA7040 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== Possible data race during write of size 8 at 0x56A6E40 by thread #2
-==29799== Locks held: 2, at addresses 0x4AA7040 0x4AA7068
-==29799==    at 0x109E26: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E82: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous read of size 8 by thread #3
-==29799== Locks held: none
-==29799==    at 0x109919: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x56a6e40 is on thread #2's stack
-==29799==  in frame #2, created by philo_thread (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799==  Lock at 0x4AA7040 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== Possible data race during write of size 8 at 0x56A6E48 by thread #2
-==29799== Locks held: 2, at addresses 0x4AA7040 0x4AA7068
-==29799==    at 0x109E2A: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E82: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous read of size 8 by thread #3
-==29799== Locks held: none
-==29799==    at 0x109928: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x56a6e48 is on thread #2's stack
-==29799==  in frame #2, created by philo_thread (???:)
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #6 was created
-==29799==    at 0x49D5282: clone (clone.S:71)
-==29799==    by 0x48982EB: create_thread (createthread.c:101)
-==29799==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
-==29799==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109718: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Thread #6: lock order "0x4AA7040 before 0x4AA7090" violated
-==29799== 
-==29799== Observed (incorrect) order is: acquisition of lock at 0x4AA7090
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109BA3: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  followed by a later acquisition of lock at 0x4AA7040
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109BB2: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  Lock at 0x4AA7040 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7090 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Thread #4: lock order "0x4AA7090 before 0x4AA7068" violated
-==29799== 
-==29799== Observed (incorrect) order is: acquisition of lock at 0x4AA7068
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109C03: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  followed by a later acquisition of lock at 0x4AA7090
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109C2D: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  Lock at 0x4AA7090 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Thread #2: lock order "0x4AA7068 before 0x4AA7040" violated
-==29799== 
-==29799== Observed (incorrect) order is: acquisition of lock at 0x4AA7040
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109C03: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  followed by a later acquisition of lock at 0x4AA7068
-==29799==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109C2D: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E6F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7040 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during write of size 4 at 0x1FFEFFF77C by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F0C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous read of size 4 by thread #6
-==29799== Locks held: none
-==29799==    at 0x109F13: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x1ffefff77c is on thread #1's stack
-==29799==  in frame #3, created by main (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x1FFEFFF77C by thread #2
-==29799== Locks held: none
-==29799==    at 0x109F02: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F0C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x1ffefff77c is on thread #1's stack
-==29799==  in frame #3, created by main (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x1FFEFFF77C by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F13: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #6
-==29799== Locks held: none
-==29799==    at 0x109F0C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x1ffefff77c is on thread #1's stack
-==29799==  in frame #3, created by main (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during write of size 4 at 0x10D018 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F20: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous read of size 4 by thread #6
-==29799== Locks held: none
-==29799==    at 0x109F87: sleeping (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109445: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799==  Lock at 0x4AA7040 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799==  Lock at 0x4AA7068 was first observed
-==29799==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AFF: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== Possible data race during read of size 4 at 0x10D018 by thread #2
-==29799== Locks held: 2, at addresses 0x4AA7040 0x4AA7068
-==29799==    at 0x109D46: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109E82: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F20: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
-==29799== 
-==29799== ---Thread-Announcement------------------------------------------
-==29799== 
-==29799== Thread #1 is the program's root thread
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x10D018 by thread #1
-==29799== Locks held: none
-==29799==    at 0x10973C: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F20: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x10D018 by thread #5
-==29799== Locks held: none
-==29799==    at 0x109372: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F20: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during write of size 4 at 0x66A8E30 by thread #5
-==29799== Locks held: none
-==29799==    at 0x10938F: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous read of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109452: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x66a8e30 is on thread #4's stack
-==29799==  in frame #4, created by philo_thread (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x66A8E30 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109452: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #5
-==29799== Locks held: none
-==29799==    at 0x10938F: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x66a8e30 is on thread #4's stack
-==29799==  in frame #0, created by philo_thread (???:)
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 4 at 0x10D018 by thread #2
-==29799== Locks held: none
-==29799==    at 0x10A038: thinking (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109451: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #4
-==29799== Locks held: none
-==29799==    at 0x109F20: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
-==29799== 
-==29799== ----------------------------------------------------------------
-==29799== 
-==29799== Possible data race during read of size 1 at 0x4AA7048 by thread #1
-==29799== Locks held: none
-==29799==    at 0x483F99C: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x483FC4A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x1094EC: exit_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109758: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799== 
-==29799== This conflicts with a previous write of size 4 by thread #6
-==29799== Locks held: none
-==29799==    at 0x489D7D1: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:52)
-==29799==    by 0x489D7D1: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
-==29799==    by 0x4840458: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109C92: unlock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109EB8: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x4899608: start_thread (pthread_create.c:477)
-==29799==    by 0x49D5292: clone (clone.S:95)
-==29799==  Address 0x4aa7048 is 8 bytes inside a block of size 120 alloc'd
-==29799==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
-==29799==    by 0x109AB1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x109656: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==    by 0x1096B0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
-==29799==  Block was alloc'd by thread #1
-==29799== 
-==29799== 
-==29799== Use --history-level=approx or =none to gain increased speed, at
-==29799== the cost of reduced accuracy of conflicting-access information
-==29799== For lists of detected and suppressed errors, rerun with: -s
-==29799== ERROR SUMMARY: 3270 errors from 20 contexts (suppressed: 357 from 70)
+==31179== Helgrind, a thread error detector
+==31179== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==31179== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==31179== Command: ./philo 3 899 300 300 3
+==31179== Parent PID: 31059
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #4 was created
+==31179==    at 0x49D5282: clone (clone.S:71)
+==31179==    by 0x48982EB: create_thread (createthread.c:101)
+==31179==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
+==31179==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109728: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #2 was created
+==31179==    at 0x49D5282: clone (clone.S:71)
+==31179==    by 0x48982EB: create_thread (createthread.c:101)
+==31179==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
+==31179==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109728: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x1FFEFFF774 by thread #4
+==31179== Locks held: none
+==31179==    at 0x1099B9: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x1099C3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x1ffefff774 is on thread #1's stack
+==31179==  in frame #2, created by main (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during write of size 4 at 0x1FFEFFF774 by thread #4
+==31179== Locks held: none
+==31179==    at 0x1099C3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x1099C3: init_philo (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1093E9: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x1ffefff774 is on thread #1's stack
+==31179==  in frame #2, created by main (???:)
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #3 was created
+==31179==    at 0x49D5282: clone (clone.S:71)
+==31179==    by 0x48982EB: create_thread (createthread.c:101)
+==31179==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
+==31179==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109408: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7068 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== Possible data race during read of size 8 at 0x56A6E40 by thread #3
+==31179== Locks held: none
+==31179==    at 0x109929: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 8 by thread #2
+==31179== Locks held: 2, at addresses 0x4AA7040 0x4AA7068
+==31179==    at 0x109E36: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E92: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x56a6e40 is on thread #2's stack
+==31179==  in frame #4, created by philo_thread (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7068 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== Possible data race during read of size 8 at 0x56A6E48 by thread #3
+==31179== Locks held: none
+==31179==    at 0x109938: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 8 by thread #2
+==31179== Locks held: 2, at addresses 0x4AA7040 0x4AA7068
+==31179==    at 0x109E3A: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E92: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x56a6e48 is on thread #2's stack
+==31179==  in frame #4, created by philo_thread (???:)
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #6 was created
+==31179==    at 0x49D5282: clone (clone.S:71)
+==31179==    by 0x48982EB: create_thread (createthread.c:101)
+==31179==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
+==31179==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109728: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #7 was created
+==31179==    at 0x49D5282: clone (clone.S:71)
+==31179==    by 0x48982EB: create_thread (createthread.c:101)
+==31179==    by 0x4899E0F: pthread_create@@GLIBC_2.2.5 (pthread_create.c:817)
+==31179==    by 0x4842917: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109408: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7090 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== Possible data race during write of size 8 at 0x76AAE40 by thread #6
+==31179== Locks held: 2, at addresses 0x4AA7040 0x4AA7090
+==31179==    at 0x109E36: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E92: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous read of size 8 by thread #7
+==31179== Locks held: none
+==31179==    at 0x109929: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x76aae40 is on thread #6's stack
+==31179==  in frame #2, created by philo_thread (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7090 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== Possible data race during write of size 8 at 0x76AAE48 by thread #6
+==31179== Locks held: 2, at addresses 0x4AA7040 0x4AA7090
+==31179==    at 0x109E3A: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E92: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous read of size 8 by thread #7
+==31179== Locks held: none
+==31179==    at 0x109938: check_time_diff (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109306: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x76aae48 is on thread #6's stack
+==31179==  in frame #2, created by philo_thread (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Thread #4: lock order "0x4AA7090 before 0x4AA7068" violated
+==31179== 
+==31179== Observed (incorrect) order is: acquisition of lock at 0x4AA7068
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109C13: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  followed by a later acquisition of lock at 0x4AA7090
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109C3D: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  Lock at 0x4AA7090 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7068 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Thread #2: lock order "0x4AA7068 before 0x4AA7040" violated
+==31179== 
+==31179== Observed (incorrect) order is: acquisition of lock at 0x4AA7040
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109C13: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  followed by a later acquisition of lock at 0x4AA7068
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109C3D: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  Lock at 0x4AA7068 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7068 is 40 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Thread #6: lock order "0x4AA7040 before 0x4AA7090" violated
+==31179== 
+==31179== Observed (incorrect) order is: acquisition of lock at 0x4AA7090
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109BB3: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  followed by a later acquisition of lock at 0x4AA7040
+==31179==    at 0x483FEDF: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109BC2: lock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E7F: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7090 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during write of size 4 at 0x1FFEFFF77C by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F1C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous read of size 4 by thread #4
+==31179== Locks held: none
+==31179==    at 0x109F23: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x1ffefff77c is on thread #1's stack
+==31179==  in frame #3, created by main (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x1FFEFFF77C by thread #6
+==31179== Locks held: none
+==31179==    at 0x109F12: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F1C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x1ffefff77c is on thread #1's stack
+==31179==  in frame #3, created by main (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x1FFEFFF77C by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F23: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #4
+==31179== Locks held: none
+==31179==    at 0x109F1C: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x1ffefff77c is on thread #1's stack
+==31179==  in frame #3, created by main (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during write of size 4 at 0x10D018 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F30: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous read of size 4 by thread #4
+==31179== Locks held: none
+==31179==    at 0x109F97: sleeping (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109445: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179==  Lock at 0x4AA7040 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7040 is 0 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179==  Lock at 0x4AA7090 was first observed
+==31179==    at 0x4843D9D: pthread_mutex_init (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109B0F: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Address 0x4aa7090 is 80 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== Possible data race during read of size 4 at 0x10D018 by thread #6
+==31179== Locks held: 2, at addresses 0x4AA7040 0x4AA7090
+==31179==    at 0x109D56: eating_log (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109E92: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F30: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
+==31179== 
+==31179== ---Thread-Announcement------------------------------------------
+==31179== 
+==31179== Thread #1 is the program's root thread
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x10D018 by thread #1
+==31179== Locks held: none
+==31179==    at 0x10974C: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F30: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x10D018 by thread #3
+==31179== Locks held: none
+==31179==    at 0x109372: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F30: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during write of size 4 at 0x56A6E30 by thread #3
+==31179== Locks held: none
+==31179==    at 0x10938F: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous read of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109452: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x56a6e30 is on thread #2's stack
+==31179==  in frame #4, created by philo_thread (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x56A6E30 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109452: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #3
+==31179== Locks held: none
+==31179==    at 0x10938F: monitor_death_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x56a6e30 is on thread #2's stack
+==31179==  in frame #0, created by philo_thread (???:)
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 1 at 0x4AA7048 by thread #1
+==31179== Locks held: none
+==31179==    at 0x483F99C: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x483FC4A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x1094FC: exit_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109768: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #6
+==31179== Locks held: none
+==31179==    at 0x489D7D1: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:52)
+==31179==    by 0x489D7D1: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==31179==    by 0x4840458: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109CA2: unlock_forks (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109EC8: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x4aa7048 is 8 bytes inside a block of size 120 alloc'd
+==31179==    at 0x483C893: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x109AC1: init_fork_mutex (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109666: init (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x1096C0: main (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==  Block was alloc'd by thread #1
+==31179== 
+==31179== ----------------------------------------------------------------
+==31179== 
+==31179== Possible data race during read of size 4 at 0x10D018 by thread #6
+==31179== Locks held: none
+==31179==    at 0x10A048: thinking (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109451: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179== 
+==31179== This conflicts with a previous write of size 4 by thread #2
+==31179== Locks held: none
+==31179==    at 0x109F30: eating (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x109432: philo_thread (in /home/hiroaki-k4/my_project/42tokyo/philosophers/philo/philo)
+==31179==    by 0x4842B1A: ??? (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_helgrind-amd64-linux.so)
+==31179==    by 0x4899608: start_thread (pthread_create.c:477)
+==31179==    by 0x49D5292: clone (clone.S:95)
+==31179==  Address 0x10d018 is 0 bytes inside data symbol "g_die_flag"
+==31179== 
+==31179== 
+==31179== Use --history-level=approx or =none to gain increased speed, at
+==31179== the cost of reduced accuracy of conflicting-access information
+==31179== For lists of detected and suppressed errors, rerun with: -s
+==31179== ERROR SUMMARY: 3277 errors from 20 contexts (suppressed: 353 from 68)
