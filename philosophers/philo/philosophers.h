@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:29:35 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/12 21:57:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 22:16:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_info
 	int	philo_count;
 	int	die_flag;
 	int	philo_eat_count;
+	int	max_time;
 }				t_info;
 
 int		increment(int i);

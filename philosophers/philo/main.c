@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/12 22:11:15 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 22:16:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ int	init(int argc, char *argv[], t_info *info)
 	info->t_die = ft_atoi(argv[2]);
 	info->t_eat = ft_atoi(argv[3]);
 	info->t_sleep = ft_atoi(argv[4]);
+	info->max_time = info->t_eat;
+	if (info->t_sleep > info->t_eat)
+		info->max_time = info->t_sleep;
 	if (argc == 6)
 	{
 		info->must_eat_num = ft_atoi(argv[5]);
@@ -122,7 +125,8 @@ int	main(int argc, char *argv[])
 		}
 		while (g_die_flag == 0)
 			usleep(5 * DIGIT);
-		usleep(10000 * DIGIT);
+		printf("max: %d\n", info.max_time);
+		usleep(1000 * DIGIT);
 		exit_thread(thread, &info);
 	}
 	return (0);
