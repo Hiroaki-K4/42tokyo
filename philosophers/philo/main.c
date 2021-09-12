@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/12 22:16:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/12 22:19:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,7 @@ int	main(int argc, char *argv[])
 		}
 		while (g_die_flag == 0)
 			usleep(5 * DIGIT);
-		printf("max: %d\n", info.max_time);
-		usleep(1000 * DIGIT);
+		usleep(info.max_time * DIGIT);
 		exit_thread(thread, &info);
 	}
 	return (0);
