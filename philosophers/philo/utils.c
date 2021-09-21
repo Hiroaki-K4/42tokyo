@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:43:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/21 22:37:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/21 22:57:28 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		flag;
-	int		ans;
+	long	ans;
 
 	flag = 1;
 	i = 0;
@@ -60,9 +60,12 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		ans = (ans * 10) + (nptr[i] - '0');
+		// if ()
 		i++;
 	}
 	ans = ans * flag;
+	printf("min: %d\n", INT_MAX);
+	print("max: %d\n", INT_MAX);
 	// printf("ans: %ld\n", ans);
 	return (ans);
 }
