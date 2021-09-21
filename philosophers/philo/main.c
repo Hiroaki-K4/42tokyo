@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/12 22:25:10 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/21 22:37:30 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int	init(int argc, char *argv[], t_info *info)
 	info->philo_total = ft_atoi(argv[1]);
 	if (info->philo_total <= 1)
 		return (1);
-	if (ft_atoi(argv[2]) < 0 || ft_atoi(argv[3]) < 0 || ft_atoi(argv[4]) < 0)
-		return (1);
 	info->t_die = ft_atoi(argv[2]);
 	info->t_eat = ft_atoi(argv[3]);
 	info->t_sleep = ft_atoi(argv[4]);
+	if (info->t_die < 0 || info->t_eat < 0 || info->t_sleep < 0)
+		return (1);
 	info->max_time = info->t_eat;
 	if (info->t_sleep > info->t_eat)
 		info->max_time = info->t_sleep;
