@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:43:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/21 22:31:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/21 22:32:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	ans = ans * flag;
-	printf("ans: %d\n", ans);
+	printf("ans: %ld\n", ans);
 	return (ans);
 }
 
