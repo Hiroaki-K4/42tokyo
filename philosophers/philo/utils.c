@@ -6,11 +6,33 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:43:24 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/21 23:09:06 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/22 21:18:42 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
+
+int	check_only_digit(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0)
+			return (-1);
+		i++;
+	}
+	return (0);
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -18,11 +40,10 @@ int	ft_atoi(const char *nptr)
 	int		flag;
 	long	ans;
 
+	if (check_only_digit(nptr) == -1)
+		return (-1);
 	flag = 1;
 	i = 0;
-	while (nptr[i] == ' ' || nptr[i] == '\f' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\t' || nptr[i] == '\v')
-		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
