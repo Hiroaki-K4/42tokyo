@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 17:27:34 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/21 22:37:30 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/24 23:14:33 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	exit_thread(pthread_t *thread, t_info *info)
 	}
 	free(thread);
 	free(g_fork_mutex);
-	i = 0;
 }
 
 int	init(int argc, char *argv[], t_info *info)
