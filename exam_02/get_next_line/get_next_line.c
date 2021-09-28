@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/09/15 09:54:57 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/09/28 22:29:00 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,12 +305,11 @@ char    *ft_strchr(const char *src, int c)
 // }
 
 
-char *get_from_store(char *store, char **line)
+char    *get_from_store(char *store, char **line)
 {
     int i;
     char *tmp;
-    
-    i = 0;
+
     while (store[i] && store[i] != '\n')
         i++;
     if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
@@ -319,16 +318,15 @@ char *get_from_store(char *store, char **line)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
-    free(store);
     return (tmp);
 }
 
-char *save_new_line(char *store, char **line, char *buf)
+char    *save_new_line(char *store, char **line, char *buf)
 {
     int i;
     int j;
     char *tmp;
-    
+
     i = 0;
     while (buf[i] && buf[i] != '\n')
         i++;
@@ -345,7 +343,6 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-    free(store);
     return (tmp);
 }
 
@@ -353,9 +350,9 @@ int read_line(int fd, char **store, char **line)
 {
     int i;
     int buffer_size;
-    char *buf;
     char *tmp;
-    
+    char *buf;
+
     buffer_size = 128;
     if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
         return (-1);
@@ -378,7 +375,6 @@ int read_line(int fd, char **store, char **line)
     }
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
-    free(buf);
     return (0);
 }
 
@@ -394,7 +390,7 @@ int get_next_line(int fd, char **line)
         store[fd] = ft_strdup("");
     if (ft_strchr(store[fd], '\n') == NULL)
     {
-        if ((i = read_line(fd, store, line)) == 0)
+        if ((i = read_line(fd, store, line) == 0))
         {
             free(store[fd]);
             store[fd] = NULL;
