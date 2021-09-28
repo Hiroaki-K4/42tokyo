@@ -26,5 +26,8 @@ This is the repository used for the development of 42. Don't worry if the commit
 - [minitalk](https://github.com/Hiroaki-K4/minitalk)
 - [FdF](https://github.com/Hiroaki-K4/FdF)
 
+**Level 2**
+- [Philosophers](https://github.com/Hiroaki-K4/philosophers)
+
 **Level 4**
 - [cub3D](https://github.com/Hiroaki-K4/cub3D)
