@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/09 12:29:38 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/10/09 12:31:53 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,7 +323,7 @@ char *ft_itoa(int num)
 		return (NULL);
 	ans[len] = '\0';
 	len--;
-	while (len >= 0 && ans[len])
+	while (len >= 0)
 	{
 		ans[len--] = num % 10 + '0';
 		num = num / 10;
