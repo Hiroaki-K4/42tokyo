@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/09 12:04:18 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/10/09 12:06:21 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,6 +247,23 @@ char	*ft_strdup(const char *s)
 // 	return (len);
 // }
 
+
+int str_to_num(const char *arg, int *i)
+{
+	int num;
+	int j;
+	
+	num = ft_atoi(arg);
+	if (num >= 0)
+	{
+		j = 0;
+		while (ft_isdigit(arg[j++]))
+			(*i)++;
+	}
+	else
+		num = -1;
+	return (num);
+}
 
 int ft_isdigit(int c)
 {
