@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/14 09:23:53 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/10/14 09:24:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -348,33 +348,6 @@ char *save_new_line(char *store, char **line, char *buf)
     free(buf);
     return (tmp);
 }
-
-// char	*save_new_line(char *store, char **line, char *buf)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	*tmp;
-
-// 	i = 0;
-// 	while (buf[i] != '\n')
-// 		i++;
-// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
-// 		return (NULL);
-// 	ft_strlcpy(tmp, store, ft_strlen(store) + 1);
-// 	j = -1;
-// 	while (buf[++j] && j < i)
-// 		tmp[ft_strlen(store) + j] = buf[j];
-// 	tmp[ft_strlen(store) + j] = '\0';
-// 	free(store);
-// 	if (!(*line = ft_strdup(tmp)))
-// 		return (NULL);
-// 	free(tmp);
-// 	if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
-// 		return (NULL);
-// 	ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-// 	free(buf);
-// 	return (tmp);
-// }
 
 int read_line(int fd, char **store, char **line)
 {
