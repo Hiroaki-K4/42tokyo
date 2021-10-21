@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/14 09:24:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/10/21 11:38:23 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -322,7 +322,7 @@ char *get_from_store(char *store, char **line)
     return (tmp);
 }
 
-char *save_new_line(char *store, char **line, char *buf)
+char *save_new_line(char *store, char *buf, char **line)
 {
     int i;
     int j;
@@ -367,7 +367,7 @@ int read_line(int fd, char **store, char **line)
         buf[i] = '\0';
         if (ft_strchr(buf, '\n') != NULL)
         {
-            if (!(store[fd] = save_new_line(store[fd], line, buf)))
+            if (!(store[fd] = save_new_line(store[fd], buf, line)))
                 return (-1);
             return (1);
         }
@@ -376,6 +376,7 @@ int read_line(int fd, char **store, char **line)
         free(store[fd]);
         store[fd] = tmp;
     }
+    free(buf);
     if (!(*line = ft_strdup(store[fd])))
         return (-1);
     return (0);
@@ -387,24 +388,24 @@ int get_next_line(int fd, char **line)
     static char *store[256];
 
     *line = NULL;
-    if (fd < 0 || fd > 255)
-        return (-1);
     if (store[fd] == NULL)
         store[fd] = ft_strdup("");
+    if (fd < 0 || fd > 255)
+        return (-1);
     if (ft_strchr(store[fd], '\n') == NULL)
     {
         if ((i = read_line(fd, store, line)) == 0)
-		{
-			free(store[fd]);
-			store[fd] = NULL;
-		}
-		return (i);
+        {
+            free(store[fd]);
+            store[fd] = NULL;
+        }
+        return (i);
     }
     else
     {
         if (!(store[fd] = get_from_store(store[fd], line)))
-			return (-1);
-		return (1);
+            return (-1);
+        return (1);
     }
-	return (0);
+    return (0);
 }
