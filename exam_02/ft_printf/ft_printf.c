@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/23 12:07:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/10/23 12:08:08 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -626,6 +626,8 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // }
 
 
+
+
 int str_to_num(const char *arg, int *i)
 {
 	int num;
@@ -639,7 +641,7 @@ int str_to_num(const char *arg, int *i)
 			(*i)++;
 	}
 	else
-		num = -1
+		num = -1;
 	return (num);
 }
 
