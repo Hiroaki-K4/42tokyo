@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/10/31 12:55:21 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/11/08 10:52:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -302,10 +302,9 @@ char    *ft_strchr(const char *src, int c)
 //         return (1);
 //     }
 //     return (0);
-// }
+// 
 
-
-char    *get_from_store(char *store, char **line)
+char *get_from_store(char *store, char **line)
 {
     int i;
     char *tmp;
@@ -323,7 +322,7 @@ char    *get_from_store(char *store, char **line)
     return (tmp);
 }
 
-char    *save_new_line(char *store, char **line, char *buf)
+char *save_new_line(char *store, char **line, char *buf)
 {
     int i;
     int j;
@@ -346,7 +345,6 @@ char    *save_new_line(char *store, char **line, char *buf)
         return (NULL);
     ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
     free(buf);
-    free(store);
     return (tmp);
 }
 
@@ -354,8 +352,8 @@ int read_line(int fd, char **store, char **line)
 {
     int i;
     int buffer_size;
-    char *tmp;
     char *buf;
+    char *tmp;
 
     buffer_size = 128;
     if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
