@@ -6,26 +6,26 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/11/13 12:02:46 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/11/13 12:05:43 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 // # include <stdint.h>
 
-typedef	struct
+typedef struct
 {
 	int field;
 	int precision;
 	int format;
-}		t_plist;
+} t_plist;
 
-size_t		ft_strlen(const char *str)
+size_t ft_strlen(const char *str)
 {
-	size_t	count;
+	size_t count;
 
 	count = 0;
 	while (str[count] != '\0')
@@ -33,11 +33,11 @@ size_t		ft_strlen(const char *str)
 	return (count);
 }
 
-char	*ft_strdup(const char *s)
+char *ft_strdup(const char *s)
 {
-	char	*new_ptr;
-	int		i;
-	int		size;
+	char *new_ptr;
+	int i;
+	int size;
 
 	size = 0;
 	while (s[size] != '\0')
@@ -214,7 +214,7 @@ char	*ft_strdup(const char *s)
 // {
 // 	int		keta;
 // 	char	*tmp;
-	
+
 // 	keta = ft_strlen(str_num);
 // 	if (num < 0)
 // 		keta--;
@@ -313,7 +313,7 @@ char *ft_itoa(int num)
 	if (num == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = digit_size(num);
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))	
+	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	ans[len] = '\0';
 	len--;
@@ -338,10 +338,10 @@ int ft_atoi(const char *arg)
 	int ans;
 	int i;
 	int flag;
-	
+
 	i = 0;
 	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
-			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
+		   arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
 		i++;
 	flag = 1;
 	if (arg[i] == '-' || arg[i] == '+')
@@ -407,7 +407,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 {
 	int keta;
 	char *tmp;
-	
+
 	keta = ft_strlen(str_num);
 	if (num < 0)
 		keta--;
@@ -443,7 +443,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 // {
 // 	int len;
-	
+
 // 	len = 0;
 // 	if (flag_list.precision == 0 && num == 0)
 // 	{
@@ -623,6 +623,23 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	va_end(ap);
 // 	return (print_len);
 // }
+
+int str_to_num(const char *arg, int *i)
+{
+	int j;
+	int num;
+
+	num = ft_atoi(arg);
+	if (num >= 0)
+	{
+		j = 0;
+		while (ft_isdigit(arg[j++]))
+			(*i)++;
+	}
+	else
+		num = -1;
+	return (num);
+}
 
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
