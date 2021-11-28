@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/11/28 11:33:43 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/11/28 11:34:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,6 +247,12 @@ char *ft_strdup(const char *s)
 // 	return (len);
 // }
 
+ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 
 int field_precision(t_plist flag_list, char *str_num, int num, int i)
 {
