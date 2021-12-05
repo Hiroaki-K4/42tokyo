@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/05 10:58:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/05 11:05:51 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,6 +625,33 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // }
 
 
+int print_digit(t_plist flag_list, char *str_num, int num, int keta)
+{
+	int len;
+
+	len = 0;
+	if (flag_list.precision == 0 && num == 0)
+	{
+		while (flag_list.field - (len++) > 0)
+			write(1, " ", 1);
+	}
+	else if (flag_list.field > (int)ft_strlen(str_num))
+	{
+		if (flag_list.precision > keta)
+			len = field_precision(flag_list, str_num, num, 0);
+		else
+		{
+			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
+				write(1, " ", 1);
+			write(1, str_num, ft_strlen(str_num));
+			len = flag_list.field;
+		}
+	}
+	else
+		len = no_field_int(flag_list, str_num, num, 0);
+	return (len);
+}
+
 int print_string(va_list *ap, t_plist flag_list)
 {
 	int i;
@@ -699,6 +726,7 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	char *str_num;
 	t_plist flag_list;
 
+	(*i)++;
 	len = 0;
 	flag_list.field = str_to_num(&arg[*i], i);
 	flag_list.precision = -1;
