@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/11/26 23:11:33 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/12 11:51:31 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,7 +304,6 @@ char    *ft_strchr(const char *src, int c)
 //     return (0);
 // 
 
-
 char *get_from_store(char *store, char **line)
 {
     int i;
@@ -319,6 +318,7 @@ char *get_from_store(char *store, char **line)
     if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
         return (NULL);
     ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
+    free(store);
     return (tmp);
 }
 
@@ -331,7 +331,7 @@ char *save_new_line(char *store, char **line, char *buf)
     i = 0;
     while (buf[i] && buf[i] != '\n')
         i++;
-    if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) +  i + 1))))
+    if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(store) + i + 1))))
         return (NULL);
     ft_strlcpy(tmp, store, ft_strlen(store) + 1);
     j = -1;
@@ -350,8 +350,8 @@ char *save_new_line(char *store, char **line, char *buf)
 
 int read_line(int fd, char **store, char **line)
 {
-    int buffer_size;
     int i;
+    int buffer_size;
     char *buf;
     char *tmp;
 
@@ -370,7 +370,7 @@ int read_line(int fd, char **store, char **line)
                 return (-1);
             return (1);
         }
-        if (!(tmp = ft_strjoin(store[fd], buf)))
+        if (!(tmp = ft_strjoin(buf, store[fd])))
             return (-1);
         free(store[fd]);
         store[fd] = tmp;
