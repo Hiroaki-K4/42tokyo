@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 23:01:25 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/14 23:01:49 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,14 +265,14 @@ int		ft_strchr_place(const char *str, int c, int *i)
 	return (-1);
 }
 
-char *ft_itoa_hex(unsigned int num, const char *arg)
+char			*ft_itoa_hex(unsigned int num, char *str)
 {
-	unsigned int i;
-	int len;
-	char *ans;
+	int				len;
+	unsigned int	i;
+	char			*ans;
 
-	i = num;
 	len = 1;
+	i = num;
 	while (i > 16)
 	{
 		len++;
@@ -284,7 +284,7 @@ char *ft_itoa_hex(unsigned int num, const char *arg)
 	len--;
 	while (len >= 0)
 	{
-		ans[len--] = arg[num % 16];
+		ans[len--] = str[num % 16];
 		num = num / 16;
 	}
 	return (ans);
