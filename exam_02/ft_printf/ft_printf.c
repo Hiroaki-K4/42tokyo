@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 22:56:11 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/14 22:58:37 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,32 +305,59 @@ int digit_size(int num)
 	return (len);
 }
 
-char *ft_itoa(int num)
-{
-	int len;
-	int flag;
-	char *ans;
+// char *ft_itoa(int num)
+// {
+// 	int len;
+// 	int flag;
+// 	char *ans;
 
-	if (num == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = digit_size(num);
-	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ans[len] = '\0';
-	len--;
+// 	if (num == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	len = digit_size(num);
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	ans[len] = '\0';
+// 	len--;
+// 	flag = 1;
+// 	if (num < 0)
+// 	{
+// 		flag = -1;
+// 		num = num * (-1);
+// 	}
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = num % 10 + "0";
+// 		num = num / 10;
+// 	}
+// 	if (flag == -1)
+// 		ans[0] = '-';
+// 	return (ans);
+// }
+
+int		ft_atoi(const char *arg)
+{
+	int		i;
+	int		flag;
+	int		ans;
+
 	flag = 1;
-	if (num < 0)
+	i = 0;
+	while (arg[i] == ' ' || arg[i] == '\f' || arg[i] == '\n' ||
+			arg[i] == '\r' || arg[i] == '\t' || arg[i] == '\v')
+		i++;
+	if (arg[i] == '-' || arg[i] == '+')
 	{
-		flag = -1;
-		num = num * (-1);
+		if (arg[i] == '-')
+			flag = -1;
+		i++;
 	}
-	while (len >= 0)
+	ans = 0;
+	while (arg[i] >= '0' && arg[i] <= '9')
 	{
-		ans[len--] = num % 10 + "0";
-		num = num / 10;
+		ans = (ans * 10) + (arg[i] - '0');
+		i++;
 	}
-	if (flag == -1)
-		ans[0] = '-';
+	ans = ans * flag;
 	return (ans);
 }
 
