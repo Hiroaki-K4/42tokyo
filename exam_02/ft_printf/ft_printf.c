@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 22:59:41 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/14 23:01:25 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,14 +248,14 @@ char *ft_strdup(const char *s)
 // }
 
 
-int ft_strchr_place(const char *arg, int c, int *i)
+int		ft_strchr_place(const char *str, int c, int *i)
 {
-	int j;
+	int	j;
 
 	j = 0;
-	while (ft_strlen(arg) - j > 0)
+	while ((int)ft_strlen(str) - j > 0)
 	{
-		if (arg[j] == c)
+		if (str[j] == c)
 		{
 			(*i)++;
 			return (j);
