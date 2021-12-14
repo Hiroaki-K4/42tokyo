@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 23:01:49 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/14 23:02:15 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,17 +290,17 @@ char			*ft_itoa_hex(unsigned int num, char *str)
 	return (ans);
 }
 
-int digit_size(int num)
+int		digit_size(int num)
 {
-	int len;
+	int		len;
 
 	len = 0;
 	if (num <= 0)
 		len++;
 	while (num != 0)
 	{
-		len++;
 		num = num / 10;
+		len++;
 	}
 	return (len);
 }
