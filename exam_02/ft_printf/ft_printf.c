@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 23:02:54 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/14 23:04:18 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,34 +305,63 @@ int		digit_size(int num)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char *ft_itoa(int num)
 {
-	int		len;
-	int		flag;
-	char	*ans;
+	int len;
+	int flag;
+	char *ans;
 
-	if (n == -2147483648)
+	if (num == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = digit_size(n);
+	len = digit_size(num);
 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	flag = 1;
-	if (n < 0)
-	{
-		n = n * (-1);
-		flag = -1;
-	}
 	ans[len] = '\0';
 	len--;
+	flag = 1;
+	if (num < 0)
+	{
+		flag = -1;
+		num = num * (-1);
+	}
 	while (len >= 0)
 	{
-		ans[len--] = '0' + (n % 10);
-		n = n / 10;
+		ans[len--] = num % 10 + '0';
+		num = num / 10;
 	}
 	if (flag == -1)
 		ans[0] = '-';
 	return (ans);
 }
+
+// char			*ft_itoa(int n)
+// {
+// 	int		len;
+// 	int		flag;
+// 	char	*ans;
+
+// 	if (n == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	len = digit_size(n);
+// 	if (!(ans = (char *)malloc(sizeof(char) * (len + 1))))
+// 		return (NULL);
+// 	flag = 1;
+// 	if (n < 0)
+// 	{
+// 		n = n * (-1);
+// 		flag = -1;
+// 	}
+// 	ans[len] = '\0';
+// 	len--;
+// 	while (len >= 0)
+// 	{
+// 		ans[len--] = '0' + (n % 10);
+// 		n = n / 10;
+// 	}
+// 	if (flag == -1)
+// 		ans[0] = '-';
+// 	return (ans);
+// }
 
 int ft_atoi(const char *arg)
 {
@@ -434,6 +463,7 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 	}
 	else
 	{
+		printf("%s\n", str_num);
 		write(1, str_num, ft_strlen(str_num));
 		len = ft_strlen(str_num);
 	}
