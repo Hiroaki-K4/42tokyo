@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/14 23:06:02 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/16 20:46:16 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,98 +625,6 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // }
 
 
-int print_digit(t_plist flag_list, char *str_num, int num, int keta)
-{
-	int len;
-
-	len = 0;
-	if (flag_list.precision == 0 && num == 0)
-	{
-		while (flag_list.field - (len++) > 0)
-			write(1, " ", 1);
-	}
-	else if (flag_list.field > (int)ft_strlen(str_num))
-	{
-		if (flag_list.precision > keta)
-			len = field_precision(flag_list, str_num, num, 0);
-		else
-		{
-			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
-				write(1, " ", 1);
-			write(1, str_num, ft_strlen(str_num));
-			len = flag_list.field;
-		}
-	}
-	else
-		len = no_field_int(flag_list, str_num, num, 0);
-	return (len);
-}
-
-int print_string(va_list *ap, t_plist flag_list)
-{
-	int i;
-	int len;
-	char *str;
-	
-	str = va_arg(*ap, char *);
-	if (str == NULL)
-		str = "(null)";
-	len = 0;
-	if (flag_list.field != -1)
-	{
-		if (flag_list.precision != -1 && flag_list.precision < (int)ft_strlen(str))
-		{
-			i = flag_list.precision;
-			while (flag_list.field - (i++) > 0)
-				write(1, " ", 1);
-			write(1, str, flag_list.precision);
-			len = i;
-		}
-		else
-		{
-			i = 0;
-			while (flag_list.field - (int)ft_strlen(str) - (i++) > 0)
-				write(1, " ", 1);
-			write(1, str, ft_strlen(str));
-			len = ft_strlen(str) + i;
-		}
-	}
-	else
-	{
-		if (flag_list.precision != -1)
-		{
-			while (len < flag_list.precision && str[len])
-			{
-				write(1, &str[len], 1);
-				len++;
-			}
-		}
-		else
-		{
-			write(1, str, ft_strlen(str));
-			len = ft_strlen(str);
-		}
-	}
-	return (len);
-}
-
-int str_to_num(const char *arg, int *i)
-{
-	int num;
-	int j;
-
-	num = ft_atoi(arg);
-	if (num >= 0)
-	{
-		j = 0;
-		while (ft_isdigit(arg[j++]))
-			(*i)++;
-	}
-	else
-		num = -1;
-	return (num);
-}
-
 int ft_printf_per(const char *arg, int *i, va_list *ap)
 {
 	int len;
@@ -724,9 +632,8 @@ int ft_printf_per(const char *arg, int *i, va_list *ap)
 	int keta;
 	unsigned int hex_num;
 	char *str_num;
-	t_plist flag_list;
+	t_plist flag_list
 
-	(*i)++;
 	len = 0;
 	flag_list.field = str_to_num(&arg[*i], i);
 	flag_list.precision = -1;
@@ -766,8 +673,8 @@ int ft_printf_str(const char *arg, int *i)
 	while (arg[*i] && arg[*i] != '%')
 	{
 		write(1, &arg[*i], 1);
-		len++;
 		(*i)++;
+		len++;
 	}
 	return (len);
 }
@@ -781,7 +688,6 @@ int ft_printf(const char *arg, ...)
 
 	va_start(ap, arg);
 	i = 0;
-	print_len = 0;
 	if (arg == NULL)
 		i = -1;
 	while (i >= 0 && arg[i])
