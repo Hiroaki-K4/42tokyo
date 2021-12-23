@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 15:06:32 by hkubo             #+#    #+#             */
-/*   Updated: 2021/12/12 11:51:31 by hkubo            ###   ########.fr       */
+/*   Updated: 2021/12/23 20:41:02 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -341,10 +341,9 @@ char *save_new_line(char *store, char **line, char *buf)
     if (!(*line = ft_strdup(tmp)))
         return (NULL);
     free(tmp);
-    if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&buf[i + 1]) + 1))))
+    if (!(tmp = (char *)malloc(sizeof(char) * (ft_strlen(&store[i + 1]) + 1))))
         return (NULL);
-    ft_strlcpy(tmp, &buf[i + 1], ft_strlen(&buf[i + 1]) + 1);
-    free(buf);
+    ft_strlcpy(tmp, &store[i + 1], ft_strlen(&store[i + 1]) + 1);
     return (tmp);
 }
 
@@ -354,7 +353,7 @@ int read_line(int fd, char **store, char **line)
     int buffer_size;
     char *buf;
     char *tmp;
-
+    
     buffer_size = 128;
     if (!(buf = (char *)malloc(sizeof(char) * (buffer_size + 1))))
         return (-1);
@@ -370,7 +369,7 @@ int read_line(int fd, char **store, char **line)
                 return (-1);
             return (1);
         }
-        if (!(tmp = ft_strjoin(buf, store[fd])))
+        if (!(tmp = ft_strjoin(store[fd], buf)))
             return (-1);
         free(store[fd]);
         store[fd] = tmp;
