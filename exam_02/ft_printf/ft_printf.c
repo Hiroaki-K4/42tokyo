@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2022/01/04 11:19:58 by hkubo            ###   ########.fr       */
+/*   Updated: 2022/01/04 11:24:27 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -622,6 +622,33 @@ int no_field_int(t_plist flag_list, char *str_num, int num, int len)
 // 	va_end(ap);
 // 	return (print_len);
 // }
+
+int print_digit(t_plist flag_list, char *str_num, int num, int keta)
+{
+	int len;
+
+	len = 0;
+	if (num == 0 && flag_list.precision == 0)
+	{
+		while (flag_list.field - (len++) > 0)
+			write(1, " ", 1);
+	}
+	else if (flag_list.field > ft_strlen(str_num))
+	{
+		if (flag_list.precision > keta)
+			len = field_precision(flag_list, str_num, num, 0)
+		else
+		{
+			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
+				write(1, " ", 1);
+			write(1, str_num, ft_strlen(str_num));
+			len = flag_list.field;
+		}
+	}
+	else
+		len = no_field_int(flag_list, str_num, num, 0);
+	return (len);
+}
 
 int print_string(va_list *ap, t_plist flag_list)
 {
