@@ -6,7 +6,7 @@
 /*   By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 18:39:32 by hkubo             #+#    #+#             */
-/*   Updated: 2022/01/04 11:24:27 by hkubo            ###   ########.fr       */
+/*   Updated: 2022/01/04 11:24:41 by hkubo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -636,7 +636,7 @@ int print_digit(t_plist flag_list, char *str_num, int num, int keta)
 	else if (flag_list.field > ft_strlen(str_num))
 	{
 		if (flag_list.precision > keta)
-			len = field_precision(flag_list, str_num, num, 0)
+			len = field_precision(flag_list, str_num, num, 0);
 		else
 		{
 			while (flag_list.field - (int)ft_strlen(str_num) - (len++) > 0)
